@@ -22,7 +22,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
     
-    return this.http.post('http://localhost:2000/api/songprvwupload', oFile, options)
+    return this.http.post('api/songprvwupload', oFile, options)
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }
@@ -32,7 +32,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
     
-    return this.http.post('http://localhost:2000/api/songfileupload', oFile, options)
+    return this.http.post('api/songfileupload', oFile, options)
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }
@@ -41,7 +41,7 @@ export class SongService {
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:2000/api/songprvwdelete', oSong, options)
+    return this.http.post('api/songprvwdelete', oSong, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -50,7 +50,7 @@ export class SongService {
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:2000/api/songfiledelete', oSong, options)
+    return this.http.post('api/songfiledelete', oSong, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -61,7 +61,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`http://localhost:2000/api/song/${userid}?artistid=${artistid}&albumid=${albumid}`, JSON.stringify(oSong), options)
+    return this.http.post(`api/song/${userid}?artistid=${artistid}&albumid=${albumid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -72,7 +72,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`http://localhost:2000/api/publishsong/${songid}`, JSON.stringify(oSong), options)
+    return this.http.put(`api/publishsong/${songid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -83,7 +83,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`http://localhost:2000/api/cancelpublishsong/${songid}`, JSON.stringify(oSong), options)
+    return this.http.put(`api/cancelpublishsong/${songid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -94,7 +94,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`http://localhost:2000/api/updatesongpreview/${songid}`, JSON.stringify(oSong), options)
+    return this.http.put(`api/updatesongpreview/${songid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -104,7 +104,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`http://localhost:2000/api/updatesongfile/${songid}`, JSON.stringify(oSong), options)
+    return this.http.put(`api/updatesongfile/${songid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -115,7 +115,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get(`http://localhost:2000/api/song/${songid}`, options)
+    return this.http.get(`api/song/${songid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -126,7 +126,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get(`http://localhost:2000/api/songaggregate/${songid}`, options)
+    return this.http.get(`api/songaggregate/${songid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -137,7 +137,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.delete(`http://localhost:2000/api/song/${songid}`, options)
+    return this.http.delete(`api/song/${songid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -148,7 +148,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`http://localhost:2000/api/song/aggreport/${userid}`, JSON.stringify(oSong), options)
+    return this.http.post(`api/song/aggreport/${userid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -159,7 +159,7 @@ export class SongService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`http://localhost:2000/api/song/report/${userid}`, JSON.stringify(oSong), options)
+    return this.http.post(`api/song/report/${userid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

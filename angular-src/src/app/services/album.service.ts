@@ -22,7 +22,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
     console.log(oFile.getAll('albumimage'));
-    return this.http.post('http://localhost:2000/api/albumphotoupload', oFile, options)
+    return this.http.post('api/albumphotoupload', oFile, options)
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }
@@ -33,7 +33,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`http://localhost:2000/api/album/${userid}?artistid=${artistid}`, JSON.stringify(oAlbum), options)
+    return this.http.post(`api/album/${userid}?artistid=${artistid}`, JSON.stringify(oAlbum), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -44,7 +44,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`http://localhost:2000/api/updatealbumphoto/${albumid}`, JSON.stringify(oAlbum), options)
+    return this.http.put(`api/updatealbumphoto/${albumid}`, JSON.stringify(oAlbum), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -53,7 +53,7 @@ export class AlbumService {
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:2000/api/albumphotodelete', oAlbum, options)
+    return this.http.post('api/albumphotodelete', oAlbum, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -64,7 +64,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`http://localhost:2000/api/album/report/${userid}`, JSON.stringify(oAlbum), options)
+    return this.http.post(`api/album/report/${userid}`, JSON.stringify(oAlbum), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -75,7 +75,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`http://localhost:2000/api/album/aggreport/${userid}`, JSON.stringify(oAlbum), options)
+    return this.http.post(`api/album/aggreport/${userid}`, JSON.stringify(oAlbum), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -86,7 +86,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get(`http://localhost:2000/api/album/${albumid}`, options)
+    return this.http.get(`api/album/${albumid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -97,7 +97,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get(`http://localhost:2000/api/albumlist/${userid}`, options)
+    return this.http.get(`api/albumlist/${userid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -108,7 +108,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get(`http://localhost:2000/api/albumlistbyartist/${userid}?artistid=${artistid}`, options)
+    return this.http.get(`api/albumlistbyartist/${userid}?artistid=${artistid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -119,7 +119,7 @@ export class AlbumService {
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.delete(`http://localhost:2000/api/album/${albumid}`, options)
+    return this.http.delete(`api/album/${albumid}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

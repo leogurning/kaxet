@@ -27,7 +27,7 @@ export class UserService {
   register(oUser) {
     let headers = new Headers ({ 'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
-     return this.http.post('http://localhost:2000/register', JSON.stringify(oUser), options)
+     return this.http.post('register', JSON.stringify(oUser), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -38,7 +38,7 @@ export class UserService {
       headers.append('Authorization', `${this.jwtToken}`);
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.get(`http://localhost:2000/api/user/${userid}`, options)
+      return this.http.get(`api/user/${userid}`, options)
           .map((response: Response) => response.json())
           .catch(this.handleError);
   }
@@ -49,7 +49,7 @@ export class UserService {
       headers.append('Authorization', `${this.jwtToken}`);
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.put(`http://localhost:2000/api/user/${userid}`, JSON.stringify(oUser), options)
+      return this.http.put(`api/user/${userid}`, JSON.stringify(oUser), options)
           .map((response: Response) => response.json())
           .catch(this.handleError);
   }
@@ -83,7 +83,7 @@ export class UserService {
       headers.append('Authorization', `${this.jwtToken}`);
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.put(`http://localhost:2000/api/password/${userid}`, JSON.stringify(oUser), options)
+      return this.http.put(`api/password/${userid}`, JSON.stringify(oUser), options)
           .map((response: Response) => response.json())
           .catch(this.handleError);
   }
