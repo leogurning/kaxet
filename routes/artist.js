@@ -2,7 +2,7 @@ const mongoose = require( 'mongoose' );
 const Artist = require('../models/artist');
 const config = require('../config');
 const fs = require('fs');
-const uploadpath = '/Users/leonardgurning/Documents/nodeprojects/kaxet/public/assets/artists/images/';
+const uploadpath = config.baseuploadpath + 'assets/artists/images/';
 //const uploadpath = '/Users/leonardgurning/Documents/nodeprojects/kaxet/angular-src/src/assets/artists/images/';
 
 exports.artistphotoupload = function(req, res, next){

@@ -53,7 +53,7 @@ export class ViewartistComponent implements OnInit {
         this.qsort = params['sortby'] || '';
 
         let payload: any = {};
-        //this.qartistid = this.artistid;
+        this.qartistid = this.artistid;
         payload.artistid = this.qartistid;
         payload.page = this.qpage;
         payload.sortby = this.qsort;
