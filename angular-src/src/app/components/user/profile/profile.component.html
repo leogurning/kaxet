@@ -1,0 +1,92 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h1>My Profile</h1>
+    </div>
+    <div class="clearfix">
+      <form [formGroup]="profileForm" (ngSubmit)="updateUser(profileForm.value)" class="form-horizontal" novalidate autocomplete="off">
+          <div class="form-group">
+              <label for="username" class="col-sm-2 control-label">Username</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-user"></i></div>
+                  <div class="form-ele">{{ userObj.username }}</div>
+              </div>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': profileForm.get('name').invalid && profileForm.get('name').dirty}">
+              <label for="name" class="col-sm-2 control-label">Name</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                  <input type="text" class="form-control" id="name" [formControl]="name" placeholder="Name">
+              </div>
+              <div class="text-danger" *ngIf="profileForm.get('name').dirty && profileForm.get('name').invalid">
+                  <span class="col-sm-2"></span>
+                  <span class="col-sm-10" style="padding:4px 0 0">Please enter your {{ userObj.username }} name</span>
+              </div>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}">
+              <label for="email" class="col-sm-2 control-label">Email</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon">@</div>
+                  <input type="text" class="form-control" id="email" [formControl]="email" placeholder="Email">
+              </div>
+              <div class="text-danger" *ngIf="profileForm.get('email').dirty && profileForm.get('email').invalid">
+                  <span class="col-sm-2"></span>
+                  <span class="col-sm-10" style="padding:4px 0 0">Please enter a valid email</span>
+              </div>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': profileForm.get('contactno').invalid && profileForm.get('contactno').dirty}">
+              <label for="contactno" class="col-sm-2 control-label">Contact No</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-bold"></i></div>
+                  <input type="text" class="form-control" id="contactno" [formControl]="contactno" placeholder="Contact No">
+              </div>
+              <div class="text-danger" *ngIf="profileForm.get('contactno').dirty && profileForm.get('contactno').invalid">
+                  <span class="col-sm-2"></span>
+                  <span class="col-sm-10" style="padding:4px 0 0">Please enter your Contact Number</span>
+              </div>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': profileForm.get('bankaccno').invalid && profileForm.get('bankaccno').dirty}">
+              <label for="bankaccno" class="col-sm-2 control-label">Bank Account No</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-bold"></i></div>
+                  <input type="text" class="form-control" id="bankaccno" [formControl]="bankaccno" placeholder="Bank Account No">
+              </div>
+              <div class="text-danger" *ngIf="profileForm.get('bankaccno').dirty && profileForm.get('bankaccno').invalid">
+                  <span class="col-sm-2"></span>
+                  <span class="col-sm-10" style="padding:4px 0 0">Please enter your Bank Account Number</span>
+              </div>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': profileForm.get('bankname').invalid && profileForm.get('bankname').dirty}">
+              <label for="bankname" class="col-sm-2 control-label">Bank Name</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-bold"></i></div>
+                  <input type="text" class="form-control" id="bankname" [formControl]="bankname" placeholder="Bank Name">
+              </div>
+              <div class="text-danger" *ngIf="profileForm.get('bankname').dirty && profileForm.get('bankname').invalid">
+                  <span class="col-sm-2"></span>
+                  <span class="col-sm-10" style="padding:4px 0 0">Please enter your Bank Name</span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="usertype" class="col-sm-2 control-label">User Type</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-user"></i></div>
+                  <div class="form-ele">{{ userObj.usertype }}</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="lastlogin" class="col-sm-2 control-label">Last Login</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-calendar"></i></div>
+                  <div class="form-ele">{{ userObj.lastlogin | date:'medium' }}</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                  <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary">Update</button>
+                  <button type="reset" class="btn btn-default" (click)="ngOnInit()">Cancel</button>
+              </div>
+          </div>
+      </form>                
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h1>Change Photo</h1>
+    </div>
+  
+    <form [formGroup]="albumForm" (ngSubmit)="updatePhoto(albumForm.value)" class="form-horizontal" novalidate autocomplete="off">
+
+        <div class="col-lg-6 col-sm-6 col-12">
+            <label for="albumimage" class="col-sm-3 control-label"></label>
+            <img src="{{ this.displayImg }}" width="170" height="170">
+            <br><br>
+            <div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse&hellip; <input type="file" (change)="fileChangeEvent($event)" name="albumimage" id="albumimage" style="display:none">
+                    </span>
+                </label>
+                <input type="text" class="form-control" value="{{ this.newfile }}">  
+              </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">     </label>
+            <div class="col-sm-10">
+                <br>
+                <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
+            </div>
+        </div>
+    </form>
+</div>

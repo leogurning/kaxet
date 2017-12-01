@@ -1,0 +1,103 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Edit Album</h3>
+    </div>
+    <form [formGroup]="albumForm" (ngSubmit)="saveAlbum(albumForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="form-group" [ngClass]="{'has-error': albumForm.get('albumname').invalid && albumForm.get('albumname').dirty}">
+            <label for="albumname" class="col-sm-2 control-label">Album Name</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input type="text" class="form-control" id="albumname" [formControl]="albumname" placeholder="Album Name">
+            </div>
+            <div class="text-danger" *ngIf="albumForm.get('albumname').dirty && albumForm.get('albumname').invalid">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0">Please enter your {{ userObj.username }} album name</span>
+            </div>
+        </div>
+        
+        <div class="form-group" [ngClass]="{'has-error': albumForm.get('artistid').invalid && albumForm.get('artistid').dirty}">
+            <label for="artistid" class="col-sm-2 control-label">Artist</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="artistid">
+                    <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="albumForm.get('artistid').dirty && albumForm.get('artistid').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="albumForm.get('artistid').errors.required">
+                    Please select artist status
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': albumForm.get('albumyear').invalid && albumForm.get('albumyear').dirty}">
+            <label for="albumyear" class="col-sm-2 control-label">Album Year</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input type="text" class="form-control" id="albumyear" [formControl]="albumyear" placeholder="Album Year">
+            </div>
+            <div class="text-danger" *ngIf="albumForm.get('albumyear').dirty && albumForm.get('albumyear').invalid">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0">Please enter album year</span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': albumForm.get('albumgenre').invalid && albumForm.get('albumgenre').dirty}">
+            <label for="albumgenre" class="col-sm-2 control-label">Album Genre</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="albumgenre">
+                    <option *ngFor="let g of genre" >{{g}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="albumForm.get('albumgenre').dirty && albumForm.get('albumgenre').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="albumForm.get('albumgenre').errors.required">
+                    Please select album genre
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': albumForm.get('albumprice').invalid && albumForm.get('albumprice').dirty}">
+            <label for="albumprice" class="col-sm-2 control-label">Price</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon">Rp</div>
+                <input type="number" class="form-control" id="albumprice" [formControl]="albumprice" placeholder="Enter price">
+            </div>
+            <div class="text-danger" *ngIf="albumForm.get('albumprice').dirty && albumForm.get('albumprice').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="albumForm.get('albumprice').errors.required">
+                    Please enter price
+                </span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="albumForm.get('albumprice').errors.pattern">
+                    Please enter a valid amount
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': albumForm.get('status').invalid && albumForm.get('status').dirty}">
+            <label for="status" class="col-sm-2 control-label">Status</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="status">
+                    <option *ngFor="let a of sts" >{{a}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="albumForm.get('status').dirty && albumForm.get('status').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="albumForm.get('status').errors.required">
+                    Please select album status
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" [disabled]="albumForm.invalid" class="btn btn-primary">{{ btnLbl }}</button>
+                <button type="reset" class="btn btn-default" (click)="onBack()">Back</button>
+            </div>
+        </div>
+    </form>
+  </div>

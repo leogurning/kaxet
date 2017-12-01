@@ -1,0 +1,40 @@
+<div class="container pagecontainer">
+  <div class="page-header">
+      <h1>Change Photo</h1>
+  </div>
+
+  <form [formGroup]="artistForm" (ngSubmit)="updatePhoto(artistForm.value)" class="form-horizontal" novalidate autocomplete="off">
+<!--       <div class="form-group" [ngClass]="{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}">
+          <label for="imgpath" class="col-sm-2 control-label">Image Path</label>
+          <div class="input-group col-sm-10">
+              <input type="text" class="form-control" id="imgpath" [formControl]="imgpath" placeholder="Img Path">
+          </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}">
+          <label for="imgoriname" class="col-sm-2 control-label">Image Oriname</label>
+          <div class="input-group col-sm-10">
+              <input type="text" class="form-control" id="imgoriname" [formControl]="imgoriname" placeholder="Img Oriname">
+          </div>
+      </div> -->
+      <div class="col-lg-6 col-sm-6 col-12">
+          <label for="artistimage" class="col-sm-3 control-label"></label>
+          <img src="{{ this.displayImg }}" width="170" height="170">
+          <br><br>
+          <div class="input-group">
+              <label class="input-group-btn">
+                  <span class="btn btn-primary">
+                      Browse&hellip; <input type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" style="display:none">
+                  </span>
+              </label>
+              <input type="text" class="form-control" value="{{ this.newfile }}">  
+            </div>
+      </div>
+      <div class="form-group">
+          <label class="col-sm-2 control-label">     </label>
+          <div class="col-sm-10">
+              <br>
+              <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
+          </div>
+      </div>
+  </form>
+</div>

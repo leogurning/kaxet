@@ -1,0 +1,102 @@
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+</script>
+    
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>List Artist</h3>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Parameter</h3>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+                <div class="row">
+                    <div class="col-sm-12 col-md-7">
+                        <label for="artistname">Artist Name</label>
+                        <div class="input-group col-sm-10">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                            <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                        <label for="status">Status</label>
+                        <div class="input-group col-sm-10">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                            <select class="form-control" [formControl]="status">
+                                <option ng-selected="true" value="">Select the status</option>
+                                <option *ngFor="let a of sts" >{{a}}</option>
+                            </select>
+                        </div>
+                    </div><br>
+                    <div class="col-sm-12 col-md-2">
+                        <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+  
+    <div class="panel panel-danger" *ngIf="artists && totalrows < 1">
+        <div class="panel-heading">
+            <h3 class="panel-title">No artist found</h3> 
+        </div>
+  
+        <div class="panel-body">
+            It seems like you havn't entered any artists for the selected criteria. Please add the artist <a style="cursor:pointer" (click)="toaddArtists()">here</a>.
+        </div>
+    </div>
+  
+  
+    <div class="panel panel-default" *ngIf="artists && totalrows > 0">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th width="50%"><a style="cursor:pointer" (click)="sortArtist('artistname')">Artist Name</a></th>
+                            <th width="20%"><a style="cursor:pointer" (click)="sortArtist('status')">Status</a></th>
+                            <th width="20%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let artst of artists; let artIndex = index'>
+                            <td><a style="cursor:pointer" (click)="showArtist(artst._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ artst.artistname}}</a></td>
+                            <td>{{ artst.status}}</td>
+                            <td>
+                                <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editArtistPhoto(artst._id)">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Artist Photo"></span>
+                                </button>
+                                <button type="button" class="btn-xs btn-danger" aria-label="Edit" (click)="editArtist(artst._id)" data-toggle="tooltip" data-placement="top" title="Change Artist Data">
+                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn-xs btn-primary" aria-label="Delete" (click)="confirmDel(artIndex, artst._id)" data-toggle="tooltip" data-placement="top" title="Delete Artist">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+  
+            <div style="text-align:center" *ngIf="artists && totalrows > 10">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                            <a [ngClass]="{'selected': qpage == idx + 1 }"class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+  
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,136 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Edit Song</h3>
+    </div>
+
+    <form [formGroup]="songForm" (ngSubmit)="saveSong(songForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('songname').invalid && songForm.get('songname').dirty}">
+            <label for="songname" class="col-sm-2 control-label">Song Name</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input type="text" class="form-control" id="songname" [formControl]="songname" placeholder="Song Name">
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('songname').dirty && songForm.get('songname').invalid">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0">Please enter your {{ userObj.username }} song name</span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('artistid').invalid && songForm.get('artistid').dirty}">
+            <label for="artistid" class="col-sm-2 control-label">Artist</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
+                    <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('artistid').dirty && songForm.get('artistid').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('artistid').errors.required">
+                    Please select artist status
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('albumid').invalid && songForm.get('albumid').dirty}">
+            <label for="albumid" class="col-sm-2 control-label">Album</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="albumid">
+                    <option *ngFor="let album of albumlist" [ngValue]="album._id">{{album.albumname}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('albumid').dirty && songForm.get('albumid').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('albumid').errors.required">
+                    Please select album song
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="songlyric" class="col-sm-2 control-label">Lyric</label>
+            <div class="input-group col-sm-10">
+                <textarea class="form-control" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('songgenre').invalid && songForm.get('songgenre').dirty}">
+            <label for="songgenre" class="col-sm-2 control-label">Song Genre</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="songgenre">
+                    <option *ngFor="let g of genre" >{{g}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('songgenre').dirty && songForm.get('songgenre').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('songgenre').errors.required">
+                    Please select song genre
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('songprice').invalid && songForm.get('songprice').dirty}">
+            <label for="songprice" class="col-sm-2 control-label">Price</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon">Rp</div>
+                <input type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Enter price">
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('songprice').dirty && songForm.get('songprice').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('songprice').errors.required">
+                    Please enter price
+                </span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('songprice').errors.pattern">
+                    Please enter a valid amount
+                </span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('songpublish').invalid && songForm.get('songpublish').dirty}">
+            <label for="songpublish" class="col-sm-2 control-label">Song Published?</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="songpublish">
+                    <option *ngFor="let g of ynlist" >{{g}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('songpublish').dirty && songForm.get('songpublish').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('songpublish').errors.required">
+                    Please select the options
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songbuy" class="col-sm-2 control-label">Total Purchased</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-download"></i></div>
+                <div class="form-ele">{{ song?.songbuy }}</div>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': songForm.get('status').invalid && songForm.get('status').dirty}">
+            <label for="status" class="col-sm-2 control-label">Status</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="status">
+                    <option *ngFor="let a of sts" >{{a}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="songForm.get('status').dirty && songForm.get('status').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('status').errors.required">
+                    Please select song status
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" [disabled]="songForm.invalid" class="btn btn-primary">{{ btnLbl }}</button>
+                <button type="reset" class="btn btn-default" (click)="onBack()">Back</button>
+            </div>
+        </div>
+    </form>
+</div>

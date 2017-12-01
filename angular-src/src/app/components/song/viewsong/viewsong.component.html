@@ -1,0 +1,91 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Song Details</h3>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="songname" class="col-sm-2 control-label">Song Name</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.songname }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="artist" class="col-sm-2 control-label">Artist</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.artist }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="album" class="col-sm-2 control-label">Album</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.album }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songlyric" class="col-sm-2 control-label">Lyric</label>
+            
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.songlyric }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songgenre" class="col-sm-2 control-label">Genre</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.songgenre }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songprice" class="col-sm-2 control-label">Price</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon">Rp</div>
+                <div class="form-ele">{{ song?.songprice | currency: 'IDR':true }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songprvwpath" class="col-sm-2 control-label">Preview</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-music"></i></div>
+                <div class="form-ele">{{ song?.songprvwpath }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songfilepath" class="col-sm-2 control-label">File</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-music"></i></div>
+                <div class="form-ele">{{ song?.songfilepath }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songpublish" class="col-sm-2 control-label">Publish?</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.songpublish }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="songbuy" class="col-sm-2 control-label">Total Purchased</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-download"></i></div>
+                <div class="form-ele">{{ song?.songbuy }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">Status</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ song?.status }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">    </label>
+            <div class="col-sm-10">
+                <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
+            </div>
+        </div>
+    </form>
+</div>

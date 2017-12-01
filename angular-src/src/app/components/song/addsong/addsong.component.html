@@ -1,0 +1,122 @@
+<div class="container pagecontainer">
+  <div class="page-header">
+      <h3>Add Song</h3>
+  </div>
+
+  <form [formGroup]="addSongForm" (ngSubmit)="addSong(addSongForm.value)" class="form-horizontal" novalidate autocomplete="off">
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}">
+      <label for="artistid" class="col-sm-2 control-label">Artist<sup>*</sup></label>
+      <div class="input-group col-sm-10">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+        <select class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
+            <option ng-selected="true" value="">Select the artist</option>
+            <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
+        </select>
+      </div>
+      <div class="text-danger" *ngIf="addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors">
+        <span class="col-sm-2"></span>
+        <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addSongForm.get('artistid').errors.required">
+            Please enter the artist
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}">
+      <label for="albumid" class="col-sm-2 control-label">Album<sup>*</sup></label>
+      <div class="input-group col-sm-10">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+        <select class="form-control" [formControl]="albumid">
+            <option ng-selected="true" value="">Select the album</option>
+            <option *ngFor="let album of albumlist" [ngValue]="album._id">{{album.albumname}}</option>
+        </select>
+      </div>
+      <div class="text-danger" *ngIf="addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors">
+        <span class="col-sm-2"></span>
+        <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addSongForm.get('albumid').errors.required">
+            Please enter the album
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}">
+      <label for="songname" class="col-sm-2 control-label">Song Name <sup>*</sup></label>
+      <div class="input-group col-sm-10">
+          <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+          <input type="text" class="form-control" [formControl]="songname" id="songname" placeholder="Song Name">
+      </div>
+      <div class="text-danger" *ngIf="addSongForm.get('songname').dirty && addSongForm.get('songname').errors">
+          <span class="col-sm-2"></span>
+          <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addSongForm.get('songname').errors.required">
+              Please enter the song name
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="songlyric" class="col-sm-2 control-label">Lyric</label>
+      <div class="input-group col-sm-10">
+          <textarea class="form-control" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}">
+      <label for="songgenre" class="col-sm-2 control-label">Genre</label>
+      <div class="input-group col-sm-10">
+          <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+          <select class="form-control" [formControl]="songgenre">
+              <option ng-selected="true" value="">Select the genre</option>
+              <option *ngFor="let a of genre" >{{a}}</option>
+          </select>
+      </div>
+      <div class="text-danger" *ngIf="addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors">
+          <span class="col-sm-2"></span>
+          <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addSongForm.get('songgenre').errors.required">
+              Please select song genre
+          </span>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}">
+      <label for="songprice" class="col-sm-2 control-label">Price</label>
+      <div class="input-group col-sm-10">
+          <div class="input-group-addon">Rp</div>
+          <input type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Song Price">
+      </div>
+      <div class="text-danger" *ngIf="addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors">
+          <span class="col-sm-2"></span>
+          <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addSongForm.get('songprice').errors.required">
+              Please enter price
+          </span>
+          <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addSongForm.get('songprice').errors.pattern">
+              Please enter a valid amount
+          </span>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}">
+      <label for="songprvw" class="col-sm-2 control-label">Song Preview</label>
+      <div class="input-group col-sm-10">
+          <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
+          <input type="file" (change)="prvwfileChangeEvent($event)" name="songprvw" id="songprvw" placeholder="Song preview">
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}">
+      <label for="songfile" class="col-sm-2 control-label">Song File</label>
+      <div class="input-group col-sm-10">
+          <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
+          <input type="file" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-5">
+          <button type="submit" [disabled]="addSongForm.invalid" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+      </div>
+      <div class="col-sm-5" style="text-align:right">
+          <sup>*</sup> required
+      </div>
+    </div>
+  </form>
+</div>
