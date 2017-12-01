@@ -4,6 +4,7 @@
   "description": "kaxet digital app for easier music creation/management",
   "main": "server01.js",
   "scripts": {
+    "start": "node server01.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
