@@ -83,44 +83,46 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_artist_service__ = __webpack_require__("../../../../../src/app/services/artist.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_album_service__ = __webpack_require__("../../../../../src/app/services/album.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_song_service__ = __webpack_require__("../../../../../src/app/services/song.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_user_password_password_component__ = __webpack_require__("../../../../../src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_user_logout_component__ = __webpack_require__("../../../../../src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_artist_editartist_editartist_component__ = __webpack_require__("../../../../../src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_artist_listartist_listartist_component__ = __webpack_require__("../../../../../src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_artist_viewartist_viewartist_component__ = __webpack_require__("../../../../../src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_artist_addartist_addartist_component__ = __webpack_require__("../../../../../src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("../../../../../src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_album_addalbum_addalbum_component__ = __webpack_require__("../../../../../src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_album_listalbum_listalbum_component__ = __webpack_require__("../../../../../src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_album_viewalbum_viewalbum_component__ = __webpack_require__("../../../../../src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_album_editalbum_editalbum_component__ = __webpack_require__("../../../../../src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("../../../../../src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_song_addsong_addsong_component__ = __webpack_require__("../../../../../src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_song_listsong_listsong_component__ = __webpack_require__("../../../../../src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("../../../../../src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_song_viewsong_viewsong_component__ = __webpack_require__("../../../../../src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_song_editsong_editsong_component__ = __webpack_require__("../../../../../src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_loading__ = __webpack_require__("../../../../ngx-loading/ngx-loading/ngx-loading.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_artist_service__ = __webpack_require__("../../../../../src/app/services/artist.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_album_service__ = __webpack_require__("../../../../../src/app/services/album.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_song_service__ = __webpack_require__("../../../../../src/app/services/song.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_user_password_password_component__ = __webpack_require__("../../../../../src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_user_logout_component__ = __webpack_require__("../../../../../src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_artist_editartist_editartist_component__ = __webpack_require__("../../../../../src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_artist_listartist_listartist_component__ = __webpack_require__("../../../../../src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_artist_viewartist_viewartist_component__ = __webpack_require__("../../../../../src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_artist_addartist_addartist_component__ = __webpack_require__("../../../../../src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("../../../../../src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_album_addalbum_addalbum_component__ = __webpack_require__("../../../../../src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_album_listalbum_listalbum_component__ = __webpack_require__("../../../../../src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_album_viewalbum_viewalbum_component__ = __webpack_require__("../../../../../src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_album_editalbum_editalbum_component__ = __webpack_require__("../../../../../src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("../../../../../src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_song_addsong_addsong_component__ = __webpack_require__("../../../../../src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_song_listsong_listsong_component__ = __webpack_require__("../../../../../src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("../../../../../src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_song_viewsong_viewsong_component__ = __webpack_require__("../../../../../src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_song_editsong_editsong_component__ = __webpack_require__("../../../../../src/app/components/song/editsong/editsong.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -162,28 +164,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_16__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_15__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_20__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_19__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_18__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_17__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_21__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_25__components_artist_addartist_addartist_component__["a" /* AddartistComponent */] },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_22__components_artist_editartist_editartist_component__["a" /* EditartistComponent */] },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_23__components_artist_listartist_listartist_component__["a" /* ListartistComponent */] },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_26__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_24__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */] },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_27__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */] },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_28__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */] },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_29__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */] },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_30__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */] },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_31__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_32__components_song_addsong_addsong_component__["a" /* AddsongComponent */] },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_song_listsong_listsong_component__["a" /* ListsongComponent */] },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_34__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_35__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */] },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_song_editsong_editsong_component__["a" /* EditsongComponent */] }
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_17__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_16__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_21__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_20__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_19__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_18__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_22__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_26__components_artist_addartist_addartist_component__["a" /* AddartistComponent */] },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_23__components_artist_editartist_editartist_component__["a" /* EditartistComponent */] },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_24__components_artist_listartist_listartist_component__["a" /* ListartistComponent */] },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_27__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_25__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */] },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_28__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */] },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_29__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */] },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_30__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */] },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_31__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */] },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_32__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_song_addsong_addsong_component__["a" /* AddsongComponent */] },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_34__components_song_listsong_listsong_component__["a" /* ListsongComponent */] },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_35__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */] },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_song_editsong_editsong_component__["a" /* EditsongComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -193,47 +195,55 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_user_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_user_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_user_password_password_component__["a" /* PasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_user_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_user_logout_component__["a" /* LogoutComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_about_about_component__["a" /* AboutComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_user_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_user_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_user_password_password_component__["a" /* PasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_user_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_user_logout_component__["a" /* LogoutComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_about_about_component__["a" /* AboutComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_5_ngx_loading__["b" /* LoadingModule */].forRoot({
+                animationType: __WEBPACK_IMPORTED_MODULE_5_ngx_loading__["a" /* ANIMATION_TYPES */].circleSwish,
+                backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+                backdropBorderRadius: '4px',
+                primaryColour: '#00008B',
+                secondaryColour: '#ffffff',
+                tertiaryColour: '#ffffff'
+            }),
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_11__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_8__services_artist_service__["a" /* ArtistService */],
-            __WEBPACK_IMPORTED_MODULE_9__services_album_service__["a" /* AlbumService */],
-            __WEBPACK_IMPORTED_MODULE_10__services_song_service__["a" /* SongService */],
-            __WEBPACK_IMPORTED_MODULE_12__angular_common__["d" /* DatePipe */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_12__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_8__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_9__services_artist_service__["a" /* ArtistService */],
+            __WEBPACK_IMPORTED_MODULE_10__services_album_service__["a" /* AlbumService */],
+            __WEBPACK_IMPORTED_MODULE_11__services_song_service__["a" /* SongService */],
+            __WEBPACK_IMPORTED_MODULE_13__angular_common__["d" /* DatePipe */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -365,7 +375,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/addalbum/addalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" >{{a}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" >{{a}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -411,6 +421,7 @@ var AddalbumComponent = (function () {
         this.datePipe = datePipe;
         this.genre = ['Alternative', 'Blues', 'Children', 'Classical', 'Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop', 'Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age', 'Pop', 'RnB', 'Reggae', 'Rock', 'Soundtrack', 'Vocal', 'Others'];
         this.filesToUpload = [];
+        this.loading = false;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.albumname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
@@ -456,6 +467,7 @@ var AddalbumComponent = (function () {
             lformData.append('albumimage', files[0], files[0]['name']);
             console.log(lformData.getAll('albumimage'));
             console.dir(theForm_1);
+            this.loading = true;
             this.albumService.uploadAlbumphoto(lformData)
                 .subscribe(function (data) {
                 if (data.success === false) {
@@ -472,11 +484,13 @@ var AddalbumComponent = (function () {
                     _this.albumService.saveAlbum(_this.userObj.userid, theForm_1.artistid, theForm_1)
                         .subscribe(function (data) {
                         if (data.success === false) {
+                            _this.loading = false;
                             _this.toastr.error(data.message);
                         }
                         else {
+                            _this.loading = false;
                             _this.toastr.success(data.message);
-                            _this.router.navigate(['report']);
+                            _this.router.navigate(['listalbum']);
                         }
                         _this.addAlbumForm.reset();
                     });
@@ -699,7 +713,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/editalbumphoto/editalbumphoto.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h1>Change Photo</h1>\n    </div>\n  \n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"updatePhoto(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"albumimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span class=\"btn btn-primary\">\n                        Browse&hellip; <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h1>Change Photo</h1>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"updatePhoto(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"albumimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span class=\"btn btn-primary\">\n                        Browse&hellip; <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -738,6 +752,7 @@ var EditalbumphotoComponent = (function () {
         this.router = router;
         this.toastr = toastr;
         this.filesToUpload = [];
+        this.loading = false;
         this.albumphotopath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.albumphotoname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
     }
@@ -787,6 +802,7 @@ var EditalbumphotoComponent = (function () {
         var files = newFileData;
         var lformData = new FormData();
         lformData.append('albumimage', files[0], files[0]['name']);
+        this.loading = true;
         this.albumService.uploadAlbumphoto(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
@@ -811,6 +827,7 @@ var EditalbumphotoComponent = (function () {
                 _this.albumService.updateAlbumphoto(_this.albumid, _this.albumForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
+                        _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -818,6 +835,7 @@ var EditalbumphotoComponent = (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.loading = false;
                         console.log('Success update database photo - ' + _this.displayImg);
                         _this.toastr.success(data.message);
                     }
@@ -865,7 +883,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/listalbum/listalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Album</h3>\n  </div>\n\n  <div class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row\">\n                  <div class=\"col-sm-12 col-md-6\">\n                      <label for=\"albumname\">Album Name</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                          <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-12 col-md-2\">\n                      <label for=\"albumyear\">Album Year</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                          <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-12 col-md-3\">\n                      <label for=\"albumgenre\">Genre</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                          <select class=\"form-control\" [formControl]=\"albumgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>  \n                            <option *ngFor=\"let g of genre\" >{{g}}</option>\n                          </select>\n                      </div>\n                  </div>\n              </div><br>\n              <div class=\"row\">\n                  <div class=\"col-sm-12 col-md-6\">\n                      <label for=\"artistid\">Artist</label>\n                      <div class=\"input-group col-sm-5\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                          <select class=\"form-control\" [formControl]=\"artistid\">\n                              <option ng-selected=\"true\" value=\"\">Select the artist</option>\n                              <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                          </select>\n                        </div>\n                  </div>                \n                  <div class=\"col-sm-12 col-md-3\">\n                      <label for=\"status\">Status</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                          <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>  \n                            <option *ngFor=\"let a of sts\" >{{a}}</option>\n                          </select>\n                      </div>\n                  </div><br>\n                  <div class=\"col-sm-12 col-md-2\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>                \n              </div>\n          </form>\n      </div>\n  </div>\n\n  <div class=\"panel panel-danger\" *ngIf=\"albums && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No album found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any albums for the selected criteria. Please add the album <a style=\"cursor:pointer\" (click)=\"toaddAlbums()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"albums && totalrows > 0\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-striped\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let albm of albums; let albIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ albm.albumname}}</a></td>\n                          <td>{{ albm.artist }}</td>\n                          <td>{{ albm.albumyear}}</td>\n                          <td>{{ albm.albumgenre}}</td>\n                          <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':true }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editAlbumPhoto(albm._id)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Photo\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(albIndex, albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Album\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                      \n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div>  \n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row\">\n                  <div class=\"col-sm-12 col-md-6\">\n                      <label for=\"albumname\">Album Name</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                          <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-12 col-md-2\">\n                      <label for=\"albumyear\">Album Year</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                          <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-12 col-md-3\">\n                      <label for=\"albumgenre\">Genre</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                          <select class=\"form-control\" [formControl]=\"albumgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>  \n                            <option *ngFor=\"let g of genre\" >{{g}}</option>\n                          </select>\n                      </div>\n                  </div>\n              </div><br>\n              <div class=\"row\">\n                  <div class=\"col-sm-12 col-md-6\">\n                      <label for=\"artistid\">Artist</label>\n                      <div class=\"input-group col-sm-5\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                          <select class=\"form-control\" [formControl]=\"artistid\">\n                              <option ng-selected=\"true\" value=\"\">Select the artist</option>\n                              <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                          </select>\n                        </div>\n                  </div>                \n                  <div class=\"col-sm-12 col-md-3\">\n                      <label for=\"status\">Status</label>\n                      <div class=\"input-group col-sm-10\">\n                          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                          <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>  \n                            <option *ngFor=\"let a of sts\" >{{a}}</option>\n                          </select>\n                      </div>\n                  </div><br>\n                  <div class=\"col-sm-12 col-md-2\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>                \n              </div>\n          </form>\n      </div>\n  </div>\n\n  <div class=\"panel panel-danger\" *ngIf=\"albums && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No album found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any albums for the selected criteria. Please add the album <a style=\"cursor:pointer\" (click)=\"toaddAlbums()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"albums && totalrows > 0\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-striped\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let albm of albums; let albIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ albm.albumname}}</a></td>\n                          <td>{{ albm.artist }}</td>\n                          <td>{{ albm.albumyear}}</td>\n                          <td>{{ albm.albumgenre}}</td>\n                          <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':true }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editAlbumPhoto(albm._id)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Photo\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(albIndex, albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Album\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                      \n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div>  \n</div>"
 
 /***/ }),
 
@@ -902,7 +920,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ListalbumComponent = (function () {
-    //artistname: String;
     function ListalbumComponent(fb, authService, artistService, albumService, songService, route, router, toastr, datePipe) {
         this.fb = fb;
         this.authService = authService;
@@ -915,6 +932,8 @@ var ListalbumComponent = (function () {
         this.datePipe = datePipe;
         this.genre = ['Alternative', 'Blues', 'Children', 'Classical', 'Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop', 'Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age', 'Pop', 'RnB', 'Reggae', 'Rock', 'Soundtrack', 'Vocal', 'Others'];
         this.sts = ['active', 'inactive'];
+        //artistname: String;
+        this.loading = false;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.albumname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
@@ -979,9 +998,11 @@ var ListalbumComponent = (function () {
     };
     ListalbumComponent.prototype.fetchReport = function (userid, formval) {
         var _this = this;
+        this.loading = true;
         this.albumService.getAggAlbums(userid, formval)
             .subscribe(function (data) {
             if (data.success === false) {
+                _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
                     _this.router.navigate(['login']);
@@ -989,6 +1010,7 @@ var ListalbumComponent = (function () {
                 _this.toastr.error(data.message);
             }
             else {
+                _this.loading = false;
                 //this.albums = data.data.docs;
                 _this.albums = data.data;
                 //console.log(this.albums);
@@ -1164,7 +1186,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/viewalbum/viewalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumyear }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumgenre }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Album Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <div class=\"form-ele\">{{ album?.status }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumphoto\" class=\"col-sm-2 control-label\">Photo</label>\n            <div class=\"input-group col-sm-10\">\n              <img src=\"{{ album?.albumphotopath }}\" class=\"rounded float-right\" width=\"170\" height=\"170\">\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"listsong\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"input-group col-sm-10\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-10\">\n                    <i>({{ totalrows }} songs found) </i> \n                </div><br>\n                <div class=\"col-sm-12 col-md-10\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"50%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                                    <td>{{ song.status}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  \n  </div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumyear }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumgenre }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Album Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <div class=\"form-ele\">{{ album?.status }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumphoto\" class=\"col-sm-2 control-label\">Photo</label>\n            <div class=\"input-group col-sm-10\">\n              <img src=\"{{ album?.albumphotopath }}\" class=\"rounded float-right\" width=\"340\" height=\"340\">\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"listsong\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"input-group col-sm-10\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-10\">\n                    <i>({{ totalrows }} songs found) </i> \n                </div><br>\n                <div class=\"col-sm-12 col-md-10\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"50%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                                    <td>{{ song.status}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  \n  </div>\n"
 
 /***/ }),
 
@@ -1354,7 +1376,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/artist/addartist/addartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n\n  <form [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1397,6 +1419,7 @@ var AddartistComponent = (function () {
         this.datePipe = datePipe;
         //status: any = ['active', 'inactive'];
         this.filesToUpload = [];
+        this.loading = false;
         this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
     }
     AddartistComponent.prototype.ngOnInit = function () {
@@ -1419,6 +1442,7 @@ var AddartistComponent = (function () {
             lformData.append('artistimage', files[0], files[0]['name']);
             console.log(lformData.getAll('artistimage'));
             console.dir(theForm_1);
+            this.loading = true;
             this.artistService.uploadArtistphoto(lformData)
                 .subscribe(function (data) {
                 if (data.success === false) {
@@ -1435,11 +1459,13 @@ var AddartistComponent = (function () {
                     _this.artistService.saveArtist(_this.userObj.userid, theForm_1)
                         .subscribe(function (data) {
                         if (data.success === false) {
+                            _this.loading = false;
                             _this.toastr.error(data.message);
                         }
                         else {
+                            _this.loading = false;
                             _this.toastr.success(data.message);
-                            _this.router.navigate(['report']);
+                            _this.router.navigate(['listartist']);
                         }
                         _this.addArtistForm.reset();
                     });
@@ -1631,7 +1657,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/artist/editartistphoto/editartistphoto.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Change Photo</h1>\n  </div>\n\n  <form [formGroup]=\"artistForm\" (ngSubmit)=\"updatePhoto(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n<!--       <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}\">\n          <label for=\"imgpath\" class=\"col-sm-2 control-label\">Image Path</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgpath\" [formControl]=\"imgpath\" placeholder=\"Img Path\">\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}\">\n          <label for=\"imgoriname\" class=\"col-sm-2 control-label\">Image Oriname</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgoriname\" [formControl]=\"imgoriname\" placeholder=\"Img Oriname\">\n          </div>\n      </div> -->\n      <div class=\"col-lg-6 col-sm-6 col-12\">\n          <label for=\"artistimage\" class=\"col-sm-3 control-label\"></label>\n          <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n          <br><br>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span class=\"btn btn-primary\">\n                      Browse&hellip; <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Change Photo</h1>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"artistForm\" (ngSubmit)=\"updatePhoto(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n<!--       <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}\">\n          <label for=\"imgpath\" class=\"col-sm-2 control-label\">Image Path</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgpath\" [formControl]=\"imgpath\" placeholder=\"Img Path\">\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}\">\n          <label for=\"imgoriname\" class=\"col-sm-2 control-label\">Image Oriname</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgoriname\" [formControl]=\"imgoriname\" placeholder=\"Img Oriname\">\n          </div>\n      </div> -->\n      <div class=\"col-lg-6 col-sm-6 col-12\">\n          <label for=\"artistimage\" class=\"col-sm-3 control-label\"></label>\n          <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n          <br><br>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span class=\"btn btn-primary\">\n                      Browse&hellip; <input type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1670,6 +1696,7 @@ var EditartistphotoComponent = (function () {
         this.router = router;
         this.toastr = toastr;
         this.filesToUpload = [];
+        this.loading = false;
         this.artistphotopath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.artistphotoname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
     }
@@ -1719,6 +1746,7 @@ var EditartistphotoComponent = (function () {
         var files = newFileData;
         var lformData = new FormData();
         lformData.append('artistimage', files[0], files[0]['name']);
+        this.loading = true;
         this.artistService.uploadArtistphoto(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
@@ -1743,6 +1771,7 @@ var EditartistphotoComponent = (function () {
                 _this.artistService.updateArtistphoto(_this.artistid, _this.artistForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
+                        _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -1750,6 +1779,7 @@ var EditartistphotoComponent = (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.loading = false;
                         console.log('Success update database photo - ' + _this.displayImg);
                         _this.toastr.success(data.message);
                     }
@@ -1797,7 +1827,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/artist/listartist/listartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<script>\n    $(document).ready(function(){\n        $('[data-toggle=\"tooltip\"]').tooltip();   \n    });\n</script>\n    \n<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Artist</h3>\n    </div>\n\n    <div class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12 col-md-7\">\n                        <label for=\"artistname\">Artist Name</label>\n                        <div class=\"input-group col-sm-10\">\n                            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-12 col-md-3\">\n                        <label for=\"status\">Status</label>\n                        <div class=\"input-group col-sm-10\">\n                            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                            <select class=\"form-control\" [formControl]=\"status\">\n                                <option ng-selected=\"true\" value=\"\">Select the status</option>\n                                <option *ngFor=\"let a of sts\" >{{a}}</option>\n                            </select>\n                        </div>\n                    </div><br>\n                    <div class=\"col-sm-12 col-md-2\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div> \n                </div>\n            </form>\n        </div>\n    </div>\n  \n    <div class=\"panel panel-danger\" *ngIf=\"artists && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No artist found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            It seems like you havn't entered any artists for the selected criteria. Please add the artist <a style=\"cursor:pointer\" (click)=\"toaddArtists()\">here</a>.\n        </div>\n    </div>\n  \n  \n    <div class=\"panel panel-default\" *ngIf=\"artists && totalrows > 0\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-striped\">\n                    <thead>\n                        <tr>\n                            <th width=\"50%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('artistname')\">Artist Name</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('status')\">Status</a></th>\n                            <th width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let artst of artists; let artIndex = index'>\n                            <td><a style=\"cursor:pointer\" (click)=\"showArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ artst.artistname}}</a></td>\n                            <td>{{ artst.status}}</td>\n                            <td>\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editArtistPhoto(artst._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Photo\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(artIndex, artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Artist\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                        \n                    </tbody>\n                </table>\n            </div>\n  \n            <div style=\"text-align:center\" *ngIf=\"artists && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\"class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div>\n  \n        </div>\n    </div>\n  </div>"
+module.exports = "<script>\n    $(document).ready(function(){\n        $('[data-toggle=\"tooltip\"]').tooltip();   \n    });\n</script>\n    \n<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Artist</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12 col-md-7\">\n                        <label for=\"artistname\">Artist Name</label>\n                        <div class=\"input-group col-sm-10\">\n                            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-12 col-md-3\">\n                        <label for=\"status\">Status</label>\n                        <div class=\"input-group col-sm-10\">\n                            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                            <select class=\"form-control\" [formControl]=\"status\">\n                                <option ng-selected=\"true\" value=\"\">Select the status</option>\n                                <option *ngFor=\"let a of sts\" >{{a}}</option>\n                            </select>\n                        </div>\n                    </div><br>\n                    <div class=\"col-sm-12 col-md-2\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div> \n                </div>\n            </form>\n        </div>\n    </div>\n  \n    <div class=\"panel panel-danger\" *ngIf=\"artists && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No artist found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            It seems like you havn't entered any artists for the selected criteria. Please add the artist <a style=\"cursor:pointer\" (click)=\"toaddArtists()\">here</a>.\n        </div>\n    </div>\n  \n  \n    <div class=\"panel panel-default\" *ngIf=\"artists && totalrows > 0\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-striped\">\n                    <thead>\n                        <tr>\n                            <th width=\"50%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('artistname')\">Artist Name</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('status')\">Status</a></th>\n                            <th width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let artst of artists; let artIndex = index'>\n                            <td><a style=\"cursor:pointer\" (click)=\"showArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ artst.artistname}}</a></td>\n                            <td>{{ artst.status}}</td>\n                            <td>\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editArtistPhoto(artst._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Photo\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(artIndex, artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Artist\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                        \n                    </tbody>\n                </table>\n            </div>\n  \n            <div style=\"text-align:center\" *ngIf=\"artists && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\"class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div>\n  \n        </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -1842,6 +1872,7 @@ var ListartistComponent = (function () {
         this.toastr = toastr;
         this.datePipe = datePipe;
         this.sts = ['active', 'inactive'];
+        this.loading = false;
         this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('active', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
     }
@@ -1881,9 +1912,11 @@ var ListartistComponent = (function () {
     };
     ListartistComponent.prototype.fetchReport = function (userid, formval) {
         var _this = this;
+        this.loading = true;
         this.artistService.getArtists(userid, formval)
             .subscribe(function (data) {
             if (data.success === false) {
+                _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
                     _this.router.navigate(['login']);
@@ -1891,6 +1924,7 @@ var ListartistComponent = (function () {
                 _this.toastr.error(data.message);
             }
             else {
+                _this.loading = false;
                 _this.artists = data.data.docs;
                 _this.totalrows = +data.data.total;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
@@ -2023,7 +2057,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/artist/viewartist/viewartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Artist Details</h1>\n  </div>\n  <form class=\"form-horizontal\">\n      <div class=\"form-group\">\n          <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n          <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <div class=\"form-ele\">{{ artist?.artistname }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n              <div class=\"form-ele\">{{ artist?.status }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"artistphoto\" class=\"col-sm-2 control-label\">Photo</label>\n          <div class=\"input-group col-sm-10\">\n            <img src=\"{{ artist?.artistphotopath }}\" class=\"rounded float-right\" width=\"170\" height=\"170\">\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"listalbum\" class=\"col-sm-2 control-label\">Album</label>\n          <div class=\"input-group col-sm-10\" *ngIf=\"albums && totalrows > 0\">\n              <div class=\"col-sm-12 col-md-10\">\n                  <i>({{ totalrows }} albums found) </i> \n              </div><br>\n              <div class=\"col-sm-12 col-md-10\">\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\" width=\"50%\">\n                          <thead>\n                              <tr>\n                                  <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td>{{ albm.albumname}}</td>\n                                  <td>{{ albm.albumyear}}</td>\n                                  <td>{{ albm.albumgenre}}</td>\n                                  <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':true }}</td>\n                                  <td>{{ albm.status}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n        \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n        \n              </div>\n          </div>      \n      </div>\n\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-10\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Artist Details</h1>\n  </div>\n  <form class=\"form-horizontal\">\n      <div class=\"form-group\">\n          <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n          <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <div class=\"form-ele\">{{ artist?.artistname }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n              <div class=\"form-ele\">{{ artist?.status }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"artistphoto\" class=\"col-sm-2 control-label\">Photo</label>\n          <div class=\"input-group col-sm-10\">\n            <img src=\"{{ artist?.artistphotopath }}\" class=\"rounded float-right\" width=\"340\" height=\"340\">\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"listalbum\" class=\"col-sm-2 control-label\">Album</label>\n          <div class=\"input-group col-sm-10\" *ngIf=\"albums && totalrows > 0\">\n              <div class=\"col-sm-12 col-md-10\">\n                  <i>({{ totalrows }} albums found) </i> \n              </div><br>\n              <div class=\"col-sm-12 col-md-10\">\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\" width=\"50%\">\n                          <thead>\n                              <tr>\n                                  <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td>{{ albm.albumname}}</td>\n                                  <td>{{ albm.albumyear}}</td>\n                                  <td>{{ albm.albumgenre}}</td>\n                                  <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':true }}</td>\n                                  <td>{{ albm.status}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n        \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n        \n              </div>\n          </div>      \n      </div>\n\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-10\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n\n</div>\n"
 
 /***/ }),
 
@@ -2418,7 +2452,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/song/addsong/addsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>\n\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n      <div class=\"input-group col-sm-10\">\n          <textarea class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" >{{a}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n      <div class=\"input-group col-sm-10\">\n          <textarea class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" >{{a}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -2468,6 +2502,7 @@ var AddsongComponent = (function () {
         this.genre = ['Alternative', 'Blues', 'Children', 'Classical', 'Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop', 'Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age', 'Pop', 'RnB', 'Reggae', 'Rock', 'Soundtrack', 'Vocal', 'Others'];
         this.PrvwfilesToUpload = [];
         this.SongfilesToUpload = [];
+        this.loading = false;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.albumid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
@@ -2548,6 +2583,7 @@ var AddsongComponent = (function () {
             lformData_1.append('songprvw', prvwfiles[0], prvwfiles[0]['name']);
             //console.log(lformData.getAll('songprvw'));
             //console.dir(theForm);
+            this.loading = true;
             this.songService.uploadSongPreview(lformData_1)
                 .subscribe(function (data) {
                 if (data.success === false) {
@@ -2573,9 +2609,11 @@ var AddsongComponent = (function () {
                             _this.songService.saveSong(_this.userObj.userid, theForm_1.artistid, theForm_1.albumid, theForm_1)
                                 .subscribe(function (data) {
                                 if (data.success === false) {
+                                    _this.loading = false;
                                     _this.toastr.error(data.message);
                                 }
                                 else {
+                                    _this.loading = false;
                                     _this.toastr.success(data.message);
                                     _this.router.navigate(['listsong']);
                                 }
@@ -2848,7 +2886,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/song/editsongfiles/editsongfiles.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Song Files</h3>\n    </div>\n    <form [formGroup]=\"songForm\" (ngSubmit)=\"updateSong(songForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"input-group col-sm-10\">\n          <label for=\"songprvw\" class=\"col-sm-3 control-label\">Song Preview</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span class=\"btn btn-primary\">\n                      Browse&hellip; <input type=\"file\" (change)=\"PrvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newprvwfile }}\">  \n            </div>\n      </div>\n      <br><br>\n      <div class=\"input-group col-sm-10\">\n          <label for=\"songfile\" class=\"col-sm-3 control-label\">Song File</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span class=\"btn btn-primary\">\n                      Browse&hellip; <input type=\"file\" (change)=\"SongfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newsongfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Song Files</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"songForm\" (ngSubmit)=\"updateSong(songForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"input-group col-sm-10\">\n          <label for=\"songprvw\" class=\"col-sm-3 control-label\">Song Preview</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span class=\"btn btn-primary\">\n                      Browse&hellip; <input type=\"file\" (change)=\"PrvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newprvwfile }}\">  \n            </div>\n      </div>\n      <br><br>\n      <div class=\"input-group col-sm-10\">\n          <label for=\"songfile\" class=\"col-sm-3 control-label\">Song File</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span class=\"btn btn-primary\">\n                      Browse&hellip; <input type=\"file\" (change)=\"SongfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newsongfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -2888,6 +2926,7 @@ var EditsongfilesComponent = (function () {
         this.toastr = toastr;
         this.PrvwfilesToUpload = [];
         this.SongfilesToUpload = [];
+        this.loading = false;
         this.songprvwpath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.songprvwname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.songfilepath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
@@ -2947,6 +2986,7 @@ var EditsongfilesComponent = (function () {
         var files = newFileData;
         var lformData = new FormData();
         lformData.append('songprvw', files[0], files[0]['name']);
+        this.loading = true;
         this.songService.uploadSongPreview(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
@@ -2970,6 +3010,7 @@ var EditsongfilesComponent = (function () {
                 _this.songService.updateSongPreview(_this.songid, _this.songForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
+                        _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -2977,6 +3018,7 @@ var EditsongfilesComponent = (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.loading = false;
                         console.log('Success update song preview.');
                         _this.toastr.success(data.message);
                     }
@@ -2989,6 +3031,7 @@ var EditsongfilesComponent = (function () {
         var files = newFileData;
         var lformData = new FormData();
         lformData.append('songfile', files[0], files[0]['name']);
+        this.loading = true;
         this.songService.uploadSongFile(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
@@ -3010,6 +3053,7 @@ var EditsongfilesComponent = (function () {
                 _this.songService.updateSongFile(_this.songid, _this.songForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
+                        _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -3017,6 +3061,7 @@ var EditsongfilesComponent = (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.loading = false;
                         console.log('Success update song file.');
                         _this.toastr.success(data.message);
                     }
@@ -3064,7 +3109,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/song/listsong/listsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Song</h3>\n  </div>\n\n  <div class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row\">\n            <div class=\"col-sm-12 col-md-6\">\n                <label for=\"artistid\">Artist</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                    <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n                        <option ng-selected=\"true\" value=\"\">Select the artist</option>\n                        <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-12 col-md-6\">\n                <label for=\"albumid\">Album</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                    <select class=\"form-control\" [formControl]=\"albumid\">\n                        <option ng-selected=\"true\" value=\"\">Select the album</option>\n                        <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n                    </select>\n                  </div>\n            </div>\n\n\n          </div><br>\n\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-6\">\n                  <label for=\"songname\">Song Name</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-12 col-md-2\">\n                  <label for=\"albumyear\">Album Year</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                  </div>\n              </div>\n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"songgenre\">Genre</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songgenre\">\n                        <option ng-selected=\"true\" value=\"\">Select the genre</option>  \n                        <option *ngFor=\"let g of genre\" >{{g}}</option>\n                      </select>\n                  </div>\n              </div>\n          </div><br>\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"songpublish\">Publish?</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songpublish\">\n                        <option ng-selected=\"true\" value=\"\">Select the options</option>  \n                        <option *ngFor=\"let a of ynlist\" >{{a}}</option>\n                      </select>\n                  </div>\n              </div>  \n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"songbuy\">Buy?</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the options</option>  \n                        <option *ngFor=\"let a of ynlist\" >{{a}}</option>\n                      </select>\n                  </div>\n              </div>  \n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"status\">Status</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"status\">\n                        <option ng-selected=\"true\" value=\"\">Select the status</option>  \n                        <option *ngFor=\"let a of sts\" >{{a}}</option>\n                      </select>\n                  </div>\n              </div><br>\n              <div class=\"col-sm-12 col-md-2\">\n                  <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n              </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No song found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any songs for the selected criteria. Please add the song <a style=\"cursor:pointer\" (click)=\"toaddSongs()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-striped\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"20%\">Album</th>\n                          <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('albumyear')\">Year</a></th>\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td>{{ song.artist }}</td>\n                          <td>{{ song.album }}</td>\n                          <td>{{ song.albumyear}}</td>\n                          <td>{{ song.songgenre}}</td>\n                          <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editSongFiles(song._id, song.songpublish, song.songbuy)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song File\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editSong(song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row\">\n            <div class=\"col-sm-12 col-md-6\">\n                <label for=\"artistid\">Artist</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                    <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n                        <option ng-selected=\"true\" value=\"\">Select the artist</option>\n                        <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-12 col-md-6\">\n                <label for=\"albumid\">Album</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                    <select class=\"form-control\" [formControl]=\"albumid\">\n                        <option ng-selected=\"true\" value=\"\">Select the album</option>\n                        <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n                    </select>\n                  </div>\n            </div>\n\n\n          </div><br>\n\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-6\">\n                  <label for=\"songname\">Song Name</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-12 col-md-2\">\n                  <label for=\"albumyear\">Album Year</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                  </div>\n              </div>\n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"songgenre\">Genre</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songgenre\">\n                        <option ng-selected=\"true\" value=\"\">Select the genre</option>  \n                        <option *ngFor=\"let g of genre\" >{{g}}</option>\n                      </select>\n                  </div>\n              </div>\n          </div><br>\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"songpublish\">Publish?</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songpublish\">\n                        <option ng-selected=\"true\" value=\"\">Select the options</option>  \n                        <option *ngFor=\"let a of ynlist\" >{{a}}</option>\n                      </select>\n                  </div>\n              </div>  \n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"songbuy\">Buy?</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the options</option>  \n                        <option *ngFor=\"let a of ynlist\" >{{a}}</option>\n                      </select>\n                  </div>\n              </div>  \n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"status\">Status</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"status\">\n                        <option ng-selected=\"true\" value=\"\">Select the status</option>  \n                        <option *ngFor=\"let a of sts\" >{{a}}</option>\n                      </select>\n                  </div>\n              </div><br>\n              <div class=\"col-sm-12 col-md-2\">\n                  <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n              </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No song found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any songs for the selected criteria. Please add the song <a style=\"cursor:pointer\" (click)=\"toaddSongs()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-striped\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"20%\">Album</th>\n                          <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('albumyear')\">Year</a></th>\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td>{{ song.artist }}</td>\n                          <td>{{ song.album }}</td>\n                          <td>{{ song.albumyear}}</td>\n                          <td>{{ song.songgenre}}</td>\n                          <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editSongFiles(song._id, song.songpublish, song.songbuy)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song File\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editSong(song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -3114,6 +3159,7 @@ var ListsongComponent = (function () {
         this.genre = ['Alternative', 'Blues', 'Children', 'Classical', 'Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop', 'Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age', 'Pop', 'RnB', 'Reggae', 'Rock', 'Soundtrack', 'Vocal', 'Others'];
         this.sts = ['active', 'inactive'];
         this.ynlist = ['Y', 'N'];
+        this.loading = false;
         this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.albumid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
@@ -3223,9 +3269,11 @@ var ListsongComponent = (function () {
     };
     ListsongComponent.prototype.fetchReport = function (userid, formval) {
         var _this = this;
+        this.loading = true;
         this.songService.getAggSongs(userid, formval)
             .subscribe(function (data) {
             if (data.success === false) {
+                _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
                     _this.router.navigate(['login']);
@@ -3233,6 +3281,7 @@ var ListsongComponent = (function () {
                 _this.toastr.error(data.message);
             }
             else {
+                _this.loading = false;
                 _this.songs = data.data;
                 _this.totalrows = +data.totalcount;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
@@ -4134,7 +4183,7 @@ var AlbumService = (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         console.log(oFile.getAll('albumimage'));
-        return this.http.post('api/albumphotoupload', oFile, options)
+        return this.http.post('http://localhost:2000/api/albumphotoupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4143,7 +4192,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/album/" + userid + "?artistid=" + artistid, JSON.stringify(oAlbum), options)
+        return this.http.post("http://localhost:2000/api/album/" + userid + "?artistid=" + artistid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4152,7 +4201,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/updatealbumphoto/" + albumid, JSON.stringify(oAlbum), options)
+        return this.http.put("http://localhost:2000/api/updatealbumphoto/" + albumid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4160,7 +4209,7 @@ var AlbumService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/albumphotodelete', oAlbum, options)
+        return this.http.post('http://localhost:2000/api/albumphotodelete', oAlbum, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4169,7 +4218,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/album/report/" + userid, JSON.stringify(oAlbum), options)
+        return this.http.post("http://localhost:2000/api/album/report/" + userid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4178,7 +4227,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/album/aggreport/" + userid, JSON.stringify(oAlbum), options)
+        return this.http.post("http://localhost:2000/api/album/aggreport/" + userid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4187,7 +4236,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/album/" + albumid, options)
+        return this.http.get("http://localhost:2000/api/album/" + albumid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4196,7 +4245,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/albumlist/" + userid, options)
+        return this.http.get("http://localhost:2000/api/albumlist/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4205,7 +4254,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/albumlistbyartist/" + userid + "?artistid=" + artistid, options)
+        return this.http.get("http://localhost:2000/api/albumlistbyartist/" + userid + "?artistid=" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4214,7 +4263,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("api/album/" + albumid, options)
+        return this.http.delete("http://localhost:2000/api/album/" + albumid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4280,7 +4329,7 @@ var ArtistService = (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         console.log(oFile.getAll('artistimage'));
-        return this.http.post('api/artistphotoupload', oFile, options)
+        return this.http.post('http://localhost:2000/api/artistphotoupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4289,7 +4338,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/artist/" + userid, JSON.stringify(oArtist), options)
+        return this.http.post("http://localhost:2000/api/artist/" + userid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4298,7 +4347,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
+        return this.http.put("http://localhost:2000/api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4306,7 +4355,7 @@ var ArtistService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/artistphotodelete', oArtist, options)
+        return this.http.post('http://localhost:2000/api/artistphotodelete', oArtist, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4315,7 +4364,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/artist/report/" + userid, JSON.stringify(oArtist), options)
+        return this.http.post("http://localhost:2000/api/artist/report/" + userid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4324,7 +4373,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/artist/" + artistid, options)
+        return this.http.get("http://localhost:2000/api/artist/" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4333,7 +4382,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/artistlist/" + userid, options)
+        return this.http.get("http://localhost:2000/api/artistlist/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4342,7 +4391,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("api/artist/" + artistid, options)
+        return this.http.delete("http://localhost:2000/api/artist/" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4415,7 +4464,7 @@ var AuthService = (function () {
         var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/login', JSON.stringify(oUser), options)
+        return this.http.post('http://localhost:2000/api/login', JSON.stringify(oUser), options)
             .do(function (response) {
             if (response.json().success) {
                 _this.currentUser = response.json().message;
@@ -4493,7 +4542,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songprvwupload', oFile, options)
+        return this.http.post('http://localhost:2000/api/songprvwupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4501,7 +4550,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songfileupload', oFile, options)
+        return this.http.post('http://localhost:2000/api/songfileupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4509,7 +4558,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songprvwdelete', oSong, options)
+        return this.http.post('http://localhost:2000/api/songprvwdelete', oSong, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4517,7 +4566,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songfiledelete', oSong, options)
+        return this.http.post('http://localhost:2000/api/songfiledelete', oSong, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4526,7 +4575,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/song/" + userid + "?artistid=" + artistid + "&albumid=" + albumid, JSON.stringify(oSong), options)
+        return this.http.post("http://localhost:2000/api/song/" + userid + "?artistid=" + artistid + "&albumid=" + albumid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4535,7 +4584,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/publishsong/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("http://localhost:2000/api/publishsong/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4544,7 +4593,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/cancelpublishsong/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("http://localhost:2000/api/cancelpublishsong/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4553,7 +4602,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/updatesongpreview/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("http://localhost:2000/api/updatesongpreview/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4562,7 +4611,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/updatesongfile/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("http://localhost:2000/api/updatesongfile/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4571,7 +4620,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/song/" + songid, options)
+        return this.http.get("http://localhost:2000/api/song/" + songid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4580,7 +4629,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/songaggregate/" + songid, options)
+        return this.http.get("http://localhost:2000/api/songaggregate/" + songid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4589,7 +4638,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("api/song/" + songid, options)
+        return this.http.delete("http://localhost:2000/api/song/" + songid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4598,7 +4647,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/song/aggreport/" + userid, JSON.stringify(oSong), options)
+        return this.http.post("http://localhost:2000/api/song/aggreport/" + userid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4607,7 +4656,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("api/song/report/" + userid, JSON.stringify(oSong), options)
+        return this.http.post("http://localhost:2000/api/song/report/" + userid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4678,7 +4727,7 @@ var UserService = (function () {
     UserService.prototype.register = function (oUser) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('register', JSON.stringify(oUser), options)
+        return this.http.post('http://localhost:2000/register', JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4687,7 +4736,7 @@ var UserService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("api/user/" + userid, options)
+        return this.http.get("http://localhost:2000/api/user/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4696,7 +4745,7 @@ var UserService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/user/" + userid, JSON.stringify(oUser), options)
+        return this.http.put("http://localhost:2000/api/user/" + userid, JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4727,7 +4776,7 @@ var UserService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("api/password/" + userid, JSON.stringify(oUser), options)
+        return this.http.put("http://localhost:2000/api/password/" + userid, JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
