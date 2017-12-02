@@ -25,6 +25,7 @@ export class ListartistComponent implements OnInit {
   qpage: number;
   qsort: String;
   sts: any = ['active', 'inactive'];
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -79,15 +80,18 @@ export class ListartistComponent implements OnInit {
   }
 
   fetchReport(userid, formval) {
+    this.loading = true;
     this.artistService.getArtists(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         if (data.errcode){
           this.authService.logout();
           this.router.navigate(['login']);
         }
         this.toastr.error(data.message);
       } else {
+        this.loading = false;
         this.artists = data.data.docs;
         this.totalrows = +data.data.total;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);

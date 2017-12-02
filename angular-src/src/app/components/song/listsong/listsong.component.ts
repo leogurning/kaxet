@@ -40,6 +40,7 @@ export class ListsongComponent implements OnInit {
   ynlist: any = ['Y', 'N'];
   currsongpublish: String;
   currsongbuy: Number;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -160,15 +161,18 @@ export class ListsongComponent implements OnInit {
   }
 
   fetchReport(userid, formval) {
+    this.loading = true;
     this.songService.getAggSongs(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         if (data.errcode){
           this.authService.logout();
           this.router.navigate(['login']);
         }
         this.toastr.error(data.message);
       } else {
+        this.loading = false;
         this.songs = data.data;
         this.totalrows = +data.totalcount;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);

@@ -25,6 +25,7 @@ export class AddsongComponent implements OnInit {
   songid: String;
   artistlist: IArtistList[];
   albumlist: IAlbumList[];
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -118,6 +119,7 @@ export class AddsongComponent implements OnInit {
       lformData.append('songprvw',prvwfiles[0],prvwfiles[0]['name']);
       //console.log(lformData.getAll('songprvw'));
       //console.dir(theForm);
+      this.loading = true;
       this.songService.uploadSongPreview(lformData)
         .subscribe(data => {
           if (data.success === false) {
@@ -141,8 +143,10 @@ export class AddsongComponent implements OnInit {
                     this.songService.saveSong(this.userObj.userid, theForm.artistid, theForm.albumid, theForm)
                     .subscribe(data => {
                       if (data.success === false) {
+                        this.loading = false;
                         this.toastr.error(data.message);
                       } else {
+                        this.loading = false;
                         this.toastr.success(data.message);
                         this.router.navigate(['listsong']);
                       }

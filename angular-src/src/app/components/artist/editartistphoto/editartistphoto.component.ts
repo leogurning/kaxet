@@ -17,6 +17,7 @@ export class EditartistphotoComponent implements OnInit {
   artist: IArtist;
   artistid: String;
   filesToUpload: Array<File> = [];
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -77,6 +78,7 @@ export class EditartistphotoComponent implements OnInit {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     lformData.append('artistimage',files[0],files[0]['name']);
+    this.loading = true;
     this.artistService.uploadArtistphoto(lformData)
     .subscribe(data => {
       if (data.success === false) {
@@ -101,12 +103,14 @@ export class EditartistphotoComponent implements OnInit {
         this.artistService.updateArtistphoto(this.artistid, this.artistForm.value)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             console.log('Success update database photo - ' + this.displayImg)
             this.toastr.success(data.message);
           }

@@ -2,7 +2,7 @@
   <div class="page-header">
       <h3>Add Album</h3>
   </div>
-
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <form [formGroup]="addAlbumForm" (ngSubmit)="addAlbum(addAlbumForm.value)" class="form-horizontal" novalidate autocomplete="off">
     <div class="form-group" [ngClass]="{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}">
       <label for="artistid" class="col-sm-2 control-label">Artist Id <sup>*</sup></label>

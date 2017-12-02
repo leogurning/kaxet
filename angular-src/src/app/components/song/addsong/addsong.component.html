@@ -2,7 +2,7 @@
   <div class="page-header">
       <h3>Add Song</h3>
   </div>
-
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <form [formGroup]="addSongForm" (ngSubmit)="addSong(addSongForm.value)" class="form-horizontal" novalidate autocomplete="off">
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}">
       <label for="artistid" class="col-sm-2 control-label">Artist<sup>*</sup></label>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}">
-      <label for="songgenre" class="col-sm-2 control-label">Genre</label>
+      <label for="songgenre" class="col-sm-2 control-label">Genre<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
           <select class="form-control" [formControl]="songgenre">
@@ -76,7 +76,7 @@
     </div>
 
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}">
-      <label for="songprice" class="col-sm-2 control-label">Price</label>
+      <label for="songprice" class="col-sm-2 control-label">Price<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon">Rp</div>
           <input type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Song Price">
@@ -93,7 +93,7 @@
     </div>
 
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}">
-      <label for="songprvw" class="col-sm-2 control-label">Song Preview</label>
+      <label for="songprvw" class="col-sm-2 control-label">Song Preview<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
           <input type="file" (change)="prvwfileChangeEvent($event)" name="songprvw" id="songprvw" placeholder="Song preview">
@@ -101,7 +101,7 @@
     </div>
 
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}">
-      <label for="songfile" class="col-sm-2 control-label">Song File</label>
+      <label for="songfile" class="col-sm-2 control-label">Song File<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
           <input type="file" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">

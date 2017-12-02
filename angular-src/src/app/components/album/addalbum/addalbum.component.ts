@@ -20,6 +20,7 @@ export class AddalbumComponent implements OnInit {
   filesToUpload: Array<File> = [];
   albumid: String;
   artistlist: IArtistList[];
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -78,6 +79,7 @@ export class AddalbumComponent implements OnInit {
       lformData.append('albumimage',files[0],files[0]['name']);
       console.log(lformData.getAll('albumimage'));
       console.dir(theForm);
+      this.loading = true;
       this.albumService.uploadAlbumphoto(lformData)
         .subscribe(data => {
           if (data.success === false) {
@@ -93,10 +95,12 @@ export class AddalbumComponent implements OnInit {
               this.albumService.saveAlbum(this.userObj.userid, theForm.artistid, theForm)
               .subscribe(data => {
                 if (data.success === false) {
+                  this.loading = false;
                   this.toastr.error(data.message);
                 } else {
+                  this.loading = false;
                   this.toastr.success(data.message);
-                  this.router.navigate(['report']);
+                  this.router.navigate(['listalbum']);
                 }
                 this.addAlbumForm.reset();
               });

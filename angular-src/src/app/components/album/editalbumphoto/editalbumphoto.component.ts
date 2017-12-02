@@ -17,6 +17,7 @@ export class EditalbumphotoComponent implements OnInit {
   album: IAlbum;
   albumid: String;
   filesToUpload: Array<File> = [];
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -78,6 +79,7 @@ export class EditalbumphotoComponent implements OnInit {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     lformData.append('albumimage',files[0],files[0]['name']);
+    this.loading = true;
     this.albumService.uploadAlbumphoto(lformData)
     .subscribe(data => {
       if (data.success === false) {
@@ -102,12 +104,14 @@ export class EditalbumphotoComponent implements OnInit {
         this.albumService.updateAlbumphoto(this.albumid, this.albumForm.value)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             console.log('Success update database photo - ' + this.displayImg)
             this.toastr.success(data.message);
           }

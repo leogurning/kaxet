@@ -35,6 +35,7 @@ export class ListalbumComponent implements OnInit {
   genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
   sts: any = ['active', 'inactive'];
   //artistname: String;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -113,15 +114,18 @@ export class ListalbumComponent implements OnInit {
   }
 
   fetchReport(userid, formval) {
+    this.loading = true;
     this.albumService.getAggAlbums(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         if (data.errcode){
           this.authService.logout();
           this.router.navigate(['login']);
         }
         this.toastr.error(data.message);
       } else {
+        this.loading = false;
         //this.albums = data.data.docs;
         this.albums = data.data;
         //console.log(this.albums);

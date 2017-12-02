@@ -17,6 +17,7 @@ export class AddartistComponent implements OnInit {
   //status: any = ['active', 'inactive'];
   filesToUpload: Array<File> = [];
   artistid: String;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -53,6 +54,7 @@ export class AddartistComponent implements OnInit {
       lformData.append('artistimage',files[0],files[0]['name']);
       console.log(lformData.getAll('artistimage'));
       console.dir(theForm);
+      this.loading = true;
       this.artistService.uploadArtistphoto(lformData)
         .subscribe(data => {
           if (data.success === false) {
@@ -68,10 +70,12 @@ export class AddartistComponent implements OnInit {
               this.artistService.saveArtist(this.userObj.userid, theForm)
               .subscribe(data => {
                 if (data.success === false) {
+                  this.loading = false;
                   this.toastr.error(data.message);
                 } else {
+                  this.loading = false;
                   this.toastr.success(data.message);
-                  this.router.navigate(['report']);
+                  this.router.navigate(['listartist']);
                 }
                 this.addArtistForm.reset();
               });

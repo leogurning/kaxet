@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
 /* Services Modules */
 import { AuthService } from './services/auth.service';
@@ -99,6 +100,14 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    LoadingModule.forRoot({
+      animationType: ANIMATION_TYPES.circleSwish,
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
+      backdropBorderRadius: '4px',
+      primaryColour: '#00008B', 
+      secondaryColour: '#ffffff', 
+      tertiaryColour: '#ffffff'
+  }),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ToastrService, 

@@ -18,6 +18,7 @@ export class EditsongfilesComponent implements OnInit {
   songid: String;
   PrvwfilesToUpload: Array<File> = [];
   SongfilesToUpload: Array<File> = [];
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -90,6 +91,7 @@ export class EditsongfilesComponent implements OnInit {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     lformData.append('songprvw',files[0],files[0]['name']);
+    this.loading = true;
     this.songService.uploadSongPreview(lformData)
     .subscribe(data => {
       if (data.success === false) {
@@ -112,12 +114,14 @@ export class EditsongfilesComponent implements OnInit {
         this.songService.updateSongPreview(this.songid, this.songForm.value)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             console.log('Success update song preview.');
             this.toastr.success(data.message);
           }
@@ -130,6 +134,7 @@ export class EditsongfilesComponent implements OnInit {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     lformData.append('songfile',files[0],files[0]['name']);
+    this.loading = true;
     this.songService.uploadSongFile(lformData)
     .subscribe(data => {
       if (data.success === false) {
@@ -151,12 +156,14 @@ export class EditsongfilesComponent implements OnInit {
         this.songService.updateSongFile(this.songid, this.songForm.value)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             console.log('Success update song file.');
             this.toastr.success(data.message);
           }
