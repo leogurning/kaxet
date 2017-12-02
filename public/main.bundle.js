@@ -1186,7 +1186,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/viewalbum/viewalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumyear }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumgenre }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Album Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <div class=\"form-ele\">{{ album?.status }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumphoto\" class=\"col-sm-2 control-label\">Photo</label>\n            <div class=\"input-group col-sm-10\">\n              <img src=\"{{ album?.albumphotopath }}\" class=\"rounded float-right\" width=\"340\" height=\"340\">\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"listsong\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"input-group col-sm-10\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-10\">\n                    <i>({{ totalrows }} songs found) </i> \n                </div><br>\n                <div class=\"col-sm-12 col-md-10\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"50%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                                    <td>{{ song.status}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  \n  </div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumyear }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumgenre }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Album Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <div class=\"form-ele\">{{ album?.status }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumphoto\" class=\"col-sm-2 control-label\">Photo</label>\n            <div class=\"input-group col-sm-10\">\n              <img src=\"{{ album?.albumphotopath }}\" class=\"rounded float-right\" width=\"600\" height=\"600\">\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"listsong\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"input-group col-sm-10\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-10\">\n                    <i>({{ totalrows }} songs found) </i> \n                </div><br>\n                <div class=\"col-sm-12 col-md-10\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"50%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                                    <td>{{ song.status}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  \n  </div>\n"
 
 /***/ }),
 
@@ -2057,7 +2057,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/artist/viewartist/viewartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Artist Details</h1>\n  </div>\n  <form class=\"form-horizontal\">\n      <div class=\"form-group\">\n          <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n          <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <div class=\"form-ele\">{{ artist?.artistname }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n              <div class=\"form-ele\">{{ artist?.status }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"artistphoto\" class=\"col-sm-2 control-label\">Photo</label>\n          <div class=\"input-group col-sm-10\">\n            <img src=\"{{ artist?.artistphotopath }}\" class=\"rounded float-right\" width=\"340\" height=\"340\">\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"listalbum\" class=\"col-sm-2 control-label\">Album</label>\n          <div class=\"input-group col-sm-10\" *ngIf=\"albums && totalrows > 0\">\n              <div class=\"col-sm-12 col-md-10\">\n                  <i>({{ totalrows }} albums found) </i> \n              </div><br>\n              <div class=\"col-sm-12 col-md-10\">\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\" width=\"50%\">\n                          <thead>\n                              <tr>\n                                  <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td>{{ albm.albumname}}</td>\n                                  <td>{{ albm.albumyear}}</td>\n                                  <td>{{ albm.albumgenre}}</td>\n                                  <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':true }}</td>\n                                  <td>{{ albm.status}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n        \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n        \n              </div>\n          </div>      \n      </div>\n\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-10\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Artist Details</h1>\n  </div>\n  <form class=\"form-horizontal\">\n      <div class=\"form-group\">\n          <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n          <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <div class=\"form-ele\">{{ artist?.artistname }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n              <div class=\"form-ele\">{{ artist?.status }}</div>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"artistphoto\" class=\"col-sm-2 control-label\">Photo</label>\n          <div class=\"input-group col-sm-10\">\n            <img src=\"{{ artist?.artistphotopath }}\" class=\"rounded float-right\" width=\"600\" height=\"600\">\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"listalbum\" class=\"col-sm-2 control-label\">Album</label>\n          <div class=\"input-group col-sm-10\" *ngIf=\"albums && totalrows > 0\">\n              <div class=\"col-sm-12 col-md-10\">\n                  <i>({{ totalrows }} albums found) </i> \n              </div><br>\n              <div class=\"col-sm-12 col-md-10\">\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\" width=\"50%\">\n                          <thead>\n                              <tr>\n                                  <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td>{{ albm.albumname}}</td>\n                                  <td>{{ albm.albumyear}}</td>\n                                  <td>{{ albm.albumgenre}}</td>\n                                  <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':true }}</td>\n                                  <td>{{ albm.status}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n        \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n        \n              </div>\n          </div>      \n      </div>\n\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-10\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n\n</div>\n"
 
 /***/ }),
 
@@ -4183,7 +4183,7 @@ var AlbumService = (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         console.log(oFile.getAll('albumimage'));
-        return this.http.post('http://localhost:2000/api/albumphotoupload', oFile, options)
+        return this.http.post('api/albumphotoupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4192,7 +4192,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/album/" + userid + "?artistid=" + artistid, JSON.stringify(oAlbum), options)
+        return this.http.post("api/album/" + userid + "?artistid=" + artistid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4201,7 +4201,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/updatealbumphoto/" + albumid, JSON.stringify(oAlbum), options)
+        return this.http.put("api/updatealbumphoto/" + albumid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4209,7 +4209,7 @@ var AlbumService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/albumphotodelete', oAlbum, options)
+        return this.http.post('api/albumphotodelete', oAlbum, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4218,7 +4218,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/album/report/" + userid, JSON.stringify(oAlbum), options)
+        return this.http.post("api/album/report/" + userid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4227,7 +4227,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/album/aggreport/" + userid, JSON.stringify(oAlbum), options)
+        return this.http.post("api/album/aggreport/" + userid, JSON.stringify(oAlbum), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4236,7 +4236,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/album/" + albumid, options)
+        return this.http.get("api/album/" + albumid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4245,7 +4245,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/albumlist/" + userid, options)
+        return this.http.get("api/albumlist/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4254,7 +4254,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/albumlistbyartist/" + userid + "?artistid=" + artistid, options)
+        return this.http.get("api/albumlistbyartist/" + userid + "?artistid=" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4263,7 +4263,7 @@ var AlbumService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("http://localhost:2000/api/album/" + albumid, options)
+        return this.http.delete("api/album/" + albumid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4329,7 +4329,7 @@ var ArtistService = (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         console.log(oFile.getAll('artistimage'));
-        return this.http.post('http://localhost:2000/api/artistphotoupload', oFile, options)
+        return this.http.post('api/artistphotoupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4338,7 +4338,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/artist/" + userid, JSON.stringify(oArtist), options)
+        return this.http.post("api/artist/" + userid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4347,7 +4347,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
+        return this.http.put("api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4355,7 +4355,7 @@ var ArtistService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/artistphotodelete', oArtist, options)
+        return this.http.post('api/artistphotodelete', oArtist, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4364,7 +4364,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/artist/report/" + userid, JSON.stringify(oArtist), options)
+        return this.http.post("api/artist/report/" + userid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4373,7 +4373,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/artist/" + artistid, options)
+        return this.http.get("api/artist/" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4382,7 +4382,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/artistlist/" + userid, options)
+        return this.http.get("api/artistlist/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4391,7 +4391,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("http://localhost:2000/api/artist/" + artistid, options)
+        return this.http.delete("api/artist/" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4464,7 +4464,7 @@ var AuthService = (function () {
         var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/login', JSON.stringify(oUser), options)
+        return this.http.post('api/login', JSON.stringify(oUser), options)
             .do(function (response) {
             if (response.json().success) {
                 _this.currentUser = response.json().message;
@@ -4542,7 +4542,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/songprvwupload', oFile, options)
+        return this.http.post('api/songprvwupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4550,7 +4550,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/songfileupload', oFile, options)
+        return this.http.post('api/songfileupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4558,7 +4558,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/songprvwdelete', oSong, options)
+        return this.http.post('api/songprvwdelete', oSong, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4566,7 +4566,7 @@ var SongService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/songfiledelete', oSong, options)
+        return this.http.post('api/songfiledelete', oSong, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4575,7 +4575,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/song/" + userid + "?artistid=" + artistid + "&albumid=" + albumid, JSON.stringify(oSong), options)
+        return this.http.post("api/song/" + userid + "?artistid=" + artistid + "&albumid=" + albumid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4584,7 +4584,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/publishsong/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("api/publishsong/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4593,7 +4593,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/cancelpublishsong/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("api/cancelpublishsong/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4602,7 +4602,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/updatesongpreview/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("api/updatesongpreview/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4611,7 +4611,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/updatesongfile/" + songid, JSON.stringify(oSong), options)
+        return this.http.put("api/updatesongfile/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4620,7 +4620,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/song/" + songid, options)
+        return this.http.get("api/song/" + songid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4629,7 +4629,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/songaggregate/" + songid, options)
+        return this.http.get("api/songaggregate/" + songid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4638,7 +4638,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("http://localhost:2000/api/song/" + songid, options)
+        return this.http.delete("api/song/" + songid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4647,7 +4647,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/song/aggreport/" + userid, JSON.stringify(oSong), options)
+        return this.http.post("api/song/aggreport/" + userid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4656,7 +4656,7 @@ var SongService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/song/report/" + userid, JSON.stringify(oSong), options)
+        return this.http.post("api/song/report/" + userid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4727,7 +4727,7 @@ var UserService = (function () {
     UserService.prototype.register = function (oUser) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/register', JSON.stringify(oUser), options)
+        return this.http.post('register', JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4736,7 +4736,7 @@ var UserService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/user/" + userid, options)
+        return this.http.get("api/user/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4745,7 +4745,7 @@ var UserService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/user/" + userid, JSON.stringify(oUser), options)
+        return this.http.put("api/user/" + userid, JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4776,7 +4776,7 @@ var UserService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/password/" + userid, JSON.stringify(oUser), options)
+        return this.http.put("api/password/" + userid, JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
