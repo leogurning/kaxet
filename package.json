@@ -11,6 +11,7 @@
     "bcrypt-nodejs": "*",
     "body-parser": "*",
     "bootstrap": "*",
+    "cloudinary": "^1.9.1",
     "core-js": "*",
     "express": "*",
     "express-fileupload": "^0.3.0",

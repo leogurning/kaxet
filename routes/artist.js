@@ -2,8 +2,14 @@ const mongoose = require( 'mongoose' );
 const Artist = require('../models/artist');
 const config = require('../config');
 const fs = require('fs');
-const uploadpath = config.baseuploadpath + 'assets/artists/images/';
-//const uploadpath = '/Users/leonardgurning/Documents/nodeprojects/kaxet/angular-src/src/assets/artists/images/';
+const cloudinary = require('cloudinary');
+const uploadpath = "kaxet/images/artists/";
+
+cloudinary.config({ 
+    cloud_name: config.cloud_name, 
+    api_key: config.api_key, 
+    api_secret: config.api_secret
+}); 
 
 exports.artistphotoupload = function(req, res, next){
     var stats;
@@ -12,57 +18,62 @@ exports.artistphotoupload = function(req, res, next){
                 d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
                 ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
 
-    console.log('Ini req files ' + req.files);
     if(req.files.artistimage){
       var file = req.files.artistimage,
-        oriname = file.name,
-        name = ts+oriname.substr(oriname.length - 4),
-        type = file.mimetype;
-      //var uploadpath = __dirname + '/uploads/' + name;
-      console.log('Ini working dir ' + __dirname);
-      var uploadfile = uploadpath + name;
-      var photopath = 'assets/artists/images/'+ name;
-      file.mv(uploadfile,function(err){
-        if(err){
-          console.log("Artist Photo Upload Failed",name,err);
-          return res.status(401).json({ success: false, 
-            message:'Artist Photo Upload Failed.'
+        name = ts;
+      cloudinary.v2.uploader.upload_stream(
+        {public_id: name, folder: uploadpath,invalidate: true,resource_type: 'image'}, 
+        function(err, result){
+            if(err){
+                console.log("Artist Photo Upload Failed", err);
+                return res.status(401).json({ success: false, 
+                  message:'Artist Photo Upload Failed.'
+                });      
+            }
+            else {
+                console.log("Artist Photo Uploaded",name);
+                res.status(201).json({
+                  success: true,
+                  message: 'Artist Photo is successfully uploaded.',
+                  filedata : {artistphotopath: result.secure_url,artistphotoname: result.public_id}
+                });      
+            }
+        }).end(file.data);
+    } else {
+        return res.status(402).json({ success: false, 
+            message:'No Artist Photo uploaded.',
+            filedata : {artistphotopath: "",artistphotoname: ""}
           });
-        }
-        else {
-          console.log("Artist Photo Uploaded",name);
-          res.status(201).json({
-            success: true,
-            message: 'Artist Photo is successfully uploaded.',
-            filedata : {artistphotopath: photopath,artistphotoname: name}});
-        }
-      });
-    }
-    else {
-      return res.status(402).json({ success: false, 
-          message:'No Artist Photo uploaded.',
-          filedata : {artistphotopath: "",artistphotoname: ""}
-        });
     };
 }
 
 exports.artistphotodelete = function(req, res, next) {
     const artistphotoname = req.body.artistphotoname;
-    var deletepathfile = uploadpath + artistphotoname;
-    fs.unlink(deletepathfile, function(err){
-        if(err){
+    //var deletepathfile = uploadpath + artistphotoname;
+    if(artistphotoname){
+        cloudinary.v2.uploader.destroy(artistphotoname,
+          {invalidate: true, resource_type: 'image'}, 
+        function(err, result){
+          if(err){
             console.log("Delete Artist Photo Failed",artistphotoname,err);
             res.status(401).json({ success: false, 
               message:'Delete Artist Photo Failed.'
             });
-        }
-        else {
-        console.log("Delete Artist Photo Success",artistphotoname);
-        res.status(201).json({
-            success: true,
-            message: 'Delete Artist Photo successful.'});
-        }
-    });
+          }
+          else {
+            console.log("Delete Artist Photo Success",artistphotoname);
+            res.status(201).json({
+                success: true,
+                message: 'Delete Artist Photo successful.'});    
+          }
+        });
+    }
+    else {
+        console.log("No File selected !");
+        res.status(402).json({
+            success: false,
+            message: 'No File selected !'});    
+    };
 }
 
 exports.saveartist = function(req, res, next){

@@ -3,6 +3,7 @@ const bodyParser  = require('body-parser');
 const morgan      = require('morgan');
 const mongoose    = require('mongoose');
 var upload = require('express-fileupload');
+const cloudinary = require('cloudinary');
 const path = require('path');
 
 const jwt    = require('jsonwebtoken'); 

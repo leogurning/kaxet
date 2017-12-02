@@ -2,7 +2,10 @@ const mongoose = require( 'mongoose' );
 const Song = require('../models/song');
 const config = require('../config');
 const fs = require('fs');
-const uploadpath = config.baseuploadpath + 'uploads/songs/';
+const cloudinary = require('cloudinary');
+const prvwuploadpath = "kaxet/previews/";
+const songuploadpath = "kaxet/songs/";
+
 var ObjId = mongoose.Types.ObjectId;
 var merge = function() {
   var obj = {},
@@ -19,38 +22,40 @@ var merge = function() {
   return obj;
 };
 
+cloudinary.config({ 
+  cloud_name: config.cloud_name, 
+  api_key: config.api_key, 
+  api_secret: config.api_secret
+}); 
+
 exports.songprvwupload = function(req, res, next){
     var stats;
     const d = new Date();
     const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
                 d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
                 ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
-
-    console.log('Ini req files ' + req.files);
     if(req.files.songprvw){
       var file = req.files.songprvw,
         oriname = file.name,
-        name = 'prvw-'+ts+oriname.substr(oriname.length - 4),
-        type = file.mimetype;
-      //var uploadpath = __dirname + '/uploads/' + name;
-      console.log('Ini working dir ' + __dirname);
-      var uploadfile = uploadpath + name;
-      var prvwpath = 'uploads/songs/'+ name;
-      file.mv(uploadfile,function(err){
-        if(err){
-          console.log("Song Preview Upload Failed",name,err);
-          return res.status(401).json({ success: false, 
-            message:'Song Preview Upload Failed.'
-          });
-        }
-        else {
-          console.log("Song Preview Uploaded",name);
-          res.status(201).json({
-            success: true,
-            message: 'Song Preview is successfully uploaded.',
-            filedata : {songprvwpath: prvwpath,songprvwname: name}});
-        }
-      });
+        name = 'prvw-'+ts+oriname.substr(oriname.length - 4);
+        cloudinary.v2.uploader.upload_stream(
+          {public_id: name, folder: prvwuploadpath,invalidate: true,resource_type: 'video'}, 
+          function(err, result){
+              if(err){
+                console.log("Song Preview Upload Failed",name,err);
+                return res.status(401).json({ success: false, 
+                  message:'Song Preview Upload Failed.'
+                });
+              }
+              else {
+                console.log("Song Preview Uploaded",name);
+                res.status(201).json({
+                  success: true,
+                  message: 'Song Preview is successfully uploaded.',
+                  filedata : {songprvwpath: result.secure_url,songprvwname: result.public_id}
+                });
+              }
+          }).end(file.data);
     }
     else {
       return res.status(402).json({ success: false, 
@@ -62,21 +67,31 @@ exports.songprvwupload = function(req, res, next){
 
 exports.songprvwdelete = function(req, res, next) {
   const songprvwname = req.body.songprvwname;
-  var deletepathfile = uploadpath + songprvwname;
-  fs.unlink(deletepathfile, function(err){
+
+  if(songprvwname){
+    cloudinary.v2.uploader.destroy(songprvwname,
+      {invalidate: true, resource_type: 'video'}, 
+    function(err, result){
       if(err){
-          console.log("Delete Song Preview Failed",songprvwname,err);
-          res.status(401).json({ success: false, 
-            message:'Delete Song Preview Failed.'
-          });
+        console.log("Delete Song Preview Failed",songprvwname,err);
+        res.status(401).json({ success: false, 
+          message:'Delete Song Preview Failed.'
+        });
       }
       else {
-      console.log("Delete Song Preview Success",songprvwname);
-      res.status(201).json({
-          success: true,
-          message: 'Delete Song Preview successful.'});
+        console.log("Delete Song Preview Success",songprvwname);
+        res.status(201).json({
+            success: true,
+            message: 'Delete Song Preview successful.'});
       }
-  });
+    });
+  }
+  else {
+      console.log("No File selected !");
+      res.status(402).json({
+          success: false,
+          message: 'No File selected !'});    
+  };
 }
 
 exports.songfileupload = function(req, res, next){
@@ -86,31 +101,28 @@ exports.songfileupload = function(req, res, next){
               d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
               ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
 
-  console.log('Ini req files ' + req.files);
   if(req.files.songfile){
     var file = req.files.songfile,
       oriname = file.name,
-      name = 'song-'+ts+oriname.substr(oriname.length - 4),
-      type = file.mimetype;
-    //var uploadpath = __dirname + '/uploads/' + name;
-    console.log('Ini working dir ' + __dirname);
-    var uploadfile = uploadpath + name;
-    var songpath = 'uploads/songs/'+ name;
-    file.mv(uploadfile,function(err){
-      if(err){
-        console.log("Song File Upload Failed",name,err);
-        return res.status(401).json({ success: false, 
-          message:'Song File Upload Failed.'
-        });
-      }
-      else {
-        console.log("Song File Uploaded",name);
-        res.status(201).json({
-          success: true,
-          message: 'Song File is successfully uploaded.',
-          filedata : {songfilepath: songpath,songfilename: name}});
-      }
-    });
+      name = 'song-'+ts+oriname.substr(oriname.length - 4);
+    
+      cloudinary.v2.uploader.upload_stream(
+        {public_id: name, folder: songuploadpath,invalidate: true,resource_type: 'video'}, 
+        function(err, result){
+            if(err){
+              console.log("Song File Upload Failed",name,err);
+              return res.status(401).json({ success: false, 
+                message:'Song File Upload Failed.'
+              });
+            }
+            else {
+              console.log("Song File Uploaded",name);
+              res.status(201).json({
+                success: true,
+                message: 'Song File is successfully uploaded.',
+                filedata : {songfilepath: result.secure_url,songfilename: result.public_id}});
+            }
+        }).end(file.data);
   }
   else {
     return res.status(402).json({ success: false, 
@@ -122,21 +134,30 @@ exports.songfileupload = function(req, res, next){
 
 exports.songfiledelete = function(req, res, next) {
   const songfilename = req.body.songfilename;
-  var deletepathfile = uploadpath + songfilename;
-  fs.unlink(deletepathfile, function(err){
+  if(songfilename){
+    cloudinary.v2.uploader.destroy(songfilename,
+      {invalidate: true, resource_type: 'video'}, 
+    function(err, result){
       if(err){
-          console.log("Delete Song File Failed",songfilename,err);
-          res.status(401).json({ success: false, 
-            message:'Delete Song File Failed.'
-          });
+        console.log("Delete Song File Failed",songfilename,err);
+        res.status(401).json({ success: false, 
+          message:'Delete Song File Failed.'
+        });
       }
       else {
-      console.log("Delete Song File Success",songfilename);
-      res.status(201).json({
-          success: true,
-          message: 'Delete Song File successful.'});
+        console.log("Delete Song File Success",songfilename);
+        res.status(201).json({
+            success: true,
+            message: 'Delete Song File successful.'});
       }
-  });
+    });
+  }
+  else {
+      console.log("No File selected !");
+      res.status(402).json({
+          success: false,
+          message: 'No File selected !'});    
+  };
 }
 
 exports.savesong = function(req, res, next){

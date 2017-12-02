@@ -2,8 +2,14 @@ const mongoose = require( 'mongoose' );
 const Album = require('../models/album');
 const config = require('../config');
 const fs = require('fs');
-const uploadpath = config.baseuploadpath + 'assets/albums/images/';
-//const uploadpath = '/Users/leonardgurning/Documents/nodeprojects/kaxet/angular-src/src/assets/artists/images/';
+const cloudinary = require('cloudinary');
+const uploadpath = "kaxet/images/albums/";
+
+cloudinary.config({ 
+    cloud_name: config.cloud_name, 
+    api_key: config.api_key, 
+    api_secret: config.api_secret
+}); 
 
 exports.testalbum = function(req, res, next){
     const labelid = req.params.id;
@@ -30,28 +36,25 @@ exports.albumphotoupload = function(req, res, next){
     console.log('Ini req files ' + req.files);
     if(req.files.albumimage){
       var file = req.files.albumimage,
-        oriname = file.name,
-        name = ts+oriname.substr(oriname.length - 4),
-        type = file.mimetype;
-      //var uploadpath = __dirname + '/uploads/' + name;
-      console.log('Ini working dir ' + __dirname);
-      var uploadfile = uploadpath + name;
-      var photopath = 'assets/albums/images/'+ name;
-      file.mv(uploadfile,function(err){
-        if(err){
-          console.log("Album Photo Upload Failed",name,err);
-          return res.status(401).json({ success: false, 
-            message:'Album Photo Upload Failed.'
-          });
-        }
-        else {
-          console.log("Album Photo Uploaded",name);
-          res.status(201).json({
-            success: true,
-            message: 'Album Photo is successfully uploaded.',
-            filedata : {albumphotopath: photopath,albumphotoname: name}});
-        }
-      });
+        name = ts;
+      cloudinary.v2.uploader.upload_stream(
+        {public_id: name, folder: uploadpath,invalidate: true,resource_type: 'image'}, 
+        function(err, result){
+            if(err){
+                console.log("Album Photo Upload Failed",name,err);
+                return res.status(401).json({ success: false, 
+                  message:'Album Photo Upload Failed.'
+                });
+            }
+            else {
+                console.log("Album Photo Uploaded",name);
+                res.status(201).json({
+                  success: true,
+                  message: 'Album Photo is successfully uploaded.',
+                  filedata : {albumphotopath: result.secure_url,albumphotoname: result.public_id}
+                });
+            }
+        }).end(file.data);
     }
     else {
       return res.status(402).json({ success: false, 
@@ -63,21 +66,30 @@ exports.albumphotoupload = function(req, res, next){
 
 exports.albumphotodelete = function(req, res, next) {
     const albumphotoname = req.body.albumphotoname;
-    var deletepathfile = uploadpath + albumphotoname;
-    fs.unlink(deletepathfile, function(err){
-        if(err){
+    if(albumphotoname){
+        cloudinary.v2.uploader.destroy(albumphotoname,
+          {invalidate: true, resource_type: 'image'}, 
+        function(err, result){
+          if(err){
             console.log("Delete Album Photo Failed",albumphotoname,err);
             res.status(401).json({ success: false, 
               message:'Delete Album Photo Failed.'
             });
-        }
-        else {
-        console.log("Delete Album Photo Success",albumphotoname);
-        res.status(201).json({
-            success: true,
-            message: 'Delete Album Photo successful.'});
-        }
-    });
+          }
+          else {
+            console.log("Delete Album Photo Success",albumphotoname);
+            res.status(201).json({
+                success: true,
+                message: 'Delete Album Photo successful.'});
+          }
+        });
+    }
+    else {
+        console.log("No File selected !");
+        res.status(402).json({
+            success: false,
+            message: 'No File selected !'});    
+    };
 }
 
 exports.savealbum = function(req, res, next){
