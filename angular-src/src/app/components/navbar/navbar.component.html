@@ -18,7 +18,7 @@
               <li><a routerLink="editexpense" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Add Expense</a></li> -->
               <li><a routerLink="about" routerLinkActive="active">About</a></li>
               <li *ngIf="authService.isLoggedIn()">
-                  <ul class="menu">
+              <ul class="menu">
                       <li>
                           Artist
                           <ul>
@@ -26,6 +26,10 @@
                               <li routerLink="listartist" routerLinkActive="active">Manage Artist</li>
                           </ul>
                       </li>
+                  </ul>
+              </li>
+              <li *ngIf="authService.isLoggedIn()">
+                <ul class="menu"> 
                       <li>
                         Album
                         <ul>
@@ -33,6 +37,10 @@
                             <li routerLink="listalbum" routerLinkActive="active">Manage Album</li>
                         </ul>
                     </li>
+                  </ul>
+              </li>
+              <li *ngIf="authService.isLoggedIn()">
+                <ul class="menu">
                     <li>
                         Song
                         <ul>
@@ -48,7 +56,7 @@
                   <a routerLink="login" routerLinkActive="active">Log In</a>
               </li>
               <li *ngIf="authService.isLoggedIn()">
-                  <ul class="menu">
+                 <ul class="dropdown menu" data-responsive-menu="drilldown medium-dropdown">
                       <li>
                           Welcome {{ authService.currentUser.name }}
                           <ul>
