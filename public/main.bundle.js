@@ -4352,7 +4352,7 @@ var ArtistService = (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         //console.log(oFile.getAll('artistimage'));
-        return this.http.post('http://localhost:2000/api/artistphotoupload', oFile, options)
+        return this.http.post('api/artistphotoupload', oFile, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4361,7 +4361,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/artist/" + userid, JSON.stringify(oArtist), options)
+        return this.http.post("api/artist/" + userid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4370,7 +4370,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.put("http://localhost:2000/api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
+        return this.http.put("api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4378,7 +4378,7 @@ var ArtistService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:2000/api/artistphotodelete', oArtist, options)
+        return this.http.post('api/artistphotodelete', oArtist, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4387,7 +4387,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post("http://localhost:2000/api/artist/report/" + userid, JSON.stringify(oArtist), options)
+        return this.http.post("api/artist/report/" + userid, JSON.stringify(oArtist), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4396,7 +4396,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/artist/" + artistid, options)
+        return this.http.get("api/artist/" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4405,7 +4405,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get("http://localhost:2000/api/artistlist/" + userid, options)
+        return this.http.get("api/artistlist/" + userid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4414,7 +4414,7 @@ var ArtistService = (function () {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.delete("http://localhost:2000/api/artist/" + artistid, options)
+        return this.http.delete("api/artist/" + artistid, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
