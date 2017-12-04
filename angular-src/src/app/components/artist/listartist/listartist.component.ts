@@ -133,35 +133,55 @@ export class ListartistComponent implements OnInit {
     );
   }
 
-  confirmDel(idx: number, artistid: string) {
+  confirmDel(idx: number, artistid: string, artistname:string, artistphotoname:string) {
     var totalalbum: number;
     
     let payload: any = {};
     payload.artistid = artistid;
+    this.loading = true;
     this.albumService.getAlbums(this.userObj.userid, payload)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         this.toastr.error(data.message);
       } else {
+        this.loading = false;
         totalalbum = +data.data.total;
         if (totalalbum > 0) {
           this.toastr.warning('Can not delete artist. It already has albums.');
         } else {
-          if(confirm('Do you really want to delete this record?')){
-            this.artistService.deleteArtist(artistid)
+          if(confirm('Do you really want to delete this artist: ' + artistname + ' record?')){
+            let payloadData: any = {};
+            payloadData.artistphotoname = artistphotoname;
+            this.loading = true;
+            this.artistService.deleteArtistPhoto(payloadData)
             .subscribe(data => {
-              if (data.success === false) {
-                if (data.errcode){
-                  this.authService.logout();
-                  this.router.navigate(['login']);
-                }
-                this.toastr.error(data.message);
-              } else {
-                this.artists.splice(idx, 1);
-                this.totalrows = this.totalrows - 1;
-                this.toastr.success(data.message);
-              }
-            });
+               if (data.success === false) {
+                this.loading = false;
+                  if (data.errcode){
+                    this.authService.logout();
+                    this.router.navigate(['login']);
+                  }
+                  this.toastr.error(data.message);
+                } else {
+                  this.artistService.deleteArtist(artistid)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      if (data.errcode){
+                        this.authService.logout();
+                        this.router.navigate(['login']);
+                      }
+                      this.toastr.error(data.message);
+                    } else {
+                      this.loading = false;
+                      this.artists.splice(idx, 1);
+                      this.totalrows = this.totalrows - 1;
+                      this.toastr.success(data.message);
+                    }
+                  });
+                }   
+              });
           }
         }
       }

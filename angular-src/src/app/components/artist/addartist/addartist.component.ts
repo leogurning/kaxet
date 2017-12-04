@@ -52,12 +52,13 @@ export class AddartistComponent implements OnInit {
       console.log('Ini file: '+ files[0]['name']);
       
       lformData.append('artistimage',files[0],files[0]['name']);
-      console.log(lformData.getAll('artistimage'));
+      //console.log(lformData.getAll('artistimage'));
       console.dir(theForm);
       this.loading = true;
       this.artistService.uploadArtistphoto(lformData)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             this.toastr.error(data.message);
           } else {
               theForm.artistphotopath = data.filedata.artistphotopath;

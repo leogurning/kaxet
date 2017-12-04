@@ -82,6 +82,7 @@ export class EditartistphotoComponent implements OnInit {
     this.artistService.uploadArtistphoto(lformData)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         this.toastr.error(data.message);
       } else {
         this.displayImg = data.filedata.artistphotopath;

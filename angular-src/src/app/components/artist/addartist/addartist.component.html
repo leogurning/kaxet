@@ -3,12 +3,12 @@
       <h3>Add Artist</h3>
   </div>
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-  <form [formGroup]="addArtistForm" (ngSubmit)="addArtist(addArtistForm.value)" class="form-horizontal" novalidate autocomplete="off">
+  <form  [formGroup]="addArtistForm" (ngSubmit)="addArtist(addArtistForm.value)" class="form-horizontal" novalidate autocomplete="off">
     <div class="form-group" [ngClass]="{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}">
         <label for="artistname" class="col-sm-2 control-label">Artist Name <sup>*</sup></label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-            <input type="text" class="form-control" [formControl]="artistname" id="artistname" placeholder="Artist Name">
+            <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="artistname" id="artistname" placeholder="Artist Name">
         </div>
         <div class="text-danger" *ngIf="addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors">
             <span class="col-sm-2"></span>
@@ -22,15 +22,15 @@
         <label for="artistimage" class="col-sm-2 control-label">Artist Photo</label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-            <input type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
+            <input [disabled]="this.loading == true" type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-sm-2 control-label"></label>
         <div class="col-sm-5">
-            <button type="submit" [disabled]="addArtistForm.invalid" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-default">Reset</button>
+            <button type="submit" [disabled]="addArtistForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
+            <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
         </div>
         <div class="col-sm-5" style="text-align:right">
             <sup>*</sup> required
