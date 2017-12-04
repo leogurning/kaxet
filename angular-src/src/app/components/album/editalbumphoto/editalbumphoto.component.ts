@@ -83,6 +83,7 @@ export class EditalbumphotoComponent implements OnInit {
     this.albumService.uploadAlbumphoto(lformData)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         this.toastr.error(data.message);
       } else {
         this.displayImg = data.filedata.albumphotopath;

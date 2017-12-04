@@ -77,12 +77,12 @@ export class AddalbumComponent implements OnInit {
       console.log('Ini file: '+ files[0]['name']);
       
       lformData.append('albumimage',files[0],files[0]['name']);
-      console.log(lformData.getAll('albumimage'));
       console.dir(theForm);
       this.loading = true;
       this.albumService.uploadAlbumphoto(lformData)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             this.toastr.error(data.message);
           } else {
               theForm.albumphotopath = data.filedata.albumphotopath;

@@ -21,7 +21,7 @@ export class AlbumService {
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
-    console.log(oFile.getAll('albumimage'));
+
     return this.http.post('api/albumphotoupload', oFile, options)
       .map((response: Response) => response.json())
       .catch(this.handleError);

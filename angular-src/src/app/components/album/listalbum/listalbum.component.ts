@@ -213,35 +213,55 @@ export class ListalbumComponent implements OnInit {
     );
   }
 
-  confirmDel(idx: number, albumid: string) {
+  confirmDel(idx: number, albumid: string, albumname:string, albumphotoname:string) {
     var totalsong: number;
 
     let payload: any = {};
     payload.albumid = albumid;
+    this.loading = true;
     this.songService.getSongs(this.userObj.userid, payload)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         this.toastr.error(data.message);
       } else {
+        this.loading = false;
         totalsong = +data.data.total;
         if (totalsong > 0) {
           this.toastr.warning('Can not delete album. It already has songs.');
         } else {
-          if(confirm('Do you really want to delete this record?')){
-            this.albumService.deleteAlbum(albumid)
+          if(confirm('Do you really want to delete this album: ' + albumname + ' record?')){
+            let payloadData: any = {};
+            payloadData.albumphotoname = albumphotoname;
+            this.loading = true;
+            this.albumService.deleteAlbumPhoto(payloadData)
             .subscribe(data => {
-              if (data.success === false) {
-                if (data.errcode){
-                  this.authService.logout();
-                  this.router.navigate(['login']);
+               if (data.success === false) {
+                this.loading = false;
+                  if (data.errcode){
+                    this.authService.logout();
+                    this.router.navigate(['login']);
+                  }
+                  this.toastr.error(data.message);
+                } else {
+                  this.albumService.deleteAlbum(albumid)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      if (data.errcode){
+                        this.authService.logout();
+                        this.router.navigate(['login']);
+                      }
+                      this.toastr.error(data.message);
+                    } else {
+                      this.loading = false;
+                      this.albums.splice(idx, 1);
+                      this.totalrows = this.totalrows - 1;
+                      this.toastr.success(data.message);  
+                    }
+                  });
                 }
-                this.toastr.error(data.message);
-              } else {
-                this.albums.splice(idx, 1);
-                this.totalrows = this.totalrows - 1;
-                this.toastr.success(data.message);  
-              }
-            });
+              });
           }
         }
       }
