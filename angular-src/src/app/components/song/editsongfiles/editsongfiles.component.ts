@@ -95,6 +95,7 @@ export class EditsongfilesComponent implements OnInit {
     this.songService.uploadSongPreview(lformData)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         this.toastr.error(data.message);
       } else {
         let payloadData: any = this.songForm.value;
@@ -138,6 +139,7 @@ export class EditsongfilesComponent implements OnInit {
     this.songService.uploadSongFile(lformData)
     .subscribe(data => {
       if (data.success === false) {
+        this.loading = false;
         this.toastr.error(data.message);
       } else {
         let payloadData: any = this.songForm.value;

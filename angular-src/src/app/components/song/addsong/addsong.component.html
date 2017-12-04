@@ -8,7 +8,7 @@
       <label for="artistid" class="col-sm-2 control-label">Artist<sup>*</sup></label>
       <div class="input-group col-sm-10">
         <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-        <select class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
+        <select [disabled]="this.loading == true" class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
             <option ng-selected="true" value="">Select the artist</option>
             <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
         </select>
@@ -25,7 +25,7 @@
       <label for="albumid" class="col-sm-2 control-label">Album<sup>*</sup></label>
       <div class="input-group col-sm-10">
         <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-        <select class="form-control" [formControl]="albumid">
+        <select [disabled]="this.loading == true" class="form-control" [formControl]="albumid">
             <option ng-selected="true" value="">Select the album</option>
             <option *ngFor="let album of albumlist" [ngValue]="album._id">{{album.albumname}}</option>
         </select>
@@ -42,7 +42,7 @@
       <label for="songname" class="col-sm-2 control-label">Song Name <sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-          <input type="text" class="form-control" [formControl]="songname" id="songname" placeholder="Song Name">
+          <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="songname" id="songname" placeholder="Song Name">
       </div>
       <div class="text-danger" *ngIf="addSongForm.get('songname').dirty && addSongForm.get('songname').errors">
           <span class="col-sm-2"></span>
@@ -54,7 +54,7 @@
     <div class="form-group">
       <label for="songlyric" class="col-sm-2 control-label">Lyric</label>
       <div class="input-group col-sm-10">
-          <textarea class="form-control" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
+          <textarea [disabled]="this.loading == true" class="form-control" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
       <label for="songgenre" class="col-sm-2 control-label">Genre<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-          <select class="form-control" [formControl]="songgenre">
+          <select [disabled]="this.loading == true" class="form-control" [formControl]="songgenre">
               <option ng-selected="true" value="">Select the genre</option>
               <option *ngFor="let a of genre" >{{a}}</option>
           </select>
@@ -79,7 +79,7 @@
       <label for="songprice" class="col-sm-2 control-label">Price<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon">Rp</div>
-          <input type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Song Price">
+          <input [disabled]="this.loading == true" type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Song Price">
       </div>
       <div class="text-danger" *ngIf="addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors">
           <span class="col-sm-2"></span>
@@ -96,7 +96,7 @@
       <label for="songprvw" class="col-sm-2 control-label">Song Preview<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-          <input type="file" (change)="prvwfileChangeEvent($event)" name="songprvw" id="songprvw" placeholder="Song preview">
+          <input [disabled]="this.loading == true" type="file" (change)="prvwfileChangeEvent($event)" name="songprvw" id="songprvw" placeholder="Song preview">
       </div>
     </div>
 
@@ -104,15 +104,15 @@
       <label for="songfile" class="col-sm-2 control-label">Song File<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-          <input type="file" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">
+          <input [disabled]="this.loading == true" type="file" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-sm-2 control-label"></label>
       <div class="col-sm-5">
-          <button type="submit" [disabled]="addSongForm.invalid" class="btn btn-primary">Submit</button>
-          <button type="reset" class="btn btn-default">Reset</button>
+          <button type="submit" [disabled]="addSongForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
+          <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
       </div>
       <div class="col-sm-5" style="text-align:right">
           <sup>*</sup> required

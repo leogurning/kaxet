@@ -3,7 +3,7 @@
       <h3>List Song</h3>
   </div>
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-  <div class="panel panel-info">
+  <div *ngIf="this.loading == false" class="panel panel-info">
     <div class="panel-heading">
         <h3 class="panel-title">Search Parameter</h3>
     </div>
@@ -108,7 +108,7 @@
       </div>
   </div>
 
-  <div class="panel panel-default" *ngIf="songs && totalrows > 0">
+  <div class="panel panel-default" *ngIf="songs && totalrows > 0 && this.loading == false">
       <div class="panel-heading">
           <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
       </div>
@@ -143,7 +143,7 @@
                               <button type="button" class="btn-xs btn-danger" aria-label="Edit" (click)="editSong(song._id, song.songpublish, song.songbuy)" data-toggle="tooltip" data-placement="top" title="Change Song Data">
                                   <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                               </button>
-                              <button type="button" class="btn-xs btn-primary" aria-label="Delete" (click)="confirmDel(songIndex, song._id, song.songpublish, song.songbuy)" data-toggle="tooltip" data-placement="top" title="Delete Song">
+                              <button type="button" class="btn-xs btn-primary" aria-label="Delete" (click)="confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)" data-toggle="tooltip" data-placement="top" title="Delete Song">
                                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                               </button>
                           </td>

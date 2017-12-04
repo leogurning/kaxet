@@ -117,12 +117,12 @@ export class AddsongComponent implements OnInit {
       //console.log('Ini file: '+ prvwfiles[0]['name']);
       
       lformData.append('songprvw',prvwfiles[0],prvwfiles[0]['name']);
-      //console.log(lformData.getAll('songprvw'));
-      //console.dir(theForm);
+
       this.loading = true;
       this.songService.uploadSongPreview(lformData)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             this.toastr.error(data.message);
           } else {
               theForm.songprvwpath = data.filedata.songprvwpath;
@@ -132,6 +132,7 @@ export class AddsongComponent implements OnInit {
               this.songService.uploadSongFile(lformData)
               .subscribe(data => {
                   if (data.success === false) {
+                    this.loading = false;
                     this.toastr.error(data.message);
                   } else {
                     theForm.songfilepath = data.filedata.songfilepath;

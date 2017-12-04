@@ -314,21 +314,44 @@ export class ListsongComponent implements OnInit {
     }
   }
 
-  confirmDel(idx: number, songid: string, songpublish, songbuy) {
+  confirmDel(idx: number, songid: string, songpublish, songbuy, songname, songprvwname, songfilename) {
     
     if (songbuy > 0) {
       this.toastr.warning("This song has been purchased. The file can not be edited");
     } else {
-      if(confirm('Do you really want to delete this record?')){
+      if(confirm('Do you really want to delete this song: ' + songname + ' record?')){
+        this.loading = true;
+        let payload: any = {};
+        payload.songprvwname = songprvwname;
+        this.songService.deleteSongPreview(payload)
+        .subscribe(data => {
+           if (data.success === false) {
+              console.log('Error delete preview' + data.message);
+            } else {
+              console.log('Success delete preview...');
+            }   
+          });
+        let payloadData: any = {};
+        payloadData.songfilename = songfilename;
+        this.songService.deleteSongFile(payloadData)
+        .subscribe(data => {
+            if (data.success === false) {
+              console.log('Error delete songfile' + data.message);
+            } else {
+              console.log('Success delete SongFile... ');
+            }   
+          });
         this.songService.deleteSong(songid)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             this.songs.splice(idx, 1);
             this.totalrows = this.totalrows - 1;
             this.toastr.success(data.message);
