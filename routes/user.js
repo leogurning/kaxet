@@ -85,7 +85,7 @@ exports.signup = function(req, res, next){
  
          // If user is not unique, return error
          if (existingUser) {
-             return res.status(201).json({
+             return res.status(401).json({
                  success: false,
                  message: 'Username already exists.'
              });
@@ -101,7 +101,7 @@ exports.signup = function(req, res, next){
                 username: username,
                 password: password,
                 usertype: usertype,
-                status: 'active',
+                status: 'pending',
                 balance: 0
             });
         
@@ -110,7 +110,8 @@ exports.signup = function(req, res, next){
         
             res.status(201).json({
                 success: true,
-                message: 'User created successfully, please login to access your account.'
+                name: name + ' (' + username + ')',
+                message: 'Label User created successfully with status:PENDING APPROVAL'
             });
         });
     });
@@ -124,31 +125,37 @@ exports.login = function(req, res, next){
 		if (!user) {
 			res.status(201).json({ success: false, message: 'Incorrect login credentials.' });
 		}else if (user) {
-			user.comparePassword(req.body.password, function (err, isMatch) {
-                if (isMatch && !err) {
-                    var token = jwt.sign({data:user}, config.secret, {
-                        expiresIn: config.tokenexp});
+            if (user.status == 'active') {
+                user.comparePassword(req.body.password, function (err, isMatch) {
+                    if (isMatch && !err) {
+                        var token = jwt.sign({data:user}, config.secret, {
+                            expiresIn: config.tokenexp});
+                        
+                        let last_login = user.lastlogin;
+                        
+                        // login success update last login
+                        user.lastlogin = new Date();
                     
-                    let last_login = user.lastlogin;
-                    
-                    // login success update last login
-                    user.lastlogin = new Date();
-                
-                    
-                    user.save(function(err) {
-                        if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
-
-                        res.status(201).json({
-                            success: true,
-                            message: {'userid': user._id, 'username': user.username, 'name': user.name, 'usertype': user.usertype, 'balance': user.balance, 'lastlogin': last_login},
-                            token: token
+                        
+                        user.save(function(err) {
+                            if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+    
+                            res.status(201).json({
+                                success: true,
+                                message: {'userid': user._id, 'username': user.username, 'name': user.name, 'usertype': user.usertype, 'balance': user.balance, 'lastlogin': last_login},
+                                token: token
+                            });
                         });
-                    });
-                } else {
-                    res.status(201).json({ success: false, message: 'Incorrect login credentials.' });
-                }
-            });	
-		}
+                    } else {
+                        res.status(201).json({ success: false, message: 'Incorrect login credentials.' });
+                    }
+                });	
+    
+            } else {
+                //console.log('This not active condition.');
+                res.status(201).json({ success: false, message: 'Incorrect user account. User is not active yet.' });
+            }
+        }
 	});
 }
 

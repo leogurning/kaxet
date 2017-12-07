@@ -41,10 +41,12 @@ import { ListsongComponent } from './components/song/listsong/listsong.component
 import { EditsongfilesComponent } from './components/song/editsongfiles/editsongfiles.component';
 import { ViewsongComponent } from './components/song/viewsong/viewsong.component';
 import { EditsongComponent } from './components/song/editsong/editsong.component';
+import { PostregisteredComponent } from './components/user/postregistered/postregistered.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
   {path:'register', component:RegisterComponent},
+  {path:'postregistered/:nm', component:PostregisteredComponent},
   {path:'login', component:LoginComponent},
   {path:'about', component:AboutComponent},
   {path:'logout', component:LogoutComponent, canActivate:[AuthGuard]},
@@ -94,6 +96,7 @@ const appRoutes: Routes = [
     EditsongfilesComponent,
     ViewsongComponent,
     EditsongComponent,
+    PostregisteredComponent,
   ],
   imports: [
     BrowserModule,

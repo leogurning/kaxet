@@ -56,8 +56,9 @@ export class RegisterComponent implements OnInit {
         if (data.success === false) {
           this.toastr.error(data.message);
         } else {
-          this.toastr.success(data.message);
-          this.router.navigate(['login']);
+          //this.toastr.success(data.message);
+          const nm = data.name;
+          this.router.navigate([`postregistered/${nm}`]);
         }
         this.registerForm.reset();
       });
