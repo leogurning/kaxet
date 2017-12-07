@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     password = new FormControl('', [Validators.required]);
 
   ngOnInit() {
+    this.authService.logout();
   }
   
   loginForm: FormGroup = this.fb.group({

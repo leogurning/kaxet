@@ -17,7 +17,7 @@
 <!--               <li ><a routerLink="report" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Report</a></li>
               <li><a routerLink="editexpense" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Add Expense</a></li> -->
               <li><a routerLink="about" routerLinkActive="active">About</a></li>
-              <li *ngIf="authService.isLoggedIn()">
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
               <ul class="menu">
                       <li>
                           Artist
@@ -28,7 +28,7 @@
                       </li>
                   </ul>
               </li>
-              <li *ngIf="authService.isLoggedIn()">
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
                 <ul class="menu"> 
                       <li>
                         Album
@@ -39,7 +39,7 @@
                     </li>
                   </ul>
               </li>
-              <li *ngIf="authService.isLoggedIn()">
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
                 <ul class="menu">
                     <li>
                         Song

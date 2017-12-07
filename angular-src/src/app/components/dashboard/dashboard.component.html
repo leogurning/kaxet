@@ -3,7 +3,7 @@
       <h3>Dashboard</h3>
   </div>
 
-  <form class="form-horizontal">
+  <form class="form-horizontal" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
     <div class="form-group">
         <label for="labelname" class="col-sm-2 control-label">Label Name</label>
         <div class="input-group col-sm-6">
