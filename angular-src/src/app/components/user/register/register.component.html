@@ -2,13 +2,13 @@
   <div class="page-header">
       <h3>Register Label</h3>
   </div>
-
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" class="form-horizontal" novalidate autocomplete="off">
       <div class="form-group" [ngClass]="{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}">
           <label for="name" class="col-sm-2 control-label">Label Name <sup>*</sup></label>
           <div class="input-group col-sm-10">
               <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-              <input type="text" class="form-control" [formControl]="name" id="name" placeholder="Label Name">
+              <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="name" id="name" placeholder="Label Name">
           </div>
           <div class="text-danger" *ngIf="registerForm.get('name').dirty && registerForm.get('name').errors">
               <span class="col-sm-2"></span>
@@ -22,7 +22,7 @@
           <label for="email" class="col-sm-2 control-label">Email <sup>*</sup></label>
           <div class="input-group col-sm-10">
               <div class="input-group-addon">@</div>
-              <input type="text" class="form-control" [formControl]="email" id="email" placeholder="Email">
+              <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="email" id="email" placeholder="Email">
           </div>
           <div class="text-danger" *ngIf="registerForm.get('email').dirty && registerForm.get('email').errors">
               <span class="col-sm-2"></span>
@@ -35,7 +35,7 @@
         <label for="contactno" class="col-sm-2 control-label">Contact No <sup>*</sup></label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-earphone"></i></div>
-            <input type="text" class="form-control" [formControl]="contactno" id="contactno" placeholder="Contact No">
+            <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="contactno" id="contactno" placeholder="Contact No">
         </div>
         <div class="text-danger" *ngIf="registerForm.get('contactno').dirty && registerForm.get('contactno').errors">
             <span class="col-sm-2"></span>
@@ -49,7 +49,7 @@
         <label for="bankaccno" class="col-sm-2 control-label">Bank Account No <sup>*</sup></label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon-bitcoin"></i></div>
-            <input type="text" class="form-control" [formControl]="bankaccno" id="bankaccno" placeholder="Bank Account No">
+            <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankaccno" id="bankaccno" placeholder="Bank Account No">
         </div>
         <div class="text-danger" *ngIf="registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors">
             <span class="col-sm-2"></span>
@@ -63,7 +63,7 @@
         <label for="bankname" class="col-sm-2 control-label">Bank Name <sup>*</sup></label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon-bitcoin"></i></div>
-            <input type="text" class="form-control" [formControl]="bankname" id="bankname" placeholder="Bank Name">
+            <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankname" id="bankname" placeholder="Bank Name">
         </div>
         <div class="text-danger" *ngIf="registerForm.get('bankname').dirty && registerForm.get('bankname').errors">
             <span class="col-sm-2"></span>
@@ -83,7 +83,7 @@
           <label for="username" class="col-sm-2 control-label">Username <sup>*</sup></label>
           <div class="input-group col-sm-10">
               <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-user"></i></div>
-              <input type="text" class="form-control" [formControl]="username" id="username" placeholder="Username">
+              <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="username" id="username" placeholder="Username">
           </div>
           <div class="text-danger" *ngIf="registerForm.get('username').dirty && registerForm.get('username').errors">
               <span class="col-sm-2"></span>
@@ -105,7 +105,7 @@
               <label for="password" class="col-sm-2 control-label">Password <sup>*</sup></label>
               <div class="input-group col-sm-10">
                   <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-asterisk"></i></div>
-                  <input type="password" class="form-control" [formControl]="password" id="password" placeholder="Pasword">
+                  <input [disabled]="this.loading == true" type="password" class="form-control" [formControl]="password" id="password" placeholder="Pasword">
               </div>
               <div class="text-danger"  *ngIf="registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors">
                   <span class="col-sm-2"></span>
@@ -122,7 +122,7 @@
               <label for="retypepass" class="col-sm-2 control-label">Retype Password <sup>*</sup></label>
               <div class="input-group col-sm-10">
                   <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-asterisk"></i></div>
-                  <input type="password" class="form-control" [formControl]="retypepass" id="retypepass" placeholder="Retype Password">
+                  <input [disabled]="this.loading == true" type="password" class="form-control" [formControl]="retypepass" id="retypepass" placeholder="Retype Password">
               </div>
               <div class="text-danger" *ngIf="(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)">
                   <span class="col-sm-2"></span>
@@ -138,8 +138,8 @@
       <div class="form-group">
           <label class="col-sm-2 control-label"></label>
           <div class="col-sm-5">
-              <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
-              <button type="reset" class="btn btn-default">Reset</button>
+              <button type="submit" [disabled]="registerForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
+              <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
           </div>
           <div class="col-sm-5" style="text-align:right">
               <sup>*</sup> required

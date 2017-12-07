@@ -11,6 +11,7 @@ import { UserService } from '../../../services/user.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -50,13 +51,15 @@ export class RegisterComponent implements OnInit {
       const thePass = this.registerForm.value.passwordGroup.password;
       theForm.password = thePass;
       delete theForm.passwordGroup;
-
+      this.loading = true;
       this.userService.register(theForm)
       .subscribe(data => {
         if (data.success === false) {
+          this.loading = false;
           this.toastr.error(data.message);
         } else {
           //this.toastr.success(data.message);
+          this.loading = false;
           const nm = data.name;
           this.router.navigate([`postregistered/${nm}`]);
         }
