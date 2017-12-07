@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   profileForm: FormGroup
   userObj: any;
   user: IUser;
+  loading = false;
 
   constructor(private fb: FormBuilder, 
     private authService: AuthService,
@@ -65,15 +66,18 @@ export class ProfileComponent implements OnInit {
 
   updateUser(formdata:any): void {
     if (this.profileForm.dirty && this.profileForm.valid) {
+        this.loading = true;
         this.userService.updateUser(this.userObj.userid, this.profileForm.value)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             this.toastr.success(data.message);
             let theUser:any = JSON.parse(localStorage.getItem('currentUser'));
             theUser.user.name = this.profileForm.value.name;
@@ -81,5 +85,9 @@ export class ProfileComponent implements OnInit {
           }
         });
       }
+    }
+
+    onBack(): void {
+      this.router.navigate(['/report']);
     }
 }

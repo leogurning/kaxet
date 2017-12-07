@@ -14,6 +14,7 @@ export class PasswordComponent implements OnInit {
 
   passwordForm: FormGroup;
   userObj: any;
+  loading = false;
 
   constructor(private fb: FormBuilder, 
     private authService: AuthService,
@@ -42,23 +43,27 @@ export class PasswordComponent implements OnInit {
       const thePass = this.passwordForm.value.passwordGroup.password;
       theForm.password = thePass;
       delete theForm.passwordGroup;
-
+      this.loading = true;
       this.userService.updatePassword(this.userObj.userid,theForm)
         .subscribe(data => {
           if (data.success === false) {
+            this.loading = false;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
             }
             this.toastr.error(data.message);
           } else {
+            this.loading = false;
             this.toastr.success(data.message);
           }
           this.passwordForm.reset();
       });
     }
   }
-
+  onBack(): void {
+    this.router.navigate(['/report']);
+  }
 }
 
 function comparePassword(c: AbstractControl): {[key: string]: boolean} | null {

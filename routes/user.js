@@ -3,68 +3,6 @@ var User = require('../models/user');
 var jwt = require('jsonwebtoken'); 
 var config = require('../config');
 
-/* 
-exports.flupload = function(req, res, next){
-    var stats;
-    const d = new Date();
-    const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
-                d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
-                ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
-
-    console.log(req.files);
-    if(req.files.usrimage){
-      var file = req.files.usrimage,
-        oriname = file.name,
-        name = ts+oriname.substr(oriname.length - 4),
-        type = file.mimetype;
-      //var uploadpath = __dirname + '/uploads/' + name;
-      var uploadfile = uploadpath + name;
-      var imgpath = 'assets/images/'+ name;
-      file.mv(uploadfile,function(err){
-        if(err){
-          console.log("File Upload Failed",name,err);
-          return res.status(401).json({ success: false, 
-            message:'File Upload Failed.'
-          });
-        }
-        else {
-          console.log("File Uploaded",name);
-          res.status(201).json({
-            success: true,
-            message: 'User image preview is uploaded.',
-            filedata : {imgpath: imgpath,imgoriname: name}});
-        }
-      });
-    }
-    else {
-      return res.status(402).json({ success: false, 
-          message:'No File uploaded.',
-          filedata : {imgpath: "",imgoriname: ""}
-        });
-      //res.end();
-    };
-}
-
-exports.fldelete = function(req, res, next) {
-    name = req.body.imgoriname;
-    var deletepathfile = uploadpath + name;
-    fs.unlink(deletepathfile, function(err){
-        if(err){
-            console.log("Delete File Failed",name,err);
-            res.status(401).json({ success: false, 
-              message:'File Upload Failed.'
-            });
-        }
-        else {
-        console.log("Delete File Success",name);
-        res.status(201).json({
-            success: true,
-            message: 'Delete file successful.'});
-        }
-    });
-}
-*/
-
 exports.signup = function(req, res, next){
     // Check for registration errors
      const name = req.body.name;
@@ -116,6 +54,53 @@ exports.signup = function(req, res, next){
         });
     });
  }
+
+ exports.signupListener = function(req, res, next){
+    // Check for registration errors
+     const name = req.body.name;
+     const email = req.body.email;
+     const username = req.body.username;
+     const password = req.body.password;
+
+     if (!name || !email || !username || !password) {
+         return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
+     }
+ 
+     User.findOne({ username: username }, function(err, existingUser) {
+         if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+ 
+         // If user is not unique, return error
+         if (existingUser) {
+             return res.status(401).json({
+                 success: false,
+                 message: 'Username already exists.'
+             });
+         }
+        // If no error, create account
+
+        let oUser = new User({
+                name: name,
+                email: email,
+                contactno: '-',
+                bankaccno: '-',
+                bankname: '-',
+                username: username,
+                password: password,
+                usertype: 'listener',
+                status: 'active',
+                balance: 0
+            });
+        
+        oUser.save(function(err, oUser) {
+            if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+        
+            res.status(201).json({
+                success: true,
+                message: 'User created successfully. You can now login as Listener.'
+            });
+        });
+    });
+}
 
 exports.login = function(req, res, next){
     // find the user
@@ -221,34 +206,6 @@ exports.updateUser = function(req, res, next){
 	});
    }
 }
-
-/*
-exports.updatePhoto = function(req, res, next){
-    const userid = req.params.id;
-    const imgpath = req.body.imgpath;
-    const imgoriname = req.body.imgoriname;
-
-    if (!imgpath || !imgoriname) {
-        return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
-    } else {
-	User.findById(userid).exec(function(err, user){
-		if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
-			
-		if(user){
-            user.imgpath = imgpath;
-            user.imgoriname = imgoriname;
-		}
-		user.save(function(err){
-			if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
-			res.status(201).json({
-				success: true,
-				message: 'Photo details updated successfully'
-			});
-		});
-	});
-   }
-}
-*/
 
 exports.updatePassword = function(req, res, next){
     const userid = req.params.id;

@@ -52,7 +52,8 @@ app.get('/', function(req, res) {
 	res.send('Kaxet API is running at http://legu.herokuapp:' + port + '/api');
 });
 app.post('/register', user.signup);
-  
+app.post('/registerListener', user.signupListener);
+
 // express router
 var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
