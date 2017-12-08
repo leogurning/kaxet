@@ -23,7 +23,7 @@ exports.signup = function(req, res, next){
  
          // If user is not unique, return error
          if (existingUser) {
-             return res.status(401).json({
+             return res.status(201).json({
                  success: false,
                  message: 'Username already exists.'
              });
