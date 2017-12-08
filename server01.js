@@ -110,11 +110,11 @@ apiRoutes.delete('/song/:id', song.delsong); //API removes the song details of g
 apiRoutes.post('/song/aggreport/:labelid', song.songaggregate); //API returns song report based on user input
 apiRoutes.post('/song/report/:labelid', song.songreport);
 
-apiRoutes.post('/artist/reportln', artistLn.artistreportLn); //API returns artist report based on user input 
-apiRoutes.post('/album/reportln', albumLn.albumreportLn); //API returns album report based on user input 
-apiRoutes.post('/album/aggreportln', albumLn.albumaggregateLn); //API returns album report based on user input
-apiRoutes.post('/song/aggreportln', songLn.songaggregateLn); //API returns song report based on user input
-apiRoutes.post('/song/reportln', songLn.songreportLn);
+apiRoutes.post('/artistln/reportln', artistLn.artistreportLn); //API returns artist report based on user input 
+apiRoutes.post('/albumln/reportln', albumLn.albumreportLn); //API returns album report based on user input 
+apiRoutes.post('/albumln/aggreportln', albumLn.albumaggregateLn); //API returns album report based on user input
+apiRoutes.post('/songln/aggreportln', songLn.songaggregateLn); //API returns song report based on user input
+apiRoutes.post('/songln/reportln', songLn.songreportLn);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));

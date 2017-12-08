@@ -55,7 +55,7 @@ exports.signup = function(req, res, next){
     });
  }
 
- exports.signupListener = function(req, res, next){
+exports.signupListener = function(req, res, next){
     // Check for registration errors
      const name = req.body.name;
      const email = req.body.email;
