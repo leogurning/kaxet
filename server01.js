@@ -57,6 +57,7 @@ app.get('/', function(req, res) {
 });
 app.post('/register', user.signup);
 app.post('/registerListener', user.signupListener);
+app.post('/checkfblistener/:id', user.checkFbListener);
 
 // express router
 var apiRoutes = express.Router();
