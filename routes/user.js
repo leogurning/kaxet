@@ -63,15 +63,15 @@ exports.signup = function(req, res, next){
      const password = req.body.password;
 
      if (!name || !email || !username || !password) {
-         return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
+         return res.status(201).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
      User.findOne({ username: username }, function(err, existingUser) {
-         if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+         if(err){ return res.status(201).json({ success: false, message:'Error processing request '+ err}); }
  
          // If user is not unique, return error
          if (existingUser) {
-             return res.status(401).json({
+             return res.status(201).json({
                  success: false,
                  message: 'Username already exists.'
              });
@@ -92,9 +92,9 @@ exports.signup = function(req, res, next){
             });
         
         oUser.save(function(err, oUser) {
-            if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+            if(err){ return res.status(201).json({ success: false, message:'Error processing request '+ err}); }
         
-            res.status(201).json({
+            res.status(200).json({
                 success: true,
                 message: 'User created successfully. You can now login as Listener.'
             });
