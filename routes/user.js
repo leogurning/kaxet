@@ -55,53 +55,6 @@ exports.signup = function(req, res, next){
     });
  }
 
-exports.signupListener = function(req, res, next){
-    // Check for registration errors
-     const name = req.body.name;
-     const email = req.body.email;
-     const username = req.body.username;
-     const password = req.body.password;
-
-     if (!name || !email || !username || !password) {
-         return res.status(201).json({ success: false, message: 'Posted data is not correct or incomplete.'});
-     }
- 
-     User.findOne({ username: username }, function(err, existingUser) {
-         if(err){ return res.status(201).json({ success: false, message:'Error processing request '+ err}); }
- 
-         // If user is not unique, return error
-         if (existingUser) {
-             return res.status(201).json({
-                 success: false,
-                 message: 'Username already exists.'
-             });
-         }
-        // If no error, create account
-
-        let oUser = new User({
-                name: name,
-                email: email,
-                contactno: '-',
-                bankaccno: '-',
-                bankname: '-',
-                username: username,
-                password: password,
-                usertype: 'listener',
-                status: 'active',
-                balance: 0
-            });
-        
-        oUser.save(function(err, oUser) {
-            if(err){ return res.status(201).json({ success: false, message:'Error processing request '+ err}); }
-        
-            res.status(200).json({
-                success: true,
-                message: 'User created successfully. You can now login as Listener.'
-            });
-        });
-    });
-}
-
 exports.login = function(req, res, next){
     // find the user
     User.findOne({ username: req.body.username }, function(err, user) {
@@ -239,50 +192,4 @@ exports.updatePassword = function(req, res, next){
             }
         });
     }
-}
-
-exports.checkFbListener = function(req, res, next){
-    // Check for registration errors
-    const appid = req.params.id;
-    const name = req.query.name;
-    const email = req.query.email;
-
-     if (!appid || !name || !email) {
-         return res.status(201).json({ success: false, message: 'Posted data is not correct or incomplete.'});
-     }
- 
-     User.findOne({ username: appid }, function(err, existingUser) {
-         if(err){ return res.status(201).json({ success: false, message:'Error processing request '+ err}); }
- 
-         // If user is not unique, return error
-         if (existingUser) {
-             return res.status(201).json({
-                 success: true,
-                 message: 'Username already exists.'
-             });
-         }
-        // If no error, create account
-
-        let oUser = new User({
-                name: name,
-                email: email,
-                contactno: '-',
-                bankaccno: '-',
-                bankname: '-',
-                username: appid,
-                password: appid,
-                usertype: 'listener',
-                status: 'active',
-                balance: 0
-            });
-        
-        oUser.save(function(err, oUser) {
-            if(err){ return res.status(201).json({ success: false, message:'Error processing request '+ err}); }
-        
-            res.status(200).json({
-                success: true,
-                message: 'User created successfully. You can now login as Listener.'
-            });
-        });
-    });
 }

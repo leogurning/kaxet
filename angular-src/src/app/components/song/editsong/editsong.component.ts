@@ -21,7 +21,6 @@ export class EditsongComponent implements OnInit {
   userObj: any;
   sts: any = ['active', 'inactive'];
   genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
-  ynlist: any = ['Y','N'];
 
   songid: String;
   artistlist: IArtistList[];
@@ -46,9 +45,9 @@ export class EditsongComponent implements OnInit {
   songlyric = new FormControl('', [Validators.required]);  
   songgenre = new FormControl('', [Validators.required]);
   songprice = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
-  songpublish = new FormControl('', [Validators.required]);
-  songbuy = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
   status = new FormControl('', [Validators.required]);
+  songpublish : String;
+  songbuy : Number;
 
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
@@ -115,6 +114,8 @@ export class EditsongComponent implements OnInit {
   }
 
   populateForm(data): void {
+    this.songpublish = data.songpublish;
+    this.songbuy = data.songbuy;    
     this.songForm.patchValue({
       artistid: data.artistid,
       albumid: data.albumid,

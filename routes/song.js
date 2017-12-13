@@ -332,6 +332,7 @@ exports.updatesongpreview = function(req, res, next){
             } else {
               song.songprvwpath = songprvwpath;
               song.songprvwname = songprvwname;
+              song.songpublish = 'N';
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
                 res.status(201).json({
@@ -363,6 +364,7 @@ exports.updatesongfile = function(req, res, next){
             } else {
               song.songfilepath = songfilepath;
               song.songfilename = songfilename;
+              song.songpublish = 'N';
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
                 res.status(201).json({

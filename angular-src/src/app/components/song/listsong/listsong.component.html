@@ -15,7 +15,8 @@
                 <div class="input-group col-sm-10">
                     <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                     <select class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
-                        <option ng-selected="true" value="">Select the artist</option>
+                        <!-- <option ng-selected="true" value="">Select the artist</option> -->
+                        <option value="">Select the artist</option>
                         <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
                     </select>
                   </div>
@@ -25,7 +26,7 @@
                 <div class="input-group col-sm-10">
                     <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                     <select class="form-control" [formControl]="albumid">
-                        <option ng-selected="true" value="">Select the album</option>
+                        <option value="">Select the album</option>
                         <option *ngFor="let album of albumlist" [ngValue]="album._id">{{album.albumname}}</option>
                     </select>
                   </div>
@@ -54,8 +55,7 @@
                   <div class="input-group col-sm-10">
                       <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                       <select class="form-control" [formControl]="songgenre">
-                        <option ng-selected="true" value="">Select the genre</option>  
-                        <option *ngFor="let g of genre" >{{g}}</option>
+                        <option *ngFor="let g of genre" [ngValue]="g.id">{{g.desc}}</option>
                       </select>
                   </div>
               </div>
@@ -66,8 +66,7 @@
                   <div class="input-group col-sm-10">
                       <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                       <select class="form-control" [formControl]="songpublish">
-                        <option ng-selected="true" value="">Select the options</option>  
-                        <option *ngFor="let a of ynlist" >{{a}}</option>
+                        <option *ngFor="let a of ynlist" [ngValue]="a.id">{{a.desc}}</option>
                       </select>
                   </div>
               </div>  
@@ -76,8 +75,7 @@
                   <div class="input-group col-sm-10">
                       <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                       <select class="form-control" [formControl]="songbuy">
-                        <option ng-selected="true" value="">Select the options</option>  
-                        <option *ngFor="let a of ynlist" >{{a}}</option>
+                        <option *ngFor="let a of ynlist" [ngValue]="a.id">{{a.desc}}</option>
                       </select>
                   </div>
               </div>  
@@ -86,8 +84,7 @@
                   <div class="input-group col-sm-10">
                       <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                       <select class="form-control" [formControl]="status">
-                        <option ng-selected="true" value="">Select the status</option>  
-                        <option *ngFor="let a of sts" >{{a}}</option>
+                        <option *ngFor="let a of sts" [ngValue]="a.id">{{a.desc}}</option>
                       </select>
                   </div>
               </div><br>

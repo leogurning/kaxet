@@ -24,7 +24,10 @@ export class ListartistComponent implements OnInit {
   qstatus: String;
   qpage: number;
   qsort: String;
-  sts: any = ['active', 'inactive'];
+  sts: any = [  {id: '',desc: 'Select option'},
+                {id: 'active', desc: 'active'}, 
+                {id: 'inactive', desc: 'inactive'} 
+              ];
   loading = false;
 
   constructor(
@@ -55,21 +58,12 @@ export class ListartistComponent implements OnInit {
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
-//      if(this.qstatus !== '') {
-        let payload: any = {};
-        payload.status = this.qstatus;
-//        if( (this.qartistname !== '')){
-          payload.artistname = this.qartistname;
-//        }
-        payload.page = this.qpage;
-        payload.sortby = this.qsort;
-        this.fetchReport(this.userObj.userid, payload);
-
-        this.reportForm.patchValue({
-          artistname: this.qartistname,
-          status: this.qstatus
-        });
-//      }
+      let payload: any = {};
+      payload.status = this.qstatus;
+      payload.artistname = this.qartistname;
+      payload.page = this.qpage;
+      payload.sortby = this.qsort;
+      this.fetchReport(this.userObj.userid, payload);
     })
   }
 
@@ -99,7 +93,10 @@ export class ListartistComponent implements OnInit {
         this.qartistname = formval.artistname;
         this.qstatus = formval.status;
         this.reportTitle = 'Artists Result';
-        
+        this.reportForm.patchValue({
+          artistname: this.qartistname,
+          status: this.qstatus
+        });
         /* if (formval.status === 'active') {
           this.reportTitle = 'Selected active Artists'
         } else {

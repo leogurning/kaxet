@@ -32,8 +32,25 @@ export class ListalbumComponent implements OnInit {
   qstatus: String;
   qpage: number;
   qsort: String;
-  genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
-  sts: any = ['active', 'inactive'];
+
+  genre: any = [ {id: '',desc: 'Select option'}, 
+                  {id:'Alternative', desc:'Alternative'}, {id:'Blues', desc:'Blues'}, 
+                  {id:'Children', desc:'Children'}, {id:'Classical', desc:'Classical'},
+                  {id:'Comedy', desc:'Comedy'}, {id:'Country', desc:'Country'}, 
+                  {id:'Dance', desc:'Dance'}, {id:'Easy Listening', desc:'Easy Listening'}, 
+                  {id:'Electronic', desc:'Electronic'}, {id:'Hip Hop', desc:'Hip Hop'},
+                  {id:'Christian Gospel', desc:'Christian Gospel'}, {id:'Instrumental', desc:'Instrumental'}, 
+                  {id:'Jazz', desc:'Jazz'}, {id:'Latin', desc:'Latin'}, 
+                  {id:'New Age', desc:'New Age'},{id:'Pop', desc:'Pop'},
+                  {id:'RnB', desc:'RnB'},{id:'Reggae', desc:'Reggae'}, 
+                  {id:'Rock', desc:'Rock'}, {id:'Soundtrack', desc:'Soundtrack'},
+                  {id:'Vocal', desc:'Vocal'},{id:'Others', desc:'Others'}
+                ];
+
+  sts: any = [ {id: '',desc: 'Select option'},
+                {id: 'active', desc: 'active'}, 
+                {id: 'inactive', desc: 'inactive'} 
+              ];
   //artistname: String;
   loading = false;
 
@@ -83,14 +100,6 @@ export class ListalbumComponent implements OnInit {
       payload.page = this.qpage;
       payload.sortby = this.qsort;
       this.fetchReport(this.userObj.userid, payload);
-
-      this.reportForm.patchValue({
-        artistid: this.qartistid,
-        albumname: this.qalbumname,
-        albumyear: this.qalbumyear,
-        albumgenre: this.qalbumgenre,
-        status: this.qstatus
-      });
     })
   }
 
@@ -140,6 +149,14 @@ export class ListalbumComponent implements OnInit {
         this.qalbumgenre = formval.albumgenre;
         this.qstatus = formval.status;
         this.reportTitle = 'Albums Result';
+        
+        this.reportForm.patchValue({
+          artistid: this.qartistid,
+          albumname: this.qalbumname,
+          albumyear: this.qalbumyear,
+          albumgenre: this.qalbumgenre,
+          status: this.qstatus
+        });
       }
     });
   }

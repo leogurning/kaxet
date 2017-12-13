@@ -14,10 +14,6 @@ const artist = require('./routes/artist.js');
 const album = require('./routes/album.js');
 const song = require('./routes/song.js');
 
-const artistLn = require('./routes/artistLn.js');
-const albumLn = require('./routes/albumLn.js');
-const songLn = require('./routes/songLn.js');
-
 const port = process.env.PORT || config.serverport;
 
 mongoose.connect(config.database, function(err){
@@ -56,8 +52,6 @@ app.get('/', function(req, res) {
 	res.send('Kaxet API is running at http://legu.herokuapp:' + port + '/api');
 });
 app.post('/register', user.signup);
-app.post('/registerListener', user.signupListener);
-app.post('/checkfblistener/:id', user.checkFbListener);
 
 // express router
 var apiRoutes = express.Router();
@@ -110,12 +104,6 @@ apiRoutes.get('/songaggregate/:id', song.getsongaggregate); // API returns song 
 apiRoutes.delete('/song/:id', song.delsong); //API removes the song details of given song id
 apiRoutes.post('/song/aggreport/:labelid', song.songaggregate); //API returns song report based on user input
 apiRoutes.post('/song/report/:labelid', song.songreport);
-
-apiRoutes.post('/artistln/reportln', artistLn.artistreportLn); //API returns artist report based on user input 
-apiRoutes.post('/albumln/reportln', albumLn.albumreportLn); //API returns album report based on user input 
-apiRoutes.post('/albumln/aggreportln', albumLn.albumaggregateLn); //API returns album report based on user input
-apiRoutes.post('/songln/aggreportln', songLn.songaggregateLn); //API returns song report based on user input
-apiRoutes.post('/songln/reportln', songLn.songreportLn);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));

@@ -35,9 +35,28 @@ export class ListsongComponent implements OnInit {
   qstatus: String;
   qpage: number;
   qsort: String;
-  genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
-  sts: any = ['active', 'inactive'];
-  ynlist: any = ['Y', 'N'];
+  genre: any = [ {id: '',desc: 'Select option'}, 
+                {id:'Alternative', desc:'Alternative'}, {id:'Blues', desc:'Blues'}, 
+                {id:'Children', desc:'Children'}, {id:'Classical', desc:'Classical'},
+                {id:'Comedy', desc:'Comedy'}, {id:'Country', desc:'Country'}, 
+                {id:'Dance', desc:'Dance'}, {id:'Easy Listening', desc:'Easy Listening'}, 
+                {id:'Electronic', desc:'Electronic'}, {id:'Hip Hop', desc:'Hip Hop'},
+                {id:'Christian Gospel', desc:'Christian Gospel'}, {id:'Instrumental', desc:'Instrumental'}, 
+                {id:'Jazz', desc:'Jazz'}, {id:'Latin', desc:'Latin'}, 
+                {id:'New Age', desc:'New Age'},{id:'Pop', desc:'Pop'},
+                {id:'RnB', desc:'RnB'},{id:'Reggae', desc:'Reggae'}, 
+                {id:'Rock', desc:'Rock'}, {id:'Soundtrack', desc:'Soundtrack'},
+                {id:'Vocal', desc:'Vocal'},{id:'Others', desc:'Others'}
+              ];
+  sts: any = [ {id: '',desc: 'Select option'},
+               {id: 'active', desc: 'active'}, 
+               {id: 'inactive', desc: 'inactive'} 
+              ];
+  ynlist: any = [ {id: '',desc: 'Select option'},
+                  {id: 'Y',desc: 'Yes'}, 
+                  {id: 'N',desc: 'No'}
+                ];
+
   currsongpublish: String;
   currsongbuy: Number;
   loading = false;
@@ -157,6 +176,7 @@ export class ListsongComponent implements OnInit {
   getReport(formdata:any): void {
     if (this.reportForm.valid) {
         this.fetchReport(this.userObj.userid, this.reportForm.value);
+
     }
   }
 
@@ -186,6 +206,22 @@ export class ListsongComponent implements OnInit {
         this.qsongbuy = formval.songbuy;
         this.qstatus = formval.status;
         this.reportTitle = 'Songs Result';
+        if (this.qartistid) {
+          this.getAlbumListbyArtist(this.userObj.userid, this.qartistid);
+        } else {
+          this.getAlbumList(this.userObj.userid);
+        }
+        
+        this.reportForm.patchValue({
+          songname: this.qsongname,
+          artistid: this.qartistid,
+          albumid: this.qalbumid,
+          albumyear: this.qalbumyear,
+          songgenre: this.qsonggenre,
+          songpublish: this.qsongpublish,
+          songbuy: this.qsongbuy,
+          status: this.qstatus
+        });
       }
     });
   }
@@ -250,8 +286,8 @@ export class ListsongComponent implements OnInit {
   }
 
   editSongFiles(songid, songpublish, songbuy): void {
-    if (songbuy > 0) {
-      this.toastr.warning("This song has been purchased. The file can not be edited");
+    if (songpublish == 'Y') {
+      this.toastr.warning("This song files has been published. The file can not be edited");
     } else {
       //this.toastr.warning("This song id: " + songid);      
       this.router.navigate([`editsongfiles/${songid}`],
@@ -294,7 +330,7 @@ export class ListsongComponent implements OnInit {
   editSong(songid, songpublish, songbuy): void {
 
     if (songbuy > 0) {
-      this.toastr.warning("This song has been purchased. The file can not be edited");
+      this.toastr.warning("This song has been purchased. Data can not be edited");
     } else {
       this.router.navigate([`editsong/${songid}`],
       {
@@ -317,7 +353,7 @@ export class ListsongComponent implements OnInit {
   confirmDel(idx: number, songid: string, songpublish, songbuy, songname, songprvwname, songfilename) {
     
     if (songbuy > 0) {
-      this.toastr.warning("This song has been purchased. The file can not be edited");
+      this.toastr.warning("This song has been purchased. Data can not be deleted");
     } else {
       if(confirm('Do you really want to delete this song: ' + songname + ' record?')){
         this.loading = true;

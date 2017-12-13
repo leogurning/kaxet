@@ -91,22 +91,14 @@
             <label for="songpublish" class="col-sm-2 control-label">Song Published?</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="songpublish">
-                    <option *ngFor="let g of ynlist" >{{g}}</option>
-                </select>
-            </div>
-            <div class="text-danger" *ngIf="songForm.get('songpublish').dirty && songForm.get('songpublish').errors">
-                <span class="col-sm-2"></span>
-                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="songForm.get('songpublish').errors.required">
-                    Please select the options
-                </span>
+                <div class="form-ele">{{ this.songpublish }}</div>
             </div>
         </div>
         <div class="form-group">
             <label for="songbuy" class="col-sm-2 control-label">Total Purchased</label>
             <div class="input-group col-sm-10">
               <div class="input-group-addon"><i class="glyphicon glyphicon-download"></i></div>
-                <div class="form-ele">{{ song?.songbuy }}</div>
+              <div class="form-ele">{{ this.songbuy }}</div>
             </div>
         </div>
 
