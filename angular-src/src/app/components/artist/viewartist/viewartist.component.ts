@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArtistService } from '../../../services/artist.service';
 import { AlbumService } from '../../../services/album.service';
@@ -7,6 +8,8 @@ import { ToastrService } from '../../../common/toastr.service';
 import { Subscription } from 'rxjs/Subscription';
 import { IArtist } from '../../../interface/artist';
 import { IAlbum } from '../../../interface/album';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-viewartist',
@@ -29,22 +32,29 @@ export class ViewartistComponent implements OnInit {
   qpage: number;
   qsort: String;
   reportTitle: String;
+  sts: IMsconfigGroupList[];
+  artistForm: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
     private artistService: ArtistService,
     private albumService: AlbumService,
+    private msconfigService: MsconfigService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
+  status = new FormControl('', [Validators.required]);
+  
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
     this.sub = this.route.params.subscribe(
       params => {
         let artistid = params['id'];
         this.artistid = artistid;
+        this.getMsconfigGroupList('CSTATUS');
         this.getArtist(artistid);
       });
       this.route.queryParams.forEach((params: Params) => {
@@ -59,10 +69,25 @@ export class ViewartistComponent implements OnInit {
         payload.sortby = this.qsort;
         this.fetchReport(this.userObj.userid, payload);
       })
+      this.artistForm = this.fb.group({
+        status: this.status
+      });
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.sts = data.data;
+        } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
+  }
+
   getArtist(id){
     this.artistService.getArtist(id).subscribe(data => {
       if (data.success === false) {
@@ -74,6 +99,7 @@ export class ViewartistComponent implements OnInit {
       } else {
         if (data.data[0]) {
           this.artist = data.data[0];
+          this.populateForm(data.data[0]);
         } else {
           this.toastr.error('Artist id is incorrect in the URL');
         }
@@ -81,9 +107,14 @@ export class ViewartistComponent implements OnInit {
       }
     });
   }
+  populateForm(data): void {
+    this.artistForm.patchValue({
+      status: data.status
+    });
+  }
 
   fetchReport(userid, formval) {
-    this.albumService.getAlbums(userid, formval)
+    this.albumService.getArtistAlbums(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
         if (data.errcode){
@@ -92,8 +123,8 @@ export class ViewartistComponent implements OnInit {
         }
         this.toastr.error(data.message);
       } else {
-        this.albums = data.data.docs;
-        this.totalrows = +data.data.total;
+        this.albums = data.data;
+        this.totalrows = +data.totalcount;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);
         
         this.qartistid = formval.artistid;

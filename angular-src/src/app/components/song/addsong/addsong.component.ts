@@ -9,7 +9,8 @@ import { SongService } from '../../../services/song.service';
 import { AuthService } from '../../../services/auth.service';
 import { IArtistList } from '../../../interface/artist';
 import { IAlbumList } from '../../../interface/album';
-
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-addsong',
@@ -19,7 +20,7 @@ import { IAlbumList } from '../../../interface/album';
 export class AddsongComponent implements OnInit {
   addSongForm: FormGroup;
   userObj: any;
-  genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
+  genre: IMsconfigGroupList[];
   PrvwfilesToUpload: Array<File> = [];
   SongfilesToUpload: Array<File> = [];
   songid: String;
@@ -33,6 +34,7 @@ export class AddsongComponent implements OnInit {
     private artistService: ArtistService,
     private albumService: AlbumService,
     private songService: SongService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -52,6 +54,7 @@ export class AddsongComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.getMsconfigGroupList('GENRE');
     this.getArtistList(this.userObj.userid);
     this.getAlbumList(this.userObj.userid);
     this.songid = '';
@@ -68,6 +71,18 @@ export class AddsongComponent implements OnInit {
       songprvwname: this.songprvwname,
       songfilepath: this.songfilepath,
       songfilename: this.songfilename,
+    });
+  }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.genre = data.data;
+        } else {
+          this.genre = [{code:'', value:'Error ms config list'}];
+        }
+      }
     });
   }
 
@@ -137,7 +152,7 @@ export class AddsongComponent implements OnInit {
                   } else {
                     theForm.songfilepath = data.filedata.songfilepath;
                     theForm.songfilename = data.filedata.songfilename;  
-                    theForm.status = 'active';
+                    theForm.status = 'STSACT';
                     if (this.songid !== '') {
                       theForm.songid = this.songid;
                     }

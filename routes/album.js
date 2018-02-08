@@ -11,6 +11,31 @@ cloudinary.config({
     api_secret: config.api_secret
 }); 
 
+// Imports the Google Cloud client library
+const Storage = require('@google-cloud/storage');
+const gcsuploadpath = "images/albums/";
+const storage = new Storage({
+    projectId: config.GCLOUD_PROJECT
+});
+const bucket = storage.bucket(config.CLOUD_BUCKET);
+var getPublicUrl = function(filename) {
+    return `https://storage.googleapis.com/${config.CLOUD_BUCKET}/${gcsuploadpath}${filename}`;
+}
+var merge = function() {
+    var obj = {},
+        i = 0,
+        il = arguments.length,
+        key;
+    for (; i < il; i++) {
+        for (key in arguments[i]) {
+            if (arguments[i].hasOwnProperty(key)) {
+                obj[key] = arguments[i][key];
+            }
+        }
+    }
+    return obj;
+};
+
 exports.testalbum = function(req, res, next){
     const labelid = req.params.id;
     const artistid = req.query.artistid;
@@ -27,6 +52,62 @@ exports.testalbum = function(req, res, next){
 }
 
 exports.albumphotoupload = function(req, res, next){
+    var stats;
+    const d = new Date();
+    const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
+                d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
+                ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
+
+    console.log('Ini req files ' + req.files);
+    if(req.files.albumimage){
+        var file = req.files.albumimage;
+        const gcsname = ts+'-'+file.name;
+        const gcsfile = bucket.file(gcsuploadpath+gcsname);
+        const stream = gcsfile.createWriteStream({
+            metadata: {
+              contentType: file.mimetype
+            }
+          });
+
+        stream.on('error', (err) => {
+            file.cloudStorageError = err;
+            console.log("Album Photo Upload Failed", err);
+            return res.status(401).json({ success: false, 
+                message:'Album Photo Upload Failed on streaming upload.'
+            });      
+          });
+
+        stream.on('finish', () => {
+            file.cloudStorageObject = gcsname;
+            gcsfile.makePublic().then(() => {
+                file.cloudStoragePublicUrl = getPublicUrl(gcsname);
+                console.log("Album Photo Uploaded",gcsname);
+                res.status(201).json({
+                  success: true,
+                  message: 'Album Photo is successfully uploaded.',
+                  filedata : {
+                        albumphotopath: file.cloudStoragePublicUrl,
+                        albumphotoname: file.cloudStorageObject
+                    }
+                });
+                next();
+            })
+            .catch(err => {
+                return res.status(401).json({ success: false, 
+                    message:'Album Photo Upload Failed on making public URL.'
+                });      
+            });
+        });       
+        stream.end(file.data);
+    } else {
+      return res.status(402).json({ success: false, 
+          message:'No Album Photo uploaded.',
+          filedata : {albumphotopath: "",albumphotoname: ""}
+        });
+    };
+}
+
+/* exports.albumphotoupload = function(req, res, next){
     var stats;
     const d = new Date();
     const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
@@ -62,9 +143,35 @@ exports.albumphotoupload = function(req, res, next){
           filedata : {albumphotopath: "",albumphotoname: ""}
         });
     };
-}
+} */
 
 exports.albumphotodelete = function(req, res, next) {
+    const albumphotoname = req.body.albumphotoname;
+    if(albumphotoname){
+        const gcsfile = bucket.file(gcsuploadpath+albumphotoname);
+        gcsfile.delete()
+        .then(() => {
+            console.log("Delete Album Photo Success",albumphotoname);
+            res.status(201).json({
+                success: true,
+                message: 'Delete Album Photo successful.'});    
+        })
+        .catch(err => {
+            console.log("Delete Album Photo Failed",albumphotoname,err);
+            res.status(401).json({ success: false, 
+              message:'Delete Album Photo Failed.'
+            });
+        });
+    }
+    else {
+        console.log("No File selected !");
+        res.status(402).json({
+            success: false,
+            message: 'No File selected !'});    
+    };
+}
+
+/* exports.albumphotodelete = function(req, res, next) {
     const albumphotoname = req.body.albumphotoname;
     if(albumphotoname){
         cloudinary.v2.uploader.destroy(albumphotoname,
@@ -90,7 +197,7 @@ exports.albumphotodelete = function(req, res, next) {
             success: false,
             message: 'No File selected !'});    
     };
-}
+} */
 
 exports.savealbum = function(req, res, next){
     const labelid = req.params.id;
@@ -121,6 +228,7 @@ exports.savealbum = function(req, res, next){
                     album.albumprice = albumprice;
                     album.status = status;
                     album.objartistid = artistid;
+                    album.modifydt = new Date();
                 }
                 album.save(function(err) {
                     if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
@@ -147,7 +255,10 @@ exports.savealbum = function(req, res, next){
                     albumphotopath: albumphotopath,
                     albumphotoname: albumphotoname,
                     status: status,
-                    objartistid: artistid
+                    objartistid: artistid,
+                    objlabelid: labelid,
+                    createddt: new Date(),
+                    modifydt: new Date()
                 });
         
                 oAlbum.save(function(err) {
@@ -177,6 +288,7 @@ exports.updatealbumphoto = function(req, res, next){
             if(album){
                 album.albumphotopath = albumphotopath;
                 album.albumphotoname = albumphotoname;
+                album.modifydt = new Date();
             }
             album.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
@@ -331,6 +443,121 @@ exports.albumreport = function(req, res, next){
 	}
 }
 
+exports.artistalbumlist = function(req, res, next){
+    const labelid = req.params.labelid || req.query.labelid;
+    const albumname = req.body.albumname || req.query.albumname;
+    const artistid = req.body.artistid || req.query.artistid;
+    const albumyear = req.body.albumyear || req.query.albumyear;
+    const albumgenre = req.body.albumgenre || req.query.albumgenre;
+    const status = req.body.status || req.query.status;
+    const genregrp = 'GENRE';
+    const statusgrp = 'CSTATUS';
+    const msconfigsts = 'STSACT';
+    var totalcount;
+
+    let limit = parseInt(req.query.limit);
+    let page = parseInt(req.body.page || req.query.page);
+    let sortby = req.body.sortby || req.query.sortby;
+    let query = {};
+
+    if(!limit || limit < 1) {
+	limit = 10;
+    }
+
+    if(!page || page < 1) {
+	page = 1;
+    }
+
+    if(!sortby) {
+	sortby = 'albumname';
+    }
+
+    var offset = (page - 1) * limit;
+
+    if (!labelid) {
+        return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
+	}else{
+        // returns albums records based on query
+        query = {labelid:labelid,
+            albumname: new RegExp(albumname,'i'), 
+            albumyear: new RegExp(albumyear,'i'),
+            "genredetails.group": genregrp,
+            "genredetails.status": msconfigsts,
+            "statusdetails.group": statusgrp,
+            "statusdetails.status": msconfigsts
+            };
+        
+        if (artistid) {
+            query = merge(query, {artistid:artistid});
+        }
+        if (albumgenre) {
+            query = merge(query, {albumgenre: albumgenre});
+        }  
+        if (status) {
+            query = merge(query, {status:status});
+        }
+
+        var options = {
+            page: page,
+            limit: limit,
+            sortBy: sortby
+        }
+
+        var aggregate = Album.aggregate();        
+        var olookup = {
+            from: 'msconfig',
+            localField: 'albumgenre',
+            foreignField: 'code',
+            as: 'genredetails'
+        };    
+        var olookup1 = {
+                from: 'msconfig',
+                localField: 'status',
+                foreignField: 'code',
+                as: 'statusdetails'
+            };
+
+        var ounwind = 'genredetails';
+        var ounwind1 = 'statusdetails';
+        var oproject = {
+            albumname: 1,
+            albumyear: 1,
+            albumgenre:1,
+            "genrevalue": "$genredetails.value",
+            albumprice:1,
+            status:1,
+            "stsvalue": "$statusdetails.value",
+            albumphotopath:1,
+            albumphotoname:1        
+        };
+
+        //var osort = { "$sort": { sortby: 1}};
+        aggregate.lookup(olookup).unwind(ounwind);
+        aggregate.lookup(olookup1).unwind(ounwind1);  
+        aggregate.match(query);  
+        aggregate.project(oproject);
+
+        Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+            if(err) 
+            {
+                res.status(400).json({
+                    success: false, 
+                    message: err.message
+                });
+            }
+            else
+            { 
+                res.status(201).json({
+                    success: true, 
+                    data: results,
+                    npage: pageCount,
+                    totalcount: count
+                });
+            }
+        })
+	}
+}
+
 exports.albumaggregate = function(req, res, next){
     const labelid = req.params.labelid || req.query.labelid;
     const albumname = req.body.albumname || req.query.albumname;
@@ -338,6 +565,8 @@ exports.albumaggregate = function(req, res, next){
     const albumyear = req.body.albumyear || req.query.albumyear;
     const albumgenre = req.body.albumgenre || req.query.albumgenre;
     const status = req.body.status || req.query.status;
+    const msconfiggrp = 'GENRE';
+    const msconfigsts = 'STSACT';
     var totalcount;
 
     let limit = parseInt(req.query.limit);
@@ -360,70 +589,23 @@ exports.albumaggregate = function(req, res, next){
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
 	}else{
-			// returns albums records based on query
-            if (!status) {
-
-                if (!albumgenre) {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i')};
-                    } else {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'),
-                            artistid:artistid, 
-                            albumyear: new RegExp(albumyear,'i')};
-                    }
-
-                }else {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            albumgenre: albumgenre};
-                    }else {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            artistid:artistid,
-                            albumgenre: albumgenre};
-                    }
-                }
-
-            }else{
-
-                if (!albumgenre) {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            status: status};
-                    } else{
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'),
-                            artistid:artistid, 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            status: status};
-                    }
-
-                }else {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            albumgenre: albumgenre, 
-                            status: status};
-                    } else {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            artistid:artistid,
-                            albumyear: new RegExp(albumyear,'i'), 
-                            albumgenre: albumgenre, 
-                            status: status};
-                    }
-                }
-            }		
-
+		// returns albums records based on query
+        query = {labelid:labelid,
+            albumname: new RegExp(albumname,'i'), 
+            albumyear: new RegExp(albumyear,'i'),
+            "msconfigdetails.group": msconfiggrp,
+            "msconfigdetails.status": msconfigsts
+            };
+        
+        if (artistid) {
+            query = merge(query, {artistid:artistid});
+        }
+        if (albumgenre) {
+            query = merge(query, {albumgenre: albumgenre});
+        }  
+        if (status) {
+            query = merge(query, {status:status});
+        }
 		var options = {
             page: page,
             limit: limit,
@@ -437,12 +619,21 @@ exports.albumaggregate = function(req, res, next){
               foreignField: '_id',
               as: 'artistdetails'
             };
+        var olookup1 = {
+            from: 'msconfig',
+            localField: 'albumgenre',
+            foreignField: 'code',
+            as: 'msconfigdetails'
+        };    
+        var ounwind = 'artistdetails';
+        var ounwind1 = 'msconfigdetails';
         var oproject = {
             labelid:1,
             artistid:1,
             albumname: 1,
             albumyear: 1,
             albumgenre:1,
+            "genrevalue": "$msconfigdetails.value",
             objartistid:1,
             "artist": "$artistdetails.artistname",
             albumprice:1,
@@ -450,11 +641,12 @@ exports.albumaggregate = function(req, res, next){
             albumphotopath:1,
             albumphotoname:1        
         };
-        var ounwind = 'artist';
+
         //var osort = { "$sort": { sortby: 1}};
-        aggregate.match(query).lookup(olookup);
+        aggregate.lookup(olookup).unwind(ounwind);
+        aggregate.lookup(olookup1).unwind(ounwind1);  
+        aggregate.match(query);  
         aggregate.project(oproject);
-        aggregate.unwind(ounwind);
         //aggregate.sort(osort);
         
         Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
@@ -474,13 +666,13 @@ exports.albumaggregate = function(req, res, next){
                     totalcount: count
                 });
             }
-          })
+        })
     }
 }
 
 exports.getalbumlist = function(req, res, next){
     const labelid = req.params.labelid;
-    const status = 'active';
+    const status = 'STSACT';
     const sortby = 'albumname';
     let query = {};
 
@@ -511,7 +703,7 @@ exports.getalbumlist = function(req, res, next){
 exports.getalbumlistbyartist = function(req, res, next){
     const labelid = req.params.labelid;
     const artistid = req.query.artistid;
-    const status = 'active';
+    const status = 'STSACT';
     const sortby = 'albumname';
     let query = {};
 
@@ -519,7 +711,10 @@ exports.getalbumlistbyartist = function(req, res, next){
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
     }else{
         // returns artists records based on query
-        query = { labelid:labelid, artistid:artistid, status: status};        
+        query = { labelid:labelid, status: status};
+        if (artistid) {
+            query = merge(query, {artistid:artistid});
+        }     
         var fields = { 
             _id:1, 
             albumname:1 

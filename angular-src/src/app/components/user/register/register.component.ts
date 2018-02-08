@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   contactno = new FormControl('', [Validators.required]);
   bankaccno = new FormControl('', [Validators.required]);
   bankname = new FormControl('', [Validators.required]);
-  usertype = new FormControl('label', [Validators.required]);
+  usertype = new FormControl('LBL', [Validators.required]);
   username = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(16)]);
   password = new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,12}$')]);
   retypepass = new FormControl('', [Validators.required]);

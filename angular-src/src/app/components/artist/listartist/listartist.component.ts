@@ -7,6 +7,8 @@ import { ArtistService } from '../../../services/artist.service';
 import { AlbumService } from '../../../services/album.service';
 import { AuthService } from '../../../services/auth.service';
 import { IArtist } from '../../../interface/artist';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-listartist',
@@ -24,10 +26,11 @@ export class ListartistComponent implements OnInit {
   qstatus: String;
   qpage: number;
   qsort: String;
-  sts: any = [  {id: '',desc: 'Select option'},
+  sts: IMsconfigGroupList[];
+/*   sts: any = [  {id: '',desc: 'Select option'},
                 {id: 'active', desc: 'active'}, 
                 {id: 'inactive', desc: 'inactive'} 
-              ];
+              ]; */
   loading = false;
 
   constructor(
@@ -35,6 +38,7 @@ export class ListartistComponent implements OnInit {
     private authService: AuthService,
     private artistService: ArtistService,
     private albumService: AlbumService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -42,7 +46,7 @@ export class ListartistComponent implements OnInit {
   ) { }
 
   artistname = new FormControl('',[Validators.nullValidator]);
-  status = new FormControl('active', [Validators.nullValidator]);
+  status = new FormControl('', [Validators.nullValidator]);
   //startdt = new FormControl({value: '', disabled: true});
 
   ngOnInit() {
@@ -58,6 +62,7 @@ export class ListartistComponent implements OnInit {
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
+      this.getMsconfigGroupList('CSTATUS');
       let payload: any = {};
       payload.status = this.qstatus;
       payload.artistname = this.qartistname;
@@ -65,6 +70,18 @@ export class ListartistComponent implements OnInit {
       payload.sortby = this.qsort;
       this.fetchReport(this.userObj.userid, payload);
     })
+  }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.sts = data.data;
+        } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
   }
 
   getReport(formdata:any): void {
@@ -75,7 +92,7 @@ export class ListartistComponent implements OnInit {
 
   fetchReport(userid, formval) {
     this.loading = true;
-    this.artistService.getArtists(userid, formval)
+    this.artistService.getAggArtists(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;
@@ -86,8 +103,10 @@ export class ListartistComponent implements OnInit {
         this.toastr.error(data.message);
       } else {
         this.loading = false;
-        this.artists = data.data.docs;
-        this.totalrows = +data.data.total;
+        //this.artists = data.data.docs;
+        this.artists = data.data;
+        //this.totalrows = +data.data.total;
+        this.totalrows = +data.totalcount;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);
         
         this.qartistname = formval.artistname;

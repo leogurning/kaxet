@@ -10,6 +10,8 @@ import { AuthService } from '../../../services/auth.service';
 import { IArtistList } from '../../../interface/artist';
 import { IAlbumList } from '../../../interface/album';
 import { ISong } from '../../../interface/song';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-editsong',
@@ -19,9 +21,8 @@ import { ISong } from '../../../interface/song';
 export class EditsongComponent implements OnInit {
   songForm: FormGroup;
   userObj: any;
-  sts: any = ['active', 'inactive'];
-  genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
-
+  sts: IMsconfigGroupList[];
+  genre: IMsconfigGroupList[];
   songid: String;
   artistlist: IArtistList[];
   albumlist: IAlbumList[];
@@ -34,6 +35,7 @@ export class EditsongComponent implements OnInit {
     private artistService: ArtistService,
     private albumService: AlbumService,
     private songService: SongService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -55,6 +57,8 @@ export class EditsongComponent implements OnInit {
       this.btnLbl = "Update"
     });
     this.getSelectedSong(this.songid);
+    this.getMsconfigGroupList('CSTATUS');
+    this.getMsconfigGroupList('GENRE');
     this.userObj =  this.authService.currentUser;
     this.getArtistList(this.userObj.userid);
 
@@ -68,6 +72,23 @@ export class EditsongComponent implements OnInit {
       songpublish: this.songpublish,
       songbuy: this.songbuy,         
       status: this.status
+    });
+  }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          if (groupid == 'CSTATUS') {
+            this.sts = data.data;
+          }
+          if (groupid == 'GENRE') {
+            this.genre = data.data;
+          }
+        } else {
+          this.genre = [{code:'', value:'Error ms config list'}];
+        }
+      }
     });
   }
 

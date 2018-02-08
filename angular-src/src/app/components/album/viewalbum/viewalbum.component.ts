@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArtistService } from '../../../services/artist.service';
 import { AlbumService } from '../../../services/album.service';
@@ -9,6 +10,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { IArtist } from '../../../interface/artist';
 import { IAlbum } from '../../../interface/album';
 import { ISong } from '../../../interface/song';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-viewalbum',
@@ -30,18 +33,25 @@ export class ViewalbumComponent implements OnInit {
   qpage: number;
   qsort: String;
   reportTitle: String;
-
+  genre: IMsconfigGroupList[];
+  sts: IMsconfigGroupList[];
+  albumForm: FormGroup;
+  
   private sub: Subscription;
 
   constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
     private artistService: ArtistService,
     private albumService: AlbumService,
     private songService: SongService,    
+    private msconfigService: MsconfigService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
+  albumgenre = new FormControl('', [Validators.required]);
+  status = new FormControl('', [Validators.required]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -51,6 +61,8 @@ export class ViewalbumComponent implements OnInit {
         this.albumid = albumid;
       });
     console.log(this.albumid);  
+    this.getMsconfigGroupList('CSTATUS');
+    this.getMsconfigGroupList('GENRE');
     this.getAlbum(this.albumid);
     this.route.queryParams.forEach((params: Params) => {
       this.qalbumid = params['albumid'] || '';
@@ -63,11 +75,33 @@ export class ViewalbumComponent implements OnInit {
       payload.page = this.qpage;
       payload.sortby = this.qsort;
       this.fetchReport(this.userObj.userid, payload);
-    })
+    });
+    this.albumForm = this.fb.group({
+      albumgenre: this.albumgenre,
+      status: this.status
+    });
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          if (groupid == 'CSTATUS') {
+            this.sts = data.data;
+          }
+          if (groupid == 'GENRE') {
+            this.genre = data.data;
+          }
+        } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
+  }
+
   getAlbum(id){
     this.albumService.getAlbum(id).subscribe(data => {
       if (data.success === false) {
@@ -80,6 +114,7 @@ export class ViewalbumComponent implements OnInit {
         if (data.data[0]) {
           this.album = data.data[0];
           this.getArtistName(this.album.artistid);
+          this.populateForm(data.data[0]);
         } else {
           this.toastr.error('Album id is incorrect in the URL');
         }
@@ -88,6 +123,13 @@ export class ViewalbumComponent implements OnInit {
     });
   }
   
+  populateForm(data): void {
+    this.albumForm.patchValue({
+      albumgenre: data.albumgenre,
+      status: data.status
+    });
+  }
+
   getArtistName(id){
     this.artistService.getArtist(id).subscribe(data => {
       if (data.success === true) {

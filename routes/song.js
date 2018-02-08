@@ -28,6 +28,18 @@ cloudinary.config({
   api_secret: config.api_secret
 }); 
 
+// Imports the Google Cloud client library
+const Storage = require('@google-cloud/storage');
+const storage = new Storage({
+    projectId: config.GCLOUD_PROJECT
+});
+const bucket = storage.bucket(config.CLOUD_BUCKET);
+const gcsuploadpathprvw = "previews/";
+const gcsuploadpathsong = "songs/";
+var getPublicUrl = function(gcsuploadpath, filename) {
+    return `https://storage.googleapis.com/${config.CLOUD_BUCKET}/${gcsuploadpath}${filename}`;
+}
+
 exports.songprvwupload = function(req, res, next){
     var stats;
     const d = new Date();
@@ -35,27 +47,47 @@ exports.songprvwupload = function(req, res, next){
                 d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
                 ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
     if(req.files.songprvw){
-      var file = req.files.songprvw,
-        oriname = file.name,
-        name = 'prvw-'+ts+oriname.substr(oriname.length - 4);
-        cloudinary.v2.uploader.upload_stream(
-          {public_id: name, folder: prvwuploadpath,invalidate: true,resource_type: 'video'}, 
-          function(err, result){
-              if(err){
-                console.log("Song Preview Upload Failed",name,err);
-                return res.status(401).json({ success: false, 
-                  message:'Song Preview Upload Failed.'
-                });
-              }
-              else {
-                console.log("Song Preview Uploaded",name);
+      var file = req.files.songprvw
+        //oriname = file.name,
+        //name = 'prvw-'+ts+oriname.substr(oriname.length - 4);
+        const gcsname = ts+'-'+file.name;
+        const gcsfile = bucket.file(gcsuploadpathprvw+gcsname);
+        const stream = gcsfile.createWriteStream({
+            metadata: {
+              contentType: file.mimetype
+            }
+          });
+
+        stream.on('error', (err) => {
+            file.cloudStorageError = err;
+            console.log("Song Preview Upload Failed", err);
+            return res.status(401).json({ success: false, 
+                message:'Song Preview Upload Failed on streaming upload.'
+            });      
+          });
+
+        stream.on('finish', () => {
+            file.cloudStorageObject = gcsname;
+            gcsfile.makePublic().then(() => {
+                file.cloudStoragePublicUrl = getPublicUrl(gcsuploadpathprvw, gcsname);
+                console.log("Song Preview Uploaded",gcsname);
                 res.status(201).json({
                   success: true,
                   message: 'Song Preview is successfully uploaded.',
-                  filedata : {songprvwpath: result.secure_url,songprvwname: result.public_id}
+                  filedata : {
+                        songprvwpath: file.cloudStoragePublicUrl,
+                        songprvwname: file.cloudStorageObject
+                    }
                 });
-              }
-          }).end(file.data);
+                next();
+            })
+            .catch(err => {
+                return res.status(401).json({ success: false, 
+                    message:'Song Preview Upload Failed on making public URL.'
+                });      
+            });
+        });       
+        stream.end(file.data);
     }
     else {
       return res.status(402).json({ success: false, 
@@ -65,7 +97,71 @@ exports.songprvwupload = function(req, res, next){
     };
 }
 
+/* exports.songprvwupload = function(req, res, next){
+  var stats;
+  const d = new Date();
+  const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
+              d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
+              ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
+  if(req.files.songprvw){
+    var file = req.files.songprvw,
+      oriname = file.name,
+      name = 'prvw-'+ts+oriname.substr(oriname.length - 4);
+      cloudinary.v2.uploader.upload_stream(
+        {public_id: name, folder: prvwuploadpath,invalidate: true,resource_type: 'video'}, 
+        function(err, result){
+            if(err){
+              console.log("Song Preview Upload Failed",name,err);
+              return res.status(401).json({ success: false, 
+                message:'Song Preview Upload Failed.'
+              });
+            }
+            else {
+              console.log("Song Preview Uploaded",name);
+              res.status(201).json({
+                success: true,
+                message: 'Song Preview is successfully uploaded.',
+                filedata : {songprvwpath: result.secure_url,songprvwname: result.public_id}
+              });
+            }
+        }).end(file.data);
+  }
+  else {
+    return res.status(402).json({ success: false, 
+        message:'No Song Preview is uploaded.',
+        filedata : {songprvwpath: "",songprvwname: ""}
+      });
+  };
+} */
+
 exports.songprvwdelete = function(req, res, next) {
+  const songprvwname = req.body.songprvwname;
+
+  if(songprvwname){
+    const gcsfile = bucket.file(gcsuploadpathprvw+songprvwname);
+    gcsfile.delete()
+    .then(() => {
+        console.log("Delete Song Preview Success",songprvwname);
+        res.status(201).json({
+            success: true,
+            message: 'Delete Song Preview successful.'});    
+    })
+    .catch(err => {
+        console.log("Delete Song Preview Failed",songprvwname,err);
+        res.status(401).json({ success: false, 
+          message:'Delete Song Preview Failed.'
+        });
+    });
+  }
+  else {
+      console.log("No File selected !");
+      res.status(402).json({
+          success: false,
+          message: 'No File selected !'});    
+  };
+}
+
+/* exports.songprvwdelete = function(req, res, next) {
   const songprvwname = req.body.songprvwname;
 
   if(songprvwname){
@@ -92,9 +188,67 @@ exports.songprvwdelete = function(req, res, next) {
           success: false,
           message: 'No File selected !'});    
   };
-}
+} */
 
 exports.songfileupload = function(req, res, next){
+  var stats;
+  const d = new Date();
+  const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
+              d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
+              ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
+
+  if(req.files.songfile){
+    var file = req.files.songfile
+      //oriname = file.name,
+      //name = 'song-'+ts+oriname.substr(oriname.length - 4);
+    const gcsname = ts+'-'+file.name;
+    const gcsfile = bucket.file(gcsuploadpathsong+gcsname);
+    const stream = gcsfile.createWriteStream({
+        metadata: {
+          contentType: file.mimetype
+        }
+      });
+
+      stream.on('error', (err) => {
+          file.cloudStorageError = err;
+          console.log("Song File Upload Failed", err);
+          return res.status(401).json({ success: false, 
+              message:'Song File Upload Failed on streaming upload.'
+          });      
+        });
+
+      stream.on('finish', () => {
+          file.cloudStorageObject = gcsname;
+          gcsfile.makePublic().then(() => {
+              file.cloudStoragePublicUrl = getPublicUrl(gcsuploadpathsong, gcsname);
+              console.log("Song File Uploaded",gcsname);
+              res.status(201).json({
+                success: true,
+                message: 'Song File is successfully uploaded.',
+                filedata : {
+                      songfilepath: file.cloudStoragePublicUrl,
+                      songfilename: file.cloudStorageObject
+                  }
+              });
+              next();
+          })
+          .catch(err => {
+              return res.status(401).json({ success: false, 
+                  message:'Song File Upload Failed on making public URL.'
+              });      
+          });
+      });       
+      stream.end(file.data);
+  }
+  else {
+    return res.status(402).json({ success: false, 
+        message:'No Song File is uploaded.',
+        filedata : {songfilepath: "",songfilename: ""}
+      });
+  };
+}
+
+/* exports.songfileupload = function(req, res, next){
   var stats;
   const d = new Date();
   const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
@@ -130,9 +284,35 @@ exports.songfileupload = function(req, res, next){
         filedata : {songfilepath: "",songfilename: ""}
       });
   };
-}
+} */
 
 exports.songfiledelete = function(req, res, next) {
+  const songfilename = req.body.songfilename;
+  if(songfilename){
+    const gcsfile = bucket.file(gcsuploadpathsong+songfilename);
+    gcsfile.delete()
+    .then(() => {
+        console.log("Delete Song File Success",songfilename);
+        res.status(201).json({
+            success: true,
+            message: 'Delete Song File successful.'});    
+    })
+    .catch(err => {
+        console.log("Delete Song File Failed",songfilename,err);
+        res.status(401).json({ success: false, 
+          message:'Delete Song File Failed.'
+        });
+    });
+  }
+  else {
+      console.log("No File selected !");
+      res.status(402).json({
+          success: false,
+          message: 'No File selected !'});    
+  };
+}
+
+/* exports.songfiledelete = function(req, res, next) {
   const songfilename = req.body.songfilename;
   if(songfilename){
     cloudinary.v2.uploader.destroy(songfilename,
@@ -158,7 +338,7 @@ exports.songfiledelete = function(req, res, next) {
           success: false,
           message: 'No File selected !'});    
   };
-}
+} */
 
 exports.savesong = function(req, res, next){
   const labelid = req.params.id;
@@ -194,6 +374,7 @@ exports.savesong = function(req, res, next){
                   song.status = status;
                   song.objartistid = artistid;
                   song.objalbumid = albumid;
+                  song.modifydt = new Date();
               }
               song.save(function(err) {
                   if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
@@ -226,7 +407,10 @@ exports.savesong = function(req, res, next){
                   songbuy: 0,
                   status: status,
                   objartistid: artistid,
-                  objalbumid: albumid
+                  objalbumid: albumid,
+                  objlabelid: labelid,
+                  createddt: new Date(),
+                  modifydt: new Date()
               });
       
               oSong.save(function(err) {
@@ -253,6 +437,7 @@ exports.publishsong = function(req, res, next){
               
           if(song){
               song.songpublish = 'Y';
+              song.modifydt = new Date();
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
                 res.status(201).json({
@@ -279,6 +464,7 @@ exports.cancelpublishsong = function(req, res, next){
               res.status(400).json({ success: false, message:'Published Song can not be canceled if the song has been sold. ' });
             } else {
               song.songpublish = 'N';
+              song.modifydt = new Date();
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
                 res.status(201).json({
@@ -333,6 +519,7 @@ exports.updatesongpreview = function(req, res, next){
               song.songprvwpath = songprvwpath;
               song.songprvwname = songprvwname;
               song.songpublish = 'N';
+              song.modifydt = new Date();
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
                 res.status(201).json({
@@ -365,6 +552,7 @@ exports.updatesongfile = function(req, res, next){
               song.songfilepath = songfilepath;
               song.songfilename = songfilename;
               song.songpublish = 'N';
+              song.modifydt = new Date();
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
                 res.status(201).json({
@@ -410,6 +598,8 @@ exports.songaggregate = function(req, res, next){
   const songpublish = req.body.songpublish || req.query.songpublish;
   const songbuy = req.body.songbuy || req.query.songbuy;  
   const status = req.body.status || req.query.status;
+  const msconfiggrp = 'GENRE';
+  const msconfigsts = 'STSACT';
   var totalcount;
 
   let limit = parseInt(req.query.limit);
@@ -438,7 +628,9 @@ exports.songaggregate = function(req, res, next){
     query = {labelid:labelid, 
       songname: new RegExp(songname,'i'),
       "albumdetails.albumyear": new RegExp(albumyear,'i'),
-      songpublish: new RegExp(songpublish,'i')
+      songpublish: new RegExp(songpublish,'i'),
+      "msconfigdetails.group": msconfiggrp,
+      "msconfigdetails.status": msconfigsts
     };
     if (artistid) {
       query = merge(query, {artistid:artistid});
@@ -480,8 +672,15 @@ exports.songaggregate = function(req, res, next){
       foreignField: '_id',
       as: 'albumdetails'
     };
+    var olookup2 = {
+      from: 'msconfig',
+      localField: 'songgenre',
+      foreignField: 'code',
+      as: 'msconfigdetails'
+    };    
     var ounwind = 'artistdetails';
     var ounwind1 = 'albumdetails';
+    var ounwind2 = 'msconfigdetails';
 
     var oproject = { 
         _id:1,
@@ -490,6 +689,7 @@ exports.songaggregate = function(req, res, next){
         albumid:1,
         songname: 1,
         songgenre:1,
+        "genrevalue": "$msconfigdetails.value",
         songlyric:1,
         songprice:1,
         "artist": "$artistdetails.artistname",
@@ -509,6 +709,7 @@ exports.songaggregate = function(req, res, next){
     
     aggregate.lookup(olookup).unwind(ounwind);
     aggregate.lookup(olookup1).unwind(ounwind1);  
+    aggregate.lookup(olookup2).unwind(ounwind2);  
     aggregate.match(query);  
     aggregate.project(oproject);      
     

@@ -36,7 +36,10 @@
             <label for="songgenre" class="col-sm-2 control-label">Genre</label>
             <div class="input-group col-sm-10">
               <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ song?.songgenre }}</div>
+              <select class="form-control" [formControl]="songgenre" disabled>
+                  <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
+              </select>
+              <!-- <div class="form-ele">{{ song?.songgenre }}</div> -->
             </div>
         </div>
         <div class="form-group">
@@ -78,7 +81,10 @@
             <label for="status" class="col-sm-2 control-label">Status</label>
             <div class="input-group col-sm-10">
               <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ song?.status }}</div>
+              <select class="form-control" [formControl]="status" disabled>
+                    <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+              </select>
+              <!-- <div class="form-ele">{{ song?.status }}</div> -->
             </div>
         </div>
         <div class="form-group">

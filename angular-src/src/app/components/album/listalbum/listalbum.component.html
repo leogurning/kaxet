@@ -29,8 +29,9 @@
                       <div class="input-group col-sm-10">
                           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                           <select class="form-control" [formControl]="albumgenre">
-                            <option *ngFor="let g of genre" [ngValue]="g.id">{{g.desc}}</option>
-                          </select>
+                            <option ng-selected="true" value="">Select the genre</option>
+                            <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
+                         </select>
                       </div>
                   </div>
               </div><br>
@@ -50,7 +51,8 @@
                       <div class="input-group col-sm-10">
                           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                           <select class="form-control" [formControl]="status">
-                            <option *ngFor="let a of sts" [ngValue]="a.id">{{a.desc}}</option>
+                            <option ng-selected="true" value="">Select the status</option>
+                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                           </select>
                       </div>
                   </div><br>
@@ -95,7 +97,7 @@
                           <td><a style="cursor:pointer" (click)="showAlbum(albm._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
                           <td>{{ albm.artist }}</td>
                           <td>{{ albm.albumyear}}</td>
-                          <td>{{ albm.albumgenre}}</td>
+                          <td>{{ albm.genrevalue}}</td>
                           <td class="text-right">{{ albm.albumprice | currency: 'IDR':true }}</td>
                           <!-- <td>{{ albm.status}}</td> -->
                           <td>

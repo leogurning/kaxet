@@ -1,0 +1,46 @@
+<div class="container pagecontainer">
+  <div class="page-header">
+      <h3>LABEL MANAGEMENT</h3>
+  </div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  <div *ngIf="this.loading == false" class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Search Parameter</h3>
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+
+          <div class="row">
+              <div class="col-sm-12 col-md-6">
+                  <label for="username">User Name</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                      <input type="text" class="form-control" id="username" [formControl]="username" placeholder="User Name">
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <label for="name">Label Name</label>
+                <div class="input-group col-sm-10">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <input type="text" class="form-control" id="name" [formControl]="name" placeholder="Label Name">
+                </div>
+              </div>
+          </div><br>
+          <div class="row">
+              <div class="col-sm-12 col-md-3">
+                  <label for="status">Status</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                      <select class="form-control" [formControl]="status">
+                        <option *ngFor="let a of sts" [ngValue]="a.id">{{a.desc}}</option>
+                      </select>
+                  </div>
+              </div><br>
+              <div class="col-sm-12 col-md-2">
+                  <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+              </div>                  
+          </div>
+      </form>
+    </div>
+  </div>  
+</div>

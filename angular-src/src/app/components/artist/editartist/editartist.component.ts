@@ -5,6 +5,8 @@ import { DatePipe } from '@angular/common';
 import { ToastrService } from '../../../common/toastr.service'
 import { ArtistService } from '../../../services/artist.service';
 import { AuthService } from '../../../services/auth.service';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-editartist',
@@ -14,7 +16,8 @@ import { AuthService } from '../../../services/auth.service';
 export class EditartistComponent implements OnInit {
   artistForm: FormGroup;
   userObj: any;
-  sts: any = ['active', 'inactive'];
+  sts: IMsconfigGroupList[];
+  //sts: any = ['active', 'inactive'];
   artistid: String;
   btnLbl: String;
 
@@ -22,6 +25,7 @@ export class EditartistComponent implements OnInit {
     private fb: FormBuilder, 
     private authService: AuthService,
     private artistService: ArtistService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -34,6 +38,7 @@ export class EditartistComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
       this.artistid = params['id'];
+      this.getMsconfigGroupList('CSTATUS');
       this.getArtist(this.artistid);
       this.btnLbl = "Update"
     });
@@ -44,6 +49,19 @@ export class EditartistComponent implements OnInit {
       status: this.status
     });
   }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.sts = data.data;
+        } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
+  }
+
   getArtist(id){
     this.artistService.getArtist(id).subscribe(data => {
       if (data.success === true) {

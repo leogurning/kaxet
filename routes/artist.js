@@ -2,16 +2,97 @@ const mongoose = require( 'mongoose' );
 const Artist = require('../models/artist');
 const config = require('../config');
 const fs = require('fs');
+// Imports the Cloudinary Cloud client library
 const cloudinary = require('cloudinary');
 const uploadpath = "kaxet/images/artists/";
-
 cloudinary.config({ 
     cloud_name: config.cloud_name, 
     api_key: config.api_key, 
     api_secret: config.api_secret
 }); 
 
+// Imports the Google Cloud client library
+const Storage = require('@google-cloud/storage');
+const gcsuploadpath = "images/artists/";
+const storage = new Storage({
+    projectId: config.GCLOUD_PROJECT
+});
+const bucket = storage.bucket(config.CLOUD_BUCKET);
+var getPublicUrl = function(filename) {
+    return `https://storage.googleapis.com/${config.CLOUD_BUCKET}/${gcsuploadpath}${filename}`;
+}
+
+var merge = function() {
+    var obj = {},
+        i = 0,
+        il = arguments.length,
+        key;
+    for (; i < il; i++) {
+        for (key in arguments[i]) {
+            if (arguments[i].hasOwnProperty(key)) {
+                obj[key] = arguments[i][key];
+            }
+        }
+    }
+    return obj;
+};
+
 exports.artistphotoupload = function(req, res, next){
+    var stats;
+    const d = new Date();
+    const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
+                d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
+                ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
+
+    if(req.files.artistimage){
+      var file = req.files.artistimage;
+        const gcsname = ts+'-'+file.name;
+        const gcsfile = bucket.file(gcsuploadpath+gcsname);
+        const stream = gcsfile.createWriteStream({
+            metadata: {
+              contentType: file.mimetype
+            }
+          });
+
+        stream.on('error', (err) => {
+            file.cloudStorageError = err;
+            console.log("Artist Photo Upload Failed", err);
+            return res.status(401).json({ success: false, 
+                message:'Artist Photo Upload Failed on streaming upload.'
+            });      
+          });
+
+        stream.on('finish', () => {
+            file.cloudStorageObject = gcsname;
+            gcsfile.makePublic().then(() => {
+                file.cloudStoragePublicUrl = getPublicUrl(gcsname);
+                console.log("Artist Photo Uploaded",gcsname);
+                res.status(201).json({
+                  success: true,
+                  message: 'Artist Photo is successfully uploaded.',
+                  filedata : {
+                        artistphotopath: file.cloudStoragePublicUrl,
+                        artistphotoname: file.cloudStorageObject
+                    }
+                });
+                next();
+            })
+            .catch(err => {
+                return res.status(401).json({ success: false, 
+                    message:'Artist Photo Upload Failed on making public URL.'
+                });      
+            });
+        });       
+        stream.end(file.data);
+    } else {
+        return res.status(402).json({ success: false, 
+            message:'No Artist Photo uploaded.',
+            filedata : {artistphotopath: "",artistphotoname: ""}
+          });
+    };
+}
+
+/* exports.artistphotoupload = function(req, res, next){
     var stats;
     const d = new Date();
     const ts = ("0" + d.getDate()).slice(-2) + ("0"+(d.getMonth()+1)).slice(-2) + 
@@ -45,9 +126,36 @@ exports.artistphotoupload = function(req, res, next){
             filedata : {artistphotopath: "",artistphotoname: ""}
           });
     };
-}
+} */
 
 exports.artistphotodelete = function(req, res, next) {
+    const artistphotoname = req.body.artistphotoname;
+
+    if(artistphotoname){
+        const gcsfile = bucket.file(gcsuploadpath+artistphotoname);
+        gcsfile.delete()
+        .then(() => {
+            console.log("Delete Artist Photo Success",artistphotoname);
+            res.status(201).json({
+                success: true,
+                message: 'Delete Artist Photo successful.'});    
+        })
+        .catch(err => {
+            console.log("Delete Artist Photo Failed",artistphotoname,err);
+            res.status(401).json({ success: false, 
+              message:'Delete Artist Photo Failed.'
+            });
+        });
+    }
+    else {
+        console.log("No File selected !");
+        res.status(402).json({
+            success: false,
+            message: 'No File selected !'});    
+    };
+}
+
+/* exports.artistphotodelete = function(req, res, next) {
     const artistphotoname = req.body.artistphotoname;
     //var deletepathfile = uploadpath + artistphotoname;
     if(artistphotoname){
@@ -74,7 +182,7 @@ exports.artistphotodelete = function(req, res, next) {
             success: false,
             message: 'No File selected !'});    
     };
-}
+} */
 
 exports.saveartist = function(req, res, next){
     const labelid = req.params.id;
@@ -95,7 +203,8 @@ exports.saveartist = function(req, res, next){
 				
 			if(artist) {
 				artist.artistname = artistname;
-				artist.status = status;
+                artist.status = status;
+                artist.modifydt = new Date();
 			}
 			artist.save(function(err) {
 				if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
@@ -116,7 +225,10 @@ exports.saveartist = function(req, res, next){
                 artistname: artistname,
                 artistphotopath: artistphotopath,
                 artistphotoname: artistphotoname,
-                status: status
+                status: status,
+                objlabelid: labelid,
+                createddt: new Date(),
+                modifydt: new Date()
             });
     
             oArtist.save(function(err) {
@@ -168,6 +280,7 @@ exports.updateartistphoto = function(req, res, next){
 		if(artist){
             artist.artistphotopath = artistphotopath;
             artist.artistphotoname = artistphotoname;
+            artist.modifydt = new Date();
 		}
 		artist.save(function(err){
 			if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
@@ -242,9 +355,102 @@ exports.artistreport = function(req, res, next){
     }    
 }
 
+exports.artistaggreport = function(req, res, next){
+    const labelid = req.params.labelid || req.query.labelid;
+    const artistname = req.body.artistname || req.query.artistname;
+    const status = req.body.status || req.query.status;
+    const msconfiggrp = 'CSTATUS';
+    const msconfigsts = 'STSACT';
+    var totalcount;
+  
+    let limit = parseInt(req.query.limit);
+    let page = parseInt(req.body.page || req.query.page);
+    let sortby = req.body.sortby || req.query.sortby;
+    let query = {};
+    //let qmatch = {};
+  
+    if(!limit || limit < 1) {
+      limit = 10;
+    }
+  
+    if(!page || page < 1) {
+      page = 1;
+    }
+  
+    if(!sortby) {
+      sortby = 'artistname';
+    }
+  
+    if (!labelid) {
+        return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
+    }else{
+  
+      // returns songs records based on query
+      query = {labelid:labelid, 
+        artistname: new RegExp(artistname,'i'),
+        "msconfigdetails.group": msconfiggrp,
+        "msconfigdetails.status": msconfigsts
+      };
+      if (status) {
+        query = merge(query, {status:status});
+      }
+  
+      var options = {
+          page: page,
+          limit: limit,
+          sortBy: sortby
+      }
+      
+      var aggregate = Artist.aggregate();        
+      var olookup = {
+        from: 'msconfig',
+        localField: 'status',
+        foreignField: 'code',
+        as: 'msconfigdetails'
+      };
+      var ounwind = 'msconfigdetails';
+  
+      var oproject = { 
+          _id:1,
+          artistname: 1,
+          status:1,
+          "stsvalue": "$msconfigdetails.value",
+          artistphotopath:1,
+          artistphotoname:1,    
+        };
+          
+      
+      aggregate.lookup(olookup).unwind(ounwind);
+      aggregate.match(query);  
+      aggregate.project(oproject);      
+      
+      //var osort = { "$sort": { sortby: 1}};
+      //aggregate.sort(osort);
+        
+      Artist.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+          if(err) 
+          {
+              res.status(400).json({
+                  success: false, 
+                  message: err.message
+              });
+          }
+          else
+          { 
+              res.status(201).json({
+                  success: true, 
+                  data: results,
+                  npage: pageCount,
+                  totalcount: count
+              });
+          }
+        })
+    }
+}
+
 exports.getartistlist = function(req, res, next){
     const labelid = req.params.labelid;
-    const status = 'active';
+    const status = 'STSACT';
     const sortby = 'artistname';
     let query = {};
 

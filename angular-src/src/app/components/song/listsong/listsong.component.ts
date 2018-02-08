@@ -10,6 +10,8 @@ import { AuthService } from '../../../services/auth.service';
 import { IArtistList } from '../../../interface/artist';
 import { IAlbumList } from '../../../interface/album';
 import { IAggSong } from '../../../interface/song';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-listsong',
@@ -35,27 +37,9 @@ export class ListsongComponent implements OnInit {
   qstatus: String;
   qpage: number;
   qsort: String;
-  genre: any = [ {id: '',desc: 'Select option'}, 
-                {id:'Alternative', desc:'Alternative'}, {id:'Blues', desc:'Blues'}, 
-                {id:'Children', desc:'Children'}, {id:'Classical', desc:'Classical'},
-                {id:'Comedy', desc:'Comedy'}, {id:'Country', desc:'Country'}, 
-                {id:'Dance', desc:'Dance'}, {id:'Easy Listening', desc:'Easy Listening'}, 
-                {id:'Electronic', desc:'Electronic'}, {id:'Hip Hop', desc:'Hip Hop'},
-                {id:'Christian Gospel', desc:'Christian Gospel'}, {id:'Instrumental', desc:'Instrumental'}, 
-                {id:'Jazz', desc:'Jazz'}, {id:'Latin', desc:'Latin'}, 
-                {id:'New Age', desc:'New Age'},{id:'Pop', desc:'Pop'},
-                {id:'RnB', desc:'RnB'},{id:'Reggae', desc:'Reggae'}, 
-                {id:'Rock', desc:'Rock'}, {id:'Soundtrack', desc:'Soundtrack'},
-                {id:'Vocal', desc:'Vocal'},{id:'Others', desc:'Others'}
-              ];
-  sts: any = [ {id: '',desc: 'Select option'},
-               {id: 'active', desc: 'active'}, 
-               {id: 'inactive', desc: 'inactive'} 
-              ];
-  ynlist: any = [ {id: '',desc: 'Select option'},
-                  {id: 'Y',desc: 'Yes'}, 
-                  {id: 'N',desc: 'No'}
-                ];
+  sts: IMsconfigGroupList[];
+  genre: IMsconfigGroupList[];
+  ynlist: IMsconfigGroupList[];
 
   currsongpublish: String;
   currsongbuy: Number;
@@ -67,6 +51,7 @@ export class ListsongComponent implements OnInit {
     private artistService: ArtistService,
     private albumService: AlbumService,
     private songService: SongService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -80,7 +65,7 @@ export class ListsongComponent implements OnInit {
   songgenre = new FormControl('',[Validators.nullValidator]);
   songpublish = new FormControl('',[Validators.nullValidator]);
   songbuy = new FormControl('',[Validators.nullValidator]);
-  status = new FormControl('active', [Validators.nullValidator]);
+  status = new FormControl('', [Validators.nullValidator]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -94,6 +79,9 @@ export class ListsongComponent implements OnInit {
       songbuy: this.songbuy,
       status: this.status
     });
+    this.getMsconfigGroupList('CSTATUS');
+    this.getMsconfigGroupList('GENRE');
+    this.getMsconfigGroupList('YRN');
     this.getArtistList(this.userObj.userid);
     this.getAlbumList(this.userObj.userid);
     this.route.queryParams.forEach((params: Params) => {
@@ -132,6 +120,26 @@ export class ListsongComponent implements OnInit {
         status: this.qstatus
       });
     })
+  }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          if (groupid == 'CSTATUS') {
+            this.sts = data.data;
+          }
+          if (groupid == 'GENRE') {
+            this.genre = data.data;
+          }
+          if (groupid == 'YRN') {
+            this.ynlist = data.data;
+          }
+        } else {
+          this.genre = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
   }
 
   getArtistList(id){

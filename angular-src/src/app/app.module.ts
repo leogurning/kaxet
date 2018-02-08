@@ -12,6 +12,9 @@ import { UserService } from './services/user.service';
 import { ArtistService } from './services/artist.service';
 import { AlbumService } from './services/album.service';
 import { SongService } from './services/song.service';
+import { UsermgtService } from './services/admin/usermgt.service';
+import { SongadminService } from './services/admin/songadmin.service';
+import { MsconfigService } from './services/admin/msconfig.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -42,6 +45,7 @@ import { EditsongfilesComponent } from './components/song/editsongfiles/editsong
 import { ViewsongComponent } from './components/song/viewsong/viewsong.component';
 import { EditsongComponent } from './components/song/editsong/editsong.component';
 import { PostregisteredComponent } from './components/user/postregistered/postregistered.component';
+import { UsermgtComponent } from './components/usermgt/usermgt.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -67,7 +71,8 @@ const appRoutes: Routes = [
   {path: 'listsong', canActivate: [ AuthGuard], component: ListsongComponent },
   {path: 'editsongfiles/:id', component:EditsongfilesComponent, canActivate:[AuthGuard]},
   {path: 'viewsong/:id', canActivate: [ AuthGuard], component: ViewsongComponent },
-  {path: 'editsong/:id', canActivate: [ AuthGuard], component: EditsongComponent }
+  {path: 'editsong/:id', canActivate: [ AuthGuard], component: EditsongComponent },
+  {path: 'usermanagement', canActivate: [ AuthGuard], component: UsermgtComponent }
 ];
 
 @NgModule({
@@ -97,6 +102,7 @@ const appRoutes: Routes = [
     ViewsongComponent,
     EditsongComponent,
     PostregisteredComponent,
+    UsermgtComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,7 +126,10 @@ const appRoutes: Routes = [
     ArtistService, 
     AlbumService, 
     SongService, 
-    DatePipe],
+    DatePipe,
+    UsermgtService,
+    SongadminService,
+    MsconfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

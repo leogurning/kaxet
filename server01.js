@@ -26,7 +26,7 @@ mongoose.connect(config.database, function(err){
 
 const app = express();
 
-app.use(upload()); // configure middleware
+app.use(upload()); // configure middleware OF file upload
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {  
@@ -49,7 +49,7 @@ app.use(morgan('dev'));
 
 // basic routes
 app.get('/', function(req, res) {
-	res.send('Kaxet API is running at http://legu.herokuapp:' + port + '/api');
+	res.send('Kaxet API is running at PORT:' + port + '/api');
 });
 app.post('/register', user.signup);
 
@@ -76,6 +76,7 @@ apiRoutes.put('/updateartistphoto/:id', artist.updateartistphoto); // API update
 apiRoutes.get('/artist/:id', artist.getartist); // API returns artist details of given artist id
 apiRoutes.get('/artistlist/:labelid', artist.getartistlist); // API returns artist list of given label id
 apiRoutes.post('/artist/report/:labelid', artist.artistreport); //API returns artist report based on user input 
+apiRoutes.post('/artist/aggreport/:labelid', artist.artistaggreport); //API returns artist report based on user input 
 
 //apiRoutes.post('/testalbum/:id', album.testalbum); // API test album of the label
 apiRoutes.post('/albumphotoupload', album.albumphotoupload);
@@ -87,6 +88,7 @@ apiRoutes.get('/albumlist/:labelid', album.getalbumlist); // API returns album l
 apiRoutes.get('/albumlistbyartist/:labelid', album.getalbumlistbyartist);
 apiRoutes.delete('/album/:id', album.delalbum); //API removes the album details of given album id
 apiRoutes.post('/album/report/:labelid', album.albumreport); //API returns album report based on user input 
+apiRoutes.post('/album/artistalbumreport/:labelid', album.artistalbumlist); //API returns album report based on user input 
 apiRoutes.post('/album/aggreport/:labelid', album.albumaggregate); //API returns album report based on user input
 
 apiRoutes.post('/songprvwupload', song.songprvwupload);
@@ -112,4 +114,4 @@ app.get('*', (req, res) => {
 // kick off the server 
 app.listen(port);
 
-console.log('Kaxet app is listening at http://legu.herokuapp:' + port);
+console.log('Kaxet app is listening at PORT:' + port);

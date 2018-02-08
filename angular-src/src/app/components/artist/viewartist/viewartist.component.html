@@ -2,7 +2,7 @@
   <div class="page-header">
       <h1>Artist Details</h1>
   </div>
-  <form class="form-horizontal">
+  <form [formGroup]="artistForm" class="form-horizontal">
       <div class="form-group">
           <label for="artistname" class="col-sm-2 control-label">Name</label>
           <div class="input-group col-sm-10">
@@ -14,7 +14,10 @@
           <label for="status" class="col-sm-2 control-label">Status</label>
           <div class="input-group col-sm-10">
               <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-              <div class="form-ele">{{ artist?.status }}</div>
+              <select class="form-control" [formControl]="status" disabled>
+                    <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+              </select>
+              <!-- <div class="form-ele">{{ artist?.status }}</div> -->
           </div>
       </div>
       <div class="form-group">
@@ -45,9 +48,9 @@
                               <tr *ngFor='let albm of albums; let albIndex = index'>
                                   <td>{{ albm.albumname}}</td>
                                   <td>{{ albm.albumyear}}</td>
-                                  <td>{{ albm.albumgenre}}</td>
+                                  <td>{{ albm.genrevalue}}</td>
                                   <td class="text-right">{{ albm.albumprice | currency: 'IDR':true }}</td>
-                                  <td>{{ albm.status}}</td>
+                                  <td>{{ albm.stsvalue}}</td>
                               </tr>
                               
                           </tbody>

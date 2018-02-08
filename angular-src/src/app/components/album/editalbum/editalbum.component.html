@@ -48,7 +48,7 @@
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                 <select class="form-control" [formControl]="albumgenre">
-                    <option *ngFor="let g of genre" >{{g}}</option>
+                    <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
                 </select>
             </div>
             <div class="text-danger" *ngIf="albumForm.get('albumgenre').dirty && albumForm.get('albumgenre').errors">
@@ -81,7 +81,7 @@
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                 <select class="form-control" [formControl]="status">
-                    <option *ngFor="let a of sts" >{{a}}</option>
+                    <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                 </select>
             </div>
             <div class="text-danger" *ngIf="albumForm.get('status').dirty && albumForm.get('status').errors">

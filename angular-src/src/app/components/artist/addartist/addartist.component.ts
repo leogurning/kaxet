@@ -49,11 +49,11 @@ export class AddartistComponent implements OnInit {
       const files: Array<File> = this.filesToUpload;
       let theForm = this.addArtistForm.value;
       let lformData: FormData = new FormData();
-      console.log('Ini file: '+ files[0]['name']);
+      //console.log('Ini file: '+ files[0]['name']);
       
       lformData.append('artistimage',files[0],files[0]['name']);
       //console.log(lformData.getAll('artistimage'));
-      console.dir(theForm);
+      //console.dir(theForm);
       this.loading = true;
       this.artistService.uploadArtistphoto(lformData)
         .subscribe(data => {
@@ -63,8 +63,8 @@ export class AddartistComponent implements OnInit {
           } else {
               theForm.artistphotopath = data.filedata.artistphotopath;
               theForm.artistphotoname = data.filedata.artistphotoname;
-              theForm.status = 'active';
-              console.log('Ini file path: '+ theForm.artistphotopath);
+              theForm.status = 'STSACT';
+              //console.log('Ini file path: '+ theForm.artistphotopath);
               if (this.artistid !== '') {
                 theForm.artistid = this.artistid;
               }

@@ -17,8 +17,8 @@
 <!--               <li ><a routerLink="report" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Report</a></li>
               <li><a routerLink="editexpense" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Add Expense</a></li> -->
               <li><a routerLink="about" routerLinkActive="active">About</a></li>
-              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
-              <ul class="menu">
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
+                <ul class="menu">
                       <li>
                           Artist
                           <ul>
@@ -26,9 +26,9 @@
                               <li routerLink="listartist" routerLinkActive="active">Manage Artist</li>
                           </ul>
                       </li>
-                  </ul>
+                </ul>
               </li>
-              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
                 <ul class="menu"> 
                       <li>
                         Album
@@ -39,7 +39,7 @@
                     </li>
                   </ul>
               </li>
-              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'label'">
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
                 <ul class="menu">
                     <li>
                         Song
@@ -49,6 +49,9 @@
                         </ul>
                     </li>
                   </ul>
+              </li>
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+                <a routerLink="usermanagement" routerLinkActive="active">Manage Label</a>
               </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

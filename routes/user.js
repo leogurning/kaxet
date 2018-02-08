@@ -39,7 +39,7 @@ exports.signup = function(req, res, next){
                 username: username,
                 password: password,
                 usertype: usertype,
-                status: 'pending',
+                status: 'STSPEND',
                 balance: 0
             });
         
@@ -63,7 +63,7 @@ exports.login = function(req, res, next){
 		if (!user) {
 			res.status(201).json({ success: false, message: 'Incorrect login credentials.' });
 		}else if (user) {
-            if (user.status == 'active') {
+            if (user.status == 'STSACT') {
                 user.comparePassword(req.body.password, function (err, isMatch) {
                     if (isMatch && !err) {
                         var token = jwt.sign({data:user}, config.secret, {

@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
     });
 
     let payload: any = {};
-    payload.status = 'active';
+    payload.status = 'STSACT';
     this.fetchReport(this.userObj.userid, payload);
   }
 

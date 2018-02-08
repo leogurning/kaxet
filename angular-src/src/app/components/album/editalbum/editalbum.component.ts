@@ -7,6 +7,8 @@ import { ArtistService } from '../../../services/artist.service';
 import { AlbumService } from '../../../services/album.service';
 import { AuthService } from '../../../services/auth.service';
 import { IArtistList } from '../../../interface/artist';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-editalbum',
@@ -16,8 +18,8 @@ import { IArtistList } from '../../../interface/artist';
 export class EditalbumComponent implements OnInit {
   albumForm: FormGroup;
   userObj: any;
-  sts: any = ['active', 'inactive'];
-  genre: any = ['Alternative', 'Blues', 'Children', 'Classical','Comedy', 'Country', 'Dance', 'Easy Listening', 'Electronic', 'Hip Hop','Christian Gospel', 'Instrumental', 'Jazz', 'Latin', 'New Age','Pop','RnB','Reggae', 'Rock', 'Soundtrack','Vocal','Others'];
+  sts: IMsconfigGroupList[];
+  genre: IMsconfigGroupList[];
   albumid: String;
   artistlist: IArtistList[];
   btnLbl: String;
@@ -27,6 +29,7 @@ export class EditalbumComponent implements OnInit {
     private authService: AuthService,
     private artistService: ArtistService,
     private albumService: AlbumService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -48,6 +51,8 @@ export class EditalbumComponent implements OnInit {
     });
     
     this.userObj =  this.authService.currentUser;
+    this.getMsconfigGroupList('CSTATUS');
+    this.getMsconfigGroupList('GENRE');
     this.getArtistList(this.userObj.userid);
     this.albumForm = this.fb.group({
       artistid: this.artistid,
@@ -58,6 +63,24 @@ export class EditalbumComponent implements OnInit {
       status: this.status
     });
   }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          if (groupid == 'CSTATUS') {
+            this.sts = data.data;
+          }
+          if (groupid == 'GENRE') {
+            this.genre = data.data;
+          }
+        } else {
+          this.genre = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
+  }
+
   getArtistList(id){
     this.artistService.getArtistList(id).subscribe(data => {
       if (data.success === true) {

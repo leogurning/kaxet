@@ -15,7 +15,10 @@ const AlbumSchema = new Schema({
     albumphotopath: {type:String, required: true},
     albumphotoname: {type:String, required: true},
     status: {type:String, required: true},
-    objartistid: { type:mongoose.Schema.ObjectId, required: true}
+    objartistid: { type:mongoose.Schema.ObjectId, required: true},
+    objlabelid: { type:mongoose.Schema.ObjectId, required: true},
+    createddt: {type:Date, required: true},
+    modifydt: {type:Date, required: true}
 });
 
 AlbumSchema.plugin(mongoosePaginate);

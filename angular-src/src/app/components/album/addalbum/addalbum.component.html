@@ -54,7 +54,7 @@
           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
           <select [disabled]="this.loading == true" class="form-control" [formControl]="albumgenre">
               <option ng-selected="true" value="">Select the genre</option>
-              <option *ngFor="let a of genre" >{{a}}</option>
+              <option *ngFor="let a of genre" [ngValue]="a.code">{{a.value}}</option>
           </select>
       </div>
       <div class="text-danger" *ngIf="addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors">
