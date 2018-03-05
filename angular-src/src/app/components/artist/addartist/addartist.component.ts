@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
@@ -11,6 +11,8 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './addartist.component.html',
   styleUrls: ['./addartist.component.css']
 })
+
+
 export class AddartistComponent implements OnInit {
   addArtistForm: FormGroup;
   userObj: any;
@@ -18,6 +20,7 @@ export class AddartistComponent implements OnInit {
   filesToUpload: Array<File> = [];
   artistid: String;
   loading = false;
+  @ViewChild('inputimg')artistimageVar: any;
 
   constructor(
     private fb: FormBuilder, 
@@ -76,9 +79,10 @@ export class AddartistComponent implements OnInit {
                 } else {
                   this.loading = false;
                   this.toastr.success(data.message);
-                  this.router.navigate(['listartist']);
+                  //this.router.navigate(['listartist']);
                 }
                 this.addArtistForm.reset();
+                this.artistimageVar.nativeElement.value = "";
               });
           }   
         });

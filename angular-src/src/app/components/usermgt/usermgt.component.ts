@@ -6,6 +6,8 @@ import { ToastrService } from '../../common/toastr.service';
 import { AuthService } from '../../services/auth.service';
 import { UsermgtService } from '../../services/admin/usermgt.service';
 import { IUser } from '../../interface/user';
+import { MsconfigService } from '../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../interface/msconfig';
 
 @Component({
   selector: 'app-usermgt',
@@ -24,18 +26,15 @@ export class UsermgtComponent implements OnInit {
   qstatus: String;
   qpage: number;
   qsort: String;
-  sts: any = [
-    {id: 'pending', desc: 'pending'}, 
-    {id: 'active', desc: 'active'},
-    {id: 'inactive', desc: 'inactive'},
-    {id: '',desc: 'All'} 
-  ];
+  sts: IMsconfigGroupList[];
+
   loading = false;
 
   constructor(
     private fb: FormBuilder, 
     private authService: AuthService,
     private labelmgtService: UsermgtService,
+    private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
@@ -44,7 +43,7 @@ export class UsermgtComponent implements OnInit {
 
   name = new FormControl('',[Validators.nullValidator]);
   username = new FormControl('',[Validators.nullValidator]);
-  status = new FormControl('pending', [Validators.nullValidator]);
+  status = new FormControl('STSPEND', [Validators.nullValidator]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -53,7 +52,7 @@ export class UsermgtComponent implements OnInit {
       username: this.username,
       status: this.status
     });
-
+    this.getMsconfigGroupList('STATUS');
     this.route.queryParams.forEach((params: Params) => {
       this.qlabelname = params['name'] || '';
       this.qusername = params['username'] || '';
@@ -72,9 +71,21 @@ export class UsermgtComponent implements OnInit {
       this.reportForm.patchValue({
         name: this.qlabelname,
         username: this.qusername,
-        status: this.qstatus
+        status: 'STSPEND'
       });
     })
+  }
+
+  getMsconfigGroupList(groupid){
+    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.sts = data.data;
+        } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
   }
 
   getReport(formdata:any): void {
@@ -155,6 +166,80 @@ export class UsermgtComponent implements OnInit {
           sortby: this.qsort }
       }
     );
+  }
+
+  activateLabel(userid: string, labelname: string, status: string) {
+
+    this.loading = true;
+    if (status == 'STSACT') {
+      this.loading = false;
+      this.toastr.warning('The label is already active.');
+    } else {
+      if(confirm('Do you really want to activate this label: ' + labelname + ' record?')){
+        let payloadData: any = {};
+        payloadData.status = 'STSACT';
+        this.labelmgtService.updateLabelStatus(userid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            this.fetchReport(this.userObj.userid, this.reportForm.value);
+            this.toastr.success(data.message);
+          }
+        });
+      } else {
+        this.loading = false;
+      }
+    }
+  }
+
+  deactivateLabel(userid: string, labelname: string, status: string) {
+    
+    this.loading = true;
+    if (status != 'STSACT') {
+      this.loading = false;
+      this.toastr.warning('The label is already NOT active.');
+    } else {
+      if(confirm('Do you really want to deactivate this label: ' + labelname + ' record?')){
+        let payloadData: any = {};
+        payloadData.status = 'STSINACT';
+        this.labelmgtService.updateLabelStatus(userid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            this.fetchReport(this.userObj.userid, this.reportForm.value);
+            this.toastr.success(data.message);
+          }
+        });
+      } else {
+        this.loading = false;
+      }
+    }
+  }
+  
+  showLabel(userid): void {
+    this.router.navigate([`viewlabel/${userid}`],
+      {
+        queryParams: { 
+          name: this.qlabelname,
+          username: this.qusername,
+          status: this.qstatus,
+          page: this.qpage || 1, 
+          sortby: this.qsort }
+      });
   }
 
 }

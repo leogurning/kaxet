@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials");
     res.setHeader("Access-Control-Allow-Credentials", "true");
-    if ('OPTIONS' === req.method) { res.send(204); } else { next(); }
+    if ('OPTIONS' === req.method) { res.sendStatus(204); } else { next(); }
   });
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -67,6 +67,7 @@ apiRoutes.get('/', function(req, res) {
 apiRoutes.get('/user/:id', user.getuserDetails); // API returns user details 
 apiRoutes.put('/user/:id', user.updateUser); // API updates user details
 apiRoutes.put('/password/:id', user.updatePassword); // API updates user password
+apiRoutes.put('/email/:id', user.updateEmail); // API updates user email
 
 apiRoutes.post('/artistphotoupload', artist.artistphotoupload);
 apiRoutes.post('/artistphotodelete', artist.artistphotodelete);
@@ -106,6 +107,7 @@ apiRoutes.get('/songaggregate/:id', song.getsongaggregate); // API returns song 
 apiRoutes.delete('/song/:id', song.delsong); //API removes the song details of given song id
 apiRoutes.post('/song/aggreport/:labelid', song.songaggregate); //API returns song report based on user input
 apiRoutes.post('/song/report/:labelid', song.songreport);
+apiRoutes.post('/song/list/:labelid', song.songlist);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));

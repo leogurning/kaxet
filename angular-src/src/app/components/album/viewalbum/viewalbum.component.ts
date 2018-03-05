@@ -143,7 +143,7 @@ export class ViewalbumComponent implements OnInit {
   }
 
   fetchReport(userid, formval) {
-    this.songService.getSongs(userid, formval)
+    this.songService.getSongList(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
         if (data.errcode){
@@ -152,8 +152,8 @@ export class ViewalbumComponent implements OnInit {
         }
         this.toastr.error(data.message);
       } else {
-        this.songs = data.data.docs;
-        this.totalrows = +data.data.total;
+        this.songs = data.data;
+        this.totalrows = +data.totalcount;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);
         
         this.qalbumid = formval.albumid;

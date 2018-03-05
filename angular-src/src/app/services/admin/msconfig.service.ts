@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Globals } from '../../app.global';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -9,10 +10,10 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class MsconfigService {
   public jwtToken: string;
-  //public adminurl = 'https://kxadmin.herokuapp.com';
-  public adminurl = 'https://api-kxadmin-dot-kaxet-191909.appspot.com';
+  public adminurl: String;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private globals: Globals) {
+      this.adminurl = globals.adminurl;
       const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
       if (theUser) {
         this.jwtToken = theUser.token;
@@ -106,10 +107,19 @@ export class MsconfigService {
   getMsconfigbygroup(msconfiggroup) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get(`${this.adminurl}/api/msconfigbygroup/${msconfiggroup}`, options)
+    return this.http.get(`${this.adminurl}/msconfigbygroup/${msconfiggroup}`, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
+  getMsconfigvalue(msconfigcode, msconfiggroup) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.get(`${this.adminurl}/msconfigvalue/${msconfigcode}?group=${msconfiggroup}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

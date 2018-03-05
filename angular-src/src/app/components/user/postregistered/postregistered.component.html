@@ -8,8 +8,8 @@
     
     Label User: {{ this.uname }} <br>
     status:PENDING APPROVAL <br> 
-    Your account need to be verified first by our System Administrator <br>
-    For more information and enquiries, you may contact adminCS@midas.co.id.
+    {{ this.remarks[0].value }} <br>
+    {{ this.remarks[1].value }} {{ this.csemail.value }}.
     <br><br>
     <div class="col-sm-10">
         <button type="button" (click)="onLogin()" class="btn btn-info">Back to Login</button>

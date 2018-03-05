@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private http: Http) {
       const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-      if (theUser) {
+      if (theUser) {  
         this.jwtToken = theUser.token;
       }    
   }
@@ -39,8 +39,8 @@ export class UserService {
       let options = new RequestOptions({ headers: headers });
 
       return this.http.get(`api/user/${userid}`, options)
-          .map((response: Response) => response.json())
-          .catch(this.handleError);
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
   }
 
   updateUser(userid, oUser){
@@ -50,8 +50,8 @@ export class UserService {
       let options = new RequestOptions({ headers: headers });
 
       return this.http.put(`api/user/${userid}`, JSON.stringify(oUser), options)
-          .map((response: Response) => response.json())
-          .catch(this.handleError);
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
   }
 
 /*   updatePhoto(userid, oUser){
@@ -84,8 +84,19 @@ export class UserService {
       let options = new RequestOptions({ headers: headers });
 
       return this.http.put(`api/password/${userid}`, JSON.stringify(oUser), options)
-          .map((response: Response) => response.json())
-          .catch(this.handleError);
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
+  updateEmail(userid, oUser){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`api/email/${userid}`, JSON.stringify(oUser), options)
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
   }
 
   private handleError(error: Response) {

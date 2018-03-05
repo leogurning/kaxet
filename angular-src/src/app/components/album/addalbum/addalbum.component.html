@@ -84,7 +84,7 @@
         <label for="albumimage" class="col-sm-2 control-label">Album Photo</label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-            <input [disabled]="this.loading == true" type="file" (change)="fileChangeEvent($event)" name="albumimage" id="albumimage" placeholder="Album image">
+            <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="albumimage" id="albumimage" placeholder="Album image">
         </div>
     </div>
 

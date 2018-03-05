@@ -39,7 +39,7 @@ export class AuthService {
             userObj.user = response.json().message;
             userObj.token = response.json().token;
 
-            localStorage.setItem('currentUser', JSON.stringify(userObj));
+            localStorage.setItem('currentUser', JSON.stringify(userObj)); 
         }
         response.json();
     })

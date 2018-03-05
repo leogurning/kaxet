@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
@@ -23,6 +23,7 @@ export class AddalbumComponent implements OnInit {
   albumid: String;
   artistlist: IArtistList[];
   loading = false;
+  @ViewChild('inputimg')albumimageVar: any;
 
   constructor(
     private fb: FormBuilder, 
@@ -117,9 +118,10 @@ export class AddalbumComponent implements OnInit {
                 } else {
                   this.loading = false;
                   this.toastr.success(data.message);
-                  this.router.navigate(['listalbum']);
+                  //this.router.navigate(['listalbum']);
                 }
                 this.addAlbumForm.reset();
+                this.albumimageVar.nativeElement.value = "";
               });
           }   
         });

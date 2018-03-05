@@ -250,6 +250,7 @@ exports.savealbum = function(req, res, next){
                     albumname: albumname,
                     albumyear: albumyear,
                     albumgenre: albumgenre,
+                    albumcntrate:1,
                     albumrate: 5,
                     albumprice: albumprice,
                     albumphotopath: albumphotopath,

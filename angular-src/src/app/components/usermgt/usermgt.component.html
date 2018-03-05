@@ -32,7 +32,8 @@
                   <div class="input-group col-sm-10">
                       <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                       <select class="form-control" [formControl]="status">
-                        <option *ngFor="let a of sts" [ngValue]="a.id">{{a.desc}}</option>
+                            <option value="">Select the status</option>
+                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                       </select>
                   </div>
               </div><br>
@@ -43,4 +44,51 @@
       </form>
     </div>
   </div>  
+
+  <div class="panel panel-danger" *ngIf="labellist && totalrows < 1">
+        <div class="panel-heading">
+            <h3 class="panel-title">No LABELS found</h3> 
+        </div>
+  
+        <div class="panel-body">
+            No Labels found from above criterias.
+        </div>
+    </div>
+  
+    <div class="panel panel-default" *ngIf="labellist && totalrows > 0 && this.loading == false">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+        </div>
+        <div class="panel-body">
+                <div class="table-responsive"> 
+                        <table class="table table-striped">
+                            <thead>
+                                    <tr>
+                                        <th width="10%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>
+                                        <th width="40%"><a style="cursor:pointer" (click)="sortLabel('name')">Label Name</a></th>
+                                        <th width="20%"><a style="cursor:pointer" (click)="sortLabel('email')">Email</a></th>
+                                        <th width="10%"><a style="cursor:pointer" (click)="sortLabel('status')">Status</a></th>
+                                        <th width="20%">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let lbl of labellist; let lblIndex = index'>
+                                        <td><a style="cursor:pointer" (click)="showLabel(lbl._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ lbl.username}}</a></td>
+                                        <td>{{ lbl.name}}</td>
+                                        <td>{{ lbl.email}}</td>
+                                        <td>{{ lbl.stsvalue}}</td>
+                                        <td>
+                                            <button type="button" class="btn-xs btn-success" aria-label="Activate" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Activate Label">
+                                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn-xs btn-danger" aria-label="Deactivate" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Deactivate Label">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                            </button>
+                                        </td>
+                                    </tr>     
+                                </tbody>    
+                        </table>
+                </div>
+        </div>
+    </div>
 </div>

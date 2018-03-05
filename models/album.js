@@ -10,6 +10,7 @@ const AlbumSchema = new Schema({
     albumname: {type:String, required: true},
     albumyear: {type:String, required: true},
     albumgenre: {type:String, required: true},
+    albumcntrate: {type:Number, required: true},
     albumrate: {type:Number, required: true},
     albumprice: {type:Number, required: true},
     albumphotopath: {type:String, required: true},

@@ -397,6 +397,7 @@ exports.savesong = function(req, res, next){
                   songname: songname,
                   songlyric: songlyric,
                   songgenre: songgenre,
+                  songcntrate:1,
                   songrate: 5,
                   songprice: songprice,
                   songprvwpath: songprvwpath,
@@ -405,6 +406,7 @@ exports.savesong = function(req, res, next){
                   songfilename: songfilename,
                   songpublish: 'N',
                   songbuy: 0,
+                  songshared:0,
                   status: status,
                   objartistid: artistid,
                   objalbumid: albumid,
@@ -867,6 +869,99 @@ exports.songreport = function(req, res, next){
         totalcount: totalcount
       });
     });
+  }
+}
+
+exports.songlist = function(req, res, next){
+  const labelid = req.params.labelid || req.query.labelid;
+  const artistid = req.body.artistid || req.query.artistid;
+  const albumid = req.body.albumid || req.query.albumid;
+  var totalcount;
+
+  let limit = parseInt(req.query.limit);
+  let page = parseInt(req.body.page || req.query.page);
+  let sortby = req.body.sortby || req.query.sortby;
+  let query = {};
+
+  if(!limit || limit < 1) {
+    limit = 10;
+  }
+
+  if(!page || page < 1) {
+    page = 1;
+  }
+
+  if(!sortby) {
+    sortby = 'songname';
+  }
+
+  if (!labelid) {
+      return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
+  }else{
+    // returns albums records based on query
+    query = {labelid:labelid};
+    if (artistid) {
+      query = merge(query, {artistid:artistid});
+    }
+    if (albumid) {
+      query = merge(query, {albumid:albumid});
+    }
+    var options = {
+      page: page,
+      limit: limit,
+      sortBy: sortby
+    }
+    var aggregate = Song.aggregate();        
+    var olookup = {
+      from: 'msconfig',
+      localField: 'status',
+      foreignField: 'code',
+      as: 'msconfigdetails'
+    };
+    var ounwind = 'msconfigdetails';
+  
+    var oproject = { 
+        _id:1,
+        labelid:1,
+        artistid:1,
+        albumid:1,
+        songname: 1,
+        songgenre:1,
+        songlyric:1,
+        songprice:1,
+        "stsvalue": "$msconfigdetails.value",
+        objartistid:1,
+        objalbumid:1,
+        songpublish:1,
+        songbuy:1,
+        status:1,
+        songprvwpath:1,
+        songprvwname:1,    
+        songfilepath:1,
+        songfilename:1,
+      };
+        
+    aggregate.match(query).lookup(olookup).unwind(ounwind);
+    aggregate.project(oproject);      
+  
+    Song.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+      if(err) 
+      {
+          res.status(400).json({
+              success: false, 
+              message: err.message
+          });
+      }
+      else
+      { 
+          res.status(201).json({
+              success: true, 
+              data: results,
+              npage: pageCount,
+              totalcount: count
+          });
+      }
+    })
   }
 }
 

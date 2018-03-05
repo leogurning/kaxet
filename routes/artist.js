@@ -58,7 +58,7 @@ exports.artistphotoupload = function(req, res, next){
             file.cloudStorageError = err;
             console.log("Artist Photo Upload Failed", err);
             return res.status(401).json({ success: false, 
-                message:'Artist Photo Upload Failed on streaming upload.'
+                message:'Artist Photo Upload Failed on streaming upload.'+ err.message
             });      
           });
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
@@ -27,6 +27,8 @@ export class AddsongComponent implements OnInit {
   artistlist: IArtistList[];
   albumlist: IAlbumList[];
   loading = false;
+  @ViewChild('inputprev')inputpreVar: any;
+  @ViewChild('inputsong')inputsongVar: any;
 
   constructor(
     private fb: FormBuilder, 
@@ -164,9 +166,11 @@ export class AddsongComponent implements OnInit {
                       } else {
                         this.loading = false;
                         this.toastr.success(data.message);
-                        this.router.navigate(['listsong']);
+                        //this.router.navigate(['listsong']);
                       }
                       this.addSongForm.reset();
+                      this.inputpreVar.nativeElement.value = "";
+                      this.inputsongVar.nativeElement.value = "";
                     });
                   }      
               });

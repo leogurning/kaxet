@@ -73,6 +73,34 @@ AppComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/app.global.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Globals; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var Globals = (function () {
+    function Globals() {
+        this.adminurl = 'http://localhost:2002';
+        //adminurl: String = 'https://apikxadmin-dot-kaxetd.appspot.com';
+    }
+    return Globals;
+}());
+Globals = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
+], Globals);
+
+//# sourceMappingURL=app.global.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -84,43 +112,46 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_loading__ = __webpack_require__("../../../../ngx-loading/ngx-loading/ngx-loading.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_artist_service__ = __webpack_require__("../../../../../src/app/services/artist.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_album_service__ = __webpack_require__("../../../../../src/app/services/album.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_song_service__ = __webpack_require__("../../../../../src/app/services/song.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_admin_usermgt_service__ = __webpack_require__("../../../../../src/app/services/admin/usermgt.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_admin_songadmin_service__ = __webpack_require__("../../../../../src/app/services/admin/songadmin.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_admin_msconfig_service__ = __webpack_require__("../../../../../src/app/services/admin/msconfig.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_user_password_password_component__ = __webpack_require__("../../../../../src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_user_logout_component__ = __webpack_require__("../../../../../src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_artist_editartist_editartist_component__ = __webpack_require__("../../../../../src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_artist_listartist_listartist_component__ = __webpack_require__("../../../../../src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_artist_viewartist_viewartist_component__ = __webpack_require__("../../../../../src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_artist_addartist_addartist_component__ = __webpack_require__("../../../../../src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("../../../../../src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_album_addalbum_addalbum_component__ = __webpack_require__("../../../../../src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_album_listalbum_listalbum_component__ = __webpack_require__("../../../../../src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_album_viewalbum_viewalbum_component__ = __webpack_require__("../../../../../src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_album_editalbum_editalbum_component__ = __webpack_require__("../../../../../src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("../../../../../src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_song_addsong_addsong_component__ = __webpack_require__("../../../../../src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_song_listsong_listsong_component__ = __webpack_require__("../../../../../src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("../../../../../src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_song_viewsong_viewsong_component__ = __webpack_require__("../../../../../src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_song_editsong_editsong_component__ = __webpack_require__("../../../../../src/app/components/song/editsong/editsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_user_postregistered_postregistered_component__ = __webpack_require__("../../../../../src/app/components/user/postregistered/postregistered.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_usermgt_usermgt_component__ = __webpack_require__("../../../../../src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_global__ = __webpack_require__("../../../../../src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_artist_service__ = __webpack_require__("../../../../../src/app/services/artist.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_album_service__ = __webpack_require__("../../../../../src/app/services/album.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_song_service__ = __webpack_require__("../../../../../src/app/services/song.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_admin_usermgt_service__ = __webpack_require__("../../../../../src/app/services/admin/usermgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_admin_songadmin_service__ = __webpack_require__("../../../../../src/app/services/admin/songadmin.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_admin_msconfig_service__ = __webpack_require__("../../../../../src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_user_password_password_component__ = __webpack_require__("../../../../../src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_logout_component__ = __webpack_require__("../../../../../src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_artist_editartist_editartist_component__ = __webpack_require__("../../../../../src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_artist_listartist_listartist_component__ = __webpack_require__("../../../../../src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_artist_viewartist_viewartist_component__ = __webpack_require__("../../../../../src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_artist_addartist_addartist_component__ = __webpack_require__("../../../../../src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("../../../../../src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_album_addalbum_addalbum_component__ = __webpack_require__("../../../../../src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_album_listalbum_listalbum_component__ = __webpack_require__("../../../../../src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_album_viewalbum_viewalbum_component__ = __webpack_require__("../../../../../src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_album_editalbum_editalbum_component__ = __webpack_require__("../../../../../src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("../../../../../src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_song_addsong_addsong_component__ = __webpack_require__("../../../../../src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_song_listsong_listsong_component__ = __webpack_require__("../../../../../src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("../../../../../src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_song_viewsong_viewsong_component__ = __webpack_require__("../../../../../src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_song_editsong_editsong_component__ = __webpack_require__("../../../../../src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_user_postregistered_postregistered_component__ = __webpack_require__("../../../../../src/app/components/user/postregistered/postregistered.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_usermgt_usermgt_component__ = __webpack_require__("../../../../../src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("../../../../../src/app/components/usermgt/viewlabel/viewlabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_user_updateemail_updateemail_component__ = __webpack_require__("../../../../../src/app/components/user/updateemail/updateemail.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -132,6 +163,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+/* Global Variables */
 
 /* Services Modules */
 
@@ -172,32 +205,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_20__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_41__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_19__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_24__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_23__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_22__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_21__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_25__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_29__components_artist_addartist_addartist_component__["a" /* AddartistComponent */] },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_26__components_artist_editartist_editartist_component__["a" /* EditartistComponent */] },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_27__components_artist_listartist_listartist_component__["a" /* ListartistComponent */] },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_30__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_28__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */] },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_31__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */] },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_32__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */] },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */] },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_34__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */] },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_35__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_song_addsong_addsong_component__["a" /* AddsongComponent */] },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_song_listsong_listsong_component__["a" /* ListsongComponent */] },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_38__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */] },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_song_editsong_editsong_component__["a" /* EditsongComponent */] },
-    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_usermgt_usermgt_component__["a" /* UsermgtComponent */] }
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_21__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_42__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_20__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_25__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_24__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_23__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_22__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_26__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_30__components_artist_addartist_addartist_component__["a" /* AddartistComponent */] },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_27__components_artist_editartist_editartist_component__["a" /* EditartistComponent */] },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_28__components_artist_listartist_listartist_component__["a" /* ListartistComponent */] },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_31__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_29__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */] },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_32__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */] },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */] },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_34__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */] },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_35__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */] },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_36__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_song_addsong_addsong_component__["a" /* AddsongComponent */] },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_song_listsong_listsong_component__["a" /* ListsongComponent */] },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_39__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */] },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_song_editsong_editsong_component__["a" /* EditsongComponent */] },
+    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_usermgt_usermgt_component__["a" /* UsermgtComponent */] },
+    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */] },
+    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -207,32 +244,34 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_17__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_user_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_user_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_user_password_password_component__["a" /* PasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_user_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_user_logout_component__["a" /* LogoutComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_about_about_component__["a" /* AboutComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_38__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-            __WEBPACK_IMPORTED_MODULE_39__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_40__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
-            __WEBPACK_IMPORTED_MODULE_41__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
-            __WEBPACK_IMPORTED_MODULE_42__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_user_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_user_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_user_password_password_component__["a" /* PasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_user_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_user_logout_component__["a" /* LogoutComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_about_about_component__["a" /* AboutComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+            __WEBPACK_IMPORTED_MODULE_40__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_41__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+            __WEBPACK_IMPORTED_MODULE_42__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
+            __WEBPACK_IMPORTED_MODULE_43__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+            __WEBPACK_IMPORTED_MODULE_44__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
+            __WEBPACK_IMPORTED_MODULE_45__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -249,18 +288,19 @@ AppModule = __decorate([
             }),
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_15__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_8__services_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_9__services_artist_service__["a" /* ArtistService */],
-            __WEBPACK_IMPORTED_MODULE_10__services_album_service__["a" /* AlbumService */],
-            __WEBPACK_IMPORTED_MODULE_11__services_song_service__["a" /* SongService */],
-            __WEBPACK_IMPORTED_MODULE_16__angular_common__["d" /* DatePipe */],
-            __WEBPACK_IMPORTED_MODULE_12__services_admin_usermgt_service__["a" /* UsermgtService */],
-            __WEBPACK_IMPORTED_MODULE_13__services_admin_songadmin_service__["a" /* SongadminService */],
-            __WEBPACK_IMPORTED_MODULE_14__services_admin_msconfig_service__["a" /* MsconfigService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_17__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_6__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_16__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_9__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_10__services_artist_service__["a" /* ArtistService */],
+            __WEBPACK_IMPORTED_MODULE_11__services_album_service__["a" /* AlbumService */],
+            __WEBPACK_IMPORTED_MODULE_12__services_song_service__["a" /* SongService */],
+            __WEBPACK_IMPORTED_MODULE_17__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_13__services_admin_usermgt_service__["a" /* UsermgtService */],
+            __WEBPACK_IMPORTED_MODULE_14__services_admin_songadmin_service__["a" /* SongadminService */],
+            __WEBPACK_IMPORTED_MODULE_15__services_admin_msconfig_service__["a" /* MsconfigService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_18__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -392,7 +432,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/addalbum/addalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -523,9 +563,10 @@ var AddalbumComponent = (function () {
                         else {
                             _this.loading = false;
                             _this.toastr.success(data.message);
-                            _this.router.navigate(['listalbum']);
+                            //this.router.navigate(['listalbum']);
                         }
                         _this.addAlbumForm.reset();
+                        _this.albumimageVar.nativeElement.value = "";
                     });
                 }
             });
@@ -537,6 +578,10 @@ var AddalbumComponent = (function () {
     };
     return AddalbumComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('inputimg'),
+    __metadata("design:type", Object)
+], AddalbumComponent.prototype, "albumimageVar", void 0);
 AddalbumComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-addalbum',
@@ -1017,15 +1062,15 @@ var ListalbumComponent = (function () {
             _this.qstatus = params['status'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
-            var payload = {};
-            payload.status = _this.qstatus;
-            payload.artistid = _this.qartistid;
-            payload.albumname = _this.qalbumyear;
-            payload.albumyear = _this.qalbumyear;
-            payload.albumgenre = _this.qalbumgenre;
-            payload.page = _this.qpage;
-            payload.sortby = _this.qsort;
-            _this.fetchReport(_this.userObj.userid, payload);
+            /*       let payload: any = {};
+                  payload.status = this.qstatus;
+                  payload.artistid = this.qartistid;
+                  payload.albumname = this.qalbumyear;
+                  payload.albumyear = this.qalbumyear;
+                  payload.albumgenre = this.qalbumgenre;
+                  payload.page = this.qpage;
+                  payload.sortby = this.qsort;
+                  this.fetchReport(this.userObj.userid, payload); */
         });
     };
     ListalbumComponent.prototype.getMsconfigGroupList = function (groupid) {
@@ -1283,7 +1328,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/album/viewalbum/viewalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <form [formGroup]=\"albumForm\" class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumyear }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <select class=\"form-control\" [formControl]=\"albumgenre\" disabled>\n                <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ album?.albumgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Album Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select class=\"form-control\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                </select>\n                <!-- <div class=\"form-ele\">{{ album?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumphoto\" class=\"col-sm-2 control-label\">Photo</label>\n            <div class=\"input-group col-sm-10\">\n              <img src=\"{{ album?.albumphotopath }}\" class=\"rounded float-right\" width=\"340\" height=\"340\">\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"listsong\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"input-group col-sm-10\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-10\">\n                    <i>({{ totalrows }} songs found) </i> \n                </div><br>\n                <div class=\"col-sm-12 col-md-10\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"50%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                                    <td>{{ song.status}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  \n  </div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <form [formGroup]=\"albumForm\" class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ album?.albumyear }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <select class=\"form-control\" [formControl]=\"albumgenre\" disabled>\n                <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ album?.albumgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Album Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select class=\"form-control\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                </select>\n                <!-- <div class=\"form-ele\">{{ album?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"albumphoto\" class=\"col-sm-2 control-label\">Photo</label>\n            <div class=\"input-group col-sm-10\">\n              <img src=\"{{ album?.albumphotopath }}\" class=\"rounded float-right\" width=\"340\" height=\"340\">\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"listsong\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"input-group col-sm-10\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-10\">\n                    <i>({{ totalrows }} songs found) </i> \n                </div><br>\n                <div class=\"col-sm-12 col-md-10\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"50%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':true }}</td>\n                                    <td>{{ song.stsvalue}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  \n  </div>\n"
 
 /***/ }),
 
@@ -1424,7 +1469,7 @@ var ViewalbumComponent = (function () {
     };
     ViewalbumComponent.prototype.fetchReport = function (userid, formval) {
         var _this = this;
-        this.songService.getSongs(userid, formval)
+        this.songService.getSongList(userid, formval)
             .subscribe(function (data) {
             if (data.success === false) {
                 if (data.errcode) {
@@ -1434,8 +1479,8 @@ var ViewalbumComponent = (function () {
                 _this.toastr.error(data.message);
             }
             else {
-                _this.songs = data.data.docs;
-                _this.totalrows = +data.data.total;
+                _this.songs = data.data;
+                _this.totalrows = +data.totalcount;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
                 _this.qalbumid = formval.albumid;
                 _this.reportTitle = 'Songs Result';
@@ -1512,7 +1557,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/artist/addartist/addartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1602,9 +1647,10 @@ var AddartistComponent = (function () {
                         else {
                             _this.loading = false;
                             _this.toastr.success(data.message);
-                            _this.router.navigate(['listartist']);
+                            //this.router.navigate(['listartist']);
                         }
                         _this.addArtistForm.reset();
+                        _this.artistimageVar.nativeElement.value = "";
                     });
                 }
             });
@@ -1616,6 +1662,10 @@ var AddartistComponent = (function () {
     };
     return AddartistComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('inputimg'),
+    __metadata("design:type", Object)
+], AddartistComponent.prototype, "artistimageVar", void 0);
 AddartistComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-addartist',
@@ -2050,12 +2100,12 @@ var ListartistComponent = (function () {
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
             _this.getMsconfigGroupList('CSTATUS');
-            var payload = {};
-            payload.status = _this.qstatus;
-            payload.artistname = _this.qartistname;
-            payload.page = _this.qpage;
-            payload.sortby = _this.qsort;
-            _this.fetchReport(_this.userObj.userid, payload);
+            /*       let payload: any = {};
+                  payload.status = this.qstatus;
+                  payload.artistname = this.qartistname;
+                  payload.page = this.qpage;
+                  payload.sortby = this.qsort;
+                  this.fetchReport(this.userObj.userid, payload); */
         });
     };
     ListartistComponent.prototype.getMsconfigGroupList = function (groupid) {
@@ -2610,7 +2660,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Fixed navbar -->\n<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container\">\n      <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n              <span class=\"sr-only\">Toggle navigation</span>\n              <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" *ngIf=\"!authService.isLoggedIn()\" routerLink=\"login\">kaXet</a>\n          <a class=\"navbar-brand\" *ngIf=\"authService.isLoggedIn()\" routerLink=\"report\">kaXet</a>\n      </div>\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav\">\n              \n<!--               <li ><a routerLink=\"report\" *ngIf=\"authService.isLoggedIn()\" routerLinkActive=\"active\">Report</a></li>\n              <li><a routerLink=\"editexpense\" *ngIf=\"authService.isLoggedIn()\" routerLinkActive=\"active\">Add Expense</a></li> -->\n              <li><a routerLink=\"about\" routerLinkActive=\"active\">About</a></li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                <ul class=\"menu\">\n                      <li>\n                          Artist\n                          <ul>\n                              <li routerLink=\"addartist\" routerLinkActive=\"active\">Add Artist</li>\n                              <li routerLink=\"listartist\" routerLinkActive=\"active\">Manage Artist</li>\n                          </ul>\n                      </li>\n                </ul>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                <ul class=\"menu\"> \n                      <li>\n                        Album\n                        <ul>\n                            <li routerLink=\"addalbum\" routerLinkActive=\"active\">Add Album</li>\n                            <li routerLink=\"listalbum\" routerLinkActive=\"active\">Manage Album</li>\n                        </ul>\n                    </li>\n                  </ul>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                <ul class=\"menu\">\n                    <li>\n                        Song\n                        <ul>\n                            <li routerLink=\"addsong\" routerLinkActive=\"active\">Add Song</li>\n                            <li routerLink=\"listsong\" routerLinkActive=\"active\">Manage Song</li>\n                        </ul>\n                    </li>\n                  </ul>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                <a routerLink=\"usermanagement\" routerLinkActive=\"active\">Manage Label</a>\n              </li>\n          </ul>\n          <ul class=\"nav navbar-nav navbar-right\">\n              <li *ngIf=\"!authService.isLoggedIn()\">\n                  <a routerLink=\"login\" routerLinkActive=\"active\">Log In</a>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn()\">\n                 <ul class=\"dropdown menu\" data-responsive-menu=\"drilldown medium-dropdown\">\n                      <li>\n                          Welcome {{ authService.currentUser.name }}\n                          <ul>\n                              <li routerLink=\"profile\" routerLinkActive=\"active\">My Profile</li>\n                              <li routerLink=\"password\" routerLinkActive=\"active\">Change Password</li>\n                              <li routerLink=\"logout\" routerLinkActive=\"active\">Logout</li>\n                          </ul>\n                      </li>\n                  </ul>\n              </li>\n          </ul>\n      </div>\n  </div>\n</nav>"
+module.exports = "<!-- Fixed navbar -->\n<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container\">\n      <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n              <span class=\"sr-only\">Toggle navigation</span>\n              <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" *ngIf=\"!authService.isLoggedIn()\" routerLink=\"login\">kaXet</a>\n          <a class=\"navbar-brand\" *ngIf=\"authService.isLoggedIn()\" routerLink=\"report\">kaXet</a>\n      </div>\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav\">\n              \n<!--               <li ><a routerLink=\"report\" *ngIf=\"authService.isLoggedIn()\" routerLinkActive=\"active\">Report</a></li>\n              <li><a routerLink=\"editexpense\" *ngIf=\"authService.isLoggedIn()\" routerLinkActive=\"active\">Add Expense</a></li> -->\n              <li><a routerLink=\"about\" routerLinkActive=\"active\">About</a></li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                <ul class=\"menu\">\n                      <li>\n                          Artist\n                          <ul>\n                              <li routerLink=\"addartist\" routerLinkActive=\"active\">Add Artist</li>\n                              <li routerLink=\"listartist\" routerLinkActive=\"active\">Manage Artist</li>\n                          </ul>\n                      </li>\n                </ul>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                <ul class=\"menu\"> \n                      <li>\n                        Album\n                        <ul>\n                            <li routerLink=\"addalbum\" routerLinkActive=\"active\">Add Album</li>\n                            <li routerLink=\"listalbum\" routerLinkActive=\"active\">Manage Album</li>\n                        </ul>\n                    </li>\n                  </ul>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                <ul class=\"menu\">\n                    <li>\n                        Song\n                        <ul>\n                            <li routerLink=\"addsong\" routerLinkActive=\"active\">Add Song</li>\n                            <li routerLink=\"listsong\" routerLinkActive=\"active\">Manage Song</li>\n                        </ul>\n                    </li>\n                  </ul>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                <a routerLink=\"usermanagement\" routerLinkActive=\"active\">Manage Label</a>\n              </li>\n          </ul>\n          <ul class=\"nav navbar-nav navbar-right\">\n              <li *ngIf=\"!authService.isLoggedIn()\">\n                  <a routerLink=\"login\" routerLinkActive=\"active\">Log In</a>\n              </li>\n              <li *ngIf=\"authService.isLoggedIn()\">\n                 <ul class=\"dropdown menu\" data-responsive-menu=\"drilldown medium-dropdown\">\n                      <li>\n                          Welcome {{ authService.currentUser.name }}\n                          <ul>\n                              <li routerLink=\"profile\" routerLinkActive=\"active\">My Profile</li>\n                              <li routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</li>\n                              <li routerLink=\"password\" routerLinkActive=\"active\">Change Password</li>\n                              <li routerLink=\"logout\" routerLinkActive=\"active\">Logout</li>\n                          </ul>\n                      </li>\n                  </ul>\n              </li>\n          </ul>\n      </div>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -2675,7 +2725,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/song/addsong/addsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n      <div class=\"input-group col-sm-10\">\n          <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n      <div class=\"input-group col-sm-10\">\n          <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputprev type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputsong type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -2854,9 +2904,11 @@ var AddsongComponent = (function () {
                                 else {
                                     _this.loading = false;
                                     _this.toastr.success(data.message);
-                                    _this.router.navigate(['listsong']);
+                                    //this.router.navigate(['listsong']);
                                 }
                                 _this.addSongForm.reset();
+                                _this.inputpreVar.nativeElement.value = "";
+                                _this.inputsongVar.nativeElement.value = "";
                             });
                         }
                     });
@@ -2880,6 +2932,14 @@ var AddsongComponent = (function () {
     };
     return AddsongComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('inputprev'),
+    __metadata("design:type", Object)
+], AddsongComponent.prototype, "inputpreVar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('inputsong'),
+    __metadata("design:type", Object)
+], AddsongComponent.prototype, "inputsongVar", void 0);
 AddsongComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-addsong',
@@ -3459,18 +3519,18 @@ var ListsongComponent = (function () {
             _this.qstatus = params['status'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
-            var payload = {};
-            payload.status = _this.qstatus;
-            payload.artistid = _this.qartistid;
-            payload.albumid = _this.qalbumid;
-            payload.songname = _this.qsongname;
-            payload.albumyear = _this.qalbumyear;
-            payload.songgenre = _this.qsonggenre;
-            payload.songpublish = _this.qsongpublish;
-            payload.songbuy = _this.qsongbuy;
-            payload.page = _this.qpage;
-            payload.sortby = _this.qsort;
-            _this.fetchReport(_this.userObj.userid, payload);
+            /*       let payload: any = {};
+                  payload.status = this.qstatus;
+                  payload.artistid = this.qartistid;
+                  payload.albumid = this.qalbumid;
+                  payload.songname = this.qsongname;
+                  payload.albumyear = this.qalbumyear;
+                  payload.songgenre = this.qsonggenre;
+                  payload.songpublish = this.qsongpublish;
+                  payload.songbuy = this.qsongbuy;
+                  payload.page = this.qpage;
+                  payload.sortby = this.qsort;
+                  this.fetchReport(this.userObj.userid, payload); */
             _this.reportForm.patchValue({
                 songname: _this.qsongname,
                 artistid: _this.qartistid,
@@ -4219,7 +4279,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/postregistered/postregistered.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Confirmation</h3>\n  </div>\n  <div class=\"jumbotron\">\n    <img src=\"../../../cassetteicon.png\">\n    <h4>Thank You</h4>\n    \n    Label User: {{ this.uname }} <br>\n    status:PENDING APPROVAL <br> \n    Your account need to be verified first by our System Administrator <br>\n    For more information and enquiries, you may contact adminCS@midas.co.id.\n    <br><br>\n    <div class=\"col-sm-10\">\n        <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n    </div>  \n  </div>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Confirmation</h3>\n  </div>\n  <div class=\"jumbotron\">\n    <img src=\"../../../cassetteicon.png\">\n    <h4>Thank You</h4>\n    \n    Label User: {{ this.uname }} <br>\n    status:PENDING APPROVAL <br> \n    {{ this.remarks[0].value }} <br>\n    {{ this.remarks[1].value }} {{ this.csemail.value }}.\n    <br><br>\n    <div class=\"col-sm-10\">\n        <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n    </div>  \n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -4230,6 +4290,7 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostregisteredComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_admin_msconfig_service__ = __webpack_require__("../../../../../src/app/services/admin/msconfig.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4241,10 +4302,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var PostregisteredComponent = (function () {
-    function PostregisteredComponent(route, router) {
+    function PostregisteredComponent(route, router, msconfigService) {
         this.route = route;
         this.router = router;
+        this.msconfigService = msconfigService;
     }
     PostregisteredComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -4252,9 +4315,37 @@ var PostregisteredComponent = (function () {
             var name = params['nm'];
             _this.uname = name;
         });
+        this.getMsconfigGroupList('REMARKS');
+        this.getMsconfigVal('CSEML', 'EMAIL');
     };
     PostregisteredComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
+    };
+    PostregisteredComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.remarks = data.data;
+                }
+                else {
+                    _this.remarks = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        });
+    };
+    PostregisteredComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.csemail = data.data[0];
+                }
+                else {
+                    _this.csemail = { code: '', value: 'Error ms config list' };
+                }
+            }
+        });
     };
     PostregisteredComponent.prototype.onLogin = function () {
         this.router.navigate(['/login']);
@@ -4267,10 +4358,10 @@ PostregisteredComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/postregistered/postregistered.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/postregistered/postregistered.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_admin_msconfig_service__["a" /* MsconfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_admin_msconfig_service__["a" /* MsconfigService */]) === "function" && _c || Object])
 ], PostregisteredComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=postregistered.component.js.map
 
 /***/ }),
@@ -4296,7 +4387,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h1>My Profile</h1>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div class=\"clearfix\">\n      <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"form-group\">\n              <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.username }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('name').invalid && profileForm.get('name').dirty}\">\n              <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('name').dirty && profileForm.get('name').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} name</span>\n              </div>\n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n              <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\">@</div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"email\" [formControl]=\"email\" placeholder=\"Email\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter a valid email</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('contactno').invalid && profileForm.get('contactno').dirty}\">\n              <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"contactno\" [formControl]=\"contactno\" placeholder=\"Contact No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('contactno').dirty && profileForm.get('contactno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Contact Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankaccno').invalid && profileForm.get('bankaccno').dirty}\">\n              <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankaccno\" [formControl]=\"bankaccno\" placeholder=\"Bank Account No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankaccno').dirty && profileForm.get('bankaccno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Account Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankname').invalid && profileForm.get('bankname').dirty}\">\n              <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankname\" [formControl]=\"bankname\" placeholder=\"Bank Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankname').dirty && profileForm.get('bankname').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Name</span>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label for=\"usertype\" class=\"col-sm-2 control-label\">User Type</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.usertype }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.lastlogin | date:'medium' }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label class=\"col-sm-2 control-label\"></label>\n              <div class=\"col-sm-10\">\n                  <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n                  <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Cancel</button>\n              </div>\n          </div>\n      </form>                \n    </div>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h1>My Profile</h1>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div class=\"clearfix\">\n      <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"form-group\">\n              <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.username }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('name').invalid && profileForm.get('name').dirty}\">\n              <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('name').dirty && profileForm.get('name').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} name</span>\n              </div>\n          </div>\n<!--           <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n              <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\">@</div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"email\" [formControl]=\"email\" placeholder=\"Email\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter a valid email</span>\n              </div>\n          </div> -->\n          <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ userObj.email }}</div>\n            </div>\n            <div class=\"text-warning\" *ngIf=\"authService.currentUser.verified_email == 'N'\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Email is not verified yet. Please verify !</span>\n            </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('contactno').invalid && profileForm.get('contactno').dirty}\">\n              <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"contactno\" [formControl]=\"contactno\" placeholder=\"Contact No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('contactno').dirty && profileForm.get('contactno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Contact Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankaccno').invalid && profileForm.get('bankaccno').dirty}\">\n              <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankaccno\" [formControl]=\"bankaccno\" placeholder=\"Bank Account No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankaccno').dirty && profileForm.get('bankaccno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Account Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\">\n            <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bitcoin\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n            </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankname').invalid && profileForm.get('bankname').dirty}\">\n              <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankname\" [formControl]=\"bankname\" placeholder=\"Bank Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankname').dirty && profileForm.get('bankname').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Name</span>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label for=\"usertype\" class=\"col-sm-2 control-label\">User Type</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.usertype }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.lastlogin | date:'medium' }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label class=\"col-sm-2 control-label\"></label>\n              <div class=\"col-sm-10\">\n                  <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n                  <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Cancel</button>\n              </div>\n          </div>\n      </form>                \n    </div>\n  </div>"
 
 /***/ }),
 
@@ -4335,9 +4426,10 @@ var ProfileComponent = (function () {
         this.toastr = toastr;
         this.loading = false;
         this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
-        this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].email]);
+        //email = new FormControl('', [Validators.email]);
         this.contactno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.bankaccno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.bankcode = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.bankname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
     }
     ProfileComponent.prototype.ngOnInit = function () {
@@ -4345,9 +4437,9 @@ var ProfileComponent = (function () {
         this.userObj = this.authService.currentUser;
         this.profileForm = this.fb.group({
             name: this.name,
-            email: this.email,
             contactno: this.contactno,
             bankaccno: this.bankaccno,
+            bankcode: this.bankcode,
             bankname: this.bankname
         });
         this.userService.getUser(this.userObj.userid).subscribe(function (data) {
@@ -4367,9 +4459,10 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.populateForm = function (data) {
         this.profileForm.patchValue({
             name: data.name,
-            email: data.email,
+            //email: data.email,
             contactno: data.contactno,
             bankaccno: data.bankaccno,
+            bankcode: data.bankcode,
             bankname: data.bankname
         });
     };
@@ -4437,7 +4530,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bitcoin\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bitcoin\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"usertype\" class=\"col-sm-2 control-label\">Usertype</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.usertype.value }}</div>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain one letter, number & special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bitcoin\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bitcoin\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bitcoin\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"usertype\" class=\"col-sm-2 control-label\">Usertype</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.usertype.value }}</div>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain one letter, number & special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -4476,6 +4569,7 @@ var RegisterComponent = (function () {
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].email]);
         this.contactno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.bankaccno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.bankcode = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.bankname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.usertype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('LBL', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
         this.username = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].minLength(4), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].maxLength(16)]);
@@ -4488,6 +4582,7 @@ var RegisterComponent = (function () {
             email: this.email,
             contactno: this.contactno,
             bankaccno: this.bankaccno,
+            bankcode: this.bankcode,
             bankname: this.bankname,
             usertype: this.usertype,
             username: this.username,
@@ -4548,6 +4643,116 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/user/updateemail/updateemail.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/updateemail/updateemail.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Change email</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"clearfix\">\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateEmail(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"oldemail\" class=\"col-sm-2 control-label\">Existing Email</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ userObj.email }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">New Email</label>\n          <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"email\" [formControl]=\"email\" placeholder=\"New Email\">\n          </div>\n          <div class=\"text-danger\"  *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\">\n                  Please enter email\n              </span>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-10\">\n              <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Cancel</button>\n          </div>\n      </div>\n    </form>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/updateemail/updateemail.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateemailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var UpdateemailComponent = (function () {
+    function UpdateemailComponent(fb, authService, userService, router, toastr) {
+        this.fb = fb;
+        this.authService = authService;
+        this.userService = userService;
+        this.router = router;
+        this.toastr = toastr;
+        this.loading = false;
+        this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].email]);
+    }
+    UpdateemailComponent.prototype.ngOnInit = function () {
+        this.userObj = this.authService.currentUser;
+        this.profileForm = this.fb.group({
+            email: this.email
+        });
+    };
+    UpdateemailComponent.prototype.updateEmail = function (formdata) {
+        var _this = this;
+        if (this.profileForm.dirty && this.profileForm.valid) {
+            this.loading = true;
+            this.userService.updateEmail(this.userObj.userid, this.profileForm.value)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['login']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.loading = false;
+                    _this.toastr.success(data.message);
+                    var theUser = JSON.parse(localStorage.getItem('currentUser'));
+                    theUser.user.email = _this.profileForm.value.email;
+                    localStorage.setItem('currentUser', JSON.stringify(theUser));
+                }
+            });
+        }
+    };
+    UpdateemailComponent.prototype.onBack = function () {
+        this.router.navigate(['/report']);
+    };
+    return UpdateemailComponent;
+}());
+UpdateemailComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-updateemail',
+        template: __webpack_require__("../../../../../src/app/components/user/updateemail/updateemail.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/user/updateemail/updateemail.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]) === "function" && _e || Object])
+], UpdateemailComponent);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=updateemail.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/usermgt/usermgt.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4569,7 +4774,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/usermgt/usermgt.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL MANAGEMENT</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-6\">\n                  <label for=\"username\">User Name</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <input type=\"text\" class=\"form-control\" id=\"username\" [formControl]=\"username\" placeholder=\"User Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-12 col-md-6\">\n                <label for=\"name\">Label Name</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <input type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Label Name\">\n                </div>\n              </div>\n          </div><br>\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"status\">Status</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"status\">\n                        <option *ngFor=\"let a of sts\" [ngValue]=\"a.id\">{{a.desc}}</option>\n                      </select>\n                  </div>\n              </div><br>\n              <div class=\"col-sm-12 col-md-2\">\n                  <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n              </div>                  \n          </div>\n      </form>\n    </div>\n  </div>  \n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL MANAGEMENT</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-6\">\n                  <label for=\"username\">User Name</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <input type=\"text\" class=\"form-control\" id=\"username\" [formControl]=\"username\" placeholder=\"User Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-12 col-md-6\">\n                <label for=\"name\">Label Name</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <input type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Label Name\">\n                </div>\n              </div>\n          </div><br>\n          <div class=\"row\">\n              <div class=\"col-sm-12 col-md-3\">\n                  <label for=\"status\">Status</label>\n                  <div class=\"input-group col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"status\">\n                            <option value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div><br>\n              <div class=\"col-sm-12 col-md-2\">\n                  <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n              </div>                  \n          </div>\n      </form>\n    </div>\n  </div>  \n\n  <div class=\"panel panel-danger\" *ngIf=\"labellist && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No LABELS found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            No Labels found from above criterias.\n        </div>\n    </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"labellist && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n                <div class=\"table-responsive\"> \n                        <table class=\"table table-striped\">\n                            <thead>\n                                    <tr>\n                                        <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('username')\">User Name</a></th>\n                                        <th width=\"40%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('name')\">Label Name</a></th>\n                                        <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('email')\">Email</a></th>\n                                        <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('status')\">Status</a></th>\n                                        <th width=\"20%\">Action</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor='let lbl of labellist; let lblIndex = index'>\n                                        <td><a style=\"cursor:pointer\" (click)=\"showLabel(lbl._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ lbl.username}}</a></td>\n                                        <td>{{ lbl.name}}</td>\n                                        <td>{{ lbl.email}}</td>\n                                        <td>{{ lbl.stsvalue}}</td>\n                                        <td>\n                                            <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Activate\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Activate Label\">\n                                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                                            </button>\n                                            <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Deactivate\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Deactivate Label\">\n                                                <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                                            </button>\n                                        </td>\n                                    </tr>     \n                                </tbody>    \n                        </table>\n                </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -4585,6 +4790,7 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__ = __webpack_require__("../../../../../src/app/services/admin/usermgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("../../../../../src/app/services/admin/msconfig.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4601,25 +4807,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var UsermgtComponent = (function () {
-    function UsermgtComponent(fb, authService, labelmgtService, route, router, toastr, datePipe) {
+    function UsermgtComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe) {
         this.fb = fb;
         this.authService = authService;
         this.labelmgtService = labelmgtService;
+        this.msconfigService = msconfigService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
-        this.sts = [
-            { id: 'pending', desc: 'pending' },
-            { id: 'active', desc: 'active' },
-            { id: 'inactive', desc: 'inactive' },
-            { id: '', desc: 'All' }
-        ];
         this.loading = false;
         this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
         this.username = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
-        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('pending', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
+        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('STSPEND', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].nullValidator]);
     }
     UsermgtComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -4629,6 +4831,7 @@ var UsermgtComponent = (function () {
             username: this.username,
             status: this.status
         });
+        this.getMsconfigGroupList('STATUS');
         this.route.queryParams.forEach(function (params) {
             _this.qlabelname = params['name'] || '';
             _this.qusername = params['username'] || '';
@@ -4645,8 +4848,21 @@ var UsermgtComponent = (function () {
             _this.reportForm.patchValue({
                 name: _this.qlabelname,
                 username: _this.qusername,
-                status: _this.qstatus
+                status: 'STSPEND'
             });
+        });
+    };
+    UsermgtComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.sts = data.data;
+                }
+                else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
         });
     };
     UsermgtComponent.prototype.getReport = function (formdata) {
@@ -4722,6 +4938,83 @@ var UsermgtComponent = (function () {
             }
         });
     };
+    UsermgtComponent.prototype.activateLabel = function (userid, labelname, status) {
+        var _this = this;
+        this.loading = true;
+        if (status == 'STSACT') {
+            this.loading = false;
+            this.toastr.warning('The label is already active.');
+        }
+        else {
+            if (confirm('Do you really want to activate this label: ' + labelname + ' record?')) {
+                var payloadData = {};
+                payloadData.status = 'STSACT';
+                this.labelmgtService.updateLabelStatus(userid, payloadData)
+                    .subscribe(function (data) {
+                    if (data.success === false) {
+                        _this.loading = false;
+                        if (data.errcode) {
+                            _this.authService.logout();
+                            _this.router.navigate(['login']);
+                        }
+                        _this.toastr.error(data.message);
+                    }
+                    else {
+                        _this.loading = false;
+                        _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+                        _this.toastr.success(data.message);
+                    }
+                });
+            }
+            else {
+                this.loading = false;
+            }
+        }
+    };
+    UsermgtComponent.prototype.deactivateLabel = function (userid, labelname, status) {
+        var _this = this;
+        this.loading = true;
+        if (status != 'STSACT') {
+            this.loading = false;
+            this.toastr.warning('The label is already NOT active.');
+        }
+        else {
+            if (confirm('Do you really want to deactivate this label: ' + labelname + ' record?')) {
+                var payloadData = {};
+                payloadData.status = 'STSINACT';
+                this.labelmgtService.updateLabelStatus(userid, payloadData)
+                    .subscribe(function (data) {
+                    if (data.success === false) {
+                        _this.loading = false;
+                        if (data.errcode) {
+                            _this.authService.logout();
+                            _this.router.navigate(['login']);
+                        }
+                        _this.toastr.error(data.message);
+                    }
+                    else {
+                        _this.loading = false;
+                        _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+                        _this.toastr.success(data.message);
+                    }
+                });
+            }
+            else {
+                this.loading = false;
+            }
+        }
+    };
+    UsermgtComponent.prototype.showLabel = function (userid) {
+        this.router.navigate(["viewlabel/" + userid], {
+            queryParams: {
+                name: this.qlabelname,
+                username: this.qusername,
+                status: this.qstatus,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
     return UsermgtComponent;
 }());
 UsermgtComponent = __decorate([
@@ -4730,11 +5023,144 @@ UsermgtComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/usermgt/usermgt.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/usermgt/usermgt.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]) === "function" && _h || Object])
 ], UsermgtComponent);
 
-var _a, _b, _c, _d, _e, _f, _g;
+var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=usermgt.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/usermgt/viewlabel/viewlabel.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/usermgt/viewlabel/viewlabel.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL DETAILS</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"clearfix\">\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ user.username }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ user.name }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ user.email }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.contactno }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankname }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                <div class=\"form-ele\">{{ user.lastlogin | date:'medium' }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"balance\" class=\"col-sm-2 control-label\">Balance</label>\n            <div class=\"input-group col-sm-6\">\n                <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ user.balance }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">       </label>\n            <div class=\"col-sm-10\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>                \n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/usermgt/viewlabel/viewlabel.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewlabelComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ViewlabelComponent = (function () {
+    function ViewlabelComponent(fb, authService, userService, route, router, toastr) {
+        this.fb = fb;
+        this.authService = authService;
+        this.userService = userService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.loading = false;
+        this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].email]);
+        this.contactno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.bankaccno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.bankname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.lastlogin = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+        this.balance = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required]);
+    }
+    ViewlabelComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            var labelid = params['id'];
+            _this.getLabel(labelid);
+        });
+        this.profileForm = this.fb.group({
+            name: this.name,
+            email: this.email,
+            contactno: this.contactno,
+            bankaccno: this.bankaccno,
+            bankname: this.bankname,
+            lastlogin: this.lastlogin,
+            balance: this.balance
+        });
+    };
+    ViewlabelComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    ViewlabelComponent.prototype.getLabel = function (id) {
+        var _this = this;
+        this.userService.getUser(id).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.user = data.data[0];
+                _this.populateForm(_this.user);
+            }
+        });
+    };
+    ViewlabelComponent.prototype.populateForm = function (data) {
+        this.profileForm.patchValue({
+            name: data.name,
+            email: data.email,
+            contactno: data.contactno,
+            bankaccno: data.bankaccno,
+            bankname: data.bankname,
+            lastlogin: this.lastlogin,
+            balance: this.balance
+        });
+    };
+    ViewlabelComponent.prototype.onBack = function () {
+        this.router.navigate(['../usermanagement'], { preserveQueryParams: true });
+    };
+    return ViewlabelComponent;
+}());
+ViewlabelComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-viewlabel',
+        template: __webpack_require__("../../../../../src/app/components/usermgt/viewlabel/viewlabel.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/usermgt/viewlabel/viewlabel.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]) === "function" && _f || Object])
+], ViewlabelComponent);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=viewlabel.component.js.map
 
 /***/ }),
 
@@ -4798,14 +5224,15 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_global__ = __webpack_require__("../../../../../src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4822,11 +5249,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MsconfigService = (function () {
-    function MsconfigService(http) {
+    function MsconfigService(http, globals) {
         this.http = http;
-        //public adminurl = 'https://kxadmin.herokuapp.com';
-        this.adminurl = 'https://api-kxadmin-dot-kaxet-191909.appspot.com';
+        this.globals = globals;
+        this.adminurl = globals.adminurl;
         var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
@@ -4905,9 +5333,16 @@ var MsconfigService = (function () {
     MsconfigService.prototype.getMsconfigbygroup = function (msconfiggroup) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.get(this.adminurl + "/api/msconfigbygroup/" + msconfiggroup, options)
+        return this.http.get(this.adminurl + "/msconfigbygroup/" + msconfiggroup, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    MsconfigService.prototype.getMsconfigvalue = function (msconfigcode, msconfiggroup) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get(this.adminurl + "/msconfigvalue/" + msconfigcode + "?group=" + msconfiggroup, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -4919,10 +5354,10 @@ var MsconfigService = (function () {
 }());
 MsconfigService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]) === "function" && _b || Object])
 ], MsconfigService);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=msconfig.service.js.map
 
 /***/ }),
@@ -4936,14 +5371,15 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_global__ = __webpack_require__("../../../../../src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4960,11 +5396,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SongadminService = (function () {
-    function SongadminService(http) {
+    function SongadminService(http, globals) {
         this.http = http;
-        //public adminurl = 'https://kxadmin.herokuapp.com';
-        this.adminurl = 'https://api-kxadmin-dot-kaxet-191909.appspot.com';
+        this.globals = globals;
+        this.adminurl = globals.adminurl;
         var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
@@ -5023,10 +5460,10 @@ var SongadminService = (function () {
 }());
 SongadminService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]) === "function" && _b || Object])
 ], SongadminService);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=songadmin.service.js.map
 
 /***/ }),
@@ -5040,14 +5477,15 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_global__ = __webpack_require__("../../../../../src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5064,10 +5502,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var UsermgtService = (function () {
-    function UsermgtService(http) {
+    function UsermgtService(http, globals) {
         this.http = http;
-        this.adminurl = 'https://api-kxadmin-dot-kaxet-191909.appspot.com';
+        this.globals = globals;
+        this.adminurl = globals.adminurl;
         var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
@@ -5115,10 +5555,10 @@ var UsermgtService = (function () {
 }());
 UsermgtService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]) === "function" && _b || Object])
 ], UsermgtService);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=usermgt.service.js.map
 
 /***/ }),
@@ -5663,6 +6103,15 @@ var SongService = (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongService.prototype.getSongList = function (userid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/song/list/" + userid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongService.prototype.handleError = function (error) {
         console.error(error);
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error');
@@ -5780,6 +6229,15 @@ var UserService = (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.put("api/password/" + userid, JSON.stringify(oUser), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    UserService.prototype.updateEmail = function (userid, oUser) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put("api/email/" + userid, JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };

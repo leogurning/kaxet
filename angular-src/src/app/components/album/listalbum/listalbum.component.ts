@@ -79,7 +79,7 @@ export class ListalbumComponent implements OnInit {
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
-      let payload: any = {};
+/*       let payload: any = {};
       payload.status = this.qstatus;
       payload.artistid = this.qartistid;
       payload.albumname = this.qalbumyear;
@@ -87,7 +87,7 @@ export class ListalbumComponent implements OnInit {
       payload.albumgenre = this.qalbumgenre;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
-      this.fetchReport(this.userObj.userid, payload);
+      this.fetchReport(this.userObj.userid, payload); */
     })
   }
 

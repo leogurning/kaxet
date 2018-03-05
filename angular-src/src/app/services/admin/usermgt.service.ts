@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Globals } from '../../app.global';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -9,9 +10,10 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class UsermgtService {
   public jwtToken: string;
-  public adminurl = 'https://api-kxadmin-dot-kaxet-191909.appspot.com';
+  public adminurl: String;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private globals: Globals) {
+      this.adminurl = globals.adminurl;
       const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
       if (theUser) {
         this.jwtToken = theUser.token;

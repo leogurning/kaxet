@@ -9,6 +9,7 @@ exports.signup = function(req, res, next){
      const email = req.body.email;
      const contactno = req.body.contactno;
      const bankaccno = req.body.bankaccno;
+     const bankcode = req.body.bankcode;
      const bankname = req.body.bankname;
      const username = req.body.username;
      const password = req.body.password;
@@ -35,12 +36,23 @@ exports.signup = function(req, res, next){
                 email: email,
                 contactno: contactno,
                 bankaccno: bankaccno,
+                bankcode: bankcode,
                 bankname: bankname,
                 username: username,
                 password: password,
                 usertype: usertype,
                 status: 'STSPEND',
-                balance: 0
+                balance: 0,
+                balance_idx:0,
+                verified_no:'N',
+                verified_email:'N',
+                pmtmethod: null,
+                ccno: null,
+                ccholdername: null,
+                ccissuerbank: null,
+                expmth: null,
+                expyr: null,
+                ccvno: null
             });
         
         oUser.save(function(err, oUser) {
@@ -53,7 +65,7 @@ exports.signup = function(req, res, next){
             });
         });
     });
- }
+}
 
 exports.login = function(req, res, next){
     // find the user
@@ -80,7 +92,7 @@ exports.login = function(req, res, next){
     
                             res.status(201).json({
                                 success: true,
-                                message: {'userid': user._id, 'username': user.username, 'name': user.name, 'usertype': user.usertype, 'balance': user.balance, 'lastlogin': last_login},
+                                message: {'userid': user._id, 'username': user.username, 'name': user.name, 'usertype': user.usertype, 'balance': user.balance, 'email': user.email, 'verified_email': user.verified_email, 'lastlogin': last_login},
                                 token: token
                             });
                         });
@@ -130,13 +142,13 @@ exports.getuserDetails = function(req, res, next){
 
 exports.updateUser = function(req, res, next){
     const name = req.body.name;
-    const email = req.body.email;
     const contactno = req.body.contactno;
     const bankaccno = req.body.bankaccno;
+    const bankcode = req.body.bankcode;
     const bankname = req.body.bankname;
     const userid = req.params.id;
 
-    if (!name || !email || !contactno || !bankaccno || !bankname || !userid) {
+    if (!name || !contactno || !bankaccno || !bankname || !userid) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
     } else {
 	User.findById(userid).exec(function(err, user){
@@ -144,9 +156,9 @@ exports.updateUser = function(req, res, next){
 			
 		if(user){
 			user.name = name;
-			user.email = email;
             user.contactno = contactno;
             user.bankaccno = bankaccno;
+            user.bankcode = bankcode;
             user.bankname = bankname;
 		}
 		user.save(function(err){
@@ -192,4 +204,31 @@ exports.updatePassword = function(req, res, next){
             }
         });
     }
+}
+
+exports.updateEmail = function(req, res, next){
+    const userid = req.params.id;
+    const newemail = req.body.email;
+
+    if (!newemail || !userid) {
+        return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
+    } else {
+        
+	User.findOne({ _id: userid }, function(err, user) {
+            if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+            if (user) {                        
+                user.email = newemail;
+                user.verified_email = 'N';
+                user.save(function(err) {
+                    if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+                    res.status(201).json({
+                        success: true,
+                        message: 'Email updated successfully. Please verify your email.'
+                    });
+                });               
+            }
+        });
+    }
+
 }

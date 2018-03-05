@@ -25,18 +25,19 @@ export class ProfileComponent implements OnInit {
     private toastr: ToastrService) { }
 
   name = new FormControl('', [Validators.required]);
-  email = new FormControl('', [Validators.email]);
+  //email = new FormControl('', [Validators.email]);
   contactno = new FormControl('', [Validators.required]);
   bankaccno = new FormControl('', [Validators.required]);
+  bankcode = new FormControl('', [Validators.nullValidator]);
   bankname = new FormControl('', [Validators.required]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
     this.profileForm = this.fb.group({
       name: this.name,
-      email: this.email,
       contactno: this.contactno,
       bankaccno: this.bankaccno,
+      bankcode: this.bankcode,
       bankname: this.bankname
     });
 
@@ -57,9 +58,10 @@ export class ProfileComponent implements OnInit {
   populateForm(data): void {
     this.profileForm.patchValue({
       name: data.name,
-      email: data.email,
+      //email: data.email,
       contactno: data.contactno,
       bankaccno: data.bankaccno,
+      bankcode: data.bankcode,
       bankname: data.bankname
     });
   }

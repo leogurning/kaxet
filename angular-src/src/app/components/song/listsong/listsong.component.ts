@@ -96,7 +96,7 @@ export class ListsongComponent implements OnInit {
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
-      let payload: any = {};
+/*       let payload: any = {};
       payload.status = this.qstatus;
       payload.artistid = this.qartistid;
       payload.albumid = this.qalbumid;
@@ -107,7 +107,7 @@ export class ListsongComponent implements OnInit {
       payload.songbuy = this.qsongbuy;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
-      this.fetchReport(this.userObj.userid, payload);
+      this.fetchReport(this.userObj.userid, payload); */
 
       this.reportForm.patchValue({
         songname: this.qsongname,

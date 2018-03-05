@@ -22,7 +22,7 @@
         <label for="artistimage" class="col-sm-2 control-label">Artist Photo</label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-            <input [disabled]="this.loading == true" type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
+            <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
         </div>
     </div>
 

@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
+/* Global Variables */
+import {Globals} from './app.global';
+
 /* Services Modules */
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
@@ -46,6 +49,8 @@ import { ViewsongComponent } from './components/song/viewsong/viewsong.component
 import { EditsongComponent } from './components/song/editsong/editsong.component';
 import { PostregisteredComponent } from './components/user/postregistered/postregistered.component';
 import { UsermgtComponent } from './components/usermgt/usermgt.component';
+import { ViewlabelComponent } from './components/usermgt/viewlabel/viewlabel.component';
+import { UpdateemailComponent } from './components/user/updateemail/updateemail.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -72,7 +77,9 @@ const appRoutes: Routes = [
   {path: 'editsongfiles/:id', component:EditsongfilesComponent, canActivate:[AuthGuard]},
   {path: 'viewsong/:id', canActivate: [ AuthGuard], component: ViewsongComponent },
   {path: 'editsong/:id', canActivate: [ AuthGuard], component: EditsongComponent },
-  {path: 'usermanagement', canActivate: [ AuthGuard], component: UsermgtComponent }
+  {path: 'usermanagement', canActivate: [ AuthGuard], component: UsermgtComponent },
+  {path: 'viewlabel/:id', canActivate: [ AuthGuard], component: ViewlabelComponent },
+  {path: 'updateemail', canActivate: [ AuthGuard], component: UpdateemailComponent }
 ];
 
 @NgModule({
@@ -103,6 +110,8 @@ const appRoutes: Routes = [
     EditsongComponent,
     PostregisteredComponent,
     UsermgtComponent,
+    ViewlabelComponent,
+    UpdateemailComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +128,8 @@ const appRoutes: Routes = [
   }),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ToastrService, 
+  providers: [ Globals,
+    ToastrService, 
     AuthService, 
     AuthGuard, 
     UserService, 

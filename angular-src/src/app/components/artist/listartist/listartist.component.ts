@@ -63,12 +63,12 @@ export class ListartistComponent implements OnInit {
       this.qsort = params['sortby'] || '';
 
       this.getMsconfigGroupList('CSTATUS');
-      let payload: any = {};
+/*       let payload: any = {};
       payload.status = this.qstatus;
       payload.artistname = this.qartistname;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
-      this.fetchReport(this.userObj.userid, payload);
+      this.fetchReport(this.userObj.userid, payload); */
     })
   }
 
