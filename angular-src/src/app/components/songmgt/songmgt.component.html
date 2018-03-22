@@ -1,0 +1,173 @@
+<div class="container pagecontainer">
+  <div class="page-header">
+      <h3>List Song</h3>
+  </div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  <div *ngIf="this.loading == false" class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Search Parameter</h3>
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <label for="labelid">Label</label>
+                <div class="input-group col-sm-10">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                    <select class="form-control" [formControl]="labelid">
+                        <!-- <option ng-selected="true" value="">Select the artist</option> -->
+                        <option value="">Select the artist</option>
+                        <option *ngFor="let label of userlist" [ngValue]="label._id">{{label.name}}</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label for="songname">Song Name</label>
+              <div class="input-group col-sm-10">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                  <input type="text" class="form-control" id="songname" [formControl]="songname" placeholder="Song Name">
+              </div>
+            </div>            
+        </div>
+          <div class="row">
+              <div class="col-sm-12 col-md-6">
+                  <label for="artistname">Artist Name</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                      <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <label for="albumname">Album Name</label>
+                <div class="input-group col-sm-10">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <input type="text" class="form-control" id="albumname" [formControl]="albumname" placeholder="Album Name">
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                  <label for="albumyear">Album Year</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                      <input type="text" class="form-control" id="albumyear" [formControl]="albumyear" placeholder="Year">
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                  <label for="songgenre">Genre</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                      <select class="form-control" [formControl]="songgenre">
+                        <option ng-selected="true" value="">Select the genre</option>
+                        <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                  <label for="songpublish">Publish?</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                      <select class="form-control" [formControl]="songpublish">
+                        <option ng-selected="true" value="">Select the option</option>
+                        <option *ngFor="let a of ynlist" [ngValue]="a.code">{{a.value}}</option>
+                      </select>
+                  </div>
+              </div>  
+              <div class="col-sm-12 col-md-3">
+                  <label for="songbuy">Buy?</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                      <select class="form-control" [formControl]="songbuy">
+                        <option ng-selected="true" value="">Select the option</option>
+                        <option *ngFor="let a of ynlist" [ngValue]="a.code">{{a.value}}</option>
+                      </select>
+                  </div>
+              </div>  
+          </div>
+          <div class="row">
+              <div class="col-sm-12 col-md-3">
+                  <label for="status">Status</label>
+                  <div class="input-group col-sm-10">
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                      <select class="form-control" [formControl]="status">
+                        <option ng-selected="true" value="">Select the status</option>
+                        <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                      </select>
+                  </div>
+              </div><br>
+              <div class="col-sm-12 col-md-3">
+                  <label for="submit"> </label>
+                  <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+              </div>                  
+          </div>
+      </form>
+    </div>
+
+    <div class="panel panel-danger" *ngIf="songs && totalrows < 1">
+        <div class="panel-heading">
+            <h3 class="panel-title">No song found</h3> 
+        </div>
+  
+        <div class="panel-body">
+            There is NO any songs found for the selected criteria.
+        </div>
+    </div>
+
+  <div class="panel panel-default" *ngIf="songs && totalrows > 0 && this.loading == false">
+      <div class="panel-heading">
+          <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th width="20%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
+                          <th width="10%"><a style="cursor:pointer" (click)="sortSong('label')">Label</a></th>
+                          <th width="10%">Artist</th>
+                          <th width="20%">Album</th>
+                          <th width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Purchase</a></th>
+                          <th width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Publish?</a></th>
+                          <th width="5%">Preview</th>
+                          <th width="5%">Song</th>
+                          <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
+                          <th width="20%">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let song of songs; let songIndex = index'>
+                          <td><a style="font-size:12px;cursor:pointer" (click)="showSong(song._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ song.songname}}</a></td>
+                          <td style="font-size:12px">{{ song.label }}</td>
+                          <td style="font-size:12px">{{ song.artist }}</td>
+                          <td style="font-size:12px">{{ song.album }}</td>
+                          <td class="text-right" style="font-size:12px">{{ song.songbuy}} x {{ song.songprice | currency: 'IDR':true }}</td>
+                          <td style="font-size:12px">{{ song.songpublish }}</td>
+                          <td><a href="{{ song.songprvwpath }}"><img src="assets/images/play-prvw.jpg" alt="Preview" style="float:center;width:30px;height:30px;border:0;" title="Play Preview"></a></td>
+                          <td><a href="{{ song.songfilepath }}"><img src="assets/images/play-song.jpg" alt="Song" style="float:center;width:30px;height:30px;border:0;" title="Play Song"></a></td>
+                          <!-- <td>{{ albm.status}}</td> -->
+                          <td>
+                               <img src="assets/images/topublish.png" alt="Publish" style="cursor:pointer;float:center;width:47px;height:42px;border:0;" (click)="publishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Publish">
+                               <img src="assets/images/tounpublish.png" alt="Unpublish" style="cursor:pointer;float:center;width:47px;height:42px;border:0;" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish">
+<!--                               <button type="button" class="btn-xs btn-success" aria-label="Publish" (click)="publishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Publish Song">
+                                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                              </button>
+                              <button type="button" class="btn-xs btn-danger" aria-label="UnPublish" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Cancel Publish Song">
+                                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                              </button> -->
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div> 
+          <div style="text-align:center" *ngIf="songs && totalrows > 10">
+              <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                      <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                          <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                      </li>
+                  </ul>
+              </nav>
+          </div> 
+      </div>
+
+  </div>
+  </div>
+</div>

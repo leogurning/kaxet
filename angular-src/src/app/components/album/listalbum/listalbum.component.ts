@@ -79,7 +79,7 @@ export class ListalbumComponent implements OnInit {
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
-/*       let payload: any = {};
+       let payload: any = {};
       payload.status = this.qstatus;
       payload.artistid = this.qartistid;
       payload.albumname = this.qalbumyear;
@@ -87,7 +87,7 @@ export class ListalbumComponent implements OnInit {
       payload.albumgenre = this.qalbumgenre;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
-      this.fetchReport(this.userObj.userid, payload); */
+      this.fetchReport(this.userObj.userid, payload); 
     })
   }
 
@@ -123,7 +123,18 @@ export class ListalbumComponent implements OnInit {
 
   getReport(formdata:any): void {
     if (this.reportForm.valid) {
-        this.fetchReport(this.userObj.userid, this.reportForm.value);
+        //this.fetchReport(this.userObj.userid, this.reportForm.value);
+        this.router.navigate(['listalbum'],
+        {
+          queryParams: { artistid: this.reportForm.value.artistid,
+            albumname: this.reportForm.value.albumname,
+            albumyear: this.reportForm.value.albumyear,
+            albumgenre: this.reportForm.value.albumgenre, 
+            status: this.reportForm.value.status, 
+            page: 1, 
+            sortby: null }
+        }
+      );
     }
   }
 

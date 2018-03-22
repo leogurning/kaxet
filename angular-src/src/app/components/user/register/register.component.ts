@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from '../../../common/toastr.service'
 import { UserService } from '../../../services/user.service';
+import { NotifService } from '../../../services/notif.service';
 
 @Component({
   selector: 'app-register',
@@ -16,6 +17,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private userService: UserService,
+    private notifService: NotifService,
     private router: Router,
     private toastr: ToastrService
   ) { }
@@ -61,13 +63,25 @@ export class RegisterComponent implements OnInit {
           this.toastr.error(data.message);
         } else {
           //this.toastr.success(data.message);
-          this.loading = false;
+          //this.loading = false;
           const nm = data.name;
-          this.router.navigate([`postregistered/${nm}`]);
+          let payload: any = {};
+          payload.emailto = theForm.email;
+          payload.vlink = data.vlink;
+          this.notifService.sendemailverification(payload)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              this.router.navigate([`postregistered/err?${theForm.email}`]);
+            } else {
+              this.loading = false;
+              this.router.navigate([`postregistered/${nm}?${theForm.email}`]);
+            }
+          });    
         }
         this.registerForm.reset();
       });
- 
+
     }
   }
 }

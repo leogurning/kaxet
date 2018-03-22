@@ -60,13 +60,13 @@ export class MsconfigService {
         .catch(this.handleError);
   }
 
-  updateMsconfig(msconfigid, oMsconfig){
+  updateMsconfigfile(userid, oMsconfig){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`${this.adminurl}/api/msconfig/${msconfigid}`, JSON.stringify(oMsconfig), options)
+    return this.http.put(`${this.adminurl}/api/msconfig/${userid}`, JSON.stringify(oMsconfig), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -120,6 +120,15 @@ export class MsconfigService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http.get(`${this.adminurl}/msconfigvalue/${msconfigcode}?group=${msconfiggroup}`, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  getMsconfiggroup() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.get(`${this.adminurl}/msconfiggroup`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

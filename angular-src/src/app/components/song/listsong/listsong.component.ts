@@ -96,7 +96,7 @@ export class ListsongComponent implements OnInit {
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
-/*       let payload: any = {};
+      let payload: any = {};
       payload.status = this.qstatus;
       payload.artistid = this.qartistid;
       payload.albumid = this.qalbumid;
@@ -107,7 +107,7 @@ export class ListsongComponent implements OnInit {
       payload.songbuy = this.qsongbuy;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
-      this.fetchReport(this.userObj.userid, payload); */
+      this.fetchReport(this.userObj.userid, payload);
 
       this.reportForm.patchValue({
         songname: this.qsongname,
@@ -183,7 +183,22 @@ export class ListsongComponent implements OnInit {
 
   getReport(formdata:any): void {
     if (this.reportForm.valid) {
-        this.fetchReport(this.userObj.userid, this.reportForm.value);
+        //this.fetchReport(this.userObj.userid, this.reportForm.value);
+        this.router.navigate(['listsong'],
+        {
+          queryParams: {
+            songname: this.reportForm.value.songname,
+            artistid: this.reportForm.value.artistid,
+            albumid: this.reportForm.value.albumid,
+            albumyear: this.reportForm.value.albumyear,
+            songgenre: this.reportForm.value.songgenre,
+            songpublish: this.reportForm.value.songpublish,
+            songbuy: this.reportForm.value.songbuy,
+            status: this.reportForm.value.status,
+            page: 1, 
+            sortby: null }
+        }
+      );
 
     }
   }

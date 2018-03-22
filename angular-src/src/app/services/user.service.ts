@@ -98,6 +98,17 @@ export class UserService {
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }
+  
+  emailVerify(oUser){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`api/emailverify`, JSON.stringify(oUser), options)
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
+  }
 
   private handleError(error: Response) {
       console.error(error);

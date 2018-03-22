@@ -47,10 +47,10 @@ exports.songprvwupload = function(req, res, next){
                 d.getFullYear() + ("0" + d.getHours()).slice(-2) + 
                 ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
     if(req.files.songprvw){
-      var file = req.files.songprvw
-        //oriname = file.name,
+      var file = req.files.songprvw,
+        oriname = file.name;
         //name = 'prvw-'+ts+oriname.substr(oriname.length - 4);
-        const gcsname = ts+'-'+file.name;
+        const gcsname = ts+'-'+oriname.substr(oriname.length - 4);
         const gcsfile = bucket.file(gcsuploadpathprvw+gcsname);
         const stream = gcsfile.createWriteStream({
             metadata: {
@@ -198,10 +198,10 @@ exports.songfileupload = function(req, res, next){
               ("0" + d.getMinutes()).slice(-2) + ("0" + d.getSeconds()).slice(-2);
 
   if(req.files.songfile){
-    var file = req.files.songfile
-      //oriname = file.name,
+    var file = req.files.songfile,
+      oriname = file.name;
       //name = 'song-'+ts+oriname.substr(oriname.length - 4);
-    const gcsname = ts+'-'+file.name;
+    const gcsname = ts+'-'+oriname.substr(oriname.length - 4);
     const gcsfile = bucket.file(gcsuploadpathsong+gcsname);
     const stream = gcsfile.createWriteStream({
         metadata: {

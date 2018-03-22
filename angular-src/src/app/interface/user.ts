@@ -17,3 +17,8 @@ export interface IUser {
     photopath: String,
     photoname: String
 }
+
+export interface IUserList {
+    _id: String;
+    name: String;
+}

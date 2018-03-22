@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html {
     position: relative;
     min-height: 100%;
@@ -139,4 +141,19 @@ ul.menu li:hover ul {
     top: 48px;
     left: 0;
   }
+}
+
+.md-dialog-container {
+  position: flex !important;
+  left: 20%;
+  top: 10%;
+  background-color: white;
+  z-index: 100000;
+}
+
+.md-progressbar-container {
+  position: flex !important;
+  padding: 0 0 5px 5px;
+  height:10px;
+  white-space:nowrap; 
 }

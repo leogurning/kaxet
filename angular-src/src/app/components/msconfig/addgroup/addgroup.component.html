@@ -1,0 +1,50 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Add Group</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <form  [formGroup]="addGroupForm" (ngSubmit)="addMsgroup(addGroupForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="form-group" [ngClass]="{'has-error': addGroupForm.get('code').invalid && addGroupForm.get('code').dirty}">
+            <label for="code" class="col-sm-2 control-label">Code <sup>*</sup></label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="code" id="code" placeholder="Ms Code">
+            </div>
+            <div class="text-danger" *ngIf="addGroupForm.get('code').dirty && addGroupForm.get('code').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addGroupForm.get('code').errors.required">
+                    Please enter the code
+                </span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': addGroupForm.get('value').invalid && addGroupForm.get('value').dirty}">
+            <label for="value" class="col-sm-2 control-label">Value <sup>*</sup></label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="value" id="value" placeholder="Ms Value">
+            </div>
+            <div class="text-danger" *ngIf="addGroupForm.get('value').dirty && addGroupForm.get('value').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addGroupForm.get('value').errors.required">
+                    Please enter the value
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="col-sm-2 control-label">Description</label>
+            <div class="input-group col-sm-10">
+                <textarea [disabled]="this.loading == true" class="form-control" id="desc" rows="10" [formControl]="desc" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <button type="submit" [disabled]="addGroupForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
+                <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
+            </div>
+            <div class="col-sm-5" style="text-align:right">
+                <sup>*</sup> required
+            </div>
+        </div>
+    </form>
+</div>

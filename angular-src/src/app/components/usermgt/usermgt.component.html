@@ -36,7 +36,17 @@
                             <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                       </select>
                   </div>
-              </div><br>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                    <label for="veremail">Email Verified?</label>
+                    <div class="input-group col-sm-10">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                        <select class="form-control" [formControl]="veremail">
+                              <option value="">Select the option</option>
+                              <option *ngFor="let b of yn" [ngValue]="b.code">{{b.value}}</option>
+                        </select>
+                    </div>
+                </div><br>
               <div class="col-sm-12 col-md-2">
                   <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
               </div>                  
@@ -65,8 +75,9 @@
                             <thead>
                                     <tr>
                                         <th width="10%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>
-                                        <th width="40%"><a style="cursor:pointer" (click)="sortLabel('name')">Label Name</a></th>
+                                        <th width="30%"><a style="cursor:pointer" (click)="sortLabel('name')">Label Name</a></th>
                                         <th width="20%"><a style="cursor:pointer" (click)="sortLabel('email')">Email</a></th>
+                                        <th width="10%"><a style="cursor:pointer" (click)="sortLabel('verified_email')">Email Verified?</a></th>
                                         <th width="10%"><a style="cursor:pointer" (click)="sortLabel('status')">Status</a></th>
                                         <th width="20%">Action</th>
                                     </tr>
@@ -76,6 +87,7 @@
                                         <td><a style="cursor:pointer" (click)="showLabel(lbl._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ lbl.username}}</a></td>
                                         <td>{{ lbl.name}}</td>
                                         <td>{{ lbl.email}}</td>
+                                        <td>{{ lbl.verified_email }}</td>
                                         <td>{{ lbl.stsvalue}}</td>
                                         <td>
                                             <button type="button" class="btn-xs btn-success" aria-label="Activate" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Activate Label">
@@ -89,6 +101,15 @@
                                 </tbody>    
                         </table>
                 </div>
+                <div style="text-align:center" *ngIf="labellist && totalrows > 10">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                                    <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                </div> 
         </div>
     </div>
 </div>

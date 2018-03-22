@@ -51,7 +51,22 @@
                   </ul>
               </li>
               <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
-                <a routerLink="usermanagement" routerLinkActive="active">Manage Label</a>
+                <a routerLink="usermanagement" [queryParams]="{status:'STSPEND',veremail:'Y'}" routerLinkActive="active">Manage Label</a>
+              </li>
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+                <a routerLink="songmanagement" [queryParams]="{songpublish:'N'}" routerLinkActive="active">Manage Song</a>
+              </li>
+              <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+                    <ul class="menu">
+                        <li>
+                            Master Config
+                            <ul>
+                                <li routerLink="addconfig" routerLinkActive="active">Add Config</li>
+                                <li routerLink="addgroup" routerLinkActive="active">Add Group</li>
+                                <li routerLink="listconfig" routerLinkActive="active">Manage Config</li>
+                            </ul>
+                        </li>
+                      </ul>
               </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

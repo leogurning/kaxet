@@ -583,9 +583,9 @@ exports.albumaggregate = function(req, res, next){
 	page = 1;
     }
 
-    if(!sortby) {
+/*     if(!sortby) {
 	sortby = 'albumname';
-    }
+    } */
 
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
@@ -607,11 +607,19 @@ exports.albumaggregate = function(req, res, next){
         if (status) {
             query = merge(query, {status:status});
         }
-		var options = {
-            page: page,
-            limit: limit,
-            sortBy: sortby
-		}
+        if(!sortby) {
+            var options = {
+                page: page,
+                limit: limit
+            }
+        } else {
+            var options = {
+                page: page,
+                limit: limit,
+                sortBy: sortby
+            }
+        }
+
         console.log(query);
         var aggregate = Album.aggregate();        
         var olookup = {
@@ -643,12 +651,15 @@ exports.albumaggregate = function(req, res, next){
             albumphotoname:1        
         };
 
-        //var osort = { "$sort": { sortby: 1}};
+        
         aggregate.lookup(olookup).unwind(ounwind);
         aggregate.lookup(olookup1).unwind(ounwind1);  
         aggregate.match(query);  
         aggregate.project(oproject);
-        //aggregate.sort(osort);
+        if(!sortby) {
+            var osort = { "artistdetails.artistname": 1, albumname:1, albumgenre:1};
+            aggregate.sort(osort);        
+        }
         
         Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
             if(err) 

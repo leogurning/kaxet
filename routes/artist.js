@@ -377,9 +377,9 @@ exports.artistaggreport = function(req, res, next){
       page = 1;
     }
   
-    if(!sortby) {
+/*     if(!sortby) {
       sortby = 'artistname';
-    }
+    } */
   
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
@@ -394,13 +394,20 @@ exports.artistaggreport = function(req, res, next){
       if (status) {
         query = merge(query, {status:status});
       }
-  
-      var options = {
-          page: page,
-          limit: limit,
-          sortBy: sortby
+
+      if(!sortby) {
+        var options = {
+            page: page,
+            limit: limit
+        }
+      } else {
+        var options = {
+            page: page,
+            limit: limit,
+            sortBy: sortby
+        }
       }
-      
+
       var aggregate = Artist.aggregate();        
       var olookup = {
         from: 'msconfig',
@@ -423,10 +430,10 @@ exports.artistaggreport = function(req, res, next){
       aggregate.lookup(olookup).unwind(ounwind);
       aggregate.match(query);  
       aggregate.project(oproject);      
-      
-      //var osort = { "$sort": { sortby: 1}};
-      //aggregate.sort(osort);
-        
+      if(!sortby) {
+        var osort = { artistname: 1};
+        aggregate.sort(osort);
+      }
       Artist.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
           if(err) 
           {

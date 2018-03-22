@@ -1,9 +1,16 @@
 <div class="container pagecontainer">
   <div class="page-header">
       <h3>Add Song</h3>
-  </div>
+  </div>  
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <form [formGroup]="addSongForm" (ngSubmit)="addSong(addSongForm.value)" class="form-horizontal" novalidate autocomplete="off">
+    <div class="form-group" *ngIf="progressvalue > 0">
+        <label class="col-sm-2 control-label">  </label>
+        <div class="input-group col-sm-10">
+                <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
+                <sup>{{ this.progressvalue }} %</sup>
+        </div>  
+    </div>
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}">
       <label for="artistid" class="col-sm-2 control-label">Artist<sup>*</sup></label>
       <div class="input-group col-sm-10">
@@ -107,7 +114,13 @@
           <input [disabled]="this.loading == true" #inputsong type="file" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">
       </div>
     </div>
-
+    <div class="form-group">
+        <label class="col-sm-2 control-label">  </label>
+        <div class="input-group col-sm-10">
+                <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
+                <sup>{{ this.progressvalue }} %</sup>
+        </div>  
+    </div>
     <div class="form-group">
       <label class="col-sm-2 control-label"></label>
       <div class="col-sm-5">

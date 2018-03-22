@@ -24,10 +24,11 @@ export class UsermgtComponent implements OnInit {
   qlabelname: String;
   qusername: String;
   qstatus: String;
+  qveremail: String;
   qpage: number;
   qsort: String;
   sts: IMsconfigGroupList[];
-
+  yn:IMsconfigGroupList[];
   loading = false;
 
   constructor(
@@ -43,20 +44,24 @@ export class UsermgtComponent implements OnInit {
 
   name = new FormControl('',[Validators.nullValidator]);
   username = new FormControl('',[Validators.nullValidator]);
-  status = new FormControl('STSPEND', [Validators.nullValidator]);
+  status = new FormControl('', [Validators.nullValidator]);
+  veremail = new FormControl('', [Validators.nullValidator]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
     this.reportForm = this.fb.group({
       name: this.name,
       username: this.username,
-      status: this.status
+      status: this.status,
+      veremail: this.veremail
     });
     this.getMsconfigGroupList('STATUS');
+    this.getMsconfigGroupList('YRN');
     this.route.queryParams.forEach((params: Params) => {
       this.qlabelname = params['name'] || '';
       this.qusername = params['username'] || '';
       this.qstatus = params['status'] || '';
+      this.qveremail = params['veremail'] || '';
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
@@ -64,6 +69,7 @@ export class UsermgtComponent implements OnInit {
       payload.status = this.qstatus;
       payload.name = this.qlabelname;
       payload.username = this.qusername;
+      payload.veremail = this.qveremail;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
       this.fetchReport(this.userObj.userid, payload);
@@ -71,7 +77,8 @@ export class UsermgtComponent implements OnInit {
       this.reportForm.patchValue({
         name: this.qlabelname,
         username: this.qusername,
-        status: 'STSPEND'
+        status: this.qstatus,
+        veremail: this.qveremail
       });
     })
   }
@@ -80,9 +87,16 @@ export class UsermgtComponent implements OnInit {
     this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
       if (data.success === true) {
         if (data.data[0]) {
-          this.sts = data.data;
+          if (groupid == 'STATUS') {
+            this.sts = data.data;
+          }
+          if (groupid == 'YRN') {
+            this.yn = data.data;
+          } 
+          
         } else {
           this.sts = [{code:'', value:'Error ms config list'}];
+          this.yn = [{code:'', value:'Error ms config list'}];
         }
       }
     });
@@ -90,8 +104,18 @@ export class UsermgtComponent implements OnInit {
 
   getReport(formdata:any): void {
     if (this.reportForm.valid) {
-        this.fetchReport(this.userObj.userid, this.reportForm.value);
-
+        //this.fetchReport(this.userObj.userid, this.reportForm.value);
+        this.router.navigate(['usermanagement'],
+        {
+          queryParams: {
+            name: this.reportForm.value.name,
+            username: this.reportForm.value.username,
+            status: this.reportForm.value.status,
+            veremail: this.reportForm.value.veremail,
+            page: 1, 
+            sortby: null }
+        }
+      );
     }
   }
 
@@ -115,12 +139,14 @@ export class UsermgtComponent implements OnInit {
         this.qlabelname = formval.name;
         this.qusername = formval.username;
         this.qstatus = formval.status;
+        this.qveremail = formval.veremail;
         this.reportTitle = 'Labels Result';
         
         this.reportForm.patchValue({
           name: this.qlabelname,
           username: this.qusername,
-          status: this.qstatus
+          status: this.qstatus,
+          veremail: this.qveremail
         });
       }
     });
@@ -133,6 +159,7 @@ export class UsermgtComponent implements OnInit {
           name: this.qlabelname,
           username: this.qusername,
           status: this.qstatus,
+          veremail: this.qveremail,
           page: page, 
           sortby: this.qsort }
       }
@@ -162,6 +189,7 @@ export class UsermgtComponent implements OnInit {
           name: this.qlabelname,
           username: this.qusername,
           status: this.qstatus,
+          veremail: this.qveremail,
           page: this.qpage || 1, 
           sortby: this.qsort }
       }
@@ -237,6 +265,7 @@ export class UsermgtComponent implements OnInit {
           name: this.qlabelname,
           username: this.qusername,
           status: this.qstatus,
+          veremail: this.qveremail,
           page: this.qpage || 1, 
           sortby: this.qsort }
       });

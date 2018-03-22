@@ -26,7 +26,8 @@ const UserSchema = new Schema({
     ccissuerbank:{type:String},
     expmth:{type:Number},
     expyr: {type:Number},
-    ccvno:{type:String}
+    ccvno:{type:String},
+    vhash: {type:String}
 });
 
 // Pre-save of user's hash password to database
@@ -35,7 +36,7 @@ UserSchema.pre('save', function (next) {
       SALT_FACTOR = 5;
   
     if (!user.isModified('password')) return next();
-  
+    
     bcrypt.genSalt(SALT_FACTOR, (err, salt) => {
       if (err) return next(err);
   

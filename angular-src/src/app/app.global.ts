@@ -4,4 +4,5 @@ import { Injectable } from '@angular/core';
 export class Globals {
     adminurl: String = 'http://localhost:2002';
     //adminurl: String = 'https://apikxadmin-dot-kaxetd.appspot.com';
+    notifurl: String = 'http://localhost:2004';
 }

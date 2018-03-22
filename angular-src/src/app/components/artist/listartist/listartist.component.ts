@@ -63,12 +63,12 @@ export class ListartistComponent implements OnInit {
       this.qsort = params['sortby'] || '';
 
       this.getMsconfigGroupList('CSTATUS');
-/*       let payload: any = {};
+      let payload: any = {};
       payload.status = this.qstatus;
       payload.artistname = this.qartistname;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
-      this.fetchReport(this.userObj.userid, payload); */
+      this.fetchReport(this.userObj.userid, payload);
     })
   }
 
@@ -86,7 +86,12 @@ export class ListartistComponent implements OnInit {
 
   getReport(formdata:any): void {
     if (this.reportForm.valid) {
-        this.fetchReport(this.userObj.userid, this.reportForm.value);
+        //this.fetchReport(this.userObj.userid, this.reportForm.value);
+        this.router.navigate(['listartist'],
+        {
+          queryParams: { artistname: this.reportForm.value.artistname, status: this.reportForm.value.status, page: 1, sortby: null }
+        }
+      );
     }
   }
 

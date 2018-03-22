@@ -14,6 +14,7 @@ export class PostregisteredComponent implements OnInit {
   uname: String;
   remarks: IMsconfigGroupList[];
   csemail: IMsconfigGroupList;
+  qemailto: String;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -23,8 +24,10 @@ export class PostregisteredComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(
       params => {
-        let name = params['nm'];
-        this.uname = name;
+        let param = params['nm'];
+        let strlist = param.split("?");
+        this.uname = strlist[0];
+        this.qemailto = strlist[1];
       });
     this.getMsconfigGroupList('REMARKS');
     this.getMsconfigVal('CSEML','EMAIL');
@@ -55,7 +58,17 @@ export class PostregisteredComponent implements OnInit {
       }
     });
   }
-  
+  getremarksvalue(premarks) : String {
+    var result: String = '';
+
+    for (let oremark of this.remarks) {
+      if (premarks === oremark.code){
+        result = oremark.value;
+     }
+    }
+    return result;
+  }
+
   onLogin(): void {
     this.router.navigate(['/login']);
   }

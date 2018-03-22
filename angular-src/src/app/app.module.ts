@@ -4,6 +4,10 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 /* Global Variables */
 import {Globals} from './app.global';
@@ -18,6 +22,7 @@ import { SongService } from './services/song.service';
 import { UsermgtService } from './services/admin/usermgt.service';
 import { SongadminService } from './services/admin/songadmin.service';
 import { MsconfigService } from './services/admin/msconfig.service';
+import { NotifService } from './services/notif.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -51,6 +56,15 @@ import { PostregisteredComponent } from './components/user/postregistered/postre
 import { UsermgtComponent } from './components/usermgt/usermgt.component';
 import { ViewlabelComponent } from './components/usermgt/viewlabel/viewlabel.component';
 import { UpdateemailComponent } from './components/user/updateemail/updateemail.component';
+import { EmailverificationComponent } from './components/user/emailverification/emailverification.component';
+import { SongmgtComponent } from './components/songmgt/songmgt.component';
+import { AddconfigComponent } from './components/msconfig/addconfig/addconfig.component';
+import { AddgroupComponent } from './components/msconfig/addgroup/addgroup.component';
+import { ListconfigComponent } from './components/msconfig/listconfig/listconfig.component';
+import { ViewconfigComponent } from './components/msconfig/viewconfig/viewconfig.component';
+import { EditconfigfileComponent } from './components/msconfig/editconfigfile/editconfigfile.component';
+import { EditconfigComponent } from './components/msconfig/editconfig/editconfig.component';
+import { KxInfoDialogComponent } from './components/kx-info-dialog/kx-info-dialog.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -79,7 +93,15 @@ const appRoutes: Routes = [
   {path: 'editsong/:id', canActivate: [ AuthGuard], component: EditsongComponent },
   {path: 'usermanagement', canActivate: [ AuthGuard], component: UsermgtComponent },
   {path: 'viewlabel/:id', canActivate: [ AuthGuard], component: ViewlabelComponent },
-  {path: 'updateemail', canActivate: [ AuthGuard], component: UpdateemailComponent }
+  {path: 'updateemail', canActivate: [ AuthGuard], component: UpdateemailComponent },
+  {path: 'verify', component: EmailverificationComponent },
+  {path: 'songmanagement', canActivate: [ AuthGuard], component: SongmgtComponent },
+  {path: 'addconfig', canActivate: [ AuthGuard], component: AddconfigComponent },
+  {path: 'addgroup', canActivate: [ AuthGuard], component: AddgroupComponent },
+  {path: 'listconfig', canActivate: [ AuthGuard], component: ListconfigComponent },
+  {path: 'viewconfig/:id', canActivate: [ AuthGuard], component: ViewconfigComponent },
+  {path: 'editconfigfile/:id', component:EditconfigfileComponent, canActivate:[AuthGuard]},
+  {path: 'editconfig/:id', component:EditconfigComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -112,21 +134,37 @@ const appRoutes: Routes = [
     UsermgtComponent,
     ViewlabelComponent,
     UpdateemailComponent,
+    EmailverificationComponent,
+    SongmgtComponent,
+    AddconfigComponent,
+    AddgroupComponent,
+    ListconfigComponent,
+    ViewconfigComponent,
+    EditconfigfileComponent,
+    EditconfigComponent,
+    KxInfoDialogComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    BrowserAnimationsModule,
     LoadingModule.forRoot({
-      animationType: ANIMATION_TYPES.circleSwish,
+      animationType: ANIMATION_TYPES.threeBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
       backdropBorderRadius: '4px',
       primaryColour: '#00008B', 
-      secondaryColour: '#ffffff', 
-      tertiaryColour: '#ffffff'
+      secondaryColour: '#ce3b3b', 
+      tertiaryColour: '#2b966b'
   }),
     RouterModule.forRoot(appRoutes)
+  ],
+  entryComponents: [
+    KxInfoDialogComponent
   ],
   providers: [ Globals,
     ToastrService, 
@@ -139,7 +177,8 @@ const appRoutes: Routes = [
     DatePipe,
     UsermgtService,
     SongadminService,
-    MsconfigService],
+    MsconfigService,
+    NotifService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

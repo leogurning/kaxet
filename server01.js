@@ -68,6 +68,7 @@ apiRoutes.get('/user/:id', user.getuserDetails); // API returns user details
 apiRoutes.put('/user/:id', user.updateUser); // API updates user details
 apiRoutes.put('/password/:id', user.updatePassword); // API updates user password
 apiRoutes.put('/email/:id', user.updateEmail); // API updates user email
+apiRoutes.put('/emailverify', user.emailverification); // API to verify user email
 
 apiRoutes.post('/artistphotoupload', artist.artistphotoupload);
 apiRoutes.post('/artistphotodelete', artist.artistphotodelete);

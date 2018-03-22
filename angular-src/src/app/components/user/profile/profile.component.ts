@@ -5,6 +5,9 @@ import { ToastrService } from '../../../common/toastr.service'
 import { UserService } from '../../../services/user.service';
 import { AuthService } from '../../../services/auth.service';
 import { IUser } from '../../../interface/user';
+import { MatDialog } from '@angular/material';
+import { KxInfoDialogComponent } from '../../kx-info-dialog/kx-info-dialog.component';
+import { NotifService } from '../../../services/notif.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,12 +20,15 @@ export class ProfileComponent implements OnInit {
   userObj: any;
   user: IUser;
   loading = false;
+//  dialogResult = "";
 
   constructor(private fb: FormBuilder, 
     private authService: AuthService,
     private userService: UserService,
+    private notifService: NotifService,
     private router: Router,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private dialog: MatDialog) { }
 
   name = new FormControl('', [Validators.required]);
   //email = new FormControl('', [Validators.email]);
@@ -87,6 +93,49 @@ export class ProfileComponent implements OnInit {
           }
         });
       }
+    }
+
+    verifyEmail(username, name, email) {
+      let payload: any = {};
+      payload.email = email;
+      payload.name = name;
+      payload.username = username;
+      this.loading = true;
+      this.userService.emailVerify(payload)
+      .subscribe(data => {
+        if (data.success === false) {
+          this.loading = false;
+          this.toastr.error(data.message);
+        } else {
+          const nm = data.name;
+          let payload1: any = {};
+          payload1.emailto = email;
+          payload1.vlink = data.vlink;
+          this.notifService.sendemailverification(payload1)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+                disableClose: true,
+                width: '400px',
+                data: 'Hi ' + name + ', We are sorry to inform that the email verification failed to be sent to ' + email + '. Please try again in few minutes.'
+              });
+              //below code is to get result from modal dialog
+        /*       dialogRef.afterClosed().subscribe(result => {
+                console.log(`Dialog closed: ${result}`);
+                this.dialogResult = result;
+              }); */
+            } else {
+              this.loading = false;
+              let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+                disableClose: true,
+                width: '400px',
+                data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
+              });
+            }
+          });    
+        }
+      });
     }
 
     onBack(): void {

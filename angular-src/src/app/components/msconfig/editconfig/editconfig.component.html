@@ -1,0 +1,69 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Edit Config</h3>
+    </div>
+    <form [formGroup]="msconfigForm" (ngSubmit)="saveMsconfig(msconfigForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="form-group">
+            <label for="code" class="col-sm-2 control-label">Code</label>
+            <div class="input-group col-sm-10">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="form-ele">{{ this.mscode }}</div>
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': msconfigForm.get('value').invalid && msconfigForm.get('value').dirty}">
+            <label for="value" class="col-sm-2 control-label">Value</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input type="text" class="form-control" id="value" [formControl]="value" placeholder="Ms Value">
+            </div>
+            <div class="text-danger" *ngIf="msconfigForm.get('value').dirty && msconfigForm.get('value').invalid">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0">Please enter the Ms config value</span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': msconfigForm.get('group').invalid && msconfigForm.get('group').dirty}">
+            <label for="group" class="col-sm-2 control-label">Group</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="group">
+                    <option *ngFor="let g of grouplist" [ngValue]="g.code">{{g.value}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="msconfigForm.get('group').dirty && msconfigForm.get('group').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="msconfigForm.get('group').errors.required">
+                    Please select Ms Config Group
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="col-sm-2 control-label">Description</label>
+            <div class="input-group col-sm-10">
+                <textarea class="form-control" id="desc" rows="10" [formControl]="desc" placeholder="Desc"></textarea>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': msconfigForm.get('status').invalid && msconfigForm.get('status').dirty}">
+            <label for="status" class="col-sm-2 control-label">Status</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="status">
+                    <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="msconfigForm.get('status').dirty && msconfigForm.get('status').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="msconfigForm.get('status').errors.required">
+                    Please select config status
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" [disabled]="msconfigForm.invalid" class="btn btn-primary">{{ btnLbl }}</button>
+                <button type="reset" class="btn btn-default" (click)="onBack()">Back</button>
+            </div>
+        </div>
+    </form>
+</div>

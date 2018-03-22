@@ -27,6 +27,7 @@ export class AddsongComponent implements OnInit {
   artistlist: IArtistList[];
   albumlist: IAlbumList[];
   loading = false;
+  progressvalue = 0;
   @ViewChild('inputprev')inputpreVar: any;
   @ViewChild('inputsong')inputsongVar: any;
 
@@ -55,6 +56,7 @@ export class AddsongComponent implements OnInit {
   songfilename: String;
 
   ngOnInit() {
+    this.progressvalue = 0;
     this.userObj =  this.authService.currentUser;
     this.getMsconfigGroupList('GENRE');
     this.getArtistList(this.userObj.userid);
@@ -127,48 +129,60 @@ export class AddsongComponent implements OnInit {
     });
   }
   addSong(formdata:any): void {
+    this.progressvalue = 0;
     if (this.addSongForm.dirty && this.addSongForm.valid) {
+      this.progressvalue = 10;
       const prvwfiles: Array<File> = this.PrvwfilesToUpload;
       let theForm = this.addSongForm.value;
+      this.progressvalue = 20;
       let lformData: FormData = new FormData();
       //console.log('Ini file: '+ prvwfiles[0]['name']);
-      
+
       lformData.append('songprvw',prvwfiles[0],prvwfiles[0]['name']);
 
       this.loading = true;
+      this.progressvalue = 30;
       this.songService.uploadSongPreview(lformData)
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
             this.toastr.error(data.message);
           } else {
+            this.progressvalue = 40;
               theForm.songprvwpath = data.filedata.songprvwpath;
               theForm.songprvwname = data.filedata.songprvwname;
               const songfiles: Array<File> = this.SongfilesToUpload;
               lformData.append('songfile',songfiles[0],songfiles[0]['name']);
+              this.progressvalue = 50;
               this.songService.uploadSongFile(lformData)
               .subscribe(data => {
                   if (data.success === false) {
                     this.loading = false;
+                    this.progressvalue = 0;
                     this.toastr.error(data.message);
                   } else {
+                    this.progressvalue = 60;
                     theForm.songfilepath = data.filedata.songfilepath;
                     theForm.songfilename = data.filedata.songfilename;  
                     theForm.status = 'STSACT';
                     if (this.songid !== '') {
                       theForm.songid = this.songid;
                     }
+                    this.progressvalue = 80;
                     this.songService.saveSong(this.userObj.userid, theForm.artistid, theForm.albumid, theForm)
                     .subscribe(data => {
                       if (data.success === false) {
                         this.loading = false;
+                        this.progressvalue = 0;
                         this.toastr.error(data.message);
                       } else {
                         this.loading = false;
+                        this.progressvalue = 100;
                         this.toastr.success(data.message);
                         //this.router.navigate(['listsong']);
                       }
                       this.addSongForm.reset();
+                      this.progressvalue = 0;
                       this.inputpreVar.nativeElement.value = "";
                       this.inputsongVar.nativeElement.value = "";
                     });

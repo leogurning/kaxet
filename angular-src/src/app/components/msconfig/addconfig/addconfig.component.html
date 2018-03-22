@@ -1,0 +1,72 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Add Config</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <form  [formGroup]="addConfigForm" (ngSubmit)="addMsconfig(addConfigForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="form-group" [ngClass]="{'has-error': addConfigForm.get('code').invalid && addConfigForm.get('code').dirty}">
+            <label for="code" class="col-sm-2 control-label">Code <sup>*</sup></label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="code" id="code" placeholder="Ms Code">
+            </div>
+            <div class="text-danger" *ngIf="addConfigForm.get('code').dirty && addConfigForm.get('code').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addConfigForm.get('code').errors.required">
+                    Please enter the code
+                </span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': addConfigForm.get('value').invalid && addConfigForm.get('value').dirty}">
+            <label for="value" class="col-sm-2 control-label">Value <sup>*</sup></label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="value" id="value" placeholder="Ms Value">
+            </div>
+            <div class="text-danger" *ngIf="addConfigForm.get('value').dirty && addConfigForm.get('value').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addConfigForm.get('value').errors.required">
+                    Please enter the value
+                </span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': addConfigForm.get('group').invalid && addConfigForm.get('group').dirty}">
+            <label for="group" class="col-sm-2 control-label">Group <sup>*</sup></label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select [disabled]="this.loading == true" class="form-control" [formControl]="group">
+                    <option *ngFor="let g of grouplist" [ngValue]="g.code">{{g.value}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="addConfigForm.get('group').dirty && addConfigForm.get('group').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="addConfigForm.get('group').errors.required">
+                    Please select config group
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="col-sm-2 control-label">Description</label>
+            <div class="input-group col-sm-10">
+                <textarea [disabled]="this.loading == true" class="form-control" id="desc" rows="10" [formControl]="desc" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="form-group" >
+            <label for="genreimage" class="col-sm-2 control-label">Config Photo</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
+                <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="genreimage" id="genreimage" placeholder="Genreimage">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+                <button type="submit" [disabled]="addConfigForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
+                <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
+            </div>
+            <div class="col-sm-5" style="text-align:right">
+                <sup>*</sup> required
+            </div>
+        </div>
+    </form>
+</div>

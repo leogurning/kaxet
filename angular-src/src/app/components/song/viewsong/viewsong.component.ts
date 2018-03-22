@@ -15,6 +15,7 @@ import { IMsconfigGroupList } from '../../../interface/msconfig';
   styleUrls: ['./viewsong.component.css']
 })
 export class ViewsongComponent implements OnInit {
+  userObj: any;
   song: IAggSong;
   genre: IMsconfigGroupList[];
   sts: IMsconfigGroupList[];
@@ -36,6 +37,7 @@ export class ViewsongComponent implements OnInit {
   status = new FormControl('', [Validators.required]);
 
   ngOnInit() {
+    this.userObj =  this.authService.currentUser;
     this.sub = this.route.params.subscribe(
       params => {
         let songid = params['id'];
@@ -96,6 +98,10 @@ export class ViewsongComponent implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['/listsong'], { preserveQueryParams: true });
+    if (this.userObj.usertype === 'ADM') {
+      this.router.navigate(['/songmanagement'], { preserveQueryParams: true });
+    } else {
+      this.router.navigate(['/listsong'], { preserveQueryParams: true });
+    }
   }
 }

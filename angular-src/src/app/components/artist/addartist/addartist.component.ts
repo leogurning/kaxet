@@ -2,7 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { ToastrService } from '../../../common/toastr.service'
+import { ToastrService } from '../../../common/toastr.service';
 import { ArtistService } from '../../../services/artist.service';
 import { AuthService } from '../../../services/auth.service';
 

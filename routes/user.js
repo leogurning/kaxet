@@ -2,18 +2,20 @@ var mongoose = require( 'mongoose' );
 var User = require('../models/user');
 var jwt = require('jsonwebtoken'); 
 var config = require('../config');
+var crypto = require('crypto');
 
 exports.signup = function(req, res, next){
     // Check for registration errors
-     const name = req.body.name;
-     const email = req.body.email;
-     const contactno = req.body.contactno;
-     const bankaccno = req.body.bankaccno;
-     const bankcode = req.body.bankcode;
-     const bankname = req.body.bankname;
-     const username = req.body.username;
-     const password = req.body.password;
-     const usertype = req.body.usertype;
+    const name = req.body.name;
+    const email = req.body.email;
+    const contactno = req.body.contactno;
+    const bankaccno = req.body.bankaccno;
+    const bankcode = req.body.bankcode;
+    const bankname = req.body.bankname;
+    const username = req.body.username;
+    const password = req.body.password;
+    const usertype = req.body.usertype;
+    var rand,randhash,link;
 
      if (!name || !email || !contactno || !bankaccno || !bankname || !username || !password|| !usertype) {
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
@@ -30,6 +32,9 @@ exports.signup = function(req, res, next){
              });
          }
         // If no error, create account
+        rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+        randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+        link= getProtocol(req)+"://"+req.get('host')+"/verify?id="+randhash;
 
         let oUser = new User({
                 name: name,
@@ -52,7 +57,8 @@ exports.signup = function(req, res, next){
                 ccissuerbank: null,
                 expmth: null,
                 expyr: null,
-                ccvno: null
+                ccvno: null,
+                vhash: randhash
             });
         
         oUser.save(function(err, oUser) {
@@ -61,6 +67,7 @@ exports.signup = function(req, res, next){
             res.status(201).json({
                 success: true,
                 name: name + ' (' + username + ')',
+                vlink: link,
                 message: 'Label User created successfully with status:PENDING APPROVAL'
             });
         });
@@ -209,16 +216,20 @@ exports.updatePassword = function(req, res, next){
 exports.updateEmail = function(req, res, next){
     const userid = req.params.id;
     const newemail = req.body.email;
-
+    var rand,randhash;
     if (!newemail || !userid) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
     } else {
         
 	User.findOne({ _id: userid }, function(err, user) {
             if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
-            if (user) {                        
+            if (user) {
+                rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+                randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+
                 user.email = newemail;
                 user.verified_email = 'N';
+                user.vhash = randhash;
                 user.save(function(err) {
                     if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
 
@@ -231,4 +242,60 @@ exports.updateEmail = function(req, res, next){
         });
     }
 
+}
+
+exports.emailverification = function(req, res, next){
+    // Check for registration errors
+    const name = req.body.name;
+    const email = req.body.email;
+    const username = req.body.username;
+    var rand,randhash,link;
+
+     if (!name || !email || !username ) {
+         return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
+     }
+ 
+     User.findOne({ username: username }, function(err, existingUser) {
+         if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+ 
+         if (existingUser) {
+            
+            if (existingUser.vhash) {
+                randhash = existingUser.vhash;
+                link= getProtocol(req)+"://"+req.get('host')+"/verify?id="+randhash+"&post=Y";
+                
+                return res.status(200).json({
+                    success: true,
+                    name: name + ' (' + username + ')',
+                    vlink: link,
+                    message: 'Email Verification has been sent to ' + email
+                });
+            } else {
+                rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+                randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+
+                existingUser.vhash = randhash;
+                existingUser.save(function(err) {
+                    if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+                    link= getProtocol(req)+"://"+req.get('host')+"/verify?id="+randhash+"&post=Y";
+                    res.status(200).json({
+                        success: true,
+                        name: name + ' (' + username + ')',
+                        vlink: link,
+                        message: 'Email Verification has been sent to ' + email
+                    });
+                });               
+            }
+        } else {
+            res.status(201).json({ success: false, message:'Error in Finding user data.'});
+        }
+    });
+}
+
+function getProtocol (req) {
+    var proto = req.connection.encrypted ? 'https' : 'http';
+    // only do this if you trust the proxy
+    proto = req.headers['x-forwarded-proto'] || proto;
+    return proto.split(/\s*,\s*/)[0];
 }

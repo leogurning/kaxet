@@ -61,6 +61,17 @@ export class UsermgtService {
         .catch(this.handleError);
   }
 
+  getLabelList() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.get(`${this.adminurl}/api/labellist`, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
