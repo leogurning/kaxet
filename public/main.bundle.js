@@ -77,9 +77,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var Globals = /** @class */ (function () {
     function Globals() {
-        this.adminurl = 'http://localhost:2002';
-        //adminurl: String = 'https://apikxadmin-dot-kaxetd.appspot.com';
-        this.notifurl = 'http://localhost:2004';
+        //adminurl: String = 'http://localhost:2002';
+        this.adminurl = 'https://apikxadmin-dot-kaxetd.appspot.com';
+        //notifurl: String = 'http://localhost:2004';
+        this.notifurl = 'https://apikxnotif-dot-kaxetd.appspot.com';
     }
     Globals = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
