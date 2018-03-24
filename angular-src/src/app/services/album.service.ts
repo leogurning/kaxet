@@ -17,16 +17,6 @@ export class AlbumService {
     }
   }
 
-  uploadAlbumphoto(oFile){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-
-    return this.http.post('api/albumphotoupload', oFile, options)
-      .map((response: Response) => response.json())
-      .catch(this.handleError);
-  }
-
   saveAlbum(userid, artistid, oAlbum){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -45,15 +35,6 @@ export class AlbumService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http.put(`api/updatealbumphoto/${albumid}`, JSON.stringify(oAlbum), options)
-        .map((response: Response) => response.json())
-        .catch(this.handleError);
-  }
-
-  deleteAlbumPhoto(oAlbum){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post('api/albumphotodelete', oAlbum, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

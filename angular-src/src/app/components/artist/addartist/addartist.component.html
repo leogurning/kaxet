@@ -25,7 +25,11 @@
             <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
         </div>
     </div>
-
+    <div class="form-group">
+         <label class="col-sm-2 control-label">  </label>
+       <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
+       <sup *ngIf="progressvalue > 0">{{ this.progressvalue }} %</sup>
+    </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"></label>
         <div class="col-sm-5">

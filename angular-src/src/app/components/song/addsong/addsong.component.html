@@ -4,13 +4,11 @@
   </div>  
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <form [formGroup]="addSongForm" (ngSubmit)="addSong(addSongForm.value)" class="form-horizontal" novalidate autocomplete="off">
-    <div class="form-group" *ngIf="progressvalue > 0">
+    <div class="form-group">
         <label class="col-sm-2 control-label">  </label>
-        <div class="input-group col-sm-10">
-                <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
-                <sup>{{ this.progressvalue }} %</sup>
-        </div>  
-    </div>
+      <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
+      <sup *ngIf="progressvalue > 0">{{ this.progressvalue }} %</sup>
+   </div>
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}">
       <label for="artistid" class="col-sm-2 control-label">Artist<sup>*</sup></label>
       <div class="input-group col-sm-10">
@@ -116,11 +114,9 @@
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label">  </label>
-        <div class="input-group col-sm-10">
-                <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
-                <sup>{{ this.progressvalue }} %</sup>
-        </div>  
-    </div>
+      <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
+      <sup *ngIf="progressvalue > 0">{{ this.progressvalue }} %</sup>
+   </div>
     <div class="form-group">
       <label class="col-sm-2 control-label"></label>
       <div class="col-sm-5">

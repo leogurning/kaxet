@@ -9,6 +9,8 @@ import { AuthService } from '../../../services/auth.service';
 import { IArtistList } from '../../../interface/artist';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-addalbum',
@@ -24,6 +26,8 @@ export class AddalbumComponent implements OnInit {
   artistlist: IArtistList[];
   loading = false;
   @ViewChild('inputimg')albumimageVar: any;
+  albumuploadpath:string;
+  progressvalue = 0;
 
   constructor(
     private fb: FormBuilder, 
@@ -34,7 +38,9 @@ export class AddalbumComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private ftService:FiletransferService,
+    private globals: Globals
   ) { }
 
   artistid = new FormControl('', [Validators.required]);  
@@ -47,6 +53,8 @@ export class AddalbumComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.albumuploadpath = this.globals.albumuploadpath;
+    this.progressvalue = 0;
     this.getArtistList(this.userObj.userid);
     this.getMsconfigGroupList('GENRE');
     this.albumid = '';
@@ -88,40 +96,51 @@ export class AddalbumComponent implements OnInit {
   }
 
   addAlbum(formdata:any): void {
+    this.progressvalue = 0;
     if (this.addAlbumForm.dirty && this.addAlbumForm.valid) {
+      this.progressvalue = 10;
       const files: Array<File> = this.filesToUpload;
       let theForm = this.addAlbumForm.value;
       let lformData: FormData = new FormData();
-      console.log('Ini file: '+ files[0]['name']);
-      
-      lformData.append('albumimage',files[0],files[0]['name']);
-      console.dir(theForm);
+      //console.log('Ini file: '+ files[0]['name']);
+      this.progressvalue = 20;
+      //lformData.append('albumimage',files[0],files[0]['name']);
+      lformData.append('fileinputsrc',files[0],files[0]['name']);
+      lformData.append('uploadpath',this.albumuploadpath);
+      //console.dir(theForm);
       this.loading = true;
-      this.albumService.uploadAlbumphoto(lformData)
+      this.progressvalue = 40;
+      this.ftService.uploadInputFile(lformData)
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
+            this.progressvalue = 0;
             this.toastr.error(data.message);
           } else {
-              theForm.albumphotopath = data.filedata.albumphotopath;
-              theForm.albumphotoname = data.filedata.albumphotoname;
+              this.progressvalue = 60;
+              theForm.albumphotopath = data.filedata.filepath;
+              theForm.albumphotoname = data.filedata.filename;
               theForm.status = 'STSACT';
-              console.log('Ini file path: '+ theForm.albumphotopath);
               if (this.albumid !== '') {
                 theForm.albumid = this.albumid;
               }
+              this.progressvalue = 80;
               this.albumService.saveAlbum(this.userObj.userid, theForm.artistid, theForm)
               .subscribe(data => {
                 if (data.success === false) {
                   this.loading = false;
+                  this.progressvalue = 0;
                   this.toastr.error(data.message);
                 } else {
+                  this.progressvalue = 90;
                   this.loading = false;
                   this.toastr.success(data.message);
                   //this.router.navigate(['listalbum']);
+                  this.progressvalue = 100;
                 }
                 this.addAlbumForm.reset();
                 this.albumimageVar.nativeElement.value = "";
+                this.progressvalue = 0;
               });
           }   
         });

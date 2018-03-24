@@ -23,6 +23,7 @@ import { UsermgtService } from './services/admin/usermgt.service';
 import { SongadminService } from './services/admin/songadmin.service';
 import { MsconfigService } from './services/admin/msconfig.service';
 import { NotifService } from './services/notif.service';
+import { FiletransferService } from './services/filetransfer.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -178,7 +179,8 @@ const appRoutes: Routes = [
     UsermgtService,
     SongadminService,
     MsconfigService,
-    NotifService],
+    NotifService,
+    FiletransferService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

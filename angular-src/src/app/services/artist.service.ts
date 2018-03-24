@@ -17,16 +17,6 @@ export class ArtistService {
     }
   }
 
-  uploadArtistphoto(oFile){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    //console.log(oFile.getAll('artistimage'));
-    return this.http.post('api/artistphotoupload', oFile, options)
-      .map((response: Response) => response.json())
-      .catch(this.handleError);
-  }
-
   saveArtist(userid, oArtist){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -45,15 +35,6 @@ export class ArtistService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http.put(`api/updateartistphoto/${artistid}`, JSON.stringify(oArtist), options)
-        .map((response: Response) => response.json())
-        .catch(this.handleError);
-  }
-
-  deleteArtistPhoto(oArtist){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post('api/artistphotodelete', oArtist, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

@@ -77,10 +77,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var Globals = /** @class */ (function () {
     function Globals() {
+        this.artistuploadpath = 'images/artists/';
+        this.albumuploadpath = 'images/albums/';
+        this.configuploadpath = 'images/genres/';
+        this.prvwuploadpath = 'previews/';
+        this.songuploadpath = 'songs/';
         //adminurl: String = 'http://localhost:2002';
         this.adminurl = 'https://apikxadmin-dot-kaxetd.appspot.com';
         //notifurl: String = 'http://localhost:2004';
         this.notifurl = 'https://apikxnotif-dot-kaxetd.appspot.com';
+        //filetransferurl: String = 'http://localhost:2005';
+        this.filetransferurl = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
     }
     Globals = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
@@ -117,45 +124,46 @@ var Globals = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_admin_songadmin_service__ = __webpack_require__("./src/app/services/admin/songadmin.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -175,6 +183,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 /* Global Variables */
 
 /* Services Modules */
+
 
 
 
@@ -227,40 +236,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_25__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_46__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_24__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_29__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_28__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_27__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_26__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_30__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_34__components_artist_addartist_addartist_component__["a" /* AddartistComponent */] },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_31__components_artist_editartist_editartist_component__["a" /* EditartistComponent */] },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_32__components_artist_listartist_listartist_component__["a" /* ListartistComponent */] },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_35__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */] },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */] },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */] },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */] },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */] },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_40__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_song_addsong_addsong_component__["a" /* AddsongComponent */] },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_song_listsong_listsong_component__["a" /* ListsongComponent */] },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_43__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */] },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_song_editsong_editsong_component__["a" /* EditsongComponent */] },
-    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_usermgt_usermgt_component__["a" /* UsermgtComponent */] },
-    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */] },
-    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */] },
-    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_50__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
-    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_songmgt_songmgt_component__["a" /* SongmgtComponent */] },
-    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */] },
-    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */] },
-    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */] },
-    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */] },
-    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_56__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_57__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_26__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_47__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_25__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_30__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_29__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_28__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_27__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_31__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_35__components_artist_addartist_addartist_component__["a" /* AddartistComponent */] },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_32__components_artist_editartist_editartist_component__["a" /* EditartistComponent */] },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_artist_listartist_listartist_component__["a" /* ListartistComponent */] },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_36__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_34__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */] },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */] },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */] },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */] },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */] },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_41__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_song_addsong_addsong_component__["a" /* AddsongComponent */] },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_song_listsong_listsong_component__["a" /* ListsongComponent */] },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_44__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */] },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_song_editsong_editsong_component__["a" /* EditsongComponent */] },
+    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_usermgt_usermgt_component__["a" /* UsermgtComponent */] },
+    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */] },
+    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_50__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */] },
+    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_51__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
+    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_songmgt_songmgt_component__["a" /* SongmgtComponent */] },
+    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */] },
+    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */] },
+    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */] },
+    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_56__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */] },
+    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_57__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_58__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -268,43 +277,43 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_22__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__components_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__components_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__components_user_password_password_component__["a" /* PasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__components_user_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__components_user_logout_component__["a" /* LogoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__components_about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_41__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_42__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_43__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-                __WEBPACK_IMPORTED_MODULE_44__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_45__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_46__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
-                __WEBPACK_IMPORTED_MODULE_47__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_48__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
-                __WEBPACK_IMPORTED_MODULE_49__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
-                __WEBPACK_IMPORTED_MODULE_50__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
-                __WEBPACK_IMPORTED_MODULE_51__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_52__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_53__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_55__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_56__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_57__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_58__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__components_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__components_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__components_user_password_password_component__["a" /* PasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__components_user_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__components_user_logout_component__["a" /* LogoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__components_about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_42__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_43__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_44__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+                __WEBPACK_IMPORTED_MODULE_45__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_46__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_47__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_49__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
+                __WEBPACK_IMPORTED_MODULE_50__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
+                __WEBPACK_IMPORTED_MODULE_52__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_56__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_57__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_58__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -326,22 +335,23 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_58__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */]
+                __WEBPACK_IMPORTED_MODULE_59__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_9__app_global__["a" /* Globals */],
-                __WEBPACK_IMPORTED_MODULE_20__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_21__common_toastr_service__["a" /* ToastrService */],
                 __WEBPACK_IMPORTED_MODULE_10__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_11__guards_auth_guard__["a" /* AuthGuard */],
                 __WEBPACK_IMPORTED_MODULE_12__services_user_service__["a" /* UserService */],
                 __WEBPACK_IMPORTED_MODULE_13__services_artist_service__["a" /* ArtistService */],
                 __WEBPACK_IMPORTED_MODULE_14__services_album_service__["a" /* AlbumService */],
                 __WEBPACK_IMPORTED_MODULE_15__services_song_service__["a" /* SongService */],
-                __WEBPACK_IMPORTED_MODULE_21__angular_common__["d" /* DatePipe */],
+                __WEBPACK_IMPORTED_MODULE_22__angular_common__["d" /* DatePipe */],
                 __WEBPACK_IMPORTED_MODULE_16__services_admin_usermgt_service__["a" /* UsermgtService */],
                 __WEBPACK_IMPORTED_MODULE_17__services_admin_songadmin_service__["a" /* SongadminService */],
                 __WEBPACK_IMPORTED_MODULE_18__services_admin_msconfig_service__["a" /* MsconfigService */],
-                __WEBPACK_IMPORTED_MODULE_19__services_notif_service__["a" /* NotifService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_22__app_component__["a" /* AppComponent */]]
+                __WEBPACK_IMPORTED_MODULE_19__services_notif_service__["a" /* NotifService */],
+                __WEBPACK_IMPORTED_MODULE_20__services_filetransfer_service__["a" /* FiletransferService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_23__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -453,7 +463,7 @@ module.exports = ""
 /***/ "./src/app/components/album/addalbum/addalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -471,6 +481,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_album_service__ = __webpack_require__("./src/app/services/album.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -489,8 +501,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AddalbumComponent = /** @class */ (function () {
-    function AddalbumComponent(fb, authService, artistService, albumService, msconfigService, route, router, toastr, datePipe) {
+    function AddalbumComponent(fb, authService, artistService, albumService, msconfigService, route, router, toastr, datePipe, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
@@ -500,8 +514,11 @@ var AddalbumComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.ftService = ftService;
+        this.globals = globals;
         this.filesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.albumname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
@@ -510,6 +527,8 @@ var AddalbumComponent = /** @class */ (function () {
     }
     AddalbumComponent.prototype.ngOnInit = function () {
         this.userObj = this.authService.currentUser;
+        this.albumuploadpath = this.globals.albumuploadpath;
+        this.progressvalue = 0;
         this.getArtistList(this.userObj.userid);
         this.getMsconfigGroupList('GENRE');
         this.albumid = '';
@@ -553,41 +572,53 @@ var AddalbumComponent = /** @class */ (function () {
     };
     AddalbumComponent.prototype.addAlbum = function (formdata) {
         var _this = this;
+        this.progressvalue = 0;
         if (this.addAlbumForm.dirty && this.addAlbumForm.valid) {
+            this.progressvalue = 10;
             var files = this.filesToUpload;
             var theForm_1 = this.addAlbumForm.value;
             var lformData = new FormData();
-            console.log('Ini file: ' + files[0]['name']);
-            lformData.append('albumimage', files[0], files[0]['name']);
-            console.dir(theForm_1);
+            //console.log('Ini file: '+ files[0]['name']);
+            this.progressvalue = 20;
+            //lformData.append('albumimage',files[0],files[0]['name']);
+            lformData.append('fileinputsrc', files[0], files[0]['name']);
+            lformData.append('uploadpath', this.albumuploadpath);
+            //console.dir(theForm);
             this.loading = true;
-            this.albumService.uploadAlbumphoto(lformData)
+            this.progressvalue = 40;
+            this.ftService.uploadInputFile(lformData)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
+                    _this.progressvalue = 0;
                     _this.toastr.error(data.message);
                 }
                 else {
-                    theForm_1.albumphotopath = data.filedata.albumphotopath;
-                    theForm_1.albumphotoname = data.filedata.albumphotoname;
+                    _this.progressvalue = 60;
+                    theForm_1.albumphotopath = data.filedata.filepath;
+                    theForm_1.albumphotoname = data.filedata.filename;
                     theForm_1.status = 'STSACT';
-                    console.log('Ini file path: ' + theForm_1.albumphotopath);
                     if (_this.albumid !== '') {
                         theForm_1.albumid = _this.albumid;
                     }
+                    _this.progressvalue = 80;
                     _this.albumService.saveAlbum(_this.userObj.userid, theForm_1.artistid, theForm_1)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
+                            _this.progressvalue = 0;
                             _this.toastr.error(data.message);
                         }
                         else {
+                            _this.progressvalue = 90;
                             _this.loading = false;
                             _this.toastr.success(data.message);
                             //this.router.navigate(['listalbum']);
+                            _this.progressvalue = 100;
                         }
                         _this.addAlbumForm.reset();
                         _this.albumimageVar.nativeElement.value = "";
+                        _this.progressvalue = 0;
                     });
                 }
             });
@@ -615,7 +646,9 @@ var AddalbumComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_9__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_10__app_global__["a" /* Globals */]])
     ], AddalbumComponent);
     return AddalbumComponent;
 }());
@@ -825,7 +858,7 @@ module.exports = ""
 /***/ "./src/app/components/album/editalbumphoto/editalbumphoto.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h1>Change Photo</h1>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"updatePhoto(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"albumimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                        Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h1>Change Photo</h1>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"updatePhoto(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"albumimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                        Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n          </div>\n          <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n            <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n            <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n          </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -840,6 +873,8 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_album_service__ = __webpack_require__("./src/app/services/album.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -855,22 +890,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditalbumphotoComponent = /** @class */ (function () {
-    function EditalbumphotoComponent(fb, authService, albumService, route, router, toastr) {
+    function EditalbumphotoComponent(fb, authService, albumService, route, router, toastr, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.albumService = albumService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
+        this.ftService = ftService;
+        this.globals = globals;
         this.filesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.albumphotopath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.albumphotoname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
     }
     EditalbumphotoComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.albumuploadpath = this.globals.albumuploadpath;
+        this.progressvalue = 0;
         this.albumForm = this.fb.group({
             albumphotopath: this.albumphotopath,
             albumphotoname: this.albumphotoname
@@ -906,41 +948,53 @@ var EditalbumphotoComponent = /** @class */ (function () {
     EditalbumphotoComponent.prototype.fileChangeEvent = function (fileInput) {
         this.filesToUpload = fileInput.target.files;
         this.newfile = this.filesToUpload[0]['name'];
-        console.log('content file: ' + this.filesToUpload);
+        //console.log('content file: ' + this.filesToUpload);
+        this.progressvalue = 0;
         this.uploadNewPhoto(this.filesToUpload);
     };
     EditalbumphotoComponent.prototype.uploadNewPhoto = function (newFileData) {
         var _this = this;
         var files = newFileData;
         var lformData = new FormData();
-        lformData.append('albumimage', files[0], files[0]['name']);
+        this.progressvalue = 10;
+        lformData.append('fileinputsrc', files[0], files[0]['name']);
+        lformData.append('uploadpath', this.albumuploadpath);
+        this.progressvalue = 30;
         this.loading = true;
-        this.albumService.uploadAlbumphoto(lformData)
+        this.progressvalue = 40;
+        this.ftService.uploadInputFile(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
+                _this.progressvalue = 0;
                 _this.toastr.error(data.message);
             }
             else {
-                _this.displayImg = data.filedata.albumphotopath;
-                var payloadData_1 = _this.albumForm.value;
-                _this.albumService.deleteAlbumPhoto(payloadData_1)
+                _this.progressvalue = 60;
+                _this.displayImg = data.filedata.filepath;
+                var payloadData_1 = {};
+                payloadData_1.uploadpath = _this.albumuploadpath;
+                payloadData_1.filename = _this.albumForm.value.albumphotoname;
+                _this.progressvalue = 80;
+                _this.ftService.deleteInputFile(payloadData_1)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         //this.toastr.error(data.message);
                         console.log('Error deleted ' + data.message);
                     }
                     else {
-                        console.log('File deleted - ' + payloadData_1.albumphotoname);
+                        console.log('File deleted - ' + payloadData_1.filename);
                     }
                 });
-                _this.albumForm.value.albumphotopath = data.filedata.albumphotopath;
-                _this.albumForm.value.albumphotoname = data.filedata.albumphotoname;
-                console.log('Update database photo - ' + _this.displayImg);
+                _this.progressvalue = 90;
+                _this.albumForm.value.albumphotopath = data.filedata.filepath;
+                _this.albumForm.value.albumphotoname = data.filedata.filename;
+                //console.log('Update database photo - ' + this.displayImg);
                 _this.albumService.updateAlbumphoto(_this.albumid, _this.albumForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -948,9 +1002,11 @@ var EditalbumphotoComponent = /** @class */ (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.progressvalue = 100;
                         _this.loading = false;
                         console.log('Success update database photo - ' + _this.displayImg);
                         _this.toastr.success(data.message);
+                        _this.progressvalue = 0;
                     }
                 });
             }
@@ -970,7 +1026,9 @@ var EditalbumphotoComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_4__services_album_service__["a" /* AlbumService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
     ], EditalbumphotoComponent);
     return EditalbumphotoComponent;
 }());
@@ -1008,6 +1066,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1027,8 +1087,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ListalbumComponent = /** @class */ (function () {
-    function ListalbumComponent(fb, authService, artistService, albumService, songService, msconfigService, route, router, toastr, datePipe) {
+    function ListalbumComponent(fb, authService, artistService, albumService, songService, msconfigService, route, router, toastr, datePipe, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
@@ -1039,6 +1101,8 @@ var ListalbumComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.ftService = ftService;
+        this.globals = globals;
         //artistname: String;
         this.loading = false;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
@@ -1050,6 +1114,7 @@ var ListalbumComponent = /** @class */ (function () {
     ListalbumComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.albumuploadpath = this.globals.albumuploadpath;
         this.reportForm = this.fb.group({
             artistid: this.artistid,
             albumname: this.albumname,
@@ -1244,9 +1309,10 @@ var ListalbumComponent = /** @class */ (function () {
                 else {
                     if (confirm('Do you really want to delete this album: ' + albumname + ' record?')) {
                         var payloadData = {};
-                        payloadData.albumphotoname = albumphotoname;
+                        payloadData.uploadpath = _this.albumuploadpath;
+                        payloadData.filename = albumphotoname;
                         _this.loading = true;
-                        _this.albumService.deleteAlbumPhoto(payloadData)
+                        _this.ftService.deleteInputFile(payloadData)
                             .subscribe(function (data) {
                             if (data.success === false) {
                                 _this.loading = false;
@@ -1321,7 +1387,9 @@ var ListalbumComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */]])
     ], ListalbumComponent);
     return ListalbumComponent;
 }());
@@ -1565,7 +1633,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/addartist/addartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-2 control-label\">  </label>\n       <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n       <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1581,6 +1649,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_artist_service__ = __webpack_require__("./src/app/services/artist.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1597,23 +1667,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AddartistComponent = /** @class */ (function () {
-    function AddartistComponent(fb, authService, artistService, route, router, toastr, datePipe) {
+    function AddartistComponent(fb, authService, artistService, ftService, route, router, toastr, datePipe, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
+        this.ftService = ftService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.globals = globals;
         //status: any = ['active', 'inactive'];
         this.filesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
     }
     AddartistComponent.prototype.ngOnInit = function () {
         this.userObj = this.authService.currentUser;
         this.artistid = '';
+        this.artistuploadpath = this.globals.artistuploadpath;
+        this.progressvalue = 0;
         this.addArtistForm = this.fb.group({
             artistname: this.artistname,
             artistimage: this.filesToUpload,
@@ -1623,25 +1700,33 @@ var AddartistComponent = /** @class */ (function () {
     };
     AddartistComponent.prototype.addArtist = function (formdata) {
         var _this = this;
+        this.progressvalue = 0;
         if (this.addArtistForm.dirty && this.addArtistForm.valid) {
+            this.progressvalue = 10;
             var files = this.filesToUpload;
             var theForm_1 = this.addArtistForm.value;
             var lformData = new FormData();
             //console.log('Ini file: '+ files[0]['name']);
-            lformData.append('artistimage', files[0], files[0]['name']);
+            this.progressvalue = 30;
+            lformData.append('fileinputsrc', files[0], files[0]['name']);
+            lformData.append('uploadpath', this.artistuploadpath);
             //console.log(lformData.getAll('artistimage'));
             //console.dir(theForm);
             this.loading = true;
-            this.artistService.uploadArtistphoto(lformData)
+            this.progressvalue = 50;
+            this.ftService.uploadInputFile(lformData)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
+                    _this.progressvalue = 0;
                     _this.toastr.error(data.message);
                 }
                 else {
-                    theForm_1.artistphotopath = data.filedata.artistphotopath;
-                    theForm_1.artistphotoname = data.filedata.artistphotoname;
+                    _this.progressvalue = 70;
+                    theForm_1.artistphotopath = data.filedata.filepath;
+                    theForm_1.artistphotoname = data.filedata.filename;
                     theForm_1.status = 'STSACT';
+                    _this.progressvalue = 90;
                     //console.log('Ini file path: '+ theForm.artistphotopath);
                     if (_this.artistid !== '') {
                         theForm_1.artistid = _this.artistid;
@@ -1650,15 +1735,18 @@ var AddartistComponent = /** @class */ (function () {
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
+                            _this.progressvalue = 0;
                             _this.toastr.error(data.message);
                         }
                         else {
                             _this.loading = false;
+                            _this.progressvalue = 100;
                             _this.toastr.success(data.message);
                             //this.router.navigate(['listartist']);
                         }
                         _this.addArtistForm.reset();
                         _this.artistimageVar.nativeElement.value = "";
+                        _this.progressvalue = 0;
                     });
                 }
             });
@@ -1681,10 +1769,12 @@ var AddartistComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_5__services_artist_service__["a" /* ArtistService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */]])
     ], AddartistComponent);
     return AddartistComponent;
 }());
@@ -1857,7 +1947,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/editartistphoto/editartistphoto.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Change Photo</h1>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"artistForm\" (ngSubmit)=\"updatePhoto(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n<!--       <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}\">\n          <label for=\"imgpath\" class=\"col-sm-2 control-label\">Image Path</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgpath\" [formControl]=\"imgpath\" placeholder=\"Img Path\">\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}\">\n          <label for=\"imgoriname\" class=\"col-sm-2 control-label\">Image Oriname</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgoriname\" [formControl]=\"imgoriname\" placeholder=\"Img Oriname\">\n          </div>\n      </div> -->\n      <div class=\"col-lg-6 col-sm-6 col-12\">\n          <label for=\"artistimage\" class=\"col-sm-3 control-label\"></label>\n          <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n          <br><br>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" style=\"display:none\">\n                  </span>\n              </label>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h1>Change Photo</h1>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"artistForm\" (ngSubmit)=\"updatePhoto(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n<!--       <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}\">\n          <label for=\"imgpath\" class=\"col-sm-2 control-label\">Image Path</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgpath\" [formControl]=\"imgpath\" placeholder=\"Img Path\">\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}\">\n          <label for=\"imgoriname\" class=\"col-sm-2 control-label\">Image Oriname</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgoriname\" [formControl]=\"imgoriname\" placeholder=\"Img Oriname\">\n          </div>\n      </div> -->\n      <div class=\"col-lg-6 col-sm-6 col-12\">\n          <label for=\"artistimage\" class=\"col-sm-3 control-label\"></label>\n          <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n          <br><br>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" style=\"display:none\">\n                  </span>\n              </label>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n        <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1872,6 +1962,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_artist_service__ = __webpack_require__("./src/app/services/artist.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1887,22 +1979,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditartistphotoComponent = /** @class */ (function () {
-    function EditartistphotoComponent(fb, authService, artistService, route, router, toastr) {
+    function EditartistphotoComponent(fb, authService, artistService, ftService, route, router, toastr, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
+        this.ftService = ftService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
+        this.globals = globals;
         this.filesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.artistphotopath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.artistphotoname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
     }
     EditartistphotoComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.progressvalue = 0;
+        this.artistuploadpath = this.globals.artistuploadpath;
         this.artistForm = this.fb.group({
             artistphotopath: this.artistphotopath,
             artistphotoname: this.artistphotoname
@@ -1939,40 +2038,52 @@ var EditartistphotoComponent = /** @class */ (function () {
         this.filesToUpload = fileInput.target.files;
         this.newfile = this.filesToUpload[0]['name'];
         console.log('content file: ' + this.filesToUpload);
+        this.progressvalue = 0;
         this.uploadNewPhoto(this.filesToUpload);
     };
     EditartistphotoComponent.prototype.uploadNewPhoto = function (newFileData) {
         var _this = this;
         var files = newFileData;
         var lformData = new FormData();
-        lformData.append('artistimage', files[0], files[0]['name']);
+        this.progressvalue = 10;
+        lformData.append('fileinputsrc', files[0], files[0]['name']);
+        lformData.append('uploadpath', this.artistuploadpath);
         this.loading = true;
-        this.artistService.uploadArtistphoto(lformData)
+        this.progressvalue = 30;
+        this.ftService.uploadInputFile(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
+                _this.progressvalue = 0;
                 _this.toastr.error(data.message);
             }
             else {
-                _this.displayImg = data.filedata.artistphotopath;
-                var payloadData_1 = _this.artistForm.value;
-                _this.artistService.deleteArtistPhoto(payloadData_1)
+                _this.progressvalue = 50;
+                _this.displayImg = data.filedata.filepath;
+                var payloadData_1 = {};
+                payloadData_1.uploadpath = _this.artistuploadpath;
+                payloadData_1.filename = _this.artistForm.value.artistphotoname;
+                _this.progressvalue = 70;
+                _this.ftService.deleteInputFile(payloadData_1)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         //this.toastr.error(data.message);
+                        _this.progressvalue = 0;
                         console.log('Error deleted ' + data.message);
                     }
                     else {
-                        console.log('File deleted - ' + payloadData_1.artistphotoname);
+                        console.log('File deleted - ' + payloadData_1.filename);
                     }
                 });
-                _this.artistForm.value.artistphotopath = data.filedata.artistphotopath;
-                _this.artistForm.value.artistphotoname = data.filedata.artistphotoname;
+                _this.progressvalue = 80;
+                _this.artistForm.value.artistphotopath = data.filedata.filepath;
+                _this.artistForm.value.artistphotoname = data.filedata.filename;
                 console.log('Update database photo - ' + _this.displayImg);
                 _this.artistService.updateArtistphoto(_this.artistid, _this.artistForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -1981,8 +2092,10 @@ var EditartistphotoComponent = /** @class */ (function () {
                     }
                     else {
                         _this.loading = false;
+                        _this.progressvalue = 100;
                         console.log('Success update database photo - ' + _this.displayImg);
                         _this.toastr.success(data.message);
+                        _this.progressvalue = 0;
                     }
                 });
             }
@@ -2000,9 +2113,11 @@ var EditartistphotoComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_artist_service__["a" /* ArtistService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
     ], EditartistphotoComponent);
     return EditartistphotoComponent;
 }());
@@ -2039,6 +2154,8 @@ module.exports = "<script>\n    $(document).ready(function(){\n        $('[data-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_album_service__ = __webpack_require__("./src/app/services/album.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2057,17 +2174,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ListartistComponent = /** @class */ (function () {
-    function ListartistComponent(fb, authService, artistService, albumService, msconfigService, route, router, toastr, datePipe) {
+    function ListartistComponent(fb, authService, artistService, albumService, ftService, msconfigService, route, router, toastr, datePipe, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
         this.albumService = albumService;
+        this.ftService = ftService;
         this.msconfigService = msconfigService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.globals = globals;
         /*   sts: any = [  {id: '',desc: 'Select option'},
                         {id: 'active', desc: 'active'},
                         {id: 'inactive', desc: 'inactive'}
@@ -2080,6 +2201,7 @@ var ListartistComponent = /** @class */ (function () {
     ListartistComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.artistuploadpath = this.globals.artistuploadpath;
         this.reportForm = this.fb.group({
             artistname: this.artistname,
             status: this.status
@@ -2192,9 +2314,10 @@ var ListartistComponent = /** @class */ (function () {
                 else {
                     if (confirm('Do you really want to delete this artist: ' + artistname + ' record?')) {
                         var payloadData = {};
-                        payloadData.artistphotoname = artistphotoname;
+                        payloadData.uploadpath = _this.artistuploadpath;
+                        payloadData.filename = artistphotoname;
                         _this.loading = true;
-                        _this.artistService.deleteArtistPhoto(payloadData)
+                        _this.ftService.deleteInputFile(payloadData)
                             .subscribe(function (data) {
                             if (data.success === false) {
                                 _this.loading = false;
@@ -2266,11 +2389,13 @@ var ListartistComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_5__services_artist_service__["a" /* ArtistService */],
             __WEBPACK_IMPORTED_MODULE_6__services_album_service__["a" /* AlbumService */],
+            __WEBPACK_IMPORTED_MODULE_9__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_10__app_global__["a" /* Globals */]])
     ], ListartistComponent);
     return ListartistComponent;
 }());
@@ -2708,7 +2833,7 @@ module.exports = ""
 /***/ "./src/app/components/msconfig/addconfig/addconfig.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Add Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form  [formGroup]=\"addConfigForm\" (ngSubmit)=\"addMsconfig(addConfigForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('code').invalid && addConfigForm.get('code').dirty}\">\n            <label for=\"code\" class=\"col-sm-2 control-label\">Code <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"code\" id=\"code\" placeholder=\"Ms Code\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('code').dirty && addConfigForm.get('code').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('code').errors.required\">\n                    Please enter the code\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('value').invalid && addConfigForm.get('value').dirty}\">\n            <label for=\"value\" class=\"col-sm-2 control-label\">Value <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"value\" id=\"value\" placeholder=\"Ms Value\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('value').dirty && addConfigForm.get('value').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('value').errors.required\">\n                    Please enter the value\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('group').invalid && addConfigForm.get('group').dirty}\">\n            <label for=\"group\" class=\"col-sm-2 control-label\">Group <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"group\">\n                    <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('group').dirty && addConfigForm.get('group').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('group').errors.required\">\n                    Please select config group\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"desc\" class=\"col-sm-2 control-label\">Description</label>\n            <div class=\"input-group col-sm-10\">\n                <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"desc\" rows=\"10\" [formControl]=\"desc\" placeholder=\"Description\"></textarea>\n            </div>\n        </div>\n        <div class=\"form-group\" >\n            <label for=\"genreimage\" class=\"col-sm-2 control-label\">Config Photo</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n                <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" placeholder=\"Genreimage\">\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-5\">\n                <button type=\"submit\" [disabled]=\"addConfigForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n            </div>\n            <div class=\"col-sm-5\" style=\"text-align:right\">\n                <sup>*</sup> required\n            </div>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Add Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form  [formGroup]=\"addConfigForm\" (ngSubmit)=\"addMsconfig(addConfigForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('code').invalid && addConfigForm.get('code').dirty}\">\n            <label for=\"code\" class=\"col-sm-2 control-label\">Code <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"code\" id=\"code\" placeholder=\"Ms Code\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('code').dirty && addConfigForm.get('code').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('code').errors.required\">\n                    Please enter the code\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('value').invalid && addConfigForm.get('value').dirty}\">\n            <label for=\"value\" class=\"col-sm-2 control-label\">Value <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"value\" id=\"value\" placeholder=\"Ms Value\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('value').dirty && addConfigForm.get('value').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('value').errors.required\">\n                    Please enter the value\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('group').invalid && addConfigForm.get('group').dirty}\">\n            <label for=\"group\" class=\"col-sm-2 control-label\">Group <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"group\">\n                    <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('group').dirty && addConfigForm.get('group').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('group').errors.required\">\n                    Please select config group\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"desc\" class=\"col-sm-2 control-label\">Description</label>\n            <div class=\"input-group col-sm-10\">\n                <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"desc\" rows=\"10\" [formControl]=\"desc\" placeholder=\"Description\"></textarea>\n            </div>\n        </div>\n        <div class=\"form-group\" >\n            <label for=\"genreimage\" class=\"col-sm-2 control-label\">Config Photo</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n                <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" placeholder=\"Genreimage\">\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n          <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n          <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n       </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-5\">\n                <button type=\"submit\" [disabled]=\"addConfigForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n            </div>\n            <div class=\"col-sm-5\" style=\"text-align:right\">\n                <sup>*</sup> required\n            </div>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -2724,6 +2849,8 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2740,8 +2867,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AddconfigComponent = /** @class */ (function () {
-    function AddconfigComponent(fb, authService, msconfigService, route, router, toastr, datePipe) {
+    function AddconfigComponent(fb, authService, msconfigService, route, router, toastr, datePipe, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.msconfigService = msconfigService;
@@ -2749,9 +2878,12 @@ var AddconfigComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.ftService = ftService;
+        this.globals = globals;
         //status: any = ['active', 'inactive'];
         this.filesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.code = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.value = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.group = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
@@ -2759,6 +2891,8 @@ var AddconfigComponent = /** @class */ (function () {
     }
     AddconfigComponent.prototype.ngOnInit = function () {
         this.userObj = this.authService.currentUser;
+        this.configuploadpath = this.globals.configuploadpath;
+        this.progressvalue = 0;
         this.msconfigid = '';
         this.addConfigForm = this.fb.group({
             code: this.code,
@@ -2787,23 +2921,31 @@ var AddconfigComponent = /** @class */ (function () {
     };
     AddconfigComponent.prototype.addMsconfig = function (formdata) {
         var _this = this;
+        this.progressvalue = 0;
         if (this.addConfigForm.dirty && this.addConfigForm.valid) {
             var files = this.filesToUpload;
             var theForm_1 = this.addConfigForm.value;
             this.loading = true;
+            this.progressvalue = 10;
             if (this.genreimageVar.nativeElement.value) {
+                this.progressvalue = 30;
                 var lformData = new FormData();
                 //console.log('Ini file: '+ files[0]['name']); 
-                lformData.append('genreimage', files[0], files[0]['name']);
+                //lformData.append('genreimage',files[0],files[0]['name']);
+                lformData.append('fileinputsrc', files[0], files[0]['name']);
+                lformData.append('uploadpath', this.configuploadpath);
                 //console.log(lformData.getAll('artistimage'));
                 //console.dir(theForm);
-                this.msconfigService.uploadGenrephoto(lformData)
+                this.progressvalue = 50;
+                this.ftService.uploadInputFile(lformData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.progressvalue = 70;
                         theForm_1.filepath = data.filedata.filepath;
                         theForm_1.filename = data.filedata.filename;
                         theForm_1.status = 'STSACT';
@@ -2811,42 +2953,52 @@ var AddconfigComponent = /** @class */ (function () {
                         if (_this.msconfigid !== '') {
                             theForm_1.msconfigid = _this.msconfigid;
                         }
+                        _this.progressvalue = 90;
                         _this.msconfigService.saveMsconfig(_this.userObj.userid, theForm_1)
                             .subscribe(function (data) {
                             if (data.success === false) {
                                 _this.loading = false;
+                                _this.progressvalue = 0;
                                 _this.toastr.error(data.message);
                             }
                             else {
+                                _this.progressvalue = 100;
                                 _this.loading = false;
                                 _this.toastr.success(data.message);
                                 //this.router.navigate(['listartist']);
                             }
                             _this.addConfigForm.reset();
                             _this.genreimageVar.nativeElement.value = "";
+                            _this.progressvalue = 0;
                         });
                     }
                 });
             }
             else {
+                this.progressvalue = 30;
                 theForm_1.status = 'STSACT';
                 //console.log('Ini file path: '+ theForm.artistphotopath);
                 if (this.msconfigid !== '') {
                     theForm_1.msconfigid = this.msconfigid;
                 }
+                this.progressvalue = 70;
                 this.msconfigService.saveMsconfig(this.userObj.userid, theForm_1)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.progressvalue = 90;
                         _this.loading = false;
                         _this.toastr.success(data.message);
                         //this.router.navigate(['listartist']);
+                        _this.progressvalue = 100;
                     }
                     _this.addConfigForm.reset();
                     _this.genreimageVar.nativeElement.value = "";
+                    _this.progressvalue = 0;
                 });
             }
         }
@@ -2871,7 +3023,9 @@ var AddconfigComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */]])
     ], AddconfigComponent);
     return AddconfigComponent;
 }());
@@ -3182,7 +3336,7 @@ module.exports = ""
 /***/ "./src/app/components/msconfig/editconfigfile/editconfigfile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change File</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"msconfigForm\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"genreimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                        Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change File</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"msconfigForm\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"genreimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                        Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n            <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n            <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
 
 /***/ }),
 
@@ -3197,6 +3351,8 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3212,22 +3368,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditconfigfileComponent = /** @class */ (function () {
-    function EditconfigfileComponent(fb, authService, msconfigService, route, router, toastr) {
+    function EditconfigfileComponent(fb, authService, msconfigService, route, router, toastr, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.msconfigService = msconfigService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
+        this.ftService = ftService;
+        this.globals = globals;
         this.filesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.filepath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.filename = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
     }
     EditconfigfileComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.configuploadpath = this.globals.configuploadpath;
+        this.progressvalue = 0;
         this.msconfigForm = this.fb.group({
             filepath: this.filepath,
             filename: this.filename
@@ -3271,24 +3434,35 @@ var EditconfigfileComponent = /** @class */ (function () {
         this.filesToUpload = fileInput.target.files;
         this.newfile = this.filesToUpload[0]['name'];
         console.log('content file: ' + this.filesToUpload);
+        this.progressvalue = 0;
         this.uploadNewPhoto(this.filesToUpload);
     };
     EditconfigfileComponent.prototype.uploadNewPhoto = function (newFileData) {
         var _this = this;
+        this.progressvalue = 30;
         var files = newFileData;
         var lformData = new FormData();
-        lformData.append('genreimage', files[0], files[0]['name']);
+        //lformData.append('genreimage',files[0],files[0]['name']);
+        lformData.append('fileinputsrc', files[0], files[0]['name']);
+        lformData.append('uploadpath', this.configuploadpath);
         this.loading = true;
-        this.msconfigService.uploadGenrephoto(lformData)
+        this.progressvalue = 60;
+        this.ftService.uploadInputFile(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
+                _this.progressvalue = 0;
                 _this.toastr.error(data.message);
             }
             else {
+                _this.progressvalue = 70;
                 _this.displayImg = data.filedata.filepath;
-                var payloadData_1 = _this.msconfigForm.value;
-                _this.msconfigService.deleteGenrephoto(payloadData_1)
+                //let payloadData: any = this.msconfigForm.value;
+                var payloadData_1 = {};
+                payloadData_1.uploadpath = _this.configuploadpath;
+                payloadData_1.filename = _this.msconfigForm.value.filename;
+                _this.progressvalue = 80;
+                _this.ftService.deleteInputFile(payloadData_1)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         //this.toastr.error(data.message);
@@ -3301,11 +3475,13 @@ var EditconfigfileComponent = /** @class */ (function () {
                 _this.msconfigForm.value.msconfigid = _this.msconfigid;
                 _this.msconfigForm.value.filepath = data.filedata.filepath;
                 _this.msconfigForm.value.filename = data.filedata.filename;
-                console.log('Update database photo - ' + _this.displayImg);
+                _this.progressvalue = 90;
+                //console.log('Update database photo - ' + this.displayImg);
                 _this.msconfigService.updateMsconfigfile(_this.userObj.userid, _this.msconfigForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -3313,9 +3489,11 @@ var EditconfigfileComponent = /** @class */ (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.progressvalue = 100;
                         _this.loading = false;
                         console.log('Success update database photo - ' + _this.displayImg);
                         _this.toastr.success(data.message);
+                        _this.progressvalue = 0;
                     }
                 });
             }
@@ -3335,7 +3513,9 @@ var EditconfigfileComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
     ], EditconfigfileComponent);
     return EditconfigfileComponent;
 }());
@@ -3370,6 +3550,8 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3386,8 +3568,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ListconfigComponent = /** @class */ (function () {
-    function ListconfigComponent(fb, authService, msconfigService, route, router, toastr, datePipe) {
+    function ListconfigComponent(fb, authService, msconfigService, route, router, toastr, datePipe, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.msconfigService = msconfigService;
@@ -3395,6 +3579,8 @@ var ListconfigComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.ftService = ftService;
+        this.globals = globals;
         this.sts = [{ code: '', value: 'Error ms config list' }];
         this.grouplist = [{ code: '', value: 'Error ms config list' }];
         this.loading = false;
@@ -3406,6 +3592,7 @@ var ListconfigComponent = /** @class */ (function () {
     ListconfigComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.configuploadpath = this.globals.configuploadpath;
         this.reportForm = this.fb.group({
             code: this.code,
             value: this.value,
@@ -3581,8 +3768,9 @@ var ListconfigComponent = /** @class */ (function () {
         if (confirm('Do you really want to delete this config: ' + code + ' record?')) {
             if (filename) {
                 var payloadData_1 = {};
+                payloadData_1.uploadpath = this.configuploadpath;
                 payloadData_1.filename = filename;
-                this.msconfigService.deleteGenrephoto(payloadData_1)
+                this.ftService.deleteInputFile(payloadData_1)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         //this.toastr.error(data.message);
@@ -3624,7 +3812,9 @@ var ListconfigComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */]])
     ], ListconfigComponent);
     return ListconfigComponent;
 }());
@@ -3823,7 +4013,7 @@ module.exports = ""
 /***/ "./src/app/components/song/addsong/addsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>  \n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" *ngIf=\"progressvalue > 0\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <div class=\"input-group col-sm-10\">\n                <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n                <sup>{{ this.progressvalue }} %</sup>\n        </div>  \n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n      <div class=\"input-group col-sm-10\">\n          <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputprev type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputsong type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <div class=\"input-group col-sm-10\">\n                <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n                <sup>{{ this.progressvalue }} %</sup>\n        </div>  \n    </div>\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>  \n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n      <div class=\"input-group col-sm-10\">\n          <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputprev type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputsong type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -3842,6 +4032,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3861,8 +4053,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AddsongComponent = /** @class */ (function () {
-    function AddsongComponent(fb, authService, artistService, albumService, songService, msconfigService, route, router, toastr, datePipe) {
+    function AddsongComponent(fb, authService, artistService, albumService, songService, msconfigService, route, router, toastr, datePipe, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
@@ -3873,6 +4067,8 @@ var AddsongComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.ftService = ftService;
+        this.globals = globals;
         this.PrvwfilesToUpload = [];
         this.SongfilesToUpload = [];
         this.loading = false;
@@ -3887,6 +4083,8 @@ var AddsongComponent = /** @class */ (function () {
     AddsongComponent.prototype.ngOnInit = function () {
         this.progressvalue = 0;
         this.userObj = this.authService.currentUser;
+        this.prvwuploadpath = this.globals.prvwuploadpath;
+        this.songuploadpath = this.globals.songuploadpath;
         this.getMsconfigGroupList('GENRE');
         this.getArtistList(this.userObj.userid);
         this.getAlbumList(this.userObj.userid);
@@ -3970,25 +4168,32 @@ var AddsongComponent = /** @class */ (function () {
             var prvwfiles = this.PrvwfilesToUpload;
             var theForm_1 = this.addSongForm.value;
             this.progressvalue = 20;
-            var lformData_1 = new FormData();
+            var lformData = new FormData();
             //console.log('Ini file: '+ prvwfiles[0]['name']);
-            lformData_1.append('songprvw', prvwfiles[0], prvwfiles[0]['name']);
+            lformData.append('fileinputsrc', prvwfiles[0], prvwfiles[0]['name']);
+            lformData.append('uploadpath', this.prvwuploadpath);
             this.loading = true;
             this.progressvalue = 30;
-            this.songService.uploadSongPreview(lformData_1)
+            this.ftService.uploadInputFile(lformData)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
+                    _this.progressvalue = 0;
                     _this.toastr.error(data.message);
                 }
                 else {
                     _this.progressvalue = 40;
-                    theForm_1.songprvwpath = data.filedata.songprvwpath;
-                    theForm_1.songprvwname = data.filedata.songprvwname;
+                    theForm_1.songprvwpath = data.filedata.filepath;
+                    theForm_1.songprvwname = data.filedata.filename;
                     var songfiles = _this.SongfilesToUpload;
-                    lformData_1.append('songfile', songfiles[0], songfiles[0]['name']);
+                    var lformData1 = new FormData();
+                    lformData1.append('fileinputsrc', songfiles[0], songfiles[0]['name']);
+                    lformData1.append('uploadpath', _this.songuploadpath);
+                    //formdata.set is not supported in Safari and other browsers
+                    //lformData.set('fileinputsrc',songfiles[0],songfiles[0]['name']);
+                    //lformData.set('uploadpath',this.songuploadpath);
                     _this.progressvalue = 50;
-                    _this.songService.uploadSongFile(lformData_1)
+                    _this.ftService.uploadInputFile(lformData1)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -3997,8 +4202,8 @@ var AddsongComponent = /** @class */ (function () {
                         }
                         else {
                             _this.progressvalue = 60;
-                            theForm_1.songfilepath = data.filedata.songfilepath;
-                            theForm_1.songfilename = data.filedata.songfilename;
+                            theForm_1.songfilepath = data.filedata.filepath;
+                            theForm_1.songfilename = data.filedata.filename;
                             theForm_1.status = 'STSACT';
                             if (_this.songid !== '') {
                                 theForm_1.songid = _this.songid;
@@ -4065,7 +4270,9 @@ var AddsongComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */]])
     ], AddsongComponent);
     return AddsongComponent;
 }());
@@ -4311,7 +4518,7 @@ module.exports = ""
 /***/ "./src/app/components/song/editsongfiles/editsongfiles.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Song Files</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"songForm\" (ngSubmit)=\"updateSong(songForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"input-group col-sm-10\">\n          <label for=\"songprvw\" class=\"col-sm-3 control-label\">Song Preview</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"PrvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newprvwfile }}\">  \n            </div>\n      </div>\n      <br><br>\n      <div class=\"input-group col-sm-10\">\n          <label for=\"songfile\" class=\"col-sm-3 control-label\">Song File</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"SongfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newsongfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Song Files</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"songForm\" (ngSubmit)=\"updateSong(songForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"input-group col-sm-10\">\n          <label for=\"songprvw\" class=\"col-sm-3 control-label\">Song Preview</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"PrvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newprvwfile }}\">  \n            </div>\n      </div>\n      <br><br>\n      <div class=\"input-group col-sm-10\">\n          <label for=\"songfile\" class=\"col-sm-3 control-label\">Song File</label>\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"SongfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newsongfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n        <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\">\n              <br>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -4326,6 +4533,8 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4341,17 +4550,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditsongfilesComponent = /** @class */ (function () {
-    function EditsongfilesComponent(fb, authService, songService, route, router, toastr) {
+    function EditsongfilesComponent(fb, authService, songService, route, router, toastr, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.songService = songService;
         this.route = route;
         this.router = router;
         this.toastr = toastr;
+        this.ftService = ftService;
+        this.globals = globals;
         this.PrvwfilesToUpload = [];
         this.SongfilesToUpload = [];
         this.loading = false;
+        this.progressvalue = 0;
         this.songprvwpath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.songprvwname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.songfilepath = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
@@ -4360,6 +4574,9 @@ var EditsongfilesComponent = /** @class */ (function () {
     EditsongfilesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.prvwuploadpath = this.globals.prvwuploadpath;
+        this.songuploadpath = this.globals.songuploadpath;
+        this.progressvalue = 0;
         this.songForm = this.fb.group({
             songprvwpath: this.songprvwpath,
             songprvwname: this.songprvwname,
@@ -4399,44 +4616,58 @@ var EditsongfilesComponent = /** @class */ (function () {
     EditsongfilesComponent.prototype.PrvwfileChangeEvent = function (fileInput) {
         this.PrvwfilesToUpload = fileInput.target.files;
         this.newprvwfile = this.PrvwfilesToUpload[0]['name'];
+        this.progressvalue = 0;
         this.uploadNewPreview(this.PrvwfilesToUpload);
     };
     EditsongfilesComponent.prototype.SongfileChangeEvent = function (fileInput) {
         this.SongfilesToUpload = fileInput.target.files;
         this.newsongfile = this.SongfilesToUpload[0]['name'];
+        this.progressvalue = 0;
         this.uploadNewSong(this.SongfilesToUpload);
     };
     EditsongfilesComponent.prototype.uploadNewPreview = function (newFileData) {
         var _this = this;
         var files = newFileData;
         var lformData = new FormData();
-        lformData.append('songprvw', files[0], files[0]['name']);
+        this.progressvalue = 10;
+        //lformData.append('songprvw',files[0],files[0]['name']);
+        lformData.append('fileinputsrc', files[0], files[0]['name']);
+        lformData.append('uploadpath', this.prvwuploadpath);
         this.loading = true;
-        this.songService.uploadSongPreview(lformData)
+        this.progressvalue = 40;
+        this.ftService.uploadInputFile(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
+                _this.progressvalue = 0;
                 _this.toastr.error(data.message);
             }
             else {
-                var payloadData_1 = _this.songForm.value;
-                _this.songService.deleteSongPreview(payloadData_1)
+                //let payloadData: any = this.songForm.value;
+                _this.progressvalue = 60;
+                var payloadData_1 = {};
+                payloadData_1.uploadpath = _this.prvwuploadpath;
+                payloadData_1.filename = _this.songForm.value.songprvwname;
+                _this.progressvalue = 80;
+                _this.ftService.deleteInputFile(payloadData_1)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         console.log('Error deleted ' + data.message);
                     }
                     else {
                         if (payloadData_1) {
-                            console.log('File deleted - ' + payloadData_1.songprvwname);
+                            console.log('File deleted - ' + payloadData_1.filename);
                         }
                     }
                 });
-                _this.songForm.value.songprvwpath = data.filedata.songprvwpath;
-                _this.songForm.value.songprvwname = data.filedata.songprvwname;
+                _this.progressvalue = 90;
+                _this.songForm.value.songprvwpath = data.filedata.filepath;
+                _this.songForm.value.songprvwname = data.filedata.filename;
                 _this.songService.updateSongPreview(_this.songid, _this.songForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -4444,9 +4675,11 @@ var EditsongfilesComponent = /** @class */ (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.progressvalue = 100;
                         _this.loading = false;
                         console.log('Success update song preview.');
                         _this.toastr.success(data.message);
+                        _this.progressvalue = 0;
                     }
                 });
             }
@@ -4456,31 +4689,43 @@ var EditsongfilesComponent = /** @class */ (function () {
         var _this = this;
         var files = newFileData;
         var lformData = new FormData();
-        lformData.append('songfile', files[0], files[0]['name']);
+        this.progressvalue = 10;
+        //lformData.append('songfile',files[0],files[0]['name']);
+        lformData.append('fileinputsrc', files[0], files[0]['name']);
+        lformData.append('uploadpath', this.songuploadpath);
         this.loading = true;
-        this.songService.uploadSongFile(lformData)
+        this.progressvalue = 40;
+        this.ftService.uploadInputFile(lformData)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
+                _this.progressvalue = 0;
                 _this.toastr.error(data.message);
             }
             else {
-                var payloadData_2 = _this.songForm.value;
-                _this.songService.deleteSongFile(payloadData_2)
+                //let payloadData: any = this.songForm.value;
+                _this.progressvalue = 60;
+                var payloadData_2 = {};
+                payloadData_2.uploadpath = _this.songuploadpath;
+                payloadData_2.filename = _this.songForm.value.songfilename;
+                _this.progressvalue = 80;
+                _this.ftService.deleteInputFile(payloadData_2)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         console.log('Error deleted ' + data.message);
                     }
                     else {
-                        console.log('File deleted - ' + payloadData_2.songfilename);
+                        console.log('File deleted - ' + payloadData_2.filename);
                     }
                 });
-                _this.songForm.value.songfilepath = data.filedata.songfilepath;
-                _this.songForm.value.songfilename = data.filedata.songfilename;
+                _this.progressvalue = 90;
+                _this.songForm.value.songfilepath = data.filedata.filepath;
+                _this.songForm.value.songfilename = data.filedata.filename;
                 _this.songService.updateSongFile(_this.songid, _this.songForm.value)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
                             _this.router.navigate(['login']);
@@ -4488,9 +4733,11 @@ var EditsongfilesComponent = /** @class */ (function () {
                         _this.toastr.error(data.message);
                     }
                     else {
+                        _this.progressvalue = 100;
                         _this.loading = false;
                         console.log('Success update song file.');
                         _this.toastr.success(data.message);
+                        _this.progressvalue = 0;
                     }
                 });
             }
@@ -4510,7 +4757,9 @@ var EditsongfilesComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_4__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
     ], EditsongfilesComponent);
     return EditsongfilesComponent;
 }());
@@ -4548,6 +4797,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4567,8 +4818,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ListsongComponent = /** @class */ (function () {
-    function ListsongComponent(fb, authService, artistService, albumService, songService, msconfigService, route, router, toastr, datePipe) {
+    function ListsongComponent(fb, authService, artistService, albumService, songService, msconfigService, route, router, toastr, datePipe, ftService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
@@ -4579,6 +4832,8 @@ var ListsongComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.ftService = ftService;
+        this.globals = globals;
         this.loading = false;
         this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
@@ -4592,6 +4847,8 @@ var ListsongComponent = /** @class */ (function () {
     ListsongComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.prvwuploadpath = this.globals.prvwuploadpath;
+        this.songuploadpath = this.globals.songuploadpath;
         this.reportForm = this.fb.group({
             songname: this.songname,
             artistid: this.artistid,
@@ -4893,8 +5150,10 @@ var ListsongComponent = /** @class */ (function () {
             if (confirm('Do you really want to delete this song: ' + songname + ' record?')) {
                 this.loading = true;
                 var payload = {};
-                payload.songprvwname = songprvwname;
-                this.songService.deleteSongPreview(payload)
+                payload.uploadpath = this.prvwuploadpath;
+                payload.filename = songprvwname;
+                //payload.songprvwname = songprvwname;
+                this.ftService.deleteInputFile(payload)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         console.log('Error delete preview' + data.message);
@@ -4904,8 +5163,10 @@ var ListsongComponent = /** @class */ (function () {
                     }
                 });
                 var payloadData = {};
-                payloadData.songfilename = songfilename;
-                this.songService.deleteSongFile(payloadData)
+                //payloadData.songfilename = songfilename;
+                payloadData.uploadpath = this.songuploadpath;
+                payloadData.filename = songfilename;
+                this.ftService.deleteInputFile(payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         console.log('Error delete songfile' + data.message);
@@ -4952,7 +5213,9 @@ var ListsongComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
+            __WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */]])
     ], ListsongComponent);
     return ListsongComponent;
 }());
@@ -7283,14 +7546,6 @@ var AlbumService = /** @class */ (function () {
             this.jwtToken = theUser.token;
         }
     }
-    AlbumService.prototype.uploadAlbumphoto = function (oFile) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/albumphotoupload', oFile, options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
     AlbumService.prototype.saveAlbum = function (userid, artistid, oAlbum) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
@@ -7306,14 +7561,6 @@ var AlbumService = /** @class */ (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.put("api/updatealbumphoto/" + albumid, JSON.stringify(oAlbum), options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
-    AlbumService.prototype.deleteAlbumPhoto = function (oAlbum) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/albumphotodelete', oAlbum, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -7431,15 +7678,6 @@ var ArtistService = /** @class */ (function () {
             this.jwtToken = theUser.token;
         }
     }
-    ArtistService.prototype.uploadArtistphoto = function (oFile) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        //console.log(oFile.getAll('artistimage'));
-        return this.http.post('api/artistphotoupload', oFile, options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
     ArtistService.prototype.saveArtist = function (userid, oArtist) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
@@ -7455,14 +7693,6 @@ var ArtistService = /** @class */ (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.put("api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
-    ArtistService.prototype.deleteArtistPhoto = function (oArtist) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/artistphotodelete', oArtist, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -7606,6 +7836,78 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/filetransfer.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FiletransferService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var FiletransferService = /** @class */ (function () {
+    function FiletransferService(http, globals) {
+        this.http = http;
+        this.globals = globals;
+        this.filetransferurl = globals.filetransferurl;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    FiletransferService.prototype.uploadInputFile = function (oFile) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        //console.log(oFile.getAll('artistimage'));
+        return this.http.post(this.filetransferurl + "/api/inputfileupload", oFile, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    FiletransferService.prototype.deleteInputFile = function (oFile) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.filetransferurl + "/api/inputfiledelete", oFile, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    FiletransferService.prototype.handleError = function (error) {
+        console.error(error);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+    };
+    FiletransferService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]])
+    ], FiletransferService);
+    return FiletransferService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/notif.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7711,38 +8013,6 @@ var SongService = /** @class */ (function () {
             this.jwtToken = theUser.token;
         }
     }
-    SongService.prototype.uploadSongPreview = function (oFile) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songprvwupload', oFile, options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
-    SongService.prototype.uploadSongFile = function (oFile) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songfileupload', oFile, options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
-    SongService.prototype.deleteSongPreview = function (oSong) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songprvwdelete', oSong, options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
-    SongService.prototype.deleteSongFile = function (oSong) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Authorization', "" + this.jwtToken);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        return this.http.post('api/songfiledelete', oSong, options)
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
     SongService.prototype.saveSong = function (userid, artistid, albumid, oSong) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');

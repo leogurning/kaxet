@@ -6,6 +6,8 @@ import { ToastrService } from '../../../common/toastr.service';
 import { AuthService } from '../../../services/auth.service';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-addconfig',
@@ -21,6 +23,8 @@ export class AddconfigComponent implements OnInit {
   grouplist: IMsconfigGroupList[];
   loading = false;
   @ViewChild('inputimg')genreimageVar: any;
+  configuploadpath:string;
+  progressvalue = 0;
 
   constructor(
     private fb: FormBuilder, 
@@ -29,7 +33,9 @@ export class AddconfigComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private ftService:FiletransferService,
+    private globals: Globals
   ) { }
 
   code = new FormControl('', [Validators.required]);
@@ -41,6 +47,8 @@ export class AddconfigComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.configuploadpath = this.globals.configuploadpath;
+    this.progressvalue = 0;
     this.msconfigid = '';
     this.addConfigForm = this.fb.group({
       code: this.code,
@@ -66,22 +74,30 @@ export class AddconfigComponent implements OnInit {
     });
   }
   addMsconfig(formdata:any): void {
+    this.progressvalue = 0;
     if (this.addConfigForm.dirty && this.addConfigForm.valid) {
       const files: Array<File> = this.filesToUpload;
       let theForm = this.addConfigForm.value;
       this.loading = true;
+      this.progressvalue = 10;
       if (this.genreimageVar.nativeElement.value) {
+        this.progressvalue = 30;
         let lformData: FormData = new FormData();
         //console.log('Ini file: '+ files[0]['name']); 
-        lformData.append('genreimage',files[0],files[0]['name']);
+        //lformData.append('genreimage',files[0],files[0]['name']);
+        lformData.append('fileinputsrc',files[0],files[0]['name']);
+        lformData.append('uploadpath',this.configuploadpath);
         //console.log(lformData.getAll('artistimage'));
         //console.dir(theForm);
-        this.msconfigService.uploadGenrephoto(lformData)
+        this.progressvalue = 50;
+        this.ftService.uploadInputFile(lformData)
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
+            this.progressvalue = 0;
             this.toastr.error(data.message);
           } else {
+              this.progressvalue = 70;
               theForm.filepath = data.filedata.filepath;
               theForm.filename = data.filedata.filename;
               theForm.status = 'STSACT';
@@ -89,39 +105,49 @@ export class AddconfigComponent implements OnInit {
               if (this.msconfigid !== '') {
                 theForm.msconfigid = this.msconfigid;
               }
+              this.progressvalue = 90;
               this.msconfigService.saveMsconfig(this.userObj.userid, theForm)
               .subscribe(data => {
                 if (data.success === false) {
                   this.loading = false;
+                  this.progressvalue = 0;
                   this.toastr.error(data.message);
                 } else {
+                  this.progressvalue = 100;
                   this.loading = false;
                   this.toastr.success(data.message);
                   //this.router.navigate(['listartist']);
                 }
                 this.addConfigForm.reset();
                 this.genreimageVar.nativeElement.value = "";
+                this.progressvalue = 0;
               });
           }   
         });
       }else {
+        this.progressvalue = 30;
         theForm.status = 'STSACT';
         //console.log('Ini file path: '+ theForm.artistphotopath);
         if (this.msconfigid !== '') {
           theForm.msconfigid = this.msconfigid;
         }
+        this.progressvalue = 70;
         this.msconfigService.saveMsconfig(this.userObj.userid, theForm)
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
+            this.progressvalue = 0;
             this.toastr.error(data.message);
           } else {
+            this.progressvalue = 90;
             this.loading = false;
             this.toastr.success(data.message);
             //this.router.navigate(['listartist']);
+            this.progressvalue = 100;
           }
           this.addConfigForm.reset();
           this.genreimageVar.nativeElement.value = "";
+          this.progressvalue = 0;
         });
       }
     }

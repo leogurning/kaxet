@@ -17,44 +17,6 @@ export class SongService {
     }
   }
 
-  uploadSongPreview(oFile){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    
-    return this.http.post('api/songprvwupload', oFile, options)
-      .map((response: Response) => response.json())
-      .catch(this.handleError);
-  }
-
-  uploadSongFile(oFile){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    
-    return this.http.post('api/songfileupload', oFile, options)
-      .map((response: Response) => response.json())
-      .catch(this.handleError);
-  }
-
-  deleteSongPreview(oSong){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post('api/songprvwdelete', oSong, options)
-        .map((response: Response) => response.json())
-        .catch(this.handleError);
-  }
-
-  deleteSongFile(oSong){
-    let headers = new Headers();
-    headers.append('Authorization', `${this.jwtToken}`);
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post('api/songfiledelete', oSong, options)
-        .map((response: Response) => response.json())
-        .catch(this.handleError);
-  }
-
   saveSong(userid, artistid, albumid, oSong){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

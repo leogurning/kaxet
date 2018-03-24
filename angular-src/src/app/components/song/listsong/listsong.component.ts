@@ -12,6 +12,8 @@ import { IAlbumList } from '../../../interface/album';
 import { IAggSong } from '../../../interface/song';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-listsong',
@@ -44,6 +46,8 @@ export class ListsongComponent implements OnInit {
   currsongpublish: String;
   currsongbuy: Number;
   loading = false;
+  prvwuploadpath: string;
+  songuploadpath: string;
 
   constructor(
     private fb: FormBuilder, 
@@ -55,7 +59,9 @@ export class ListsongComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private ftService:FiletransferService,
+    private globals: Globals
   ) { }
 
   songname = new FormControl('',[Validators.nullValidator]);
@@ -69,6 +75,8 @@ export class ListsongComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.prvwuploadpath = this.globals.prvwuploadpath;
+    this.songuploadpath = this.globals.songuploadpath;
     this.reportForm = this.fb.group({
       songname: this.songname,
       artistid: this.artistid,
@@ -381,8 +389,10 @@ export class ListsongComponent implements OnInit {
       if(confirm('Do you really want to delete this song: ' + songname + ' record?')){
         this.loading = true;
         let payload: any = {};
-        payload.songprvwname = songprvwname;
-        this.songService.deleteSongPreview(payload)
+        payload.uploadpath = this.prvwuploadpath;
+        payload.filename = songprvwname;
+        //payload.songprvwname = songprvwname;
+        this.ftService.deleteInputFile(payload)
         .subscribe(data => {
            if (data.success === false) {
               console.log('Error delete preview' + data.message);
@@ -391,8 +401,10 @@ export class ListsongComponent implements OnInit {
             }   
           });
         let payloadData: any = {};
-        payloadData.songfilename = songfilename;
-        this.songService.deleteSongFile(payloadData)
+        //payloadData.songfilename = songfilename;
+        payloadData.uploadpath = this.songuploadpath;
+        payloadData.filename = songfilename;
+        this.ftService.deleteInputFile(payloadData)
         .subscribe(data => {
             if (data.success === false) {
               console.log('Error delete songfile' + data.message);

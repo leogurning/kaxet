@@ -12,6 +12,8 @@ import { IAggAlbum } from '../../../interface/album';
 import { ISong } from '../../../interface/song';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-listalbum',
@@ -38,6 +40,7 @@ export class ListalbumComponent implements OnInit {
   genre: IMsconfigGroupList[];
   //artistname: String;
   loading = false;
+  albumuploadpath:string;
 
   constructor(
     private fb: FormBuilder, 
@@ -49,7 +52,9 @@ export class ListalbumComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private ftService:FiletransferService,
+    private globals: Globals
   ) { }
 
   artistid = new FormControl('',[Validators.nullValidator]);
@@ -60,6 +65,7 @@ export class ListalbumComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.albumuploadpath = this.globals.albumuploadpath;
     this.reportForm = this.fb.group({
       artistid: this.artistid,
       albumname: this.albumname,
@@ -265,9 +271,10 @@ export class ListalbumComponent implements OnInit {
         } else {
           if(confirm('Do you really want to delete this album: ' + albumname + ' record?')){
             let payloadData: any = {};
-            payloadData.albumphotoname = albumphotoname;
+            payloadData.uploadpath = this.albumuploadpath;
+            payloadData.filename = albumphotoname;
             this.loading = true;
-            this.albumService.deleteAlbumPhoto(payloadData)
+            this.ftService.deleteInputFile(payloadData)
             .subscribe(data => {
                if (data.success === false) {
                 this.loading = false;

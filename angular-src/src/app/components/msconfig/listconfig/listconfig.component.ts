@@ -7,6 +7,8 @@ import { AuthService } from '../../../services/auth.service';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
 import { IAggMsconfig } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-listconfig',
@@ -29,6 +31,7 @@ export class ListconfigComponent implements OnInit {
   sts: IMsconfigGroupList[] = [{code:'', value:'Error ms config list'}];
   grouplist: IMsconfigGroupList[] = [{code:'', value:'Error ms config list'}];
   loading = false;
+  configuploadpath:string;
 
   constructor(
     private fb: FormBuilder, 
@@ -37,7 +40,9 @@ export class ListconfigComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private ftService:FiletransferService,
+    private globals: Globals
   ) { }
 
   code = new FormControl('',[Validators.nullValidator]);
@@ -47,6 +52,7 @@ export class ListconfigComponent implements OnInit {
   
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.configuploadpath = this.globals.configuploadpath;
     this.reportForm = this.fb.group({
       code: this.code,
       value: this.value,
@@ -237,8 +243,9 @@ export class ListconfigComponent implements OnInit {
     if(confirm('Do you really want to delete this config: ' + code + ' record?')){
       if (filename) {
         let payloadData: any = {};
+        payloadData.uploadpath = this.configuploadpath;
         payloadData.filename = filename;
-        this.msconfigService.deleteGenrephoto(payloadData)
+        this.ftService.deleteInputFile(payloadData)
         .subscribe(data => {
             if (data.success === false) {
               //this.toastr.error(data.message);

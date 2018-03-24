@@ -9,6 +9,8 @@ import { AuthService } from '../../../services/auth.service';
 import { IArtist } from '../../../interface/artist';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-listartist',
@@ -27,6 +29,7 @@ export class ListartistComponent implements OnInit {
   qpage: number;
   qsort: String;
   sts: IMsconfigGroupList[];
+  artistuploadpath:string;
 /*   sts: any = [  {id: '',desc: 'Select option'},
                 {id: 'active', desc: 'active'}, 
                 {id: 'inactive', desc: 'inactive'} 
@@ -38,11 +41,13 @@ export class ListartistComponent implements OnInit {
     private authService: AuthService,
     private artistService: ArtistService,
     private albumService: AlbumService,
+    private ftService:FiletransferService,
     private msconfigService: MsconfigService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private globals: Globals
   ) { }
 
   artistname = new FormControl('',[Validators.nullValidator]);
@@ -51,6 +56,7 @@ export class ListartistComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.artistuploadpath = this.globals.artistuploadpath;
     this.reportForm = this.fb.group({
       artistname: this.artistname,
       status: this.status
@@ -173,9 +179,10 @@ export class ListartistComponent implements OnInit {
         } else {
           if(confirm('Do you really want to delete this artist: ' + artistname + ' record?')){
             let payloadData: any = {};
-            payloadData.artistphotoname = artistphotoname;
+            payloadData.uploadpath = this.artistuploadpath;
+            payloadData.filename = artistphotoname;
             this.loading = true;
-            this.artistService.deleteArtistPhoto(payloadData)
+            this.ftService.deleteInputFile(payloadData)
             .subscribe(data => {
                if (data.success === false) {
                 this.loading = false;

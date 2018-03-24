@@ -5,6 +5,8 @@ import { ToastrService } from '../../../common/toastr.service'
 import { ArtistService } from '../../../services/artist.service';
 import { AuthService } from '../../../services/auth.service';
 import { IArtist } from '../../../interface/artist';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-editartistphoto',
@@ -18,14 +20,18 @@ export class EditartistphotoComponent implements OnInit {
   artistid: String;
   filesToUpload: Array<File> = [];
   loading = false;
+  artistuploadpath:string;
+  progressvalue = 0;
 
   constructor(
     private fb: FormBuilder, 
     private authService: AuthService,
     private artistService: ArtistService,
+    private ftService:FiletransferService,
     private route: ActivatedRoute,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private globals: Globals
   ) { }
 
   artistphotopath = new FormControl('', [Validators.nullValidator]);
@@ -36,6 +42,8 @@ export class EditartistphotoComponent implements OnInit {
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
+    this.progressvalue = 0;
+    this.artistuploadpath = this.globals.artistuploadpath;
     this.artistForm = this.fb.group({
       artistphotopath: this.artistphotopath,
       artistphotoname: this.artistphotoname
@@ -71,40 +79,51 @@ export class EditartistphotoComponent implements OnInit {
     this.filesToUpload = <Array<File>>fileInput.target.files;
     this.newfile = this.filesToUpload[0]['name'];
     console.log('content file: ' + this.filesToUpload);
+    this.progressvalue = 0;
     this.uploadNewPhoto(this.filesToUpload);  
   }
 
   uploadNewPhoto(newFileData:any): void {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
-    lformData.append('artistimage',files[0],files[0]['name']);
+    this.progressvalue = 10;
+    lformData.append('fileinputsrc',files[0],files[0]['name']);
+    lformData.append('uploadpath',this.artistuploadpath);
     this.loading = true;
-    this.artistService.uploadArtistphoto(lformData)
+    this.progressvalue = 30;
+    this.ftService.uploadInputFile(lformData)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;
+        this.progressvalue = 0;
         this.toastr.error(data.message);
       } else {
-        this.displayImg = data.filedata.artistphotopath;
-        let payloadData: any = this.artistForm.value;
-        this.artistService.deleteArtistPhoto(payloadData)
+        this.progressvalue = 50;
+        this.displayImg = data.filedata.filepath;
+        let payloadData: any = {};
+        payloadData.uploadpath = this.artistuploadpath;
+        payloadData.filename = this.artistForm.value.artistphotoname;
+        this.progressvalue = 70;
+        this.ftService.deleteInputFile(payloadData)
         .subscribe(data => {
            if (data.success === false) {
               //this.toastr.error(data.message);
+              this.progressvalue = 0;
               console.log('Error deleted ' + data.message);
             } else {
-              console.log('File deleted - ' + payloadData.artistphotoname);
+              console.log('File deleted - ' + payloadData.filename);
             }   
           });
-           
-        this.artistForm.value.artistphotopath = data.filedata.artistphotopath;
-        this.artistForm.value.artistphotoname = data.filedata.artistphotoname;
+        this.progressvalue = 80;   
+        this.artistForm.value.artistphotopath = data.filedata.filepath;
+        this.artistForm.value.artistphotoname = data.filedata.filename;
 
         console.log('Update database photo - ' + this.displayImg);
         this.artistService.updateArtistphoto(this.artistid, this.artistForm.value)
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
+            this.progressvalue = 0;
             if (data.errcode){
               this.authService.logout();
               this.router.navigate(['login']);
@@ -112,8 +131,10 @@ export class EditartistphotoComponent implements OnInit {
             this.toastr.error(data.message);
           } else {
             this.loading = false;
+            this.progressvalue = 100;
             console.log('Success update database photo - ' + this.displayImg)
             this.toastr.success(data.message);
+            this.progressvalue = 0;
           }
         });
 

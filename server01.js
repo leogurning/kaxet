@@ -3,7 +3,6 @@ const bodyParser  = require('body-parser');
 const morgan      = require('morgan');
 const mongoose    = require('mongoose');
 var upload = require('express-fileupload');
-const cloudinary = require('cloudinary');
 const path = require('path');
 
 const jwt    = require('jsonwebtoken'); 
@@ -70,8 +69,6 @@ apiRoutes.put('/password/:id', user.updatePassword); // API updates user passwor
 apiRoutes.put('/email/:id', user.updateEmail); // API updates user email
 apiRoutes.put('/emailverify', user.emailverification); // API to verify user email
 
-apiRoutes.post('/artistphotoupload', artist.artistphotoupload);
-apiRoutes.post('/artistphotodelete', artist.artistphotodelete);
 apiRoutes.post('/artist/:id', artist.saveartist); // API adds & update artist of the label
 apiRoutes.delete('/artist/:id', artist.delartist); //API removes the artist details of given artist id
 apiRoutes.put('/updateartistphoto/:id', artist.updateartistphoto); // API updates user photo
@@ -81,8 +78,6 @@ apiRoutes.post('/artist/report/:labelid', artist.artistreport); //API returns ar
 apiRoutes.post('/artist/aggreport/:labelid', artist.artistaggreport); //API returns artist report based on user input 
 
 //apiRoutes.post('/testalbum/:id', album.testalbum); // API test album of the label
-apiRoutes.post('/albumphotoupload', album.albumphotoupload);
-apiRoutes.post('/albumphotodelete', album.albumphotodelete);
 apiRoutes.post('/album/:id', album.savealbum); // API adds & update album of the label
 apiRoutes.put('/updatealbumphoto/:id', album.updatealbumphoto); // API updates album photo
 apiRoutes.get('/album/:id', album.getalbum); // API returns album details of given album id
@@ -93,10 +88,6 @@ apiRoutes.post('/album/report/:labelid', album.albumreport); //API returns album
 apiRoutes.post('/album/artistalbumreport/:labelid', album.artistalbumlist); //API returns album report based on user input 
 apiRoutes.post('/album/aggreport/:labelid', album.albumaggregate); //API returns album report based on user input
 
-apiRoutes.post('/songprvwupload', song.songprvwupload);
-apiRoutes.post('/songfileupload', song.songfileupload);
-apiRoutes.post('/songprvwdelete', song.songprvwdelete);
-apiRoutes.post('/songfiledelete', song.songfiledelete);
 apiRoutes.post('/song/:id', song.savesong); // API adds & update song of the label
 apiRoutes.put('/publishsong/:id', song.publishsong); // API to publish song of the label
 apiRoutes.put('/cancelpublishsong/:id', song.cancelpublishsong); // API to cancel publish song of the label

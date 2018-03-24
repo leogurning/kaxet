@@ -11,6 +11,8 @@ import { IArtistList } from '../../../interface/artist';
 import { IAlbumList } from '../../../interface/album';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { FiletransferService } from '../../../services/filetransfer.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-addsong',
@@ -30,6 +32,8 @@ export class AddsongComponent implements OnInit {
   progressvalue = 0;
   @ViewChild('inputprev')inputpreVar: any;
   @ViewChild('inputsong')inputsongVar: any;
+  prvwuploadpath: string;
+  songuploadpath: string;
 
   constructor(
     private fb: FormBuilder, 
@@ -41,7 +45,9 @@ export class AddsongComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private ftService:FiletransferService,
+    private globals: Globals
   ) { }
 
   artistid = new FormControl('', [Validators.required]);  
@@ -58,6 +64,8 @@ export class AddsongComponent implements OnInit {
   ngOnInit() {
     this.progressvalue = 0;
     this.userObj =  this.authService.currentUser;
+    this.prvwuploadpath = this.globals.prvwuploadpath;
+    this.songuploadpath = this.globals.songuploadpath;
     this.getMsconfigGroupList('GENRE');
     this.getArtistList(this.userObj.userid);
     this.getAlbumList(this.userObj.userid);
@@ -137,24 +145,30 @@ export class AddsongComponent implements OnInit {
       this.progressvalue = 20;
       let lformData: FormData = new FormData();
       //console.log('Ini file: '+ prvwfiles[0]['name']);
-
-      lformData.append('songprvw',prvwfiles[0],prvwfiles[0]['name']);
+      lformData.append('fileinputsrc',prvwfiles[0],prvwfiles[0]['name']);
+      lformData.append('uploadpath',this.prvwuploadpath);
 
       this.loading = true;
       this.progressvalue = 30;
-      this.songService.uploadSongPreview(lformData)
+      this.ftService.uploadInputFile(lformData)
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
+            this.progressvalue = 0;
             this.toastr.error(data.message);
           } else {
             this.progressvalue = 40;
-              theForm.songprvwpath = data.filedata.songprvwpath;
-              theForm.songprvwname = data.filedata.songprvwname;
+              theForm.songprvwpath = data.filedata.filepath;
+              theForm.songprvwname = data.filedata.filename;
               const songfiles: Array<File> = this.SongfilesToUpload;
-              lformData.append('songfile',songfiles[0],songfiles[0]['name']);
+              let lformData1: FormData = new FormData();
+              lformData1.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
+              lformData1.append('uploadpath',this.songuploadpath);
+              //formdata.set is not supported in Safari and other browsers
+              //lformData.set('fileinputsrc',songfiles[0],songfiles[0]['name']);
+              //lformData.set('uploadpath',this.songuploadpath);
               this.progressvalue = 50;
-              this.songService.uploadSongFile(lformData)
+              this.ftService.uploadInputFile(lformData1)
               .subscribe(data => {
                   if (data.success === false) {
                     this.loading = false;
@@ -162,8 +176,8 @@ export class AddsongComponent implements OnInit {
                     this.toastr.error(data.message);
                   } else {
                     this.progressvalue = 60;
-                    theForm.songfilepath = data.filedata.songfilepath;
-                    theForm.songfilename = data.filedata.songfilename;  
+                    theForm.songfilepath = data.filedata.filepath;
+                    theForm.songfilename = data.filedata.filename;  
                     theForm.status = 'STSACT';
                     if (this.songid !== '') {
                       theForm.songid = this.songid;
