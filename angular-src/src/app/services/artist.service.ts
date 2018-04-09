@@ -50,6 +50,17 @@ export class ArtistService {
         .catch(this.handleError);
   }
 
+  getArtistCount(userid, oArtist) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/artistcount/${userid}`, JSON.stringify(oArtist), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
   getAggArtists(userid, oArtist) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

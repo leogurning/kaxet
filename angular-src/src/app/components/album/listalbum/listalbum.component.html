@@ -9,55 +9,62 @@
       </div>
       <div class="panel-body">
           <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
-              <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                      <label for="albumname">Album Name</label>
-                      <div class="input-group col-sm-10">
-                          <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="albumname" class="col-sm-2 paddingsearch">Name</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
                           <input type="text" class="form-control" id="albumname" [formControl]="albumname" placeholder="Album Name">
                       </div>
                   </div>
-                  <div class="col-sm-12 col-md-2">
-                      <label for="albumyear">Album Year</label>
-                      <div class="input-group col-sm-10">
-                          <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                          <input type="text" class="form-control" id="albumyear" [formControl]="albumyear" placeholder="Album Year">
-                      </div>
-                  </div>
-                  <div class="col-sm-12 col-md-3">
-                      <label for="albumgenre">Genre</label>
-                      <div class="input-group col-sm-10">
-                          <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                  <div class="col-sm-6 col-md-6">
+                        <label for="artistid" class="col-sm-2 paddingsearch">Artist</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                            <select class="form-control" [formControl]="artistid">
+                                <option ng-selected="true" value="">Select the artist</option>
+                                <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
+                            </select>
+                          </div>
+                    </div>                
+
+                </div>
+               <div class="row rowmarginsearch">   
+                  <div class="col-sm-6 col-md-6">
+                      <label for="albumgenre" class="col-sm-2 paddingsearch">Genre</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
                           <select class="form-control" [formControl]="albumgenre">
                             <option ng-selected="true" value="">Select the genre</option>
                             <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
                          </select>
                       </div>
                   </div>
-              </div><br>
-              <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                      <label for="artistid">Artist</label>
-                      <div class="input-group col-sm-5">
-                          <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                          <select class="form-control" [formControl]="artistid">
-                              <option ng-selected="true" value="">Select the artist</option>
-                              <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
-                          </select>
+                  <div class="col-sm-6 col-md-6">
+                        <label for="albumyear" class="col-sm-2 paddingsearch">Year</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                            <input type="text" class="form-control" id="albumyear" [formControl]="albumyear" placeholder="Album Year">
                         </div>
-                  </div>                
-                  <div class="col-sm-12 col-md-3">
-                      <label for="status">Status</label>
-                      <div class="input-group col-sm-10">
-                          <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                    </div>
+              </div>
+              <div class="row rowmarginsearch">
+
+                  <div class="col-sm-6 col-md-6">
+                      <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
                           <select class="form-control" [formControl]="status">
                             <option ng-selected="true" value="">Select the status</option>
                             <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                           </select>
                       </div>
-                  </div><br>
-                  <div class="col-sm-12 col-md-2">
-                      <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <label class="col-sm-2 paddingsearch"></label>
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                    </div>
                   </div>                
               </div>
           </form>
@@ -80,12 +87,12 @@
       </div>
       <div class="panel-body">
           <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="table table-hover">
                   <thead>
                       <tr>
                           <th width="20%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
                           <th width="20%">Artist</th>
-                          <th width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th>
+                          <!-- <th width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th> -->
                           <th width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
                           <th width="10%"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
                           <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
@@ -96,9 +103,9 @@
                       <tr *ngFor='let albm of albums; let albIndex = index'>
                           <td><a style="cursor:pointer" (click)="showAlbum(albm._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
                           <td>{{ albm.artist }}</td>
-                          <td>{{ albm.albumyear}}</td>
+                          <!-- <td>{{ albm.albumyear}}</td> -->
                           <td>{{ albm.genrevalue}}</td>
-                          <td class="text-right">{{ albm.albumprice | currency: 'IDR':true }}</td>
+                          <td class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
                           <!-- <td>{{ albm.status}}</td> -->
                           <td>
                               <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editAlbumPhoto(albm._id)">

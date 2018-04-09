@@ -2,6 +2,7 @@ const mongoose = require( 'mongoose' );
 const Artist = require('../models/artist');
 const config = require('../config');
 const fs = require('fs');
+var rediscli = require('../redisconn');
 
 var merge = function() {
     var obj = {},
@@ -30,61 +31,74 @@ exports.saveartist = function(req, res, next){
         return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
     } else {
 		
-	if (artistid) {
-		//Edit expense
-		Artist.findById(artistid).exec(function(err, artist){
-			if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
-				
-			if(artist) {
-				artist.artistname = artistname;
-                artist.status = status;
-                artist.modifydt = new Date();
-			}
-			artist.save(function(err) {
-				if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
-				res.status(201).json({
-					success: true,
-					message: 'Artist updated successfully'
-				});
-			});
-		});
-
-	}else {
-        // Add new artist
-        if (!artistphotopath || !artistphotoname) {
-            return res.status(422).send({ success: false, message: 'Artist photo is not provided.' });
-        } else {
-            let oArtist = new Artist({
-                labelid: labelid,
-                artistname: artistname,
-                artistphotopath: artistphotopath,
-                artistphotoname: artistphotoname,
-                status: status,
-                objlabelid: labelid,
-                createddt: new Date(),
-                modifydt: new Date()
-            });
-    
-            oArtist.save(function(err) {
+        if (artistid) {
+            //Edit artist
+            Artist.findById(artistid).exec(function(err, artist){
                 if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
                     
-                res.status(201).json({
-                    success: true,
-                    message: 'Artist saved successfully'
+                if(artist) {
+                    artist.artistname = artistname;
+                    artist.status = status;
+                    artist.modifydt = new Date();
+                }
+                artist.save(function(err) {
+                    if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
+                    res.status(201).json({
+                        success: true,
+                        message: 'Artist updated successfully'
                     });
+                    //Delete redis respective keys
+                    rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
+                });
+            });
+
+        }else {
+            // Add new artist
+            if (!artistphotopath || !artistphotoname) {
+                return res.status(422).send({ success: false, message: 'Artist photo is not provided.' });
+            } else {
+                let oArtist = new Artist({
+                    labelid: labelid,
+                    artistname: artistname,
+                    artistphotopath: artistphotopath,
+                    artistphotoname: artistphotoname,
+                    status: status,
+                    objlabelid: labelid,
+                    createddt: new Date(),
+                    modifydt: new Date()
+                });
+        
+                oArtist.save(function(err) {
+                    if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
+                        
+                    res.status(201).json({
+                        success: true,
+                        message: 'Artist saved successfully'
+                    });
+                    //Delete redis respective keys
+                    rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
                 });
             }
-	    }
+        }
     }
 }
 
 exports.delartist = function(req, res, next) {
-	Artist.remove({_id: req.params.id}, function(err){
+    const artistid = req.params.id;
+    Artist.findById(artistid).exec(function(err, artist){ 
         if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
-        res.status(201).json({
-        success: true,
-        message: 'Artist removed successfully'
-    });
+        if(artist) {
+            let labelid = artist.labelid;
+            //Delete redis respective keys
+            rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
+        }
+        Artist.remove({_id: artistid}, function(err){
+            if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
+            res.status(201).json({
+                success: true,
+                message: 'Artist removed successfully'
+            });
+        });
     });
 }
 
@@ -155,37 +169,100 @@ exports.artistreport = function(req, res, next){
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
 	}else{
-			// returns all artists records for the label
-            //query = { labelid:labelid, artistname:artistname };
-            if (!status) {
-                query = { labelid:labelid, artistname: new RegExp(artistname,'i')};
-            }else{
-                query = { labelid:labelid, artistname: new RegExp(artistname,'i'), status: status};
+        let keyredis = 'redis-user-artist-'+labelid;
+        //check on redis
+        rediscli.hgetall(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis...');
+                res.status(201).json({
+                    success: true,
+                    data: JSON.parse(obj.artist), 
+                    totalcount: obj.totalcount
+                }); 
+            } else {
+                // returns all artists records for the label
+                //query = { labelid:labelid, artistname:artistname };
+                if (!status) {
+                    query = { labelid:labelid, artistname: new RegExp(artistname,'i')};
+                }else{
+                    query = { labelid:labelid, artistname: new RegExp(artistname,'i'), status: status};
+                }
+
+                Artist.count(query, function(err, count){
+                    totalcount = count;
+                    //console.log('count: ' + count.toString());                
+                    if(count > offset){
+                        offset = 0;
+                    }
+                });
+                
+                //console.log('offset: ' + offset);                
+                var options = {
+                    select: 'artistname status artistphotopath artistphotoname',
+                    sort: sortby,
+                    offset: offset,
+                    limit: limit
+                }
+
+                Artist.paginate(query, options).then(function(result) {
+                    res.status(201).json({
+                        success: true, 
+                        data: result,
+                        totalcount: totalcount
+                    });
+                    //set in redis
+                    rediscli.hmset(keyredis, [ 
+                        'artist', JSON.stringify(result),
+                        'totalcount', totalcount ], function(err, reply) {
+                        if (err) {  console.log(err); }
+                        console.log(reply);
+                    });                     
+                });
             }
+        });
+    }    
+}
 
-			Artist.count(query, function(err, count){
-                totalcount = count;
-                //console.log('count: ' + count.toString());                
-                if(count > offset){
-					offset = 0;
-				}
-			});
-		
-        //console.log('offset: ' + offset);                
-		var options = {
-			select: 'artistname status artistphotopath artistphotoname',
-			sort: sortby,
-			offset: offset,
-			limit: limit
-		}
+exports.totalartistcount = function(req, res, next){
+    const labelid = req.params.labelid || req.query.labelid;
+    const status = req.body.status || req.query.status;
 
-		Artist.paginate(query, options).then(function(result) {
-			res.status(201).json({
-				success: true, 
-                data: result,
-                totalcount: totalcount
-			});
-		});
+    let query = {};
+
+    if (!labelid) {
+        return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
+	}else{
+        let keyredis = 'redis-user-artistcnt-'+labelid;
+        //check on redis
+        rediscli.get(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis...');
+                res.status(201).json({
+                    success: true,
+                    totalcount: obj
+                }); 
+            } else {
+                // returns all artists records for the label
+                if (!status) {
+                    query = { labelid:labelid };
+                }else{
+                    query = { labelid:labelid, status: status};
+                }
+
+                Artist.count(query, function(err, count){
+                    if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
+                    
+                    res.status(201).json({
+                        success: true,
+                        totalcount: count
+                    }); 
+                    //set in redis
+                    rediscli.set(keyredis, count, function(error) {
+                        if (error) { throw error; }
+                    });                    
+                });
+            }
+        });
     }    
 }
 
@@ -298,23 +375,39 @@ exports.getartistlist = function(req, res, next){
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
     }else{
-        // returns artists records based on query
-        query = { labelid:labelid, status: status};        
-        var fields = { 
-            _id:1, 
-            artistname:1 
-        };
+        let keyredis = 'redis-user-artistlist-'+labelid;
+        //check on redis
+        rediscli.get(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis..');
+                res.status(201).json({
+                    success: true, 
+                    data: JSON.parse(obj)
+                });                
+            } else {
+                // returns artists records based on query
+                query = { labelid:labelid, status: status};        
+                var fields = { 
+                    _id:1, 
+                    artistname:1 
+                };
 
-        var psort = { artistname: 1 };
+                var psort = { artistname: 1 };
 
-        Artist.find(query, fields).sort(psort).exec(function(err, result) {
-            if(err) { 
-                res.status(400).json({ success: false, message:'Error processing request '+ err }); 
-            } 
-            res.status(201).json({
-                success: true, 
-                data: result
-            });
+                Artist.find(query, fields).sort(psort).exec(function(err, result) {
+                    if(err) { 
+                        res.status(400).json({ success: false, message:'Error processing request '+ err }); 
+                    } 
+                    res.status(201).json({
+                        success: true, 
+                        data: result
+                    });
+                    //set in redis
+                    rediscli.set(keyredis,JSON.stringify(result), function(error) {
+                        if (error) { throw error; }
+                    });                                     
+                });
+            }
         });
     }
 }

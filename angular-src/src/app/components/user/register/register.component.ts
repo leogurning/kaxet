@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
   bankaccno = new FormControl('', [Validators.required]);
   bankcode = new FormControl('', [Validators.nullValidator]);
   bankname = new FormControl('', [Validators.required]);
-  usertype = new FormControl('LBL', [Validators.required]);
   username = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(16)]);
   password = new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,12}$')]);
   retypepass = new FormControl('', [Validators.required]);
@@ -41,7 +40,6 @@ export class RegisterComponent implements OnInit {
       bankaccno: this.bankaccno,
       bankcode: this.bankcode,
       bankname: this.bankname,
-      usertype: this.usertype,
       username: this.username,
       passwordGroup: this.fb.group({
         password: this.password,

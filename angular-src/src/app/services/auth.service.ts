@@ -49,6 +49,8 @@ export class AuthService {
   logout(): void {
     this.currentUser = null;
     localStorage.removeItem('currentUser');
+    //Clear storage after specific time
+    var logoutTimer = setTimeout(function() { localStorage.clear(); }, 100);
   }
 
   private handleError(error: Response) {

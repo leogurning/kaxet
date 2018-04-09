@@ -8,7 +8,7 @@
       <label for="artistid" class="col-sm-2 control-label">Artist Id <sup>*</sup></label>
       <div class="input-group col-sm-10">
         <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-        <select [disabled]="this.loading == true" class="form-control" [formControl]="artistid">
+        <select #inputartist [disabled]="this.loading == true" class="form-control" [formControl]="artistid">
             <option ng-selected="true" value="">Select the artist</option>
             <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
         </select>
@@ -24,7 +24,7 @@
     <div class="form-group" [ngClass]="{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}">
         <label for="albumname" class="col-sm-2 control-label">Album Name <sup>*</sup></label>
         <div class="input-group col-sm-10">
-            <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+            <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
             <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="albumname" id="albumname" placeholder="Album Name">
         </div>
         <div class="text-danger" *ngIf="addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors">
@@ -37,7 +37,7 @@
     <div class="form-group" [ngClass]="{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}">
       <label for="albumyear" class="col-sm-2 control-label">Album Year <sup>*</sup></label>
       <div class="input-group col-sm-6">
-          <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+          <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
           <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="albumyear" id="albumyear" placeholder="Album Year">
       </div>
       <div class="text-danger" *ngIf="addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors">
@@ -49,10 +49,10 @@
     </div>
 
     <div class="form-group" [ngClass]="{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}">
-      <label for="albumgenre" class="col-sm-2 control-label">Genre</label>
+      <label for="albumgenre" class="col-sm-2 control-label">Genre <sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-          <select [disabled]="this.loading == true" class="form-control" [formControl]="albumgenre">
+          <select #inputgenre [disabled]="this.loading == true" class="form-control" [formControl]="albumgenre">
               <option ng-selected="true" value="">Select the genre</option>
               <option *ngFor="let a of genre" [ngValue]="a.code">{{a.value}}</option>
           </select>
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="form-group" [ngClass]="{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}">
-      <label for="albumprice" class="col-sm-2 control-label">Price</label>
+      <label for="albumprice" class="col-sm-2 control-label">Price <sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon">Rp</div>
           <input [disabled]="this.loading == true" type="number" class="form-control" id="albumprice" [formControl]="albumprice" placeholder="Album Price">
@@ -81,7 +81,7 @@
       </div>
     </div>
     <div class="form-group" [ngClass]="{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}">
-        <label for="albumimage" class="col-sm-2 control-label">Album Photo</label>
+        <label for="albumimage" class="col-sm-2 control-label">Album Photo <sup>*</sup></label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
             <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="albumimage" id="albumimage" placeholder="Album image">
@@ -94,7 +94,7 @@
    </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"></label>
-        <div class="col-sm-5">
+        <div class="col-sm-5" style="padding:0;margin:0;">
             <button type="submit" [disabled]="addAlbumForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
             <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
         </div>

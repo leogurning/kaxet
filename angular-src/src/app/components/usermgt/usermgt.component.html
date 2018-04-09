@@ -10,45 +10,50 @@
     <div class="panel-body">
       <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
 
-          <div class="row">
-              <div class="col-sm-12 col-md-6">
-                  <label for="username">User Name</label>
-                  <div class="input-group col-sm-10">
-                      <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+          <div class="row rowmarginsearch">
+              <div class="col-sm-6 col-md-6">
+                  <label for="username" class="col-sm-2 paddingsearch">Username</label>
+                  <div class="col-sm-10">
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
                       <input type="text" class="form-control" id="username" [formControl]="username" placeholder="User Name">
                   </div>
               </div>
-              <div class="col-sm-12 col-md-6">
-                <label for="name">Label Name</label>
-                <div class="input-group col-sm-10">
-                    <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+              <div class="col-sm-6 col-md-6">
+                <label for="name" class="col-sm-2 paddingsearch">Name</label>
+                <div class="col-sm-10">
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
                     <input type="text" class="form-control" id="name" [formControl]="name" placeholder="Label Name">
                 </div>
               </div>
-          </div><br>
-          <div class="row">
-              <div class="col-sm-12 col-md-3">
-                  <label for="status">Status</label>
-                  <div class="input-group col-sm-10">
-                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+          </div>
+          <div class="row rowmarginsearch">
+              <div class="col-sm-6 col-md-6">
+                  <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                  <div class="col-sm-10">
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
                       <select class="form-control" [formControl]="status">
                             <option value="">Select the status</option>
                             <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                       </select>
                   </div>
               </div>
-              <div class="col-sm-12 col-md-3">
-                    <label for="veremail">Email Verified?</label>
-                    <div class="input-group col-sm-10">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+              <div class="col-sm-6 col-md-6">
+                    <label for="veremail" class="col-sm-3 paddingsearch">Email Verified?</label>
+                    <div class="col-sm-9">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
                         <select class="form-control" [formControl]="veremail">
                               <option value="">Select the option</option>
                               <option *ngFor="let b of yn" [ngValue]="b.code">{{b.value}}</option>
                         </select>
                     </div>
-                </div><br>
-              <div class="col-sm-12 col-md-2">
-                  <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                </div>
+            </div>
+            <div class="row rowmarginsearch">
+              <div class="col-sm-6 col-md-6">
+                  <label class="col-sm-2 paddingsearch">      </label>
+                  <div class="col-sm-5">
+                    <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                  </div>
               </div>                  
           </div>
       </form>
@@ -71,7 +76,7 @@
         </div>
         <div class="panel-body">
                 <div class="table-responsive"> 
-                        <table class="table table-striped">
+                        <table class="table table-hover">
                             <thead>
                                     <tr>
                                         <th width="10%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>

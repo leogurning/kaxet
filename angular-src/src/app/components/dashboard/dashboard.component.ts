@@ -6,8 +6,8 @@ import { ArtistService } from '../../services/artist.service';
 import { AlbumService } from '../../services/album.service';
 import { SongService } from '../../services/song.service';
 import { AuthService } from '../../services/auth.service';
-import { IArtist } from '../../interface/artist';
-import { IAlbum } from '../../interface/album';
+//import { IArtist } from '../../interface/artist';
+//import { IAlbum } from '../../interface/album';
 import { IUser } from '../../interface/user';
 import { UserService } from '../../services/user.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -18,8 +18,8 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  artists: IArtist[];
-  albums: IAlbum[];  
+  //artists: IArtist[];
+  //albums: IAlbum[];  
   user: IUser;
   private sub: Subscription;
   userObj: any;
@@ -68,7 +68,7 @@ export class DashboardComponent implements OnInit {
   }
 
   fetchReport(userid, formval) {
-    this.artistService.getArtists(userid, formval)
+    this.artistService.getArtistCount(userid, formval)
     .subscribe(data => {
       if (data.success === false) {
         if (data.errcode){
@@ -77,9 +77,9 @@ export class DashboardComponent implements OnInit {
         }
         this.toastr.error(data.message);
       } else {
-        this.artists = data.data.docs;
-        this.totalrows = +data.data.total;
-        this.albumService.getAlbums(userid, formval)
+        //this.artists = data.data.docs;
+        this.totalrows = +data.totalcount;
+        this.albumService.getAlbumCount(userid, formval)
         .subscribe(data => {
           if (data.success === false) {
             if (data.errcode){
@@ -88,9 +88,9 @@ export class DashboardComponent implements OnInit {
             }
             this.toastr.error(data.message);
           } else {
-            this.albums = data.data.docs;
-            this.totalalbums = +data.data.total;
-            this.songService.getSongs(userid, formval)
+            //this.albums = data.data.docs;
+            this.totalalbums = +data.totalcount;
+            this.songService.getSongCount(userid, formval)
             .subscribe(data => {
               if (data.success === false) {
                 if (data.errcode){
@@ -99,7 +99,7 @@ export class DashboardComponent implements OnInit {
                 }
                 this.toastr.error(data.message);
               } else {
-                this.totalsongs = +data.data.total;
+                this.totalsongs = +data.totalcount;
               }
             });
           }

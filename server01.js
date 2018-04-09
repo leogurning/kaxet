@@ -51,7 +51,8 @@ app.get('/', function(req, res) {
 	res.send('Kaxet API is running at PORT:' + port + '/api');
 });
 app.post('/register', user.signup);
-
+app.post('/resetpwd', user.resetpassword); // API to reset password user
+app.post('/doresetpwd', user.doresetpassword); // API to do reset password user
 // express router
 var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
@@ -76,6 +77,7 @@ apiRoutes.get('/artist/:id', artist.getartist); // API returns artist details of
 apiRoutes.get('/artistlist/:labelid', artist.getartistlist); // API returns artist list of given label id
 apiRoutes.post('/artist/report/:labelid', artist.artistreport); //API returns artist report based on user input 
 apiRoutes.post('/artist/aggreport/:labelid', artist.artistaggreport); //API returns artist report based on user input 
+apiRoutes.post('/artistcount/:labelid', artist.totalartistcount); //API returns total artist based on user input
 
 //apiRoutes.post('/testalbum/:id', album.testalbum); // API test album of the label
 apiRoutes.post('/album/:id', album.savealbum); // API adds & update album of the label
@@ -87,6 +89,7 @@ apiRoutes.delete('/album/:id', album.delalbum); //API removes the album details 
 apiRoutes.post('/album/report/:labelid', album.albumreport); //API returns album report based on user input 
 apiRoutes.post('/album/artistalbumreport/:labelid', album.artistalbumlist); //API returns album report based on user input 
 apiRoutes.post('/album/aggreport/:labelid', album.albumaggregate); //API returns album report based on user input
+apiRoutes.post('/albumcount/:labelid', album.totalalbumcount); //API returns total album based on user input 
 
 apiRoutes.post('/song/:id', song.savesong); // API adds & update song of the label
 apiRoutes.put('/publishsong/:id', song.publishsong); // API to publish song of the label
@@ -100,6 +103,7 @@ apiRoutes.delete('/song/:id', song.delsong); //API removes the song details of g
 apiRoutes.post('/song/aggreport/:labelid', song.songaggregate); //API returns song report based on user input
 apiRoutes.post('/song/report/:labelid', song.songreport);
 apiRoutes.post('/song/list/:labelid', song.songlist);
+apiRoutes.post('/songcount/:labelid', song.totalsongcount);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));

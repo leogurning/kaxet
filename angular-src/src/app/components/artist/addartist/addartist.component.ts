@@ -57,9 +57,9 @@ export class AddartistComponent implements OnInit {
 
   addArtist(formdata:any): void {
     this.progressvalue = 0;
-    if (this.addArtistForm.dirty && this.addArtistForm.valid) {
+    const files: Array<File> = this.filesToUpload;
+    if (this.addArtistForm.dirty && this.addArtistForm.valid && files[0]) {
       this.progressvalue = 10;
-      const files: Array<File> = this.filesToUpload;
       let theForm = this.addArtistForm.value;
       let lformData: FormData = new FormData();
       //console.log('Ini file: '+ files[0]['name']);
@@ -105,6 +105,8 @@ export class AddartistComponent implements OnInit {
           }   
         });
  
+    } else {
+        this.toastr.error('Please provide artist photo...');
     }
   }
 

@@ -13,7 +13,7 @@
       <label for="artistid" class="col-sm-2 control-label">Artist<sup>*</sup></label>
       <div class="input-group col-sm-10">
         <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-        <select [disabled]="this.loading == true" class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
+        <select #inputartist [disabled]="this.loading == true" class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
             <option ng-selected="true" value="">Select the artist</option>
             <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
         </select>
@@ -30,7 +30,7 @@
       <label for="albumid" class="col-sm-2 control-label">Album<sup>*</sup></label>
       <div class="input-group col-sm-10">
         <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-        <select [disabled]="this.loading == true" class="form-control" [formControl]="albumid">
+        <select #inputalbum [disabled]="this.loading == true" class="form-control" [formControl]="albumid">
             <option ng-selected="true" value="">Select the album</option>
             <option *ngFor="let album of albumlist" [ngValue]="album._id">{{album.albumname}}</option>
         </select>
@@ -46,7 +46,7 @@
     <div class="form-group" [ngClass]="{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}">
       <label for="songname" class="col-sm-2 control-label">Song Name <sup>*</sup></label>
       <div class="input-group col-sm-10">
-          <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+          <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
           <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="songname" id="songname" placeholder="Song Name">
       </div>
       <div class="text-danger" *ngIf="addSongForm.get('songname').dirty && addSongForm.get('songname').errors">
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="songlyric" class="col-sm-2 control-label">Lyric</label>
+      <label for="songlyric" class="col-sm-2 control-label">Lyric <sup>*</sup></label>
       <div class="input-group col-sm-10">
           <textarea [disabled]="this.loading == true" class="form-control" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
       </div>
@@ -67,7 +67,7 @@
       <label for="songgenre" class="col-sm-2 control-label">Genre<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-          <select [disabled]="this.loading == true" class="form-control" [formControl]="songgenre">
+          <select #inputgenre [disabled]="this.loading == true" class="form-control" [formControl]="songgenre">
               <option ng-selected="true" value="">Select the genre</option>
               <option *ngFor="let a of genre" [ngValue]="a.code">{{a.value}}</option>
           </select>
@@ -119,7 +119,7 @@
    </div>
     <div class="form-group">
       <label class="col-sm-2 control-label"></label>
-      <div class="col-sm-5">
+      <div class="col-sm-5" style="padding:0;margin:0;">
           <button type="submit" [disabled]="addSongForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
           <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
       </div>

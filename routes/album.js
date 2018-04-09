@@ -2,6 +2,7 @@ const mongoose = require( 'mongoose' );
 const Album = require('../models/album');
 const config = require('../config');
 const fs = require('fs');
+var rediscli = require('../redisconn');
 
 var merge = function() {
     var obj = {},
@@ -70,6 +71,8 @@ exports.savealbum = function(req, res, next){
                         success: true,
                         message: 'Album updated successfully'
                     });
+                    //Delete redis respective keys
+                    rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);
                 });
             });
 
@@ -103,6 +106,8 @@ exports.savealbum = function(req, res, next){
                         success: true,
                         message: 'Album saved successfully'
                         });
+                    //Delete redis respective keys
+                    rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);    
                 });
             }
         }
@@ -149,12 +154,22 @@ exports.getalbum = function(req, res, next){
 }
 
 exports.delalbum = function(req, res, next) {
-	Album.remove({_id: req.params.id}, function(err){
+    const albumid = req.params.id;
+    Album.findById(albumid).exec(function(err, album){ 
         if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
-        
-        res.status(201).json({
-            success: true,
-            message: 'Album removed successfully'
+        if(album) {
+            let labelid = album.labelid;
+            let artistid = album.artistid;
+            //Delete redis respective keys
+            rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);    
+        }
+        Album.remove({_id: albumid}, function(err){
+            if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
+            
+            res.status(201).json({
+                success: true,
+                message: 'Album removed successfully'
+            });
         });
     });
 }
@@ -190,91 +205,215 @@ exports.albumreport = function(req, res, next){
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
 	}else{
-			// returns albums records based on query
-            if (!status) {
-
-                if (!albumgenre) {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i')};
-                    } else {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'),
-                            artistid:artistid, 
-                            albumyear: new RegExp(albumyear,'i')};
+        let keyredis = 'redis-user-album-'+labelid;
+        //check on redis
+        rediscli.hgetall(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis...');
+                res.status(201).json({
+                    success: true,
+                    data: JSON.parse(obj.album), 
+                    totalcount: obj.totalcount
+                }); 
+            } else {
+			    // returns albums records based on query
+                if (!status) {
+                
+                        if (!albumgenre) {
+                            if (!artistid) {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'), 
+                                    albumyear: new RegExp(albumyear,'i')};
+                            } else {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'),
+                                    artistid:artistid, 
+                                    albumyear: new RegExp(albumyear,'i')};
+                            }
+        
+                        }else {
+                            if (!artistid) {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'), 
+                                    albumyear: new RegExp(albumyear,'i'), 
+                                    albumgenre: albumgenre};
+                            }else {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'), 
+                                    albumyear: new RegExp(albumyear,'i'), 
+                                    artistid:artistid,
+                                    albumgenre: albumgenre};
+                            }
+                        }
+        
+                    }else{
+        
+                        if (!albumgenre) {
+                            if (!artistid) {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'), 
+                                    albumyear: new RegExp(albumyear,'i'), 
+                                    status: status};
+                            } else{
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'),
+                                    artistid:artistid, 
+                                    albumyear: new RegExp(albumyear,'i'), 
+                                    status: status};
+                            }
+        
+                        }else {
+                            if (!artistid) {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'), 
+                                    albumyear: new RegExp(albumyear,'i'), 
+                                    albumgenre: albumgenre, 
+                                    status: status};
+                            } else {
+                                query = { labelid:labelid, 
+                                    albumname: new RegExp(albumname,'i'), 
+                                    artistid:artistid,
+                                    albumyear: new RegExp(albumyear,'i'), 
+                                    albumgenre: albumgenre, 
+                                    status: status};
+                            }
+                        }
                     }
-
-                }else {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            albumgenre: albumgenre};
-                    }else {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            artistid:artistid,
-                            albumgenre: albumgenre};
-                    }
+        
+                    Album.count(query, function(err, count){
+                        totalcount = count;                
+                        if(count > offset){
+                            offset = 0;
+                        }
+                    });
+        
+                var options = {
+                    select: 'albumname albumyear albumgenre artistid albumprice status albumphotopath albumphotoname',
+                    sort: sortby,
+                    offset: offset,
+                    limit: limit
                 }
-
-            }else{
-
-                if (!albumgenre) {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            status: status};
-                    } else{
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'),
-                            artistid:artistid, 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            status: status};
-                    }
-
-                }else {
-                    if (!artistid) {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            albumyear: new RegExp(albumyear,'i'), 
-                            albumgenre: albumgenre, 
-                            status: status};
-                    } else {
-                        query = { labelid:labelid, 
-                            albumname: new RegExp(albumname,'i'), 
-                            artistid:artistid,
-                            albumyear: new RegExp(albumyear,'i'), 
-                            albumgenre: albumgenre, 
-                            status: status};
-                    }
-                }
+                console.log(query);
+                Album.paginate(query, options).then(function(result) {
+                    res.status(201).json({
+                        success: true, 
+                        data: result,
+                        totalcount: totalcount
+                    });
+                    //set in redis
+                    rediscli.hmset(keyredis, [ 
+                        'album', JSON.stringify(result),
+                        'totalcount', totalcount ], function(err, reply) {
+                        if (err) {  console.log(err); }
+                        console.log(reply);
+                    });                                         
+                });
             }
+        });
+	}
+}
 
-			Album.count(query, function(err, count){
-                totalcount = count;                
-                if(count > offset){
-					offset = 0;
-				}
-			});
+exports.totalalbumcount = function(req, res, next){
+    const labelid = req.params.labelid || req.query.labelid;
+    const albumname = req.body.albumname || req.query.albumname;
+    const artistid = req.body.artistid || req.query.artistid;
+    const albumyear = req.body.albumyear || req.query.albumyear;
+    const albumgenre = req.body.albumgenre || req.query.albumgenre;
+    const status = req.body.status || req.query.status;
 
-		var options = {
-			select: 'albumname albumyear albumgenre artistid albumprice status albumphotopath albumphotoname',
-			sort: sortby,
-			offset: offset,
-			limit: limit
-		}
-        console.log(query);
-		Album.paginate(query, options).then(function(result) {
-			res.status(201).json({
-				success: true, 
-                data: result,
-                totalcount: totalcount
-			});
-		});
+    let query = {};
+
+    if (!labelid) {
+        return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
+	}else{
+        let keyredis = 'redis-user-albumcnt-'+labelid;
+        //check on redis
+        rediscli.get(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis...');
+                res.status(201).json({
+                    success: true,
+                    totalcount: obj
+                }); 
+            } else {
+			    // returns albums records based on query
+                if (!status) {
+                
+                    if (!albumgenre) {
+                        if (!artistid) {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'), 
+                                albumyear: new RegExp(albumyear,'i')};
+                        } else {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'),
+                                artistid:artistid, 
+                                albumyear: new RegExp(albumyear,'i')};
+                        }
+    
+                    }else {
+                        if (!artistid) {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'), 
+                                albumyear: new RegExp(albumyear,'i'), 
+                                albumgenre: albumgenre};
+                        }else {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'), 
+                                albumyear: new RegExp(albumyear,'i'), 
+                                artistid:artistid,
+                                albumgenre: albumgenre};
+                        }
+                    }
+    
+                }else{
+    
+                    if (!albumgenre) {
+                        if (!artistid) {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'), 
+                                albumyear: new RegExp(albumyear,'i'), 
+                                status: status};
+                        } else{
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'),
+                                artistid:artistid, 
+                                albumyear: new RegExp(albumyear,'i'), 
+                                status: status};
+                        }
+    
+                    }else {
+                        if (!artistid) {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'), 
+                                albumyear: new RegExp(albumyear,'i'), 
+                                albumgenre: albumgenre, 
+                                status: status};
+                        } else {
+                            query = { labelid:labelid, 
+                                albumname: new RegExp(albumname,'i'), 
+                                artistid:artistid,
+                                albumyear: new RegExp(albumyear,'i'), 
+                                albumgenre: albumgenre, 
+                                status: status};
+                        }
+                    }
+                }
+    
+                Album.count(query, function(err, count){
+                    if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
+
+                    res.status(201).json({
+                        success: true,
+                        totalcount: count
+                    }); 
+                    //set in redis
+                    rediscli.set(keyredis, count, function(error) {
+                        if (error) { throw error; }
+                    });                    
+                });
+            }
+        });
 	}
 }
 
@@ -312,84 +451,106 @@ exports.artistalbumlist = function(req, res, next){
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
 	}else{
-        // returns albums records based on query
-        query = {labelid:labelid,
-            albumname: new RegExp(albumname,'i'), 
-            albumyear: new RegExp(albumyear,'i'),
-            "genredetails.group": genregrp,
-            "genredetails.status": msconfigsts,
-            "statusdetails.group": statusgrp,
-            "statusdetails.status": msconfigsts
-            };
-        
-        if (artistid) {
-            query = merge(query, {artistid:artistid});
-        }
-        if (albumgenre) {
-            query = merge(query, {albumgenre: albumgenre});
-        }  
-        if (status) {
-            query = merge(query, {status:status});
-        }
-
-        var options = {
-            page: page,
-            limit: limit,
-            sortBy: sortby
-        }
-
-        var aggregate = Album.aggregate();        
-        var olookup = {
-            from: 'msconfig',
-            localField: 'albumgenre',
-            foreignField: 'code',
-            as: 'genredetails'
-        };    
-        var olookup1 = {
-                from: 'msconfig',
-                localField: 'status',
-                foreignField: 'code',
-                as: 'statusdetails'
-            };
-
-        var ounwind = 'genredetails';
-        var ounwind1 = 'statusdetails';
-        var oproject = {
-            albumname: 1,
-            albumyear: 1,
-            albumgenre:1,
-            "genrevalue": "$genredetails.value",
-            albumprice:1,
-            status:1,
-            "stsvalue": "$statusdetails.value",
-            albumphotopath:1,
-            albumphotoname:1        
-        };
-
-        //var osort = { "$sort": { sortby: 1}};
-        aggregate.lookup(olookup).unwind(ounwind);
-        aggregate.lookup(olookup1).unwind(ounwind1);  
-        aggregate.match(query);  
-        aggregate.project(oproject);
-
-        Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
-            if(err) 
-            {
-                res.status(400).json({
-                    success: false, 
-                    message: err.message
-                });
-            }
-            else
-            { 
+        let keyredis = 'redis-user-artistalbumlist-'+artistid+labelid;
+        //check on redis
+        rediscli.hgetall(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis...');
                 res.status(201).json({
                     success: true, 
-                    data: results,
-                    npage: pageCount,
-                    totalcount: count
+                    data: JSON.parse(obj.album), 
+                    npage: obj.npage,
+                    totalcount: obj.totalcount
                 });
-            }
-        })
+            } else {
+                // returns albums records based on query
+                query = {labelid:labelid,
+                    albumname: new RegExp(albumname,'i'), 
+                    albumyear: new RegExp(albumyear,'i'),
+                    "genredetails.group": genregrp,
+                    "genredetails.status": msconfigsts,
+                    "statusdetails.group": statusgrp,
+                    "statusdetails.status": msconfigsts
+                    };
+                
+                if (artistid) {
+                    query = merge(query, {artistid:artistid});
+                }
+                if (albumgenre) {
+                    query = merge(query, {albumgenre: albumgenre});
+                }  
+                if (status) {
+                    query = merge(query, {status:status});
+                }
+
+                var options = {
+                    page: page,
+                    limit: limit,
+                    sortBy: sortby
+                }
+
+                var aggregate = Album.aggregate();        
+                var olookup = {
+                    from: 'msconfig',
+                    localField: 'albumgenre',
+                    foreignField: 'code',
+                    as: 'genredetails'
+                };    
+                var olookup1 = {
+                        from: 'msconfig',
+                        localField: 'status',
+                        foreignField: 'code',
+                        as: 'statusdetails'
+                    };
+
+                var ounwind = 'genredetails';
+                var ounwind1 = 'statusdetails';
+                var oproject = {
+                    albumname: 1,
+                    albumyear: 1,
+                    albumgenre:1,
+                    "genrevalue": "$genredetails.value",
+                    albumprice:1,
+                    status:1,
+                    "stsvalue": "$statusdetails.value",
+                    albumphotopath:1,
+                    albumphotoname:1        
+                };
+
+                //var osort = { "$sort": { sortby: 1}};
+                aggregate.lookup(olookup).unwind(ounwind);
+                aggregate.lookup(olookup1).unwind(ounwind1);  
+                aggregate.match(query);  
+                aggregate.project(oproject);
+
+                Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+                    if(err) 
+                    {
+                        res.status(400).json({
+                            success: false, 
+                            message: err.message
+                        });
+                    }
+                    else
+                    { 
+                        res.status(201).json({
+                            success: true, 
+                            data: results,
+                            npage: pageCount,
+                            totalcount: count
+                        });
+                        //set in redis
+                        rediscli.hmset(keyredis, [ 
+                            'album', JSON.stringify(results),
+                            'npage', pageCount,
+                            'totalcount', count ], function(err, reply) {
+                            if (err) {  console.log(err); }
+                            console.log(reply);
+                        });
+                    }
+                })
+            }        
+        });        
 	}
 }
 
@@ -525,23 +686,39 @@ exports.getalbumlist = function(req, res, next){
     if (!labelid) {
         return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
     }else{
-        // returns artists records based on query
-        query = { labelid:labelid, status: status};        
-        var fields = { 
-            _id:1, 
-            albumname:1 
-        };
+        let keyredis = 'redis-user-albumlist-'+labelid;
+        //check on redis
+        rediscli.get(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis..');
+                res.status(201).json({
+                    success: true, 
+                    data: JSON.parse(obj)
+                });                
+            } else {
+                // returns artists records based on query
+                query = { labelid:labelid, status: status};        
+                var fields = { 
+                    _id:1, 
+                    albumname:1 
+                };
 
-        var psort = { albumname: 1 };
+                var psort = { albumname: 1 };
 
-        Album.find(query, fields).sort(psort).exec(function(err, result) {
-            if(err) { 
-                res.status(400).json({ success: false, message:'Error processing request '+ err }); 
-            } 
-            res.status(201).json({
-                success: true, 
-                data: result
-            });
+                Album.find(query, fields).sort(psort).exec(function(err, result) {
+                    if(err) { 
+                        res.status(400).json({ success: false, message:'Error processing request '+ err }); 
+                    } 
+                    res.status(201).json({
+                        success: true, 
+                        data: result
+                    });
+                    //set in redis
+                    rediscli.set(keyredis,JSON.stringify(result), function(error) {
+                        if (error) { throw error; }
+                    });                                                         
+                });
+            }            
         });
     }
 }

@@ -23,6 +23,7 @@ export class EditalbumComponent implements OnInit {
   albumid: String;
   artistlist: IArtistList[];
   btnLbl: String;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -123,8 +124,10 @@ export class EditalbumComponent implements OnInit {
         theForm.albumid = this.albumid;
       
       }
+      this.loading = true;
       this.albumService.saveAlbum(this.userObj.userid,theForm.artistid, theForm)
         .subscribe(data => {
+          this.loading = false;
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();

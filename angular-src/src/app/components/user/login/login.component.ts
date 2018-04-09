@@ -11,7 +11,7 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  loading = false;
   constructor(private fb: FormBuilder, 
     private authService: AuthService,
     private router: Router,
@@ -30,12 +30,16 @@ export class LoginComponent implements OnInit {
   });
 
   loginUser(formdata:any): void {
+    this.authService.logout();
     if (this.loginForm.dirty && this.loginForm.valid) {
+      this.loading = true;
       this.authService.login(this.loginForm.value)
         .subscribe(data => {
           if (data.json().success === false) {
+            this.loading = false;
             this.toastr.error(data.json().message);
           } else {
+            this.loading = false;
             this.toastr.success('Login successful.');
             this.router.navigate(['report']);
           }

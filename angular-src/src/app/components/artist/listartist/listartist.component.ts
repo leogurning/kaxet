@@ -166,14 +166,14 @@ export class ListartistComponent implements OnInit {
     let payload: any = {};
     payload.artistid = artistid;
     this.loading = true;
-    this.albumService.getAlbums(this.userObj.userid, payload)
+    this.albumService.getAlbumCount(this.userObj.userid, payload)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;
         this.toastr.error(data.message);
       } else {
         this.loading = false;
-        totalalbum = +data.data.total;
+        totalalbum = +data.totalcount;
         if (totalalbum > 0) {
           this.toastr.warning('Can not delete artist. It already has albums.');
         } else {

@@ -2,71 +2,72 @@
     <div class="page-header">
         <h3>Album Details</h3>
     </div>
-    <form [formGroup]="albumForm" class="form-horizontal">
-        <div class="form-group">
-            <label for="albumname" class="col-sm-2 control-label">Album Name</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ album?.albumname }}</div>
+    <div class="row">
+        <div class="col-sm-8">
+          <form [formGroup]="albumForm" class="form-horizontal">
+            <div class="form-group">
+                <label for="albumname" class="col-sm-2 control-label">Name</label>
+                <div class="form-ele col-sm-10">{{ album?.albumname }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <div class="form-ele">{{ album?.albumname }}</div> -->
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="artistname" class="col-sm-2 control-label">Artist</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ artist?.artistname }}</div>
+            <div class="form-group">
+                <label for="artistname" class="col-sm-2 control-label">Artist</label>
+                <div class="form-ele col-sm-10">{{ artist?.artistname }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <div class="form-ele">{{ artist?.artistname }}</div> -->
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="albumyear" class="col-sm-2 control-label">Album Year</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ album?.albumyear }}</div>
+            <div class="form-group">
+                <label for="albumyear" class="col-sm-2 control-label">Year</label>
+                <div class="form-ele col-sm-10">{{ album?.albumyear }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <div class="form-ele">{{ album?.albumyear }}</div> -->
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="albumgenre" class="col-sm-2 control-label">Album Genre</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-              <select class="form-control" [formControl]="albumgenre" disabled>
-                <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
-              </select>
-              <!-- <div class="form-ele">{{ album?.albumgenre }}</div> -->
+            <div class="form-group">
+                <label for="albumgenre" class="col-sm-2 control-label">Genre</label>
+                <div class="col-sm-10" style="padding:0;margin:0;">
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                    <select class="form-control selectfontsize" [formControl]="albumgenre" disabled>
+                        <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
+                    </select>
+                    <!-- <div class="form-ele">{{ album?.albumgenre }}</div> -->
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="albumprice" class="col-sm-2 control-label">Album Price</label>
-            <div class="input-group col-sm-10">
-                <div class="input-group-addon">Rp</div>
-                <div class="form-ele">{{ album?.albumprice | currency: 'IDR':true }}</div>
+            <div class="form-group">
+                <label for="albumprice" class="col-sm-2 control-label">Price</label>
+                <div class="form-ele col-sm-10">{{ album?.albumprice | currency: 'IDR':'symbol-narrow' }}
+                    <!-- <div class="input-group-addon">Rp</div>
+                    <div class="form-ele">{{ album?.albumprice | currency: 'IDR':true }}</div> -->
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="status" class="col-sm-2 control-label">Status</label>
-            <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="status" disabled>
-                    <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
-                </select>
-                <!-- <div class="form-ele">{{ album?.status }}</div> -->
+            <div class="form-group">
+                <label for="status" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-10" style="padding:0;margin:0;">
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                    <select class="form-control selectfontsize" [formControl]="status" disabled>
+                        <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                    </select>
+                    <!-- <div class="form-ele">{{ album?.status }}</div> -->
+                </div>
             </div>
+          </form>
         </div>
-        <div class="form-group">
-            <label for="albumphoto" class="col-sm-2 control-label">Photo</label>
-            <div class="input-group col-sm-10">
-              <img src="{{ album?.albumphotopath }}" class="rounded float-right" width="340" height="340">
-            </div>
+        <div class="col-sm-4 thumbpadding">
+            <img src="{{ album?.albumphotopath }}" class="img-thumbnail thumbviewsize">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="listsong" class="col-sm-2 control-label">Song</label>
-            <div class="input-group col-sm-10" *ngIf="songs && totalrows > 0">
-                <div class="col-sm-12 col-md-10">
-                    <i>({{ totalrows }} songs found) </i> 
+        <div class="row">
+            <div class="col-sm-12 dtlpadding" *ngIf="songs && totalrows > 0">
+                <div class="col-sm-12 col-md-12">
+                    <b>( TOTAL : {{ totalrows }} songs ) </b> 
                 </div><br>
-                <div class="col-sm-12 col-md-10">
+                <div class="col-sm-12 col-md-12">
                     <div class="table-responsive">
-                        <table class="table table-striped" width="50%">
+                        <table class="table table-striped" width="80%">
                             <thead>
                                 <tr>
                                     <th width="30%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
@@ -81,7 +82,7 @@
                                     <td>{{ song.songname}}</td>
                                     <td>{{ song.songpublish}}</td>
                                     <td>{{ song.songbuy}}</td>
-                                    <td class="text-right">{{ song.songprice | currency: 'IDR':true }}</td>
+                                    <td class="text-right">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
                                     <td>{{ song.stsvalue}}</td>
                                 </tr>
                                 
@@ -103,12 +104,10 @@
             </div>      
         </div>
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-12">
                 <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
             </div>
         </div>
-    </form>
-  
+        <br>
   </div>

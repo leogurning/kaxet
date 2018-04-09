@@ -20,7 +20,7 @@ export class EditartistComponent implements OnInit {
   //sts: any = ['active', 'inactive'];
   artistid: String;
   btnLbl: String;
-
+  loading = false;
   constructor(
     private fb: FormBuilder, 
     private authService: AuthService,
@@ -88,8 +88,10 @@ export class EditartistComponent implements OnInit {
         theForm.artistid = this.artistid;
       
       }
+      this.loading = true;
       this.artistService.saveArtist(this.userObj.userid,theForm)
         .subscribe(data => {
+          this.loading = false;
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();

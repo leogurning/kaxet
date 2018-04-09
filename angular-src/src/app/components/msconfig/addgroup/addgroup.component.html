@@ -7,7 +7,7 @@
         <div class="form-group" [ngClass]="{'has-error': addGroupForm.get('code').invalid && addGroupForm.get('code').dirty}">
             <label for="code" class="col-sm-2 control-label">Code <sup>*</sup></label>
             <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
                 <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="code" id="code" placeholder="Ms Code">
             </div>
             <div class="text-danger" *ngIf="addGroupForm.get('code').dirty && addGroupForm.get('code').errors">
@@ -20,7 +20,7 @@
         <div class="form-group" [ngClass]="{'has-error': addGroupForm.get('value').invalid && addGroupForm.get('value').dirty}">
             <label for="value" class="col-sm-2 control-label">Value <sup>*</sup></label>
             <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
                 <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="value" id="value" placeholder="Ms Value">
             </div>
             <div class="text-danger" *ngIf="addGroupForm.get('value').dirty && addGroupForm.get('value').errors">
@@ -32,13 +32,13 @@
         </div>
         <div class="form-group">
             <label for="desc" class="col-sm-2 control-label">Description</label>
-            <div class="input-group col-sm-10">
+            <div class="col-sm-10" style="padding:0;margin:0;">
                 <textarea [disabled]="this.loading == true" class="form-control" id="desc" rows="10" [formControl]="desc" placeholder="Description"></textarea>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-5">
+            <div class="col-sm-5" style="padding:0;margin:0;">
                 <button type="submit" [disabled]="addGroupForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
                 <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
             </div>

@@ -2,13 +2,13 @@
     <div class="page-header">
         <h3>Edit Song</h3>
     </div>
-
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
     <form [formGroup]="songForm" (ngSubmit)="saveSong(songForm.value)" class="form-horizontal" novalidate autocomplete="off">
         <div class="form-group" [ngClass]="{'has-error': songForm.get('songname').invalid && songForm.get('songname').dirty}">
             <label for="songname" class="col-sm-2 control-label">Song Name</label>
             <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <input type="text" class="form-control" id="songname" [formControl]="songname" placeholder="Song Name">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
+                <input [disabled]="this.loading == true" type="text" class="form-control" id="songname" [formControl]="songname" placeholder="Song Name">
             </div>
             <div class="text-danger" *ngIf="songForm.get('songname').dirty && songForm.get('songname').invalid">
                 <span class="col-sm-2"></span>
@@ -20,7 +20,7 @@
             <label for="artistid" class="col-sm-2 control-label">Artist</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
+                <select [disabled]="this.loading == true" class="form-control" [formControl]="artistid" (change)="artistChangeEvent($event)">
                     <option *ngFor="let artist of artistlist" [ngValue]="artist._id">{{artist.artistname}}</option>
                 </select>
             </div>
@@ -36,7 +36,7 @@
             <label for="albumid" class="col-sm-2 control-label">Album</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="albumid">
+                <select [disabled]="this.loading == true" class="form-control" [formControl]="albumid">
                     <option *ngFor="let album of albumlist" [ngValue]="album._id">{{album.albumname}}</option>
                 </select>
             </div>
@@ -50,8 +50,8 @@
 
         <div class="form-group">
             <label for="songlyric" class="col-sm-2 control-label">Lyric</label>
-            <div class="input-group col-sm-10">
-                <textarea class="form-control" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
+            <div class="col-sm-10" style="padding:0;margin:0;">
+                <textarea class="form-control" [disabled]="this.loading == true" id="songlyric" rows="10" [formControl]="songlyric" placeholder="Song Lyric"></textarea>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
             <label for="songgenre" class="col-sm-2 control-label">Song Genre</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="songgenre">
+                <select [disabled]="this.loading == true" class="form-control" [formControl]="songgenre">
                     <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
                 </select>
             </div>
@@ -75,7 +75,7 @@
             <label for="songprice" class="col-sm-2 control-label">Price</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon">Rp</div>
-                <input type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Enter price">
+                <input [disabled]="this.loading == true" type="number" class="form-control" id="songprice" [formControl]="songprice" placeholder="Enter price">
             </div>
             <div class="text-danger" *ngIf="songForm.get('songprice').dirty && songForm.get('songprice').errors">
                 <span class="col-sm-2"></span>
@@ -87,7 +87,7 @@
                 </span>
             </div>
         </div>
-        <div class="form-group" [ngClass]="{'has-error': songForm.get('songpublish').invalid && songForm.get('songpublish').dirty}">
+<!--         <div class="form-group" [ngClass]="{'has-error': songForm.get('songpublish').invalid && songForm.get('songpublish').dirty}">
             <label for="songpublish" class="col-sm-2 control-label">Song Published?</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
@@ -101,12 +101,12 @@
               <div class="form-ele">{{ this.songbuy }}</div>
             </div>
         </div>
-
+ -->
         <div class="form-group" [ngClass]="{'has-error': songForm.get('status').invalid && songForm.get('status').dirty}">
             <label for="status" class="col-sm-2 control-label">Status</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="status">
+                <select [disabled]="this.loading == true" class="form-control" [formControl]="status">
                     <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
                 </select>
             </div>
@@ -119,9 +119,9 @@
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
-                <button type="submit" [disabled]="songForm.invalid" class="btn btn-primary">{{ btnLbl }}</button>
-                <button type="reset" class="btn btn-default" (click)="onBack()">Back</button>
+            <div class="col-sm-10" style="padding:0;margin:0;">
+                <button type="submit" [disabled]="songForm.invalid || this.loading == true" class="btn btn-primary">{{ btnLbl }}</button>
+                <button type="reset" [disabled]="this.loading == true" class="btn btn-default" (click)="onBack()">Back</button>
             </div>
         </div>
     </form>

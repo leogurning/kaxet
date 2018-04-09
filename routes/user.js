@@ -3,6 +3,7 @@ var User = require('../models/user');
 var jwt = require('jsonwebtoken'); 
 var config = require('../config');
 var crypto = require('crypto');
+var rediscli = require('../redisconn');
 
 exports.signup = function(req, res, next){
     // Check for registration errors
@@ -14,21 +15,21 @@ exports.signup = function(req, res, next){
     const bankname = req.body.bankname;
     const username = req.body.username;
     const password = req.body.password;
-    const usertype = req.body.usertype;
+    const usertype = 'LBL';
     var rand,randhash,link;
 
      if (!name || !email || !contactno || !bankaccno || !bankname || !username || !password|| !usertype) {
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
-     User.findOne({ username: username }, function(err, existingUser) {
+     User.findOne({ $or:[{username:username},{email:email}] }, function(err, existingUser) {
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          // If user is not unique, return error
          if (existingUser) {
              return res.status(201).json({
                  success: false,
-                 message: 'Username already exists.'
+                 message: 'Username OR Email address already exists.'
              });
          }
         // If no error, create account
@@ -118,7 +119,8 @@ exports.login = function(req, res, next){
 
 exports.authenticate = function(req, res, next){
     // check header or url parameters or post parameters for token
-	var token = req.body.token || req.query.token || req.headers['authorization'];
+    //var token = req.body.token || req.query.token || req.headers['authorization'];
+    var token = req.headers['authorization'];
     //console.log(token);
 	if (token) {
 		jwt.verify(token, config.secret, function(err, decoded) {			
@@ -139,11 +141,28 @@ exports.authenticate = function(req, res, next){
 }
 
 exports.getuserDetails = function(req, res, next){
-    User.find({_id:req.params.id}).exec(function(err, user){
-        if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err}); }
-        res.status(201).json({
-		success: true, 
-		data: user });
+    const userid = req.params.id;
+    let keyredis = 'redis-user-'+userid;
+    rediscli.get(keyredis, function(error,obj) { 
+        if (obj) {
+            //console.log('key on redis...');
+            res.status(201).json({
+                success: true, 
+                data: JSON.parse(obj)
+            });         
+        } else {
+            User.find({_id:userid}).exec(function(err, user){
+                if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err}); }
+                res.status(201).json({
+                    success: true, 
+                    data: user 
+                });
+                //set in redis
+                rediscli.set(keyredis,JSON.stringify(user), function(error) {
+                    if (error) { throw error; }
+                });                    
+            });
+        }
     });
 }
 
@@ -173,7 +192,9 @@ exports.updateUser = function(req, res, next){
 			res.status(201).json({
 				success: true,
 				message: 'User details updated successfully'
-			});
+            });
+            //Delete redis respective keys
+            rediscli.del('redis-user-'+userid);                
 		});
 	});
    }
@@ -237,6 +258,8 @@ exports.updateEmail = function(req, res, next){
                         success: true,
                         message: 'Email updated successfully. Please verify your email.'
                     });
+                    //Delete redis respective keys
+                    rediscli.del('redis-user-'+userid);                
                 });               
             }
         });
@@ -291,6 +314,87 @@ exports.emailverification = function(req, res, next){
             res.status(201).json({ success: false, message:'Error in Finding user data.'});
         }
     });
+}
+
+exports.resetpassword = function(req, res, next){
+    // Check for registration errors
+    const email = req.body.email;
+    var rand,randhash,link;
+
+     if (!email ) {
+         return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
+     }
+ 
+     User.findOne({ email: email }, function(err, existingUser) {
+         if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+ 
+         if (existingUser) {
+            if (existingUser.status === 'STSACT') {
+                if (existingUser.vhash) {
+                    randhash = existingUser.vhash;
+                    link= getProtocol(req)+"://"+req.get('host')+"/resetpassword?id="+randhash;
+                    
+                    return res.status(200).json({
+                        success: true,
+                        vlink: link,
+                        message: 'Email has been sent to ' + email + '. Please access your email to reset the password.'
+                    });
+                } else {
+                    rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+                    randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+    
+                    existingUser.vhash = randhash;
+                    existingUser.save(function(err) {
+                        if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+    
+                        link= getProtocol(req)+"://"+req.get('host')+"/resetpassword?id="+randhash;
+                        res.status(200).json({
+                            success: true,
+                            vlink: link,
+                            message: 'Email has been sent to ' + email + '. Please access your email to reset the password.'
+                        });
+                    });               
+                }
+            } else {
+                res.status(201).json({ success: false, message:'Process Error. The account linked to the email is NOT ACTIVE account.'});
+            }
+
+        } else {
+            res.status(201).json({ success: false, message:'Error in Finding user data. There is no user account linked to the email input.'});
+        }
+    });
+}
+
+exports.doresetpassword = function(req, res, next){
+    const hash = req.body.hash;
+    const password = req.body.password;
+    
+    // find the user
+    User.findOne({ vhash: hash }, function(err, user) {
+        if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+        if (!user) {
+            res.status(201).json({ success: false, message: 'UNAuthorised ! Incorrect hash value provided.' });
+        }else if (user) {
+            if (user.status == 'STSACT') {
+                // login success update last login
+                user.password = password;
+                user.vhash = '';
+                user.save(function(err) {
+                    if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+                    res.status(200).json({
+                        success: true,
+                        message: 'Password reset successfully'
+                    });
+                });
+            } else {
+                //console.log('This not active condition.');
+                res.status(201).json({ success: false, message: 'Process STOP. User account is NOT ACTIVE.' });
+            }
+        }
+    });
+
 }
 
 function getProtocol (req) {

@@ -50,6 +50,17 @@ export class AlbumService {
         .catch(this.handleError);
   }
 
+  getAlbumCount(userid, oAlbum) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/albumcount/${userid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
   getArtistAlbums(userid, oAlbum) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

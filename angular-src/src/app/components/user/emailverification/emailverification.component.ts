@@ -30,6 +30,7 @@ export class EmailverificationComponent implements OnInit {
               { }
 
   ngOnInit() {
+    this.loading = true;
     this.sub = this.route.queryParams.subscribe(
       params => {
         let hash = params['id'];

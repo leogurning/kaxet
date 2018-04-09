@@ -2,57 +2,64 @@
     <div class="page-header">
         <h3>Config Details</h3>
     </div>
-    <form [formGroup]="msconfigForm" class="form-horizontal">
-        <div class="form-group">
-            <label for="code" class="col-sm-2 control-label">Code</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ msconfig?.code }}</div>
-            </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <form [formGroup]="msconfigForm" class="form-horizontal">
+                <div class="form-group">
+                    <label for="code" class="col-sm-2 control-label">Code</label>
+                    <div class="col-sm-10 form-ele">{{ msconfig?.code }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ msconfig?.code }}</div>-->
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <label for="value" class="col-sm-2 control-label">Value</label>
+                    <div class="form-ele col-sm-10">{{ msconfig?.value }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ msconfig?.value }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="group" class="col-sm-2 control-label">Group</label>
+                    <div class="form-ele col-sm-10">{{ msconfig?.groupname }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ msconfig?.groupname }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="desc" class="col-sm-2 control-label">Desc</label>
+                    
+                    <div class="form-ele col-sm-10">{{ msconfig?.desc }}
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ msconfig?.desc }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">Status</label>
+                    <div class="col-sm-10" style="padding:0;margin:0;">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control selectfontsize" [formControl]="status" disabled>
+                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                        </select>
+                        <!-- <div class="form-ele">{{ artist?.status }}</div> -->
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="value" class="col-sm-2 control-label">Value</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ msconfig?.value }}</div>
-            </div>
+        <div class="col-sm-4 thumbpadding" *ngIf="msconfig?.filepath != ''">
+                <img src="{{ msconfig?.filepath }}" class="img-thumbnail thumbviewsize">
         </div>
-        <div class="form-group">
-            <label for="group" class="col-sm-2 control-label">Group</label>
-            <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ msconfig?.groupname }}</div>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10" style="padding:0;margin:0;">
+                        <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="desc" class="col-sm-2 control-label">Desc</label>
-            
-            <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
-                <div class="form-ele">{{ msconfig?.desc }}</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="status" class="col-sm-2 control-label">Status</label>
-            <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
-                <select class="form-control" [formControl]="status" disabled>
-                      <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
-                </select>
-                <!-- <div class="form-ele">{{ artist?.status }}</div> -->
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="genrephoto" class="col-sm-2 control-label">Image</label>
-            <div class="input-group col-sm-10" *ngIf="msconfig?.filepath != ''">
-              <img src="{{ msconfig?.filepath }}" class="rounded float-right" width="340" height="340">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
-                <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>

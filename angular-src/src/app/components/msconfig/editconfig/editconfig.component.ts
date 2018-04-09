@@ -20,6 +20,7 @@ export class EditconfigComponent implements OnInit {
   grouplist: IMsconfigGroupList[];
   msconfigid: String;
   btnLbl: String;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -118,8 +119,10 @@ export class EditconfigComponent implements OnInit {
         theForm.msconfigid = this.msconfigid;
       
       }
+      this.loading = true;
       this.msconfigService.saveMsconfig(this.userObj.userid, theForm)
         .subscribe(data => {
+          this.loading = false;
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();

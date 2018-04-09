@@ -1,6 +1,6 @@
 <div class="container pagecontainer">
     <div class="page-header">
-        <h1>My Profile</h1>
+        <h3>My Profile</h3>
     </div>
     <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
     <div class="clearfix">
@@ -15,7 +15,7 @@
           <div class="form-group" [ngClass]="{'has-error': profileForm.get('name').invalid && profileForm.get('name').dirty}">
               <label for="name" class="col-sm-2 control-label">Name</label>
               <div class="input-group col-sm-10">
-                  <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                  <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
                   <input [disabled]="this.loading == true" type="text" class="form-control" id="name" [formControl]="name" placeholder="Name">
               </div>
               <div class="text-danger" *ngIf="profileForm.get('name').dirty && profileForm.get('name').invalid">
@@ -48,7 +48,7 @@
           <div *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'" class="form-group" [ngClass]="{'has-error': profileForm.get('contactno').invalid && profileForm.get('contactno').dirty}">
               <label for="contactno" class="col-sm-2 control-label">Contact No</label>
               <div class="input-group col-sm-10">
-                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-bold"></i></div>
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-pencil"></i></div>
                   <input [disabled]="this.loading == true" type="text" class="form-control" id="contactno" [formControl]="contactno" placeholder="Contact No">
               </div>
               <div class="text-danger" *ngIf="profileForm.get('contactno').dirty && profileForm.get('contactno').invalid">
@@ -59,7 +59,7 @@
           <div *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'" class="form-group" [ngClass]="{'has-error': profileForm.get('bankaccno').invalid && profileForm.get('bankaccno').dirty}">
               <label for="bankaccno" class="col-sm-2 control-label">Bank Account No</label>
               <div class="input-group col-sm-10">
-                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-bold"></i></div>
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-pencil"></i></div>
                   <input [disabled]="this.loading == true" type="text" class="form-control" id="bankaccno" [formControl]="bankaccno" placeholder="Bank Account No">
               </div>
               <div class="text-danger" *ngIf="profileForm.get('bankaccno').dirty && profileForm.get('bankaccno').invalid">
@@ -70,14 +70,14 @@
           <div *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'" class="form-group">
             <label for="bankcode" class="col-sm-2 control-label">Bank Code</label>
             <div class="input-group col-sm-10">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-bitcoin"></i></div>
+                <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
                 <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankcode" id="bankcode" placeholder="Bank Code">
             </div>
           </div>
           <div *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'" class="form-group" [ngClass]="{'has-error': profileForm.get('bankname').invalid && profileForm.get('bankname').dirty}">
               <label for="bankname" class="col-sm-2 control-label">Bank Name</label>
               <div class="input-group col-sm-10">
-                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-bold"></i></div>
+                  <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-pencil"></i></div>
                   <input [disabled]="this.loading == true" type="text" class="form-control" id="bankname" [formControl]="bankname" placeholder="Bank Name">
               </div>
               <div class="text-danger" *ngIf="profileForm.get('bankname').dirty && profileForm.get('bankname').invalid">
@@ -85,13 +85,13 @@
                   <span class="col-sm-10" style="padding:4px 0 0">Please enter your Bank Name</span>
               </div>
           </div>
-          <div class="form-group">
+<!--           <div class="form-group">
               <label for="usertype" class="col-sm-2 control-label">User Type</label>
               <div class="input-group col-sm-10">
                   <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-user"></i></div>
                   <div class="form-ele">{{ userObj.usertype }}</div>
               </div>
-          </div>
+          </div> -->
           <div class="form-group">
               <label for="lastlogin" class="col-sm-2 control-label">Last Login</label>
               <div class="input-group col-sm-10">
@@ -101,7 +101,7 @@
           </div>
           <div class="form-group">
               <label class="col-sm-2 control-label"></label>
-              <div class="col-sm-10">
+              <div class="col-sm-10" style="padding:0;margin:0;">
                   <button type="submit" [disabled]="profileForm.invalid || this.loading == true" class="btn btn-primary">Update</button>
                   <button type="reset" [disabled]="this.loading == true" class="btn btn-default" (click)="onBack()">Cancel</button>
               </div>

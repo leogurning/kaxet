@@ -28,6 +28,7 @@ export class EditsongComponent implements OnInit {
   albumlist: IAlbumList[];
   partistid: String;
   btnLbl: String;
+  loading = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -157,8 +158,10 @@ export class EditsongComponent implements OnInit {
         theForm.songid = this.songid;
       
       }
+      this.loading = true;
       this.songService.saveSong(this.userObj.userid,theForm.artistid, theForm.albumid,theForm)
         .subscribe(data => {
+          this.loading = false;
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();

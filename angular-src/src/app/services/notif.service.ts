@@ -27,11 +27,26 @@ export class NotifService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  sendresetpasswd(oLink) {
+    let headers = new Headers ({ 'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+     return this.http.post(`${this.notifurl}/sendresetpassword`,JSON.stringify(oLink), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   recvemailverification(hash) {
     let headers = new Headers ({ 'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
      return this.http.get(`${this.notifurl}/verify?id=${hash}`, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
+  pageverification(hash) {
+    let headers = new Headers ({ 'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+     return this.http.get(`${this.notifurl}/pgverify?id=${hash}`, options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }

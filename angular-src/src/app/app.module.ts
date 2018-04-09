@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material'
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 /* Global Variables */
 import {Globals} from './app.global';
@@ -66,10 +68,13 @@ import { ViewconfigComponent } from './components/msconfig/viewconfig/viewconfig
 import { EditconfigfileComponent } from './components/msconfig/editconfigfile/editconfigfile.component';
 import { EditconfigComponent } from './components/msconfig/editconfig/editconfig.component';
 import { KxInfoDialogComponent } from './components/kx-info-dialog/kx-info-dialog.component';
+import { ForgotpasswordComponent } from './components/user/forgotpassword/forgotpassword.component';
+import { ResetuserpasswdComponent } from './components/user/resetuserpasswd/resetuserpasswd.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
   {path:'register', component:RegisterComponent},
+  {path:'forgotpassword', component:ForgotpasswordComponent},
   {path:'postregistered/:nm', component:PostregisteredComponent},
   {path:'login', component:LoginComponent},
   {path:'about', component:AboutComponent},
@@ -102,7 +107,8 @@ const appRoutes: Routes = [
   {path: 'listconfig', canActivate: [ AuthGuard], component: ListconfigComponent },
   {path: 'viewconfig/:id', canActivate: [ AuthGuard], component: ViewconfigComponent },
   {path: 'editconfigfile/:id', component:EditconfigfileComponent, canActivate:[AuthGuard]},
-  {path: 'editconfig/:id', component:EditconfigComponent, canActivate:[AuthGuard]}
+  {path: 'editconfig/:id', component:EditconfigComponent, canActivate:[AuthGuard]},
+  {path: 'resetpassword', component: ResetuserpasswdComponent }
 ];
 
 @NgModule({
@@ -144,6 +150,8 @@ const appRoutes: Routes = [
     EditconfigfileComponent,
     EditconfigComponent,
     KxInfoDialogComponent,
+    ForgotpasswordComponent,
+    ResetuserpasswdComponent,
   ],
   imports: [
     BrowserModule,
@@ -153,14 +161,16 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatButtonModule,
     MatProgressBarModule,
+    MatCardModule,
     BrowserAnimationsModule,
+    Angular2FontawesomeModule,
     LoadingModule.forRoot({
       animationType: ANIMATION_TYPES.threeBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
       backdropBorderRadius: '4px',
-      primaryColour: '#00008B', 
+      primaryColour: '#ce3b3b', 
       secondaryColour: '#ce3b3b', 
-      tertiaryColour: '#2b966b'
+      tertiaryColour: '#ce3b3b'
   }),
     RouterModule.forRoot(appRoutes)
   ],

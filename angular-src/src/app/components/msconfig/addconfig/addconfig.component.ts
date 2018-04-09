@@ -23,6 +23,7 @@ export class AddconfigComponent implements OnInit {
   grouplist: IMsconfigGroupList[];
   loading = false;
   @ViewChild('inputimg')genreimageVar: any;
+  @ViewChild('inputgroup')inputgroupVar: any;  
   configuploadpath:string;
   progressvalue = 0;
 
@@ -119,6 +120,7 @@ export class AddconfigComponent implements OnInit {
                   //this.router.navigate(['listartist']);
                 }
                 this.addConfigForm.reset();
+                this.inputgroupVar.nativeElement.selectedIndex = 0;
                 this.genreimageVar.nativeElement.value = "";
                 this.progressvalue = 0;
               });
@@ -146,6 +148,7 @@ export class AddconfigComponent implements OnInit {
             this.progressvalue = 100;
           }
           this.addConfigForm.reset();
+          this.inputgroupVar.nativeElement.selectedIndex = 0;
           this.genreimageVar.nativeElement.value = "";
           this.progressvalue = 0;
         });

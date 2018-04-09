@@ -26,6 +26,8 @@ export class AddalbumComponent implements OnInit {
   artistlist: IArtistList[];
   loading = false;
   @ViewChild('inputimg')albumimageVar: any;
+  @ViewChild('inputartist')artistVar: any;
+  @ViewChild('inputgenre')genreVar: any;
   albumuploadpath:string;
   progressvalue = 0;
 
@@ -97,9 +99,10 @@ export class AddalbumComponent implements OnInit {
 
   addAlbum(formdata:any): void {
     this.progressvalue = 0;
-    if (this.addAlbumForm.dirty && this.addAlbumForm.valid) {
+    const files: Array<File> = this.filesToUpload;
+    if (this.addAlbumForm.dirty && this.addAlbumForm.valid && files[0]) {
       this.progressvalue = 10;
-      const files: Array<File> = this.filesToUpload;
+      //const files: Array<File> = this.filesToUpload;
       let theForm = this.addAlbumForm.value;
       let lformData: FormData = new FormData();
       //console.log('Ini file: '+ files[0]['name']);
@@ -139,12 +142,16 @@ export class AddalbumComponent implements OnInit {
                   this.progressvalue = 100;
                 }
                 this.addAlbumForm.reset();
+                this.artistVar.nativeElement.selectedIndex = 0;
+                this.genreVar.nativeElement.selectedIndex = 0;
                 this.albumimageVar.nativeElement.value = "";
                 this.progressvalue = 0;
               });
           }   
         });
  
+    } else {
+      this.toastr.error('Please provide the album cover/image...');
     }
   }
 

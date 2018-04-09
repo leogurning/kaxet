@@ -9,7 +9,9 @@
       "outDir": "../public",
       "assets": [
         "assets",
-        "cassetteicon.png"
+        "cassetteicon.png",
+        "KXLOGO5.png",
+        "KXLOGO6.png"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -21,12 +23,16 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/toastr/build/toastr.min.css",
-        "styles.css"
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "styles.css",
+        "menu.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/toastr/build/toastr.min.js"        
+        "../node_modules/toastr/build/toastr.min.js",
+        "js/function.js",
+        "js/jquery1.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

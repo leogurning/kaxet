@@ -7,7 +7,7 @@
       <div class="form-group" [ngClass]="{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}">
           <label for="name" class="col-sm-2 control-label">Label Name <sup>*</sup></label>
           <div class="input-group col-sm-10">
-              <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+              <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
               <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="name" id="name" placeholder="Label Name">
           </div>
           <div class="text-danger" *ngIf="registerForm.get('name').dirty && registerForm.get('name').errors">
@@ -48,7 +48,7 @@
       <div class="form-group" [ngClass]="{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}">
         <label for="bankaccno" class="col-sm-2 control-label">Bank Account No <sup>*</sup></label>
         <div class="input-group col-sm-10">
-            <div class="input-group-addon"><i class="glyphicon glyphicon-bitcoin"></i></div>
+            <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
             <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankaccno" id="bankaccno" placeholder="Bank Account No">
         </div>
         <div class="text-danger" *ngIf="registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors">
@@ -61,14 +61,14 @@
       <div class="form-group">
         <label for="bankcode" class="col-sm-2 control-label">Bank Code</label>
         <div class="input-group col-sm-10">
-            <div class="input-group-addon"><i class="glyphicon glyphicon-bitcoin"></i></div>
+            <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
             <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankcode" id="bankcode" placeholder="Bank Code">
         </div>
       </div>
       <div class="form-group" [ngClass]="{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}">
         <label for="bankname" class="col-sm-2 control-label">Bank Name <sup>*</sup></label>
         <div class="input-group col-sm-10">
-            <div class="input-group-addon"><i class="glyphicon glyphicon-bitcoin"></i></div>
+            <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
             <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankname" id="bankname" placeholder="Bank Name">
         </div>
         <div class="text-danger" *ngIf="registerForm.get('bankname').dirty && registerForm.get('bankname').errors">
@@ -76,13 +76,6 @@
             <span class="col-sm-10" style="padding:4px 0 0" *ngIf="registerForm.get('bankname').errors.required">
                 Please enter your bank name
             </span>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="usertype" class="col-sm-2 control-label">Usertype</label>
-        <div class="input-group col-sm-10">
-            <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-user"></i></div>
-            <div class="form-ele">{{ this.usertype.value }}</div>
         </div>
       </div>
       <div class="form-group" [ngClass]="{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}">
@@ -143,7 +136,7 @@
        </div>
       <div class="form-group">
           <label class="col-sm-2 control-label"></label>
-          <div class="col-sm-5">
+          <div class="col-sm-5" style="padding:0;margin:0;">
               <button type="submit" [disabled]="registerForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
               <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
           </div>

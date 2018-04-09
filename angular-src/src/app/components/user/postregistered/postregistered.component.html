@@ -2,25 +2,39 @@
   <div class="page-header">
       <h3>Confirmation</h3>
   </div>
-  <div class="jumbotron">
-    <img src="../../../cassetteicon.png">
-    <h4>Thank You</h4>
-
-    Label User: {{ this.uname }} <br>
-    email : {{ this.qemailto }} <br>
-    <br>
-    <div class="alert alert-success" *ngIf="this.uname != 'err'">
-      <!-- status:PENDING APPROVAL <br> -->
-      {{ this.getremarksvalue('REMARKS3') }} <br>
-      <!-- {{ this.remarks[1].value }} {{ this.csemail.value }}. -->
-    </div>
-    <div class="alert alert-danger" *ngIf="this.uname == 'err'">
-      Oops, Sorry.. {{ this.getremarksvalue('REMARKS4') }}.
-    </div>    
-    <br>
-    <div class="col-sm-10">
-        <button type="button" (click)="onLogin()" class="btn btn-info">Back to Login</button>
-    </div>  
+  <div *ngIf="this.uname != 'err'" class="panel panel-success">
+      <div class="panel-heading">
+          <h3 class="panel-title">Success</h3>
+      </div>
+      <div class="panel-body">
+          <h4>Thank You !</h4>
+          <p>{{ this.getremarksvalue('REMARKS3') }}</p>
+          <p>Below is the account information for your reference,</p>
+          <div class="row rowmarginsearch">
+              <div class="col-xs-3 col-sm-2" style="text-align:right;">Label:</div>
+              <div class="col-xs-9 col-sm-10" style="padding:0;">{{ this.uname }}</div>
+            </div>
+            <div class="row rowmarginsearch">
+              <div class="col-xs-3 col-sm-2" style="text-align:right;">Email:</div>
+              <div class="col-xs-9 col-sm-10" style="padding:0;">{{ this.qemailto }}</div>
+            </div>
+          <br>
+          <div class="col-sm-12" style="margin:0;padding:0;">
+              <button type="button" (click)="onLogin()" class="btn btn-info">Back to Login</button>
+          </div>  
+      </div>
+  </div>
+  <div *ngIf="this.uname == 'err'" class="panel panel-danger">
+      <div class="panel-heading">
+          <h3 class="panel-title">Error</h3>
+      </div>
+      <div class="panel-body">
+          <p>Oops, Sorry.. {{ this.getremarksvalue('REMARKS4') }}</p>
+          <br>
+          <div class="col-sm-12" style="margin:0;padding:0;">
+              <button type="button" (click)="onLogin()" class="btn btn-info">Back to Login</button>
+          </div>  
+      </div>
   </div>
 
 </div>

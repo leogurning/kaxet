@@ -125,6 +125,17 @@ export class SongService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  
+  getSongCount(userid, oSong) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/songcount/${userid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   getSongList(userid, oSong) {
     let headers = new Headers();

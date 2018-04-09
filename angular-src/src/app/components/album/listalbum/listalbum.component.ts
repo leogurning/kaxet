@@ -258,14 +258,14 @@ export class ListalbumComponent implements OnInit {
     let payload: any = {};
     payload.albumid = albumid;
     this.loading = true;
-    this.songService.getSongs(this.userObj.userid, payload)
+    this.songService.getSongCount(this.userObj.userid, payload)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;
         this.toastr.error(data.message);
       } else {
         this.loading = false;
-        totalsong = +data.data.total;
+        totalsong = +data.totalcount;
         if (totalsong > 0) {
           this.toastr.warning('Can not delete album. It already has songs.');
         } else {

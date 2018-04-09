@@ -32,6 +32,9 @@ export class AddsongComponent implements OnInit {
   progressvalue = 0;
   @ViewChild('inputprev')inputpreVar: any;
   @ViewChild('inputsong')inputsongVar: any;
+  @ViewChild('inputartist')artistVar: any;
+  @ViewChild('inputalbum')albumVar: any;
+  @ViewChild('inputgenre')genreVar: any;
   prvwuploadpath: string;
   songuploadpath: string;
 
@@ -138,9 +141,11 @@ export class AddsongComponent implements OnInit {
   }
   addSong(formdata:any): void {
     this.progressvalue = 0;
-    if (this.addSongForm.dirty && this.addSongForm.valid) {
+    const prvwfiles: Array<File> = this.PrvwfilesToUpload;
+    const songfiles: Array<File> = this.SongfilesToUpload;
+    if (this.addSongForm.dirty && this.addSongForm.valid && prvwfiles[0] && songfiles[0]) {
       this.progressvalue = 10;
-      const prvwfiles: Array<File> = this.PrvwfilesToUpload;
+      //const prvwfiles: Array<File> = this.PrvwfilesToUpload;
       let theForm = this.addSongForm.value;
       this.progressvalue = 20;
       let lformData: FormData = new FormData();
@@ -160,7 +165,7 @@ export class AddsongComponent implements OnInit {
             this.progressvalue = 40;
               theForm.songprvwpath = data.filedata.filepath;
               theForm.songprvwname = data.filedata.filename;
-              const songfiles: Array<File> = this.SongfilesToUpload;
+              //const songfiles: Array<File> = this.SongfilesToUpload;
               let lformData1: FormData = new FormData();
               lformData1.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
               lformData1.append('uploadpath',this.songuploadpath);
@@ -197,6 +202,9 @@ export class AddsongComponent implements OnInit {
                       }
                       this.addSongForm.reset();
                       this.progressvalue = 0;
+                      this.artistVar.nativeElement.selectedIndex = 0;
+                      this.albumVar.nativeElement.selectedIndex = 0;
+                      this.genreVar.nativeElement.selectedIndex = 0;
                       this.inputpreVar.nativeElement.value = "";
                       this.inputsongVar.nativeElement.value = "";
                     });
@@ -205,6 +213,8 @@ export class AddsongComponent implements OnInit {
           }   
         });
  
+    } else {
+      this.toastr.error('Please provide BOTH Song Preview and Song File...');
     }
   }
 
