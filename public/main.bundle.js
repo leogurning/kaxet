@@ -77,17 +77,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var Globals = /** @class */ (function () {
     function Globals() {
-        this.artistuploadpath = 'kaxet/images/artists/';
-        this.albumuploadpath = 'kaxet/images/albums/';
-        this.configuploadpath = 'kaxet/images/genres/';
-        this.prvwuploadpath = 'kaxet/previews/';
-        this.songuploadpath = 'kaxet/songs/';
-        this.adminurl = 'http://localhost:2002';
-        //adminurl: String = 'https://kxadmin.herokuapp.com';
+        this.artistuploadpath = 'images/artists/';
+        this.albumuploadpath = 'images/albums/';
+        this.configuploadpath = 'images/genres/';
+        this.prvwuploadpath = 'previews/';
+        this.songuploadpath = 'songs/';
+        //adminurl: String = 'http://localhost:2002';
+        this.adminurl = 'https://apikxadmin-dot-kaxetd.appspot.com';
         //notifurl: String = 'http://localhost:2004';
-        this.notifurl = 'https://kxnotif.herokuapp.com';
+        this.notifurl = 'https://apikxnotif-dot-kaxetd.appspot.com';
         //filetransferurl: String = 'http://localhost:2005';
-        this.filetransferurl = 'https://kxfiletrf.herokuapp.com';
+        this.filetransferurl = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
     }
     Globals = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
