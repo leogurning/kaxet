@@ -1,88 +1,66 @@
 <div class="container pagecontainer">
   <div class="page-header">
-      <h3>LABEL MANAGEMENT</h3>
+      <h3>LABEL APPROVAL</h3>
   </div>
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <div *ngIf="this.loading == false" class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Search Parameter</h3>
-    </div>
-    <div class="panel-body">
-      <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
-
-          <div class="row rowmarginsearch">
-              <div class="col-sm-6 col-md-6">
-                  <label for="username" class="col-sm-2 paddingsearch">Username</label>
-                  <div class="col-sm-10">
-                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
-                      <input type="text" class="form-control" id="username" [formControl]="username" placeholder="User Name">
-                  </div>
-              </div>
-              <div class="col-sm-6 col-md-6">
-                <label for="name" class="col-sm-2 paddingsearch">Name</label>
-                <div class="col-sm-10">
-                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
-                    <input type="text" class="form-control" id="name" [formControl]="name" placeholder="Label Name">
-                </div>
-              </div>
-          </div>
-          <div class="row rowmarginsearch">
-              <div class="col-sm-6 col-md-6">
-                  <label for="status" class="col-sm-2 paddingsearch">Status</label>
-                  <div class="col-sm-10">
-                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
-                      <select class="form-control" [formControl]="status">
-                            <option value="">Select the status</option>
-                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
-                      </select>
-                  </div>
-              </div>
-              <div class="col-sm-6 col-md-6">
-                    <label for="veremail" class="col-sm-3 paddingsearch">Email Verified?</label>
-                    <div class="col-sm-9">
-                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
-                        <select class="form-control" [formControl]="veremail">
-                              <option value="">Select the option</option>
-                              <option *ngFor="let b of yn" [ngValue]="b.code">{{b.value}}</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row rowmarginsearch">
-              <div class="col-sm-6 col-md-6">
-                  <label class="col-sm-2 paddingsearch">      </label>
-                  <div class="col-sm-5">
-                    <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
-                  </div>
-              </div>                  
-          </div>
-      </form>
-    </div>
-  </div>  
-
-  <div class="panel panel-danger" *ngIf="labellist && totalrows < 1">
         <div class="panel-heading">
-            <h3 class="panel-title">No LABELS found</h3> 
+            <h3 class="panel-title">Search Parameter</h3>
+        </div>
+        <div class="panel-body">
+          <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+    
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="username" class="col-sm-2 paddingsearch">Username</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="username" [formControl]="username" placeholder="User Name">
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <label for="name" class="col-sm-2 paddingsearch">Name</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                        <input type="text" class="form-control" id="name" [formControl]="name" placeholder="Label Name">
+                    </div>
+                  </div>
+              </div>
+                <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label class="col-sm-2 paddingsearch">      </label>
+                      <div class="col-sm-5">
+                        <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                      </div>
+                  </div>                  
+              </div>
+          </form>
+        </div>
+    </div>
+
+  <div class="panel panel-danger" *ngIf="this.loading == false && labellist && totalrows < 1">
+        <div class="panel-heading">
+            <h3 class="panel-title">Pending Approval List</h3> 
         </div>
   
         <div class="panel-body">
-            No Labels found from above criterias.
+            No Pending Labels found.
         </div>
     </div>
   
-    <div class="panel panel-default" *ngIf="labellist && totalrows > 0 && this.loading == false">
+    <div class="panel panel-default" *ngIf="this.loading == false && labellist && totalrows > 0 && this.loading == false">
         <div class="panel-heading">
-            <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+            <h3 class="panel-title">{{reportTitle}} <b> ({{ totalrows }} records found)</b> </h3> 
         </div>
         <div class="panel-body">
                 <div class="table-responsive"> 
                         <table class="table table-hover">
                             <thead>
                                     <tr>
-                                        <th width="10%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>
+                                        <th width="20%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>
                                         <th width="30%"><a style="cursor:pointer" (click)="sortLabel('name')">Label Name</a></th>
                                         <th width="20%"><a style="cursor:pointer" (click)="sortLabel('email')">Email</a></th>
-                                        <th width="10%"><a style="cursor:pointer" (click)="sortLabel('verified_email')">Email Verified?</a></th>
+                                        <!-- <th width="10%"><a style="cursor:pointer" (click)="sortLabel('verified_email')">Email Verified?</a></th> -->
                                         <th width="10%"><a style="cursor:pointer" (click)="sortLabel('status')">Status</a></th>
                                         <th width="20%">Action</th>
                                     </tr>
@@ -92,15 +70,18 @@
                                         <td><a style="cursor:pointer" (click)="showLabel(lbl._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ lbl.username}}</a></td>
                                         <td>{{ lbl.name}}</td>
                                         <td>{{ lbl.email}}</td>
-                                        <td>{{ lbl.verified_email }}</td>
+                                        <!-- <td>{{ lbl.verified_email }}</td> -->
                                         <td>{{ lbl.stsvalue}}</td>
                                         <td>
-                                            <button type="button" class="btn-xs btn-success" aria-label="Activate" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Activate Label">
+                                            <!-- <button type="button" class="btn-xs btn-success" aria-label="Activate" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Activate Label">
                                                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                            </button>
-                                            <button type="button" class="btn-xs btn-danger" aria-label="Deactivate" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Deactivate Label">
+                                            </button> -->
+                                            <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Approve Label"><i class="fa fa-check fa-2x"></i></a>
+                                            <!-- <button type="button" class="btn-xs btn-danger" aria-label="Deactivate" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Deactivate Label">
                                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                            </button>
+                                            </button> -->
+                                            &nbsp;&nbsp;&nbsp;
+                                            <a style="cursor:pointer;color:red" aria-label="Reject" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Reject Label"><i class="fa fa-times fa-2x"></i></a>
                                         </td>
                                     </tr>     
                                 </tbody>    

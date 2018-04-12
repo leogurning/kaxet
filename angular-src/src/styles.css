@@ -177,3 +177,11 @@ code {
 .rowmarginsearch {
   margin-bottom: 4px;
 }
+
+a.borderless {
+  border-top: 0 none;
+}
+a.bordersideless {
+  border-left: 0 none;
+  border-right: 0 none;
+}

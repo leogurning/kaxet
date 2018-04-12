@@ -313,7 +313,11 @@ export class ListsongComponent implements OnInit {
     var result = <String>selectedValue.target.value;
     // result is 1: artistid. Therefore need split
     var res = result.split(" ");
-    this.getAlbumListbyArtist(this.userObj.userid,res[1]);
+    if (res[1]) {
+      this.getAlbumListbyArtist(this.userObj.userid,res[1]);
+    } else {
+      this.getAlbumList(this.userObj.userid);
+    }   
   }
 
   editSongFiles(songid, songpublish, songbuy): void {

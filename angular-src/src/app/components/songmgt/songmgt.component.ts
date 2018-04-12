@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params,NavigationEnd } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from '../../common/toastr.service'
 import { AuthService } from '../../services/auth.service';
@@ -18,6 +18,7 @@ import { IMsconfigGroupList } from '../../interface/msconfig';
   styleUrls: ['./songmgt.component.css']
 })
 export class SongmgtComponent implements OnInit {
+  navigationSubscription;
   reportForm: FormGroup
   userObj: any;
   reportTitle: String;
@@ -31,8 +32,7 @@ export class SongmgtComponent implements OnInit {
   qalbumname: String;
   qalbumyear: String;
   qsonggenre: String;
-  qsongpublish: String;
-  qsongbuy: String;
+  //qsongbuy: String;
   qstatus: String;
   qpage: number;
   qsort: String;
@@ -41,7 +41,7 @@ export class SongmgtComponent implements OnInit {
   ynlist: IMsconfigGroupList[];
 
   currsongpublish: String;
-  currsongbuy: Number;
+  //currsongbuy: Number;
   loading = false;
 
   constructor(    
@@ -54,7 +54,14 @@ export class SongmgtComponent implements OnInit {
     private toastr: ToastrService,
     private datePipe: DatePipe,
     private songadminService: SongadminService,
-  ) { }
+  ) { 
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      // If it is a NavigationEnd event re-initalise the component
+      if (e instanceof NavigationEnd) {
+        this.ngOnInit();
+      }
+    });
+  }
 
   songname = new FormControl('',[Validators.nullValidator]);
   labelid = new FormControl('',[Validators.nullValidator]);
@@ -62,8 +69,7 @@ export class SongmgtComponent implements OnInit {
   albumname = new FormControl('',[Validators.nullValidator]);  
   albumyear = new FormControl('',[Validators.nullValidator]);
   songgenre = new FormControl('',[Validators.nullValidator]);
-  songpublish = new FormControl('',[Validators.nullValidator]);
-  songbuy = new FormControl('',[Validators.nullValidator]);
+  //songbuy = new FormControl('',[Validators.nullValidator]);
   status = new FormControl('', [Validators.nullValidator]);
 
   ngOnInit() {
@@ -75,8 +81,7 @@ export class SongmgtComponent implements OnInit {
       albumname: this.albumname,
       albumyear: this.albumyear,
       songgenre: this.songgenre,
-      songpublish: this.songpublish,
-      songbuy: this.songbuy,
+      //songbuy: this.songbuy,
       status: this.status
     });
     this.getMsconfigGroupList('CSTATUS');
@@ -90,8 +95,7 @@ export class SongmgtComponent implements OnInit {
       this.qalbumname = params['albumname'] || '';
       this.qalbumyear = params['albumyear'] || '';
       this.qsonggenre = params['songgenre'] || '';
-      this.qsongpublish = params['songpublish'] || '';
-      this.qsongbuy = params['songbuy'] || '';
+      //this.qsongbuy = params['songbuy'] || '';
       this.qstatus = params['status'] || '';
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
@@ -104,8 +108,7 @@ export class SongmgtComponent implements OnInit {
       payload.songname = this.qsongname;
       payload.albumyear = this.qalbumyear;
       payload.songgenre = this.qsonggenre;
-      payload.songpublish = this.qsongpublish;
-      payload.songbuy = this.qsongbuy;
+      //payload.songbuy = this.qsongbuy;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
       this.fetchReport(payload);
@@ -117,11 +120,15 @@ export class SongmgtComponent implements OnInit {
         albumname: this.qalbumname,
         albumyear: this.qalbumyear,
         songgenre: this.qsonggenre,
-        songpublish: this.qsongpublish,
-        songbuy: this.qsongbuy,
+        //songbuy: this.qsongbuy,
         status: this.qstatus
       });
     })
+  }
+  ngOnDestroy() {
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
   getMsconfigGroupList(groupid){
     this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
@@ -168,8 +175,7 @@ export class SongmgtComponent implements OnInit {
             albumname: this.reportForm.value.albumname,
             albumyear: this.reportForm.value.albumyear,
             songgenre: this.reportForm.value.songgenre,
-            songpublish: this.reportForm.value.songpublish,
-            songbuy: this.reportForm.value.songbuy,
+            //songbuy: this.reportForm.value.songbuy,
             status: this.reportForm.value.status,
             page: 1, 
             sortby: null }
@@ -180,7 +186,7 @@ export class SongmgtComponent implements OnInit {
 
   fetchReport(formval) {
     this.loading = true;
-    this.songadminService.getAggSongs(formval)
+    this.songadminService.getAggSongsnonpublish(formval)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;
@@ -200,8 +206,7 @@ export class SongmgtComponent implements OnInit {
         this.qalbumname = formval.albumname;
         this.qalbumyear = formval.albumyear;
         this.qsonggenre = formval.songgenre;
-        this.qsongpublish = formval.songpublish;
-        this.qsongbuy = formval.songbuy;
+        //this.qsongbuy = formval.songbuy;
         this.qstatus = formval.status;
         this.reportTitle = 'Songs Result';
         
@@ -212,8 +217,7 @@ export class SongmgtComponent implements OnInit {
           albumid: this.qalbumname,
           albumyear: this.qalbumyear,
           songgenre: this.qsonggenre,
-          songpublish: this.qsongpublish,
-          songbuy: this.qsongbuy,
+          //songbuy: this.qsongbuy,
           status: this.qstatus
         });
       }
@@ -230,8 +234,7 @@ export class SongmgtComponent implements OnInit {
           albumname: this.qalbumname,
           albumyear: this.qalbumyear,
           songgenre: this.qsonggenre,
-          songpublish: this.qsongpublish,
-          songbuy: this.qsongbuy,
+          //songbuy: this.qsongbuy,
           status: this.qstatus,
           page: page, 
           sortby: this.qsort }
@@ -265,8 +268,7 @@ export class SongmgtComponent implements OnInit {
           albumname: this.qalbumname,
           albumyear: this.qalbumyear,
           songgenre: this.qsonggenre,
-          songpublish: this.qsongpublish,
-          songbuy: this.qsongbuy,
+          //songbuy: this.qsongbuy,
           status: this.qstatus,
           page: this.qpage || 1, 
           sortby: this.qsort }
@@ -284,8 +286,7 @@ export class SongmgtComponent implements OnInit {
           albumname: this.qalbumname,
           albumyear: this.qalbumyear,
           songgenre: this.qsonggenre,
-          songpublish: this.qsongpublish,
-          songbuy: this.qsongbuy,
+          //songbuy: this.qsongbuy,
           status: this.qstatus,
           page: this.qpage || 1, 
           sortby: this.qsort }

@@ -1,0 +1,134 @@
+<div class="container pagecontainer">
+  <div class="page-header">
+      <h3>Albums</h3>
+  </div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  <div *ngIf="this.loading == false" class="panel panel-info">
+      <div class="panel-heading">
+          <h3 class="panel-title">Search Parameter</h3>
+      </div>
+      <div class="panel-body">
+          <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="labelid" class="col-sm-2 paddingsearch">Label</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                          <select class="form-control" [formControl]="labelid">
+                              <!-- <option ng-selected="true" value="">Select the artist</option> -->
+                              <option value="">Select the label</option>
+                              <option *ngFor="let label of userlist" [ngValue]="label._id">{{label.name}}</option>
+                          </select>
+                        </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                      <label for="albumname" class="col-sm-2 paddingsearch">Album</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="albumname" [formControl]="albumname" placeholder="Album Name">
+                      </div>
+                  </div>
+                </div>
+               <div class="row rowmarginsearch">   
+                  <div class="col-sm-6 col-md-6">
+                      <label for="artistname" class="col-sm-2 paddingsearch">Artist</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                      <label for="albumgenre" class="col-sm-2 paddingsearch">Genre</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                          <select class="form-control" [formControl]="albumgenre">
+                            <option ng-selected="true" value="">Select the genre</option>
+                            <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
+                         </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="albumyear" class="col-sm-2 paddingsearch">Year</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="albumyear" [formControl]="albumyear" placeholder="Album Year">
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                      <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                          <select class="form-control" [formControl]="status">
+                            <option ng-selected="true" value="">Select the status</option>
+                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label class="col-sm-2 paddingsearch"></label>
+                      <div class="col-sm-10">
+                          <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                      </div>
+                    </div>                
+              </div>
+          </form>
+      </div>
+  </div>
+  <div class="panel panel-danger" *ngIf="albums && totalrows < 1">
+      <div class="panel-heading">
+          <h3 class="panel-title">No album found</h3> 
+      </div>
+
+      <div class="panel-body">
+          It seems there is NO albums entered yet for the selected criteria.
+      </div>
+  </div>
+  <div class="panel panel-default" *ngIf="albums && totalrows > 0 && this.loading == false">
+      <div class="panel-heading">
+          <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th width="20%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
+                          <th width="20%">Label</th>
+                          <th width="20%">Artist</th>
+                          <th width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th>
+                          <th width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
+                          <th width="10%"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
+                          <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let albm of albums; let albIndex = index'>
+                          <td><a style="cursor:pointer" (click)="showAlbum(albm._id, albm.labelid)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
+                          <td>{{ albm.label }}</td>
+                          <td>{{ albm.artist }}</td>
+                          <td>{{ albm.albumyear}}</td>
+                          <td>{{ albm.genrevalue}}</td>
+                          <td class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
+                          <!-- <td>{{ albm.status}}</td> -->
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+
+          <div style="text-align:center" *ngIf="albums && totalrows > 10">
+              <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                      <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                          <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+
+      </div>
+  </div> 
+</div>

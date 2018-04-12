@@ -756,3 +756,271 @@ exports.getalbumlistbyartist = function(req, res, next){
         });
     }
 }
+
+exports.artistalbumliststats = function(req, res, next){
+    const labelid = req.body.labelid || req.query.labelid;
+    const albumname = req.body.albumname || req.query.albumname;
+    const artistid = req.body.artistid || req.query.artistid;
+    const albumyear = req.body.albumyear || req.query.albumyear;
+    const albumgenre = req.body.albumgenre || req.query.albumgenre;
+    const status = req.body.status || req.query.status;
+    const genregrp = 'GENRE';
+    const statusgrp = 'CSTATUS';
+    const msconfigsts = 'STSACT';
+    var totalcount;
+
+    let limit = parseInt(req.query.limit);
+    let page = parseInt(req.body.page || req.query.page);
+    let sortby = req.body.sortby || req.query.sortby;
+    let query = {};
+
+    if(!limit || limit < 1) {
+	limit = 10;
+    }
+
+    if(!page || page < 1) {
+	page = 1;
+    }
+
+    if(!sortby) {
+	sortby = 'albumname';
+    }
+
+    var offset = (page - 1) * limit;
+
+    if (!labelid) {
+        return res.status(422).send({ error: 'Parameter data is not correct or incompleted.'});
+	}else{
+        let keyredis = 'redis-user-artistalbumlist-'+artistid+labelid;
+        //check on redis
+        rediscli.hgetall(keyredis, function(err, obj) { 
+            if (obj) {
+                //console.log('key on redis...');
+                res.status(201).json({
+                    success: true, 
+                    data: JSON.parse(obj.album), 
+                    npage: obj.npage,
+                    totalcount: obj.totalcount
+                });
+            } else {
+                // returns albums records based on query
+                query = {labelid:labelid,
+                    albumname: new RegExp(albumname,'i'), 
+                    albumyear: new RegExp(albumyear,'i'),
+                    "genredetails.group": genregrp,
+                    "genredetails.status": msconfigsts,
+                    "statusdetails.group": statusgrp,
+                    "statusdetails.status": msconfigsts
+                    };
+                
+                if (artistid) {
+                    query = merge(query, {artistid:artistid});
+                }
+                if (albumgenre) {
+                    query = merge(query, {albumgenre: albumgenre});
+                }  
+                if (status) {
+                    query = merge(query, {status:status});
+                }
+
+                var options = {
+                    page: page,
+                    limit: limit,
+                    sortBy: sortby
+                }
+
+                var aggregate = Album.aggregate();        
+                var olookup = {
+                    from: 'msconfig',
+                    localField: 'albumgenre',
+                    foreignField: 'code',
+                    as: 'genredetails'
+                };    
+                var olookup1 = {
+                        from: 'msconfig',
+                        localField: 'status',
+                        foreignField: 'code',
+                        as: 'statusdetails'
+                    };
+
+                var ounwind = 'genredetails';
+                var ounwind1 = 'statusdetails';
+                var oproject = {
+                    albumname: 1,
+                    albumyear: 1,
+                    albumgenre:1,
+                    "genrevalue": "$genredetails.value",
+                    albumprice:1,
+                    status:1,
+                    "stsvalue": "$statusdetails.value",
+                    albumphotopath:1,
+                    albumphotoname:1        
+                };
+
+                //var osort = { "$sort": { sortby: 1}};
+                aggregate.lookup(olookup).unwind(ounwind);
+                aggregate.lookup(olookup1).unwind(ounwind1);  
+                aggregate.match(query);  
+                aggregate.project(oproject);
+
+                Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+                    if(err) 
+                    {
+                        res.status(400).json({
+                            success: false, 
+                            message: err.message
+                        });
+                    }
+                    else
+                    { 
+                        res.status(201).json({
+                            success: true, 
+                            data: results,
+                            npage: pageCount,
+                            totalcount: count
+                        });
+                        //set in redis
+                        rediscli.hmset(keyredis, [ 
+                            'album', JSON.stringify(results),
+                            'npage', pageCount,
+                            'totalcount', count ], function(err, reply) {
+                            if (err) {  console.log(err); }
+                            console.log(reply);
+                        });
+                    }
+                })
+            }        
+        });        
+	}
+}
+
+exports.albumaggstats = function(req, res, next){
+    const labelid = req.body.labelid || req.query.labelid;
+    const albumname = req.body.albumname || req.query.albumname;
+    const artistname = req.body.artistname || req.query.artistname;
+    const albumyear = req.body.albumyear || req.query.albumyear;
+    const albumgenre = req.body.albumgenre || req.query.albumgenre;
+    const status = req.body.status || req.query.status;
+    const msconfiggrp = 'GENRE';
+    const msconfigsts = 'STSACT';
+    var totalcount;
+
+    let limit = parseInt(req.query.limit);
+    let page = parseInt(req.body.page || req.query.page);
+    let sortby = req.body.sortby || req.query.sortby;
+    let query = {};
+
+    if(!limit || limit < 1) {
+	limit = 10;
+    }
+
+    if(!page || page < 1) {
+	page = 1;
+    }
+
+    // returns albums records based on query
+    query = { albumname: new RegExp(albumname,'i'), 
+        albumyear: new RegExp(albumyear,'i'),
+        "msconfigdetails.group": msconfiggrp,
+        "msconfigdetails.status": msconfigsts
+    };
+    if (labelid) {
+        query = merge(query, {labelid:labelid});
+    }      
+    if (artistname) {
+        query = merge(query, {"artistdetails.artistname": new RegExp(artistname,'i')});
+    }
+    if (albumgenre) {
+        query = merge(query, {albumgenre: albumgenre});
+    }  
+    if (status) {
+        query = merge(query, {status:status});
+    }
+    if(!sortby) {
+        var options = {
+            page: page,
+            limit: limit
+        }
+    } else {
+        var options = {
+            page: page,
+            limit: limit,
+            sortBy: sortby
+        }
+    }
+
+    //console.log(query);
+    var aggregate = Album.aggregate(); 
+    var olookuplb = {
+        from: 'user',
+        localField: 'objlabelid',
+        foreignField: '_id',
+        as: 'labeldetails'
+      };          
+    var olookup = {
+            from: 'artist',
+            localField: 'objartistid',
+            foreignField: '_id',
+            as: 'artistdetails'
+        };
+    var olookup1 = {
+        from: 'msconfig',
+        localField: 'albumgenre',
+        foreignField: 'code',
+        as: 'msconfigdetails'
+    };    
+    var ounwind = 'artistdetails';
+    var ounwind1 = 'msconfigdetails';
+    var ounwindlb = 'labeldetails';
+
+    var oproject = {
+        labelid:1,
+        "label": "$labeldetails.name",
+        artistid:1,
+        albumname: 1,
+        albumyear: 1,
+        albumgenre:1,
+        "genrevalue": "$msconfigdetails.value",
+        objartistid:1,
+        "artist": "$artistdetails.artistname",
+        albumprice:1,
+        status:1,
+        albumphotopath:1,
+        albumphotoname:1        
+    };
+
+        
+    aggregate.lookup(olookup).unwind(ounwind);
+    aggregate.lookup(olookup1).unwind(ounwind1);  
+    aggregate.match(query);  
+    aggregate.lookup(olookuplb).unwind(ounwindlb);
+    aggregate.project(oproject);
+
+    if(!sortby) {
+        var osort = {   "labeldetails.name":1, 
+                        "artistdetails.artistname": 1, 
+                        albumname:1, 
+                        albumgenre:1
+                    };
+        aggregate.sort(osort);        
+    }
+        
+    Album.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+        if(err) 
+        {
+            res.status(400).json({
+                success: false, 
+                message: err.message
+            });
+        }
+        else
+        { 
+            res.status(201).json({
+                success: true, 
+                data: results,
+                npage: pageCount,
+                totalcount: count
+            });
+        }
+    });
+}

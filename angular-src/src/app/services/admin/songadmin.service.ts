@@ -52,7 +52,28 @@ export class SongadminService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  
+  getAggSongsnonpublish(oSong) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
 
+    return this.http.post(`${this.adminurl}/api/songadm/aggreportnonpublish`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  
+  getPendingSongCount(userid, oSong) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`${this.adminurl}/api/songadm/pendingsongcount/${userid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
   getSong(songid) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

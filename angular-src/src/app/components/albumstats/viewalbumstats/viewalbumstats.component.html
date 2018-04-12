@@ -1,0 +1,113 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Album Details</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+          <form [formGroup]="albumForm" class="form-horizontal">
+            <div class="form-group">
+                <label for="albumname" class="col-sm-2 control-label">Name</label>
+                <div class="form-ele col-sm-10">{{ album?.albumname }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <div class="form-ele">{{ album?.albumname }}</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="artistname" class="col-sm-2 control-label">Artist</label>
+                <div class="form-ele col-sm-10">{{ artist?.artistname }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <div class="form-ele">{{ artist?.artistname }}</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="albumyear" class="col-sm-2 control-label">Year</label>
+                <div class="form-ele col-sm-10">{{ album?.albumyear }}
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                    <div class="form-ele">{{ album?.albumyear }}</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="albumgenre" class="col-sm-2 control-label">Genre</label>
+                <div class="col-sm-10" style="padding:0;margin:0;">
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                    <select class="form-control selectfontsize" [formControl]="albumgenre" disabled>
+                        <option *ngFor="let g of genre" [ngValue]="g.code">{{g.value}}</option>
+                    </select>
+                    <!-- <div class="form-ele">{{ album?.albumgenre }}</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="albumprice" class="col-sm-2 control-label">Price</label>
+                <div class="form-ele col-sm-10">{{ album?.albumprice | currency: 'IDR':'symbol-narrow' }}
+                    <!-- <div class="input-group-addon">Rp</div>
+                    <div class="form-ele">{{ album?.albumprice | currency: 'IDR':true }}</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-10" style="padding:0;margin:0;">
+                    <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                    <select class="form-control selectfontsize" [formControl]="status" disabled>
+                        <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                    </select>
+                    <!-- <div class="form-ele">{{ album?.status }}</div> -->
+                </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-4 thumbpadding">
+            <img src="{{ album?.albumphotopath }}" class="img-thumbnail thumbviewsize">
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-sm-12 dtlpadding" *ngIf="songs && totalrows > 0">
+                <div class="col-sm-12 col-md-12">
+                    <b>( TOTAL : {{ totalrows }} songs ) </b> 
+                </div><br>
+                <div class="col-sm-12 col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped" width="80%">
+                            <thead>
+                                <tr>
+                                    <th width="30%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
+                                    <th width="5%"><a style="cursor:pointer" (click)="sortSong('songpublish')">Published?</a></th>
+                                    <th width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Total Purchase</a></th>
+                                    <th width="10%" class="text-right"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
+                                    <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let song of songs; let songIndex = index'>
+                                    <td>{{ song.songname}}</td>
+                                    <td>{{ song.songpublish}}</td>
+                                    <td>{{ song.songbuy}}</td>
+                                    <td class="text-right">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
+                                    <td>{{ song.stsvalue}}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+            
+                    <div style="text-align:center" *ngIf="songs && totalrows > 10">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                                    <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+            
+                </div>
+            </div>      
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
+            </div>
+        </div>
+        <br>
+  </div>

@@ -70,6 +70,14 @@ import { EditconfigComponent } from './components/msconfig/editconfig/editconfig
 import { KxInfoDialogComponent } from './components/kx-info-dialog/kx-info-dialog.component';
 import { ForgotpasswordComponent } from './components/user/forgotpassword/forgotpassword.component';
 import { ResetuserpasswdComponent } from './components/user/resetuserpasswd/resetuserpasswd.component';
+import { ArtiststatsComponent } from './components/artiststats/artiststats.component';
+import { AlbumstatsComponent } from './components/albumstats/albumstats.component';
+import { SongstatsComponent } from './components/songstats/songstats.component';
+import { LabelstatsComponent } from './components/labelstats/labelstats.component';
+import { ViewlabelstatsComponent } from './components/labelstats/viewlabelstats/viewlabelstats.component';
+import { ViewartiststatsComponent } from './components/artiststats/viewartiststats/viewartiststats.component';
+import { ViewalbumstatsComponent } from './components/albumstats/viewalbumstats/viewalbumstats.component';
+import { ViewsongstatsComponent } from './components/songstats/viewsongstats/viewsongstats.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -78,37 +86,45 @@ const appRoutes: Routes = [
   {path:'postregistered/:nm', component:PostregisteredComponent},
   {path:'login', component:LoginComponent},
   {path:'about', component:AboutComponent},
-  {path:'logout', component:LogoutComponent, canActivate:[AuthGuard]},
-  {path:'profile', component:ProfileComponent, canActivate:[AuthGuard]},
-  {path:'password', component:PasswordComponent, canActivate:[AuthGuard]},
-  {path:'report', component:DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'addartist', canActivate: [ AuthGuard], component: AddartistComponent },
-  {path: 'editartist/:id', canActivate: [ AuthGuard], component: EditartistComponent },
-  {path: 'listartist', canActivate: [ AuthGuard], component: ListartistComponent },
-  {path: 'editartistphoto/:id', component:EditartistphotoComponent, canActivate:[AuthGuard]},
-  {path: 'viewartist/:id', canActivate: [ AuthGuard], component: ViewartistComponent },
-  {path: 'addalbum', canActivate: [ AuthGuard], component: AddalbumComponent },
-  {path: 'listalbum', canActivate: [ AuthGuard], component: ListalbumComponent },
-  {path: 'viewalbum/:id', canActivate: [ AuthGuard], component: ViewalbumComponent },
-  {path: 'editalbum/:id', canActivate: [ AuthGuard], component: EditalbumComponent },
-  {path: 'editalbumphoto/:id', component:EditalbumphotoComponent, canActivate:[AuthGuard]},
-  {path: 'addsong', canActivate: [ AuthGuard], component: AddsongComponent },
-  {path: 'listsong', canActivate: [ AuthGuard], component: ListsongComponent },
-  {path: 'editsongfiles/:id', component:EditsongfilesComponent, canActivate:[AuthGuard]},
-  {path: 'viewsong/:id', canActivate: [ AuthGuard], component: ViewsongComponent },
-  {path: 'editsong/:id', canActivate: [ AuthGuard], component: EditsongComponent },
-  {path: 'usermanagement', canActivate: [ AuthGuard], component: UsermgtComponent },
-  {path: 'viewlabel/:id', canActivate: [ AuthGuard], component: ViewlabelComponent },
-  {path: 'updateemail', canActivate: [ AuthGuard], component: UpdateemailComponent },
+  {path:'logout', component:LogoutComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path:'profile', component:ProfileComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path:'password', component:PasswordComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path:'report', component:DashboardComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'addartist', canActivate: [ AuthGuard], component: AddartistComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editartist/:id', canActivate: [ AuthGuard], component: EditartistComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'listartist', canActivate: [ AuthGuard], component: ListartistComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editartistphoto/:id', component:EditartistphotoComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'viewartist/:id', canActivate: [ AuthGuard], component: ViewartistComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'addalbum', canActivate: [ AuthGuard], component: AddalbumComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'listalbum', canActivate: [ AuthGuard], component: ListalbumComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewalbum/:id', canActivate: [ AuthGuard], component: ViewalbumComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editalbum/:id', canActivate: [ AuthGuard], component: EditalbumComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editalbumphoto/:id', component:EditalbumphotoComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'addsong', canActivate: [ AuthGuard], component: AddsongComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'listsong', canActivate: [ AuthGuard], component: ListsongComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editsongfiles/:id', component:EditsongfilesComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'viewsong/:id', canActivate: [ AuthGuard], component: ViewsongComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editsong/:id', canActivate: [ AuthGuard], component: EditsongComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'usermanagement', canActivate: [ AuthGuard], component: UsermgtComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewlabel/:id', canActivate: [ AuthGuard], component: ViewlabelComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'updateemail', canActivate: [ AuthGuard], component: UpdateemailComponent ,runGuardsAndResolvers: 'always'},
   {path: 'verify', component: EmailverificationComponent },
-  {path: 'songmanagement', canActivate: [ AuthGuard], component: SongmgtComponent },
-  {path: 'addconfig', canActivate: [ AuthGuard], component: AddconfigComponent },
-  {path: 'addgroup', canActivate: [ AuthGuard], component: AddgroupComponent },
-  {path: 'listconfig', canActivate: [ AuthGuard], component: ListconfigComponent },
-  {path: 'viewconfig/:id', canActivate: [ AuthGuard], component: ViewconfigComponent },
-  {path: 'editconfigfile/:id', component:EditconfigfileComponent, canActivate:[AuthGuard]},
-  {path: 'editconfig/:id', component:EditconfigComponent, canActivate:[AuthGuard]},
-  {path: 'resetpassword', component: ResetuserpasswdComponent }
+  {path: 'songmanagement', canActivate: [ AuthGuard], component: SongmgtComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'addconfig', canActivate: [ AuthGuard], component: AddconfigComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'addgroup', canActivate: [ AuthGuard], component: AddgroupComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'listconfig', canActivate: [ AuthGuard], component: ListconfigComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewconfig/:id', canActivate: [ AuthGuard], component: ViewconfigComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editconfigfile/:id', component:EditconfigfileComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'editconfig/:id', component:EditconfigComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'resetpassword', component: ResetuserpasswdComponent },
+  {path: 'labelstats', canActivate: [ AuthGuard], component: LabelstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'artiststats', canActivate: [ AuthGuard], component: ArtiststatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'albumstats', canActivate: [ AuthGuard], component: AlbumstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'songstats', canActivate: [ AuthGuard], component: SongstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewlabelstats/:id', canActivate: [ AuthGuard], component: ViewlabelstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewartiststats/:id', canActivate: [ AuthGuard], component: ViewartiststatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewalbumstats/:id', canActivate: [ AuthGuard], component: ViewalbumstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewsongstats/:id', canActivate: [ AuthGuard], component: ViewsongstatsComponent ,runGuardsAndResolvers: 'always'},
 ];
 
 @NgModule({
@@ -152,6 +168,14 @@ const appRoutes: Routes = [
     KxInfoDialogComponent,
     ForgotpasswordComponent,
     ResetuserpasswdComponent,
+    ArtiststatsComponent,
+    AlbumstatsComponent,
+    SongstatsComponent,
+    LabelstatsComponent,
+    ViewlabelstatsComponent,
+    ViewartiststatsComponent,
+    ViewalbumstatsComponent,
+    ViewsongstatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -172,7 +196,7 @@ const appRoutes: Routes = [
       secondaryColour: '#ce3b3b', 
       tertiaryColour: '#ce3b3b'
   }),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'})
   ],
   entryComponents: [
     KxInfoDialogComponent

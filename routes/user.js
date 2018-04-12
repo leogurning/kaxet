@@ -26,7 +26,7 @@ exports.signup = function(req, res, next){
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          // If user is not unique, return error
-         if (existingUser) {
+         if (existingUser && existingUser.status != 'STSRJCT') {
              return res.status(201).json({
                  success: false,
                  message: 'Username OR Email address already exists.'
@@ -241,30 +241,35 @@ exports.updateEmail = function(req, res, next){
     if (!newemail || !userid) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
     } else {
-        
-	User.findOne({ _id: userid }, function(err, user) {
+        User.findOne({ email: newemail, status:{ $ne: 'STSRJCT' }}, function(err, existingUser) {
             if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
-            if (user) {
-                rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
-                randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
-
-                user.email = newemail;
-                user.verified_email = 'N';
-                user.vhash = randhash;
-                user.save(function(err) {
+            if (existingUser) {
+                res.status(201).json({ success: false, message:'Error in Updating user email. The new email address has been used/linked to another user account.'});
+            } else {
+                User.findOne({ _id: userid }, function(err, user) {
                     if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
-
-                    res.status(201).json({
-                        success: true,
-                        message: 'Email updated successfully. Please verify your email.'
-                    });
-                    //Delete redis respective keys
-                    rediscli.del('redis-user-'+userid);                
-                });               
+                    if (user) {
+                        rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+                        randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+        
+                        user.email = newemail;
+                        user.verified_email = 'N';
+                        user.vhash = randhash;
+                        user.save(function(err) {
+                            if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+        
+                            res.status(200).json({
+                                success: true,
+                                message: 'Email updated successfully. Please verify your email.'
+                            });
+                            //Delete redis respective keys
+                            rediscli.del('redis-user-'+userid);                
+                        });               
+                    }
+                });
             }
-        });
+        });    
     }
-
 }
 
 exports.emailverification = function(req, res, next){
@@ -278,7 +283,7 @@ exports.emailverification = function(req, res, next){
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
-     User.findOne({ username: username }, function(err, existingUser) {
+     User.findOne({ username: username, status:'STSACT' }, function(err, existingUser) {
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          if (existingUser) {
@@ -325,7 +330,7 @@ exports.resetpassword = function(req, res, next){
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
-     User.findOne({ email: email }, function(err, existingUser) {
+     User.findOne({ email: email, status:'STSACT' }, function(err, existingUser) {
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          if (existingUser) {
@@ -360,7 +365,7 @@ exports.resetpassword = function(req, res, next){
             }
 
         } else {
-            res.status(201).json({ success: false, message:'Error in Finding user data. There is no user account linked to the email input.'});
+            res.status(201).json({ success: false, message:'Error in Finding user data. There is no active user account linked to the email input.'});
         }
     });
 }

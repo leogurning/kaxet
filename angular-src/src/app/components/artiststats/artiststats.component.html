@@ -1,0 +1,113 @@
+<div class="container pagecontainer">
+  <div class="page-header">
+      <h3>Artists</h3>
+  </div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  <div *ngIf="this.loading == false" class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Search Parameter</h3>
+    </div>
+    <div class="panel-body">
+        <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+            <div class="row rowmarginsearch">
+                <div class="col-sm-6 col-md-6">
+                    <label for="labelid" class="col-sm-2 paddingsearch">Label</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control" [formControl]="labelid">
+                            <!-- <option ng-selected="true" value="">Select the artist</option> -->
+                            <option value="">Select the label</option>
+                            <option *ngFor="let label of userlist" [ngValue]="label._id">{{label.name}}</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <label for="artistname" class="col-sm-2 paddingsearch">Name</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                        <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row rowmarginsearch">
+                <div class="col-sm-6 col-md-6">
+                    <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control" [formControl]="status">
+                            <option ng-selected="true" value="">Select the status</option>
+                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <label for="submit" class="col-sm-2 paddingsearch">      </label>
+                    <div class="col-sm-5">
+                        <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+  </div>
+  <div class="panel panel-danger" *ngIf="artists && totalrows < 1">
+      <div class="panel-heading">
+          <h3 class="panel-title">No artist found</h3> 
+      </div>
+
+      <div class="panel-body">
+          It seems there is NO artists entered yet for the selected criteria.
+      </div>
+  </div>
+
+  <div class="panel panel-default" *ngIf="artists && totalrows > 0 && this.loading == false">
+      <div class="panel-heading">
+          <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th width="40%"><a style="cursor:pointer" (click)="sortArtist('artistname')">Artist Name</a></th>
+                          <th width="40%"><a style="cursor:pointer" (click)="sortArtist('labelid')">Label</a></th>
+                          <th width="20%"><a style="cursor:pointer" (click)="sortArtist('status')">Status</a></th>
+                          <!-- <th width="20%">Action</th> -->
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let artst of artists; let artIndex = index'>
+                          <td><a style="cursor:pointer" (click)="showArtist(artst._id, artst.labelid)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ artst.artistname}}</a></td>
+                          <td>{{ artst.label}}</td>
+                          <td>{{ artst.stsvalue}}</td>
+<!--                           <td>
+                              <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editArtistPhoto(artst._id)">
+                                  <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Artist Photo"></span>
+                              </button>
+                              <button type="button" class="btn-xs btn-danger" aria-label="Edit" (click)="editArtist(artst._id)" data-toggle="tooltip" data-placement="top" title="Change Artist Data">
+                                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                              </button>
+                              <button type="button" class="btn-xs btn-primary" aria-label="Delete" (click)="confirmDel(artIndex, artst._id, artst.artistname,artst.artistphotoname)" data-toggle="tooltip" data-placement="top" title="Delete Artist">
+                                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                              </button>
+                          </td> -->
+                      </tr>
+                      
+                  </tbody>
+              </table>
+          </div>
+
+          <div style="text-align:center" *ngIf="artists && totalrows > 10">
+              <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                      <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                          <a [ngClass]="{'selected': qpage == idx + 1 }"class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+
+      </div>
+  </div>
+
+</div>

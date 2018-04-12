@@ -33,28 +33,45 @@
         </div>
     </div>
     <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
+      <div class="input-group col-xs-11 col-sm-8">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">Total Assets</h3>
             </div>
             <div class="panel-body">
-                <div class="col-sm-12" style="padding:0;margin:0"><i class="fa fa-angle-double-right"></i>  
-                    <b><i><a style="cursor:pointer" (click)="toArtists()">({{ this.totalrows }})</a></i></b> active artists
-                </div>        
-                <div class="col-sm-12" style="padding:0;margin:0"><i class="fa fa-angle-double-right"></i>  
-                    <b><i><a style="cursor:pointer" (click)="toAlbums()">({{ this.totalalbums }})</a></i></b> active albums
-                </div>        
-                <div class="col-sm-12" style="padding:0;margin:0"><i class="fa fa-angle-double-right"></i>  
-                    <b><i><a style="cursor:pointer" (click)="toSongs()">({{ this.totalsongs }})</a></i></b> active songs
-                </div>                    
+                <ul class="list-group">
+                    <a style="cursor:pointer" (click)="toArtists()" class="list-group-item borderless bordersideless">Total active artists <span class="badge"><b><i>{{ this.totalrows }}</i></b></span></a>
+                    <a style="cursor:pointer" (click)="toAlbums()" class="list-group-item bordersideless">Total active albums <span class="badge"><b><i>{{ this.totalalbums }}</i></b></span></a>
+                    <a style="cursor:pointer" (click)="toSongs()" class="list-group-item bordersideless">Total active songs <span class="badge"><b><i>{{ this.totalsongs }}</i></b></span></a>
+                </ul>
             </div>
-        </div>  
+        </div>
+      </div>  
+      <div class="col-xs-1 col-sm-4"></div>
 <!--         <label class="col-sm-2 control-label"></label>
         <div class="col-sm-7">
             You have <b><i><a style="cursor:pointer" (click)="toArtists()">({{ this.totalrows }})</a></i></b> active artists, <b><i><a style="cursor:pointer" (click)="toAlbums()">({{ this.totalalbums }})</a></i></b> active albums, 
             and <b><i><a style="cursor:pointer" (click)="toSongs()">({{ this.totalsongs }})</a></i></b> active songs.
         </div> -->
     </div>
+    
+    <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+        <div class="input-group col-xs-11 col-sm-8">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Approval Summary</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <a style="cursor:pointer" (click)="toLabelApv()" class="list-group-item borderless bordersideless">Total pending labels <span class="badge"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>
+                        <a style="cursor:pointer" (click)="toSongMgt()" class="list-group-item bordersideless">Total pending to publish songs <span class="badge"><b><i>{{ this.totalpendingsong }}</i></b></span></a>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+        <div class="col-xs-1 col-sm-4"></div>
+    </div>
+
     <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'">
         <label class="col-sm-2 control-label"></label>
         <div class="col-sm-7">

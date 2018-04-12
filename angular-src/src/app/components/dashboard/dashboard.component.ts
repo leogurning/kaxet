@@ -11,6 +11,8 @@ import { AuthService } from '../../services/auth.service';
 import { IUser } from '../../interface/user';
 import { UserService } from '../../services/user.service';
 import { Subscription } from 'rxjs/Subscription';
+import { UsermgtService } from '../../services/admin/usermgt.service';
+import { SongadminService } from '../../services/admin/songadmin.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,6 +28,8 @@ export class DashboardComponent implements OnInit {
   totalrows: number;
   totalalbums: number;
   totalsongs: number;
+  totalpendinglabel: number = 0;
+  totalpendingsong: number = 0;
 
   constructor(
     private authService: AuthService,
@@ -33,6 +37,8 @@ export class DashboardComponent implements OnInit {
     private albumService: AlbumService,
     private songService: SongService,
     private userService: UserService,
+    private labelmgtService: UsermgtService,
+    private songadminService: SongadminService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router
@@ -62,9 +68,14 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    let payload: any = {};
-    payload.status = 'STSACT';
-    this.fetchReport(this.userObj.userid, payload);
+    if (this.userObj.usertype === 'ADM') {
+      this.fetchReportAdm(this.userObj.userid);
+    }
+    if (this.userObj.usertype === 'LBL') {
+      let payload: any = {};
+      payload.status = 'STSACT';
+      this.fetchReport(this.userObj.userid, payload);
+    }
   }
 
   fetchReport(userid, formval) {
@@ -107,6 +118,38 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+  fetchReportAdm (userid) {
+    let payload: any = {};
+    payload.status = 'STSPEND';
+    payload.veremail = 'Y';
+    payload.usertype = 'LBL';
+    this.labelmgtService.getPendingLabelCount(userid, payload)
+    .subscribe(data => { 
+      if (data.success === false) {
+        if (data.errcode){
+          this.authService.logout();
+          this.router.navigate(['login']);
+        }
+        this.toastr.error(data.message);
+      } else {
+        this.totalpendinglabel = +data.totalcount;
+      }
+    });
+    let payloadsg: any = {};
+    payloadsg.songpublish = 'N';
+    this.songadminService.getPendingSongCount(userid, payloadsg)
+    .subscribe(data => { 
+      if (data.success === false) {
+        if (data.errcode){
+          this.authService.logout();
+          this.router.navigate(['login']);
+        }
+        this.toastr.error(data.message);
+      } else {
+        this.totalpendingsong = +data.totalcount;
+      }
+    });
+  }
 
   toArtists(): void {
     this.router.navigate(['/listartist']);
@@ -116,5 +159,11 @@ export class DashboardComponent implements OnInit {
   }
   toSongs(): void {
     this.router.navigate(['/listsong']);
+  }
+  toLabelApv(): void {
+    this.router.navigate(['/usermanagement']);
+  }
+  toSongMgt(): void {
+    this.router.navigate(['/songmanagement']);
   }
 }

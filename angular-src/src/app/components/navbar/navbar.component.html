@@ -32,12 +32,24 @@
                                 <li><a routerLink="listsong" routerLinkActive="active"><i class="fa fa-edit"></i>  Manage Song</a></li>
                             </ul>
                         </li>
-                        <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
-                            <a routerLink="usermanagement" [queryParams]="{status:'STSPEND',veremail:'Y'}" routerLinkActive="active">Labels</a>
-                        </li>
-                        <li *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
-                            <a routerLink="songmanagement" [queryParams]="{songpublish:'N'}" routerLinkActive="active"><i class="fa fa-music"></i>  Songs</a>
-                        </li>
+                        <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+                            <a style="cursor:pointer">Data</a>
+                            <ul class="sub-menu">
+                                <li><a routerLink="labelstats" routerLinkActive="active">Labels</a></li>
+                                <li><a routerLink="artiststats" routerLinkActive="active">Artists</a></li>
+                                <li><a routerLink="albumstats" routerLinkActive="active">Albums</a></li>
+                                <li><a routerLink="songstats" routerLinkActive="active">Songs</a></li>
+                            </ul>
+                        </li>                        
+                        <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+                            <a style="cursor:pointer">Pending Action</a>
+                            <ul class="sub-menu">
+                                <!-- <li><a routerLink="usermanagement" [queryParams]="{status:'STSPEND',veremail:'Y'}" routerLinkActive="active">Pending Labels</a></li> -->
+                                <li><a routerLink="usermanagement" routerLinkActive="active">Pending Labels</a></li>
+                                <!-- <li><a routerLink="songmanagement" [queryParams]="{songpublish:'N'}" routerLinkActive="active"><i class="fa fa-music"></i> Publish Songs</a></li> -->
+                                <li><a routerLink="songmanagement" routerLinkActive="active"><i class="fa fa-music"></i> Publish Songs</a></li>
+                            </ul>
+                        </li>                        
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
                                 <a routerLink="listconfig" routerLinkActive="active">Master Config  <i class="fa fa-wrench"></i></a>
                                 <ul class="sub-menu">

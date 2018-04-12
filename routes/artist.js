@@ -366,6 +366,112 @@ exports.artistaggreport = function(req, res, next){
     }
 }
 
+exports.artistaggstats = function(req, res, next){
+    const labelid = req.body.labelid || req.query.labelid;
+    const artistname = req.body.artistname || req.query.artistname;
+    const status = req.body.status || req.query.status;
+    const msconfiggrp = 'CSTATUS';
+    const msconfigsts = 'STSACT';
+    var totalcount;
+  
+    let limit = parseInt(req.query.limit);
+    let page = parseInt(req.body.page || req.query.page);
+    let sortby = req.body.sortby || req.query.sortby;
+    let query = {};
+    //let qmatch = {};
+  
+    if(!limit || limit < 1) {
+      limit = 10;
+    }
+  
+    if(!page || page < 1) {
+      page = 1;
+    }
+  
+  
+    // returns songs records based on query
+    query = { artistname: new RegExp(artistname,'i'),
+        "msconfigdetails.group": msconfiggrp,
+        "msconfigdetails.status": msconfigsts
+    };
+    
+    if (labelid) {
+        query = merge(query, {labelid:labelid});
+    }      
+    if (status) {
+        query = merge(query, {status:status});
+    }
+
+    if(!sortby) {
+        var options = {
+            page: page,
+            limit: limit
+        }
+    } else {
+        var options = {
+            page: page,
+            limit: limit,
+            sortBy: sortby
+        }
+    }
+
+    var aggregate = Artist.aggregate();     
+    var olookuplb = {
+        from: 'user',
+        localField: 'objlabelid',
+        foreignField: '_id',
+        as: 'labeldetails'
+      };   
+    var olookup = {
+        from: 'msconfig',
+        localField: 'status',
+        foreignField: 'code',
+        as: 'msconfigdetails'
+    };
+    var ounwind = 'msconfigdetails';
+    var ounwindlb = 'labeldetails';
+
+    var oproject = { 
+        _id:1,
+        labelid:1,
+        artistname: 1,
+        "label": "$labeldetails.name",
+        status:1,
+        "stsvalue": "$msconfigdetails.value",
+        artistphotopath:1,
+        artistphotoname:1,   
+        objlabelid:1, 
+    };
+        
+    
+    aggregate.lookup(olookup).unwind(ounwind);
+    aggregate.match(query);  
+    aggregate.lookup(olookuplb).unwind(ounwindlb);
+    aggregate.project(oproject);      
+    if(!sortby) {
+        var osort = { artistname: 1};
+        aggregate.sort(osort);
+    }
+    Artist.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+        if(err) 
+        {
+            res.status(400).json({
+                success: false, 
+                message: 'Ini Error: ' + err.message
+            });
+        }
+        else
+        { 
+            res.status(201).json({
+                success: true, 
+                data: results,
+                npage: pageCount,
+                totalcount: count
+            });
+        }
+    })
+}
+
 exports.getartistlist = function(req, res, next){
     const labelid = req.params.labelid;
     const status = 'STSACT';

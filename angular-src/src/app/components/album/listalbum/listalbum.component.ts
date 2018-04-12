@@ -88,7 +88,7 @@ export class ListalbumComponent implements OnInit {
        let payload: any = {};
       payload.status = this.qstatus;
       payload.artistid = this.qartistid;
-      payload.albumname = this.qalbumyear;
+      payload.albumname = this.qalbumname;
       payload.albumyear = this.qalbumyear;
       payload.albumgenre = this.qalbumgenre;
       payload.page = this.qpage;

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from '../../common/toastr.service';
 import { AuthService } from '../../services/auth.service';
@@ -15,6 +15,7 @@ import { IMsconfigGroupList } from '../../interface/msconfig';
   styleUrls: ['./usermgt.component.css']
 })
 export class UsermgtComponent implements OnInit {
+  navigationSubscription;
   reportForm: FormGroup
   userObj: any;
   reportTitle: String;
@@ -23,12 +24,8 @@ export class UsermgtComponent implements OnInit {
   pgCounter: number;
   qlabelname: String;
   qusername: String;
-  qstatus: String;
-  qveremail: String;
   qpage: number;
   qsort: String;
-  sts: IMsconfigGroupList[];
-  yn:IMsconfigGroupList[];
   loading = false;
 
   constructor(
@@ -40,66 +37,48 @@ export class UsermgtComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private datePipe: DatePipe
-  ) { }
-
+  ) { 
+    // subscribe to the router events. Store the subscription so we can
+    // unsubscribe later.
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      // If it is a NavigationEnd event re-initalise the component
+      if (e instanceof NavigationEnd) {
+        this.ngOnInit();
+      }
+    });
+  }
   name = new FormControl('',[Validators.nullValidator]);
   username = new FormControl('',[Validators.nullValidator]);
-  status = new FormControl('', [Validators.nullValidator]);
-  veremail = new FormControl('', [Validators.nullValidator]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
     this.reportForm = this.fb.group({
       name: this.name,
       username: this.username,
-      status: this.status,
-      veremail: this.veremail
     });
-    this.getMsconfigGroupList('STATUS');
-    this.getMsconfigGroupList('YRN');
+
     this.route.queryParams.forEach((params: Params) => {
       this.qlabelname = params['name'] || '';
       this.qusername = params['username'] || '';
-      this.qstatus = params['status'] || '';
-      this.qveremail = params['veremail'] || '';
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
 
       let payload: any = {};
-      payload.status = this.qstatus;
       payload.name = this.qlabelname;
       payload.username = this.qusername;
-      payload.veremail = this.qveremail;
       payload.page = this.qpage;
       payload.sortby = this.qsort;
       this.fetchReport(this.userObj.userid, payload);
-
       this.reportForm.patchValue({
         name: this.qlabelname,
-        username: this.qusername,
-        status: this.qstatus,
-        veremail: this.qveremail
+        username: this.qusername
       });
     })
   }
-
-  getMsconfigGroupList(groupid){
-    this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
-      if (data.success === true) {
-        if (data.data[0]) {
-          if (groupid == 'STATUS') {
-            this.sts = data.data;
-          }
-          if (groupid == 'YRN') {
-            this.yn = data.data;
-          } 
-          
-        } else {
-          this.sts = [{code:'', value:'Error ms config list'}];
-          this.yn = [{code:'', value:'Error ms config list'}];
-        }
-      }
-    });
+  ngOnDestroy() {
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
 
   getReport(formdata:any): void {
@@ -110,8 +89,6 @@ export class UsermgtComponent implements OnInit {
           queryParams: {
             name: this.reportForm.value.name,
             username: this.reportForm.value.username,
-            status: this.reportForm.value.status,
-            veremail: this.reportForm.value.veremail,
             page: 1, 
             sortby: null }
         }
@@ -121,7 +98,7 @@ export class UsermgtComponent implements OnInit {
 
   fetchReport(userid, formval) {
     this.loading = true;
-    this.labelmgtService.getUserLabels(formval)
+    this.labelmgtService.getPendingUserLabels(formval)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;
@@ -138,15 +115,10 @@ export class UsermgtComponent implements OnInit {
 
         this.qlabelname = formval.name;
         this.qusername = formval.username;
-        this.qstatus = formval.status;
-        this.qveremail = formval.veremail;
-        this.reportTitle = 'Labels Result';
-        
+        this.reportTitle = 'Pending Approval List ';
         this.reportForm.patchValue({
           name: this.qlabelname,
-          username: this.qusername,
-          status: this.qstatus,
-          veremail: this.qveremail
+          username: this.qusername
         });
       }
     });
@@ -158,8 +130,6 @@ export class UsermgtComponent implements OnInit {
         queryParams: {
           name: this.qlabelname,
           username: this.qusername,
-          status: this.qstatus,
-          veremail: this.qveremail,
           page: page, 
           sortby: this.qsort }
       }
@@ -188,8 +158,6 @@ export class UsermgtComponent implements OnInit {
         queryParams: { 
           name: this.qlabelname,
           username: this.qusername,
-          status: this.qstatus,
-          veremail: this.qveremail,
           page: this.qpage || 1, 
           sortby: this.qsort }
       }
@@ -203,26 +171,39 @@ export class UsermgtComponent implements OnInit {
       this.loading = false;
       this.toastr.warning('The label is already active.');
     } else {
-      if(confirm('Do you really want to activate this label: ' + labelname + ' record?')){
-        let payloadData: any = {};
-        payloadData.status = 'STSACT';
-        this.labelmgtService.updateLabelStatus(userid, payloadData)
-        .subscribe(data => {
-          if (data.success === false) {
-            this.loading = false;
-            if (data.errcode){
-              this.authService.logout();
-              this.router.navigate(['login']);
-            }
-            this.toastr.error(data.message);
-          } else {
-            this.loading = false;
-            this.fetchReport(this.userObj.userid, this.reportForm.value);
-            this.toastr.success(data.message);
-          }
-        });
-      } else {
+      if (status === 'STSRJCT') {
         this.loading = false;
+        this.toastr.warning('The label is already rejected.');
+      } else {
+        if(confirm('Do you really want to activate this label: ' + labelname + ' record?')){
+          let payloadData: any = {};
+          payloadData.status = 'STSACT';
+          this.labelmgtService.updateLabelStatus(userid, payloadData)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              if (data.errcode){
+                this.authService.logout();
+                this.router.navigate(['login']);
+              }
+              this.toastr.error(data.message);
+            } else {
+              this.loading = false;
+              this.toastr.success(data.message);
+              this.router.navigate(['usermanagement'],
+                {
+                  queryParams: { 
+                    name: this.qlabelname,
+                    username: this.qusername,
+                    page: this.qpage || 1, 
+                    sortby: this.qsort }
+                }
+              );
+            }
+          });
+        } else {
+          this.loading = false;
+        }
       }
     }
   }
@@ -230,13 +211,10 @@ export class UsermgtComponent implements OnInit {
   deactivateLabel(userid: string, labelname: string, status: string) {
     
     this.loading = true;
-    if (status != 'STSACT') {
-      this.loading = false;
-      this.toastr.warning('The label is already NOT active.');
-    } else {
-      if(confirm('Do you really want to deactivate this label: ' + labelname + ' record?')){
+    if (status === 'STSPEND') {
+      if(confirm('Do you really want to reject this label: ' + labelname + ' record?')){
         let payloadData: any = {};
-        payloadData.status = 'STSINACT';
+        payloadData.status = 'STSRJCT';
         this.labelmgtService.updateLabelStatus(userid, payloadData)
         .subscribe(data => {
           if (data.success === false) {
@@ -248,12 +226,55 @@ export class UsermgtComponent implements OnInit {
             this.toastr.error(data.message);
           } else {
             this.loading = false;
-            this.fetchReport(this.userObj.userid, this.reportForm.value);
             this.toastr.success(data.message);
+            this.router.navigate(['usermanagement'],
+                {
+                  queryParams: { 
+                    name: this.qlabelname,
+                    username: this.qusername,
+                    page: this.qpage || 1, 
+                    sortby: this.qsort }
+                }
+            );
           }
         });
       } else {
         this.loading = false;
+      }
+    } else {
+      if (status != 'STSACT') {
+        this.loading = false;
+        this.toastr.warning('The label is already NOT active.');
+      } else {
+        if(confirm('Do you really want to deactivate this label: ' + labelname + ' record?')){
+          let payloadData: any = {};
+          payloadData.status = 'STSINACT';
+          this.labelmgtService.updateLabelStatus(userid, payloadData)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              if (data.errcode){
+                this.authService.logout();
+                this.router.navigate(['login']);
+              }
+              this.toastr.error(data.message);
+            } else {
+              this.loading = false;
+              this.toastr.success(data.message);
+              this.router.navigate(['usermanagement'],
+                  {
+                    queryParams: { 
+                      name: this.qlabelname,
+                      username: this.qusername,
+                      page: this.qpage || 1, 
+                      sortby: this.qsort }
+                  }
+              );
+            }
+          });
+        } else {
+          this.loading = false;
+        }
       }
     }
   }
@@ -264,8 +285,6 @@ export class UsermgtComponent implements OnInit {
         queryParams: { 
           name: this.qlabelname,
           username: this.qusername,
-          status: this.qstatus,
-          veremail: this.qveremail,
           page: this.qpage || 1, 
           sortby: this.qsort }
       });

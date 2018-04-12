@@ -38,6 +38,28 @@ export class UsermgtService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  
+  getPendingUserLabels(oLabels) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`${this.adminurl}/api/pendinglabelreport`, JSON.stringify(oLabels), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
+  getPendingLabelCount(userid, oLabels) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`${this.adminurl}/api/pendinglabelcount/${userid}`, JSON.stringify(oLabels), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   updateLabelStatus(labelid, oLabel){
     let headers = new Headers();

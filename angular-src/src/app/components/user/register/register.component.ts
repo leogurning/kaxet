@@ -58,6 +58,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(data => {
         if (data.success === false) {
           this.loading = false;
+          this.registerForm.reset();
           this.toastr.error(data.message);
         } else {
           //this.toastr.success(data.message);
@@ -76,8 +77,9 @@ export class RegisterComponent implements OnInit {
               this.router.navigate([`postregistered/${nm}?${theForm.email}`]);
             }
           });    
+          this.registerForm.reset();
         }
-        this.registerForm.reset();
+        //this.registerForm.reset();
       });
 
     }

@@ -1,6 +1,6 @@
 <div class="container pagecontainer">
   <div class="page-header">
-      <h3>List Song</h3>
+      <h3>Publish Song</h3>
   </div>
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <div *ngIf="this.loading == false" class="panel panel-info">
@@ -65,45 +65,33 @@
               </div>
            </div>
           <div class="row rowmarginsearch">        
-              <div class="col-sm-6 col-md-6">
-                  <label for="songpublish" class="col-sm-2 paddingsearch">Publish?</label>
-                  <div class="col-sm-10">
-                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
-                      <select class="form-control" [formControl]="songpublish">
-                        <option ng-selected="true" value="">Select the option</option>
-                        <option *ngFor="let a of ynlist" [ngValue]="a.code">{{a.value}}</option>
-                      </select>
-                  </div>
-              </div>  
-              <div class="col-sm-6 col-md-6">
+<!--               <div class="col-sm-6 col-md-6">
                   <label for="songbuy" class="col-sm-2 paddingsearch">Buy?</label>
                   <div class="col-sm-10">
-                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                      <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
                       <select class="form-control" [formControl]="songbuy">
                         <option ng-selected="true" value="">Select the option</option>
                         <option *ngFor="let a of ynlist" [ngValue]="a.code">{{a.value}}</option>
                       </select>
                   </div>
-              </div>  
-          </div>
-          <div class="row rowmarginsearch">
+              </div>   -->
               <div class="col-sm-6 col-md-6">
-                  <label for="status" class="col-sm-2 paddingsearch">Status</label>
-                  <div class="col-sm-10">
-                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
-                      <select class="form-control" [formControl]="status">
-                        <option ng-selected="true" value="">Select the status</option>
-                        <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
-                      </select>
-                  </div>
-              </div>
-              <div class="col-sm-6 col-md-6">
-                  <label for="submit" class="col-sm-2 paddingsearch">     </label>
-                  <div class="col-sm-5">
-                    <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
-                  </div>
-              </div>                  
-          </div>
+                    <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control" [formControl]="status">
+                          <option ng-selected="true" value="">Select the status</option>
+                          <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                        <label for="submit" class="col-sm-2 paddingsearch">     </label>
+                        <div class="col-sm-5">
+                          <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+                        </div>
+                </div>                  
+            </div>
       </form>
     </div>
   </div>
@@ -127,15 +115,15 @@
                   <thead>
                       <tr>
                           <th width="20%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
-                          <th width="10%"><a style="cursor:pointer" (click)="sortSong('label')">Label</a></th>
-                          <th width="10%">Artist</th>
+                          <th width="15%"><a style="cursor:pointer" (click)="sortSong('label')">Label</a></th>
+                          <th width="20%">Artist</th>
                           <th width="20%">Album</th>
-                          <th width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Purchase</a></th>
-                          <th width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Publish?</a></th>
+                          <th width="5%"><a style="cursor:pointer" (click)="sortSong('songpublish')">Publish?</a></th>
+                          <th width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
                           <th width="5%">Preview</th>
                           <th width="5%">Song</th>
                           <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
-                          <th width="20%">Action</th>
+                          <th width="5%">Action</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -144,14 +132,14 @@
                           <td style="font-size:12px">{{ song.label }}</td>
                           <td style="font-size:12px">{{ song.artist }}</td>
                           <td style="font-size:12px">{{ song.album }}</td>
-                          <td class="text-right" style="font-size:12px">{{ song.songbuy}} x {{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
                           <td style="font-size:12px">{{ song.songpublish }}</td>
+                          <td class="text-right" style="font-size:12px">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
                           <td><a href="{{ song.songprvwpath }}" style="cursor:pointer;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a></td>
-                          <td><a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#11DFDF" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                          <td><a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a></td>
                           <!-- <td>{{ albm.status}}</td> -->
                           <td>
                                <a alt="Publish" style="cursor:pointer;float:center;color:#11DFDF" (click)="publishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Publish"><i class="fa fa-cloud-upload fa-2x"></i></a>
-                               <a alt="Unpublish" style="cursor:pointer;float:center;color:grey" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish"><i class="fa fa-cloud-download fa-2x"></i></a>
+                               <!-- <a alt="Unpublish" style="cursor:pointer;float:center;color:grey" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish"><i class="fa fa-cloud-download fa-2x"></i></a> -->
 <!--                               <button type="button" class="btn-xs btn-success" aria-label="Publish" (click)="publishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Publish Song">
                                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                               </button>

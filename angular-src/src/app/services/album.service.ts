@@ -71,6 +71,17 @@ export class AlbumService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  
+  getArtistAlbumsStats(userid, oAlbum) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/album/artistalbumreportstats/${userid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   getAggAlbums(userid, oAlbum) {
     let headers = new Headers();
@@ -83,6 +94,16 @@ export class AlbumService {
         .catch(this.handleError);
   }
 
+  getAggAlbumstats(userid, oAlbum) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/album/aggstats/${userid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
   getAlbum(albumid) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
