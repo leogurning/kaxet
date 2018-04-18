@@ -57,31 +57,31 @@
                         <table class="table table-hover">
                             <thead>
                                     <tr>
-                                        <th width="20%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>
-                                        <th width="30%"><a style="cursor:pointer" (click)="sortLabel('name')">Label Name</a></th>
-                                        <th width="20%"><a style="cursor:pointer" (click)="sortLabel('email')">Email</a></th>
+                                        <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortLabel('username')">User Name</a></th>
+                                        <th scope="col" width="30%"><a style="cursor:pointer" (click)="sortLabel('name')">Label Name</a></th>
+                                        <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortLabel('email')">Email</a></th>
                                         <!-- <th width="10%"><a style="cursor:pointer" (click)="sortLabel('verified_email')">Email Verified?</a></th> -->
-                                        <th width="10%"><a style="cursor:pointer" (click)="sortLabel('status')">Status</a></th>
-                                        <th width="20%">Action</th>
+                                        <th scope="col" width="10%"><a style="cursor:pointer" (click)="sortLabel('status')">Status</a></th>
+                                        <th scope="col" width="20%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor='let lbl of labellist; let lblIndex = index'>
-                                        <td><a style="cursor:pointer" (click)="showLabel(lbl._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ lbl.username}}</a></td>
-                                        <td>{{ lbl.name}}</td>
-                                        <td>{{ lbl.email}}</td>
+                                        <td scope="row" data-label="Username"><a style="cursor:pointer" (click)="showLabel(lbl._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ lbl.username}}</a></td>
+                                        <td data-label="Name">{{ lbl.name}}</td>
+                                        <td data-label="Email">{{ lbl.email}}</td>
                                         <!-- <td>{{ lbl.verified_email }}</td> -->
-                                        <td>{{ lbl.stsvalue}}</td>
-                                        <td>
+                                        <td data-label="Status">{{ lbl.stsvalue}}</td>
+                                        <td data-label="Action">
                                             <!-- <button type="button" class="btn-xs btn-success" aria-label="Activate" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Activate Label">
                                                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                                             </button> -->
-                                            <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Approve Label"><i class="fa fa-check fa-2x"></i></a>
+                                            <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="activateLabel(lbl._id, lbl.name, lbl.status, lbl.email,lbl.username)" data-toggle="tooltip" data-placement="top" title="Approve Label"><i class="fa fa-check fa-2x"></i></a>
                                             <!-- <button type="button" class="btn-xs btn-danger" aria-label="Deactivate" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Deactivate Label">
                                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                             </button> -->
                                             &nbsp;&nbsp;&nbsp;
-                                            <a style="cursor:pointer;color:red" aria-label="Reject" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Reject Label"><i class="fa fa-times fa-2x"></i></a>
+                                            <a style="cursor:pointer;color:red" aria-label="Reject" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status, lbl.email, lbl.username)" data-toggle="tooltip" data-placement="top" title="Reject Label"><i class="fa fa-times fa-2x"></i></a>
                                         </td>
                                     </tr>     
                                 </tbody>    

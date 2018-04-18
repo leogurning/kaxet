@@ -214,7 +214,7 @@ export class SongmgtComponent implements OnInit {
           labelid: this.qlabelid,
           songname: this.qsongname,
           artistname: this.qartistname,
-          albumid: this.qalbumname,
+          albumname: this.qalbumname,
           albumyear: this.qalbumyear,
           songgenre: this.qsonggenre,
           //songbuy: this.qsongbuy,

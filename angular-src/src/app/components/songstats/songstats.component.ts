@@ -204,7 +204,7 @@ export class SongstatsComponent implements OnInit {
           labelid: this.qlabelid,
           songname: this.qsongname,
           artistname: this.qartistname,
-          albumid: this.qalbumname,
+          albumname: this.qalbumname,
           albumyear: this.qalbumyear,
           songgenre: this.qsonggenre,
           songpublish: this.qsongpublish,

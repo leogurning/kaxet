@@ -88,6 +88,7 @@ var Globals = /** @class */ (function () {
         this.notifurl = 'https://apikxnotif-dot-kaxetd.appspot.com';
         //filetransferurl: String = 'http://localhost:2005';
         this.filetransferurl = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
+        this.kaxeturl = 'https://kaxetd.appspot.com';
     }
     Globals = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
@@ -115,67 +116,78 @@ var Globals = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_material_progress_bar__ = __webpack_require__("./node_modules/@angular/material/esm5/progress-bar.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angular2_fontawesome_angular2_fontawesome__ = __webpack_require__("./node_modules/angular2-fontawesome/angular2-fontawesome.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angular2_fontawesome_angular2_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_angular2_fontawesome_angular2_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_global__ = __webpack_require__("./src/app/app.global.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_artist_service__ = __webpack_require__("./src/app/services/artist.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_album_service__ = __webpack_require__("./src/app/services/album.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_admin_songadmin_service__ = __webpack_require__("./src/app/services/admin/songadmin.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_datepicker__ = __webpack_require__("./node_modules/ngx-bootstrap/datepicker/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_artist_service__ = __webpack_require__("./src/app/services/artist.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_album_service__ = __webpack_require__("./src/app/services/album.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_admin_songadmin_service__ = __webpack_require__("./src/app/services/admin/songadmin.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -194,9 +206,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 /* Global Variables */
 
 /* Services Modules */
+
+
 
 
 
@@ -258,52 +273,67 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
+
+
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_27__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_61__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
-    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_48__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_26__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_31__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_30__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_29__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_28__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_32__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_33__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_34__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_37__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_35__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_42__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_45__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_50__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_52__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
-    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_56__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_57__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_58__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_62__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
-    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_66__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_63__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_64__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_65__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_67__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_30__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_64__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
+    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_51__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_29__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_34__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_33__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_32__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_31__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_35__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_40__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_45__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_48__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_50__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_55__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
+    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_56__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_57__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_60__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_61__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_65__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
+    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_66__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_67__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -311,53 +341,61 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_24__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__components_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__components_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__components_user_password_password_component__["a" /* PasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__components_user_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__components_user_logout_component__["a" /* LogoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__components_about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_41__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_42__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_43__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_44__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_45__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-                __WEBPACK_IMPORTED_MODULE_46__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_47__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_48__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
-                __WEBPACK_IMPORTED_MODULE_49__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_50__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
-                __WEBPACK_IMPORTED_MODULE_51__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
-                __WEBPACK_IMPORTED_MODULE_52__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
-                __WEBPACK_IMPORTED_MODULE_53__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_55__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
-                __WEBPACK_IMPORTED_MODULE_56__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_57__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_58__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_60__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_61__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_62__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
-                __WEBPACK_IMPORTED_MODULE_63__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_64__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_65__components_songstats_songstats_component__["a" /* SongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_66__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_67__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_68__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_69__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_70__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__components_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__components_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__components_user_password_password_component__["a" /* PasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__components_user_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_user_logout_component__["a" /* LogoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__components_about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_42__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_43__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_44__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_45__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_46__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_47__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+                __WEBPACK_IMPORTED_MODULE_49__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_50__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
+                __WEBPACK_IMPORTED_MODULE_52__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
+                __WEBPACK_IMPORTED_MODULE_56__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_57__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_60__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_63__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_64__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_65__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
+                __WEBPACK_IMPORTED_MODULE_66__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_67__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_68__components_songstats_songstats_component__["a" /* SongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_69__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_70__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_71__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_72__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_73__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_74__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_75__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_76__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_78__components_transaction_transaction_component__["a" /* TransactionComponent */],
+                __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_80__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_81__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -378,26 +416,30 @@ var AppModule = /** @class */ (function () {
                     secondaryColour: '#ce3b3b',
                     tertiaryColour: '#ce3b3b'
                 }),
+                __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_datepicker__["a" /* BsDatepickerModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["d" /* RouterModule */].forRoot(appRoutes, { onSameUrlNavigation: 'reload' })
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_60__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */]
+                __WEBPACK_IMPORTED_MODULE_63__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_81__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_10__app_global__["a" /* Globals */],
-                __WEBPACK_IMPORTED_MODULE_22__common_toastr_service__["a" /* ToastrService */],
-                __WEBPACK_IMPORTED_MODULE_11__services_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */],
-                __WEBPACK_IMPORTED_MODULE_13__services_user_service__["a" /* UserService */],
-                __WEBPACK_IMPORTED_MODULE_14__services_artist_service__["a" /* ArtistService */],
-                __WEBPACK_IMPORTED_MODULE_15__services_album_service__["a" /* AlbumService */],
-                __WEBPACK_IMPORTED_MODULE_16__services_song_service__["a" /* SongService */],
-                __WEBPACK_IMPORTED_MODULE_23__angular_common__["DatePipe"],
-                __WEBPACK_IMPORTED_MODULE_17__services_admin_usermgt_service__["a" /* UsermgtService */],
-                __WEBPACK_IMPORTED_MODULE_18__services_admin_songadmin_service__["a" /* SongadminService */],
-                __WEBPACK_IMPORTED_MODULE_19__services_admin_msconfig_service__["a" /* MsconfigService */],
-                __WEBPACK_IMPORTED_MODULE_20__services_notif_service__["a" /* NotifService */],
-                __WEBPACK_IMPORTED_MODULE_21__services_filetransfer_service__["a" /* FiletransferService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_24__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */],
+                __WEBPACK_IMPORTED_MODULE_25__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_12__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */],
+                __WEBPACK_IMPORTED_MODULE_14__services_user_service__["a" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_15__services_artist_service__["a" /* ArtistService */],
+                __WEBPACK_IMPORTED_MODULE_16__services_album_service__["a" /* AlbumService */],
+                __WEBPACK_IMPORTED_MODULE_17__services_song_service__["a" /* SongService */],
+                __WEBPACK_IMPORTED_MODULE_26__angular_common__["DatePipe"],
+                __WEBPACK_IMPORTED_MODULE_18__services_admin_usermgt_service__["a" /* UsermgtService */],
+                __WEBPACK_IMPORTED_MODULE_19__services_admin_songadmin_service__["a" /* SongadminService */],
+                __WEBPACK_IMPORTED_MODULE_20__services_admin_msconfig_service__["a" /* MsconfigService */],
+                __WEBPACK_IMPORTED_MODULE_21__services_notif_service__["a" /* NotifService */],
+                __WEBPACK_IMPORTED_MODULE_22__services_filetransfer_service__["a" /* FiletransferService */],
+                __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__["a" /* SongpurchaseService */],
+                __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__["a" /* TransactionService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -425,6 +467,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ToastrService = /** @class */ (function () {
     function ToastrService() {
+        toastr.options = {
+            //timeOut : 0,
+            //extendedTimeOut : 100,
+            //tapToDismiss : true,
+            //debug : false,
+            //fadeOut: 10,
+            positionClass: "toast-top-right"
+        };
     }
     ToastrService.prototype.success = function (message, title) {
         toastr.success(message, title);
@@ -509,7 +559,7 @@ module.exports = ""
 /***/ "./src/app/components/album/addalbum/addalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputartist [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select #inputgenre [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputartist [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select #inputgenre [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n            <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -577,6 +627,7 @@ var AddalbumComponent = /** @class */ (function () {
         this.progressvalue = 0;
         this.getArtistList(this.userObj.userid);
         this.getMsconfigGroupList('GENRE');
+        this.getMsconfigVal('IMGSIZE', 'FSIZE');
         this.albumid = '';
         this.addAlbumForm = this.fb.group({
             artistid: this.artistid,
@@ -598,6 +649,19 @@ var AddalbumComponent = /** @class */ (function () {
                 }
                 else {
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        });
+    };
+    AddalbumComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
                 }
             }
         });
@@ -677,8 +741,23 @@ var AddalbumComponent = /** @class */ (function () {
         }
     };
     AddalbumComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        console.log('content file: ' + this.filesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("image/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.filesToUpload = fileInput.target.files;
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+                this.albumimageVar.nativeElement.value = "";
+            }
+        }
+        else {
+            alert('Error file type. You must input image file type.');
+            this.albumimageVar.nativeElement.value = "";
+        }
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('inputimg'),
@@ -921,7 +1000,7 @@ module.exports = ""
 /***/ "./src/app/components/album/editalbumphoto/editalbumphoto.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Photo</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"updatePhoto(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n        <div class=\"form-group\">\n            <!-- <label for=\"albumimage\" class=\"col-sm-2 control-label\"></label> -->\n            <div class=\"col-sm-12\">\n                <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            </div>\n        </div>\n        <div class=\"form-group\">   \n            <!-- <label class=\"col-sm-2 control-label\"></label> -->\n            <div class=\"col-sm-12\">\n                <div class=\"input-group\">\n                    <label class=\"input-group-btn\">\n                        <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                            Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" style=\"display:none\">\n                        </span>\n                    </label>\n                    <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n                </div>\n            </div>            \n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n            <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n            <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n          </div>\n        <div class=\"form-group\">\n            <div class=\"col-sm-12\">\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Photo</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"updatePhoto(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n        <div class=\"form-group\">\n            <!-- <label for=\"albumimage\" class=\"col-sm-2 control-label\"></label> -->\n            <div class=\"col-sm-12\">\n                <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            </div>\n        </div>\n        <div class=\"form-group\">   \n            <!-- <label class=\"col-sm-2 control-label\"></label> -->\n            <div class=\"col-sm-12\">\n                <label class=\"control-label\" style=\"color:red;\"><sup>* <u>FILE SIZE (MAX {{ +this.maxfilesize?.value/1000 }} KB)</u></sup></label>    \n                <div class=\"input-group\">\n                    <label class=\"input-group-btn\">\n                        <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                            Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" style=\"display:none\">\n                        </span>\n                    </label>\n                    <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n                </div>\n            </div>            \n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n            <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n            <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n          </div>\n        <div class=\"form-group\">\n            <div class=\"col-sm-12\">\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -938,6 +1017,7 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -955,8 +1035,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EditalbumphotoComponent = /** @class */ (function () {
-    function EditalbumphotoComponent(fb, authService, albumService, route, router, toastr, ftService, globals) {
+    function EditalbumphotoComponent(fb, authService, albumService, route, router, toastr, ftService, globals, msconfigService) {
         this.fb = fb;
         this.authService = authService;
         this.albumService = albumService;
@@ -965,6 +1046,7 @@ var EditalbumphotoComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.ftService = ftService;
         this.globals = globals;
+        this.msconfigService = msconfigService;
         this.filesToUpload = [];
         this.loading = false;
         this.progressvalue = 0;
@@ -976,6 +1058,7 @@ var EditalbumphotoComponent = /** @class */ (function () {
         this.userObj = this.authService.currentUser;
         this.albumuploadpath = this.globals.albumuploadpath;
         this.progressvalue = 0;
+        this.getMsconfigVal('IMGSIZE', 'FSIZE');
         this.albumForm = this.fb.group({
             albumphotopath: this.albumphotopath,
             albumphotoname: this.albumphotoname
@@ -983,6 +1066,19 @@ var EditalbumphotoComponent = /** @class */ (function () {
         this.route.params.subscribe(function (params) {
             _this.albumid = params['id'];
             _this.getAlbum(_this.albumid);
+        });
+    };
+    EditalbumphotoComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
+                }
+            }
         });
     };
     EditalbumphotoComponent.prototype.getAlbum = function (id) {
@@ -1009,11 +1105,25 @@ var EditalbumphotoComponent = /** @class */ (function () {
         });
     };
     EditalbumphotoComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        this.newfile = this.filesToUpload[0]['name'];
+        var files = fileInput.target.files;
         //console.log('content file: ' + this.filesToUpload);
-        this.progressvalue = 0;
-        this.uploadNewPhoto(this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("image/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.filesToUpload = fileInput.target.files;
+                this.newfile = this.filesToUpload[0]['name'];
+                //console.log('content file: ' + this.filesToUpload);
+                this.progressvalue = 0;
+                this.uploadNewPhoto(this.filesToUpload);
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+            }
+        }
+        else {
+            alert('Error file type. You must input image file type.');
+        }
     };
     EditalbumphotoComponent.prototype.uploadNewPhoto = function (newFileData) {
         var _this = this;
@@ -1091,7 +1201,8 @@ var EditalbumphotoComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
-            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
     ], EditalbumphotoComponent);
     return EditalbumphotoComponent;
 }());
@@ -1110,7 +1221,7 @@ module.exports = ""
 /***/ "./src/app/components/album/listalbum/listalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Name</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistid\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"artistid\">\n                                <option ng-selected=\"true\" value=\"\">Select the artist</option>\n                                <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                            </select>\n                          </div>\n                    </div>                \n\n                </div>\n               <div class=\"row rowmarginsearch\">   \n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"albumgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                         </select>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                        </div>\n                    </div>\n              </div>\n              <div class=\"row rowmarginsearch\">\n\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-2 paddingsearch\"></label>\n                    <div class=\"col-sm-10\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                  </div>                \n              </div>\n          </form>\n      </div>\n  </div>\n\n  <div class=\"panel panel-danger\" *ngIf=\"albums && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No album found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any albums for the selected criteria. Please add the album <a style=\"cursor:pointer\" (click)=\"toaddAlbums()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"albums && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <!-- <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th> -->\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let albm of albums; let albIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ albm.albumname}}</a></td>\n                          <td>{{ albm.artist }}</td>\n                          <!-- <td>{{ albm.albumyear}}</td> -->\n                          <td>{{ albm.genrevalue}}</td>\n                          <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editAlbumPhoto(albm._id)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Photo\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(albIndex, albm._id, albm.albumname, albm.albumphotoname )\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Album\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                      \n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div>  \n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Name</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistid\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"artistid\">\n                                <option ng-selected=\"true\" value=\"\">Select the artist</option>\n                                <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                            </select>\n                          </div>\n                    </div>                \n\n                </div>\n               <div class=\"row rowmarginsearch\">   \n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"albumgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                         </select>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                        </div>\n                    </div>\n              </div>\n              <div class=\"row rowmarginsearch\">\n\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-2 paddingsearch\"></label>\n                    <div class=\"col-sm-10\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                  </div>                \n              </div>\n          </form>\n      </div>\n  </div>\n\n  <div class=\"panel panel-danger\" *ngIf=\"albums && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No album found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any albums for the selected criteria. Please add the album <a style=\"cursor:pointer\" (click)=\"toaddAlbums()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"albums && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                          <th width=\"20%\" scope=\"col\">Artist</th>\n                          <!-- <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th> -->\n                          <th width=\"9%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                          <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\" scope=\"col\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let albm of albums; let albIndex = index'>\n                          <td scope=\"row\" data-label=\"Album Name\"><a style=\"cursor:pointer\" (click)=\"showAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ albm.albumname}}</a></td>\n                          <td data-label=\"Artist\">{{ albm.artist }}</td>\n                          <!-- <td>{{ albm.albumyear}}</td> -->\n                          <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                          <td data-label=\"Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editAlbumPhoto(albm._id)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Photo\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editAlbum(albm._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Album Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(albIndex, albm._id, albm.albumname, albm.albumphotoname )\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Album\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                      \n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div>  \n</div>"
 
 /***/ }),
 
@@ -1357,7 +1468,7 @@ var ListalbumComponent = /** @class */ (function () {
         var payload = {};
         payload.albumid = albumid;
         this.loading = true;
-        this.songService.getSongCount(this.userObj.userid, payload)
+        this.songService.getSongList(this.userObj.userid, payload)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
@@ -1471,7 +1582,7 @@ module.exports = ""
 /***/ "./src/app/components/album/viewalbum/viewalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-8\">\n          <form [formGroup]=\"albumForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"albumname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n                <div class=\"form-ele col-sm-10\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumyear\" class=\"col-sm-2 control-label\">Year</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumyear }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumyear }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"albumgenre\" disabled>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.albumgenre }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumprice | currency: 'IDR':'symbol-narrow' }}\n                    <!-- <div class=\"input-group-addon\">Rp</div>\n                    <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                        <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.status }}</div> -->\n                </div>\n            </div>\n          </form>\n        </div>\n        <div class=\"col-sm-4 thumbpadding\">\n            <img src=\"{{ album?.albumphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n        </div>\n    </div>\n\n        <div class=\"row\">\n            <div class=\"col-sm-12 dtlpadding\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-12\">\n                    <b>( TOTAL : {{ totalrows }} songs ) </b> \n                </div><br>\n                <div class=\"col-sm-12 col-md-12\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"80%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                    <td>{{ song.stsvalue}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n        <br>\n  </div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-8\">\n          <form [formGroup]=\"albumForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"albumname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n                <div class=\"form-ele col-sm-10\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumyear\" class=\"col-sm-2 control-label\">Year</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumyear }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumyear }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"albumgenre\" disabled>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.albumgenre }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumprice | currency: 'IDR':'symbol-narrow' }}\n                    <!-- <div class=\"input-group-addon\">Rp</div>\n                    <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                        <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.status }}</div> -->\n                </div>\n            </div>\n          </form>\n        </div>\n        <div class=\"col-sm-4 thumbpadding\">\n            <img src=\"{{ album?.albumphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n        </div>\n    </div>\n\n        <div class=\"row\">\n            <div class=\"dtlpadding\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-md-11 col-lg-11\">\n                        <b>( TOTAL : {{ totalrows }} songs ) </b><br> \n                    <!-- <div class=\"table-responsive\"> -->\n                        <table class=\"table table-striped\">\n                            <thead>\n                                <tr>\n                                    <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                                    <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td scope=\"row\" data-label=\"Song Title\">{{ song.songname}}</td>\n                                    <td data-label=\"Publish\">{{ song.songpublish}}</td>\n                                    <td data-label=\"Purchase\">{{ song.songbuy}}</td>\n                                    <td data-label=\"Song Price\" class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                    <td data-label=\"Status\">{{ song.stsvalue}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    <!-- </div> -->\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n                <div class=\"col-md-1 col-lg-1\"></div>\n            </div>      \n        </div>\n\n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n        <br>\n  </div>\n"
 
 /***/ }),
 
@@ -1696,7 +1807,7 @@ module.exports = ""
 /***/ "./src/app/components/albumstats/albumstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Albums</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"labelid\">\n                              <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                              <option value=\"\">Select the label</option>\n                              <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                          </select>\n                        </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                      </div>\n                  </div>\n                </div>\n               <div class=\"row rowmarginsearch\">   \n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"albumgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                         </select>\n                      </div>\n                  </div>\n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                  </div>\n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-2 paddingsearch\"></label>\n                      <div class=\"col-sm-10\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                      </div>\n                    </div>                \n              </div>\n          </form>\n      </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"albums && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No album found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems there is NO albums entered yet for the selected criteria.\n      </div>\n  </div>\n  <div class=\"panel panel-default\" *ngIf=\"albums && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                          <th width=\"20%\">Label</th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let albm of albums; let albIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showAlbum(albm._id, albm.labelid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ albm.albumname}}</a></td>\n                          <td>{{ albm.label }}</td>\n                          <td>{{ albm.artist }}</td>\n                          <td>{{ albm.albumyear}}</td>\n                          <td>{{ albm.genrevalue}}</td>\n                          <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                      </tr>\n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div> \n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Albums</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"labelid\">\n                              <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                              <option value=\"\">Select the label</option>\n                              <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                          </select>\n                        </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                      </div>\n                  </div>\n                </div>\n               <div class=\"row rowmarginsearch\">   \n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"albumgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                         </select>\n                      </div>\n                  </div>\n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                  </div>\n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-2 paddingsearch\"></label>\n                      <div class=\"col-sm-10\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                      </div>\n                    </div>                \n              </div>\n          </form>\n      </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"albums && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No album found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems there is NO albums entered yet for the selected criteria.\n      </div>\n  </div>\n  <div class=\"panel panel-default\" *ngIf=\"albums && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                          <th scope=\"col\" width=\"20%\">Label</th>\n                          <th scope=\"col\" width=\"20%\">Artist</th>\n                          <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                          <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                          <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let albm of albums; let albIndex = index'>\n                          <td scope=\"row\" data-label=\"Album Name\"><a style=\"cursor:pointer\" (click)=\"showAlbum(albm._id, albm.labelid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ albm.albumname}}</a></td>\n                          <td data-label=\"Label\">{{ albm.label }}</td>\n                          <td data-label=\"Artist\">{{ albm.artist }}</td>\n                          <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                          <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                          <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                      </tr>\n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div> \n</div>"
 
 /***/ }),
 
@@ -1972,7 +2083,7 @@ module.exports = ""
 /***/ "./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-8\">\n          <form [formGroup]=\"albumForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"albumname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n                <div class=\"form-ele col-sm-10\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumyear\" class=\"col-sm-2 control-label\">Year</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumyear }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumyear }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"albumgenre\" disabled>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.albumgenre }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumprice | currency: 'IDR':'symbol-narrow' }}\n                    <!-- <div class=\"input-group-addon\">Rp</div>\n                    <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                        <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.status }}</div> -->\n                </div>\n            </div>\n          </form>\n        </div>\n        <div class=\"col-sm-4 thumbpadding\">\n            <img src=\"{{ album?.albumphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n        </div>\n    </div>\n\n        <div class=\"row\">\n            <div class=\"col-sm-12 dtlpadding\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-sm-12 col-md-12\">\n                    <b>( TOTAL : {{ totalrows }} songs ) </b> \n                </div><br>\n                <div class=\"col-sm-12 col-md-12\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"80%\">\n                            <thead>\n                                <tr>\n                                    <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td>{{ song.songname}}</td>\n                                    <td>{{ song.songpublish}}</td>\n                                    <td>{{ song.songbuy}}</td>\n                                    <td class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                    <td>{{ song.stsvalue}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n            </div>      \n        </div>\n\n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n        <br>\n  </div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Album Details</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-8\">\n          <form [formGroup]=\"albumForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"albumname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist</label>\n                <div class=\"form-ele col-sm-10\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumyear\" class=\"col-sm-2 control-label\">Year</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumyear }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ album?.albumyear }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"albumgenre\" disabled>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.albumgenre }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n                <div class=\"form-ele col-sm-10\">{{ album?.albumprice | currency: 'IDR':'symbol-narrow' }}\n                    <!-- <div class=\"input-group-addon\">Rp</div>\n                    <div class=\"form-ele\">{{ album?.albumprice | currency: 'IDR':true }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                        <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ album?.status }}</div> -->\n                </div>\n            </div>\n          </form>\n        </div>\n        <div class=\"col-sm-4 thumbpadding\">\n            <img src=\"{{ album?.albumphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n        </div>\n    </div>\n\n        <div class=\"row\">\n            <div class=\"dtlpadding\" *ngIf=\"songs && totalrows > 0\">\n                <div class=\"col-md-11 col-lg-11\">\n                    <b>( TOTAL : {{ totalrows }} songs ) </b>\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-striped\" width=\"80%\">\n                            <thead>\n                                <tr>\n                                    <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                                    <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Published?</a></th>\n                                    <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Total Purchase</a></th>\n                                    <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                                    <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor='let song of songs; let songIndex = index'>\n                                    <td scope=\"row\" data-label=\"Song Title\">{{ song.songname}}</td>\n                                    <td data-label=\"Publish\">{{ song.songpublish}}</td>\n                                    <td data-label=\"Purchase\">{{ song.songbuy}}</td>\n                                    <td data-label=\"Song Price\" class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                    <td data-label=\"Status\">{{ song.stsvalue}}</td>\n                                </tr>\n                                \n                            </tbody>\n                        </table>\n                    </div>\n            \n                    <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                    </div>\n            \n                </div>\n                <div class=\"col-md-1 col-lg-1\"></div>\n            </div>      \n        </div>\n\n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n        <br>\n  </div>\n"
 
 /***/ }),
 
@@ -2202,7 +2313,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/addartist/addartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-2 control-label\">  </label>\n       <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n       <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n            <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-2 control-label\">  </label>\n       <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n       <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -2220,6 +2331,7 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2238,8 +2350,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AddartistComponent = /** @class */ (function () {
-    function AddartistComponent(fb, authService, artistService, ftService, route, router, toastr, datePipe, globals) {
+    function AddartistComponent(fb, authService, artistService, ftService, route, router, toastr, datePipe, globals, msconfigService) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
@@ -2249,6 +2362,7 @@ var AddartistComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.datePipe = datePipe;
         this.globals = globals;
+        this.msconfigService = msconfigService;
         //status: any = ['active', 'inactive'];
         this.filesToUpload = [];
         this.loading = false;
@@ -2259,12 +2373,26 @@ var AddartistComponent = /** @class */ (function () {
         this.userObj = this.authService.currentUser;
         this.artistid = '';
         this.artistuploadpath = this.globals.artistuploadpath;
+        this.getMsconfigVal('IMGSIZE', 'FSIZE');
         this.progressvalue = 0;
         this.addArtistForm = this.fb.group({
             artistname: this.artistname,
             artistimage: this.filesToUpload,
             artistphotopath: this.artistphotopath,
             artistphotoname: this.artistphotoname
+        });
+    };
+    AddartistComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
+                }
+            }
         });
     };
     AddartistComponent.prototype.addArtist = function (formdata) {
@@ -2325,8 +2453,23 @@ var AddartistComponent = /** @class */ (function () {
         }
     };
     AddartistComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        console.log('content file: ' + this.filesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("image/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.filesToUpload = fileInput.target.files;
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+                this.artistimageVar.nativeElement.value = "";
+            }
+        }
+        else {
+            alert('Error file type. You must input image file type.');
+            this.artistimageVar.nativeElement.value = "";
+        }
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('inputimg'),
@@ -2346,7 +2489,8 @@ var AddartistComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
-            __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */]])
+            __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */]])
     ], AddartistComponent);
     return AddartistComponent;
 }());
@@ -2522,7 +2666,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/editartistphoto/editartistphoto.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Change Photo</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"artistForm\" (ngSubmit)=\"updatePhoto(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n<!--       <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}\">\n          <label for=\"imgpath\" class=\"col-sm-2 control-label\">Image Path</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgpath\" [formControl]=\"imgpath\" placeholder=\"Img Path\">\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}\">\n          <label for=\"imgoriname\" class=\"col-sm-2 control-label\">Image Oriname</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgoriname\" [formControl]=\"imgoriname\" placeholder=\"Img Oriname\">\n          </div>\n      </div> -->\n      <div class=\"form-group\">\n        <div class=\"col-sm-12\">\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n        </div>\n      </div>    \n      <div class=\"form-group\">\n        <div class=\"col-sm-12\">\n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" style=\"display:none\">\n                  </span>\n              </label>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n            </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n        <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <div class=\"col-sm-12\">\n              <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Change Photo</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"artistForm\" (ngSubmit)=\"updatePhoto(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n<!--       <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}\">\n          <label for=\"imgpath\" class=\"col-sm-2 control-label\">Image Path</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgpath\" [formControl]=\"imgpath\" placeholder=\"Img Path\">\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('imgoriname').invalid && profileForm.get('imgoriname').dirty}\">\n          <label for=\"imgoriname\" class=\"col-sm-2 control-label\">Image Oriname</label>\n          <div class=\"input-group col-sm-10\">\n              <input type=\"text\" class=\"form-control\" id=\"imgoriname\" [formControl]=\"imgoriname\" placeholder=\"Img Oriname\">\n          </div>\n      </div> -->\n      <div class=\"form-group\">\n        <div class=\"col-sm-12\">\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n        </div>\n      </div>    \n      <div class=\"form-group\">\n        <div class=\"col-sm-12\">\n          <label class=\"control-label\" style=\"color:red;\"><sup>* <u>FILE SIZE (MAX {{ +this.maxfilesize?.value/1000 }} KB)</u></sup></label>    \n          <div class=\"input-group\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" style=\"display:none\">\n                  </span>\n              </label>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n            </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n        <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <div class=\"col-sm-12\">\n              <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -2539,6 +2683,7 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2556,8 +2701,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EditartistphotoComponent = /** @class */ (function () {
-    function EditartistphotoComponent(fb, authService, artistService, ftService, route, router, toastr, globals) {
+    function EditartistphotoComponent(fb, authService, artistService, ftService, route, router, toastr, globals, msconfigService) {
         this.fb = fb;
         this.authService = authService;
         this.artistService = artistService;
@@ -2566,6 +2712,7 @@ var EditartistphotoComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.globals = globals;
+        this.msconfigService = msconfigService;
         this.filesToUpload = [];
         this.loading = false;
         this.progressvalue = 0;
@@ -2577,6 +2724,7 @@ var EditartistphotoComponent = /** @class */ (function () {
         this.userObj = this.authService.currentUser;
         this.progressvalue = 0;
         this.artistuploadpath = this.globals.artistuploadpath;
+        this.getMsconfigVal('IMGSIZE', 'FSIZE');
         this.artistForm = this.fb.group({
             artistphotopath: this.artistphotopath,
             artistphotoname: this.artistphotoname
@@ -2584,6 +2732,19 @@ var EditartistphotoComponent = /** @class */ (function () {
         this.route.params.subscribe(function (params) {
             _this.artistid = params['id'];
             _this.getArtist(_this.artistid);
+        });
+    };
+    EditartistphotoComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
+                }
+            }
         });
     };
     EditartistphotoComponent.prototype.getArtist = function (id) {
@@ -2610,11 +2771,25 @@ var EditartistphotoComponent = /** @class */ (function () {
         });
     };
     EditartistphotoComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        this.newfile = this.filesToUpload[0]['name'];
-        console.log('content file: ' + this.filesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
         this.progressvalue = 0;
-        this.uploadNewPhoto(this.filesToUpload);
+        if (~files[0].type.indexOf("image/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.filesToUpload = fileInput.target.files;
+                this.newfile = this.filesToUpload[0]['name'];
+                //console.log('content file: ' + this.filesToUpload);
+                this.uploadNewPhoto(this.filesToUpload);
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+            }
+        }
+        else {
+            alert('Error file type. You must input image file type.');
+        }
     };
     EditartistphotoComponent.prototype.uploadNewPhoto = function (newFileData) {
         var _this = this;
@@ -2692,7 +2867,8 @@ var EditartistphotoComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
     ], EditartistphotoComponent);
     return EditartistphotoComponent;
 }());
@@ -2711,7 +2887,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/listartist/listartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Artist</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-7 col-md-7\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Name</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-5 col-md-5\">\n                        <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"status\">\n                                <option ng-selected=\"true\" value=\"\">Select the status</option>\n                                <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                            </select>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-7 col-md-7\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\">      </label>\n                        <div class=\"col-sm-5\">\n                            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                    </div> \n                </div>\n            </form>\n        </div>\n    </div>\n  \n    <div class=\"panel panel-danger\" *ngIf=\"artists && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No artist found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            It seems like you havn't entered any artists for the selected criteria. Please add the artist <a style=\"cursor:pointer\" (click)=\"toaddArtists()\">here</a>.\n        </div>\n    </div>\n  \n  \n    <div class=\"panel panel-default\" *ngIf=\"artists && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"50%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('artistname')\">Artist Name</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('status')\">Status</a></th>\n                            <th width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let artst of artists; let artIndex = index'>\n                            <td><a style=\"cursor:pointer\" (click)=\"showArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ artst.artistname}}</a></td>\n                            <td>{{ artst.stsvalue}}</td>\n                            <td>\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editArtistPhoto(artst._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Photo\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(artIndex, artst._id, artst.artistname,artst.artistphotoname)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Artist\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                        \n                    </tbody>\n                </table>\n            </div>\n  \n            <div style=\"text-align:center\" *ngIf=\"artists && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\"class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div>\n  \n        </div>\n    </div>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Artist</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-7 col-md-7\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Name</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-5 col-md-5\">\n                        <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"status\">\n                                <option ng-selected=\"true\" value=\"\">Select the status</option>\n                                <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                            </select>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-7 col-md-7\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\">      </label>\n                        <div class=\"col-sm-5\">\n                            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                    </div> \n                </div>\n            </form>\n        </div>\n    </div>\n  \n    <div class=\"panel panel-danger\" *ngIf=\"artists && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No artist found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            It seems like you havn't entered any artists for the selected criteria. Please add the artist <a style=\"cursor:pointer\" (click)=\"toaddArtists()\">here</a>.\n        </div>\n    </div>\n  \n  \n    <div class=\"panel panel-default\" *ngIf=\"artists && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"50%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortArtist('artistname')\">Artist Name</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortArtist('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let artst of artists; let artIndex = index'>\n                            <td scope=\"row\" data-label=\"Artist Name\"><a style=\"cursor:pointer\" (click)=\"showArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ artst.artistname}}</a></td>\n                            <td data-label=\"Status\">{{ artst.stsvalue}}</td>\n                            <td data-label=\"Action\">\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editArtistPhoto(artst._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Photo\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(artIndex, artst._id, artst.artistname,artst.artistphotoname)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Artist\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                        \n                    </tbody>\n                </table>\n            </div>\n  \n            <div style=\"text-align:center\" *ngIf=\"artists && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\"class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div>\n  \n        </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -2874,7 +3050,7 @@ var ListartistComponent = /** @class */ (function () {
         var payload = {};
         payload.artistid = artistid;
         this.loading = true;
-        this.albumService.getAlbumCount(this.userObj.userid, payload)
+        this.albumService.getArtistAlbums(this.userObj.userid, payload)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
@@ -2989,7 +3165,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/viewartist/viewartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Artist Details</h3>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-8\">\n        <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                </div>\n            </div>\n        </form>\n    </div>\n    <div class=\"col-sm-4 thumbpadding\">        \n        <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n    </div>\n  </div>\n  \n    <div class=\"row\">\n        <div class=\"col-sm-12 dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n            <div class=\"col-sm-12 col-md-12\">\n                <b>( TOTAL : {{ totalrows }} albums ) </b> \n            </div>\n            <div class=\"col-sm-12 col-md-12\">\n                <div class=\"table-responsive\">\n                    <table class=\"table table-striped\" width=\"80%\">\n                        <thead>\n                            <tr>\n                                <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor='let albm of albums; let albIndex = index'>\n                                <td>{{ albm.albumname}}</td>\n                                <td>{{ albm.albumyear}}</td>\n                                <td>{{ albm.genrevalue}}</td>\n                                <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                <td>{{ albm.stsvalue}}</td>\n                            </tr>\n                            \n                        </tbody>\n                    </table>\n                </div>\n    \n                <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                    <nav aria-label=\"Page navigation\">\n                        <ul class=\"pagination\">\n                            <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                            </li>\n                        </ul>\n                    </nav>\n                </div>\n    \n            </div>\n        </div>      \n    </div>\n\n      <div class=\"row\">\n          <div class=\"col-sm-12\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n          <br>\n      </div>\n\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Artist Details</h3>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-8\">\n        <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                </div>\n            </div>\n        </form>\n    </div>\n    <div class=\"col-sm-4 thumbpadding\">        \n        <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n    </div>\n  </div>\n  \n    <div class=\"row\">\n        <div class=\"dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n            <div class=\"col-md-11 col-lg-11\">\n                <b>( TOTAL : {{ totalrows }} albums ) </b> \n                <div class=\"table-responsive\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor='let albm of albums; let albIndex = index'>\n                                <td scope=\"row\" data-label=\"Album Name\">{{ albm.albumname}}</td>\n                                <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                                <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                                <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                <td data-label=\"Status\">{{ albm.stsvalue}}</td>\n                            </tr>\n                            \n                        </tbody>\n                    </table>\n                </div>\n    \n                <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                    <nav aria-label=\"Page navigation\">\n                        <ul class=\"pagination\">\n                            <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                            </li>\n                        </ul>\n                    </nav>\n                </div>\n    \n            </div>\n            <div class=\"col-md-1 col-lg-11\"></div>\n        </div>      \n    </div>\n\n      <div class=\"row\">\n          <div class=\"col-sm-12\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n          <br>\n      </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -3186,7 +3362,7 @@ module.exports = ""
 /***/ "./src/app/components/artiststats/artiststats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Artists</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"labelid\">\n                            <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                            <option value=\"\">Select the label</option>\n                            <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                        </select>\n                      </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Name</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                    </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"submit\" class=\"col-sm-2 paddingsearch\">      </label>\n                    <div class=\"col-sm-5\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                </div> \n            </div>\n        </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"artists && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No artist found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems there is NO artists entered yet for the selected criteria.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"artists && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"40%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('artistname')\">Artist Name</a></th>\n                          <th width=\"40%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('labelid')\">Label</a></th>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortArtist('status')\">Status</a></th>\n                          <!-- <th width=\"20%\">Action</th> -->\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let artst of artists; let artIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showArtist(artst._id, artst.labelid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ artst.artistname}}</a></td>\n                          <td>{{ artst.label}}</td>\n                          <td>{{ artst.stsvalue}}</td>\n<!--                           <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editArtistPhoto(artst._id)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Photo\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(artIndex, artst._id, artst.artistname,artst.artistphotoname)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Artist\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td> -->\n                      </tr>\n                      \n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"artists && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\"class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Artists</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"labelid\">\n                            <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                            <option value=\"\">Select the label</option>\n                            <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                        </select>\n                      </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Name</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                    </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"submit\" class=\"col-sm-2 paddingsearch\">      </label>\n                    <div class=\"col-sm-5\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                </div> \n            </div>\n        </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"artists && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No artist found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems there is NO artists entered yet for the selected criteria.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"artists && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"40%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortArtist('artistname')\">Artist Name</a></th>\n                          <th width=\"40%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortArtist('labelid')\">Label</a></th>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortArtist('status')\">Status</a></th>\n                          <!-- <th width=\"20%\">Action</th> -->\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let artst of artists; let artIndex = index'>\n                          <td scope=\"row\" data-label=\"Artist Name\"><a style=\"cursor:pointer\" (click)=\"showArtist(artst._id, artst.labelid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ artst.artistname}}</a></td>\n                          <td data-label=\"Label\">{{ artst.label}}</td>\n                          <td data-label=\"Status\">{{ artst.stsvalue}}</td>\n<!--                           <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editArtistPhoto(artst._id)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Photo\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editArtist(artst._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Artist Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(artIndex, artst._id, artst.artistname,artst.artistphotoname)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Artist\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td> -->\n                      </tr>\n                      \n                  </tbody>\n              </table>\n          </div>\n\n          <div style=\"text-align:center\" *ngIf=\"artists && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\"class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div>\n\n      </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -3420,7 +3596,7 @@ module.exports = ""
 /***/ "./src/app/components/artiststats/viewartiststats/viewartiststats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Artist Details</h3>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-8\">\n          <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n              <div class=\"form-group\">\n                  <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                  <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                  </div>\n              </div>\n              <div class=\"form-group\">\n                  <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                  <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                      <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                  </div>\n              </div>\n          </form>\n      </div>\n      <div class=\"col-sm-4 thumbpadding\">        \n          <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n      </div>\n    </div>\n    \n      <div class=\"row\">\n          <div class=\"col-sm-12 dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n              <div class=\"col-sm-12 col-md-12\">\n                  <b>( TOTAL : {{ totalrows }} albums ) </b> \n              </div>\n              <div class=\"col-sm-12 col-md-12\">\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\" width=\"80%\">\n                          <thead>\n                              <tr>\n                                  <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td>{{ albm.albumname}}</td>\n                                  <td>{{ albm.albumyear}}</td>\n                                  <td>{{ albm.genrevalue}}</td>\n                                  <td class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                  <td>{{ albm.stsvalue}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n      \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n      \n              </div>\n          </div>      \n      </div>\n  \n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n            <br>\n        </div>\n  \n  </div>\n  "
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Artist Details</h3>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-8\">\n          <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n              <div class=\"form-group\">\n                  <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                  <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                  </div>\n              </div>\n              <div class=\"form-group\">\n                  <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                  <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                      <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                  </div>\n              </div>\n          </form>\n      </div>\n      <div class=\"col-sm-4 thumbpadding\">        \n          <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n      </div>\n    </div>\n    \n      <div class=\"row\">\n          <div class=\"dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n                <div class=\"col-md-11 col-lg-11\">\n                  <b>( TOTAL : {{ totalrows }} albums ) </b>\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\">\n                          <thead>\n                              <tr>\n                                  <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td scope=\"row\" data-label=\"Album Name\">{{ albm.albumname}}</td>\n                                  <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                                  <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                                  <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                  <td data-label=\"Status\">{{ albm.stsvalue}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n      \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n      \n              </div>\n              <div class=\"col-md-1 col-lg-1\"></div>\n          </div>      \n      </div>\n  \n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n            <br>\n        </div>\n  \n  </div>\n  "
 
 /***/ }),
 
@@ -3622,7 +3798,7 @@ module.exports = ""
 /***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div class=\"form-group\">\n        <label for=\"labelname\" class=\"control-label\">Name</label>\n        <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.name }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\" class=\"control-label\">Email</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\">@</div>\n            <div class=\"form-ele\">{{ this.email }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <label for=\"contactno\" class=\"control-label\">Contact No</label>\n      <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n          <div class=\"form-ele\">{{ this.contactno }}</div>\n      </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-bold\"></i></div>\n            <div class=\"form-ele\">{{ this.balance | currency:'IDR':'symbol-narrow'}}</div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-11 col-sm-8\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-1 col-sm-4\"></div>\n<!--         <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have <b><i><a style=\"cursor:pointer\" (click)=\"toArtists()\">({{ this.totalrows }})</a></i></b> active artists, <b><i><a style=\"cursor:pointer\" (click)=\"toAlbums()\">({{ this.totalalbums }})</a></i></b> active albums, \n            and <b><i><a style=\"cursor:pointer\" (click)=\"toSongs()\">({{ this.totalsongs }})</a></i></b> active songs.\n        </div> -->\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-11 col-sm-8\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-1 col-sm-4\"></div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div class=\"form-group\">\n        <label for=\"labelname\" class=\"control-label\">Name</label>\n        <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.name }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\" class=\"control-label\">Email</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\">@</div>\n            <div class=\"form-ele\">{{ this.email }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <label for=\"contactno\" class=\"control-label\">Contact No</label>\n      <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n          <div class=\"form-ele\">{{ this.contactno }}</div>\n      </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\"> \n            <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-11 col-sm-8\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-1 col-sm-4\"></div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -3641,6 +3817,9 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_admin_songadmin_service__ = __webpack_require__("./src/app/services/admin/songadmin.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3660,8 +3839,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(authService, artistService, albumService, songService, userService, labelmgtService, songadminService, toastr, route, router) {
+    function DashboardComponent(authService, artistService, albumService, songService, userService, labelmgtService, songadminService, toastr, route, router, songpurchaseService, dialog) {
         this.authService = authService;
         this.artistService = artistService;
         this.albumService = albumService;
@@ -3672,8 +3854,11 @@ var DashboardComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.route = route;
         this.router = router;
+        this.songpurchaseService = songpurchaseService;
+        this.dialog = dialog;
         this.totalpendinglabel = 0;
         this.totalpendingsong = 0;
+        this.totalpendingpurchase = 0;
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -3746,6 +3931,22 @@ var DashboardComponent = /** @class */ (function () {
                 });
             }
         });
+        //songpurchaseService.getPendingSongpurchaseCount
+        var payload = {};
+        payload.status = 'STSPEND';
+        this.songpurchaseService.getPendingSongpurchaseCount(userid, payload)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.totalpendingpurchase = +data.totalcount;
+            }
+        });
     };
     DashboardComponent.prototype.fetchReportAdm = function (userid) {
         var _this = this;
@@ -3797,6 +3998,16 @@ var DashboardComponent = /** @class */ (function () {
     DashboardComponent.prototype.toSongMgt = function () {
         this.router.navigate(['/songmanagement']);
     };
+    DashboardComponent.prototype.toPendingSongpurchase = function () {
+        this.router.navigate(['/songpendingpurchase']);
+    };
+    DashboardComponent.prototype.viewlabelbalance = function (labelname) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_12__labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */], {
+            disableClose: true,
+            width: '400px',
+            data: 'Hi ' + labelname + ', Please find below your balance.'
+        });
+    };
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dashboard',
@@ -3812,7 +4023,9 @@ var DashboardComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_9__services_admin_songadmin_service__["a" /* SongadminService */],
             __WEBPACK_IMPORTED_MODULE_2__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_10__services_songpurchase_service__["a" /* SongpurchaseService */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["d" /* MatDialog */]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -3890,6 +4103,115 @@ var KxInfoDialogComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/labelbalancedialog/labelbalancedialog.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/labelbalancedialog/labelbalancedialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"md-dialog-container\">\n    <h3 mat-dialog-title>BALANCE INFO</h3>\n    <hr>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <mat-dialog-content>\n      <div *ngIf=\"this.success === true\">\n        <strong>{{this.reportTitle}}</strong><br><br>\n        <span style=\"color:red;font-size:14px\" *ngIf=\"this.total <= 0\"><strong>BALANCE : Rp {{this.totalstr }}</strong></span>\n        <span style=\"color:#065E06;font-size:14px\" *ngIf=\"this.total > 0\"><strong>BALANCE : Rp {{this.totalstr }}</strong></span>\n      </div>\n      <div *ngIf=\"this.success === false\">\n          <span style=\"color:red\"><strong>Oopss! sorry there is error when getting the balance</strong></span>\n      </div>\n    </mat-dialog-content>\n    <hr>\n    <mat-dialog-actions>\n        <!-- <button mat-raised-button (click)=\"onCloseConfirm()\">Confirm</button> -->\n        <button class=\"btn btn-info\" (click)=\"onCloseCancel()\">Close</button>\n    </mat-dialog-actions>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/labelbalancedialog/labelbalancedialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LabelbalancedialogComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+
+var LabelbalancedialogComponent = /** @class */ (function () {
+    function LabelbalancedialogComponent(dialogRef, data, transactionService, authService) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.transactionService = transactionService;
+        this.authService = authService;
+        this.loading = false;
+    }
+    LabelbalancedialogComponent.prototype.ngOnInit = function () {
+        this.userObj = this.authService.currentUser;
+        this.fetchReport(this.userObj.userid);
+    };
+    LabelbalancedialogComponent.prototype.fetchReport = function (userid) {
+        var _this = this;
+        this.loading = true;
+        this.transactionService.getLabelbalance(userid)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                _this.success = false;
+            }
+            else {
+                _this.success = true;
+                _this.loading = false;
+                _this.reportTitle = _this.data;
+                _this.balances = data.data;
+                if (_this.balances[0]) {
+                    var amt = _this.getbalanceamt(_this.balances[0]._id, _this.balances[0].balance);
+                    var amt1 = _this.getbalanceamt(_this.balances[1]._id, _this.balances[1].balance);
+                    _this.total = amt + amt1;
+                    _this.totalstr = _this.total.toLocaleString();
+                }
+                else {
+                    _this.total = 0;
+                    _this.totalstr = "0";
+                }
+            }
+        });
+    };
+    LabelbalancedialogComponent.prototype.onCloseCancel = function () {
+        this.dialogRef.close('Cancel');
+    };
+    LabelbalancedialogComponent.prototype.changePosition = function () {
+        this.dialogRef.updatePosition({ top: '50px', left: '50px' });
+    };
+    LabelbalancedialogComponent.prototype.getbalanceamt = function (sign, balance) {
+        var result = balance;
+        if (sign === "-") {
+            result = -1 * balance;
+        }
+        return result;
+    };
+    LabelbalancedialogComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-labelbalancedialog',
+            template: __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.html"),
+            styles: [__webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.css")]
+        }),
+        __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MAT_DIALOG_DATA */])),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialogRef */], String, __WEBPACK_IMPORTED_MODULE_3__services_transaction_service__["a" /* TransactionService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
+    ], LabelbalancedialogComponent);
+    return LabelbalancedialogComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/labelstats/labelstats.component.css":
 /***/ (function(module, exports) {
 
@@ -3900,7 +4222,7 @@ module.exports = ""
 /***/ "./src/app/components/labelstats/labelstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Labels</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"username\" class=\"col-sm-2 paddingsearch\">Username</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"username\" [formControl]=\"username\" placeholder=\"User Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"name\" class=\"col-sm-2 paddingsearch\">Name</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Label Name\">\n                </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"status\">\n                            <option value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"veremail\" class=\"col-sm-3 paddingsearch\">Email Verified?</label>\n                    <div class=\"col-sm-9\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"veremail\">\n                              <option value=\"\">Select the option</option>\n                              <option *ngFor=\"let b of yn\" [ngValue]=\"b.code\">{{b.value}}</option>\n                        </select>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-2 paddingsearch\">      </label>\n                  <div class=\"col-sm-5\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>\n              </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  \n  <div class=\"panel panel-danger\" *ngIf=\"labellist && totalrows < 1\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No LABELS found</h3> \n    </div>\n    <div class=\"panel-body\">\n        No Labels found from above criterias.\n    </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"labellist && totalrows > 0 && this.loading == false\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n    </div>\n    <div class=\"panel-body\">\n          <div class=\"table-responsive\"> \n                  <table class=\"table table-hover\">\n                      <thead>\n                              <tr>\n                                  <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('username')\">User Name</a></th>\n                                  <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('name')\">Label Name</a></th>\n                                  <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('email')\">Email</a></th>\n                                  <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('verified_email')\">Email Verified?</a></th>\n                                  <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('status')\">Status</a></th>\n                                  <th width=\"20%\">Action</th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let lbl of labellist; let lblIndex = index'>\n                                  <td><a style=\"cursor:pointer\" (click)=\"showLabel(lbl._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ lbl.username}}</a></td>\n                                  <td>{{ lbl.name}}</td>\n                                  <td>{{ lbl.email}}</td>\n                                  <td>{{ lbl.verified_email }}</td>\n                                  <td>{{ lbl.stsvalue}}</td>\n                                  <td>\n                                      <button *ngIf=\"lbl.status === 'STSINACT'\" type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Activate\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Activate Label\">\n                                          <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                                      </button>\n                                      <button *ngIf=\"lbl.status === 'STSACT'\" type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Deactivate\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Deactivate Label\">\n                                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                                      </button>\n                                  </td>\n                              </tr>     \n                          </tbody>    \n                  </table>\n          </div>\n          <div style=\"text-align:center\" *ngIf=\"labellist && totalrows > 10\">\n                  <nav aria-label=\"Page navigation\">\n                      <ul class=\"pagination\">\n                          <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                              <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                          </li>\n                      </ul>\n                  </nav>\n          </div> \n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Labels</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"username\" class=\"col-sm-2 paddingsearch\">Username</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"username\" [formControl]=\"username\" placeholder=\"User Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"name\" class=\"col-sm-2 paddingsearch\">Name</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Label Name\">\n                </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"status\">\n                            <option value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"veremail\" class=\"col-sm-3 paddingsearch\">Email Verified?</label>\n                    <div class=\"col-sm-9\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"veremail\">\n                              <option value=\"\">Select the option</option>\n                              <option *ngFor=\"let b of yn\" [ngValue]=\"b.code\">{{b.value}}</option>\n                        </select>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-2 paddingsearch\">      </label>\n                  <div class=\"col-sm-5\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>\n              </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  \n  <div class=\"panel panel-danger\" *ngIf=\"labellist && totalrows < 1\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No LABELS found</h3> \n    </div>\n    <div class=\"panel-body\">\n        No Labels found from above criterias.\n    </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"labellist && totalrows > 0 && this.loading == false\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n    </div>\n    <div class=\"panel-body\">\n          <div class=\"table-responsive\"> \n                  <table class=\"table table-hover\">\n                      <thead>\n                              <tr>\n                                  <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('username')\">User Name</a></th>\n                                  <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('name')\">Label Name</a></th>\n                                  <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('email')\">Email</a></th>\n                                  <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('verified_email')\">Email Verified?</a></th>\n                                  <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('status')\">Status</a></th>\n                                  <th scope=\"col\" width=\"20%\">Action</th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let lbl of labellist; let lblIndex = index'>\n                                  <td scope=\"row\" data-label=\"Username\"><a style=\"cursor:pointer\" (click)=\"showLabel(lbl._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ lbl.username}}</a></td>\n                                  <td data-label=\"Label Name\">{{ lbl.name}}</td>\n                                  <td data-label=\"Email\">{{ lbl.email}}</td>\n                                  <td data-label=\"Email Verified?\">{{ lbl.verified_email }}</td>\n                                  <td data-label=\"Status\">{{ lbl.stsvalue}}</td>\n                                  <td data-label=\"Action\">\n                                      <button *ngIf=\"lbl.status === 'STSINACT'\" type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Activate\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status, lbl.email, lbl.username)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Activate Label\">\n                                          <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                                      </button>\n                                      <button *ngIf=\"lbl.status === 'STSACT'\" type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Deactivate\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status, lbl.email, lbl.username)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Deactivate Label\">\n                                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                                      </button>\n                                      <span  *ngIf=\"lbl.status !== 'STSINACT' && lbl.status !== 'STSACT'\" style=\"color:#eee\">No Action</span>\n                                  </td>\n                              </tr>     \n                          </tbody>    \n                  </table>\n          </div>\n          <div style=\"text-align:center\" *ngIf=\"labellist && totalrows > 10\">\n                  <nav aria-label=\"Page navigation\">\n                      <ul class=\"pagination\">\n                          <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                              <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                          </li>\n                      </ul>\n                  </nav>\n          </div> \n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -3917,6 +4239,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3934,8 +4258,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var LabelstatsComponent = /** @class */ (function () {
-    function LabelstatsComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe) {
+    function LabelstatsComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe, notifService, globals) {
         this.fb = fb;
         this.authService = authService;
         this.labelmgtService = labelmgtService;
@@ -3944,6 +4270,8 @@ var LabelstatsComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.notifService = notifService;
+        this.globals = globals;
         this.loading = false;
         this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.username = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
@@ -3959,6 +4287,7 @@ var LabelstatsComponent = /** @class */ (function () {
             status: this.status,
             veremail: this.veremail
         });
+        this.urlkaxet = this.globals.kaxeturl;
         this.getMsconfigGroupList('STATUS');
         this.getMsconfigGroupList('YRN');
         this.route.queryParams.forEach(function (params) {
@@ -4090,7 +4419,7 @@ var LabelstatsComponent = /** @class */ (function () {
             }
         });
     };
-    LabelstatsComponent.prototype.activateLabel = function (userid, labelname, status) {
+    LabelstatsComponent.prototype.activateLabel = function (userid, labelname, status, email, username) {
         var _this = this;
         this.loading = true;
         if (status == 'STSACT') {
@@ -4117,9 +4446,22 @@ var LabelstatsComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.loading = false;
-                            _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
-                            _this.toastr.success(data.message);
+                            var payload = {};
+                            payload.emailto = email;
+                            payload.vlink = _this.urlkaxet;
+                            payload.username = username;
+                            var successmsg_1 = data.message;
+                            _this.notifService.sendemailwelcome(payload)
+                                .subscribe(function (data) {
+                                _this.loading = false;
+                                if (data.success === true) {
+                                    _this.toastr.success(successmsg_1);
+                                }
+                                else {
+                                    _this.toastr.warning(successmsg_1 + '. However welcome email not send. ' + data.message);
+                                }
+                                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+                            });
                         }
                     });
                 }
@@ -4129,7 +4471,7 @@ var LabelstatsComponent = /** @class */ (function () {
             }
         }
     };
-    LabelstatsComponent.prototype.deactivateLabel = function (userid, labelname, status) {
+    LabelstatsComponent.prototype.deactivateLabel = function (userid, labelname, status, email, username) {
         var _this = this;
         this.loading = true;
         if (status === 'STSPEND') {
@@ -4177,9 +4519,21 @@ var LabelstatsComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.loading = false;
-                            _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
-                            _this.toastr.success(data.message);
+                            var payload = {};
+                            payload.emailto = email;
+                            payload.username = username;
+                            var successmsg_2 = data.message;
+                            _this.notifService.senddeactivation(payload)
+                                .subscribe(function (data) {
+                                _this.loading = false;
+                                if (data.success === true) {
+                                    _this.toastr.success(successmsg_2);
+                                }
+                                else {
+                                    _this.toastr.warning(successmsg_2 + '. However welcome email not send. ' + data.message);
+                                }
+                                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+                            });
                         }
                     });
                 }
@@ -4214,7 +4568,9 @@ var LabelstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_8__services_notif_service__["a" /* NotifService */],
+            __WEBPACK_IMPORTED_MODULE_9__app_global__["a" /* Globals */]])
     ], LabelstatsComponent);
     return LabelstatsComponent;
 }());
@@ -4359,7 +4715,7 @@ module.exports = ""
 /***/ "./src/app/components/msconfig/addconfig/addconfig.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Add Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form  [formGroup]=\"addConfigForm\" (ngSubmit)=\"addMsconfig(addConfigForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('code').invalid && addConfigForm.get('code').dirty}\">\n            <label for=\"code\" class=\"col-sm-2 control-label\">Code <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"code\" id=\"code\" placeholder=\"Ms Code\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('code').dirty && addConfigForm.get('code').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('code').errors.required\">\n                    Please enter the code\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('value').invalid && addConfigForm.get('value').dirty}\">\n            <label for=\"value\" class=\"col-sm-2 control-label\">Value <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"value\" id=\"value\" placeholder=\"Ms Value\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('value').dirty && addConfigForm.get('value').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('value').errors.required\">\n                    Please enter the value\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('group').invalid && addConfigForm.get('group').dirty}\">\n            <label for=\"group\" class=\"col-sm-2 control-label\">Group <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select #inputgroup [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"group\">\n                    <option ng-selected=\"true\" value=\"\">Select the group</option>\n                    <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('group').dirty && addConfigForm.get('group').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('group').errors.required\">\n                    Please select config group\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"desc\" class=\"col-sm-2 control-label\">Description</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"desc\" rows=\"10\" [formControl]=\"desc\" placeholder=\"Description\"></textarea>\n            </div>\n        </div>\n        <div class=\"form-group\" >\n            <label for=\"genreimage\" class=\"col-sm-2 control-label\">Config Photo</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n                <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" placeholder=\"Genreimage\">\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n          <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n          <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n       </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"addConfigForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n            </div>\n            <div class=\"col-sm-5\" style=\"text-align:right\">\n                <sup>*</sup> required\n            </div>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Add Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form  [formGroup]=\"addConfigForm\" (ngSubmit)=\"addMsconfig(addConfigForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('code').invalid && addConfigForm.get('code').dirty}\">\n            <label for=\"code\" class=\"col-sm-2 control-label\">Code <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"code\" id=\"code\" placeholder=\"Ms Code\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('code').dirty && addConfigForm.get('code').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('code').errors.required\">\n                    Please enter the code\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('value').invalid && addConfigForm.get('value').dirty}\">\n            <label for=\"value\" class=\"col-sm-2 control-label\">Value <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"value\" id=\"value\" placeholder=\"Ms Value\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('value').dirty && addConfigForm.get('value').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('value').errors.required\">\n                    Please enter the value\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': addConfigForm.get('group').invalid && addConfigForm.get('group').dirty}\">\n            <label for=\"group\" class=\"col-sm-2 control-label\">Group <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select #inputgroup [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"group\">\n                    <option ng-selected=\"true\" value=\"\">Select the group</option>\n                    <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"addConfigForm.get('group').dirty && addConfigForm.get('group').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addConfigForm.get('group').errors.required\">\n                    Please select config group\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"desc\" class=\"col-sm-2 control-label\">Description</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"desc\" rows=\"10\" [formControl]=\"desc\" placeholder=\"Description\"></textarea>\n            </div>\n        </div>\n        <div class=\"form-group\" >\n            <label for=\"genreimage\" class=\"col-sm-2 control-label\">Config Photo</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n                <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" placeholder=\"Genreimage\">\n                <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n          <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n          <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n       </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"addConfigForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n            </div>\n            <div class=\"col-sm-5\" style=\"text-align:right\">\n                <sup>*</sup> required\n            </div>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -4430,6 +4786,7 @@ var AddconfigComponent = /** @class */ (function () {
             filename: this.filename
         });
         this.getMsconfiggroup();
+        this.getMsconfigVal('IMGSIZE', 'FSIZE');
     };
     AddconfigComponent.prototype.getMsconfiggroup = function () {
         var _this = this;
@@ -4441,6 +4798,19 @@ var AddconfigComponent = /** @class */ (function () {
                 }
                 else {
                     _this.grouplist = [{ code: '', value: 'Error group list' }];
+                }
+            }
+        });
+    };
+    AddconfigComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
                 }
             }
         });
@@ -4532,8 +4902,23 @@ var AddconfigComponent = /** @class */ (function () {
         }
     };
     AddconfigComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        console.log('content file: ' + this.filesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("image/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.filesToUpload = fileInput.target.files;
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+                this.genreimageVar.nativeElement.value = "";
+            }
+        }
+        else {
+            alert('Error file type. You must input image file type.');
+            this.genreimageVar.nativeElement.value = "";
+        }
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('inputimg'),
@@ -4871,7 +5256,7 @@ module.exports = ""
 /***/ "./src/app/components/msconfig/editconfigfile/editconfigfile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change File</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"msconfigForm\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"col-lg-6 col-sm-6 col-12\">\n            <label for=\"genreimage\" class=\"col-sm-3 control-label\"></label>\n            <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            <br><br>\n            <div class=\"input-group\">\n                <label class=\"input-group-btn\">\n                    <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                        Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" style=\"display:none\">\n                    </span>\n                </label>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n              </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n            <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n            <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">     </label>\n            <div class=\"col-sm-10\">\n                <br>\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change File</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"msconfigForm\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <div class=\"col-sm-12\">\n                <img src=\"{{ this.displayImg }}\" width=\"170\" height=\"170\">\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <div class=\"col-sm-12\">\n                <label class=\"control-label\" style=\"color:red;\"><sup>* <u>FILE SIZE (MAX {{ +this.maxfilesize?.value/1000 }} KB)</u></sup></label> \n                <div class=\"input-group\">\n                    <label class=\"input-group-btn\">\n                        <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                            Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"genreimage\" id=\"genreimage\" style=\"display:none\">\n                        </span>\n                    </label>\n                    <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" value=\"{{ this.newfile }}\">  \n                </div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n            <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n            <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n        </div>\n        <div class=\"form-group\">\n            <div class=\"col-sm-12\">\n                <button [disabled]=\"this.loading == true\" type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
 
 /***/ }),
 
@@ -4926,6 +5311,7 @@ var EditconfigfileComponent = /** @class */ (function () {
         this.userObj = this.authService.currentUser;
         this.configuploadpath = this.globals.configuploadpath;
         this.progressvalue = 0;
+        this.getMsconfigVal('IMGSIZE', 'FSIZE');
         this.msconfigForm = this.fb.group({
             filepath: this.filepath,
             filename: this.filename
@@ -4934,6 +5320,19 @@ var EditconfigfileComponent = /** @class */ (function () {
             var msconfigid = params['id'];
             _this.msconfigid = msconfigid;
             _this.getMsconfig(msconfigid);
+        });
+    };
+    EditconfigfileComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
+                }
+            }
         });
     };
     EditconfigfileComponent.prototype.getMsconfig = function (id) {
@@ -4966,11 +5365,26 @@ var EditconfigfileComponent = /** @class */ (function () {
         });
     };
     EditconfigfileComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        this.newfile = this.filesToUpload[0]['name'];
-        console.log('content file: ' + this.filesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
         this.progressvalue = 0;
-        this.uploadNewPhoto(this.filesToUpload);
+        if (~files[0].type.indexOf("image/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.filesToUpload = fileInput.target.files;
+                this.newfile = this.filesToUpload[0]['name'];
+                //console.log('content file: ' + this.filesToUpload);
+                this.progressvalue = 0;
+                this.uploadNewPhoto(this.filesToUpload);
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+            }
+        }
+        else {
+            alert('Error file type. You must input image file type.');
+        }
     };
     EditconfigfileComponent.prototype.uploadNewPhoto = function (newFileData) {
         var _this = this;
@@ -5069,7 +5483,7 @@ module.exports = ""
 /***/ "./src/app/components/msconfig/listconfig/listconfig.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"code\" class=\"col-sm-2 paddingsearch\">Code</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"code\" [formControl]=\"code\" placeholder=\"Ms Code\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"value\" class=\"col-sm-2 paddingsearch\">Value</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"value\" [formControl]=\"value\" placeholder=\"Ms Value\">\n                      </div>\n                  </div>\n                </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"group\" class=\"col-sm-2 paddingsearch\">Group</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"group\">\n                                <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                                <option ng-selected=\"true\" value=\"\">Select the group</option>\n                                <option value=\"GROUP\">Group Config</option>\n                                <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                            </select>\n                          </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                            </select>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">    \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\"> </label>\n                        <div class=\"col-sm-10\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n\n            </form>\n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"msconfigs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No config found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any configs found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"msconfigs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('code')\">Code</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('value')\">Value</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('group')\">Group</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('status')\">Status</a></th>\n                            <th width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let config of msconfigs; let cfgIndex = index'>\n                            <td><a style=\"cursor:pointer\" (click)=\"showConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ config.code}}</a></td>\n                            <td>{{ config.value }}</td>\n                            <td>{{ config.groupname }}</td>\n                            <td>{{ config.stsvalue}}</td>\n                            <td>\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editConfigFiles(config._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config File\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(cfgIndex, config._id, config.code, config.filename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Config\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"msconfigs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"code\" class=\"col-sm-2 paddingsearch\">Code</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"code\" [formControl]=\"code\" placeholder=\"Ms Code\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"value\" class=\"col-sm-2 paddingsearch\">Value</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"value\" [formControl]=\"value\" placeholder=\"Ms Value\">\n                      </div>\n                  </div>\n                </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"group\" class=\"col-sm-2 paddingsearch\">Group</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"group\">\n                                <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                                <option ng-selected=\"true\" value=\"\">Select the group</option>\n                                <option value=\"GROUP\">Group Config</option>\n                                <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                            </select>\n                          </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                            </select>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">    \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\"> </label>\n                        <div class=\"col-sm-10\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n\n            </form>\n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"msconfigs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No config found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any configs found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"msconfigs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('code')\">Code</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('value')\">Value</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('group')\">Group</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('status')\">Status</a></th>\n                            <th scope=\"col\" width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let config of msconfigs; let cfgIndex = index'>\n                            <td scope=\"row\" data-label=\"Code\"><a style=\"cursor:pointer\" (click)=\"showConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ config.code}}</a></td>\n                            <td data-label=\"Value\">{{ config.value }}</td>\n                            <td data-label=\"Group\">{{ config.groupname }}</td>\n                            <td data-label=\"Status\">{{ config.stsvalue}}</td>\n                            <td data-label=\"Action\">\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editConfigFiles(config._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config File\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(cfgIndex, config._id, config.code, config.filename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Config\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"msconfigs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -5495,7 +5909,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a class=\"logo\" routerLink=\"about\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <a id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn()\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
+module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a class=\"logo\" routerLink=\"about\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <a id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn()\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
 
 /***/ }),
 
@@ -5538,6 +5952,1636 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Summary</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>         \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                      </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"paymentmtd\" class=\"col-sm-2 paddingsearch\">Payment</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"paymentmtd\">\n                            <option ng-selected=\"true\" value=\"\">Select the method</option>\n                            <option *ngFor=\"let pmt of pmtd\" [ngValue]=\"pmt.code\">{{pmt.value}}</option>\n                        </select>\n                      </div>\n                    </div> \n                    <div class=\"col-sm-6 col-md-6\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songpurchase && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No song purchase found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO song purchase found for the selected criteria.\n      </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpurchase && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"5%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('listener')\">Buyer</a></th>\n                            <th width=\"25%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('song')\">Song Title</a></th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('artist')\">Artist</a></th>\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('songprice')\">Price</a></th>\n                            <th width=\"5%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('approvedt')\">Response date</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>\n                            <td data-label=\"Purchase Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showPurchase(songpuritem._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  \n                            <td data-label=\"Payment\">{{ songpuritem.payment }}</td>\n                            <td data-label=\"Buyer\">{{ songpuritem.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(songpuritem.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpuritem.song}}</a></td>\n                            <td data-label=\"Artist\">{{ songpuritem.artist }}</td>\n                            <!-- <td style=\"font-size:12px\">{{ songpuritem.album }}</td> -->\n                            <td data-label=\"Song Price\" class=\"text-right\">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Status\">{{ songpuritem.stsvalue }}</td>\n                            <td data-label=\"Response date\">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpurchase && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SongcompletepurchaseComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var SongcompletepurchaseComponent = /** @class */ (function () {
+    function SongcompletepurchaseComponent(fb, authService, route, router, toastr, datePipe, songpurchaseService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.songpurchaseService = songpurchaseService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        //albumname = new FormControl('',[Validators.nullValidator]);  
+        this.buyername = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.paymentmtd = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    SongcompletepurchaseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            artistname: this.artistname,
+            //albumname: this.albumname,
+            buyername: this.buyername,
+            songname: this.songname,
+            status: this.status,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt,
+            paymentmtd: this.paymentmtd
+        });
+        this.getMsconfigGroupList('PMTSTATUS');
+        this.getMsconfigGroupList('PMTMETHOD');
+        this.route.queryParams.forEach(function (params) {
+            _this.qartistname = params['artistname'] || '';
+            //this.qalbumname = params['albumname'] || '';
+            _this.qbuyername = params['buyername'] || '';
+            _this.qsongname = params['songname'] || '';
+            _this.qstatus = params['status'] || '';
+            _this.qpaymentmtd = params['paymentmtd'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.artistname = _this.qartistname;
+                //payload.albumname = this.qalbumname;
+                payload.buyername = _this.qbuyername;
+                payload.songname = _this.qsongname;
+                payload.status = _this.qstatus;
+                payload.paymentmtd = _this.qpaymentmtd;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    artistname: _this.qartistname,
+                    //albumname: this.qalbumname,
+                    buyername: _this.qbuyername,
+                    songname: _this.qsongname,
+                    status: _this.qstatus,
+                    paymentmtd: _this.qpaymentmtd,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    SongcompletepurchaseComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    SongcompletepurchaseComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    SongcompletepurchaseComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'PMTSTATUS') {
+                        _this.sts = data.data;
+                    }
+                    if (groupid == 'PMTMETHOD') {
+                        _this.pmtd = data.data;
+                    }
+                }
+                else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
+                    _this.pmtd = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        });
+    };
+    SongcompletepurchaseComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['songcompletepurchase'], {
+                            queryParams: {
+                                artistname: this.reportForm.value.artistname,
+                                //albumname: this.reportForm.value.albumname,
+                                buyername: this.reportForm.value.buyername,
+                                songname: this.reportForm.value.songname,
+                                status: this.reportForm.value.status,
+                                paymentmtd: this.reportForm.value.paymentmtd,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['songcompletepurchase'], {
+                    queryParams: {
+                        artistname: this.reportForm.value.artistname,
+                        //albumname: this.reportForm.value.albumname,
+                        buyername: this.reportForm.value.buyername,
+                        songname: this.reportForm.value.songname,
+                        status: this.reportForm.value.status,
+                        paymentmtd: this.reportForm.value.paymentmtd,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    SongcompletepurchaseComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.songpurchaseService.getSongpurchaseAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.songpurchase = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qartistname = formval.artistname;
+                //this.qalbumname = formval.albumname;
+                _this.qbuyername = formval.buyername;
+                _this.qsongname = formval.songname;
+                _this.qstatus = formval.status;
+                _this.qpaymentmtd = formval.paymentmtd;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    artistname: _this.qartistname,
+                    //albumname: this.qalbumname,
+                    buyername: _this.qbuyername,
+                    songname: _this.qsongname,
+                    status: _this.qstatus,
+                    paymentmtd: _this.qpaymentmtd,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        });
+    };
+    SongcompletepurchaseComponent.prototype.setPage = function (page) {
+        this.router.navigate(['songcompletepurchase'], {
+            queryParams: {
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongcompletepurchaseComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    SongcompletepurchaseComponent.prototype.sortSongpurchase = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['songcompletepurchase'], {
+            queryParams: {
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongcompletepurchaseComponent.prototype.showSong = function (songid) {
+        this.router.navigate(["viewsongpurchase/" + songid], {
+            queryParams: {
+                srcpg: 'comp',
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongcompletepurchaseComponent.prototype.showPurchase = function (songpurchaseid) {
+        this.router.navigate(["viewpurchase/" + songpurchaseid], {
+            queryParams: {
+                srcpg: 'comp',
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongcompletepurchaseComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-songcompletepurchase',
+            template: __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.html"),
+            styles: [__webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__["a" /* SongpurchaseService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], SongcompletepurchaseComponent);
+    return SongcompletepurchaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Pending Song purchase (Cash)</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>         \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                      </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>    \n    <div class=\"panel panel-danger\" *ngIf=\"songpendings && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No pending song purchase found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO pending song purchase found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpendings && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('listener')\">Buyer</a></th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('song')\">Song Name</a></th>\n                            <!-- <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('artist')\">Artist</a></th> -->\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('songprice')\">Price</a></th>\n                            <th width=\"15%\" scope=\"col\" >Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpending of songpendings; let songIndex = index'>\n                            <td data-label=\"Purchase Date\" scope=\"row\">{{ songpending.purchasedt | date: 'd MMM y'}}</td>  \n                            <td data-label=\"Buyer\">{{ songpending.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(songpending.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpending.song}}</a></td>\n                            <!-- <td style=\"font-size:12px\">{{ songpending.artist }}</td> -->\n                            <!-- <td style=\"font-size:12px\">{{ songpending.album }}</td> -->\n                            <td data-label=\"Price\" class=\"text-right\">{{ songpending.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Action\">\n                                <!-- <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\"><i class=\"fa fa-check fa-2x\"></i></a> -->\n                                <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\">Approve</a>\n                                &nbsp;&nbsp;&nbsp;\n                                <!-- <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\"><i class=\"fa fa-times fa-2x\"></i></a> -->\n                                <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\">Reject</a>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpendings && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SongpendingpurchaseComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+var SongpendingpurchaseComponent = /** @class */ (function () {
+    function SongpendingpurchaseComponent(fb, authService, route, router, toastr, datePipe, songpurchaseService, transactionService, songService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.songpurchaseService = songpurchaseService;
+        this.transactionService = transactionService;
+        this.songService = songService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        //albumname = new FormControl('',[Validators.nullValidator]);  
+        this.buyername = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    SongpendingpurchaseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            artistname: this.artistname,
+            //albumname: this.albumname,
+            buyername: this.buyername,
+            songname: this.songname,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getMsconfigVal('PFEE', 'FEE');
+        this.route.queryParams.forEach(function (params) {
+            _this.qartistname = params['artistname'] || '';
+            //this.qalbumname = params['albumname'] || '';
+            _this.qbuyername = params['buyername'] || '';
+            _this.qsongname = params['songname'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.artistname = _this.qartistname;
+                //payload.albumname = this.qalbumname;
+                payload.buyername = _this.qbuyername;
+                payload.songname = _this.qsongname;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    artistname: _this.qartistname,
+                    //albumname: this.qalbumname,
+                    buyername: _this.qbuyername,
+                    songname: _this.qsongname,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    SongpendingpurchaseComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    SongpendingpurchaseComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    SongpendingpurchaseComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.pfee = data.data[0];
+                }
+                else {
+                    _this.pfee = { code: '', value: 'Error ms config list' };
+                }
+            }
+        });
+    };
+    SongpendingpurchaseComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['songpendingpurchase'], {
+                            queryParams: {
+                                artistname: this.reportForm.value.artistname,
+                                //albumname: this.reportForm.value.albumname,
+                                buyername: this.reportForm.value.buyername,
+                                songname: this.reportForm.value.songname,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                    /* if (!this.isValidDate2(pstartdt) || !this.isValidDate2(penddt) ) {
+                       this.toastr.error('Input date is invalid.');
+                    } else {
+                       var bits = pstartdt.split('-');
+                       var y = bits[2],
+                         m = bits[1],
+                         d = bits[0];
+                       let ipstartdt = new Date(y+ '-' +m+ '-' +d);
+                       bits = penddt.split('-');
+                       y = bits[2];
+                       m = bits[1];
+                       d = bits[0];
+                       let ipenddt = new Date(y+ '-' +m+ '-' +d);
+                       if (ipstartdt > ipenddt) {
+                         this.toastr.error('Start date cannot be greater than end date.');
+                       } else {
+                         this.router.navigate(['songpendingpurchase'],
+                             {
+                               queryParams: {
+                                 artistname: this.reportForm.value.artistname,
+                                 albumname: this.reportForm.value.albumname,
+                                 songname: this.reportForm.value.songname,
+                                 rptype: this.reportForm.value.rptype,
+                                 startdt: pstartdt,
+                                 enddt: penddt,
+                                 page: 1,
+                                 sortby: null }
+                             }
+                         );
+                       }
+                   } */
+                }
+            }
+            else {
+                this.router.navigate(['songpendingpurchase'], {
+                    queryParams: {
+                        artistname: this.reportForm.value.artistname,
+                        //albumname: this.reportForm.value.albumname,
+                        buyername: this.reportForm.value.buyername,
+                        songname: this.reportForm.value.songname,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    SongpendingpurchaseComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.songpurchaseService.getPendingsongpurchaseAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.songpendings = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qartistname = formval.artistname;
+                //this.qalbumname = formval.albumname;
+                _this.qbuyername = formval.buyername;
+                _this.qsongname = formval.songname;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Search Result for month:' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Result for date: ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' to ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Pending Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Result for date: today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    artistname: _this.qartistname,
+                    //albumname: this.qalbumname,
+                    buyername: _this.qbuyername,
+                    songname: _this.qsongname,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        });
+    };
+    SongpendingpurchaseComponent.prototype.setPage = function (page) {
+        this.router.navigate(['songpendingpurchase'], {
+            queryParams: {
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpendingpurchaseComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    SongpendingpurchaseComponent.prototype.sortSongpending = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['songpendingpurchase'], {
+            queryParams: {
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpendingpurchaseComponent.prototype.showSong = function (songid) {
+        this.router.navigate(["viewsongpurchase/" + songid], {
+            queryParams: {
+                srcpg: 'pend',
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpendingpurchaseComponent.prototype.showPurchase = function (songpurchaseid) {
+        this.router.navigate(["viewpurchase/" + songpurchaseid], {
+            queryParams: {
+                srcpg: 'pend',
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpendingpurchaseComponent.prototype.approvePayment = function (songpurchaseid, songname, songid, listenerid, songprice) {
+        var _this = this;
+        if (confirm('Do you really want to approve this song payment: ' + songname + ' record?')) {
+            this.loading = true;
+            var payload = {};
+            payload.status = 'STSAPV';
+            this.songpurchaseService.updateStatuspurchase(songpurchaseid, payload)
+                .subscribe(function (data) {
+                if (data.success === true) {
+                    var payload1 = {};
+                    payload1.listenerid = listenerid;
+                    payload1.purchaseid = songpurchaseid;
+                    payload1.paymentmtd = 'PMTCASH';
+                    payload1.producttype = 'SONG';
+                    payload1.productid = songid;
+                    payload1.dbcr = '-';
+                    payload1.amount = Number(_this.pfee.value) * (parseInt(songprice) / 100);
+                    _this.transactionService.saveTransaction(_this.userObj.userid, payload1)
+                        .subscribe(function (data) {
+                        if (data.success === true) {
+                            var payload2 = {};
+                            _this.songService.songbuyincrement(songid, payload2)
+                                .subscribe(function (data) {
+                                if (data.success === true) {
+                                    _this.loading = false;
+                                    _this.toastr.success('Approve payment success !');
+                                }
+                                else {
+                                    _this.toastr.warning('Error increment total purchase in song data...');
+                                }
+                                _this.router.navigate(['songpendingpurchase'], {
+                                    queryParams: {
+                                        artistname: _this.qartistname,
+                                        //albumname: this.qalbumname,
+                                        buyername: _this.qbuyername,
+                                        songname: _this.qsongname,
+                                        rptype: _this.qrptype,
+                                        startdt: _this.qstartdt,
+                                        enddt: _this.qenddt,
+                                        page: _this.qpage || 1,
+                                        sortby: _this.qsort
+                                    }
+                                });
+                            });
+                        }
+                        else {
+                            _this.toastr.error('Error saving the payment transaction...');
+                        }
+                    });
+                }
+                else {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['login']);
+                    }
+                    _this.toastr.error(data.message + '. Error updating the purchase status...');
+                }
+            });
+        }
+    };
+    SongpendingpurchaseComponent.prototype.rejectPayment = function (songpurchaseid, songname) {
+        var _this = this;
+        if (confirm('Do you really want to reject this song payment: ' + songname + ' record?')) {
+            this.loading = true;
+            var payload = {};
+            payload.status = 'STSRJCT';
+            this.songpurchaseService.updateStatuspurchase(songpurchaseid, payload)
+                .subscribe(function (data) {
+                if (data.success === true) {
+                    _this.loading = false;
+                    _this.toastr.success(data.message);
+                    _this.router.navigate(['songpendingpurchase'], {
+                        queryParams: {
+                            artistname: _this.qartistname,
+                            //albumname: this.qalbumname,
+                            buyername: _this.qbuyername,
+                            songname: _this.qsongname,
+                            rptype: _this.qrptype,
+                            startdt: _this.qstartdt,
+                            enddt: _this.qenddt,
+                            page: _this.qpage || 1,
+                            sortby: _this.qsort
+                        }
+                    });
+                }
+                else {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['login']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+            });
+        }
+    };
+    SongpendingpurchaseComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-songpendingpurchase',
+            template: __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.html"),
+            styles: [__webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__["a" /* SongpurchaseService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_transaction_service__["a" /* TransactionService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_song_service__["a" /* SongService */],
+            __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], SongpendingpurchaseComponent);
+    return SongpendingpurchaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songpurchasestats/songpurchasestats.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songpurchasestats/songpurchasestats.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Summary</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <!-- <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div> -->         \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                        <div class=\"col-sm-10\">\n                          <select class=\"form-control\" [formControl]=\"labelid\">\n                            <option value=\"\">Select the label</option>\n                            <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                          </select>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                        </div>\n                      </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"paymentmtd\" class=\"col-sm-2 paddingsearch\">Payment</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"paymentmtd\">\n                            <option ng-selected=\"true\" value=\"\">Select the method</option>\n                            <option *ngFor=\"let pmt of pmtd\" [ngValue]=\"pmt.code\">{{pmt.value}}</option>\n                        </select>\n                      </div>\n                    </div> \n                    <div class=\"col-sm-6 col-md-6\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songpurchase && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No song purchase found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO song purchase found for the selected criteria.\n      </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpurchase && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('label')\">Label</a></th>  \n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"5%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('listener')\">Buyer</a></th>\n                            <th width=\"25%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('song')\">Song Title</a></th>\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('songprice')\">Price</a></th>\n                            <th width=\"5%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('approvedt')\">Response date</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>\n                            <td data-label=\"Label\">{{ songpuritem.label }}</td>  \n                            <td data-label=\"Purchase Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showPurchase(songpuritem._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  \n                            <td data-label=\"Payment\">{{ songpuritem.payment }}</td>\n                            <td data-label=\"Buyer\">{{ songpuritem.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(songpuritem.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpuritem.song}}</a></td>\n                            <!-- <td style=\"font-size:12px\">{{ songpuritem.album }}</td> -->\n                            <td data-label=\"Song Price\" class=\"text-right\">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Status\">{{ songpuritem.stsvalue }}</td>\n                            <td data-label=\"Response date\">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpurchase && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SongpurchasestatsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var SongpurchasestatsComponent = /** @class */ (function () {
+    function SongpurchasestatsComponent(fb, authService, route, router, toastr, datePipe, songpurchaseService, msconfigService, labelmgtService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.songpurchaseService = songpurchaseService;
+        this.msconfigService = msconfigService;
+        this.labelmgtService = labelmgtService;
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        //albumname = new FormControl('',[Validators.nullValidator]);  
+        this.buyername = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.paymentmtd = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    SongpurchasestatsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            artistname: this.artistname,
+            //albumname: this.albumname,
+            buyername: this.buyername,
+            songname: this.songname,
+            status: this.status,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt,
+            paymentmtd: this.paymentmtd
+        });
+        this.getMsconfigGroupList('PMTSTATUS');
+        this.getMsconfigGroupList('PMTMETHOD');
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qartistname = params['artistname'] || '';
+            //this.qalbumname = params['albumname'] || '';
+            _this.qbuyername = params['buyername'] || '';
+            _this.qsongname = params['songname'] || '';
+            _this.qstatus = params['status'] || '';
+            _this.qpaymentmtd = params['paymentmtd'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.artistname = _this.qartistname;
+                //payload.albumname = this.qalbumname;
+                payload.buyername = _this.qbuyername;
+                payload.songname = _this.qsongname;
+                payload.status = _this.qstatus;
+                payload.paymentmtd = _this.qpaymentmtd;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    artistname: _this.qartistname,
+                    //albumname: this.qalbumname,
+                    buyername: _this.qbuyername,
+                    songname: _this.qsongname,
+                    status: _this.qstatus,
+                    paymentmtd: _this.qpaymentmtd,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    SongpurchasestatsComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    SongpurchasestatsComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    SongpurchasestatsComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'PMTSTATUS') {
+                        _this.sts = data.data;
+                    }
+                    if (groupid == 'PMTMETHOD') {
+                        _this.pmtd = data.data;
+                    }
+                }
+                else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
+                    _this.pmtd = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        });
+    };
+    SongpurchasestatsComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Error label list' }];
+                }
+            }
+        });
+    };
+    SongpurchasestatsComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['songpurchasestats'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                artistname: this.reportForm.value.artistname,
+                                //albumname: this.reportForm.value.albumname,
+                                buyername: this.reportForm.value.buyername,
+                                songname: this.reportForm.value.songname,
+                                status: this.reportForm.value.status,
+                                paymentmtd: this.reportForm.value.paymentmtd,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['songpurchasestats'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        artistname: this.reportForm.value.artistname,
+                        //albumname: this.reportForm.value.albumname,
+                        buyername: this.reportForm.value.buyername,
+                        songname: this.reportForm.value.songname,
+                        status: this.reportForm.value.status,
+                        paymentmtd: this.reportForm.value.paymentmtd,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    SongpurchasestatsComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.songpurchaseService.getAdmSongpurchaseAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.songpurchase = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid;
+                _this.qartistname = formval.artistname;
+                //this.qalbumname = formval.albumname;
+                _this.qbuyername = formval.buyername;
+                _this.qsongname = formval.songname;
+                _this.qstatus = formval.status;
+                _this.qpaymentmtd = formval.paymentmtd;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    artistname: _this.qartistname,
+                    //albumname: this.qalbumname,
+                    buyername: _this.qbuyername,
+                    songname: _this.qsongname,
+                    status: _this.qstatus,
+                    paymentmtd: _this.qpaymentmtd,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        });
+    };
+    SongpurchasestatsComponent.prototype.setPage = function (page) {
+        this.router.navigate(['songpurchasestats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpurchasestatsComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    SongpurchasestatsComponent.prototype.sortSongpurchase = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['songpurchasestats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpurchasestatsComponent.prototype.showSong = function (songid) {
+        this.router.navigate(["viewsongpurchase/" + songid], {
+            queryParams: {
+                srcpg: 'stats',
+                labelid: this.qlabelid,
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpurchasestatsComponent.prototype.showPurchase = function (songpurchaseid) {
+        this.router.navigate(["viewpurchase/" + songpurchaseid], {
+            queryParams: {
+                srcpg: 'stats',
+                labelid: this.qlabelid,
+                artistname: this.qartistname,
+                //albumname: this.qalbumname,
+                buyername: this.qbuyername,
+                songname: this.qsongname,
+                status: this.qstatus,
+                paymentmtd: this.qpaymentmtd,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    SongpurchasestatsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-songpurchasestats',
+            template: __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.html"),
+            styles: [__webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__["a" /* SongpurchaseService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], SongpurchasestatsComponent);
+    return SongpurchasestatsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/viewpurchase/viewpurchase.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/viewpurchase/viewpurchase.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Details</h3>\n    </div>\n    <form class=\"form-horizontal \">\n        <div class=\"form-group\">\n            <label for=\"label\" class=\"col-sm-2 control-label\">Label</label>\n            <div class=\"form-ele col-sm-10\"> {{ purchase?.label }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"id\" class=\"col-sm-2 control-label\">Purchase Ref</label>\n            <div class=\"form-ele col-sm-10\"> {{ purchase?._id }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"purchasedate\" class=\"col-sm-2 control-label\">Purchase Date</label>\n            <div class=\"form-ele col-sm-10\"> {{ purchase?.purchasedt | date: 'd MMM y'}}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"payment\" class=\"col-sm-2 control-label\">Payment Method</label>\n            <div class=\"form-ele col-sm-10\"> {{ purchase?.payment }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"listener\" class=\"col-sm-2 control-label\">Buyer</label>\n            <div class=\"form-ele col-sm-10\">{{ purchase?.listener }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"song\" class=\"col-sm-2 control-label\">Song</label>\n            <div class=\"form-ele col-sm-10\">{{ purchase?.song }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ purchase?.artist }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"form-ele col-sm-10\">{{ purchase?.stsvalue }}</div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"approvedt\" class=\"col-sm-2 control-label\">Response Date</label>\n            <div class=\"form-ele col-sm-10\"> {{ purchase?.approvedt | date: 'd MMM y'}}</div>\n        </div>\n       \n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/viewpurchase/viewpurchase.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewpurchaseComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ViewpurchaseComponent = /** @class */ (function () {
+    function ViewpurchaseComponent(fb, authService, songpurchaseService, toastr, route, router) {
+        this.fb = fb;
+        this.authService = authService;
+        this.songpurchaseService = songpurchaseService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+    }
+    ViewpurchaseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.sub = this.route.params.subscribe(function (params) {
+            var songpurchaseid = params['id'];
+            _this.getSongpurchase(songpurchaseid);
+        });
+        this.route.queryParams.forEach(function (params) {
+            _this.qsrcpg = params['srcpg'] || '';
+        });
+    };
+    ViewpurchaseComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    ViewpurchaseComponent.prototype.getSongpurchase = function (id) {
+        var _this = this;
+        var payload = {};
+        payload.songpurchaseid = id;
+        this.songpurchaseService.getSongpurchaseAgg(id).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                if (data.data[0]) {
+                    _this.purchase = data.data[0];
+                }
+                else {
+                    _this.toastr.error('Song purchase id is incorrect in the URL');
+                }
+            }
+        });
+    };
+    ViewpurchaseComponent.prototype.onBack = function () {
+        if (this.qsrcpg === 'pend') {
+            this.router.navigate(['/songpendingpurchase'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'comp') {
+            this.router.navigate(['/songcompletepurchase'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'tranx') {
+            this.router.navigate(['/transaction'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'stats') {
+            this.router.navigate(['/songpurchasestats'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'tranxstats') {
+            this.router.navigate(['/transactionstats'], { preserveQueryParams: true });
+        }
+        else {
+            this.authService.logout();
+            this.router.navigate(['login']);
+            this.toastr.error('Incorrect param in the URL');
+        }
+    };
+    ViewpurchaseComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-viewpurchase',
+            template: __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.html"),
+            styles: [__webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_songpurchase_service__["a" /* SongpurchaseService */],
+            __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+    ], ViewpurchaseComponent);
+    return ViewpurchaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewsongpurchaseComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var ViewsongpurchaseComponent = /** @class */ (function () {
+    function ViewsongpurchaseComponent(fb, authService, songService, msconfigService, toastr, route, router) {
+        this.fb = fb;
+        this.authService = authService;
+        this.songService = songService;
+        this.msconfigService = msconfigService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+        this.songgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+    }
+    ViewsongpurchaseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.sub = this.route.params.subscribe(function (params) {
+            var songid = params['id'];
+            _this.getMsconfigGroupList('CSTATUS');
+            _this.getMsconfigGroupList('GENRE');
+            _this.getSong(songid);
+        });
+        this.route.queryParams.forEach(function (params) {
+            _this.qsrcpg = params['srcpg'] || '';
+        });
+        this.songForm = this.fb.group({
+            songgenre: this.songgenre,
+            status: this.status
+        });
+    };
+    ViewsongpurchaseComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    ViewsongpurchaseComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'CSTATUS') {
+                        _this.sts = data.data;
+                    }
+                    if (groupid == 'GENRE') {
+                        _this.genre = data.data;
+                    }
+                }
+                else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        });
+    };
+    ViewsongpurchaseComponent.prototype.getSong = function (id) {
+        var _this = this;
+        this.songService.getSongAgg(id).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                if (data.data[0]) {
+                    _this.song = data.data[0];
+                    _this.populateForm(data.data[0]);
+                }
+                else {
+                    _this.toastr.error('Song id is incorrect in the URL');
+                }
+            }
+        });
+    };
+    ViewsongpurchaseComponent.prototype.populateForm = function (data) {
+        this.songForm.patchValue({
+            songgenre: data.songgenre,
+            status: data.status
+        });
+    };
+    ViewsongpurchaseComponent.prototype.onBack = function () {
+        if (this.qsrcpg === 'pend') {
+            this.router.navigate(['/songpendingpurchase'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'comp') {
+            this.router.navigate(['/songcompletepurchase'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'tranx') {
+            this.router.navigate(['../transaction'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'stats') {
+            this.router.navigate(['/songpurchasestats'], { preserveQueryParams: true });
+        }
+        else {
+            this.authService.logout();
+            this.router.navigate(['login']);
+            this.toastr.error('Incorrect param in the URL');
+        }
+    };
+    ViewsongpurchaseComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-viewsongpurchase',
+            template: __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.html"),
+            styles: [__webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_song_service__["a" /* SongService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
+            __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+    ], ViewsongpurchaseComponent);
+    return ViewsongpurchaseComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/song/addsong/addsong.component.css":
 /***/ (function(module, exports) {
 
@@ -5548,7 +7592,7 @@ module.exports = ""
 /***/ "./src/app/components/song/addsong/addsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>  \n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputartist [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputalbum [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select #inputgenre [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputprev type=\"file\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputsong type=\"file\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Song</h3>\n  </div>  \n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addSongForm\" (ngSubmit)=\"addSong(addSongForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('artistid').invalid && addSongForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputartist [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('artistid').dirty && addSongForm.get('artistid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('artistid').errors.required\">\n            Please enter the artist\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('albumid').invalid && addSongForm.get('albumid').dirty}\">\n      <label for=\"albumid\" class=\"col-sm-2 control-label\">Album<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputalbum [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumid\">\n            <option ng-selected=\"true\" value=\"\">Select the album</option>\n            <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('albumid').dirty && addSongForm.get('albumid').errors\">\n        <span class=\"col-sm-2\"></span>\n        <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('albumid').errors.required\">\n            Please enter the album\n        </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songname').invalid && addSongForm.get('songname').dirty}\">\n      <label for=\"songname\" class=\"col-sm-2 control-label\">Song Name <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"songname\" id=\"songname\" placeholder=\"Song Name\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songname').dirty && addSongForm.get('songname').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songname').errors.required\">\n              Please enter the song name\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"songlyric\" rows=\"10\" [formControl]=\"songlyric\" placeholder=\"Song Lyric\"></textarea>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songgenre').invalid && addSongForm.get('songgenre').dirty}\">\n      <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select #inputgenre [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"songgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songgenre').dirty && addSongForm.get('songgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songgenre').errors.required\">\n              Please select song genre\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprice').invalid && addSongForm.get('songprice').dirty}\">\n      <label for=\"songprice\" class=\"col-sm-2 control-label\">Price<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"songprice\" [formControl]=\"songprice\" placeholder=\"Song Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addSongForm.get('songprice').dirty && addSongForm.get('songprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addSongForm.get('songprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songprvw').invalid && addSongForm.get('songprvw').dirty}\">\n      <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputprev type=\"file\" accept=\"audio/*,video/*\" (change)=\"prvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" placeholder=\"Song preview\">\n          <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>( MAX {{ +this.maxfilesize?.value/1000000 }} MB )</b></u></span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addSongForm.get('songfile').invalid && addSongForm.get('songfile').dirty}\">\n      <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File<sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n          <input [disabled]=\"this.loading == true\" #inputsong type=\"file\" accept=\"audio/*,video/*\" (change)=\"songfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" placeholder=\"Song file\">\n          <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>( MAX {{ +this.maxfilesize?.value/1000000 }} MB )</b></u></span>\n      </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n      <label class=\"col-sm-2 control-label\"></label>\n      <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n          <button type=\"submit\" [disabled]=\"addSongForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n          <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n      </div>\n      <div class=\"col-sm-5\" style=\"text-align:right\">\n          <sup>*</sup> required\n      </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -5621,6 +7665,7 @@ var AddsongComponent = /** @class */ (function () {
         this.prvwuploadpath = this.globals.prvwuploadpath;
         this.songuploadpath = this.globals.songuploadpath;
         this.getMsconfigGroupList('GENRE');
+        this.getMsconfigVal('AVSIZE', 'FSIZE');
         this.getArtistList(this.userObj.userid);
         this.getAlbumList(this.userObj.userid);
         this.songid = '';
@@ -5648,6 +7693,19 @@ var AddsongComponent = /** @class */ (function () {
                 }
                 else {
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        });
+    };
+    AddsongComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
                 }
             }
         });
@@ -5777,12 +7835,42 @@ var AddsongComponent = /** @class */ (function () {
         }
     };
     AddsongComponent.prototype.prvwfileChangeEvent = function (fileInput) {
-        this.PrvwfilesToUpload = fileInput.target.files;
-        console.log('content file: ' + this.PrvwfilesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.PrvwfilesToUpload = fileInput.target.files;
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+                this.inputpreVar.nativeElement.value = "";
+            }
+        }
+        else {
+            alert('Error file type. You must input audio/video file type.');
+            this.inputpreVar.nativeElement.value = "";
+        }
     };
     AddsongComponent.prototype.songfileChangeEvent = function (fileInput) {
-        this.SongfilesToUpload = fileInput.target.files;
-        console.log('content file: ' + this.SongfilesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.SongfilesToUpload = fileInput.target.files;
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+                this.inputsongVar.nativeElement.value = "";
+            }
+        }
+        else {
+            alert('Error file type. You must input audio/video file type.');
+            this.inputsongVar.nativeElement.value = "";
+        }
     };
     AddsongComponent.prototype.artistChangeEvent = function (selectedValue) {
         var result = selectedValue.target.value;
@@ -6076,7 +8164,7 @@ module.exports = ""
 /***/ "./src/app/components/song/editsongfiles/editsongfiles.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Song Files</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"songForm\" (ngSubmit)=\"updateSong(songForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n          <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview</label>\n          <div class=\"input-group col-sm-10\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"PrvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newprvwfile }}\">  \n            </div>\n      </div>\n      <br>\n      <div class=\"form-group\">\n          <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File</label>\n          <div class=\"input-group col-sm-10\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" (change)=\"SongfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newsongfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n        <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <br>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Change Song Files</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"songForm\" (ngSubmit)=\"updateSong(songForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n          <label for=\"songprvw\" class=\"col-sm-2 control-label\">Song Preview</label>\n          <div class=\"input-group col-sm-10\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" accept=\"audio/*,video/*\" (change)=\"PrvwfileChangeEvent($event)\" name=\"songprvw\" id=\"songprvw\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newprvwfile }}\">  \n          </div>\n      </div>\n      <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <label class=\"col-sm-10\" style=\"margin:0;padding:0;color:red;\"><sup>* <u><b>FILE SIZE (MAX {{ +this.maxfilesize?.value/1000000 }} MB)</b></u></sup></label>    \n      </div>\n      <br>\n      <div class=\"form-group\">\n          <label for=\"songfile\" class=\"col-sm-2 control-label\">Song File</label>\n          <div class=\"input-group col-sm-10\">\n              <label class=\"input-group-btn\">\n                  <span *ngIf=\"this.loading == false\" class=\"btn btn-primary\">\n                      Browse&hellip; <input [disabled]=\"this.loading == true\" type=\"file\" accept=\"audio/*,video/*\" (change)=\"SongfileChangeEvent($event)\" name=\"songfile\" id=\"songfile\" style=\"display:none\">\n                  </span>\n              </label>\n              <input type=\"text\" class=\"form-control\" value=\"{{ this.newsongfile }}\">  \n            </div>\n      </div>\n      <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <label class=\"col-sm-10\" style=\"margin:0;padding:0;color:red;\"><sup>* <u><b>FILE SIZE (MAX {{ +this.maxfilesize?.value/1000000 }} MB)</b></u></sup></label>    \n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n        <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n        <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\">     </label>\n          <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <br>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n      </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -6093,6 +8181,7 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6110,8 +8199,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EditsongfilesComponent = /** @class */ (function () {
-    function EditsongfilesComponent(fb, authService, songService, route, router, toastr, ftService, globals) {
+    function EditsongfilesComponent(fb, authService, songService, route, router, toastr, ftService, globals, msconfigService) {
         this.fb = fb;
         this.authService = authService;
         this.songService = songService;
@@ -6120,6 +8210,7 @@ var EditsongfilesComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.ftService = ftService;
         this.globals = globals;
+        this.msconfigService = msconfigService;
         this.PrvwfilesToUpload = [];
         this.SongfilesToUpload = [];
         this.loading = false;
@@ -6135,6 +8226,7 @@ var EditsongfilesComponent = /** @class */ (function () {
         this.prvwuploadpath = this.globals.prvwuploadpath;
         this.songuploadpath = this.globals.songuploadpath;
         this.progressvalue = 0;
+        this.getMsconfigVal('AVSIZE', 'FSIZE');
         this.songForm = this.fb.group({
             songprvwpath: this.songprvwpath,
             songprvwname: this.songprvwname,
@@ -6144,6 +8236,19 @@ var EditsongfilesComponent = /** @class */ (function () {
         this.route.params.subscribe(function (params) {
             _this.songid = params['id'];
             _this.getSong(_this.songid);
+        });
+    };
+    EditsongfilesComponent.prototype.getMsconfigVal = function (code, groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.maxfilesize = data.data[0];
+                }
+                else {
+                    _this.maxfilesize = { code: '', value: '0' };
+                }
+            }
         });
     };
     EditsongfilesComponent.prototype.getSong = function (id) {
@@ -6172,16 +8277,44 @@ var EditsongfilesComponent = /** @class */ (function () {
         });
     };
     EditsongfilesComponent.prototype.PrvwfileChangeEvent = function (fileInput) {
-        this.PrvwfilesToUpload = fileInput.target.files;
-        this.newprvwfile = this.PrvwfilesToUpload[0]['name'];
-        this.progressvalue = 0;
-        this.uploadNewPreview(this.PrvwfilesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.PrvwfilesToUpload = fileInput.target.files;
+                this.newprvwfile = this.PrvwfilesToUpload[0]['name'];
+                this.progressvalue = 0;
+                this.uploadNewPreview(this.PrvwfilesToUpload);
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+            }
+        }
+        else {
+            alert('Error file type. You must input audio/video file type.');
+        }
     };
     EditsongfilesComponent.prototype.SongfileChangeEvent = function (fileInput) {
-        this.SongfilesToUpload = fileInput.target.files;
-        this.newsongfile = this.SongfilesToUpload[0]['name'];
-        this.progressvalue = 0;
-        this.uploadNewSong(this.SongfilesToUpload);
+        var files = fileInput.target.files;
+        //console.log('content file: ' + this.filesToUpload);
+        //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+        if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+            if (files[0].size <= +this.maxfilesize.value) {
+                this.SongfilesToUpload = fileInput.target.files;
+                this.newsongfile = this.SongfilesToUpload[0]['name'];
+                this.progressvalue = 0;
+                this.uploadNewSong(this.SongfilesToUpload);
+            }
+            else {
+                var mfsize = +this.maxfilesize.value / 1000000;
+                alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+            }
+        }
+        else {
+            alert('Error file type. You must input audio/video file type.');
+        }
     };
     EditsongfilesComponent.prototype.uploadNewPreview = function (newFileData) {
         var _this = this;
@@ -6317,7 +8450,8 @@ var EditsongfilesComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
-            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
+            __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
     ], EditsongfilesComponent);
     return EditsongfilesComponent;
 }());
@@ -6336,7 +8470,7 @@ module.exports = ""
 /***/ "./src/app/components/song/listsong/listsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"artistid\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                <div class=\"col-sm-10\">\n                <!-- <div class=\"input-group col-sm-10\"> -->\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the artist</option>\n                        <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumid\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"albumid\">\n                        <option value=\"\">Select the album</option>\n                        <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n                    </select>\n                  </div>\n            </div>\n\n\n          </div>\n\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                  </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songpublish\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n                </div>  \n              </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-2 paddingsearch\"></label>\n                  <div class=\"col-sm-10\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>\n                </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No song found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any songs for the selected criteria. Please add the song <a style=\"cursor:pointer\" (click)=\"toaddSongs()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"20%\">Album</th>\n                          <!-- <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('albumyear')\">Year</a></th> -->\n                          <th width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songgenre')\">Genre</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td><a style=\"cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td>{{ song.artist }}</td>\n                          <td>{{ song.album }}</td>\n                          <!-- <td>{{ song.albumyear}}</td> -->\n                          <td>{{ song.genrevalue}}</td>\n                          <td class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editSongFiles(song._id, song.songpublish, song.songbuy)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song File\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editSong(song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"artistid\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                <div class=\"col-sm-10\">\n                <!-- <div class=\"input-group col-sm-10\"> -->\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the artist</option>\n                        <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumid\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"albumid\">\n                        <option value=\"\">Select the album</option>\n                        <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n                    </select>\n                  </div>\n            </div>\n\n\n          </div>\n\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                  </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songpublish\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n                </div>  \n              </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-2 paddingsearch\"></label>\n                  <div class=\"col-sm-10\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>\n                </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No song found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any songs for the selected criteria. Please add the song <a style=\"cursor:pointer\" (click)=\"toaddSongs()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                          <th width=\"20%\" scope=\"col\">Artist</th>\n                          <th width=\"20%\" scope=\"col\">Album</th>\n                          <!-- <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('albumyear')\">Year</a></th> -->\n                          <th width=\"9%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songgenre')\">Genre</a></th>\n                          <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\" scope=\"col\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td scope=\"row\" data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td data-label=\"Artist\">{{ song.artist }}</td>\n                          <td data-label=\"Album\">{{ song.album }}</td>\n                          <!-- <td>{{ song.albumyear}}</td> -->\n                          <td data-label=\"Genre\">{{ song.genrevalue}}</td>\n                          <td data-label=\"Price\" class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editSongFiles(song._id, song.songpublish, song.songbuy)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song File\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editSong(song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -6684,8 +8818,9 @@ var ListsongComponent = /** @class */ (function () {
         });
     };
     ListsongComponent.prototype.editSong = function (songid, songpublish, songbuy) {
-        if (songbuy > 0) {
-            this.toastr.warning("This song has been purchased. Data can not be edited");
+        //if (songbuy > 0) {
+        if (songpublish == 'Y') {
+            this.toastr.warning("This song has been published. Data can not be edited");
         }
         else {
             this.router.navigate(["editsong/" + songid], {
@@ -6706,8 +8841,9 @@ var ListsongComponent = /** @class */ (function () {
     };
     ListsongComponent.prototype.confirmDel = function (idx, songid, songpublish, songbuy, songname, songprvwname, songfilename) {
         var _this = this;
-        if (songbuy > 0) {
-            this.toastr.warning("This song has been purchased. Data can not be deleted");
+        //if (songbuy > 0) {
+        if (songpublish == 'Y') {
+            this.toastr.warning("This song has been published. Data can not be deleted");
         }
         else {
             if (confirm('Do you really want to delete this song: ' + songname + ' record?')) {
@@ -6797,7 +8933,7 @@ module.exports = ""
 /***/ "./src/app/components/song/viewsong/viewsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
 
 /***/ }),
 
@@ -6907,8 +9043,13 @@ var ViewsongComponent = /** @class */ (function () {
         if (this.userObj.usertype === 'ADM') {
             this.router.navigate(['/songmanagement'], { preserveQueryParams: true });
         }
-        else {
+        else if (this.userObj.usertype === 'LBL') {
             this.router.navigate(['/listsong'], { preserveQueryParams: true });
+        }
+        else {
+            this.authService.logout();
+            this.router.navigate(['login']);
+            this.toastr.error('Incorrect param in the URL');
         }
     };
     ViewsongComponent = __decorate([
@@ -6942,7 +9083,7 @@ module.exports = ""
 /***/ "./src/app/components/songmgt/songmgt.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Publish Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"labelid\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the label</option>\n                        <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n              <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n              <div class=\"col-sm-10\">\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                  <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n              </div>\n            </div>            \n        </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">    \n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songgenre\">\n                        <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                      </select>\n                  </div>\n              </div>\n           </div>\n          <div class=\"row rowmarginsearch\">        \n<!--               <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>   -->\n              <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                        <div class=\"col-sm-5\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                </div>                  \n            </div>\n      </form>\n    </div>\n  </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No song found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any songs found for the selected criteria.\n        </div>\n    </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                          <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                          <th width=\"20%\">Artist</th>\n                          <th width=\"20%\">Album</th>\n                          <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Publish?</a></th>\n                          <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <th width=\"5%\">Preview</th>\n                          <th width=\"5%\">Song</th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"5%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td style=\"font-size:12px\">{{ song.label }}</td>\n                          <td style=\"font-size:12px\">{{ song.artist }}</td>\n                          <td style=\"font-size:12px\">{{ song.album }}</td>\n                          <td style=\"font-size:12px\">{{ song.songpublish }}</td>\n                          <td class=\"text-right\" style=\"font-size:12px\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                          <td><a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td>\n                               <a alt=\"Publish\" style=\"cursor:pointer;float:center;color:#11DFDF\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish\"><i class=\"fa fa-cloud-upload fa-2x\"></i></a>\n                               <!-- <a alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a> -->\n<!--                               <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Publish\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish Song\">\n                                  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"UnPublish\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Cancel Publish Song\">\n                                  <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                              </button> -->\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Publish Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"labelid\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the label</option>\n                        <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n              <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n              <div class=\"col-sm-10\">\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                  <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n              </div>\n            </div>            \n        </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">    \n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songgenre\">\n                        <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                      </select>\n                  </div>\n              </div>\n           </div>\n          <div class=\"row rowmarginsearch\">        \n<!--               <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>   -->\n              <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                        <div class=\"col-sm-5\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                </div>                  \n            </div>\n      </form>\n    </div>\n  </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No song found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any songs found for the selected criteria.\n        </div>\n    </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                          <th scope=\"col\" width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                          <th scope=\"col\" width=\"20%\">Artist</th>\n                          <th scope=\"col\" width=\"20%\">Album</th>\n                          <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Publish?</a></th>\n                          <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <th scope=\"col\" width=\"5%\">Preview</th>\n                          <th scope=\"col\" width=\"5%\">Song</th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th scope=\"col\" width=\"5%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td scope=\"row\" data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td data-label=\"Label\">{{ song.label }}</td>\n                          <td data-label=\"Artist\">{{ song.artist }}</td>\n                          <td data-label=\"Album\">{{ song.album }}</td>\n                          <td data-label=\"Publish\">{{ song.songpublish }}</td>\n                          <td class=\"text-right\" data-label=\"Song Price\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td data-label=\"Song Preview\"><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                          <td data-label=\"Song File\"><a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                               <a alt=\"Publish\" style=\"cursor:pointer;float:center;color:#11DFDF\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish\"><i class=\"fa fa-cloud-upload fa-2x\"></i></a>\n                               <!-- <a alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a> -->\n<!--                               <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Publish\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish Song\">\n                                  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"UnPublish\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Cancel Publish Song\">\n                                  <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                              </button> -->\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -7149,7 +9290,7 @@ var SongmgtComponent = /** @class */ (function () {
                     labelid: _this.qlabelid,
                     songname: _this.qsongname,
                     artistname: _this.qartistname,
-                    albumid: _this.qalbumname,
+                    albumname: _this.qalbumname,
                     albumyear: _this.qalbumyear,
                     songgenre: _this.qsonggenre,
                     //songbuy: this.qsongbuy,
@@ -7321,7 +9462,7 @@ module.exports = ""
 /***/ "./src/app/components/songstats/songstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Songs</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                </div>\n              </div>            \n          </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                  </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">    \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                          <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                          <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n                </div>\n             </div>\n            <div class=\"row rowmarginsearch\">        \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songpublish\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songbuy\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                    <div class=\"col-sm-5\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                </div>                  \n            </div>\n        </form>\n      </div>\n    </div>\n      <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n          <div class=\"panel-heading\">\n              <h3 class=\"panel-title\">No song found</h3> \n          </div>\n    \n          <div class=\"panel-body\">\n              There is NO any songs found for the selected criteria.\n          </div>\n      </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Name</a></th>\n                            <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                            <th width=\"10%\">Artist</th>\n                            <th width=\"20%\">Album</th>\n                            <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Purchase</a></th>\n                            <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                            <th width=\"10%\">Publish?</th>\n                            <!-- <th width=\"5%\">Preview</th> -->\n                            <th width=\"5%\">Song</th>\n                            <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                            <th width=\"5%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let song of songs; let songIndex = index'>\n                            <td><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                            <td style=\"font-size:12px\">{{ song.label }}</td>\n                            <td style=\"font-size:12px\">{{ song.artist }}</td>\n                            <td style=\"font-size:12px\">{{ song.album }}</td>\n                            <td class=\"text-right\" style=\"font-size:12px\">{{ song.songbuy}}</td>\n                            <td class=\"text-right\" style=\"font-size:12px\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td style=\"font-size:12px\">{{ song.songpublish }}</td>\n                            <!-- <td><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td> -->\n                            <td><a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                            <!-- <td>{{ albm.status}}</td> -->\n                            <td><a *ngIf=\"song.songpublish === 'Y' && song.songbuy === 0\" alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a></td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n  </div>\n  "
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Songs</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                </div>\n              </div>            \n          </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                  </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">    \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                          <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                          <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n                </div>\n             </div>\n            <div class=\"row rowmarginsearch\">        \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songpublish\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songbuy\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                    <div class=\"col-sm-5\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                </div>                  \n            </div>\n        </form>\n      </div>\n    </div>\n      <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n          <div class=\"panel-heading\">\n              <h3 class=\"panel-title\">No song found</h3> \n          </div>\n    \n          <div class=\"panel-body\">\n              There is NO any songs found for the selected criteria.\n          </div>\n      </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                            <th scope=\"col\" width=\"10%\">Artist</th>\n                            <th scope=\"col\" width=\"20%\">Album</th>\n                            <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Purchase</a></th>\n                            <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                            <th scope=\"col\" width=\"10%\">Publish?</th>\n                            <!-- <th width=\"5%\">Preview</th> -->\n                            <th scope=\"col\" width=\"5%\">Song</th>\n                            <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                            <th scope=\"col\" width=\"5%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let song of songs; let songIndex = index'>\n                            <td scope=\"row\" data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                            <td data-label=\"Label\">{{ song.label }}</td>\n                            <td data-label=\"Artist\">{{ song.artist }}</td>\n                            <td data-label=\"Album\">{{ song.album }}</td>\n                            <td class=\"text-right\" data-label=\"Purchase\">{{ song.songbuy}}</td>\n                            <td class=\"text-right\" data-label=\"Price\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Publish?\">{{ song.songpublish }}</td>\n                            <!-- <td><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td> -->\n                            <td data-label=\"Song\"><a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                            <!-- <td>{{ albm.status}}</td> -->\n                            <td data-label=\"Action\">\n                                <a *ngIf=\"song.songpublish === 'Y' && song.songbuy === 0\" alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a>\n                                <span *ngIf=\"song.songpublish !== 'Y' || song.songbuy !== 0\" style=\"color:#eee\">No Action</span>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n  </div>\n  "
 
 /***/ }),
 
@@ -7522,7 +9663,7 @@ var SongstatsComponent = /** @class */ (function () {
                     labelid: _this.qlabelid,
                     songname: _this.qsongname,
                     artistname: _this.qartistname,
-                    albumid: _this.qalbumname,
+                    albumname: _this.qalbumname,
                     albumyear: _this.qalbumyear,
                     songgenre: _this.qsonggenre,
                     songpublish: _this.qsongpublish,
@@ -7795,6 +9936,789 @@ var ViewsongstatsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/transaction/transaction.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/transaction/transaction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Transactions</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Payment Ref</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"Payment Ref\">\n                    </div>\n                </div>         \n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                  </div>\n                </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"productname\" class=\"col-sm-2 paddingsearch\">Product Name</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"productname\" [formControl]=\"productname\" placeholder=\"Product Name\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"dbcr\" class=\"col-sm-2 paddingsearch\">IN/OUT</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"dbcr\">\n                            <option ng-selected=\"true\" value=\"\">Select the option</option>\n                            <option *ngFor=\"let a of dc\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                      </div>\n                    </div>             \n                </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Transaction Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n\n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                      </div>\n                  </div>                  \n              </div>\n            </form>\n        </div>    \n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"transactions && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No transaction found</h3> \n        </div>\n\n        <div class=\"panel-body\">\n          There is NO transaction found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"transactions && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('transactiondt')\">Transaction Date</a></th>\n                            <th width=\"40%\" scope=\"col\">Remarks</th>\n                            <th width=\"20%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('amount')\">Amount</a></th>\n                            <th width=\"5%\" scope=\"col\">In/Out</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let trx of transactions; let trxIndex = index'>\n                            <!-- <td data-label=\"Transaction Date\" scope=\"row\"><a style=\"cursor:pointer\" (click)=\"showTransaction(trx._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->\n                            <td data-label=\"Transaction Date\" scope=\"row\">{{ trx.transactiondt | date: 'd MMM y'}}</td>\n                            <td data-label=\"Remarks\">payment ref: {{ trx.purchaseid }} ; <br> buyer: {{ trx.listener }} ;<br> product: {{ trx.producttype}} &nbsp; {{ trx.product}}</td>\n                            <td data-label=\"Payment\"><a style=\"cursor:pointer\" (click)=\"showPurchase(trx.purchaseid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Payment\">{{ trx.payment }}</a></td>\n                            <td data-label=\"Amount\" class=\"text-right\">{{ trx.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"In/Out\">{{ trx.dbcr }}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"transactions && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/transaction/transaction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+//import { SongService } from '../../services/song.service';
+
+var TransactionComponent = /** @class */ (function () {
+    function TransactionComponent(fb, authService, route, router, toastr, datePipe, transactionService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.transactionService = transactionService;
+        this.msconfigService = msconfigService;
+        this.dc = [{ code: '-', value: 'OUT' },
+            { code: '+', value: 'IN' }];
+        this.loading = false;
+        this.productname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.buyername = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.dbcr = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    TransactionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            productname: this.productname,
+            purchaseid: this.purchaseid,
+            buyername: this.buyername,
+            dbcr: this.dbcr,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.route.queryParams.forEach(function (params) {
+            _this.qproductname = params['productname'] || '';
+            _this.qpurchaseid = params['purchaseid'] || '';
+            _this.qbuyername = params['buyername'] || '';
+            _this.qdbcr = params['dbcr'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.productname = _this.qproductname;
+                payload.purchaseid = _this.qpurchaseid;
+                payload.buyername = _this.qbuyername;
+                payload.dbcr = _this.qdbcr;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    productname: _this.qproductname,
+                    purchaseid: _this.qpurchaseid,
+                    buyername: _this.qbuyername,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    TransactionComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    TransactionComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    TransactionComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['transaction'], {
+                            queryParams: {
+                                productname: this.reportForm.value.productname,
+                                purchaseid: this.reportForm.value.purchaseid,
+                                buyername: this.reportForm.value.buyername,
+                                dbcr: this.reportForm.value.dbcr,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['transaction'], {
+                    queryParams: {
+                        productname: this.reportForm.value.productname,
+                        purchaseid: this.reportForm.value.purchaseid,
+                        buyername: this.reportForm.value.buyername,
+                        dbcr: this.reportForm.value.dbcr,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    TransactionComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.transactionService.getTransactionAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.transactions = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qproductname = formval.productname;
+                _this.qpurchaseid = formval.purchaseid;
+                _this.qbuyername = formval.buyername;
+                _this.qdbcr = formval.dbcr;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    productname: _this.qproductname,
+                    purchaseid: _this.qpurchaseid,
+                    buyername: _this.qbuyername,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        });
+    };
+    TransactionComponent.prototype.setPage = function (page) {
+        this.router.navigate(['transaction'], {
+            queryParams: {
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    TransactionComponent.prototype.sortTransaction = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['transaction'], {
+            queryParams: {
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionComponent.prototype.showSong = function (songid) {
+        this.router.navigate(["viewsongpurchase/" + songid], {
+            queryParams: {
+                srcpg: 'tranx',
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionComponent.prototype.showPurchase = function (songpurchaseid) {
+        this.router.navigate(["viewpurchase/" + songpurchaseid], {
+            queryParams: {
+                srcpg: 'tranx',
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-transaction',
+            template: __webpack_require__("./src/app/components/transaction/transaction.component.html"),
+            styles: [__webpack_require__("./src/app/components/transaction/transaction.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__["a" /* TransactionService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], TransactionComponent);
+    return TransactionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/transactionstats/transactionstats.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/transactionstats/transactionstats.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Transactions</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Payment Ref</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"Payment Ref\">\n                    </div>\n                </div>         \n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                  </div>\n                </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"productname\" class=\"col-sm-2 paddingsearch\">Product Name</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"productname\" [formControl]=\"productname\" placeholder=\"Product Name\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"dbcr\" class=\"col-sm-2 paddingsearch\">IN/OUT</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"dbcr\">\n                            <option ng-selected=\"true\" value=\"\">Select the option</option>\n                            <option *ngFor=\"let a of dc\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                      </div>\n                    </div>             \n                </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Transaction Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n\n              </div>\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                </div>                  \n              </div>\n            </form>\n        </div>    \n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"transactions && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No transaction found</h3> \n        </div>\n\n        <div class=\"panel-body\">\n          There is NO transaction found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"transactions && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('transactiondt')\">Transaction Date</a></th>\n                            <th width=\"40%\" scope=\"col\">Remarks</th>\n                            <th width=\"20%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('amount')\">Amount</a></th>\n                            <th width=\"5%\" scope=\"col\">In/Out</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let trx of transactions; let trxIndex = index'>\n                            <!-- <td data-label=\"Transaction Date\" scope=\"row\"><a style=\"cursor:pointer\" (click)=\"showTransaction(trx._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->\n                            <td data-label=\"Transaction Date\" scope=\"row\">{{ trx.transactiondt | date: 'd MMM y'}}</td>\n                            <td data-label=\"Remarks\">payment ref: {{ trx.purchaseid }} ; <br> buyer: {{ trx.listener }} ;<br> product: {{ trx.producttype}} &nbsp; {{ trx.product}}</td>\n                            <td data-label=\"Payment\"><a style=\"cursor:pointer\" (click)=\"showPurchase(trx.purchaseid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Payment\">{{ trx.payment }}</a></td>\n                            <td data-label=\"Amount\" class=\"text-right\">{{ trx.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"In/Out\">{{ trx.dbcr }}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"transactions && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/transactionstats/transactionstats.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionstatsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+//import { SongService } from '../../services/song.service';
+
+
+var TransactionstatsComponent = /** @class */ (function () {
+    function TransactionstatsComponent(fb, authService, route, router, toastr, datePipe, transactionService, msconfigService, labelmgtService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.transactionService = transactionService;
+        this.msconfigService = msconfigService;
+        this.labelmgtService = labelmgtService;
+        this.dc = [{ code: '-', value: 'OUT' },
+            { code: '+', value: 'IN' }];
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.productname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.buyername = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.dbcr = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    TransactionstatsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            productname: this.productname,
+            purchaseid: this.purchaseid,
+            buyername: this.buyername,
+            dbcr: this.dbcr,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qproductname = params['productname'] || '';
+            _this.qpurchaseid = params['purchaseid'] || '';
+            _this.qbuyername = params['buyername'] || '';
+            _this.qdbcr = params['dbcr'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.productname = _this.qproductname;
+                payload.purchaseid = _this.qpurchaseid;
+                payload.buyername = _this.qbuyername;
+                payload.dbcr = _this.qdbcr;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    productname: _this.qproductname,
+                    purchaseid: _this.qpurchaseid,
+                    buyername: _this.qbuyername,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    TransactionstatsComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    TransactionstatsComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    TransactionstatsComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Error label list' }];
+                }
+            }
+        });
+    };
+    TransactionstatsComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['transactionstats'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                productname: this.reportForm.value.productname,
+                                purchaseid: this.reportForm.value.purchaseid,
+                                buyername: this.reportForm.value.buyername,
+                                dbcr: this.reportForm.value.dbcr,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['transactionstats'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        productname: this.reportForm.value.productname,
+                        purchaseid: this.reportForm.value.purchaseid,
+                        buyername: this.reportForm.value.buyername,
+                        dbcr: this.reportForm.value.dbcr,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    TransactionstatsComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.transactionService.getAdmTransactionAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.transactions = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid,
+                    _this.qproductname = formval.productname;
+                _this.qpurchaseid = formval.purchaseid;
+                _this.qbuyername = formval.buyername;
+                _this.qdbcr = formval.dbcr;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    productname: _this.qproductname,
+                    purchaseid: _this.qpurchaseid,
+                    buyername: _this.qbuyername,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        });
+    };
+    TransactionstatsComponent.prototype.setPage = function (page) {
+        this.router.navigate(['transactionstats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionstatsComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    TransactionstatsComponent.prototype.sortTransaction = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['transactionstats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionstatsComponent.prototype.showPurchase = function (songpurchaseid) {
+        this.router.navigate(["viewpurchase/" + songpurchaseid], {
+            queryParams: {
+                srcpg: 'tranxstats',
+                labelid: this.qlabelid,
+                productname: this.qproductname,
+                purchaseid: this.qpurchaseid,
+                buyername: this.qbuyername,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    TransactionstatsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-transactionstats',
+            template: __webpack_require__("./src/app/components/transactionstats/transactionstats.component.html"),
+            styles: [__webpack_require__("./src/app/components/transactionstats/transactionstats.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__["a" /* TransactionService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], TransactionstatsComponent);
+    return TransactionstatsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/user/emailverification/emailverification.component.css":
 /***/ (function(module, exports) {
 
@@ -7805,7 +10729,7 @@ module.exports = "\n/* Base ------------------------------ */\n\n*:not(br):not(t
 /***/ "./src/app/components/user/emailverification/emailverification.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <table class=\"email-wrapper\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n    <tr>\n      <td align=\"center\">\n        <table class=\"email-content\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n          <!-- Email Body -->\n          <tr>\n            <td class=\"email-body\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n              <table class=\"email-body_inner\" align=\"center\" width=\"570\" cellpadding=\"0\" cellspacing=\"0\">\n                <!-- Body content -->\n                <tr>\n                  <td class=\"content-cell\">\n                    <h1>Hi, {{name}}!</h1>\n                    <p><strong>Thanks for the email confirmation !</strong></p>\n                    <p>{{ this.remarks1 }}</p>\n                    <p>{{ this.remarks2 }} <a href=\"mailto:{{ this.csemail.value }}\">{{ this.csemail.value }}</a></p>\n                    <p>For reference, here's your account information:</p>\n                    <table class=\"attributes\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                      <tr>\n                        <td class=\"attributes_content\">\n                          <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                            <tr>\n                              <td class=\"attributes_item\"><strong>Username:</strong> {{this.username}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Name:</strong> {{this.name}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Email:</strong> {{ this.email }}</td>\n                            </tr>\n                              <tr>\n                              <td class=\"attributes_item\"><strong>Usertype:</strong> {{ this.utype }}</td>\n                            </tr>\n                          </table>\n                        </td>\n                      </tr>\n                    </table>\n                    <!-- Sub copy -->\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n </div> "
+module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <table class=\"email-wrapper\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n    <tr>\n      <td align=\"center\">\n        <table class=\"email-content\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n          <!-- Email Body -->\n          <tr>\n            <td class=\"email-body\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n              <table class=\"email-body_inner\" align=\"center\" width=\"570\" cellpadding=\"0\" cellspacing=\"0\">\n                <!-- Body content -->\n                <tr>\n                  <td class=\"content-cell\">\n                    <h1>Hi, {{name}}!</h1>\n                    <p><strong>Thanks for the email confirmation !</strong></p>\n                    <p>{{ this.remarks1 }}</p>\n                    <p>{{ this.remarks2 }} <a href=\"mailto:{{ this.csemail.value }}\">{{ this.csemail.value }}</a></p>\n                    <p>For reference, here's your account information:</p>\n                    <table class=\"attributes\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                      <tr>\n                        <td class=\"attributes_content\">\n                          <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                            <tr>\n                              <td class=\"attributes_item\"><strong>Username:</strong> {{this.username}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Name:</strong> {{this.name}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Email:</strong> {{ this.email }}</td>\n                            </tr>\n                              <tr>\n                              <td class=\"attributes_item\"><strong>Usertype:</strong> label</td>\n                            </tr>\n                          </table>\n                        </td>\n                      </tr>\n                    </table>\n                    <!-- Sub copy -->\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n </div> "
 
 /***/ }),
 
@@ -8065,7 +10989,7 @@ module.exports = ""
 /***/ "./src/app/components/user/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"loginUser(loginForm.value)\" class=\"form-signin\" novalidate autocomplete=\"off\">\n      <h3>Please sign in</h3>\n      <label for=\"inputUser\" class=\"sr-only\">Username</label>\n      <input type=\"text\" id=\"inputUser\" class=\"form-control\" [formControl]=\"username\" placeholder=\"Username\" autofocus>\n      <div class=\"text-danger\" *ngIf=\"loginForm.get('username').dirty && loginForm.get('username').invalid\">\n          Please enter username\n      </div>\n      <label for=\"inputPassword\" class=\"sr-only\">Password</label>\n      <input type=\"password\" id=\"inputPassword\" class=\"form-control\" [formControl]=\"password\" placeholder=\"Password\">\n      <div class=\"text-danger\" *ngIf=\"loginForm.get('password').dirty && loginForm.get('password').invalid\">\n          Please enter password\n      </div>\n      <br><br>\n      <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" [disabled]=\"loginForm.invalid\" >Sign In</button>\n      <br>\n      <div class=\"row\">\n          <div class=\"col-md-6 col-sm-6 col-xs-6\"><a [routerLink]=\"['/forgotpassword']\">Forgot Password  <i class=\"fa fa-question fa-lg\"></i></a></div>\n          <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\"><a [routerLink]=\"['/register']\"><i class=\"fa fa-child fa-lg\"></i>  Register</a></div>\n      </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"loginUser(loginForm.value)\" class=\"form-signin\" novalidate autocomplete=\"off\">\n      <h3>Please sign in</h3>\n      <label for=\"inputUser\" class=\"sr-only\">Username</label>\n      <input type=\"text\" id=\"inputUser\" class=\"form-control\" [formControl]=\"username\" placeholder=\"Username\" autofocus>\n      <div class=\"text-danger\" *ngIf=\"loginForm.get('username').dirty && loginForm.get('username').invalid\">\n          Please enter username\n      </div>\n      <label for=\"inputPassword\" class=\"sr-only\">Password</label>\n      <input type=\"password\" id=\"inputPassword\" class=\"form-control\" [formControl]=\"password\" placeholder=\"Password\">\n      <div class=\"text-danger\" *ngIf=\"loginForm.get('password').dirty && loginForm.get('password').invalid\">\n          Please enter password\n      </div>\n      <br><br>\n      <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" [disabled]=\"loginForm.invalid\" >Sign In</button>\n      <br>\n      <div class=\"row\">\n          <div class=\"col-md-6 col-sm-6 col-xs-6\"><a [routerLink]=\"['/forgotpassword']\">Forgot Password  <i class=\"fa fa-question fa-lg\"></i></a></div>\n          <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\"><a [routerLink]=\"['/register']\"><i class=\"fa fa-user fa-lg\"></i>  Register</a></div>\n      </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -8652,7 +11576,7 @@ module.exports = ""
 /***/ "./src/app/components/user/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain one letter, number & special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain capital letter, number or special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -9035,7 +11959,7 @@ module.exports = ""
 /***/ "./src/app/components/usermgt/usermgt.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL APPROVAL</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    \n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"username\" class=\"col-sm-2 paddingsearch\">Username</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"username\" [formControl]=\"username\" placeholder=\"User Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"name\" class=\"col-sm-2 paddingsearch\">Name</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Label Name\">\n                    </div>\n                  </div>\n              </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-2 paddingsearch\">      </label>\n                      <div class=\"col-sm-5\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                      </div>\n                  </div>                  \n              </div>\n          </form>\n        </div>\n    </div>\n\n  <div class=\"panel panel-danger\" *ngIf=\"this.loading == false && labellist && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Pending Approval List</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            No Pending Labels found.\n        </div>\n    </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"this.loading == false && labellist && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">{{reportTitle}} <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n                <div class=\"table-responsive\"> \n                        <table class=\"table table-hover\">\n                            <thead>\n                                    <tr>\n                                        <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('username')\">User Name</a></th>\n                                        <th width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('name')\">Label Name</a></th>\n                                        <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('email')\">Email</a></th>\n                                        <!-- <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('verified_email')\">Email Verified?</a></th> -->\n                                        <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('status')\">Status</a></th>\n                                        <th width=\"20%\">Action</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor='let lbl of labellist; let lblIndex = index'>\n                                        <td><a style=\"cursor:pointer\" (click)=\"showLabel(lbl._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ lbl.username}}</a></td>\n                                        <td>{{ lbl.name}}</td>\n                                        <td>{{ lbl.email}}</td>\n                                        <!-- <td>{{ lbl.verified_email }}</td> -->\n                                        <td>{{ lbl.stsvalue}}</td>\n                                        <td>\n                                            <!-- <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Activate\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Activate Label\">\n                                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                                            </button> -->\n                                            <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Label\"><i class=\"fa fa-check fa-2x\"></i></a>\n                                            <!-- <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Deactivate\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Deactivate Label\">\n                                                <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                                            </button> -->\n                                            &nbsp;&nbsp;&nbsp;\n                                            <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Label\"><i class=\"fa fa-times fa-2x\"></i></a>\n                                        </td>\n                                    </tr>     \n                                </tbody>    \n                        </table>\n                </div>\n                <div style=\"text-align:center\" *ngIf=\"labellist && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                </div> \n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL APPROVAL</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    \n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"username\" class=\"col-sm-2 paddingsearch\">Username</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"username\" [formControl]=\"username\" placeholder=\"User Name\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"name\" class=\"col-sm-2 paddingsearch\">Name</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Label Name\">\n                    </div>\n                  </div>\n              </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-2 paddingsearch\">      </label>\n                      <div class=\"col-sm-5\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                      </div>\n                  </div>                  \n              </div>\n          </form>\n        </div>\n    </div>\n\n  <div class=\"panel panel-danger\" *ngIf=\"this.loading == false && labellist && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Pending Approval List</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            No Pending Labels found.\n        </div>\n    </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"this.loading == false && labellist && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">{{reportTitle}} <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n                <div class=\"table-responsive\"> \n                        <table class=\"table table-hover\">\n                            <thead>\n                                    <tr>\n                                        <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('username')\">User Name</a></th>\n                                        <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('name')\">Label Name</a></th>\n                                        <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('email')\">Email</a></th>\n                                        <!-- <th width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('verified_email')\">Email Verified?</a></th> -->\n                                        <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortLabel('status')\">Status</a></th>\n                                        <th scope=\"col\" width=\"20%\">Action</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor='let lbl of labellist; let lblIndex = index'>\n                                        <td scope=\"row\" data-label=\"Username\"><a style=\"cursor:pointer\" (click)=\"showLabel(lbl._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ lbl.username}}</a></td>\n                                        <td data-label=\"Name\">{{ lbl.name}}</td>\n                                        <td data-label=\"Email\">{{ lbl.email}}</td>\n                                        <!-- <td>{{ lbl.verified_email }}</td> -->\n                                        <td data-label=\"Status\">{{ lbl.stsvalue}}</td>\n                                        <td data-label=\"Action\">\n                                            <!-- <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Activate\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Activate Label\">\n                                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                                            </button> -->\n                                            <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"activateLabel(lbl._id, lbl.name, lbl.status, lbl.email,lbl.username)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Label\"><i class=\"fa fa-check fa-2x\"></i></a>\n                                            <!-- <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Deactivate\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Deactivate Label\">\n                                                <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                                            </button> -->\n                                            &nbsp;&nbsp;&nbsp;\n                                            <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"deactivateLabel(lbl._id, lbl.name, lbl.status, lbl.email, lbl.username)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Label\"><i class=\"fa fa-times fa-2x\"></i></a>\n                                        </td>\n                                    </tr>     \n                                </tbody>    \n                        </table>\n                </div>\n                <div style=\"text-align:center\" *ngIf=\"labellist && totalrows > 10\">\n                        <nav aria-label=\"Page navigation\">\n                            <ul class=\"pagination\">\n                                <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                    <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                                </li>\n                            </ul>\n                        </nav>\n                </div> \n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -9052,6 +11976,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9069,8 +11995,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var UsermgtComponent = /** @class */ (function () {
-    function UsermgtComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe) {
+    function UsermgtComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe, notifService, globals) {
         var _this = this;
         this.fb = fb;
         this.authService = authService;
@@ -9080,6 +12008,8 @@ var UsermgtComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.datePipe = datePipe;
+        this.notifService = notifService;
+        this.globals = globals;
         this.loading = false;
         this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.username = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
@@ -9099,6 +12029,7 @@ var UsermgtComponent = /** @class */ (function () {
             name: this.name,
             username: this.username,
         });
+        this.urlkaxet = this.globals.kaxeturl;
         this.route.queryParams.forEach(function (params) {
             _this.qlabelname = params['name'] || '';
             _this.qusername = params['username'] || '';
@@ -9198,7 +12129,7 @@ var UsermgtComponent = /** @class */ (function () {
             }
         });
     };
-    UsermgtComponent.prototype.activateLabel = function (userid, labelname, status) {
+    UsermgtComponent.prototype.activateLabel = function (userid, labelname, status, email, username) {
         var _this = this;
         this.loading = true;
         if (status == 'STSACT') {
@@ -9225,15 +12156,28 @@ var UsermgtComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.loading = false;
-                            _this.toastr.success(data.message);
-                            _this.router.navigate(['usermanagement'], {
-                                queryParams: {
-                                    name: _this.qlabelname,
-                                    username: _this.qusername,
-                                    page: _this.qpage || 1,
-                                    sortby: _this.qsort
+                            var payload = {};
+                            payload.emailto = email;
+                            payload.vlink = _this.urlkaxet;
+                            payload.username = username;
+                            var successmsg_1 = data.message;
+                            _this.notifService.sendemailwelcome(payload)
+                                .subscribe(function (data) {
+                                _this.loading = false;
+                                if (data.success === true) {
+                                    _this.toastr.success(successmsg_1);
                                 }
+                                else {
+                                    _this.toastr.warning(successmsg_1 + '. However welcome email not send. ' + data.message);
+                                }
+                                _this.router.navigate(['usermanagement'], {
+                                    queryParams: {
+                                        name: _this.qlabelname,
+                                        username: _this.qusername,
+                                        page: _this.qpage || 1,
+                                        sortby: _this.qsort
+                                    }
+                                });
                             });
                         }
                     });
@@ -9244,7 +12188,7 @@ var UsermgtComponent = /** @class */ (function () {
             }
         }
     };
-    UsermgtComponent.prototype.deactivateLabel = function (userid, labelname, status) {
+    UsermgtComponent.prototype.deactivateLabel = function (userid, labelname, status, email, username) {
         var _this = this;
         this.loading = true;
         if (status === 'STSPEND') {
@@ -9299,15 +12243,27 @@ var UsermgtComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.loading = false;
-                            _this.toastr.success(data.message);
-                            _this.router.navigate(['usermanagement'], {
-                                queryParams: {
-                                    name: _this.qlabelname,
-                                    username: _this.qusername,
-                                    page: _this.qpage || 1,
-                                    sortby: _this.qsort
+                            var payload = {};
+                            payload.emailto = email;
+                            payload.username = username;
+                            var successmsg_2 = data.message;
+                            _this.notifService.senddeactivation(payload)
+                                .subscribe(function (data) {
+                                _this.loading = false;
+                                if (data.success === true) {
+                                    _this.toastr.success(successmsg_2);
                                 }
+                                else {
+                                    _this.toastr.warning(successmsg_2 + '. However welcome email not send. ' + data.message);
+                                }
+                                _this.router.navigate(['usermanagement'], {
+                                    queryParams: {
+                                        name: _this.qlabelname,
+                                        username: _this.qusername,
+                                        page: _this.qpage || 1,
+                                        sortby: _this.qsort
+                                    }
+                                });
                             });
                         }
                     });
@@ -9341,7 +12297,9 @@ var UsermgtComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_8__services_notif_service__["a" /* NotifService */],
+            __WEBPACK_IMPORTED_MODULE_9__app_global__["a" /* Globals */]])
     ], UsermgtComponent);
     return UsermgtComponent;
 }());
@@ -10424,6 +13382,20 @@ var NotifService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    NotifService.prototype.sendemailwelcome = function (oLink) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.notifurl + "/welcomemail", JSON.stringify(oLink), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    NotifService.prototype.senddeactivation = function (oLink) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.notifurl + "/deactivationemail", JSON.stringify(oLink), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     NotifService.prototype.handleError = function (error) {
         console.error(error);
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
@@ -10592,6 +13564,15 @@ var SongService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongService.prototype.songbuyincrement = function (songid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put("api/songbuyincrement/" + songid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongService.prototype.handleError = function (error) {
         console.error(error);
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
@@ -10601,6 +13582,225 @@ var SongService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
     ], SongService);
     return SongService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/songpurchase.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SongpurchaseService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var SongpurchaseService = /** @class */ (function () {
+    function SongpurchaseService(http) {
+        this.http = http;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    SongpurchaseService.prototype.saveSongpurchase = function (userid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/songpurchase/" + userid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.getSongpurchase = function (songpurchaseid) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get("api/songpurchase/" + songpurchaseid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.deleteSongpurchase = function (songpurchaseid) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.delete("api/songpurchase/" + songpurchaseid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.updateStatuspurchase = function (songpurchaseid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put("api/songpurchase/" + songpurchaseid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.getSongpurchaseAggs = function (userid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/songpurchaseagg/" + userid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.getSongpurchaseAgg = function (songpurchaseid) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get("api/songpurchaseagg/" + songpurchaseid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.getPendingsongpurchaseAggs = function (userid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pendingsongpurchaseagg/" + userid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.getPendingSongpurchaseCount = function (userid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pendingsongpurchasecount/" + userid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.getAdmSongpurchaseAggs = function (userid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/admsongpurchaseagg/" + userid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongpurchaseService.prototype.handleError = function (error) {
+        console.error(error);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+    };
+    SongpurchaseService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], SongpurchaseService);
+    return SongpurchaseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/transaction.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var TransactionService = /** @class */ (function () {
+    function TransactionService(http) {
+        this.http = http;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    TransactionService.prototype.saveTransaction = function (userid, oTransaction) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/transaction/" + userid, JSON.stringify(oTransaction), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TransactionService.prototype.getTransactionAggs = function (userid, oTransaction) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/transactionagg/" + userid, JSON.stringify(oTransaction), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TransactionService.prototype.getAdmTransactionAggs = function (userid, oTransaction) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/admtransactionagg/" + userid, JSON.stringify(oTransaction), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TransactionService.prototype.getLabelbalance = function (userid) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get("api/labelbalance/" + userid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TransactionService.prototype.handleError = function (error) {
+        console.error(error);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+    };
+    TransactionService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], TransactionService);
+    return TransactionService;
 }());
 
 

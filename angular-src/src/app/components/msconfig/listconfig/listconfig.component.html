@@ -79,20 +79,20 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th width="20%"><a style="cursor:pointer" (click)="sortConfig('code')">Code</a></th>
-                            <th width="20%"><a style="cursor:pointer" (click)="sortConfig('value')">Value</a></th>
-                            <th width="20%"><a style="cursor:pointer" (click)="sortConfig('group')">Group</a></th>
-                            <th width="20%"><a style="cursor:pointer" (click)="sortConfig('status')">Status</a></th>
-                            <th width="20%">Action</th>
+                            <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('code')">Code</a></th>
+                            <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('value')">Value</a></th>
+                            <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('group')">Group</a></th>
+                            <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('status')">Status</a></th>
+                            <th scope="col" width="20%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor='let config of msconfigs; let cfgIndex = index'>
-                            <td><a style="cursor:pointer" (click)="showConfig(config._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ config.code}}</a></td>
-                            <td>{{ config.value }}</td>
-                            <td>{{ config.groupname }}</td>
-                            <td>{{ config.stsvalue}}</td>
-                            <td>
+                            <td scope="row" data-label="Code"><a style="cursor:pointer" (click)="showConfig(config._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ config.code}}</a></td>
+                            <td data-label="Value">{{ config.value }}</td>
+                            <td data-label="Group">{{ config.groupname }}</td>
+                            <td data-label="Status">{{ config.stsvalue}}</td>
+                            <td data-label="Action">
                                 <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editConfigFiles(config._id)">
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Config File"></span>
                                 </button>

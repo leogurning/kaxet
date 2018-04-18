@@ -30,6 +30,7 @@ export class AddalbumComponent implements OnInit {
   @ViewChild('inputgenre')genreVar: any;
   albumuploadpath:string;
   progressvalue = 0;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -59,6 +60,7 @@ export class AddalbumComponent implements OnInit {
     this.progressvalue = 0;
     this.getArtistList(this.userObj.userid);
     this.getMsconfigGroupList('GENRE');
+    this.getMsconfigVal('IMGSIZE','FSIZE');
     this.albumid = '';
     this.addAlbumForm = this.fb.group({
       artistid: this.artistid,
@@ -79,6 +81,17 @@ export class AddalbumComponent implements OnInit {
           this.genre = data.data;
         } else {
           this.genre = [{code:'', value:'Error ms config list'}];
+        }
+      }
+    });
+  }
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
         }
       }
     });
@@ -156,7 +169,20 @@ export class AddalbumComponent implements OnInit {
   }
 
   fileChangeEvent(fileInput:any): void {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    console.log('content file: ' + this.filesToUpload);
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("image/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.filesToUpload = <Array<File>>fileInput.target.files;
+      } else {
+        let mfsize = +this.maxfilesize.value/1000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+        this.albumimageVar.nativeElement.value = "";
+      }
+    } else  {
+      alert('Error file type. You must input image file type.');
+      this.albumimageVar.nativeElement.value = "";
+    }    
   }
 }

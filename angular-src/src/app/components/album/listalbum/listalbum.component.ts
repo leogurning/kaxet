@@ -258,7 +258,7 @@ export class ListalbumComponent implements OnInit {
     let payload: any = {};
     payload.albumid = albumid;
     this.loading = true;
-    this.songService.getSongCount(this.userObj.userid, payload)
+    this.songService.getSongList(this.userObj.userid, payload)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;

@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material'
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 /* Global Variables */
 import {Globals} from './app.global';
@@ -26,6 +27,8 @@ import { SongadminService } from './services/admin/songadmin.service';
 import { MsconfigService } from './services/admin/msconfig.service';
 import { NotifService } from './services/notif.service';
 import { FiletransferService } from './services/filetransfer.service';
+import { SongpurchaseService } from './services/songpurchase.service';
+import { TransactionService } from './services/transaction.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -78,6 +81,14 @@ import { ViewlabelstatsComponent } from './components/labelstats/viewlabelstats/
 import { ViewartiststatsComponent } from './components/artiststats/viewartiststats/viewartiststats.component';
 import { ViewalbumstatsComponent } from './components/albumstats/viewalbumstats/viewalbumstats.component';
 import { ViewsongstatsComponent } from './components/songstats/viewsongstats/viewsongstats.component';
+import { SongpendingpurchaseComponent } from './components/purchase/songpendingpurchase/songpendingpurchase.component';
+import { SongcompletepurchaseComponent } from './components/purchase/songcompletepurchase/songcompletepurchase.component';
+import { ViewsongpurchaseComponent } from './components/purchase/viewsongpurchase/viewsongpurchase.component';
+import { ViewpurchaseComponent } from './components/purchase/viewpurchase/viewpurchase.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { SongpurchasestatsComponent } from './components/purchase/songpurchasestats/songpurchasestats.component';
+import { TransactionstatsComponent } from './components/transactionstats/transactionstats.component';
+import { LabelbalancedialogComponent } from './components/labelbalancedialog/labelbalancedialog.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -125,6 +136,13 @@ const appRoutes: Routes = [
   {path: 'viewartiststats/:id', canActivate: [ AuthGuard], component: ViewartiststatsComponent ,runGuardsAndResolvers: 'always'},
   {path: 'viewalbumstats/:id', canActivate: [ AuthGuard], component: ViewalbumstatsComponent ,runGuardsAndResolvers: 'always'},
   {path: 'viewsongstats/:id', canActivate: [ AuthGuard], component: ViewsongstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'songpendingpurchase', canActivate: [ AuthGuard], component: SongpendingpurchaseComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'songcompletepurchase', canActivate: [ AuthGuard], component: SongcompletepurchaseComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewsongpurchase/:id', canActivate: [ AuthGuard], component: ViewsongpurchaseComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewpurchase/:id', canActivate: [ AuthGuard], component: ViewpurchaseComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'transaction', canActivate: [ AuthGuard], component: TransactionComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'songpurchasestats', canActivate: [ AuthGuard], component: SongpurchasestatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'transactionstats', canActivate: [ AuthGuard], component: TransactionstatsComponent ,runGuardsAndResolvers: 'always'},
 ];
 
 @NgModule({
@@ -176,6 +194,14 @@ const appRoutes: Routes = [
     ViewartiststatsComponent,
     ViewalbumstatsComponent,
     ViewsongstatsComponent,
+    SongpendingpurchaseComponent,
+    SongcompletepurchaseComponent,
+    ViewsongpurchaseComponent,
+    ViewpurchaseComponent,
+    TransactionComponent,
+    SongpurchasestatsComponent,
+    TransactionstatsComponent,
+    LabelbalancedialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -195,11 +221,13 @@ const appRoutes: Routes = [
       primaryColour: '#ce3b3b', 
       secondaryColour: '#ce3b3b', 
       tertiaryColour: '#ce3b3b'
-  }),
+    }),
+    BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'})
   ],
   entryComponents: [
-    KxInfoDialogComponent
+    KxInfoDialogComponent,
+    LabelbalancedialogComponent
   ],
   providers: [ Globals,
     ToastrService, 
@@ -214,7 +242,9 @@ const appRoutes: Routes = [
     SongadminService,
     MsconfigService,
     NotifService,
-    FiletransferService],
+    FiletransferService,
+    SongpurchaseService,
+    TransactionService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,6 +32,13 @@
                                 <li><a routerLink="listsong" routerLinkActive="active"><i class="fa fa-edit"></i>  Manage Song</a></li>
                             </ul>
                         </li>
+                        <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
+                                <a routerLink="songpendingpurchase" routerLinkActive="active">Purchase</a>
+                                <ul class="sub-menu">
+                                    <li><a routerLink="songpendingpurchase" routerLinkActive="active">Pending Cash</a></li>
+                                    <li><a routerLink="songcompletepurchase" routerLinkActive="active">Summary</a></li>
+                                </ul>
+                        </li>
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
                             <a style="cursor:pointer">Data</a>
                             <ul class="sub-menu">
@@ -39,6 +46,8 @@
                                 <li><a routerLink="artiststats" routerLinkActive="active">Artists</a></li>
                                 <li><a routerLink="albumstats" routerLinkActive="active">Albums</a></li>
                                 <li><a routerLink="songstats" routerLinkActive="active">Songs</a></li>
+                                <li><a routerLink="songpurchasestats" routerLinkActive="active">Purchase</a></li>
+                                <li><a routerLink="transactionstats" routerLinkActive="active">Transactions</a></li>
                             </ul>
                         </li>                        
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">

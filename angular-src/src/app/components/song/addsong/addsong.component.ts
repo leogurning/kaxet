@@ -37,6 +37,7 @@ export class AddsongComponent implements OnInit {
   @ViewChild('inputgenre')genreVar: any;
   prvwuploadpath: string;
   songuploadpath: string;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -70,6 +71,7 @@ export class AddsongComponent implements OnInit {
     this.prvwuploadpath = this.globals.prvwuploadpath;
     this.songuploadpath = this.globals.songuploadpath;
     this.getMsconfigGroupList('GENRE');
+    this.getMsconfigVal('AVSIZE','FSIZE');
     this.getArtistList(this.userObj.userid);
     this.getAlbumList(this.userObj.userid);
     this.songid = '';
@@ -100,7 +102,17 @@ export class AddsongComponent implements OnInit {
       }
     });
   }
-
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
+        }
+      }
+    });
+  }
   getArtistList(id){
     this.artistService.getArtistList(id).subscribe(data => {
       if (data.success === true) {
@@ -219,13 +231,39 @@ export class AddsongComponent implements OnInit {
   }
 
   prvwfileChangeEvent(fileInput:any): void {
-    this.PrvwfilesToUpload = <Array<File>>fileInput.target.files;
-    console.log('content file: ' + this.PrvwfilesToUpload);
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.PrvwfilesToUpload = <Array<File>>fileInput.target.files;
+      } else {
+        let mfsize = +this.maxfilesize.value/1000000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+        this.inputpreVar.nativeElement.value = "";
+      }
+    } else  {
+      alert('Error file type. You must input audio/video file type.');
+      this.inputpreVar.nativeElement.value = "";
+    }    
   }
 
   songfileChangeEvent(fileInput:any): void {
-    this.SongfilesToUpload = <Array<File>>fileInput.target.files;
-    console.log('content file: ' + this.SongfilesToUpload);
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.SongfilesToUpload = <Array<File>>fileInput.target.files;
+      } else {
+        let mfsize = +this.maxfilesize.value/1000000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+        this.inputsongVar.nativeElement.value = "";
+      }
+    } else  {
+      alert('Error file type. You must input audio/video file type.');
+      this.inputsongVar.nativeElement.value = "";
+    } 
   }
 
   artistChangeEvent(selectedValue:any): void {

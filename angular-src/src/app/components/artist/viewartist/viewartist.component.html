@@ -30,29 +30,27 @@
   </div>
   
     <div class="row">
-        <div class="col-sm-12 dtlpadding" *ngIf="albums && totalrows > 0">
-            <div class="col-sm-12 col-md-12">
+        <div class="dtlpadding" *ngIf="albums && totalrows > 0">
+            <div class="col-md-11 col-lg-11">
                 <b>( TOTAL : {{ totalrows }} albums ) </b> 
-            </div>
-            <div class="col-sm-12 col-md-12">
                 <div class="table-responsive">
-                    <table class="table table-striped" width="80%">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th width="30%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
-                                <th width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th>
-                                <th width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
-                                <th width="10%" class="text-right"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
-                                <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th>
+                                <th scope="col" width="30%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
+                                <th scope="col" width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th>
+                                <th scope="col" width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
+                                <th scope="col" width="10%" class="text-right"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
+                                <th scope="col" width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor='let albm of albums; let albIndex = index'>
-                                <td>{{ albm.albumname}}</td>
-                                <td>{{ albm.albumyear}}</td>
-                                <td>{{ albm.genrevalue}}</td>
-                                <td class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
-                                <td>{{ albm.stsvalue}}</td>
+                                <td scope="row" data-label="Album Name">{{ albm.albumname}}</td>
+                                <td data-label="Album Year">{{ albm.albumyear}}</td>
+                                <td data-label="Genre">{{ albm.genrevalue}}</td>
+                                <td data-label="Album Price" class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
+                                <td data-label="Status">{{ albm.stsvalue}}</td>
                             </tr>
                             
                         </tbody>
@@ -70,6 +68,7 @@
                 </div>
     
             </div>
+            <div class="col-md-1 col-lg-11"></div>
         </div>      
     </div>
 

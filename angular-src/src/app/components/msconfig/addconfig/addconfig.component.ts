@@ -26,6 +26,7 @@ export class AddconfigComponent implements OnInit {
   @ViewChild('inputgroup')inputgroupVar: any;  
   configuploadpath:string;
   progressvalue = 0;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -61,6 +62,7 @@ export class AddconfigComponent implements OnInit {
       filename: this.filename
     });
     this.getMsconfiggroup();
+    this.getMsconfigVal('IMGSIZE','FSIZE');
   }
   getMsconfiggroup(){
     this.msconfigService.getMsconfiggroup().subscribe(data => {
@@ -70,6 +72,17 @@ export class AddconfigComponent implements OnInit {
           //console.log(this.artistlist);
         } else {
           this.grouplist = [{code:'', value:'Error group list'}];
+        }
+      }
+    });
+  }
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
         }
       }
     });
@@ -156,7 +169,21 @@ export class AddconfigComponent implements OnInit {
     }
   }
   fileChangeEvent(fileInput:any): void {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    console.log('content file: ' + this.filesToUpload);
+
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("image/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.filesToUpload = <Array<File>>fileInput.target.files;
+      } else {
+        let mfsize = +this.maxfilesize.value/1000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+        this.genreimageVar.nativeElement.value = "";
+      }
+    } else  {
+      alert('Error file type. You must input image file type.');
+      this.genreimageVar.nativeElement.value = "";
+    }   
   }
 }

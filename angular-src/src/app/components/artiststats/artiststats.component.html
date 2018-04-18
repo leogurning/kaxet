@@ -69,17 +69,17 @@
               <table class="table table-hover">
                   <thead>
                       <tr>
-                          <th width="40%"><a style="cursor:pointer" (click)="sortArtist('artistname')">Artist Name</a></th>
-                          <th width="40%"><a style="cursor:pointer" (click)="sortArtist('labelid')">Label</a></th>
-                          <th width="20%"><a style="cursor:pointer" (click)="sortArtist('status')">Status</a></th>
+                          <th width="40%" scope="col"><a style="cursor:pointer" (click)="sortArtist('artistname')">Artist Name</a></th>
+                          <th width="40%" scope="col"><a style="cursor:pointer" (click)="sortArtist('labelid')">Label</a></th>
+                          <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortArtist('status')">Status</a></th>
                           <!-- <th width="20%">Action</th> -->
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor='let artst of artists; let artIndex = index'>
-                          <td><a style="cursor:pointer" (click)="showArtist(artst._id, artst.labelid)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ artst.artistname}}</a></td>
-                          <td>{{ artst.label}}</td>
-                          <td>{{ artst.stsvalue}}</td>
+                          <td scope="row" data-label="Artist Name"><a style="cursor:pointer" (click)="showArtist(artst._id, artst.labelid)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ artst.artistname}}</a></td>
+                          <td data-label="Label">{{ artst.label}}</td>
+                          <td data-label="Status">{{ artst.stsvalue}}</td>
 <!--                           <td>
                               <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editArtistPhoto(artst._id)">
                                   <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Artist Photo"></span>

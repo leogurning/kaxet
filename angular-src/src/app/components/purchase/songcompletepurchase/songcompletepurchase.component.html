@@ -1,0 +1,179 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Purchase Summary</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <div *ngIf="this.loading == false" class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Parameter</h3>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                        <label for="artistname" class="col-sm-2 paddingsearch">Artist</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                            <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
+                        </div>
+                    </div>         
+                    <div class="col-sm-6 col-md-6">
+                      <label for="buyername" class="col-sm-2 paddingsearch">Buyer</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="buyername" [formControl]="buyername" placeholder="Buyer Name">
+                      </div>
+                    </div>            
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                        <label for="songname" class="col-sm-2 paddingsearch">Song</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                            <input type="text" class="form-control" id="songname" [formControl]="songname" placeholder="Song Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                      <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                          <select class="form-control" [formControl]="status">
+                              <option ng-selected="true" value="">Select the status</option>
+                              <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                          </select>
+                      </div>
+                    </div>         
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                      <label class="col-sm-6 paddingsearch">Purchase Date</label>
+                    </div>  
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-3 col-md-3">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rptype" value="opt3" [formControl]="rptype" checked>
+                                Today
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rptype" value="opt1" [formControl]="rptype">
+                                Current month
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rptype" value="opt2" [formControl]="rptype">
+                                Date Range (yyyy-mm-dd)
+                            </label>
+                        </div>
+                        <div class="row" style="padding: 8px">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group" style="margin-right:0" [ngClass]="{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                        <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="startdt" placeholder="Start Date">
+                                    </div>
+                                    <div class="text-danger" *ngIf="reportForm.get('startdt').dirty && reportForm.get('startdt').invalid">
+                                        <span class="col-sm-2"></span>
+                                        <span class="col-sm-10" style="padding:4px 0 0">Please enter valid start date</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group" style="margin-right:0" [ngClass]="{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                        <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="enddt" placeholder="End Date">
+                                    </div>
+                                    <div class="text-danger" *ngIf="reportForm.get('enddt').dirty && reportForm.get('enddt').invalid">
+                                        <span class="col-sm-2"></span>
+                                        <span class="col-sm-10" style="padding:4px 0 0">Please enter valid end date</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                      <label for="paymentmtd" class="col-sm-2 paddingsearch">Payment</label>
+                      <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control" [formControl]="paymentmtd">
+                            <option ng-selected="true" value="">Select the method</option>
+                            <option *ngFor="let pmt of pmtd" [ngValue]="pmt.code">{{pmt.value}}</option>
+                        </select>
+                      </div>
+                    </div> 
+                    <div class="col-sm-6 col-md-6">
+                          <button type="submit" class="btn btn-primary" [disabled]="this.loading == false && reportForm.invalid">Submit</button>
+                    </div>                  
+                </div>
+            </form>  
+        </div>
+    </div>
+    <div class="panel panel-danger" *ngIf="songpurchase && totalrows < 1">
+      <div class="panel-heading">
+        <h3 class="panel-title">No song purchase found</h3> 
+      </div>
+
+      <div class="panel-body">
+        There is NO song purchase found for the selected criteria.
+      </div>
+    </div>
+    <div class="panel panel-default" *ngIf="songpurchase && totalrows > 0 && this.loading == false">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="15%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('purchasedt')">Purchase Date</a></th>
+                            <th width="5%" scope="col">Payment</th>
+                            <th width="15%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('listener')">Buyer</a></th>
+                            <th width="25%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('song')">Song Title</a></th>
+                            <th width="15%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('artist')">Artist</a></th>
+                            <!-- <th width="15%"><a style="cursor:pointer" (click)="sortSongpurchase('album')">Album</a></th> -->                            
+                            <th width="10%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('songprice')">Price</a></th>
+                            <th width="5%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('status')">Status</a></th>
+                            <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortSongpurchase('approvedt')">Response date</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>
+                            <td data-label="Purchase Date" scope="row"><a style="font-size:12px;cursor:pointer" (click)="showPurchase(songpuritem._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  
+                            <td data-label="Payment">{{ songpuritem.payment }}</td>
+                            <td data-label="Buyer">{{ songpuritem.listener }}</td>
+                            <td data-label="Song Title"><a style="cursor:pointer" (click)="showSong(songpuritem.songid)" data-toggle="tooltip" data-placement="top" title="View Song">{{ songpuritem.song}}</a></td>
+                            <td data-label="Artist">{{ songpuritem.artist }}</td>
+                            <!-- <td style="font-size:12px">{{ songpuritem.album }}</td> -->
+                            <td data-label="Song Price" class="text-right">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>
+                            <td data-label="Status">{{ songpuritem.stsvalue }}</td>
+                            <td data-label="Response date">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            <div style="text-align:center" *ngIf="songpurchase && totalrows > 10">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                            <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
+        </div>
+  
+    </div>
+</div>

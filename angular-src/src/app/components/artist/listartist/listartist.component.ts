@@ -166,7 +166,7 @@ export class ListartistComponent implements OnInit {
     let payload: any = {};
     payload.artistid = artistid;
     this.loading = true;
-    this.albumService.getAlbumCount(this.userObj.userid, payload)
+    this.albumService.getArtistAlbums(this.userObj.userid, payload)
     .subscribe(data => {
       if (data.success === false) {
         this.loading = false;

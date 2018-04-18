@@ -96,23 +96,23 @@
               <table class="table table-hover">
                   <thead>
                       <tr>
-                          <th width="20%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
-                          <th width="20%">Label</th>
-                          <th width="20%">Artist</th>
-                          <th width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th>
-                          <th width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
-                          <th width="10%"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
+                          <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
+                          <th scope="col" width="20%">Label</th>
+                          <th scope="col" width="20%">Artist</th>
+                          <th scope="col" width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th>
+                          <th scope="col" width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
+                          <th scope="col" width="10%"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
                           <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor='let albm of albums; let albIndex = index'>
-                          <td><a style="cursor:pointer" (click)="showAlbum(albm._id, albm.labelid)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
-                          <td>{{ albm.label }}</td>
-                          <td>{{ albm.artist }}</td>
-                          <td>{{ albm.albumyear}}</td>
-                          <td>{{ albm.genrevalue}}</td>
-                          <td class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
+                          <td scope="row" data-label="Album Name"><a style="cursor:pointer" (click)="showAlbum(albm._id, albm.labelid)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
+                          <td data-label="Label">{{ albm.label }}</td>
+                          <td data-label="Artist">{{ albm.artist }}</td>
+                          <td data-label="Album Year">{{ albm.albumyear}}</td>
+                          <td data-label="Genre">{{ albm.genrevalue}}</td>
+                          <td data-label="Album Price" class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
                           <!-- <td>{{ albm.status}}</td> -->
                       </tr>
                   </tbody>

@@ -7,6 +7,7 @@ import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IAggMsconfig } from '../../../interface/msconfig';
 import { FiletransferService } from '../../../services/filetransfer.service';
 import { Globals } from '../../../app.global';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-editconfigfile',
@@ -22,6 +23,7 @@ export class EditconfigfileComponent implements OnInit {
   loading = false;
   configuploadpath:string;
   progressvalue = 0;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -43,6 +45,7 @@ export class EditconfigfileComponent implements OnInit {
     this.userObj =  this.authService.currentUser;
     this.configuploadpath = this.globals.configuploadpath;
     this.progressvalue = 0;
+    this.getMsconfigVal('IMGSIZE','FSIZE');
     this.msconfigForm = this.fb.group({
       filepath: this.filepath,
       filename: this.filename
@@ -51,6 +54,17 @@ export class EditconfigfileComponent implements OnInit {
       let msconfigid = params['id'];
       this.msconfigid = msconfigid;
       this.getMsconfig(msconfigid);
+    });
+  }
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
+        }
+      }
     });
   }
   getMsconfig(id){
@@ -81,11 +95,25 @@ export class EditconfigfileComponent implements OnInit {
   }
 
   fileChangeEvent(fileInput:any): void {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    this.newfile = this.filesToUpload[0]['name'];
-    console.log('content file: ' + this.filesToUpload);
+
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
     this.progressvalue = 0;
-    this.uploadNewPhoto(this.filesToUpload);  
+    if (~files[0].type.indexOf("image/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.filesToUpload = <Array<File>>fileInput.target.files;
+        this.newfile = this.filesToUpload[0]['name'];
+        //console.log('content file: ' + this.filesToUpload);
+        this.progressvalue = 0;
+        this.uploadNewPhoto(this.filesToUpload);
+      } else {
+        let mfsize = +this.maxfilesize.value/1000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+      }
+    } else  {
+      alert('Error file type. You must input image file type.');
+    }     
   }
 
   uploadNewPhoto(newFileData:any): void {

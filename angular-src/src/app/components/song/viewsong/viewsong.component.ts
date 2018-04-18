@@ -100,8 +100,12 @@ export class ViewsongComponent implements OnInit {
   onBack(): void {
     if (this.userObj.usertype === 'ADM') {
       this.router.navigate(['/songmanagement'], { preserveQueryParams: true });
-    } else {
+    } else if (this.userObj.usertype === 'LBL') {
       this.router.navigate(['/listsong'], { preserveQueryParams: true });
+    }  else {
+      this.authService.logout();
+      this.router.navigate(['login']);
+      this.toastr.error('Incorrect param in the URL');
     }
   }
 }

@@ -90,24 +90,24 @@
               <table class="table table-hover">
                   <thead>
                       <tr>
-                          <th width="20%"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
-                          <th width="20%">Artist</th>
+                          <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortAlbum('albumname')">Album Name</a></th>
+                          <th width="20%" scope="col">Artist</th>
                           <!-- <th width="5%"><a style="cursor:pointer" (click)="sortAlbum('albumyear')">Year</a></th> -->
-                          <th width="9%"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
-                          <th width="10%"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
+                          <th width="9%" scope="col"><a style="cursor:pointer" (click)="sortAlbum('albumgenre')">Genre</a></th>
+                          <th width="10%" scope="col"><a style="cursor:pointer" (click)="sortAlbum('albumprice')">Price</a></th>
                           <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
-                          <th width="20%">Action</th>
+                          <th width="20%" scope="col">Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor='let albm of albums; let albIndex = index'>
-                          <td><a style="cursor:pointer" (click)="showAlbum(albm._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
-                          <td>{{ albm.artist }}</td>
+                          <td scope="row" data-label="Album Name"><a style="cursor:pointer" (click)="showAlbum(albm._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ albm.albumname}}</a></td>
+                          <td data-label="Artist">{{ albm.artist }}</td>
                           <!-- <td>{{ albm.albumyear}}</td> -->
-                          <td>{{ albm.genrevalue}}</td>
-                          <td class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
+                          <td data-label="Genre">{{ albm.genrevalue}}</td>
+                          <td data-label="Price" class="text-right">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>
                           <!-- <td>{{ albm.status}}</td> -->
-                          <td>
+                          <td data-label="Action">
                               <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editAlbumPhoto(albm._id)">
                                   <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Album Photo"></span>
                               </button>

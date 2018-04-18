@@ -13,4 +13,5 @@ export class Globals {
     notifurl: String = 'https://apikxnotif-dot-kaxetd.appspot.com';
     //filetransferurl: String = 'http://localhost:2005';
     filetransferurl: String = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
+    kaxeturl: String = 'https://kaxetd.appspot.com';
 }

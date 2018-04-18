@@ -174,6 +174,8 @@ exports.songbuyincrement = function(req, res, next){
           if(err){ res.status(400).json({ success: false, message: 'Error processing request '+ err }); }
               
           if(song){
+              let labelid = song.labelid;
+              let albumid = song.albumid;
               song.songbuy = song.songbuy + 1 ;
               song.save(function(err){
                 if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err }); }
@@ -181,6 +183,8 @@ exports.songbuyincrement = function(req, res, next){
                     success: true,
                     message: 'Song buy has been added successfully'
                 });
+                //Delete redis respective keys
+                rediscli.del('redis-user-song-'+labelid, 'redis-user-songlist-'+albumid+labelid);
               });
           }
       });
@@ -202,6 +206,8 @@ exports.updatesongpreview = function(req, res, next){
             if (song.songbuy > 0) {
               res.status(400).json({ success: false, message:'Song preview can not be updated if the song has been sold. ' });
             } else {
+              let labelid = song.labelid;
+              let albumid = song.albumid;
               song.songprvwpath = songprvwpath;
               song.songprvwname = songprvwname;
               song.songpublish = 'N';
@@ -237,6 +243,8 @@ exports.updatesongfile = function(req, res, next){
             if (song.songbuy > 0) {
               res.status(400).json({ success: false, message:'Song file can not be updated if the song has been sold. ' });
             } else {
+              let labelid = song.labelid;
+              let albumid = song.albumid;
               song.songfilepath = songfilepath;
               song.songfilename = songfilename;
               song.songpublish = 'N';

@@ -50,7 +50,22 @@ export class NotifService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  sendemailwelcome(oLink) {
+    let headers = new Headers ({ 'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+     return this.http.post(`${this.notifurl}/welcomemail`,JSON.stringify(oLink), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
+  senddeactivation(oLink) {
+    let headers = new Headers ({ 'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+     return this.http.post(`${this.notifurl}/deactivationemail`,JSON.stringify(oLink), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');

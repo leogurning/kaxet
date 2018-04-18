@@ -7,6 +7,8 @@ import { ArtistService } from '../../../services/artist.service';
 import { AuthService } from '../../../services/auth.service';
 import { FiletransferService } from '../../../services/filetransfer.service';
 import { Globals } from '../../../app.global';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-addartist',
@@ -25,6 +27,7 @@ export class AddartistComponent implements OnInit {
   loading = false;
   progressvalue = 0;
   @ViewChild('inputimg')artistimageVar: any;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -35,7 +38,8 @@ export class AddartistComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private datePipe: DatePipe,
-    private globals: Globals
+    private globals: Globals,
+    private msconfigService: MsconfigService
   ) { }
   
   artistname = new FormControl('', [Validators.required]);
@@ -46,12 +50,25 @@ export class AddartistComponent implements OnInit {
     this.userObj =  this.authService.currentUser;
     this.artistid = '';
     this.artistuploadpath = this.globals.artistuploadpath;
+    this.getMsconfigVal('IMGSIZE','FSIZE');
     this.progressvalue = 0;
     this.addArtistForm = this.fb.group({
       artistname: this.artistname,
       artistimage: this.filesToUpload,
       artistphotopath: this.artistphotopath,
       artistphotoname: this.artistphotoname
+    });
+  }
+
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
+        }
+      }
     });
   }
 
@@ -111,8 +128,21 @@ export class AddartistComponent implements OnInit {
   }
 
   fileChangeEvent(fileInput:any): void {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    console.log('content file: ' + this.filesToUpload);
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("image/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.filesToUpload = <Array<File>>fileInput.target.files;
+      } else {
+        let mfsize = +this.maxfilesize.value/1000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+        this.artistimageVar.nativeElement.value = "";
+      }
+    } else  {
+      alert('Error file type. You must input image file type.');
+      this.artistimageVar.nativeElement.value = "";
+    }    
   }
 
 }

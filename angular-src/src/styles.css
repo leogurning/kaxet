@@ -138,11 +138,12 @@ code {
   background-image: none;
   background-color: #eee;
   color:#333;
-  border-color:#333; 
+  border-color:#333;
 }
 
 .table {
   border: 1px solid  #333;
+  width: 98%;
 }
 .table > thead {
   background-color: #fce86c;
@@ -163,7 +164,7 @@ code {
 }
 
 .dtlpadding {
-  padding:10px 0 0 5px;
+  padding:10px 5px;
 }
 
 .selectfontsize {
@@ -184,4 +185,60 @@ a.borderless {
 a.bordersideless {
   border-left: 0 none;
   border-right: 0 none;
+}
+
+.toast-top-right {
+  top: 55px;
+  right: 2%;
+}
+
+@media screen and (max-width: 600px) {
+  
+
+  .table {
+    border: none;
+  }
+
+  .table caption {
+    font-size: 1.3em;
+  }
+  
+  .table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 0;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .table tr {
+    border-top:1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: block;
+    margin-bottom: .325em;
+  }
+  
+  .table td {
+    border-bottom: 1px solid #D4D0D0;
+    display: block;
+    font-size: 1.0em;
+    text-align: right;
+  }
+  
+  .table td::before {
+    
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .table td:last-child {
+    border-bottom: 5px solid #333;
+  }
 }

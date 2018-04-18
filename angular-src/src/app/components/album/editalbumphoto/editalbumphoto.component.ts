@@ -7,6 +7,8 @@ import { AuthService } from '../../../services/auth.service';
 import { IAlbum } from '../../../interface/album';
 import { FiletransferService } from '../../../services/filetransfer.service';
 import { Globals } from '../../../app.global';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-editalbumphoto',
@@ -22,6 +24,7 @@ export class EditalbumphotoComponent implements OnInit {
   loading = false;
   albumuploadpath:string;
   progressvalue = 0;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -31,7 +34,8 @@ export class EditalbumphotoComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private ftService:FiletransferService,
-    private globals: Globals
+    private globals: Globals,
+    private msconfigService: MsconfigService,
   ) { }
   
   albumphotopath = new FormControl('', [Validators.nullValidator]);
@@ -44,6 +48,7 @@ export class EditalbumphotoComponent implements OnInit {
     this.userObj =  this.authService.currentUser;
     this.albumuploadpath = this.globals.albumuploadpath;
     this.progressvalue = 0;
+    this.getMsconfigVal('IMGSIZE','FSIZE');
     this.albumForm = this.fb.group({
       albumphotopath: this.albumphotopath,
       albumphotoname: this.albumphotoname
@@ -51,6 +56,17 @@ export class EditalbumphotoComponent implements OnInit {
     this.route.params.subscribe((params: any) => {
       this.albumid = params['id'];
       this.getAlbum(this.albumid);
+    });
+  }
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
+        }
+      }
     });
   }
   getAlbum(id){
@@ -77,11 +93,23 @@ export class EditalbumphotoComponent implements OnInit {
   }
 
   fileChangeEvent(fileInput:any): void {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    this.newfile = this.filesToUpload[0]['name'];
+    const files: Array<File> = <Array<File>>fileInput.target.files;
     //console.log('content file: ' + this.filesToUpload);
-    this.progressvalue = 0;
-    this.uploadNewPhoto(this.filesToUpload);  
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("image/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.filesToUpload = <Array<File>>fileInput.target.files;
+        this.newfile = this.filesToUpload[0]['name'];
+        //console.log('content file: ' + this.filesToUpload);
+        this.progressvalue = 0;
+        this.uploadNewPhoto(this.filesToUpload);  
+      } else {
+        let mfsize = +this.maxfilesize.value/1000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Kb');
+      }
+    } else  {
+      alert('Error file type. You must input image file type.');
+    }   
   }
 
   uploadNewPhoto(newFileData:any): void {

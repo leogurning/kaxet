@@ -101,7 +101,8 @@
       <label for="songprvw" class="col-sm-2 control-label">Song Preview<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-          <input [disabled]="this.loading == true" #inputprev type="file" (change)="prvwfileChangeEvent($event)" name="songprvw" id="songprvw" placeholder="Song preview">
+          <input [disabled]="this.loading == true" #inputprev type="file" accept="audio/*,video/*" (change)="prvwfileChangeEvent($event)" name="songprvw" id="songprvw" placeholder="Song preview">
+          <span class="control-label" style="text-align:bottom;font-size:10px;color:red;">&nbsp;&nbsp;<u><b>( MAX {{ +this.maxfilesize?.value/1000000 }} MB )</b></u></span>
       </div>
     </div>
 
@@ -109,7 +110,8 @@
       <label for="songfile" class="col-sm-2 control-label">Song File<sup>*</sup></label>
       <div class="input-group col-sm-10">
           <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-          <input [disabled]="this.loading == true" #inputsong type="file" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">
+          <input [disabled]="this.loading == true" #inputsong type="file" accept="audio/*,video/*" (change)="songfileChangeEvent($event)" name="songfile" id="songfile" placeholder="Song file">
+          <span class="control-label" style="text-align:bottom;font-size:10px;color:red;">&nbsp;&nbsp;<u><b>( MAX {{ +this.maxfilesize?.value/1000000 }} MB )</b></u></span>
       </div>
     </div>
     <div class="form-group">

@@ -1,0 +1,20 @@
+<div class="md-dialog-container">
+    <h3 mat-dialog-title>BALANCE INFO</h3>
+    <hr>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <mat-dialog-content>
+      <div *ngIf="this.success === true">
+        <strong>{{this.reportTitle}}</strong><br><br>
+        <span style="color:red;font-size:14px" *ngIf="this.total <= 0"><strong>BALANCE : Rp {{this.totalstr }}</strong></span>
+        <span style="color:#065E06;font-size:14px" *ngIf="this.total > 0"><strong>BALANCE : Rp {{this.totalstr }}</strong></span>
+      </div>
+      <div *ngIf="this.success === false">
+          <span style="color:red"><strong>Oopss! sorry there is error when getting the balance</strong></span>
+      </div>
+    </mat-dialog-content>
+    <hr>
+    <mat-dialog-actions>
+        <!-- <button mat-raised-button (click)="onCloseConfirm()">Confirm</button> -->
+        <button class="btn btn-info" (click)="onCloseCancel()">Close</button>
+    </mat-dialog-actions>
+  </div>

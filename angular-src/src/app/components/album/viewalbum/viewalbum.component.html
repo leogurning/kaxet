@@ -61,34 +61,32 @@
     </div>
 
         <div class="row">
-            <div class="col-sm-12 dtlpadding" *ngIf="songs && totalrows > 0">
-                <div class="col-sm-12 col-md-12">
-                    <b>( TOTAL : {{ totalrows }} songs ) </b> 
-                </div><br>
-                <div class="col-sm-12 col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped" width="80%">
+            <div class="dtlpadding" *ngIf="songs && totalrows > 0">
+                <div class="col-md-11 col-lg-11">
+                        <b>( TOTAL : {{ totalrows }} songs ) </b><br> 
+                    <!-- <div class="table-responsive"> -->
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th width="30%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
-                                    <th width="5%"><a style="cursor:pointer" (click)="sortSong('songpublish')">Published?</a></th>
-                                    <th width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Total Purchase</a></th>
-                                    <th width="10%" class="text-right"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
-                                    <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th>
+                                    <th scope="col" width="30%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Title</a></th>
+                                    <th scope="col" width="5%"><a style="cursor:pointer" (click)="sortSong('songpublish')">Published?</a></th>
+                                    <th scope="col" width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Total Purchase</a></th>
+                                    <th scope="col" width="10%" class="text-right"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
+                                    <th scope="col" width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor='let song of songs; let songIndex = index'>
-                                    <td>{{ song.songname}}</td>
-                                    <td>{{ song.songpublish}}</td>
-                                    <td>{{ song.songbuy}}</td>
-                                    <td class="text-right">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
-                                    <td>{{ song.stsvalue}}</td>
+                                    <td scope="row" data-label="Song Title">{{ song.songname}}</td>
+                                    <td data-label="Publish">{{ song.songpublish}}</td>
+                                    <td data-label="Purchase">{{ song.songbuy}}</td>
+                                    <td data-label="Song Price" class="text-right">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
+                                    <td data-label="Status">{{ song.stsvalue}}</td>
                                 </tr>
                                 
                             </tbody>
                         </table>
-                    </div>
+                    <!-- </div> -->
             
                     <div style="text-align:center" *ngIf="songs && totalrows > 10">
                         <nav aria-label="Page navigation">
@@ -101,6 +99,7 @@
                     </div>
             
                 </div>
+                <div class="col-md-1 col-lg-1"></div>
             </div>      
         </div>
 

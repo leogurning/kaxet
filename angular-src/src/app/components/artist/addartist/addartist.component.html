@@ -22,7 +22,8 @@
         <label for="artistimage" class="col-sm-2 control-label">Artist Photo <sup>*</sup></label>
         <div class="input-group col-sm-10">
             <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-            <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
+            <input [disabled]="this.loading == true" #inputimg type="file" accept="image/*" (change)="fileChangeEvent($event)" name="artistimage" id="artistimage" placeholder="Artistimage">
+            <span class="control-label" style="text-align:bottom;font-size:10px;color:red;">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>
         </div>
     </div>
     <div class="form-group">

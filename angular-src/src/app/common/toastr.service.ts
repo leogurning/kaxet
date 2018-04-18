@@ -4,7 +4,16 @@ declare let toastr:any
 @Injectable()
 export class ToastrService {
 
-  constructor() { }
+  constructor() { 
+    toastr.options = {
+      //timeOut : 0,
+      //extendedTimeOut : 100,
+      //tapToDismiss : true,
+      //debug : false,
+      //fadeOut: 10,
+      positionClass : "toast-top-right"
+      };
+  }
   success(message: string, title?: string) {
     toastr.success(message, title)
   }

@@ -126,26 +126,26 @@
               <table class="table table-hover">
                   <thead>
                       <tr>
-                          <th width="20%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
-                          <th width="20%">Artist</th>
-                          <th width="20%">Album</th>
+                          <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortSong('songname')">Song Title</a></th>
+                          <th width="20%" scope="col">Artist</th>
+                          <th width="20%" scope="col">Album</th>
                           <!-- <th width="5%"><a style="cursor:pointer" (click)="sortSong('albumyear')">Year</a></th> -->
-                          <th width="9%"><a style="cursor:pointer" (click)="sortSong('songgenre')">Genre</a></th>
-                          <th width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
+                          <th width="9%" scope="col"><a style="cursor:pointer" (click)="sortSong('songgenre')">Genre</a></th>
+                          <th width="10%" scope="col"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
                           <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
-                          <th width="20%">Action</th>
+                          <th width="20%" scope="col">Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor='let song of songs; let songIndex = index'>
-                          <td><a style="cursor:pointer" (click)="showSong(song._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ song.songname}}</a></td>
-                          <td>{{ song.artist }}</td>
-                          <td>{{ song.album }}</td>
+                          <td scope="row" data-label="Song Title"><a style="cursor:pointer" (click)="showSong(song._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ song.songname}}</a></td>
+                          <td data-label="Artist">{{ song.artist }}</td>
+                          <td data-label="Album">{{ song.album }}</td>
                           <!-- <td>{{ song.albumyear}}</td> -->
-                          <td>{{ song.genrevalue}}</td>
-                          <td class="text-right">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
+                          <td data-label="Genre">{{ song.genrevalue}}</td>
+                          <td data-label="Price" class="text-right">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
                           <!-- <td>{{ albm.status}}</td> -->
-                          <td>
+                          <td data-label="Action">
                               <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editSongFiles(song._id, song.songpublish, song.songbuy)">
                                   <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Song File"></span>
                               </button>

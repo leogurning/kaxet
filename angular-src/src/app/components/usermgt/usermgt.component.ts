@@ -8,6 +8,8 @@ import { UsermgtService } from '../../services/admin/usermgt.service';
 import { IUser } from '../../interface/user';
 import { MsconfigService } from '../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../interface/msconfig';
+import { NotifService } from '../../services/notif.service';
+import { Globals } from '../../app.global';
 
 @Component({
   selector: 'app-usermgt',
@@ -27,6 +29,7 @@ export class UsermgtComponent implements OnInit {
   qpage: number;
   qsort: String;
   loading = false;
+  urlkaxet: String;
 
   constructor(
     private fb: FormBuilder, 
@@ -36,7 +39,9 @@ export class UsermgtComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private notifService: NotifService,
+    private globals: Globals,
   ) { 
     // subscribe to the router events. Store the subscription so we can
     // unsubscribe later.
@@ -56,7 +61,7 @@ export class UsermgtComponent implements OnInit {
       name: this.name,
       username: this.username,
     });
-
+    this.urlkaxet = this.globals.kaxeturl;
     this.route.queryParams.forEach((params: Params) => {
       this.qlabelname = params['name'] || '';
       this.qusername = params['username'] || '';
@@ -164,7 +169,7 @@ export class UsermgtComponent implements OnInit {
     );
   }
 
-  activateLabel(userid: string, labelname: string, status: string) {
+  activateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
 
     this.loading = true;
     if (status == 'STSACT') {
@@ -188,17 +193,29 @@ export class UsermgtComponent implements OnInit {
               }
               this.toastr.error(data.message);
             } else {
-              this.loading = false;
-              this.toastr.success(data.message);
-              this.router.navigate(['usermanagement'],
-                {
-                  queryParams: { 
-                    name: this.qlabelname,
-                    username: this.qusername,
-                    page: this.qpage || 1, 
-                    sortby: this.qsort }
+              let payload: any = {};
+              payload.emailto = email;
+              payload.vlink = this.urlkaxet;
+              payload.username = username;
+              let successmsg = data.message;
+              this.notifService.sendemailwelcome(payload)
+              .subscribe(data => {
+                this.loading = false;
+                if (data.success === true) {
+                  this.toastr.success(successmsg);
+                } else {
+                  this.toastr.warning(successmsg + '. However welcome email not send. ' + data.message);
                 }
-              );
+                this.router.navigate(['usermanagement'],
+                  {
+                    queryParams: { 
+                      name: this.qlabelname,
+                      username: this.qusername,
+                      page: this.qpage || 1, 
+                      sortby: this.qsort }
+                  }
+                );
+              });
             }
           });
         } else {
@@ -208,7 +225,7 @@ export class UsermgtComponent implements OnInit {
     }
   }
 
-  deactivateLabel(userid: string, labelname: string, status: string) {
+  deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
     
     this.loading = true;
     if (status === 'STSPEND') {
@@ -259,17 +276,28 @@ export class UsermgtComponent implements OnInit {
               }
               this.toastr.error(data.message);
             } else {
-              this.loading = false;
-              this.toastr.success(data.message);
-              this.router.navigate(['usermanagement'],
-                  {
-                    queryParams: { 
-                      name: this.qlabelname,
-                      username: this.qusername,
-                      page: this.qpage || 1, 
-                      sortby: this.qsort }
-                  }
-              );
+              let payload: any = {};
+              payload.emailto = email;
+              payload.username = username;
+              let successmsg = data.message;
+              this.notifService.senddeactivation(payload)
+              .subscribe(data => {
+                this.loading = false;
+                if (data.success === true) {
+                  this.toastr.success(successmsg);
+                } else {
+                  this.toastr.warning(successmsg + '. However welcome email not send. ' + data.message);
+                }
+                this.router.navigate(['usermanagement'],
+                    {
+                      queryParams: { 
+                        name: this.qlabelname,
+                        username: this.qusername,
+                        page: this.qpage || 1, 
+                        sortby: this.qsort }
+                    }
+                );
+              });
             }
           });
         } else {

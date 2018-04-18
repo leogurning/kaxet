@@ -56,7 +56,8 @@
             <label for="genreimage" class="col-sm-2 control-label">Config Photo</label>
             <div class="input-group col-sm-10">
                 <div class="input-group-addon"><i class="glyphicon glyphicon glyphicon-file"></i></div>
-                <input [disabled]="this.loading == true" #inputimg type="file" (change)="fileChangeEvent($event)" name="genreimage" id="genreimage" placeholder="Genreimage">
+                <input [disabled]="this.loading == true" #inputimg type="file" accept="image/*" (change)="fileChangeEvent($event)" name="genreimage" id="genreimage" placeholder="Genreimage">
+                <span class="control-label" style="text-align:bottom;font-size:10px;color:red;">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>
             </div>
         </div>
         <div class="form-group">

@@ -126,32 +126,35 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th width="20%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Name</a></th>
-                            <th width="20%"><a style="cursor:pointer" (click)="sortSong('label')">Label</a></th>
-                            <th width="10%">Artist</th>
-                            <th width="20%">Album</th>
-                            <th width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Purchase</a></th>
-                            <th width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
-                            <th width="10%">Publish?</th>
+                            <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Title</a></th>
+                            <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortSong('label')">Label</a></th>
+                            <th scope="col" width="10%">Artist</th>
+                            <th scope="col" width="20%">Album</th>
+                            <th scope="col" width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Purchase</a></th>
+                            <th scope="col" width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
+                            <th scope="col" width="10%">Publish?</th>
                             <!-- <th width="5%">Preview</th> -->
-                            <th width="5%">Song</th>
+                            <th scope="col" width="5%">Song</th>
                             <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
-                            <th width="5%">Action</th>
+                            <th scope="col" width="5%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor='let song of songs; let songIndex = index'>
-                            <td><a style="font-size:12px;cursor:pointer" (click)="showSong(song._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ song.songname}}</a></td>
-                            <td style="font-size:12px">{{ song.label }}</td>
-                            <td style="font-size:12px">{{ song.artist }}</td>
-                            <td style="font-size:12px">{{ song.album }}</td>
-                            <td class="text-right" style="font-size:12px">{{ song.songbuy}}</td>
-                            <td class="text-right" style="font-size:12px">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
-                            <td style="font-size:12px">{{ song.songpublish }}</td>
+                            <td scope="row" data-label="Song Title"><a style="font-size:12px;cursor:pointer" (click)="showSong(song._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ song.songname}}</a></td>
+                            <td data-label="Label">{{ song.label }}</td>
+                            <td data-label="Artist">{{ song.artist }}</td>
+                            <td data-label="Album">{{ song.album }}</td>
+                            <td class="text-right" data-label="Purchase">{{ song.songbuy}}</td>
+                            <td class="text-right" data-label="Price">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
+                            <td data-label="Publish?">{{ song.songpublish }}</td>
                             <!-- <td><a href="{{ song.songprvwpath }}" style="cursor:pointer;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a></td> -->
-                            <td><a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                            <td data-label="Song"><a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a></td>
                             <!-- <td>{{ albm.status}}</td> -->
-                            <td><a *ngIf="song.songpublish === 'Y' && song.songbuy === 0" alt="Unpublish" style="cursor:pointer;float:center;color:grey" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish"><i class="fa fa-cloud-download fa-2x"></i></a></td>
+                            <td data-label="Action">
+                                <a *ngIf="song.songpublish === 'Y' && song.songbuy === 0" alt="Unpublish" style="cursor:pointer;float:center;color:grey" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish"><i class="fa fa-cloud-download fa-2x"></i></a>
+                                <span *ngIf="song.songpublish !== 'Y' || song.songbuy !== 0" style="color:#eee">No Action</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

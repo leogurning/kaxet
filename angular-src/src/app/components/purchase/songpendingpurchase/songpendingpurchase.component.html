@@ -1,0 +1,163 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Pending Song purchase (Cash)</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <div *ngIf="this.loading == false" class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Parameter</h3>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                        <label for="artistname" class="col-sm-2 paddingsearch">Artist</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                            <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
+                        </div>
+                    </div>         
+                    <div class="col-sm-6 col-md-6">
+                      <label for="buyername" class="col-sm-2 paddingsearch">Buyer</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="buyername" [formControl]="buyername" placeholder="Buyer Name">
+                      </div>
+                    </div>            
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                        <label for="songname" class="col-sm-2 paddingsearch">Song</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                            <input type="text" class="form-control" id="songname" [formControl]="songname" placeholder="Song Name">
+                        </div>
+                    </div>         
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                      <label class="col-sm-6 paddingsearch">Purchase Date</label>
+                    </div>  
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-3 col-md-3">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rptype" value="opt3" [formControl]="rptype" checked>
+                                Today
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rptype" value="opt1" [formControl]="rptype">
+                                Current month
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rptype" value="opt2" [formControl]="rptype">
+                                Date Range (yyyy-mm-dd)
+                            </label>
+                        </div>
+                        <div class="row" style="padding: 8px">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group" style="margin-right:0" [ngClass]="{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                        <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="startdt" placeholder="Start Date">
+                                    </div>
+                                    <div class="text-danger" *ngIf="reportForm.get('startdt').dirty && reportForm.get('startdt').invalid">
+                                        <span class="col-sm-2"></span>
+                                        <span class="col-sm-10" style="padding:4px 0 0">Please enter valid start date</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group" style="margin-right:0" [ngClass]="{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                        <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="enddt" placeholder="End Date">
+                                    </div>
+                                    <div class="text-danger" *ngIf="reportForm.get('enddt').dirty && reportForm.get('enddt').invalid">
+                                        <span class="col-sm-2"></span>
+                                        <span class="col-sm-10" style="padding:4px 0 0">Please enter valid end date</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                </div>
+                <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="col-sm-6" style="margin:0;padding:0">
+                          <button type="submit" class="btn btn-primary" [disabled]="this.loading == false && reportForm.invalid">Submit</button>
+                        </div>
+                    </div>                  
+                </div>
+            </form>  
+        </div>
+    </div>    
+    <div class="panel panel-danger" *ngIf="songpendings && totalrows < 1">
+        <div class="panel-heading">
+            <h3 class="panel-title">No pending song purchase found</h3> 
+        </div>
+  
+        <div class="panel-body">
+            There is NO pending song purchase found for the selected criteria.
+        </div>
+    </div>
+    <div class="panel panel-default" *ngIf="songpendings && totalrows > 0 && this.loading == false">
+        <div class="panel-heading">
+            <span class="panel-title"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> 
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="10%" scope="col"><a style="cursor:pointer" (click)="sortSongpending('purchasedt')">Purchase Date</a></th>
+                            <th width="10%" scope="col"><a style="cursor:pointer" (click)="sortSongpending('listener')">Buyer</a></th>
+                            <th width="15%" scope="col"><a style="cursor:pointer" (click)="sortSongpending('song')">Song Name</a></th>
+                            <!-- <th width="20%"><a style="cursor:pointer" (click)="sortSongpending('artist')">Artist</a></th> -->
+                            <!-- <th width="15%"><a style="cursor:pointer" (click)="sortSong('album')">Album</a></th> -->                            
+                            <th width="10%" scope="col"><a style="cursor:pointer" (click)="sortSongpending('songprice')">Price</a></th>
+                            <th width="15%" scope="col" >Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let songpending of songpendings; let songIndex = index'>
+                            <td data-label="Purchase Date" scope="row">{{ songpending.purchasedt | date: 'd MMM y'}}</td>  
+                            <td data-label="Buyer">{{ songpending.listener }}</td>
+                            <td data-label="Song Title"><a style="font-size:12px;cursor:pointer" (click)="showSong(songpending.songid)" data-toggle="tooltip" data-placement="top" title="View Song">{{ songpending.song}}</a></td>
+                            <!-- <td style="font-size:12px">{{ songpending.artist }}</td> -->
+                            <!-- <td style="font-size:12px">{{ songpending.album }}</td> -->
+                            <td data-label="Price" class="text-right">{{ songpending.songprice | currency: 'IDR':'symbol-narrow' }}</td>
+                            <td data-label="Action">
+                                <!-- <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)" data-toggle="tooltip" data-placement="top" title="Approve Payment"><i class="fa fa-check fa-2x"></i></a> -->
+                                <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)" data-toggle="tooltip" data-placement="top" title="Approve Payment">Approve</a>
+                                &nbsp;&nbsp;&nbsp;
+                                <!-- <a style="cursor:pointer;color:red" aria-label="Reject" (click)="rejectPayment(songpending._id, songpending.song)" data-toggle="tooltip" data-placement="top" title="Reject Payment"><i class="fa fa-times fa-2x"></i></a> -->
+                                <a style="cursor:pointer;color:red" aria-label="Reject" (click)="rejectPayment(songpending._id, songpending.song)" data-toggle="tooltip" data-placement="top" title="Reject Payment">Reject</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            <div style="text-align:center" *ngIf="songpendings && totalrows > 10">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                            <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
+        </div>
+  
+    </div>
+</div>

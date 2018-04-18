@@ -364,8 +364,9 @@ export class ListsongComponent implements OnInit {
 
   editSong(songid, songpublish, songbuy): void {
 
-    if (songbuy > 0) {
-      this.toastr.warning("This song has been purchased. Data can not be edited");
+    //if (songbuy > 0) {
+    if (songpublish == 'Y') {
+      this.toastr.warning("This song has been published. Data can not be edited");
     } else {
       this.router.navigate([`editsong/${songid}`],
       {
@@ -387,8 +388,9 @@ export class ListsongComponent implements OnInit {
 
   confirmDel(idx: number, songid: string, songpublish, songbuy, songname, songprvwname, songfilename) {
     
-    if (songbuy > 0) {
-      this.toastr.warning("This song has been purchased. Data can not be deleted");
+    //if (songbuy > 0) {
+    if (songpublish == 'Y') {
+      this.toastr.warning("This song has been published. Data can not be deleted");
     } else {
       if(confirm('Do you really want to delete this song: ' + songname + ' record?')){
         this.loading = true;

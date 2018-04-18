@@ -13,6 +13,9 @@ import { UserService } from '../../services/user.service';
 import { Subscription } from 'rxjs/Subscription';
 import { UsermgtService } from '../../services/admin/usermgt.service';
 import { SongadminService } from '../../services/admin/songadmin.service';
+import { SongpurchaseService } from '../../services/songpurchase.service';
+import { MatDialog } from '@angular/material';
+import { LabelbalancedialogComponent } from '../labelbalancedialog/labelbalancedialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -30,6 +33,7 @@ export class DashboardComponent implements OnInit {
   totalsongs: number;
   totalpendinglabel: number = 0;
   totalpendingsong: number = 0;
+  totalpendingpurchase: number = 0;
 
   constructor(
     private authService: AuthService,
@@ -41,7 +45,9 @@ export class DashboardComponent implements OnInit {
     private songadminService: SongadminService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private songpurchaseService: SongpurchaseService,
+    private dialog: MatDialog
   ) { }
 
   name: String;
@@ -117,6 +123,21 @@ export class DashboardComponent implements OnInit {
         });
       }
     });
+    //songpurchaseService.getPendingSongpurchaseCount
+    let payload: any = {};
+    payload.status = 'STSPEND';
+    this.songpurchaseService.getPendingSongpurchaseCount(userid, payload)
+    .subscribe(data => {
+      if (data.success === false) {
+        if (data.errcode){
+          this.authService.logout();
+          this.router.navigate(['login']);
+        }
+        this.toastr.error(data.message);
+      } else {
+        this.totalpendingpurchase = +data.totalcount;
+      }
+    });
   }
   fetchReportAdm (userid) {
     let payload: any = {};
@@ -165,5 +186,16 @@ export class DashboardComponent implements OnInit {
   }
   toSongMgt(): void {
     this.router.navigate(['/songmanagement']);
+  }
+  toPendingSongpurchase(): void {
+    this.router.navigate(['/songpendingpurchase']);
+  }
+
+  viewlabelbalance(labelname):void {
+    let dialogRef = this.dialog.open(LabelbalancedialogComponent, {
+      disableClose: true,
+      width: '400px',
+      data: 'Hi ' + labelname + ', Please find below your balance.'
+    });
   }
 }

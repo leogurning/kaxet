@@ -12,6 +12,8 @@ const user = require('./routes/user.js');
 const artist = require('./routes/artist.js');
 const album = require('./routes/album.js');
 const song = require('./routes/song.js');
+const songpurchase = require('./routes/songpurchase.js');
+const transaction = require('./routes/transaction.js');
 
 const port = process.env.PORT || config.serverport;
 
@@ -108,6 +110,21 @@ apiRoutes.post('/song/report/:labelid', song.songreport);
 apiRoutes.post('/song/list/:labelid', song.songlist);
 apiRoutes.post('/songcount/:labelid', song.totalsongcount);
 apiRoutes.post('/song/stats/:id', song.songliststats);
+
+apiRoutes.post('/songpurchase/:id', songpurchase.savesongpurchase); // API adds song purchase of the label
+apiRoutes.get('/songpurchase/:id', songpurchase.getsongpurchase); // API get song purchase of the label
+apiRoutes.delete('/songpurchase/:id', songpurchase.delsongpurchase); // API delete song purchase of the label
+apiRoutes.put('/songpurchase/:id', songpurchase.updatestatuspurchase); // API update status song purchase of the label
+apiRoutes.post('/songpurchaseagg/:id', songpurchase.songpurchaseagg);
+apiRoutes.post('/pendingsongpurchaseagg/:id', songpurchase.pendingsongpurchaseagg);
+apiRoutes.get('/songpurchaseagg/:id', songpurchase.getsongpurchaseagg);
+apiRoutes.post('/pendingsongpurchasecount/:labelid', songpurchase.pendingsongpurchasecount);
+apiRoutes.post('/admsongpurchaseagg/:id', songpurchase.admsongpurchaseagg);
+
+apiRoutes.post('/transaction/:id', transaction.savetransaction); // API adds transaction of the label
+apiRoutes.post('/transactionagg/:id', transaction.transactionagg); // API get transaction data of the label
+apiRoutes.post('/admtransactionagg/:id', transaction.admtransactionagg); // API get transaction data of the label
+apiRoutes.get('/labelbalance/:id', transaction.getlabelbalance); // API get balance data of the label
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));

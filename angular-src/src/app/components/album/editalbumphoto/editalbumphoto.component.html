@@ -14,10 +14,11 @@
         <div class="form-group">   
             <!-- <label class="col-sm-2 control-label"></label> -->
             <div class="col-sm-12">
+                <label class="control-label" style="color:red;"><sup>* <u>FILE SIZE (MAX {{ +this.maxfilesize?.value/1000 }} KB)</u></sup></label>    
                 <div class="input-group">
                     <label class="input-group-btn">
                         <span *ngIf="this.loading == false" class="btn btn-primary">
-                            Browse&hellip; <input [disabled]="this.loading == true" type="file" (change)="fileChangeEvent($event)" name="albumimage" id="albumimage" style="display:none">
+                            Browse&hellip; <input [disabled]="this.loading == true" type="file" accept="image/*" (change)="fileChangeEvent($event)" name="albumimage" id="albumimage" style="display:none">
                         </span>
                     </label>
                     <input [disabled]="this.loading == true" type="text" class="form-control" value="{{ this.newfile }}">  

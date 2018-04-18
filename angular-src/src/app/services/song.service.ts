@@ -158,6 +158,18 @@ export class SongService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+
+  songbuyincrement(songid, oSong){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`api/songbuyincrement/${songid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');

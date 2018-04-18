@@ -7,6 +7,8 @@ import { AuthService } from '../../../services/auth.service';
 import { ISong } from '../../../interface/song';
 import { FiletransferService } from '../../../services/filetransfer.service';
 import { Globals } from '../../../app.global';
+import { MsconfigService } from '../../../services/admin/msconfig.service';
+import { IMsconfigGroupList } from '../../../interface/msconfig';
 
 @Component({
   selector: 'app-editsongfiles',
@@ -24,6 +26,7 @@ export class EditsongfilesComponent implements OnInit {
   prvwuploadpath: string;
   songuploadpath: string;
   progressvalue = 0;
+  maxfilesize: IMsconfigGroupList;
 
   constructor(
     private fb: FormBuilder, 
@@ -33,7 +36,8 @@ export class EditsongfilesComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private ftService:FiletransferService,
-    private globals: Globals
+    private globals: Globals,
+    private msconfigService: MsconfigService,
   ) { }
 
   songprvwpath = new FormControl('', [Validators.nullValidator]);
@@ -50,6 +54,7 @@ export class EditsongfilesComponent implements OnInit {
     this.prvwuploadpath = this.globals.prvwuploadpath;
     this.songuploadpath = this.globals.songuploadpath;
     this.progressvalue = 0;
+    this.getMsconfigVal('AVSIZE','FSIZE');
     this.songForm = this.fb.group({
       songprvwpath: this.songprvwpath,
       songprvwname: this.songprvwname,
@@ -59,6 +64,17 @@ export class EditsongfilesComponent implements OnInit {
     this.route.params.subscribe((params: any) => {
       this.songid = params['id'];
       this.getSong(this.songid);
+    });
+  }
+  getMsconfigVal(code, groupid){
+    this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
+      if (data.success === true) {
+        if (data.data[0]) {
+          this.maxfilesize = data.data[0];
+        } else {
+          this.maxfilesize = {code:'', value:'0'};
+        }
+      }
     });
   }
   getSong(id){
@@ -86,17 +102,41 @@ export class EditsongfilesComponent implements OnInit {
   }
 
   PrvwfileChangeEvent(fileInput:any): void {
-    this.PrvwfilesToUpload = <Array<File>>fileInput.target.files;
-    this.newprvwfile = this.PrvwfilesToUpload[0]['name'];
-    this.progressvalue = 0;
-    this.uploadNewPreview(this.PrvwfilesToUpload);  
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.PrvwfilesToUpload = <Array<File>>fileInput.target.files;
+        this.newprvwfile = this.PrvwfilesToUpload[0]['name'];
+        this.progressvalue = 0;
+        this.uploadNewPreview(this.PrvwfilesToUpload);  
+      } else {
+        let mfsize = +this.maxfilesize.value/1000000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+      }
+    } else  {
+      alert('Error file type. You must input audio/video file type.');
+    }    
   }
 
   SongfileChangeEvent(fileInput:any): void {
-    this.SongfilesToUpload = <Array<File>>fileInput.target.files;
-    this.newsongfile = this.SongfilesToUpload[0]['name'];
-    this.progressvalue = 0;
-    this.uploadNewSong(this.SongfilesToUpload);  
+    const files: Array<File> = <Array<File>>fileInput.target.files;
+    //console.log('content file: ' + this.filesToUpload);
+    //alert('File size: ' + files[0].size + '. File type: '+ files[0].type + '. Max size: ' + this.maxfilesize.value);
+    if (~files[0].type.indexOf("audio/") || ~files[0].type.indexOf("video/")) {
+      if (files[0].size <= +this.maxfilesize.value) {
+        this.SongfilesToUpload = <Array<File>>fileInput.target.files;
+        this.newsongfile = this.SongfilesToUpload[0]['name'];
+        this.progressvalue = 0;
+        this.uploadNewSong(this.SongfilesToUpload);  
+      } else {
+        let mfsize = +this.maxfilesize.value/1000000 ;
+        alert('Error file size. File size is maximum ' + mfsize + ' Mb');
+      }
+    } else  {
+      alert('Error file type. You must input audio/video file type.');
+    }    
   }
 
   uploadNewPreview(newFileData:any): void {

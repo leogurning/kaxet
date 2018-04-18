@@ -1,0 +1,180 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Transactions</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <div *ngIf="this.loading == false" class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Parameter</h3>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+              <div class="row rowmarginsearch">
+                <div class="col-sm-6 col-md-6">
+                    <label for="purchaseid" class="col-sm-2 paddingsearch">Payment Ref</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                        <input type="text" class="form-control" id="purchaseid" [formControl]="purchaseid" placeholder="Payment Ref">
+                    </div>
+                </div>         
+                <div class="col-sm-6 col-md-6">
+                  <label for="buyername" class="col-sm-2 paddingsearch">Buyer</label>
+                  <div class="col-sm-10">
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                      <input type="text" class="form-control" id="buyername" [formControl]="buyername" placeholder="Buyer Name">
+                  </div>
+                </div>            
+              </div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="productname" class="col-sm-2 paddingsearch">Product Name</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="productname" [formControl]="productname" placeholder="Product Name">
+                      </div>
+                  </div>         
+                  <div class="col-sm-6 col-md-6">
+                      <label for="dbcr" class="col-sm-2 paddingsearch">IN/OUT</label>
+                      <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control" [formControl]="dbcr">
+                            <option ng-selected="true" value="">Select the option</option>
+                            <option *ngFor="let a of dc" [ngValue]="a.code">{{a.value}}</option>
+                        </select>
+                      </div>
+                    </div>             
+                </div>
+                <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="fromamt" class="col-sm-2 paddingsearch">From Amount</label>
+                      <div class="col-sm-10">
+                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                          <input type="text" class="form-control" id="fromamt" [formControl]="fromamt" placeholder="From Amount">
+                      </div>
+                  </div>         
+                  <div class="col-sm-6 col-md-6">
+                    <label for="toamt" class="col-sm-2 paddingsearch">To Amount</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                        <input type="text" class="form-control" id="toamt" [formControl]="toamt" placeholder="To Amount">
+                    </div>
+                  </div>            
+              </div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                    <label class="col-sm-6 paddingsearch">Transaction Date</label>
+                  </div>  
+              </div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-3 col-md-3">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="rptype" value="opt3" [formControl]="rptype" checked>
+                              Today
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="rptype" value="opt1" [formControl]="rptype">
+                              Current month
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="rptype" value="opt2" [formControl]="rptype">
+                              Date Range (yyyy-mm-dd)
+                          </label>
+                      </div>
+                      <div class="row" style="padding: 8px">
+                          <div class="col-sm-6 col-md-6">
+                              <div class="form-group" style="margin-right:0" [ngClass]="{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}">
+                                  <div class="input-group">
+                                      <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                      <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="startdt" placeholder="Start Date">
+                                  </div>
+                                  <div class="text-danger" *ngIf="reportForm.get('startdt').dirty && reportForm.get('startdt').invalid">
+                                      <span class="col-sm-2"></span>
+                                      <span class="col-sm-10" style="padding:4px 0 0">Please enter valid start date</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6 col-md-6">
+                              <div class="form-group" style="margin-right:0" [ngClass]="{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}">
+                                  <div class="input-group">
+                                      <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                      <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="enddt" placeholder="End Date">
+                                  </div>
+                                  <div class="text-danger" *ngIf="reportForm.get('enddt').dirty && reportForm.get('enddt').invalid">
+                                      <span class="col-sm-2"></span>
+                                      <span class="col-sm-10" style="padding:4px 0 0">Please enter valid end date</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div> 
+
+              </div>
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <div class="col-sm-6" style="margin:0;padding:0">
+                        <button type="submit" class="btn btn-primary" [disabled]="this.loading == false && reportForm.invalid">Submit</button>
+                      </div>
+                  </div>                  
+              </div>
+            </form>
+        </div>    
+    </div>
+    <div class="panel panel-danger" *ngIf="transactions && totalrows < 1">
+        <div class="panel-heading">
+          <h3 class="panel-title">No transaction found</h3> 
+        </div>
+
+        <div class="panel-body">
+          There is NO transaction found for the selected criteria.
+        </div>
+    </div>
+    <div class="panel panel-default" *ngIf="transactions && totalrows > 0 && this.loading == false">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="15%" scope="col"><a style="cursor:pointer" (click)="sortTransaction('transactiondt')">Transaction Date</a></th>
+                            <th width="40%" scope="col">Remarks</th>
+                            <th width="20%" scope="col">Payment</th>
+                            <th width="15%" scope="col"><a style="cursor:pointer" (click)="sortTransaction('amount')">Amount</a></th>
+                            <th width="5%" scope="col">In/Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let trx of transactions; let trxIndex = index'>
+                            <!-- <td data-label="Transaction Date" scope="row"><a style="cursor:pointer" (click)="showTransaction(trx._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->
+                            <td data-label="Transaction Date" scope="row">{{ trx.transactiondt | date: 'd MMM y'}}</td>
+                            <td data-label="Remarks">payment ref: {{ trx.purchaseid }} ; <br> buyer: {{ trx.listener }} ;<br> product: {{ trx.producttype}} &nbsp; {{ trx.product}}</td>
+                            <td data-label="Payment"><a style="cursor:pointer" (click)="showPurchase(trx.purchaseid)" data-toggle="tooltip" data-placement="top" title="View Payment">{{ trx.payment }}</a></td>
+                            <td data-label="Amount" class="text-right">{{ trx.amount | currency: 'IDR':'symbol-narrow' }}</td>
+                            <td data-label="In/Out">{{ trx.dbcr }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            <div style="text-align:center" *ngIf="transactions && totalrows > 10">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                            <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
+        </div>
+  
+    </div>
+</div>
