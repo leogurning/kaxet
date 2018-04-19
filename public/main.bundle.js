@@ -10729,7 +10729,7 @@ module.exports = "\n/* Base ------------------------------ */\n\n*:not(br):not(t
 /***/ "./src/app/components/user/emailverification/emailverification.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <table class=\"email-wrapper\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n    <tr>\n      <td align=\"center\">\n        <table class=\"email-content\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n          <!-- Email Body -->\n          <tr>\n            <td class=\"email-body\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n              <table class=\"email-body_inner\" align=\"center\" width=\"570\" cellpadding=\"0\" cellspacing=\"0\">\n                <!-- Body content -->\n                <tr>\n                  <td class=\"content-cell\">\n                    <h1>Hi, {{name}}!</h1>\n                    <p><strong>Thanks for the email confirmation !</strong></p>\n                    <p>{{ this.remarks1 }}</p>\n                    <p>{{ this.remarks2 }} <a href=\"mailto:{{ this.csemail.value }}\">{{ this.csemail.value }}</a></p>\n                    <p>For reference, here's your account information:</p>\n                    <table class=\"attributes\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                      <tr>\n                        <td class=\"attributes_content\">\n                          <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                            <tr>\n                              <td class=\"attributes_item\"><strong>Username:</strong> {{this.username}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Name:</strong> {{this.name}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Email:</strong> {{ this.email }}</td>\n                            </tr>\n                              <tr>\n                              <td class=\"attributes_item\"><strong>Usertype:</strong> label</td>\n                            </tr>\n                          </table>\n                        </td>\n                      </tr>\n                    </table>\n                    <!-- Sub copy -->\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n </div> "
+module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <table class=\"email-wrapper\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n    <tr>\n      <td align=\"center\">\n        <table class=\"email-content\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n          <!-- Email Body -->\n          <tr>\n            <td class=\"email-body\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n              <table class=\"email-body_inner\" align=\"center\" width=\"570\" cellpadding=\"0\" cellspacing=\"0\">\n                <!-- Body content -->\n                <tr>\n                  <td class=\"content-cell\">\n                    <h1>Hi, {{name}}!</h1>\n                    <p><strong>Thanks for the email confirmation !</strong></p>\n                    <p>{{ this.remarks1?.value }}</p>\n                    <p>{{ this.remarks2?.value }} <a href=\"mailto:{{ this.csemail?.value }}\">{{ this.csemail?.value }}</a></p>\n                    <p>For reference, here's your account information:</p>\n                    <table class=\"attributes\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                      <tr>\n                        <td class=\"attributes_content\">\n                          <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                            <tr>\n                              <td class=\"attributes_item\"><strong>Username:</strong> {{this.username}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Name:</strong> {{this.name}}</td>\n                            </tr>\n                                                          <tr>\n                              <td class=\"attributes_item\"><strong>Email:</strong> {{ this.email }}</td>\n                            </tr>\n                              <tr>\n                              <td class=\"attributes_item\"><strong>Usertype:</strong> label</td>\n                            </tr>\n                          </table>\n                        </td>\n                      </tr>\n                    </table>\n                    <!-- Sub copy -->\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n </div> "
 
 /***/ }),
 
@@ -10772,7 +10772,7 @@ var EmailverificationComponent = /** @class */ (function () {
         this.sub = this.route.queryParams.subscribe(function (params) {
             var hash = params['id'];
             var postind = params['post'];
-            _this.getMsconfigGroupList('REMARKS');
+            //this.getMsconfigGroupList('REMARKS');
             _this.notifService.recvemailverification(hash)
                 .subscribe(function (data) {
                 if (data.success === false) {
@@ -10787,12 +10787,12 @@ var EmailverificationComponent = /** @class */ (function () {
                     _this.email = data.message.email;
                     _this.utype = data.message.usertype;
                     if (postind === 'Y') {
-                        _this.remarks1 = "Your email has been verified.";
-                        _this.remarks2 = "If you have any queries, please send email to ";
+                        _this.remarks1 = { code: '0', value: "Your email has been verified." };
+                        _this.remarks2 = { code: '0', value: "If you have any queries, please send email to " };
                     }
                     else {
-                        _this.remarks1 = _this.getremarksvalue('REMARKS1');
-                        _this.remarks2 = _this.getremarksvalue('REMARKS2');
+                        _this.getMsconfigVal('REMARKS1', 'REMARKS');
+                        _this.getMsconfigVal('REMARKS2', 'REMARKS');
                     }
                 }
             });
@@ -10802,41 +10802,40 @@ var EmailverificationComponent = /** @class */ (function () {
     EmailverificationComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    EmailverificationComponent.prototype.getMsconfigGroupList = function (groupid) {
-        var _this = this;
-        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
-            if (data.success === true) {
-                if (data.data[0]) {
-                    _this.remarks = data.data;
-                }
-                else {
-                    _this.remarks = [{ code: '', value: 'Error ms config list' }];
-                }
-            }
-        });
-    };
+    /* getMsconfigGroupList(groupid){
+      this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+        if (data.success === true) {
+          if (data.data[0]) {
+            this.remarks = data.data;
+          } else {
+            this.remarks = [{code:'', value:'Error ms config list'}];
+          }
+        }
+      });
+      
+    } */
     EmailverificationComponent.prototype.getMsconfigVal = function (code, groupid) {
         var _this = this;
         this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
             if (data.success === true) {
                 if (data.data[0]) {
-                    _this.csemail = data.data[0];
+                    if (code === 'CSEML') {
+                        _this.csemail = data.data[0];
+                    }
+                    else if (code === 'REMARKS1') {
+                        _this.remarks1 = data.data[0];
+                    }
+                    else if (code === 'REMARKS2') {
+                        _this.remarks2 = data.data[0];
+                    }
                 }
                 else {
                     _this.csemail = { code: '', value: 'Error ms config list' };
+                    _this.remarks1 = { code: '', value: 'Error ms config list' };
+                    _this.remarks2 = { code: '', value: 'Error ms config list' };
                 }
             }
         });
-    };
-    EmailverificationComponent.prototype.getremarksvalue = function (premarks) {
-        var result = '';
-        for (var _i = 0, _a = this.remarks; _i < _a.length; _i++) {
-            var oremark = _a[_i];
-            if (premarks === oremark.code) {
-                result = oremark.value;
-            }
-        }
-        return result;
     };
     EmailverificationComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({

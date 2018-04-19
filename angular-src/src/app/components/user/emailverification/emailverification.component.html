@@ -13,8 +13,8 @@
                   <td class="content-cell">
                     <h1>Hi, {{name}}!</h1>
                     <p><strong>Thanks for the email confirmation !</strong></p>
-                    <p>{{ this.remarks1 }}</p>
-                    <p>{{ this.remarks2 }} <a href="mailto:{{ this.csemail.value }}">{{ this.csemail.value }}</a></p>
+                    <p>{{ this.remarks1?.value }}</p>
+                    <p>{{ this.remarks2?.value }} <a href="mailto:{{ this.csemail?.value }}">{{ this.csemail?.value }}</a></p>
                     <p>For reference, here's your account information:</p>
                     <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
                       <tr>
