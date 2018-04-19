@@ -48,6 +48,7 @@ export class UpdateemailComponent implements OnInit {
             this.toastr.success(data.message);
             let theUser:any = JSON.parse(localStorage.getItem('currentUser'));
             theUser.user.email = this.profileForm.value.email;
+            theUser.user.verified_email = "N";
             localStorage.setItem('currentUser', JSON.stringify(theUser));
           }
       });

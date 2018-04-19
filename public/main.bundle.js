@@ -11921,6 +11921,7 @@ var UpdateemailComponent = /** @class */ (function () {
                     _this.toastr.success(data.message);
                     var theUser = JSON.parse(localStorage.getItem('currentUser'));
                     theUser.user.email = _this.profileForm.value.email;
+                    theUser.user.verified_email = "N";
                     localStorage.setItem('currentUser', JSON.stringify(theUser));
                 }
             });
