@@ -58,6 +58,10 @@ export class ViewpurchaseComponent implements OnInit {
           this.toastr.error('Song purchase id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   onBack(): void {

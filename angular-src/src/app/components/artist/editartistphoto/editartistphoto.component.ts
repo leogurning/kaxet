@@ -67,6 +67,9 @@ export class EditartistphotoComponent implements OnInit {
           this.maxfilesize = {code:'', value:'0'};
         }
       }
+    },
+    err => {
+      this.maxfilesize = {code:'', value:'0'};
     });
   }
 
@@ -81,6 +84,11 @@ export class EditartistphotoComponent implements OnInit {
           this.router.navigate(['listartist']);
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
+      this.router.navigate(['listartist']);
     });
   }
 
@@ -111,8 +119,102 @@ export class EditartistphotoComponent implements OnInit {
       alert('Error file type. You must input image file type.');
     }    
   }
-
+  
   uploadNewPhoto(newFileData:any): void {
+    const files: Array<File> = newFileData;
+    let lformData: FormData = new FormData();
+    this.progressvalue = 10;
+    lformData.append('fileinputsrc',files[0],files[0]['name']);
+    lformData.append('uploadpath',this.artistuploadpath);
+    this.loading = true;
+    this.progressvalue = 30;
+    this.ftService.uploadInputFile(lformData)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.progressvalue = 0;
+        this.toastr.error(data.message);
+      } else {
+        this.progressvalue = 50;
+        this.displayImg = data.filedata.filepath;
+        let payloadData: any = {};
+        //payloadData.uploadpath = this.artistuploadpath;
+        payloadData.oldartistphotoname = this.artistForm.value.artistphotoname;
+        payloadData.artistphotoname = data.filedata.filename;
+        payloadData.artistphotopath = data.filedata.filepath;
+        payloadData.labelid = this.userObj.userid;
+        this.progressvalue = 80;   
+        this.artistService.pubupdateArtistphoto(this.artistid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            this.progressvalue = 100;
+            //console.log('Success update database photo - ' + this.displayImg)
+            this.toastr.success(data.message);
+            this.progressvalue = 0;
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+
+      }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
+    });    
+  }
+
+/*   uploadNewPhoto(newFileData:any): void {
+    const files: Array<File> = newFileData;
+    let lformData: FormData = new FormData();
+    this.progressvalue = 10;
+    lformData.append('fileinputsrc',files[0],files[0]['name']);
+    lformData.append('uploadpath',this.artistuploadpath);
+    lformData.append('artistphotoname',this.artistForm.value.artistphotoname);
+    lformData.append('labelid',this.userObj.userid);
+    this.loading = true;
+    this.progressvalue = 30;
+    this.artistService.pubupdateArtistphoto(this.artistid, lformData)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.progressvalue = 0;
+        this.toastr.error(data.message);
+      } else {
+        this.loading = false;
+        this.progressvalue = 50;
+        //this.displayImg = data.filedata.filepath;
+        this.progressvalue = 70;
+        this.progressvalue = 80;   
+        this.progressvalue = 100;
+        this.toastr.success(data.message);
+        this.progressvalue = 0;
+        this.router.navigate(['/listartist'], { preserveQueryParams: true });
+      }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
+    });    
+  } */
+/*   uploadNewPhoto(newFileData:any): void {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     this.progressvalue = 10;
@@ -142,12 +244,15 @@ export class EditartistphotoComponent implements OnInit {
             } else {
               console.log('File deleted - ' + payloadData.filename);
             }   
+          },
+          err => {
+            console.log(err);
           });
         this.progressvalue = 80;   
         this.artistForm.value.artistphotopath = data.filedata.filepath;
         this.artistForm.value.artistphotoname = data.filedata.filename;
 
-        console.log('Update database photo - ' + this.displayImg);
+        //console.log('Update database photo - ' + this.displayImg);
         this.artistService.updateArtistphoto(this.artistid, this.artistForm.value)
         .subscribe(data => {
           if (data.success === false) {
@@ -161,15 +266,27 @@ export class EditartistphotoComponent implements OnInit {
           } else {
             this.loading = false;
             this.progressvalue = 100;
-            console.log('Success update database photo - ' + this.displayImg)
+            //console.log('Success update database photo - ' + this.displayImg)
             this.toastr.success(data.message);
             this.progressvalue = 0;
           }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
         });
 
       }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
     });    
-  }
+  } */
 
   onBack(): void {
     this.router.navigate(['/listartist'], { preserveQueryParams: true });

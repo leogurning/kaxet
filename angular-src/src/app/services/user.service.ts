@@ -32,6 +32,14 @@ export class UserService {
         .catch(this.handleError);
   }
 
+  registerlabel(oUser) {
+    let headers = new Headers ({ 'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+     return this.http.post('registerlabel', JSON.stringify(oUser), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
   getUser(userid) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
@@ -128,7 +136,8 @@ export class UserService {
       .catch(this.handleError);
   }
   private handleError(error: Response) {
-      console.error(error);
-      return Observable.throw(error.json().error || 'Server error');
+    let errMsg = error.status ? `${error.status} - ${error.statusText}`:'Ooops sorry...a server error occured. Please try again shortly.';
+    //console.error(errMsg);
+    return Observable.throw( errMsg );
   }
 }

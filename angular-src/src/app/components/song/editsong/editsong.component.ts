@@ -87,9 +87,20 @@ export class EditsongComponent implements OnInit {
             this.genre = data.data;
           }
         } else {
-          this.genre = [{code:'', value:'Error ms config list'}];
+          this.sts = [{code:'', value:'Empty list'}];
+          this.genre = [{code:'', value:'Empty list'}];
         }
+      } else {
+        this.sts = [{code:'', value:'Error ms config list'}];
+        this.genre = [{code:'', value:'Error ms config list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -100,23 +111,39 @@ export class EditsongComponent implements OnInit {
           this.artistlist = data.data;
           //console.log(this.artistlist);
         } else {
-          this.artistlist = [{_id:'', artistname:'Error artist list'}];
+          this.artistlist = [{_id:'', artistname:'Empty artist list'}];
         }
+      } else {
+        this.artistlist = [{_id:'', artistname:'Error artist list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.artistlist = [{_id:'', artistname:'Error artist list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
   getAlbumListbyArtist(id, artistid){
     this.albumService.getAlbumListbyArtist(id, artistid).subscribe(data => {
       if (data.success === true) {
-        console.log(data.data[0]);
+        //console.log(data.data[0]);
         if (data.data[0]) {
           this.albumlist = data.data;
           //console.log(this.albumlist);
         } else {
           this.albumlist = [{_id:'', albumname:'No album list available'}];
         }
+      } else {
+        this.albumlist = [{_id:'', albumname:'Error album list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.albumlist = [{_id:'', albumname:'Error album list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -128,10 +155,19 @@ export class EditsongComponent implements OnInit {
           this.getAlbumListbyArtist(this.userObj.userid, this.partistid)
           this.populateForm(data.data[0]);
         } else {
-          this.toastr.error('Song id is incorrect in the URL');
+          this.toastr.error('Empty song result');
           this.router.navigate(['listsong']);
         }
+      } else {
+        this.toastr.error('Song id is incorrect in the URL');
+        this.router.navigate(['listsong']);
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+      this.router.navigate(['listsong']);
     });
   }
 
@@ -150,8 +186,39 @@ export class EditsongComponent implements OnInit {
       status: data.status
     });
   }
-
+  
   saveSong(formdata:any): void {
+    if (this.songForm.valid) {
+      const theForm:any = this.songForm.value;
+      if (this.songid !== '') {
+        theForm.songid = this.songid;
+      
+      }
+      this.loading = true;
+      this.songService.pubeditSong(this.userObj.userid, theForm)
+        .subscribe(data => {
+          this.loading = false;
+          if (data.success === false) {
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.toastr.success(data.message);
+          }
+          if (!this.songid) {
+            this.songForm.reset();
+          }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+    }
+  }
+/*   saveSong(formdata:any): void {
     if (this.songForm.valid) {
       const theForm:any = this.songForm.value;
       if (this.songid !== '') {
@@ -174,9 +241,14 @@ export class EditsongComponent implements OnInit {
           if (!this.songid) {
             this.songForm.reset();
           }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
-  }
+  } */
 
   onBack(): void {
     this.router.navigate(['/listsong'], { preserveQueryParams: true });

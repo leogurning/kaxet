@@ -56,6 +56,12 @@ export class EmailverificationComponent implements OnInit {
               this.getMsconfigVal('REMARKS2','REMARKS');
             }
           }
+        },
+        err => {
+          this.loading = false;
+          this.router.navigate(['login']);
+          //console.log(err);
+          this.toastr.error(err);
         });    
       });
 
@@ -95,6 +101,11 @@ export class EmailverificationComponent implements OnInit {
           this.remarks2 = {code:'', value:'Error ms config list'};
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   /* getremarksvalue(premarks) : String {

@@ -3,6 +3,8 @@ const Songpurchase = require('../models/songpurchase');
 const config = require('../config');
 //const fs = require('fs');
 var rediscli = require('../redisconn');
+var amqpConn = null;
+var amqp = require('amqplib/callback_api');
 
 var ObjId = mongoose.Types.ObjectId;
 var merge = function() {
@@ -19,6 +21,8 @@ var merge = function() {
   }
   return obj;
 };
+
+startpubRMQpurchase();
 
 exports.savesongpurchase = function(req, res, next){
     const labelid = req.params.id;
@@ -194,8 +198,10 @@ exports.songpurchaseagg = function(req, res, next){
 
 		} else if (rptype === 'opt2'){
             // return records within given date range
-            fromdt.setDate(fromdt.getDate() - 1);
-            todt.setDate(todt.getDate() + 1);
+            fromdt.setDate(fromdt.getDate());
+            fromdt.setUTCHours(0,0,0);
+            todt.setDate(todt.getDate());
+            todt.setUTCHours(23,59,59);
             query = merge(query, { purchasedt:{$gte: fromdt, $lte: todt} });
 
 		} else if (rptype === 'opt3') {
@@ -203,9 +209,12 @@ exports.songpurchaseagg = function(req, res, next){
             let ptodt = new Date();
             let dt = ptodt.getUTCDate() + 1;
 			let month = ptodt.getUTCMonth() + 1; //months from 1-12
-			let year = ptodt.getUTCFullYear();
+            let year = ptodt.getUTCFullYear();
             let pfromdt = new Date(year + "/" + month + "/" + dt);
-            query = merge(query, { purchasedt:{$gte: pfromdt, $lte: ptodt} });
+            pfromdt.setUTCHours(0,0,0);
+            let todt = new Date(year + "/" + month + "/" + dt);
+            todt.setUTCHours(23,59,59);
+            query = merge(query, { purchasedt:{$gte: pfromdt, $lte: todt} });
 		}
         if (artistname) {
             query = merge(query, {"artistdetails.artistname": new RegExp(artistname,'i')});
@@ -396,8 +405,10 @@ exports.pendingsongpurchaseagg = function(req, res, next){
 
 		} else if (rptype === 'opt2'){
             // return records within given date range
-            fromdt.setDate(fromdt.getDate() - 1);
-            todt.setDate(todt.getDate() + 1);
+            fromdt.setDate(fromdt.getDate());
+            fromdt.setUTCHours(0,0,0);
+            todt.setDate(todt.getDate());
+            todt.setUTCHours(23,59,59);
             query = merge(query, { purchasedt:{$gte: fromdt, $lte: todt} });
 
 		} else if (rptype === 'opt3') {
@@ -407,7 +418,10 @@ exports.pendingsongpurchaseagg = function(req, res, next){
 			let month = ptodt.getUTCMonth() + 1; //months from 1-12
 			let year = ptodt.getUTCFullYear();
             let pfromdt = new Date(year + "/" + month + "/" + dt);
-            query = merge(query, { purchasedt:{$gte: pfromdt, $lte: ptodt} });
+            pfromdt.setUTCHours(0,0,0);
+            let todt = new Date(year + "/" + month + "/" + dt);
+            todt.setUTCHours(23,59,59);
+            query = merge(query, { purchasedt:{$gte: pfromdt, $lte: todt} });
 		}
         if (artistname) {
             query = merge(query, {"artistdetails.artistname": new RegExp(artistname,'i')});
@@ -750,8 +764,10 @@ exports.admsongpurchaseagg = function(req, res, next){
 
 		} else if (rptype === 'opt2'){
             // return records within given date range
-            fromdt.setDate(fromdt.getDate() - 1);
-            todt.setDate(todt.getDate() + 1);
+            fromdt.setDate(fromdt.getDate());
+            fromdt.setUTCHours(0,0,0);
+            todt.setDate(todt.getDate());
+            todt.setUTCHours(23,59,59);
             query = merge(query, { purchasedt:{$gte: fromdt, $lte: todt} });
 
 		} else if (rptype === 'opt3') {
@@ -761,7 +777,10 @@ exports.admsongpurchaseagg = function(req, res, next){
 			let month = ptodt.getUTCMonth() + 1; //months from 1-12
 			let year = ptodt.getUTCFullYear();
             let pfromdt = new Date(year + "/" + month + "/" + dt);
-            query = merge(query, { purchasedt:{$gte: pfromdt, $lte: ptodt} });
+            pfromdt.setUTCHours(0,0,0);
+            let todt = new Date(year + "/" + month + "/" + dt);
+            todt.setUTCHours(23,59,59);
+            query = merge(query, { purchasedt:{$gte: pfromdt, $lte: todt} });
         }
         
         if (labelid) {
@@ -908,4 +927,108 @@ exports.admsongpurchaseagg = function(req, res, next){
         })
     }
       
+}
+exports.pubactionPayment = function(req, res, next){
+    const labelid = req.params.id;
+    const songpurchaseid = req.body.songpurchaseid;
+    const status = req.body.status;
+    const listenerid = req.body.listenerid;
+    const paymentmtd = req.body.paymentmtd;
+    const producttype = req.body.producttype;
+    const songid = req.body.songid;
+    const dbcr = req.body.dbcr;
+    const amount = req.body.amount;
+
+    const q = 'purchaseQueue';
+
+    if (!labelid || !songpurchaseid || !status ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objlabelid = {labelid: labelid};
+    var objmsg = Object.assign(objbody,objlabelid);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubadd = actionPaymentpublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to save purchase data received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+
+//Start RabbitMQ Connection for PUBLISHERS
+function startpubRMQpurchase() {
+    amqp.connect(config.amqpURL, function(err, conn) {
+      if (err) {
+        console.error("[AMQP PURCHASE]", err.message);
+        return setTimeout(startpubRMQpurchase, 1000);
+      }
+      conn.on("error", function(err) {
+        if (err.message !== "Connection closing") {
+          console.error("[AMQP PURCHASE] conn error", err.message);
+        }
+      });
+      conn.on("close", function() {
+        console.error("[AMQP PURCHASE] reconnecting");
+        return setTimeout(startpubRMQpurchase, 1000);
+      });
+      console.log("[AMQP PURCHASE] connected");
+      amqpConn = conn;
+      actionPaymentPub('purchaseQueue');
+    });
+}
+
+var actionPaymentPubChannel = null;
+var actionPaymentofflinePubQueue = [];
+function actionPaymentPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP PURCHASE] action payment channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP PURCHASE] action payment channel closed");
+    });
+    
+    actionPaymentPubChannel = ch;
+    actionPaymentPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = actionPaymentofflinePubQueue.shift();
+        if (!m) break;
+        actionPaymentpublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function actionPaymentpublish(exchange, routingKey, content) {
+    try {
+        actionPaymentPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP PURCHASE] action payment publish", err);
+            actionPaymentofflinePubQueue.push([exchange, routingKey, content]);
+            actionPaymentPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP PURCHASE] action payment publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP PURCHASE] action payment publish", e.message);
+      actionPaymentofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+function closeOnErr(err) {
+    if (!err) return false;
+    console.error("[AMQP PURCHASE] error", err);
+    amqpConn.close();
+    return true;
 }

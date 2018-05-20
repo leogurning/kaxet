@@ -51,6 +51,11 @@ export class UpdateemailComponent implements OnInit {
             theUser.user.verified_email = "N";
             localStorage.setItem('currentUser', JSON.stringify(theUser));
           }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
   }

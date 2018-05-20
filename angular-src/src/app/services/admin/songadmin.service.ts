@@ -97,7 +97,8 @@ export class SongadminService {
   }
 
   private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+    let errMsg = error.status ? `${error.status} - ${error.statusText}`:'Ooops sorry...a server error occured. Please try again shortly.';
+    //console.error(errMsg);
+    return Observable.throw( errMsg );
   }
 }

@@ -58,6 +58,11 @@ export class PasswordComponent implements OnInit {
             this.toastr.success(data.message);
           }
           this.passwordForm.reset();
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
   }

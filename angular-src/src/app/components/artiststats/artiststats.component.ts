@@ -91,6 +91,9 @@ export class ArtiststatsComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
     });
   }
   getLabels(){
@@ -103,6 +106,9 @@ export class ArtiststatsComponent implements OnInit {
           this.userlist = [{_id:'', name:'Error label list'}];
         }
       }
+    },
+    err => {
+      this.userlist = [{_id:'', name:'Error label list'}];
     });
   }
 
@@ -151,6 +157,11 @@ export class ArtiststatsComponent implements OnInit {
           this.reportTitle = 'Selected inactive Artists'
         } */
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -188,19 +199,16 @@ export class ArtiststatsComponent implements OnInit {
 
   showArtist(artistid, labelid): void {
     //console.log(artistid + '  ' + labelid);
-    if (this.qlabelid) {
-      this.router.navigate([`viewartiststats/${artistid}`],
-        {
-          queryParams: { labelid: this.qlabelid, artistname: this.qartistname, status: this.qstatus, page: this.qpage || 1, sortby: this.qsort }
-        }
-      );
-    } else {
-      this.router.navigate([`viewartiststats/${artistid}`],
-        {
-          queryParams: { labelid: labelid, artistname: this.qartistname, status: this.qstatus, page: this.qpage || 1, sortby: this.qsort }
-        }
-      );
-    }
+    this.router.navigate([`viewartiststats/${artistid}`],
+      {
+        queryParams: { label:labelid, 
+          labelid: this.qlabelid, 
+          artistname: this.qartistname, 
+          status: this.qstatus, 
+          page: this.qpage || 1, 
+          sortby: this.qsort }
+      }
+    );
   }
 
 }

@@ -57,6 +57,11 @@ export class AddgroupComponent implements OnInit {
           //this.router.navigate(['listartist']);
         }
         this.addGroupForm.reset();
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
   }

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@google-cloud/storage": "^1.5.2",
+    "amqplib": "^0.5.2",
     "bcrypt-nodejs": "*",
     "body-parser": "*",
     "bootstrap": "*",
@@ -16,12 +17,14 @@
     "core-js": "*",
     "express": "*",
     "express-fileupload": "^0.3.0",
+    "form-data": "^2.3.2",
     "jquery": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
     "mongoose-aggregate-paginate": "^1.0.6",
     "mongoose-paginate": "*",
     "morgan": "*",
+    "node-fetch": "^2.1.2",
     "popper": "*",
     "redis": "^2.8.0"
   },

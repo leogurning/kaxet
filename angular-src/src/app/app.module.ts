@@ -29,6 +29,7 @@ import { NotifService } from './services/notif.service';
 import { FiletransferService } from './services/filetransfer.service';
 import { SongpurchaseService } from './services/songpurchase.service';
 import { TransactionService } from './services/transaction.service';
+import { ActivitylogService } from './services/activitylog.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -89,6 +90,8 @@ import { TransactionComponent } from './components/transaction/transaction.compo
 import { SongpurchasestatsComponent } from './components/purchase/songpurchasestats/songpurchasestats.component';
 import { TransactionstatsComponent } from './components/transactionstats/transactionstats.component';
 import { LabelbalancedialogComponent } from './components/labelbalancedialog/labelbalancedialog.component';
+import { ActivitylogComponent } from './components/activitylog/activitylog.component';
+import { ActivitylogstatsComponent } from './components/activitylogstats/activitylogstats.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -143,6 +146,8 @@ const appRoutes: Routes = [
   {path: 'transaction', canActivate: [ AuthGuard], component: TransactionComponent ,runGuardsAndResolvers: 'always'},
   {path: 'songpurchasestats', canActivate: [ AuthGuard], component: SongpurchasestatsComponent ,runGuardsAndResolvers: 'always'},
   {path: 'transactionstats', canActivate: [ AuthGuard], component: TransactionstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'activitylog', canActivate: [ AuthGuard], component: ActivitylogComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'activitylogstats', canActivate: [ AuthGuard], component: ActivitylogstatsComponent ,runGuardsAndResolvers: 'always'},
 ];
 
 @NgModule({
@@ -202,6 +207,8 @@ const appRoutes: Routes = [
     SongpurchasestatsComponent,
     TransactionstatsComponent,
     LabelbalancedialogComponent,
+    ActivitylogComponent,
+    ActivitylogstatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -244,7 +251,8 @@ const appRoutes: Routes = [
     NotifService,
     FiletransferService,
     SongpurchaseService,
-    TransactionService ],
+    TransactionService,
+    ActivitylogService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

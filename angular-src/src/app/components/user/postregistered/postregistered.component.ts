@@ -12,8 +12,10 @@ import { IMsconfigGroupList } from '../../../interface/msconfig';
 export class PostregisteredComponent implements OnInit {
   private sub: Subscription;
   uname: String;
-  remarks: IMsconfigGroupList[];
+  //remarks: IMsconfigGroupList[];
   csemail: IMsconfigGroupList;
+  remarks3: IMsconfigGroupList;
+  remarks4: IMsconfigGroupList;
   qemailto: String;
 
   constructor(private route: ActivatedRoute,
@@ -29,36 +31,56 @@ export class PostregisteredComponent implements OnInit {
         this.uname = strlist[0];
         this.qemailto = strlist[1];
       });
-    this.getMsconfigGroupList('REMARKS');
+    //this.getMsconfigGroupList('REMARKS');
+    this.getMsconfigVal('REMARKS3','REMARKS');
+    this.getMsconfigVal('REMARKS4','REMARKS');
     this.getMsconfigVal('CSEML','EMAIL');
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-  getMsconfigGroupList(groupid){
+/*   getMsconfigGroupList(groupid){
     this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
       if (data.success === true) {
         if (data.data[0]) {
           this.remarks = data.data;
         } else {
-          this.remarks = [{code:'', value:'Error ms config list'}];
+          this.remarks = [{code:'', value:'Empty list...'}];
         }
       }
+    },
+    err => {
+      this.remarks = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
     });
     
-  }
+  } */
   getMsconfigVal(code, groupid){
     this.msconfigService.getMsconfigvalue(code, groupid).subscribe(data => {
       if (data.success === true) {
         if (data.data[0]) {
-          this.csemail = data.data[0];
+          if (code === 'CSEML') {
+            this.csemail = data.data[0];
+          } else if (code === 'REMARKS3') {
+            this.remarks3 = data.data[0];
+          } else if (code === 'REMARKS4') {
+            this.remarks4 = data.data[0];
+          }
         } else {
-          this.csemail = {code:'', value:'Error ms config list'};
+          this.csemail = {code:'', value:'Empty list...'};
+          this.remarks3 = {code:'', value:'Empty list...'};
+          this.remarks4 = {code:'', value:'Empty list...'};
         }
       }
+    },
+    err => {
+      this.csemail = {code:'', value:'Error ms config list'};
+      this.remarks3 = {code:'', value:'Error ms config list'};
+      this.remarks4 = {code:'', value:'Error ms config list'};
+      //console.log(err);
     });
   }
-  getremarksvalue(premarks) : String {
+/*   getremarksvalue(premarks) : String {
     var result: String = '';
 
     for (let oremark of this.remarks) {
@@ -67,7 +89,7 @@ export class PostregisteredComponent implements OnInit {
      }
     }
     return result;
-  }
+  } */
 
   onLogin(): void {
     this.router.navigate(['/login']);

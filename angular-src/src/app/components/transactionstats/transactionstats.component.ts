@@ -170,9 +170,15 @@ export class TransactionstatsComponent implements OnInit {
           this.userlist = data.data;
           //console.log(this.artistlist);
         } else {
-          this.userlist = [{_id:'', name:'Error label list'}];
+          this.userlist = [{_id:'', name:'Empty list...'}];
         }
       }
+    },
+    err => {
+      this.loading = false;
+      this.userlist = [{_id:'', name:'Error label list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getReport(formdata:any): void {
@@ -289,6 +295,11 @@ export class TransactionstatsComponent implements OnInit {
           enddt: this.qenddt,
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 

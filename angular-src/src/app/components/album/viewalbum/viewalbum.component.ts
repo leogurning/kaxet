@@ -97,8 +97,13 @@ export class ViewalbumComponent implements OnInit {
           }
         } else {
           this.sts = [{code:'', value:'Error ms config list'}];
+          this.genre = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -120,6 +125,10 @@ export class ViewalbumComponent implements OnInit {
         }
         
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   
@@ -139,6 +148,10 @@ export class ViewalbumComponent implements OnInit {
           this.toastr.error('Artist id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -159,6 +172,10 @@ export class ViewalbumComponent implements OnInit {
         this.qalbumid = formval.albumid;
         this.reportTitle = 'Songs Result';
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 

@@ -100,6 +100,11 @@ export class ListconfigComponent implements OnInit {
           }
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getReport(formdata:any): void {
@@ -148,6 +153,11 @@ export class ListconfigComponent implements OnInit {
           status: this.qstatus
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -253,6 +263,9 @@ export class ListconfigComponent implements OnInit {
             } else {
               console.log('File deleted - ' + payloadData.filename);
             }   
+          },
+          err => {
+            console.log('Error deleted ' + err);
           });
       }
       this.msconfigService.deleteMsconfig(msconfigid)
@@ -270,6 +283,11 @@ export class ListconfigComponent implements OnInit {
           this.totalrows = this.totalrows - 1;
           this.toastr.success(data.message);
         }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });  
     }
   }

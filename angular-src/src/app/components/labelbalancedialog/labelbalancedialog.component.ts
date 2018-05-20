@@ -52,6 +52,10 @@ export class LabelbalancedialogComponent implements OnInit {
         } 
 
       }
+    },
+    err => {
+      this.loading = false;
+      this.success = false; 
     });
   }
   onCloseCancel() {

@@ -180,6 +180,13 @@ export class SongpurchasestatsComponent implements OnInit {
           this.pmtd = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.loading = false;
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.pmtd = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getLabels(){
@@ -192,6 +199,12 @@ export class SongpurchasestatsComponent implements OnInit {
           this.userlist = [{_id:'', name:'Error label list'}];
         }
       }
+    },
+    err => {
+      this.loading = false;
+      this.userlist = [{_id:'', name:'Error label list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getReport(formdata:any): void {
@@ -309,6 +322,11 @@ export class SongpurchasestatsComponent implements OnInit {
           enddt: this.qenddt,
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {

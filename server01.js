@@ -14,6 +14,9 @@ const album = require('./routes/album.js');
 const song = require('./routes/song.js');
 const songpurchase = require('./routes/songpurchase.js');
 const transaction = require('./routes/transaction.js');
+const activitylog = require('./routes/activitylog.js');
+
+const consumers = require('./routes/consumers.js');
 
 const port = process.env.PORT || config.serverport;
 
@@ -53,7 +56,9 @@ app.get('/', function(req, res) {
 	res.send('Kaxet API is running at PORT:' + port + '/api');
 });
 app.post('/register', user.signup);
-app.post('/resetpwd', user.resetpassword); // API to reset password user
+app.post('/registerlabel', user.pubregisterlabel);
+//app.post('/resetpwd', user.resetpassword); // API to reset password user
+app.post('/resetpwd', user.pubresetpassword); // API to reset password user
 app.post('/doresetpwd', user.doresetpassword); // API to do reset password user
 // express router
 var apiRoutes = express.Router();
@@ -71,10 +76,14 @@ apiRoutes.put('/user/:id', user.updateUser); // API updates user details
 apiRoutes.put('/password/:id', user.updatePassword); // API updates user password
 apiRoutes.put('/email/:id', user.updateEmail); // API updates user email
 apiRoutes.put('/emailverify', user.emailverification); // API to verify user email
+apiRoutes.post('/pubchangelabelstatus/:id', user.pubchangelabelstatus); // API updates user label status
 
 apiRoutes.post('/artist/:id', artist.saveartist); // API adds & update artist of the label
+apiRoutes.post('/pubartist/:id', artist.pubaddartist); // API adds artist of the label
 apiRoutes.delete('/artist/:id', artist.delartist); //API removes the artist details of given artist id
+apiRoutes.post('/pubdelartist/:id', artist.pubdeleteartist); //API removes the artist details of given artist id
 apiRoutes.put('/updateartistphoto/:id', artist.updateartistphoto); // API updates user photo
+apiRoutes.post('/pubupdateartistphoto/:id', artist.pubeditartistphoto); // API updates user photo
 apiRoutes.get('/artist/:id', artist.getartist); // API returns artist details of given artist id
 apiRoutes.get('/artistlist/:labelid', artist.getartistlist); // API returns artist list of given label id
 apiRoutes.post('/artist/report/:labelid', artist.artistreport); //API returns artist report based on user input 
@@ -95,6 +104,9 @@ apiRoutes.post('/album/aggreport/:labelid', album.albumaggregate); //API returns
 apiRoutes.post('/albumcount/:labelid', album.totalalbumcount); //API returns total album based on user input 
 apiRoutes.post('/album/artistalbumreportstats/:labelid', album.artistalbumliststats); //API returns album report based on user input 
 apiRoutes.post('/album/aggstats/:id', album.albumaggstats); //API returns album report based on user input
+apiRoutes.post('/pubaddalbum/:id', album.pubaddalbum); // API adds album of the label
+apiRoutes.post('/pubeditalbumphoto/:id', album.pubeditalbumphoto); // API updates album photo of the label
+apiRoutes.post('/pubdeletealbum/:id', album.pubdeletealbum); // API removes album of the label
 
 apiRoutes.post('/song/:id', song.savesong); // API adds & update song of the label
 apiRoutes.put('/publishsong/:id', song.publishsong); // API to publish song of the label
@@ -110,6 +122,12 @@ apiRoutes.post('/song/report/:labelid', song.songreport);
 apiRoutes.post('/song/list/:labelid', song.songlist);
 apiRoutes.post('/songcount/:labelid', song.totalsongcount);
 apiRoutes.post('/song/stats/:id', song.songliststats);
+apiRoutes.post('/pubsong/:id', song.pubaddsong); // API adds & update song of the label
+apiRoutes.post('/uploadsong/:id', song.uploadsongfiles); // API upload song files of the label
+apiRoutes.post('/pubeditsongprvw/:id', song.pubeditsongprvw); // API update song preview of the label
+apiRoutes.post('/pubeditsongfile/:id', song.pubeditsongfile); // API update song file of the label
+apiRoutes.post('/pubdeletesong/:id', song.pubdeletesong); // API delete song of the label
+apiRoutes.post('/pubeditsong/:id', song.pubeditsong); // API update song of the label
 
 apiRoutes.post('/songpurchase/:id', songpurchase.savesongpurchase); // API adds song purchase of the label
 apiRoutes.get('/songpurchase/:id', songpurchase.getsongpurchase); // API get song purchase of the label
@@ -120,11 +138,16 @@ apiRoutes.post('/pendingsongpurchaseagg/:id', songpurchase.pendingsongpurchaseag
 apiRoutes.get('/songpurchaseagg/:id', songpurchase.getsongpurchaseagg);
 apiRoutes.post('/pendingsongpurchasecount/:labelid', songpurchase.pendingsongpurchasecount);
 apiRoutes.post('/admsongpurchaseagg/:id', songpurchase.admsongpurchaseagg);
+apiRoutes.post('/actionpmtpurchase/:id', songpurchase.pubactionPayment); // API to action song payment purchase of the label
 
 apiRoutes.post('/transaction/:id', transaction.savetransaction); // API adds transaction of the label
 apiRoutes.post('/transactionagg/:id', transaction.transactionagg); // API get transaction data of the label
 apiRoutes.post('/admtransactionagg/:id', transaction.admtransactionagg); // API get transaction data of the label
 apiRoutes.get('/labelbalance/:id', transaction.getlabelbalance); // API get balance data of the label
+
+apiRoutes.post('/activitylog/:id', activitylog.saveactivity); // API adds activitylog of the label
+apiRoutes.post('/activitylogagg/:id', activitylog.activitylogagg); // API get activitylog data of the label
+apiRoutes.post('/admactivitylogagg/:id', activitylog.admactivitylogagg); // API get activitylog data of the label
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));

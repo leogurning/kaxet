@@ -57,6 +57,7 @@
                 <ul class="list-group">
                     <a style="cursor:pointer" (click)="toPendingSongpurchase()" class="list-group-item borderless bordersideless">Pending purchase <span class="badge"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>
                     <a style="cursor:pointer" routerLink="../transaction" routerLinkActive="active" class="list-group-item bordersideless">View Transactions</a>
+                    <a style="cursor:pointer" routerLink="../activitylog" routerLinkActive="active" class="list-group-item bordersideless">View Activity Log</a>
                 </ul>
             </div>
         </div>
@@ -65,7 +66,8 @@
     </div>
     
     <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
-        <div class="input-group col-xs-11 col-sm-8">
+        <div class="input-group col-xs-12">
+        <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">Approval Summary</h3>
@@ -78,7 +80,19 @@
                 </div>
             </div>
         </div>  
-        <div class="col-xs-1 col-sm-4"></div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Activity Log</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <a style="cursor:pointer" routerLink="../activitylogstats" routerLinkActive="active" class="list-group-item borderless bordersideless">View Activity Log</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
 
     <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'">

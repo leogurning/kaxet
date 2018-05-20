@@ -126,6 +126,11 @@ export class UsermgtComponent implements OnInit {
           username: this.qusername
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -168,8 +173,60 @@ export class UsermgtComponent implements OnInit {
       }
     );
   }
-
+  
   activateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+    
+    this.loading = true;
+    if (status == 'STSACT') {
+      this.loading = false;
+      this.toastr.warning('The label is already active.');
+    } else {
+      if (status === 'STSRJCT') {
+        this.loading = false;
+        this.toastr.warning('The label is already rejected.');
+      } else {
+        if(confirm('Do you really want to activate this label: ' + labelname + ' record?')){
+          let payloadData: any = {};
+          payloadData.labelid = userid;
+          payloadData.emailto = email;
+          payloadData.vlink = this.urlkaxet;
+          payloadData.username = username;
+          payloadData.status = 'STSACT';
+          this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              if (data.errcode){
+                this.authService.logout();
+                this.router.navigate(['login']);
+              }
+              this.toastr.error(data.message);
+            } else {
+              this.loading = false;
+              this.toastr.success(data.message);
+              this.router.navigate(['usermanagement'],
+                {
+                  queryParams: { 
+                    name: this.qlabelname,
+                    username: this.qusername,
+                    page: this.qpage || 1, 
+                    sortby: this.qsort }
+                }
+              );
+            }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        } else {
+          this.loading = false;
+        }
+      }
+    }
+  }
+/*   activateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
 
     this.loading = true;
     if (status == 'STSACT') {
@@ -215,8 +272,104 @@ export class UsermgtComponent implements OnInit {
                       sortby: this.qsort }
                   }
                 );
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
               });
             }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        } else {
+          this.loading = false;
+        }
+      }
+    }
+  } */
+  
+  deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+    
+    this.loading = true;
+    if (status === 'STSPEND') {
+      if(confirm('Do you really want to reject this label: ' + labelname + ' record?')){
+        let payloadData: any = {};
+        payloadData.labelid = userid;
+        payloadData.username = username;
+        payloadData.status = 'STSRJCT';
+        this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            this.toastr.success(data.message);
+            this.router.navigate(['usermanagement'],
+                {
+                  queryParams: { 
+                    name: this.qlabelname,
+                    username: this.qusername,
+                    page: this.qpage || 1, 
+                    sortby: this.qsort }
+                }
+            );
+          }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } else {
+        this.loading = false;
+      }
+    } else {
+      if (status != 'STSACT') {
+        this.loading = false;
+        this.toastr.warning('The label is already NOT active.');
+      } else {
+        if(confirm('Do you really want to deactivate this label: ' + labelname + ' record?')){
+          let payloadData: any = {};
+          payloadData.labelid = userid;
+          payloadData.emailto = email;
+          payloadData.username = username;
+          payloadData.status = 'STSINACT';
+          this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              if (data.errcode){
+                this.authService.logout();
+                this.router.navigate(['login']);
+              }
+              this.toastr.error(data.message);
+            } else {
+              this.loading = false;
+              this.toastr.success(data.message);
+              this.router.navigate(['usermanagement'],
+                  {
+                    queryParams: { 
+                      name: this.qlabelname,
+                      username: this.qusername,
+                      page: this.qpage || 1, 
+                      sortby: this.qsort }
+                  }
+              );
+            }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
           });
         } else {
           this.loading = false;
@@ -224,8 +377,7 @@ export class UsermgtComponent implements OnInit {
       }
     }
   }
-
-  deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+/*   deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
     
     this.loading = true;
     if (status === 'STSPEND') {
@@ -254,6 +406,11 @@ export class UsermgtComponent implements OnInit {
                 }
             );
           }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
       } else {
         this.loading = false;
@@ -297,15 +454,25 @@ export class UsermgtComponent implements OnInit {
                         sortby: this.qsort }
                     }
                 );
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
               });
             }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
           });
         } else {
           this.loading = false;
         }
       }
     }
-  }
+  } */
   
   showLabel(userid): void {
     this.router.navigate([`viewlabel/${userid}`],

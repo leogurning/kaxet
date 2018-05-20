@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       }, {validator: comparePassword})
     });
   }
-  registerUser(formdata:any): void {
+/*   registerUser(formdata:any): void {
     if (this.registerForm.dirty && this.registerForm.valid) {
       let theForm = this.registerForm.value;      
       const thePass = this.registerForm.value.passwordGroup.password;
@@ -76,12 +76,51 @@ export class RegisterComponent implements OnInit {
               this.loading = false;
               this.router.navigate([`postregistered/${nm}?${theForm.email}`]);
             }
-          });    
+          },
+          err => {
+            this.loading = false;
+            this.toastr.error(err);
+            //console.log(err);
+          });   
           this.registerForm.reset();
         }
         //this.registerForm.reset();
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
 
+    }
+  } */
+  registerUser(formdata:any): void {
+    if (this.registerForm.dirty && this.registerForm.valid) {
+      let theForm = this.registerForm.value;      
+      const thePass = this.registerForm.value.passwordGroup.password;
+      theForm.password = thePass;
+      delete theForm.passwordGroup;
+      this.loading = true;
+      this.userService.registerlabel(theForm)
+      .subscribe(data => {
+        if (data.success === false) {
+          this.loading = false;
+          this.toastr.error(data.message);
+          this.router.navigate([`postregistered/err?${theForm.email}`]);
+        } else {
+          //this.toastr.success(data.message);
+          //this.loading = false;
+          const nm = data.name;
+          this.loading = false;
+          this.router.navigate([`postregistered/${nm}?${theForm.email}`]);
+        }
+        this.registerForm.reset();
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
     }
   }
 }

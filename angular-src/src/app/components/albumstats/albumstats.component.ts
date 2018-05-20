@@ -116,9 +116,14 @@ export class AlbumstatsComponent implements OnInit {
             this.genre = data.data;
           }
         } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
           this.genre = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
     });
   }
   getLabels(){
@@ -131,6 +136,9 @@ export class AlbumstatsComponent implements OnInit {
           this.userlist = [{_id:'', name:'Error label list'}];
         }
       }
+    },
+    err => {
+      this.userlist = [{_id:'', name:'Error label list'}];
     });
   }
   getReport(formdata:any): void {
@@ -185,6 +193,11 @@ export class AlbumstatsComponent implements OnInit {
           status: this.qstatus
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -237,7 +250,8 @@ export class AlbumstatsComponent implements OnInit {
   showAlbum(albumid, labelid): void {
       this.router.navigate([`viewalbumstats/${albumid}`],
         {
-          queryParams: { labelid: labelid,
+          queryParams: { label:labelid, 
+            labelid: this.qlabelid,
             artistname: this.qartistname,
             albumname: this.qalbumname,
             albumyear: this.qalbumyear,

@@ -83,6 +83,9 @@ export class AddalbumComponent implements OnInit {
           this.genre = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.genre = [{code:'', value:'Error ms config list'}];
     });
   }
   getMsconfigVal(code, groupid){
@@ -94,6 +97,9 @@ export class AddalbumComponent implements OnInit {
           this.maxfilesize = {code:'', value:'0'};
         }
       }
+    },
+    err => {
+      this.maxfilesize = {code:'', value:'0'};
     });
   }
 
@@ -107,10 +113,80 @@ export class AddalbumComponent implements OnInit {
           this.artistlist = [{_id:'', artistname:'Error artist list'}];
         }
       }
+    },
+    err => {
+      this.artistlist = [{_id:'', artistname:'Error artist list'}];
     });
   }
-
+  
   addAlbum(formdata:any): void {
+    this.progressvalue = 0;
+    const files: Array<File> = this.filesToUpload;
+    if (this.addAlbumForm.dirty && this.addAlbumForm.valid && files[0]) {
+      this.progressvalue = 10;
+      //const files: Array<File> = this.filesToUpload;
+      let theForm = this.addAlbumForm.value;
+      let lformData: FormData = new FormData();
+      //console.log('Ini file: '+ files[0]['name']);
+      this.progressvalue = 20;
+      //lformData.append('albumimage',files[0],files[0]['name']);
+      lformData.append('fileinputsrc',files[0],files[0]['name']);
+      lformData.append('uploadpath',this.albumuploadpath);
+      //console.dir(theForm);
+      this.loading = true;
+      this.progressvalue = 40;
+      this.ftService.uploadInputFile(lformData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            this.toastr.error(data.message);
+          } else {
+              this.progressvalue = 60;
+              theForm.albumphotopath = data.filedata.filepath;
+              theForm.albumphotoname = data.filedata.filename;
+              theForm.status = 'STSACT';
+              if (this.albumid !== '') {
+                theForm.albumid = this.albumid;
+              }
+              this.progressvalue = 80;
+              this.albumService.pubsaveAlbum(this.userObj.userid, theForm)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  this.progressvalue = 0;
+                  this.toastr.error(data.message);
+                } else {
+                  this.progressvalue = 90;
+                  this.loading = false;
+                  this.toastr.success(data.message);
+                  //this.router.navigate(['listalbum']);
+                  this.progressvalue = 100;
+                }
+                this.addAlbumForm.reset();
+                this.artistVar.nativeElement.selectedIndex = 0;
+                this.genreVar.nativeElement.selectedIndex = 0;
+                this.albumimageVar.nativeElement.value = "";
+                this.progressvalue = 0;
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+              });
+          }   
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+ 
+    } else {
+      this.toastr.error('Please provide the album cover/image...');
+    }
+  }
+/*   addAlbum(formdata:any): void {
     this.progressvalue = 0;
     const files: Array<File> = this.filesToUpload;
     if (this.addAlbumForm.dirty && this.addAlbumForm.valid && files[0]) {
@@ -159,14 +235,24 @@ export class AddalbumComponent implements OnInit {
                 this.genreVar.nativeElement.selectedIndex = 0;
                 this.albumimageVar.nativeElement.value = "";
                 this.progressvalue = 0;
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
               });
           }   
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
  
     } else {
       this.toastr.error('Please provide the album cover/image...');
     }
-  }
+  } */
 
   fileChangeEvent(fileInput:any): void {
     const files: Array<File> = <Array<File>>fileInput.target.files;

@@ -148,9 +148,42 @@ export class AlbumService {
         .catch(this.handleError);
   }
 
+  pubsaveAlbum(userid, oAlbum){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubaddalbum/${userid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
+  pubupdateAlbumphoto(albumid, oAlbum){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubeditalbumphoto/${albumid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  pubdeleteAlbum(albumid, oAlbum){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubdeletealbum/${albumid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  
   private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+    let errMsg = error.status ? `${error.status} - ${error.statusText}`:'Ooops sorry...a server error occured. Please try again shortly.';
+    //console.error(errMsg);
+    return Observable.throw( errMsg );
   }
 
 }

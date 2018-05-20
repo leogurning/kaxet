@@ -87,6 +87,9 @@ export class ListartistComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -133,6 +136,11 @@ export class ListartistComponent implements OnInit {
           this.reportTitle = 'Selected inactive Artists'
         } */
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -179,6 +187,59 @@ export class ListartistComponent implements OnInit {
         } else {
           if(confirm('Do you really want to delete this artist: ' + artistname + ' record?')){
             let payloadData: any = {};
+            payloadData.artistphotoname = artistphotoname;
+            payloadData.labelid = this.userObj.userid;
+            this.loading = true;
+            this.artistService.pubdeleteArtist(artistid, payloadData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.loading = false;
+                this.artists.splice(idx, 1);
+                this.totalrows = this.totalrows - 1;
+                this.toastr.success(data.message);
+              }
+            },
+            err => {
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          }
+        }
+      }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+    });    
+  }
+/*   confirmDel(idx: number, artistid: string, artistname:string, artistphotoname:string) {
+    var totalalbum: number;
+    
+    let payload: any = {};
+    payload.artistid = artistid;
+    this.loading = true;
+    this.albumService.getArtistAlbums(this.userObj.userid, payload)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.toastr.error(data.message);
+      } else {
+        this.loading = false;
+        totalalbum = +data.totalcount;
+        if (totalalbum > 0) {
+          this.toastr.warning('Can not delete artist. It already has albums.');
+        } else {
+          if(confirm('Do you really want to delete this artist: ' + artistname + ' record?')){
+            let payloadData: any = {};
             payloadData.uploadpath = this.artistuploadpath;
             payloadData.filename = artistphotoname;
             this.loading = true;
@@ -207,14 +268,29 @@ export class ListartistComponent implements OnInit {
                       this.totalrows = this.totalrows - 1;
                       this.toastr.success(data.message);
                     }
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
                   });
                 }   
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
               });
           }
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });    
-  }
+  } */
 
   editArtist(artistid): void {
     this.router.navigate([`editartist/${artistid}`],

@@ -3,6 +3,8 @@ const Artist = require('../models/artist');
 const config = require('../config');
 const fs = require('fs');
 var rediscli = require('../redisconn');
+var amqpConn = null;
+var amqp = require('amqplib/callback_api');
 
 var merge = function() {
     var obj = {},
@@ -18,6 +20,8 @@ var merge = function() {
     }
     return obj;
 };
+
+startpubRMQartist();
 
 exports.saveartist = function(req, res, next){
     const labelid = req.params.id;
@@ -516,4 +520,284 @@ exports.getartistlist = function(req, res, next){
             }
         });
     }
+}
+
+exports.pubaddartist = function(req, res, next){
+    const labelid = req.params.id;
+    const artistname = req.body.artistname;
+    const status = req.body.status;
+    const artistphotopath = req.body.artistphotopath;
+    const artistphotoname = req.body.artistphotoname;
+    const artistid = req.body.artistid;
+
+    const q = 'addArtistQueue';
+
+    if (!labelid || !artistname || !status ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objlabelid = {labelid: labelid};
+    var objmsg = Object.assign(objbody,objlabelid);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubadd = addArtistpublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to save Artist received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+
+/* exports.pubaddartist = function(req, res, next){
+    const labelid = req.params.id;
+    const artistname = req.body.artistname;
+    const status = req.body.status;
+    const uploadpath = req.body.uploadpath;
+    const token = req.headers['authorization'];
+    const q = 'addArtistQueue';
+
+    if (!labelid || !artistname || !status ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objlabelid = {labelid: labelid};
+    var objfile = { fileinputsrc: req.files.fileinputsrc };
+    var headers = {token: token};
+    var objmsg = Object.assign(objbody,objlabelid,objfile, headers);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubadd = addArtistpublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to save Artist received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+} */
+
+exports.pubeditartistphoto = function(req, res, next){
+    const artistid = req.params.id;
+    const artistphotoname = req.body.artistphotoname;
+    const artistphotopath = req.body.artistphotopath;
+    const oldartistphotoname = req.body.oldartistphotoname;
+    //const uploadpath = req.body.uploadpath;
+    const labelid = req.body.labelid;
+    const token = req.headers['authorization'];
+    const q = 'editArtistphotoQueue';
+
+    if (!artistid || !artistphotoname || !artistphotopath || !labelid ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objartistid = {artistid: artistid};
+    //var objfile = { fileinputsrc: req.files.fileinputsrc };
+    var headers = {token: token};
+    //var objmsg = Object.assign(objbody,objartistid,objfile, headers);
+    var objmsg = Object.assign(objbody,objartistid, headers);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubeditphoto = editArtistphotopublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to edit Artist photo received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+
+exports.pubdeleteartist = function(req, res, next){
+    const artistid = req.params.id;
+    const artistphotoname = req.body.artistphotoname;
+    const labelid = req.body.labelid;
+    const token = req.headers['authorization'];
+    const q = 'deleteArtistQueue';
+
+    if (!artistid || !artistphotoname || !labelid ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objartistid = {artistid: artistid};
+    var headers = {token: token};
+    var objmsg = Object.assign(objbody,objartistid, headers);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubdelartist = deleteArtistpublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to delete Artist received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+
+//Start RabbitMQ Connection for PUBLISHERS
+function startpubRMQartist() {
+    amqp.connect(config.amqpURL, function(err, conn) {
+      if (err) {
+        console.error("[AMQP ARTIST]", err.message);
+        return setTimeout(startpubRMQartist, 1000);
+      }
+      conn.on("error", function(err) {
+        if (err.message !== "Connection closing") {
+          console.error("[AMQP ARTIST] conn error", err.message);
+        }
+      });
+      conn.on("close", function() {
+        console.error("[AMQP ARTIST] reconnecting");
+        return setTimeout(startpubRMQartist, 1000);
+      });
+      console.log("[AMQP ARTIST] connected");
+      amqpConn = conn;
+      addArtistPub('addArtistQueue');
+      editArtistphotoPub('editArtistphotoQueue');
+      deleteArtistPub('deleteArtistQueue');
+    });
+}
+
+var addArtistPubChannel = null;
+var addArtistofflinePubQueue = [];
+function addArtistPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP ARTIST] add artist channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP ARTIST] add artist channel closed");
+    });
+    
+    addArtistPubChannel = ch;
+    addArtistPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = addArtistofflinePubQueue.shift();
+        if (!m) break;
+        addArtistpublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function addArtistpublish(exchange, routingKey, content) {
+    try {
+        addArtistPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP ARTIST] add artist publish", err);
+            addArtistofflinePubQueue.push([exchange, routingKey, content]);
+            addArtistPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP ARTIST] add artist publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP ARTIST] add artist publish", e.message);
+      addArtistofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+var editArtistphotoPubChannel = null;
+var editArtistphotoofflinePubQueue = [];
+function editArtistphotoPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP ARTIST] edit artist photo channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP ARTIST] edit artist photo channel closed");
+    });
+    
+    editArtistphotoPubChannel = ch;
+    editArtistphotoPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = editArtistphotoofflinePubQueue.shift();
+        if (!m) break;
+        editArtistphotopublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function editArtistphotopublish(exchange, routingKey, content) {
+    try {
+        editArtistphotoPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP ARTIST] edit artist photo publish", err);
+            editArtistphotoofflinePubQueue.push([exchange, routingKey, content]);
+            editArtistphotoPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP ARTIST] edit artist photo publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP ARTIST] edit artist photo publish", e.message);
+      editArtistphotoofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+var deleteArtistPubChannel = null;
+var deleteArtistofflinePubQueue = [];
+function deleteArtistPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP ARTIST] delete artist channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP ARTIST] delete artist channel closed");
+    });
+    
+    deleteArtistPubChannel = ch;
+    deleteArtistPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = deleteArtistofflinePubQueue.shift();
+        if (!m) break;
+        deleteArtistpublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function deleteArtistpublish(exchange, routingKey, content) {
+    try {
+        deleteArtistPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP ARTIST] delete artist publish", err);
+            deleteArtistofflinePubQueue.push([exchange, routingKey, content]);
+            deleteArtistPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP ARTIST] delete artist publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP ARTIST] delete artist publish", e.message);
+      deleteArtistofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+function closeOnErr(err) {
+    if (!err) return false;
+    console.error("[AMQP ARTIST] error", err);
+    amqpConn.close();
+    return true;
 }

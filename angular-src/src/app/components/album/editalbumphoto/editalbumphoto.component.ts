@@ -67,6 +67,9 @@ export class EditalbumphotoComponent implements OnInit {
           this.maxfilesize = {code:'', value:'0'};
         }
       }
+    },
+    err => {
+      this.maxfilesize = {code:'', value:'0'};
     });
   }
   getAlbum(id){
@@ -80,6 +83,12 @@ export class EditalbumphotoComponent implements OnInit {
           this.router.navigate(['listalbum']);
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+      this.router.navigate(['listalbum']);
     });
   }
 
@@ -111,8 +120,68 @@ export class EditalbumphotoComponent implements OnInit {
       alert('Error file type. You must input image file type.');
     }   
   }
-
+  
   uploadNewPhoto(newFileData:any): void {
+    const files: Array<File> = newFileData;
+    let lformData: FormData = new FormData();
+    this.progressvalue = 10;
+    lformData.append('fileinputsrc',files[0],files[0]['name']);
+    lformData.append('uploadpath',this.albumuploadpath);
+    this.progressvalue = 30;
+    this.loading = true;
+    this.progressvalue = 40;
+    this.ftService.uploadInputFile(lformData)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.progressvalue = 0;
+        this.toastr.error(data.message);
+      } else {
+        this.progressvalue = 60;
+        this.displayImg = data.filedata.filepath;
+        let payloadData: any = {};
+        payloadData.oldalbumphotoname = this.albumForm.value.albumphotoname;
+        payloadData.albumphotoname = data.filedata.filename;
+        payloadData.albumphotopath = data.filedata.filepath;
+        payloadData.labelid = this.userObj.userid;
+        this.progressvalue = 80;
+        this.progressvalue = 90;   
+        this.albumService.pubupdateAlbumphoto(this.albumid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.progressvalue = 100;
+            this.loading = false;
+            console.log('Success update database photo - ' + this.displayImg)
+            this.toastr.success(data.message);
+            this.progressvalue = 0;
+          }
+        },
+        err => {
+          this.progressvalue = 0;
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+
+      }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
+    });    
+  }
+
+/*   uploadNewPhoto(newFileData:any): void {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     this.progressvalue = 10;
@@ -142,6 +211,9 @@ export class EditalbumphotoComponent implements OnInit {
             } else {
               console.log('File deleted - ' + payloadData.filename);
             }   
+          },
+          err => {
+            console.log(err);
           });
         this.progressvalue = 90;   
         this.albumForm.value.albumphotopath = data.filedata.filepath;
@@ -165,11 +237,23 @@ export class EditalbumphotoComponent implements OnInit {
             this.toastr.success(data.message);
             this.progressvalue = 0;
           }
+        },
+        err => {
+          this.progressvalue = 0;
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
 
       }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
     });    
-  }
+  } */
 
   onBack(): void {
     this.router.navigate(['/listalbum'], { preserveQueryParams: true });

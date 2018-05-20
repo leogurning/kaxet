@@ -144,9 +144,23 @@ export class SongmgtComponent implements OnInit {
             this.ynlist = data.data;
           }
         } else {
-          this.genre = [{code:'', value:'Error ms config list'}];
+          if (groupid == 'CSTATUS') this.sts = [{code:'', value:'Empty list...'}];
+          if (groupid == 'GENRE') this.genre = [{code:'', value:'Empty list...'}];
+          if (groupid == 'YRN') this.ynlist = [{code:'', value:'Empty list...'}];
         }
+      } else {
+        this.sts = [{code:'', value:'Error ms config list'}];
+        this.genre = [{code:'', value:'Error ms config list'}];
+        this.ynlist = [{code:'', value:'Error ms config list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
+      this.ynlist = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -157,9 +171,17 @@ export class SongmgtComponent implements OnInit {
           this.userlist = data.data;
           //console.log(this.artistlist);
         } else {
-          this.userlist = [{_id:'', name:'Error label list'}];
+          this.userlist = [{_id:'', name:'Empty list...'}];
         }
+      } else {
+        this.userlist = [{_id:'', name:'Error label list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.userlist = [{_id:'', name:'Error label list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -221,6 +243,11 @@ export class SongmgtComponent implements OnInit {
           status: this.qstatus
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -318,6 +345,11 @@ export class SongmgtComponent implements OnInit {
             this.fetchReport(this.reportForm.value);
             this.toastr.success(data.message);
           }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
       } else {
         this.loading = false;
@@ -349,6 +381,11 @@ export class SongmgtComponent implements OnInit {
             this.fetchReport(this.reportForm.value);
             this.toastr.success(data.message);
           }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
       } else {
         this.loading = false;

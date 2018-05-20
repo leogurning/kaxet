@@ -68,6 +68,11 @@ export class ViewsongpurchaseComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -87,6 +92,10 @@ export class ViewsongpurchaseComponent implements OnInit {
           this.toastr.error('Song id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 

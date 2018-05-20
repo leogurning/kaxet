@@ -74,6 +74,9 @@ export class AddconfigComponent implements OnInit {
           this.grouplist = [{code:'', value:'Error group list'}];
         }
       }
+    },
+    err => {
+      this.grouplist = [{code:'', value:'Error group list'}];
     });
   }
   getMsconfigVal(code, groupid){
@@ -85,6 +88,9 @@ export class AddconfigComponent implements OnInit {
           this.maxfilesize = {code:'', value:'0'};
         }
       }
+    },
+    err => {
+      this.maxfilesize = {code:'', value:'0'};
     });
   }
   addMsconfig(formdata:any): void {
@@ -136,8 +142,20 @@ export class AddconfigComponent implements OnInit {
                 this.inputgroupVar.nativeElement.selectedIndex = 0;
                 this.genreimageVar.nativeElement.value = "";
                 this.progressvalue = 0;
+              },
+              err => {
+                this.loading = false;
+                this.progressvalue = 0;
+                //console.log(err);
+                this.toastr.error(err);
               });
           }   
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
         });
       }else {
         this.progressvalue = 30;
@@ -164,6 +182,12 @@ export class AddconfigComponent implements OnInit {
           this.inputgroupVar.nativeElement.selectedIndex = 0;
           this.genreimageVar.nativeElement.value = "";
           this.progressvalue = 0;
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
         });
       }
     }

@@ -85,6 +85,9 @@ export class ViewartistComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -105,6 +108,10 @@ export class ViewartistComponent implements OnInit {
         }
         
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   populateForm(data): void {
@@ -130,6 +137,10 @@ export class ViewartistComponent implements OnInit {
         this.qartistid = formval.artistid;
         this.reportTitle = 'Albums Result';
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 

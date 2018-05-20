@@ -144,9 +144,23 @@ export class ListsongComponent implements OnInit {
             this.ynlist = data.data;
           }
         } else {
-          this.genre = [{code:'', value:'Error ms config list'}];
+          this.sts = [{code:'', value:'Empty list...'}];
+          this.genre = [{code:'', value:'Empty list...'}];
+          this.ynlist = [{code:'', value:'Empty list...'}];
         }
+      } else {
+        this.sts = [{code:'', value:'Error ms config list'}];
+        this.ynlist = [{code:'', value:'Error ms config list'}];
+        this.genre = [{code:'', value:'Error ms config list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.ynlist = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -157,9 +171,17 @@ export class ListsongComponent implements OnInit {
           this.artistlist = data.data;
           //console.log(this.artistlist);
         } else {
-          this.artistlist = [{_id:'', artistname:'Error artist list'}];
+          this.artistlist = [{_id:'', artistname:'Empty list...'}];
         }
+      } else {
+        this.artistlist = [{_id:'', artistname:'Error artist list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.artistlist = [{_id:'', artistname:'Error artist list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -170,22 +192,38 @@ export class ListsongComponent implements OnInit {
           this.albumlist = data.data;
           //console.log(this.artistlist);
         } else {
-          this.albumlist = [{_id:'', albumname:'Error album list'}];
+          this.albumlist = [{_id:'', albumname:'Empty list...'}];
         }
+      } else {
+        this.albumlist = [{_id:'', albumname:'Error album list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.albumlist = [{_id:'', albumname:'Error album list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getAlbumListbyArtist(id, artistid){
     this.albumService.getAlbumListbyArtist(id, artistid).subscribe(data => {
       if (data.success === true) {
-        console.log(data.data[0]);
+        //console.log(data.data[0]);
         if (data.data[0]) {
           this.albumlist = data.data;
           //console.log(this.albumlist);
         } else {
           this.albumlist = [{_id:'', albumname:'No album list available'}];
         }
+      } else {
+        this.albumlist = [{_id:'', albumname:'Error album list'}];
       }
+    },
+    err => {
+      this.loading = false;
+      this.albumlist = [{_id:'', albumname:'Error album list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -254,6 +292,11 @@ export class ListsongComponent implements OnInit {
           status: this.qstatus
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -385,8 +428,44 @@ export class ListsongComponent implements OnInit {
       );
     }
   }
-
+  
   confirmDel(idx: number, songid: string, songpublish, songbuy, songname, songprvwname, songfilename) {
+    
+    //if (songbuy > 0) {
+    if (songpublish == 'Y') {
+      this.toastr.warning("This song has been published. Data can not be deleted");
+    } else {
+      if(confirm('Do you really want to delete this song: ' + songname + ' record?')){
+        this.loading = true;
+        let payloadData: any = {};
+        payloadData.labelid = this.userObj.userid;
+        payloadData.songprvwname = songprvwname;
+        payloadData.songfilename = songfilename;        
+        this.songService.pubdeleteSong(songid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            this.songs.splice(idx, 1);
+            this.totalrows = this.totalrows - 1;
+            this.toastr.success(data.message);
+          }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      }
+    }
+  }
+/*   confirmDel(idx: number, songid: string, songpublish, songbuy, songname, songprvwname, songfilename) {
     
     //if (songbuy > 0) {
     if (songpublish == 'Y') {
@@ -405,6 +484,9 @@ export class ListsongComponent implements OnInit {
             } else {
               console.log('Success delete preview...');
             }   
+          },
+          err => {
+            console.log('Error delete preview' + err);
           });
         let payloadData: any = {};
         //payloadData.songfilename = songfilename;
@@ -417,6 +499,9 @@ export class ListsongComponent implements OnInit {
             } else {
               console.log('Success delete SongFile... ');
             }   
+          },
+          err => {
+            console.log('Error delete songfile' + err);
           });
         this.songService.deleteSong(songid)
         .subscribe(data => {
@@ -433,10 +518,15 @@ export class ListsongComponent implements OnInit {
             this.totalrows = this.totalrows - 1;
             this.toastr.success(data.message);
           }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
       }
     }
-  }
+  } */
 
   toaddSongs(): void {
     this.router.navigate(['/addsong']);

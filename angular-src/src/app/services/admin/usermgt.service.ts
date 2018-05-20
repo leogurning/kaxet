@@ -71,7 +71,16 @@ export class UsermgtService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  pubupdateLabelstatus(userid, oUser){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
 
+    return this.http.post(`api/pubchangelabelstatus/${userid}`, JSON.stringify(oUser), options)
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
+  }
   updateLabelBalance(labelid, oLabel){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -95,7 +104,8 @@ export class UsermgtService {
   }
 
   private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+    let errMsg = error.status ? `${error.status} - ${error.statusText}`:'Ooops sorry...a server error occured. Please try again shortly.';
+    //console.error(errMsg);
+    return Observable.throw( errMsg );
   }
 }

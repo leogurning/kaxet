@@ -58,7 +58,12 @@ export class ProfileComponent implements OnInit {
         this.user = data.data[0];
         this.populateForm(this.user);
       }
-    });    
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+    });
   }
 
   populateForm(data): void {
@@ -91,6 +96,11 @@ export class ProfileComponent implements OnInit {
             theUser.user.name = this.profileForm.value.name;
             localStorage.setItem('currentUser', JSON.stringify(theUser));
           }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
       }
     }
@@ -133,8 +143,22 @@ export class ProfileComponent implements OnInit {
                 data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
               });
             }
-          });    
+          },
+          err => {
+            this.loading = false;
+            let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+              disableClose: true,
+              width: '400px',
+              data: err
+            });
+            //console.log(err);
+          });   
         }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
 

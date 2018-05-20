@@ -72,6 +72,10 @@ export class DashboardComponent implements OnInit {
         this.contactno = this.user.contactno;
         this.balance = this.user.balance;
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
 
     if (this.userObj.usertype === 'ADM') {
@@ -118,10 +122,22 @@ export class DashboardComponent implements OnInit {
               } else {
                 this.totalsongs = +data.totalcount;
               }
+            },
+            err => {
+              //console.log(err);
+              this.toastr.error(err);
             });
           }
+        },
+        err => {
+          //console.log(err);
+          this.toastr.error(err);
         });
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
     //songpurchaseService.getPendingSongpurchaseCount
     let payload: any = {};
@@ -137,6 +153,10 @@ export class DashboardComponent implements OnInit {
       } else {
         this.totalpendingpurchase = +data.totalcount;
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   fetchReportAdm (userid) {
@@ -155,6 +175,10 @@ export class DashboardComponent implements OnInit {
       } else {
         this.totalpendinglabel = +data.totalcount;
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
     let payloadsg: any = {};
     payloadsg.songpublish = 'N';
@@ -169,6 +193,10 @@ export class DashboardComponent implements OnInit {
       } else {
         this.totalpendingsong = +data.totalcount;
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 

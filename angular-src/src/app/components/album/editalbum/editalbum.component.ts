@@ -76,9 +76,14 @@ export class EditalbumComponent implements OnInit {
             this.genre = data.data;
           }
         } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
           this.genre = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -92,6 +97,9 @@ export class EditalbumComponent implements OnInit {
           this.artistlist = [{_id:'', artistname:'Error artist list'}];
         }
       }
+    },
+    err => {
+      this.artistlist = [{_id:'', artistname:'Error artist list'}];
     });
   }
   getAlbum(id){
@@ -104,6 +112,12 @@ export class EditalbumComponent implements OnInit {
           this.router.navigate(['listalbum']);
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+      this.router.navigate(['listalbum']);
     });
   }
   populateForm(data): void {
@@ -116,8 +130,39 @@ export class EditalbumComponent implements OnInit {
       status: data.status
     });
   }
-
+  
   saveAlbum(formdata:any): void {
+    if (this.albumForm.valid) {
+      const theForm:any = this.albumForm.value;
+      if (this.albumid !== '') {
+        theForm.albumid = this.albumid;
+      
+      }
+      this.loading = true;
+      this.albumService.pubsaveAlbum(this.userObj.userid, theForm)
+        .subscribe(data => {
+          this.loading = false;
+          if (data.success === false) {
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.toastr.success(data.message);
+          }
+          if (!this.albumid) {
+            this.albumForm.reset();
+          }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+    }
+  }
+/*   saveAlbum(formdata:any): void {
     if (this.albumForm.valid) {
       const theForm:any = this.albumForm.value;
       if (this.albumid !== '') {
@@ -140,9 +185,14 @@ export class EditalbumComponent implements OnInit {
           if (!this.albumid) {
             this.albumForm.reset();
           }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
-  }
+  } */
 
   onBack(): void {
     this.router.navigate(['/listalbum'], { preserveQueryParams: true });

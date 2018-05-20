@@ -58,7 +58,7 @@ export class ViewartiststatsComponent implements OnInit {
         this.getArtist(artistid);
       });
       this.route.queryParams.forEach((params: Params) => {
-        this.qlabelid = params['labelid'] || '';
+        this.qlabelid = params['label'] || '';
         this.qartistid = params['artistid'] || '';
         this.qpage = params['page'] || '';
         this.qsort = params['sortby'] || '';
@@ -87,6 +87,9 @@ export class ViewartiststatsComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
     });
   }
   getArtist(id){
@@ -106,6 +109,10 @@ export class ViewartiststatsComponent implements OnInit {
         }
         
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   populateForm(data): void {
@@ -132,6 +139,10 @@ export class ViewartiststatsComponent implements OnInit {
         this.qartistid = formval.artistid;
         this.reportTitle = 'Albums Result';
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {

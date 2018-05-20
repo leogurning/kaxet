@@ -59,6 +59,9 @@ export class EditartistComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -72,6 +75,12 @@ export class EditartistComponent implements OnInit {
           this.router.navigate(['listartist']);
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+      this.router.navigate(['listartist']);
     });
   }
   populateForm(data): void {
@@ -82,6 +91,37 @@ export class EditartistComponent implements OnInit {
   }
 
   saveArtist(formdata:any): void {
+    if (this.artistForm.valid) {
+      const theForm:any = this.artistForm.value;
+      if (this.artistid !== '') {
+        theForm.artistid = this.artistid;
+      
+      }
+      this.loading = true;
+      this.artistService.pubsaveArtist(this.userObj.userid,theForm)
+        .subscribe(data => {
+          this.loading = false;
+          if (data.success === false) {
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.toastr.success(data.message);
+          }
+          if (!this.artistid) {
+            this.artistForm.reset();
+          }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+    }
+  }
+/*   saveArtist(formdata:any): void {
     if (this.artistForm.valid) {
       const theForm:any = this.artistForm.value;
       if (this.artistid !== '') {
@@ -104,9 +144,14 @@ export class EditartistComponent implements OnInit {
           if (!this.artistid) {
             this.artistForm.reset();
           }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
-  }
+  } */
 
   onBack(): void {
     this.router.navigate(['/listartist'], { preserveQueryParams: true });

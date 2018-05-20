@@ -55,6 +55,11 @@ export class ViewconfigComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getMsconfig(id){
@@ -73,6 +78,10 @@ export class ViewconfigComponent implements OnInit {
           this.toastr.error('MsConfig id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   populateForm(data): void {

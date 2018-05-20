@@ -45,7 +45,13 @@ export class ResetuserpasswdComponent implements OnInit {
             this.loading = false;
             this.vhash = data.hash;
           }
-        });    
+        },
+        err => {
+          this.loading = false;
+          this.router.navigate(['login']);
+          //console.log(err);
+          this.toastr.error(err);
+        }); 
       });
     this.passwordForm = this.fb.group({
       passwordGroup: this.fb.group({
@@ -78,6 +84,11 @@ export class ResetuserpasswdComponent implements OnInit {
           }
           this.passwordForm.reset();
           this.router.navigate(['login']);
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
   }

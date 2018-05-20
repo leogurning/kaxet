@@ -28,6 +28,37 @@ export class SongService {
         .catch(this.handleError);
   }
 
+  pubsaveSong(userid, oSong){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubsong/${userid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  pubeditSong(userid, oSong){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubeditsong/${userid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  
+  uploadSongfiles(userid, oSong){
+    let headers = new Headers();
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/uploadsong/${userid}`, oSong, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+
   publishSong(songid, oSong){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -60,6 +91,16 @@ export class SongService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  pubupdateSongPreview(songid, oSong){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubeditsongprvw/${songid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
   updateSongFile(songid, oSong){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -67,6 +108,16 @@ export class SongService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http.put(`api/updatesongfile/${songid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  pubupdateSongFile(songid, oSong){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubeditsongfile/${songid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -100,6 +151,16 @@ export class SongService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http.delete(`api/song/${songid}`, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  pubdeleteSong(songid, oSong) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/pubdeletesong/${songid}`, JSON.stringify(oSong), options)
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
@@ -171,8 +232,9 @@ export class SongService {
   }
 
   private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+    let errMsg = error.status ? `${error.status} - ${error.statusText}`:'Ooops sorry...a server error occured. Please try again shortly.';
+    //console.error(errMsg);
+    return Observable.throw( errMsg );
   }
 
 }

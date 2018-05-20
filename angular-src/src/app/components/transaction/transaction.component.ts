@@ -266,6 +266,11 @@ export class TransactionComponent implements OnInit {
           enddt: this.qenddt,
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {

@@ -66,7 +66,7 @@ export class ViewalbumstatsComponent implements OnInit {
     this.getMsconfigGroupList('GENRE');
     this.getAlbum(this.albumid);
     this.route.queryParams.forEach((params: Params) => {
-      this.qlabelid = params['labelid'] || '';
+      this.qlabelid = params['label'] || '';
       this.qalbumid = params['albumid'] || '';
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
@@ -100,8 +100,13 @@ export class ViewalbumstatsComponent implements OnInit {
           }
         } else {
           this.sts = [{code:'', value:'Error ms config list'}];
+          this.genre = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -123,6 +128,10 @@ export class ViewalbumstatsComponent implements OnInit {
         }
         
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   populateForm(data): void {
@@ -141,6 +150,10 @@ export class ViewalbumstatsComponent implements OnInit {
           this.toastr.error('Artist id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   fetchReport(userid, formval) {
@@ -160,6 +173,10 @@ export class ViewalbumstatsComponent implements OnInit {
         this.qalbumid = formval.albumid;
         this.reportTitle = 'Songs Result';
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {

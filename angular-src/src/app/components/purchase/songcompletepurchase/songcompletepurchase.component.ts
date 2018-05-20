@@ -170,6 +170,13 @@ export class SongcompletepurchaseComponent implements OnInit {
           this.pmtd = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.loading = false;
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.pmtd = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getReport(formdata:any): void {
@@ -283,6 +290,11 @@ export class SongcompletepurchaseComponent implements OnInit {
           enddt: this.qenddt,
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {

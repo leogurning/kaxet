@@ -108,9 +108,14 @@ export class ListalbumComponent implements OnInit {
             this.genre = data.data;
           }
         } else {
+          this.sts = [{code:'', value:'Error ms config list'}];
           this.genre = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
     });
   }
 
@@ -124,6 +129,9 @@ export class ListalbumComponent implements OnInit {
           this.artistlist = [{_id:'', artistname:'Error artist list'}];
         }
       }
+    },
+    err => {
+      this.artistlist = [{_id:'', artistname:'Error artist list'}];
     });
   }
 
@@ -180,6 +188,11 @@ export class ListalbumComponent implements OnInit {
           status: this.qstatus
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -251,8 +264,61 @@ export class ListalbumComponent implements OnInit {
       }
     );
   }
-
+  
   confirmDel(idx: number, albumid: string, albumname:string, albumphotoname:string) {
+    var totalsong: number;
+
+    let payload: any = {};
+    payload.albumid = albumid;
+    this.loading = true;
+    this.songService.getSongList(this.userObj.userid, payload)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.toastr.error(data.message);
+      } else {
+        this.loading = false;
+        totalsong = +data.totalcount;
+        if (totalsong > 0) {
+          this.toastr.warning('Can not delete album. It already has songs.');
+        } else {
+          if(confirm('Do you really want to delete this album: ' + albumname + ' record?')){
+            let payloadData: any = {};
+            payloadData.labelid = this.userObj.userid;
+            payloadData.albumphotoname = albumphotoname;
+            this.loading = true;
+            this.albumService.pubdeleteAlbum(albumid, payloadData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.loading = false;
+                this.albums.splice(idx, 1);
+                this.totalrows = this.totalrows - 1;
+                this.toastr.success(data.message);  
+              }
+            },
+            err => {
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          }
+        }
+      }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+    });
+  }
+/*   confirmDel(idx: number, albumid: string, albumname:string, albumphotoname:string) {
     var totalsong: number;
 
     let payload: any = {};
@@ -299,14 +365,29 @@ export class ListalbumComponent implements OnInit {
                       this.totalrows = this.totalrows - 1;
                       this.toastr.success(data.message);  
                     }
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
                   });
                 }
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
               });
           }
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
-  }
+  } */
   
   editAlbum(albumid): void {
     this.router.navigate([`editalbum/${albumid}`],

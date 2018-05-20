@@ -57,7 +57,12 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['report']);
           }
           this.loginForm.reset();
-        });
+        },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
     }
   }
 

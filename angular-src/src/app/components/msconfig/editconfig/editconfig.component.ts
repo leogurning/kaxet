@@ -68,6 +68,9 @@ export class EditconfigComponent implements OnInit {
           this.sts = [{code:'', value:'Error ms config list'}];
         }
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
     });
   }
   getMsconfiggroup(){
@@ -80,6 +83,9 @@ export class EditconfigComponent implements OnInit {
           this.grouplist = [{code:'', value:'Error group list'}];
         }
       }
+    },
+    err => {
+      this.grouplist = [{code:'', value:'Error group list'}];
     });
   }
 
@@ -98,6 +104,11 @@ export class EditconfigComponent implements OnInit {
           this.toastr.error('MsConfig id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -135,6 +146,11 @@ export class EditconfigComponent implements OnInit {
           if (!this.msconfigid) {
             this.msconfigForm.reset();
           }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
   }

@@ -65,6 +65,11 @@ export class ViewlabelstatsComponent implements OnInit {
         this.user = data.data[0];
         this.populateForm(this.user);
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });   
   }
   populateForm(data): void {

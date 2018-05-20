@@ -43,6 +43,31 @@ export class ForgotpasswordComponent implements OnInit {
         this.loading = false;
         this.toastr.error(data.message);
       } else {
+        this.loading = false;
+        let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+          disableClose: true,
+          width: '400px',
+          data: 'Email to reset password has been sent to ' + this.profileForm.value.email + '. Please follow the instruction in the email.'
+        });    
+      }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+    });
+  }
+
+  sendEmail_OLD(formdata:any): void {
+    let payload: any = {};
+    payload.email = this.profileForm.value.email;
+    this.loading = true;
+    this.userService.resetPasswd(payload)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.toastr.error(data.message);
+      } else {
         let payload1: any = {};
         payload1.emailto = this.profileForm.value.email;
         payload1.vlink = data.vlink;
@@ -68,8 +93,22 @@ export class ForgotpasswordComponent implements OnInit {
               data: 'Email to reset password has been sent to ' + this.profileForm.value.email + '. Please follow the instruction in the email.'
             });
           }
-        });    
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+            disableClose: true,
+            width: '400px',
+            data: err
+          });
+        });  
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 }

@@ -65,9 +65,19 @@ export class ViewsongComponent implements OnInit {
             this.genre = data.data;
           }
         } else {
-          this.sts = [{code:'', value:'Error ms config list'}];
+          this.sts = [{code:'', value:'Empty list...'}];
+          this.genre = [{code:'', value:'Empty list...'}];
         }
+      } else {
+        this.sts = [{code:'', value:'Error ms config list'}];
+        this.genre = [{code:'', value:'Error ms config list'}];
       }
+    },
+    err => {
+      this.sts = [{code:'', value:'Error ms config list'}];
+      this.genre = [{code:'', value:'Error ms config list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 
@@ -87,6 +97,10 @@ export class ViewsongComponent implements OnInit {
           this.toastr.error('Song id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
 

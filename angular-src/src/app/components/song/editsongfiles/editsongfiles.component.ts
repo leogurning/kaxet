@@ -74,7 +74,15 @@ export class EditsongfilesComponent implements OnInit {
         } else {
           this.maxfilesize = {code:'', value:'0'};
         }
+      } else {
+        this.maxfilesize = {code:'', value:'0'};
       }
+    },
+    err => {
+      this.loading = false;
+      this.maxfilesize = {code:'', value:'0'};
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getSong(id){
@@ -84,10 +92,19 @@ export class EditsongfilesComponent implements OnInit {
           this.song = data.data[0];
           this.populateForm(data.data[0]);
         } else {
-          this.toastr.error('Song id is incorrect in the URL');
+          this.toastr.error('Empty Song result...');
           this.router.navigate(['listsong']);
         }
+      } else {
+        this.toastr.error('Song id is incorrect in the URL...');
+        this.router.navigate(['listsong']);
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
+      this.router.navigate(['listsong']);
     });
   }
   populateForm(data): void {
@@ -138,8 +155,69 @@ export class EditsongfilesComponent implements OnInit {
       alert('Error file type. You must input audio/video file type.');
     }    
   }
-
+  
   uploadNewPreview(newFileData:any): void {
+    const files: Array<File> = newFileData;
+    let lformData: FormData = new FormData();
+    this.progressvalue = 10;
+    //lformData.append('songprvw',files[0],files[0]['name']);
+    lformData.append('fileinputsrc',files[0],files[0]['name']);
+    lformData.append('uploadpath',this.prvwuploadpath);
+    this.loading = true;
+    this.progressvalue = 40;
+    this.ftService.uploadInputFile(lformData)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.progressvalue = 0;
+        this.toastr.error(data.message);
+      } else {
+        //let payloadData: any = this.songForm.value;
+        this.progressvalue = 60;
+        let payloadData: any = {};
+        payloadData.songprvwpath = data.filedata.filepath;
+        payloadData.songprvwname = data.filedata.filename;
+        payloadData.oldsongprvwname = this.songForm.value.songprvwname;
+        payloadData.labelid = this.userObj.userid;
+        this.progressvalue = 80;
+        this.progressvalue = 90;
+          
+        this.songService.pubupdateSongPreview(this.songid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.progressvalue = 100;
+            this.loading = false;
+            console.log('Success update song preview.');
+            this.toastr.success(data.message);
+            this.progressvalue = 0;
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+        //this.songForm.value.songprvwpath = data.filedata.filepath;
+        //this.songForm.value.songprvwname = data.filedata.filename;
+      }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
+    });    
+  }
+/*   uploadNewPreview(newFileData:any): void {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     this.progressvalue = 10;
@@ -170,8 +248,11 @@ export class EditsongfilesComponent implements OnInit {
                 console.log('File deleted - ' + payloadData.filename);
               }
             }   
+          },
+          err => {
+            console.log('Error deleted ' + err);
           });
-          this.progressvalue = 90;
+        this.progressvalue = 90;
         this.songForm.value.songprvwpath = data.filedata.filepath;
         this.songForm.value.songprvwname = data.filedata.filename;
           
@@ -192,12 +273,84 @@ export class EditsongfilesComponent implements OnInit {
             this.toastr.success(data.message);
             this.progressvalue = 0;
           }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
         });
       }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
+    });    
+  } */
+  
+  uploadNewSong(newFileData:any): void {
+    const files: Array<File> = newFileData;
+    let lformData: FormData = new FormData();
+    this.progressvalue = 10;
+    //lformData.append('songfile',files[0],files[0]['name']);
+    lformData.append('fileinputsrc',files[0],files[0]['name']);
+    lformData.append('uploadpath',this.songuploadpath);
+    this.loading = true;
+    this.progressvalue = 40;
+    this.ftService.uploadInputFile(lformData)
+    .subscribe(data => {
+      if (data.success === false) {
+        this.loading = false;
+        this.progressvalue = 0;
+        this.toastr.error(data.message);
+      } else {
+        //let payloadData: any = this.songForm.value;
+        this.progressvalue = 60;
+        let payloadData: any = {};
+        payloadData.songfilepath = data.filedata.filepath;
+        payloadData.songfilename = data.filedata.filename;
+        payloadData.oldsongfilename = this.songForm.value.songfilename;
+        payloadData.labelid = this.userObj.userid;
+        this.progressvalue = 80;
+        this.progressvalue = 90;   
+        this.songService.pubupdateSongFile(this.songid, payloadData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            if (data.errcode){
+              this.authService.logout();
+              this.router.navigate(['login']);
+            }
+            this.toastr.error(data.message);
+          } else {
+            this.progressvalue = 100;
+            this.loading = false;
+            console.log('Success update song file.');
+            this.toastr.success(data.message);
+            this.progressvalue = 0;
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+        //this.songForm.value.songfilepath = data.filedata.filepath;
+        //this.songForm.value.songfilename = data.filedata.filename;
+      }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
     });    
   }
-
-  uploadNewSong(newFileData:any): void {
+/*   uploadNewSong(newFileData:any): void {
     const files: Array<File> = newFileData;
     let lformData: FormData = new FormData();
     this.progressvalue = 10;
@@ -226,6 +379,9 @@ export class EditsongfilesComponent implements OnInit {
             } else {
               console.log('File deleted - ' + payloadData.filename);
             }   
+          },
+          err => {
+            console.log('Error deleted ' + err);
           });
         this.progressvalue = 90;   
         this.songForm.value.songfilepath = data.filedata.filepath;
@@ -248,10 +404,22 @@ export class EditsongfilesComponent implements OnInit {
             this.toastr.success(data.message);
             this.progressvalue = 0;
           }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
         });
       }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
     });    
-  }
+  } */
   onBack(): void {
     this.router.navigate(['/listsong'], { preserveQueryParams: true });
   }

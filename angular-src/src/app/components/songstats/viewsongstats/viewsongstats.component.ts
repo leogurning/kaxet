@@ -61,10 +61,12 @@ export class ViewsongstatsComponent implements OnInit {
           if (groupid == 'GENRE') {
             this.genre = data.data;
           }
-        } else {
-          this.sts = [{code:'', value:'Error ms config list'}];
-        }
+        } 
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getSong(id){
@@ -83,6 +85,10 @@ export class ViewsongstatsComponent implements OnInit {
           this.toastr.error('Song id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   populateForm(data): void {

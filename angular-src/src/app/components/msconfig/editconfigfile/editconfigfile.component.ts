@@ -65,6 +65,9 @@ export class EditconfigfileComponent implements OnInit {
           this.maxfilesize = {code:'', value:'0'};
         }
       }
+    },
+    err => {
+      this.maxfilesize = {code:'', value:'0'};
     });
   }
   getMsconfig(id){
@@ -83,6 +86,11 @@ export class EditconfigfileComponent implements OnInit {
           this.toastr.error('MsConfig id is incorrect in the URL');
         }
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   populateForm(data): void {
@@ -147,6 +155,9 @@ export class EditconfigfileComponent implements OnInit {
             } else {
               console.log('File deleted - ' + payloadData.filename);
             }   
+          },
+          err => {
+            console.log('Error deleted ' + err);
           });
         this.msconfigForm.value.msconfigid = this.msconfigid;   
         this.msconfigForm.value.filepath = data.filedata.filepath;
@@ -170,9 +181,21 @@ export class EditconfigfileComponent implements OnInit {
             this.toastr.success(data.message);
             this.progressvalue = 0;
           }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
         });
 
       }
+    },
+    err => {
+      this.loading = false;
+      this.progressvalue = 0;
+      //console.log(err);
+      this.toastr.error(err);
     });    
   }
   onBack(): void {

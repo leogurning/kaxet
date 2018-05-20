@@ -154,6 +154,12 @@ export class SongpendingpurchaseComponent implements OnInit {
           this.pfee = {code:'', value:'Error ms config list'};
         }
       }
+    },
+    err => {
+      this.loading = false;
+      this.pfee = {code:'', value:'Error ms config list'};
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getReport(formdata:any): void {
@@ -290,6 +296,11 @@ export class SongpendingpurchaseComponent implements OnInit {
           enddt: this.qenddt,
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {
@@ -377,8 +388,56 @@ export class SongpendingpurchaseComponent implements OnInit {
       }
     );
   }
-
+  
   approvePayment(songpurchaseid, songname, songid, listenerid, songprice): void {
+    if(confirm('Do you really want to approve this song payment: ' + songname + ' record?')){ 
+      this.loading = true;
+      let payload: any = {};
+      payload.status = 'STSAPV';
+      payload.listenerid = listenerid;
+      payload.songpurchaseid = songpurchaseid;
+      payload.paymentmtd = 'PMTCASH';
+      payload.producttype = 'SONG';
+      payload.songid = songid;
+      payload.dbcr = '-'
+      payload.amount = Number(this.pfee.value) * (parseInt(songprice) / 100);
+      this.songpurchaseService.pubSaveSongpurchasePayment(this.userObj.userid, payload)
+      .subscribe(data => {
+        if (data.success === true) {
+          setTimeout(
+            this.router.navigate(['songpendingpurchase'],
+              {
+                queryParams: { 
+                  artistname: this.qartistname,
+                  //albumname: this.qalbumname,
+                  buyername: this.qbuyername,
+                  songname: this.qsongname,
+                  rptype: this.qrptype,
+                  startdt: this.qstartdt,
+                  enddt: this.qenddt,
+                  page: this.qpage || 1, 
+                  sortby: this.qsort }
+              }
+            ), 1000); 
+          this.loading = false;
+          this.toastr.success('Approve payment success !');
+        } else {
+          this.loading = false;
+          if (data.errcode){
+            this.authService.logout();
+            this.router.navigate(['login']);
+          }
+          this.toastr.error(data.message + '. Error updating the purchase payment...');
+        }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+    }
+  }
+/*   approvePayment(songpurchaseid, songname, songid, listenerid, songprice): void {
     if(confirm('Do you really want to approve this song payment: ' + songname + ' record?')){
       this.loading = true;
       let payload: any = {};
@@ -420,10 +479,35 @@ export class SongpendingpurchaseComponent implements OnInit {
                         sortby: this.qsort }
                   }
                 );                
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+                this.router.navigate(['songpendingpurchase'],
+                  {
+                      queryParams: { 
+                        artistname: this.qartistname,
+                        //albumname: this.qalbumname,
+                        buyername: this.qbuyername,
+                        songname: this.qsongname,
+                        rptype: this.qrptype,
+                        startdt: this.qstartdt,
+                        enddt: this.qenddt,
+                        page: this.qpage || 1, 
+                        sortby: this.qsort }
+                  }
+                ); 
               });
             } else {
+              this.loading = false;
               this.toastr.error('Error saving the payment transaction...');
             }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
           });
 
         } else {
@@ -434,10 +518,58 @@ export class SongpendingpurchaseComponent implements OnInit {
           }
           this.toastr.error(data.message + '. Error updating the purchase status...');
         }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+    }
+  } */
+
+  rejectPayment(songpurchaseid, songname): void {
+    if(confirm('Do you really want to reject this song payment: ' + songname + ' record?')){
+      this.loading = true;
+      let payload: any = {};
+      payload.status = 'STSRJCT';
+      payload.songpurchaseid = songpurchaseid;
+      this.songpurchaseService.pubSaveSongpurchasePayment(this.userObj.userid, payload)
+      .subscribe(data => {
+        if (data.success === true) {
+          setTimeout(
+            this.router.navigate(['songpendingpurchase'],
+              {
+                queryParams: { 
+                  artistname: this.qartistname,
+                  //albumname: this.qalbumname,
+                  buyername: this.qbuyername,
+                  songname: this.qsongname,
+                  rptype: this.qrptype,
+                  startdt: this.qstartdt,
+                  enddt: this.qenddt,
+                  page: this.qpage || 1, 
+                  sortby: this.qsort }
+              }
+            ), 1000);
+            this.loading = false;
+            this.toastr.success(data.message);
+        } else {
+          this.loading = false;
+          if (data.errcode){
+            this.authService.logout();
+            this.router.navigate(['login']);
+          }
+          this.toastr.error(data.message);
+        }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
   }
-  rejectPayment(songpurchaseid, songname): void {
+/*   rejectPayment(songpurchaseid, songname): void {
     if(confirm('Do you really want to reject this song payment: ' + songname + ' record?')){
       this.loading = true;
       let payload: any = {};
@@ -469,9 +601,14 @@ export class SongpendingpurchaseComponent implements OnInit {
           }
           this.toastr.error(data.message);
         }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
       });
     }
-  }
+  } */
 /*   isValidDate2(s): boolean {
     let input = <String>s;
     var bits = input.split("-");

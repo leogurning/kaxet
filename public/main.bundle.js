@@ -77,18 +77,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var Globals = /** @class */ (function () {
     function Globals() {
-        this.artistuploadpath = 'images/artists/';
-        this.albumuploadpath = 'images/albums/';
-        this.configuploadpath = 'images/genres/';
-        this.prvwuploadpath = 'previews/';
-        this.songuploadpath = 'songs/';
+        this.artistuploadpath = 'kaxet/images/artists/';
+        this.albumuploadpath = 'kaxet/images/albums/';
+        this.configuploadpath = 'kaxet/images/genres/';
+        this.prvwuploadpath = 'kaxet/previews/';
+        this.songuploadpath = 'kaxet/songs/';
         //adminurl: String = 'http://localhost:2002';
-        this.adminurl = 'https://apikxadmin-dot-kaxetd.appspot.com';
+        this.adminurl = 'https://kxadmin.herokuapp.com';
         //notifurl: String = 'http://localhost:2004';
-        this.notifurl = 'https://apikxnotif-dot-kaxetd.appspot.com';
+        this.notifurl = 'https://kxnotif.herokuapp.com';
         //filetransferurl: String = 'http://localhost:2005';
-        this.filetransferurl = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
-        this.kaxeturl = 'https://kaxetd.appspot.com';
+        this.filetransferurl = 'https://kxfiletrf.herokuapp.com';
+        this.kaxeturl = 'https://kaxet.herokuapp.com';
+        //kaxeturl: String = 'http://localhost:2000';
     }
     Globals = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
@@ -131,63 +132,66 @@ var Globals = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_filetransfer_service__ = __webpack_require__("./src/app/services/filetransfer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__ = __webpack_require__("./src/app/services/activitylog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__components_activitylog_activitylog_component__ = __webpack_require__("./src/app/components/activitylog/activitylog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__components_activitylogstats_activitylogstats_component__ = __webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -210,6 +214,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 /* Global Variables */
 
 /* Services Modules */
+
 
 
 
@@ -281,59 +286,63 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_30__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_64__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
-    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_51__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_29__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_34__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_33__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_32__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_31__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_35__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_36__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_40__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_45__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_48__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_50__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_55__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
-    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_56__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_57__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_60__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_61__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_65__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
-    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_66__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_67__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_31__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_65__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
+    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_52__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_30__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_35__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_34__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_33__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_32__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_36__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_41__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_46__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_49__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_50__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_56__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
+    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_57__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_60__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_61__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_66__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
+    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_67__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_81__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'activitylog', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_83__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'activitylogstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_84__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */], runGuardsAndResolvers: 'always' },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -341,61 +350,63 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__components_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__components_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__components_user_password_password_component__["a" /* PasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__components_user_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__components_user_logout_component__["a" /* LogoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__components_about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_41__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_42__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_43__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_44__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_45__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_46__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_47__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_48__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-                __WEBPACK_IMPORTED_MODULE_49__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_50__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_51__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
-                __WEBPACK_IMPORTED_MODULE_52__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_53__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
-                __WEBPACK_IMPORTED_MODULE_55__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
-                __WEBPACK_IMPORTED_MODULE_56__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_57__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
-                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_60__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_61__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_63__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_64__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_65__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
-                __WEBPACK_IMPORTED_MODULE_66__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_67__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_68__components_songstats_songstats_component__["a" /* SongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_69__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_70__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_71__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_72__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_73__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_74__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_75__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_76__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_78__components_transaction_transaction_component__["a" /* TransactionComponent */],
-                __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_80__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_81__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__components_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__components_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__components_user_password_password_component__["a" /* PasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_user_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__components_user_logout_component__["a" /* LogoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__components_about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_42__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_43__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_44__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_45__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_46__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_47__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_49__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+                __WEBPACK_IMPORTED_MODULE_50__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_52__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
+                __WEBPACK_IMPORTED_MODULE_56__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
+                __WEBPACK_IMPORTED_MODULE_57__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
+                __WEBPACK_IMPORTED_MODULE_60__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_64__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_65__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_66__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
+                __WEBPACK_IMPORTED_MODULE_67__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_68__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_69__components_songstats_songstats_component__["a" /* SongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_70__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_71__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_72__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_73__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_74__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_75__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_76__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_79__components_transaction_transaction_component__["a" /* TransactionComponent */],
+                __WEBPACK_IMPORTED_MODULE_80__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_81__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_82__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_83__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */],
+                __WEBPACK_IMPORTED_MODULE_84__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -420,26 +431,27 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["d" /* RouterModule */].forRoot(appRoutes, { onSameUrlNavigation: 'reload' })
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_63__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_81__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
+                __WEBPACK_IMPORTED_MODULE_64__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_82__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */],
-                __WEBPACK_IMPORTED_MODULE_25__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_26__common_toastr_service__["a" /* ToastrService */],
                 __WEBPACK_IMPORTED_MODULE_12__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */],
                 __WEBPACK_IMPORTED_MODULE_14__services_user_service__["a" /* UserService */],
                 __WEBPACK_IMPORTED_MODULE_15__services_artist_service__["a" /* ArtistService */],
                 __WEBPACK_IMPORTED_MODULE_16__services_album_service__["a" /* AlbumService */],
                 __WEBPACK_IMPORTED_MODULE_17__services_song_service__["a" /* SongService */],
-                __WEBPACK_IMPORTED_MODULE_26__angular_common__["DatePipe"],
+                __WEBPACK_IMPORTED_MODULE_27__angular_common__["DatePipe"],
                 __WEBPACK_IMPORTED_MODULE_18__services_admin_usermgt_service__["a" /* UsermgtService */],
                 __WEBPACK_IMPORTED_MODULE_19__services_admin_songadmin_service__["a" /* SongadminService */],
                 __WEBPACK_IMPORTED_MODULE_20__services_admin_msconfig_service__["a" /* MsconfigService */],
                 __WEBPACK_IMPORTED_MODULE_21__services_notif_service__["a" /* NotifService */],
                 __WEBPACK_IMPORTED_MODULE_22__services_filetransfer_service__["a" /* FiletransferService */],
                 __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__["a" /* SongpurchaseService */],
-                __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__["a" /* TransactionService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */]]
+                __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__["a" /* TransactionService */],
+                __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__["a" /* ActivitylogService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_28__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -549,6 +561,666 @@ var AboutComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/activitylog/activitylog.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/activitylog/activitylog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Activity Log</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                <label class=\"col-sm-6 paddingsearch\">Activity Date</label>\n              </div>  \n          </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-3 col-md-3\">\n                  <div class=\"radio\">\n                      <label>\n                          <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                          Today\n                      </label>\n                  </div>\n              </div>\n              <div class=\"col-sm-3 col-md-3\">\n                  <div class=\"radio\">\n                      <label>\n                          <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                          Current month\n                      </label>\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <div class=\"radio\">\n                      <label>\n                          <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                          Date Range (yyyy-mm-dd)\n                      </label>\n                  </div>\n                  <div class=\"row\" style=\"padding: 8px\">\n                      <div class=\"col-sm-6 col-md-6\">\n                          <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                              <div class=\"input-group\">\n                                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                  <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                              </div>\n                              <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                  <span class=\"col-sm-2\"></span>\n                                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                              </div>\n                          </div>\n                      </div>\n                      <div class=\"col-sm-6 col-md-6\">\n                          <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                              <div class=\"input-group\">\n                                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                  <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                              </div>\n                              <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                  <span class=\"col-sm-2\"></span>\n                                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div> \n\n          </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"status\" class=\"col-sm-2 paddingsearch\">Activity Type</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"activitytype\">\n                      <option ng-selected=\"true\" value=\"\">Select the activity</option>\n                      <option *ngFor=\"let a of activitylist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                  </div>\n              </div>                  \n          </div>\n        </form>\n    </div>    \n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"activitylog && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No activity found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO activity found for the selected criteria.\n      </div>\n  </div>\n  <div class=\"panel panel-default\" *ngIf=\"activitylog && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortActivitylog('logdate')\">Activity Date</a></th>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortActivitylog('activitytype')\">Activity type</a></th>\n                          <th width=\"45%\" scope=\"col\">Remarks</th>\n                          <th width=\"20%\" scope=\"col\">Status</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let log of activitylog; let logIndex = index'>\n                          <!-- <td data-label=\"Transaction Date\" scope=\"row\"><a style=\"cursor:pointer\" (click)=\"showTransaction(trx._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->\n                          <td data-label=\"Activity Date\" scope=\"row\">{{ log.logdate | date: 'd MMM y'}}</td>\n                          <td data-label=\"Activity Type\">{{ log.activity }}</td>\n                          <td data-label=\"Remarks\">{{ log.remarks }}</td>\n                          <td data-label=\"Status\">{{ log.stsval }}</td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"activitylog && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/activitylog/activitylog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActivitylogComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_activitylog_service__ = __webpack_require__("./src/app/services/activitylog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+//import { SongService } from '../../services/song.service';
+
+var ActivitylogComponent = /** @class */ (function () {
+    function ActivitylogComponent(fb, authService, route, router, toastr, datePipe, activitylogService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.activitylogService = activitylogService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.activitytype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    ActivitylogComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            activitytype: this.activitytype,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getMsconfigGroupList('ALOG');
+        this.route.queryParams.forEach(function (params) {
+            _this.qactivitytype = params['activitytype'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.activitytype = _this.qactivitytype;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    activitytype: _this.qactivitytype,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    ActivitylogComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ActivitylogComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    ActivitylogComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'ALOG') {
+                        _this.activitylist = data.data;
+                    }
+                }
+                else {
+                    _this.activitylist = [{ code: '', value: 'Empty ms config list' }];
+                }
+            }
+        }, function (err) {
+            _this.activitylist = [{ code: '', value: 'Error ms config list' }];
+        });
+    };
+    ActivitylogComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['activitylog'], {
+                            queryParams: {
+                                activitytype: this.reportForm.value.activitytype,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['activitylog'], {
+                    queryParams: {
+                        activitytype: this.reportForm.value.activitytype,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    ActivitylogComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.activitylogService.getActivitylogAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.activitylog = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qactivitytype = formval.activitytype;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    activitytype: _this.qactivitytype,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ActivitylogComponent.prototype.setPage = function (page) {
+        this.router.navigate(['activitylog'], {
+            queryParams: {
+                activitytype: this.qactivitytype,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    ActivitylogComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    ActivitylogComponent.prototype.sortActivitylog = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['activitylog'], {
+            queryParams: {
+                activitytype: this.qactivitytype,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    ActivitylogComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-activitylog',
+            template: __webpack_require__("./src/app/components/activitylog/activitylog.component.html"),
+            styles: [__webpack_require__("./src/app/components/activitylog/activitylog.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_activitylog_service__["a" /* ActivitylogService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], ActivitylogComponent);
+    return ActivitylogComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/activitylogstats/activitylogstats.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/activitylogstats/activitylogstats.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Activity Log</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-6 paddingsearch\">Activity Date</label>\n                </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-3 col-md-3\">\n                    <div class=\"radio\">\n                        <label>\n                            <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                            Today\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col-sm-3 col-md-3\">\n                    <div class=\"radio\">\n                        <label>\n                            <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                            Current month\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <div class=\"radio\">\n                        <label>\n                            <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                            Date Range (yyyy-mm-dd)\n                        </label>\n                    </div>\n                    <div class=\"row\" style=\"padding: 8px\">\n                        <div class=\"col-sm-6 col-md-6\">\n                            <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                <div class=\"input-group\">\n                                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                    <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                </div>\n                                <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                    <span class=\"col-sm-2\"></span>\n                                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"col-sm-6 col-md-6\">\n                            <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                <div class=\"input-group\">\n                                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                    <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                </div>\n                                <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                    <span class=\"col-sm-2\"></span>\n                                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div> \n  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"status\" class=\"col-sm-2 paddingsearch\">Activity Type</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"activitytype\">\n                        <option ng-selected=\"true\" value=\"\">Select the activity</option>\n                        <option *ngFor=\"let a of activitylist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"labelid\">\n                            <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                            <option value=\"\">Select the label</option>\n                            <!-- <option value=\"system\">system</option> -->\n                            <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                        </select>\n                      </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>\n                </div>                  \n            </div>\n          </form>\n      </div>    \n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"activitylog && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No activity found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n          There is NO activity found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"activitylog && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortActivitylog('logdate')\">Activity Date</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortActivitylog('activitytype')\">Activity type</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortActivitylog('performed')\">Performed by</a></th>                            \n                            <th width=\"40%\" scope=\"col\">Remarks</th>\n                            <th width=\"10%\" scope=\"col\">Status</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let log of activitylog; let logIndex = index'>\n                            <!-- <td data-label=\"Transaction Date\" scope=\"row\"><a style=\"cursor:pointer\" (click)=\"showTransaction(trx._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->\n                            <td data-label=\"Activity Date\" scope=\"row\">{{ log.logdate | date: 'd MMM y'}}</td>\n                            <td data-label=\"Activity Type\">{{ log.activity }}</td>\n                            <td data-label=\"Performed by\">{{ log.performed }}</td>\n                            <td data-label=\"Remarks\">{{ log.remarks }}</td>\n                            <td data-label=\"Status\">{{ log.stsval }}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"activitylog && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/activitylogstats/activitylogstats.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActivitylogstatsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_activitylog_service__ = __webpack_require__("./src/app/services/activitylog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+//import { SongService } from '../../services/song.service';
+
+var ActivitylogstatsComponent = /** @class */ (function () {
+    function ActivitylogstatsComponent(fb, authService, route, router, toastr, datePipe, labelmgtService, activitylogService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.labelmgtService = labelmgtService;
+        this.activitylogService = activitylogService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.activitytype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    ActivitylogstatsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            activitytype: this.activitytype,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getMsconfigGroupList('ALOG');
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qactivitytype = params['activitytype'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.activitytype = _this.qactivitytype;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    activitytype: _this.qactivitytype,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    ActivitylogstatsComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ActivitylogstatsComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    ActivitylogstatsComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Error label list' }];
+                }
+            }
+        }, function (err) {
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+        });
+    };
+    ActivitylogstatsComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'ALOG') {
+                        _this.activitylist = data.data;
+                    }
+                }
+                else {
+                    _this.activitylist = [{ code: '', value: 'Empty ms config list' }];
+                }
+            }
+        }, function (err) {
+            _this.activitylist = [{ code: '', value: 'Error ms config list' }];
+        });
+    };
+    ActivitylogstatsComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['activitylogstats'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                activitytype: this.reportForm.value.activitytype,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['activitylogstats'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        activitytype: this.reportForm.value.activitytype,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    ActivitylogstatsComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.activitylogService.getAdmActivitylogAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['login']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.activitylog = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid;
+                _this.qactivitytype = formval.activitytype;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    activitytype: _this.qactivitytype,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ActivitylogstatsComponent.prototype.setPage = function (page) {
+        this.router.navigate(['activitylogstats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                activitytype: this.qactivitytype,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    ActivitylogstatsComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    ActivitylogstatsComponent.prototype.sortActivitylog = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['activitylogstats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                activitytype: this.qactivitytype,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    ActivitylogstatsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-activitylogstats',
+            template: __webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.html"),
+            styles: [__webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_activitylog_service__["a" /* ActivitylogService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], ActivitylogstatsComponent);
+    return ActivitylogstatsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/album/addalbum/addalbum.component.css":
 /***/ (function(module, exports) {
 
@@ -651,6 +1323,8 @@ var AddalbumComponent = /** @class */ (function () {
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
         });
     };
     AddalbumComponent.prototype.getMsconfigVal = function (code, groupid) {
@@ -664,6 +1338,8 @@ var AddalbumComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.maxfilesize = { code: '', value: '0' };
         });
     };
     AddalbumComponent.prototype.getArtistList = function (id) {
@@ -678,6 +1354,8 @@ var AddalbumComponent = /** @class */ (function () {
                     _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
                 }
             }
+        }, function (err) {
+            _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
         });
     };
     AddalbumComponent.prototype.addAlbum = function (formdata) {
@@ -713,7 +1391,7 @@ var AddalbumComponent = /** @class */ (function () {
                         theForm_1.albumid = _this.albumid;
                     }
                     _this.progressvalue = 80;
-                    _this.albumService.saveAlbum(_this.userObj.userid, theForm_1.artistid, theForm_1)
+                    _this.albumService.pubsaveAlbum(_this.userObj.userid, theForm_1)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -732,14 +1410,89 @@ var AddalbumComponent = /** @class */ (function () {
                         _this.genreVar.nativeElement.selectedIndex = 0;
                         _this.albumimageVar.nativeElement.value = "";
                         _this.progressvalue = 0;
+                    }, function (err) {
+                        _this.loading = false;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
         else {
             this.toastr.error('Please provide the album cover/image...');
         }
     };
+    /*   addAlbum(formdata:any): void {
+        this.progressvalue = 0;
+        const files: Array<File> = this.filesToUpload;
+        if (this.addAlbumForm.dirty && this.addAlbumForm.valid && files[0]) {
+          this.progressvalue = 10;
+          //const files: Array<File> = this.filesToUpload;
+          let theForm = this.addAlbumForm.value;
+          let lformData: FormData = new FormData();
+          //console.log('Ini file: '+ files[0]['name']);
+          this.progressvalue = 20;
+          //lformData.append('albumimage',files[0],files[0]['name']);
+          lformData.append('fileinputsrc',files[0],files[0]['name']);
+          lformData.append('uploadpath',this.albumuploadpath);
+          //console.dir(theForm);
+          this.loading = true;
+          this.progressvalue = 40;
+          this.ftService.uploadInputFile(lformData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                this.toastr.error(data.message);
+              } else {
+                  this.progressvalue = 60;
+                  theForm.albumphotopath = data.filedata.filepath;
+                  theForm.albumphotoname = data.filedata.filename;
+                  theForm.status = 'STSACT';
+                  if (this.albumid !== '') {
+                    theForm.albumid = this.albumid;
+                  }
+                  this.progressvalue = 80;
+                  this.albumService.saveAlbum(this.userObj.userid, theForm.artistid, theForm)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      this.progressvalue = 0;
+                      this.toastr.error(data.message);
+                    } else {
+                      this.progressvalue = 90;
+                      this.loading = false;
+                      this.toastr.success(data.message);
+                      //this.router.navigate(['listalbum']);
+                      this.progressvalue = 100;
+                    }
+                    this.addAlbumForm.reset();
+                    this.artistVar.nativeElement.selectedIndex = 0;
+                    this.genreVar.nativeElement.selectedIndex = 0;
+                    this.albumimageVar.nativeElement.value = "";
+                    this.progressvalue = 0;
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }
+            },
+            err => {
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+     
+        } else {
+          this.toastr.error('Please provide the album cover/image...');
+        }
+      } */
     AddalbumComponent.prototype.fileChangeEvent = function (fileInput) {
         var files = fileInput.target.files;
         //console.log('content file: ' + this.filesToUpload);
@@ -894,9 +1647,13 @@ var EditalbumComponent = /** @class */ (function () {
                     }
                 }
                 else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
         });
     };
     EditalbumComponent.prototype.getArtistList = function (id) {
@@ -911,6 +1668,8 @@ var EditalbumComponent = /** @class */ (function () {
                     _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
                 }
             }
+        }, function (err) {
+            _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
         });
     };
     EditalbumComponent.prototype.getAlbum = function (id) {
@@ -925,6 +1684,11 @@ var EditalbumComponent = /** @class */ (function () {
                     _this.router.navigate(['listalbum']);
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listalbum']);
         });
     };
     EditalbumComponent.prototype.populateForm = function (data) {
@@ -945,7 +1709,7 @@ var EditalbumComponent = /** @class */ (function () {
                 theForm.albumid = this.albumid;
             }
             this.loading = true;
-            this.albumService.saveAlbum(this.userObj.userid, theForm.artistid, theForm)
+            this.albumService.pubsaveAlbum(this.userObj.userid, theForm)
                 .subscribe(function (data) {
                 _this.loading = false;
                 if (data.success === false) {
@@ -961,9 +1725,44 @@ var EditalbumComponent = /** @class */ (function () {
                 if (!_this.albumid) {
                     _this.albumForm.reset();
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
+    /*   saveAlbum(formdata:any): void {
+        if (this.albumForm.valid) {
+          const theForm:any = this.albumForm.value;
+          if (this.albumid !== '') {
+            theForm.albumid = this.albumid;
+          
+          }
+          this.loading = true;
+          this.albumService.saveAlbum(this.userObj.userid,theForm.artistid, theForm)
+            .subscribe(data => {
+              this.loading = false;
+              if (data.success === false) {
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.toastr.success(data.message);
+              }
+              if (!this.albumid) {
+                this.albumForm.reset();
+              }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        }
+      } */
     EditalbumComponent.prototype.onBack = function () {
         this.router.navigate(['/listalbum'], { preserveQueryParams: true });
     };
@@ -1079,6 +1878,8 @@ var EditalbumphotoComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.maxfilesize = { code: '', value: '0' };
         });
     };
     EditalbumphotoComponent.prototype.getAlbum = function (id) {
@@ -1094,6 +1895,11 @@ var EditalbumphotoComponent = /** @class */ (function () {
                     _this.router.navigate(['listalbum']);
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listalbum']);
         });
     };
     EditalbumphotoComponent.prototype.populateForm = function (data) {
@@ -1145,25 +1951,14 @@ var EditalbumphotoComponent = /** @class */ (function () {
             else {
                 _this.progressvalue = 60;
                 _this.displayImg = data.filedata.filepath;
-                var payloadData_1 = {};
-                payloadData_1.uploadpath = _this.albumuploadpath;
-                payloadData_1.filename = _this.albumForm.value.albumphotoname;
+                var payloadData = {};
+                payloadData.oldalbumphotoname = _this.albumForm.value.albumphotoname;
+                payloadData.albumphotoname = data.filedata.filename;
+                payloadData.albumphotopath = data.filedata.filepath;
+                payloadData.labelid = _this.userObj.userid;
                 _this.progressvalue = 80;
-                _this.ftService.deleteInputFile(payloadData_1)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        //this.toastr.error(data.message);
-                        console.log('Error deleted ' + data.message);
-                    }
-                    else {
-                        console.log('File deleted - ' + payloadData_1.filename);
-                    }
-                });
                 _this.progressvalue = 90;
-                _this.albumForm.value.albumphotopath = data.filedata.filepath;
-                _this.albumForm.value.albumphotoname = data.filedata.filename;
-                //console.log('Update database photo - ' + this.displayImg);
-                _this.albumService.updateAlbumphoto(_this.albumid, _this.albumForm.value)
+                _this.albumService.pubupdateAlbumphoto(_this.albumid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -1181,10 +1976,93 @@ var EditalbumphotoComponent = /** @class */ (function () {
                         _this.toastr.success(data.message);
                         _this.progressvalue = 0;
                     }
+                }, function (err) {
+                    _this.progressvalue = 0;
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.progressvalue = 0;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
+    /*   uploadNewPhoto(newFileData:any): void {
+        const files: Array<File> = newFileData;
+        let lformData: FormData = new FormData();
+        this.progressvalue = 10;
+        lformData.append('fileinputsrc',files[0],files[0]['name']);
+        lformData.append('uploadpath',this.albumuploadpath);
+        this.progressvalue = 30;
+        this.loading = true;
+        this.progressvalue = 40;
+        this.ftService.uploadInputFile(lformData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            this.toastr.error(data.message);
+          } else {
+            this.progressvalue = 60;
+            this.displayImg = data.filedata.filepath;
+            let payloadData: any = {};
+            payloadData.uploadpath = this.albumuploadpath;
+            payloadData.filename = this.albumForm.value.albumphotoname;
+            this.progressvalue = 80;
+            this.ftService.deleteInputFile(payloadData)
+            .subscribe(data => {
+               if (data.success === false) {
+                  //this.toastr.error(data.message);
+                  console.log('Error deleted ' + data.message);
+                } else {
+                  console.log('File deleted - ' + payloadData.filename);
+                }
+              },
+              err => {
+                console.log(err);
+              });
+            this.progressvalue = 90;
+            this.albumForm.value.albumphotopath = data.filedata.filepath;
+            this.albumForm.value.albumphotoname = data.filedata.filename;
+    
+            //console.log('Update database photo - ' + this.displayImg);
+            this.albumService.updateAlbumphoto(this.albumid, this.albumForm.value)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.progressvalue = 100;
+                this.loading = false;
+                console.log('Success update database photo - ' + this.displayImg)
+                this.toastr.success(data.message);
+                this.progressvalue = 0;
+              }
+            },
+            err => {
+              this.progressvalue = 0;
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+    
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
     EditalbumphotoComponent.prototype.onBack = function () {
         this.router.navigate(['/listalbum'], { preserveQueryParams: true });
     };
@@ -1331,9 +2209,13 @@ var ListalbumComponent = /** @class */ (function () {
                     }
                 }
                 else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ListalbumComponent.prototype.getArtistList = function (id) {
@@ -1348,6 +2230,8 @@ var ListalbumComponent = /** @class */ (function () {
                     _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
                 }
             }
+        }, function (err) {
+            _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
         });
     };
     ListalbumComponent.prototype.getReport = function (formdata) {
@@ -1400,6 +2284,10 @@ var ListalbumComponent = /** @class */ (function () {
                     status: _this.qstatus
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListalbumComponent.prototype.setPage = function (page) {
@@ -1483,10 +2371,10 @@ var ListalbumComponent = /** @class */ (function () {
                 else {
                     if (confirm('Do you really want to delete this album: ' + albumname + ' record?')) {
                         var payloadData = {};
-                        payloadData.uploadpath = _this.albumuploadpath;
-                        payloadData.filename = albumphotoname;
+                        payloadData.labelid = _this.userObj.userid;
+                        payloadData.albumphotoname = albumphotoname;
                         _this.loading = true;
-                        _this.ftService.deleteInputFile(payloadData)
+                        _this.albumService.pubdeleteAlbum(albumid, payloadData)
                             .subscribe(function (data) {
                             if (data.success === false) {
                                 _this.loading = false;
@@ -1497,30 +2385,95 @@ var ListalbumComponent = /** @class */ (function () {
                                 _this.toastr.error(data.message);
                             }
                             else {
-                                _this.albumService.deleteAlbum(albumid)
-                                    .subscribe(function (data) {
-                                    if (data.success === false) {
-                                        _this.loading = false;
-                                        if (data.errcode) {
-                                            _this.authService.logout();
-                                            _this.router.navigate(['login']);
-                                        }
-                                        _this.toastr.error(data.message);
-                                    }
-                                    else {
-                                        _this.loading = false;
-                                        _this.albums.splice(idx, 1);
-                                        _this.totalrows = _this.totalrows - 1;
-                                        _this.toastr.success(data.message);
-                                    }
-                                });
+                                _this.loading = false;
+                                _this.albums.splice(idx, 1);
+                                _this.totalrows = _this.totalrows - 1;
+                                _this.toastr.success(data.message);
                             }
+                        }, function (err) {
+                            _this.loading = false;
+                            //console.log(err);
+                            _this.toastr.error(err);
                         });
                     }
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
+    /*   confirmDel(idx: number, albumid: string, albumname:string, albumphotoname:string) {
+        var totalsong: number;
+    
+        let payload: any = {};
+        payload.albumid = albumid;
+        this.loading = true;
+        this.songService.getSongList(this.userObj.userid, payload)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            totalsong = +data.totalcount;
+            if (totalsong > 0) {
+              this.toastr.warning('Can not delete album. It already has songs.');
+            } else {
+              if(confirm('Do you really want to delete this album: ' + albumname + ' record?')){
+                let payloadData: any = {};
+                payloadData.uploadpath = this.albumuploadpath;
+                payloadData.filename = albumphotoname;
+                this.loading = true;
+                this.ftService.deleteInputFile(payloadData)
+                .subscribe(data => {
+                   if (data.success === false) {
+                    this.loading = false;
+                      if (data.errcode){
+                        this.authService.logout();
+                        this.router.navigate(['login']);
+                      }
+                      this.toastr.error(data.message);
+                    } else {
+                      this.albumService.deleteAlbum(albumid)
+                      .subscribe(data => {
+                        if (data.success === false) {
+                          this.loading = false;
+                          if (data.errcode){
+                            this.authService.logout();
+                            this.router.navigate(['login']);
+                          }
+                          this.toastr.error(data.message);
+                        } else {
+                          this.loading = false;
+                          this.albums.splice(idx, 1);
+                          this.totalrows = this.totalrows - 1;
+                          this.toastr.success(data.message);
+                        }
+                      },
+                      err => {
+                        this.loading = false;
+                        //console.log(err);
+                        this.toastr.error(err);
+                      });
+                    }
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }
+            }
+          }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
     ListalbumComponent.prototype.editAlbum = function (albumid) {
         this.router.navigate(["editalbum/" + albumid], {
             queryParams: { artistid: this.qartistid,
@@ -1676,8 +2629,12 @@ var ViewalbumComponent = /** @class */ (function () {
                 }
                 else {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
+                    _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ViewalbumComponent.prototype.getAlbum = function (id) {
@@ -1700,6 +2657,9 @@ var ViewalbumComponent = /** @class */ (function () {
                     _this.toastr.error('Album id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewalbumComponent.prototype.populateForm = function (data) {
@@ -1719,6 +2679,9 @@ var ViewalbumComponent = /** @class */ (function () {
                     _this.toastr.error('Artist id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewalbumComponent.prototype.fetchReport = function (userid, formval) {
@@ -1739,6 +2702,9 @@ var ViewalbumComponent = /** @class */ (function () {
                 _this.qalbumid = formval.albumid;
                 _this.reportTitle = 'Songs Result';
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewalbumComponent.prototype.setPage = function (page) {
@@ -1924,9 +2890,13 @@ var AlbumstatsComponent = /** @class */ (function () {
                     }
                 }
                 else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
         });
     };
     AlbumstatsComponent.prototype.getLabels = function () {
@@ -1941,6 +2911,8 @@ var AlbumstatsComponent = /** @class */ (function () {
                     _this.userlist = [{ _id: '', name: 'Error label list' }];
                 }
             }
+        }, function (err) {
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
         });
     };
     AlbumstatsComponent.prototype.getReport = function (formdata) {
@@ -1992,6 +2964,10 @@ var AlbumstatsComponent = /** @class */ (function () {
                     status: _this.qstatus
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     AlbumstatsComponent.prototype.setPage = function (page) {
@@ -2036,7 +3012,8 @@ var AlbumstatsComponent = /** @class */ (function () {
     };
     AlbumstatsComponent.prototype.showAlbum = function (albumid, labelid) {
         this.router.navigate(["viewalbumstats/" + albumid], {
-            queryParams: { labelid: labelid,
+            queryParams: { label: labelid,
+                labelid: this.qlabelid,
                 artistname: this.qartistname,
                 albumname: this.qalbumname,
                 albumyear: this.qalbumyear,
@@ -2145,7 +3122,7 @@ var ViewalbumstatsComponent = /** @class */ (function () {
         this.getMsconfigGroupList('GENRE');
         this.getAlbum(this.albumid);
         this.route.queryParams.forEach(function (params) {
-            _this.qlabelid = params['labelid'] || '';
+            _this.qlabelid = params['label'] || '';
             _this.qalbumid = params['albumid'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
@@ -2179,8 +3156,12 @@ var ViewalbumstatsComponent = /** @class */ (function () {
                 }
                 else {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
+                    _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ViewalbumstatsComponent.prototype.getAlbum = function (id) {
@@ -2203,6 +3184,9 @@ var ViewalbumstatsComponent = /** @class */ (function () {
                     _this.toastr.error('Album id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewalbumstatsComponent.prototype.populateForm = function (data) {
@@ -2222,6 +3206,9 @@ var ViewalbumstatsComponent = /** @class */ (function () {
                     _this.toastr.error('Artist id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewalbumstatsComponent.prototype.fetchReport = function (userid, formval) {
@@ -2243,6 +3230,9 @@ var ViewalbumstatsComponent = /** @class */ (function () {
                 _this.qalbumid = formval.albumid;
                 _this.reportTitle = 'Songs Result';
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewalbumstatsComponent.prototype.setPage = function (page) {
@@ -2393,8 +3383,76 @@ var AddartistComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.maxfilesize = { code: '', value: '0' };
         });
     };
+    /*   addArtist(formdata:any): void {
+        this.progressvalue = 0;
+        const files: Array<File> = this.filesToUpload;
+        if (this.addArtistForm.dirty && this.addArtistForm.valid && files[0]) {
+          this.progressvalue = 10;
+          let theForm = this.addArtistForm.value;
+          let lformData: FormData = new FormData();
+          //console.log('Ini file: '+ files[0]['name']);
+          this.progressvalue = 30;
+          lformData.append('fileinputsrc',files[0],files[0]['name']);
+          lformData.append('uploadpath',this.artistuploadpath);
+          //console.log(lformData.getAll('artistimage'));
+          //console.dir(theForm);
+          this.loading = true;
+          this.progressvalue = 50;
+          this.ftService.uploadInputFile(lformData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                this.toastr.error(data.message);
+              } else {
+                  this.progressvalue = 70;
+                  theForm.artistphotopath = data.filedata.filepath;
+                  theForm.artistphotoname = data.filedata.filename;
+                  theForm.status = 'STSACT';
+                  this.progressvalue = 90;
+                  //console.log('Ini file path: '+ theForm.artistphotopath);
+                  if (this.artistid !== '') {
+                    theForm.artistid = this.artistid;
+                  }
+                  this.artistService.saveArtist(this.userObj.userid, theForm)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      this.progressvalue = 0;
+                      this.toastr.error(data.message);
+                    } else {
+                      this.loading = false;
+                      this.progressvalue = 100;
+                      this.toastr.success(data.message);
+                      //this.router.navigate(['listartist']);
+                    }
+                    this.addArtistForm.reset();
+                    this.artistimageVar.nativeElement.value = "";
+                    this.progressvalue = 0;
+                  },
+                  err => {
+                    this.loading = false;
+                    this.progressvalue = 0;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }
+            },
+            err => {
+              this.progressvalue = 0;
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+     
+        } else {
+            this.toastr.error('Please provide artist photo...');
+        }
+      } */
     AddartistComponent.prototype.addArtist = function (formdata) {
         var _this = this;
         this.progressvalue = 0;
@@ -2428,7 +3486,7 @@ var AddartistComponent = /** @class */ (function () {
                     if (_this.artistid !== '') {
                         theForm_1.artistid = _this.artistid;
                     }
-                    _this.artistService.saveArtist(_this.userObj.userid, theForm_1)
+                    _this.artistService.pubsaveArtist(_this.userObj.userid, theForm_1)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -2444,14 +3502,69 @@ var AddartistComponent = /** @class */ (function () {
                         _this.addArtistForm.reset();
                         _this.artistimageVar.nativeElement.value = "";
                         _this.progressvalue = 0;
+                    }, function (err) {
+                        _this.loading = false;
+                        _this.progressvalue = 0;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
+            }, function (err) {
+                _this.progressvalue = 0;
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
         else {
             this.toastr.error('Please provide artist photo...');
         }
     };
+    /*   addArtist(formdata:any): void {
+        this.progressvalue = 0;
+        const files: Array<File> = this.filesToUpload;
+        if (this.addArtistForm.dirty && this.addArtistForm.valid && files[0]) {
+          this.progressvalue = 10;
+          let theForm = this.addArtistForm.value;
+          let lformData: FormData = new FormData();
+          //console.log('Ini file: '+ files[0]['name']);
+          this.progressvalue = 30;
+          lformData.append('fileinputsrc',files[0],files[0]['name']);
+          lformData.append('uploadpath',this.artistuploadpath);
+          lformData.append('artistname',theForm.artistname);
+          lformData.append('status','STSACT');
+          //console.log(lformData.getAll('artistimage'));
+          //console.dir(theForm);
+          this.loading = true;
+          this.progressvalue = 70;
+          this.artistService.addArtist(this.userObj.userid,lformData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                this.toastr.error(data.message);
+              } else {
+                  this.progressvalue = 80;
+                  this.progressvalue = 90;
+                  this.loading = false;
+                  this.progressvalue = 100;
+                  this.toastr.success(data.message);
+                  this.addArtistForm.reset();
+                  this.artistimageVar.nativeElement.value = "";
+                  this.progressvalue = 0;
+              }
+            },
+            err => {
+              this.progressvalue = 0;
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+     
+        } else {
+            this.toastr.error('Please provide artist photo...');
+        }
+      } */
     AddartistComponent.prototype.fileChangeEvent = function (fileInput) {
         var files = fileInput.target.files;
         //console.log('content file: ' + this.filesToUpload);
@@ -2582,6 +3695,8 @@ var EditartistComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
         });
     };
     EditartistComponent.prototype.getArtist = function (id) {
@@ -2596,6 +3711,11 @@ var EditartistComponent = /** @class */ (function () {
                     _this.router.navigate(['listartist']);
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listartist']);
         });
     };
     EditartistComponent.prototype.populateForm = function (data) {
@@ -2612,7 +3732,7 @@ var EditartistComponent = /** @class */ (function () {
                 theForm.artistid = this.artistid;
             }
             this.loading = true;
-            this.artistService.saveArtist(this.userObj.userid, theForm)
+            this.artistService.pubsaveArtist(this.userObj.userid, theForm)
                 .subscribe(function (data) {
                 _this.loading = false;
                 if (data.success === false) {
@@ -2628,9 +3748,44 @@ var EditartistComponent = /** @class */ (function () {
                 if (!_this.artistid) {
                     _this.artistForm.reset();
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
+    /*   saveArtist(formdata:any): void {
+        if (this.artistForm.valid) {
+          const theForm:any = this.artistForm.value;
+          if (this.artistid !== '') {
+            theForm.artistid = this.artistid;
+          
+          }
+          this.loading = true;
+          this.artistService.saveArtist(this.userObj.userid,theForm)
+            .subscribe(data => {
+              this.loading = false;
+              if (data.success === false) {
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.toastr.success(data.message);
+              }
+              if (!this.artistid) {
+                this.artistForm.reset();
+              }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        }
+      } */
     EditartistComponent.prototype.onBack = function () {
         this.router.navigate(['/listartist'], { preserveQueryParams: true });
     };
@@ -2745,6 +3900,8 @@ var EditartistphotoComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.maxfilesize = { code: '', value: '0' };
         });
     };
     EditartistphotoComponent.prototype.getArtist = function (id) {
@@ -2760,6 +3917,10 @@ var EditartistphotoComponent = /** @class */ (function () {
                     _this.router.navigate(['listartist']);
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listartist']);
         });
     };
     EditartistphotoComponent.prototype.populateForm = function (data) {
@@ -2810,26 +3971,14 @@ var EditartistphotoComponent = /** @class */ (function () {
             else {
                 _this.progressvalue = 50;
                 _this.displayImg = data.filedata.filepath;
-                var payloadData_1 = {};
-                payloadData_1.uploadpath = _this.artistuploadpath;
-                payloadData_1.filename = _this.artistForm.value.artistphotoname;
-                _this.progressvalue = 70;
-                _this.ftService.deleteInputFile(payloadData_1)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        //this.toastr.error(data.message);
-                        _this.progressvalue = 0;
-                        console.log('Error deleted ' + data.message);
-                    }
-                    else {
-                        console.log('File deleted - ' + payloadData_1.filename);
-                    }
-                });
+                var payloadData = {};
+                //payloadData.uploadpath = this.artistuploadpath;
+                payloadData.oldartistphotoname = _this.artistForm.value.artistphotoname;
+                payloadData.artistphotoname = data.filedata.filename;
+                payloadData.artistphotopath = data.filedata.filepath;
+                payloadData.labelid = _this.userObj.userid;
                 _this.progressvalue = 80;
-                _this.artistForm.value.artistphotopath = data.filedata.filepath;
-                _this.artistForm.value.artistphotoname = data.filedata.filename;
-                console.log('Update database photo - ' + _this.displayImg);
-                _this.artistService.updateArtistphoto(_this.artistid, _this.artistForm.value)
+                _this.artistService.pubupdateArtistphoto(_this.artistid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -2843,14 +3992,132 @@ var EditartistphotoComponent = /** @class */ (function () {
                     else {
                         _this.loading = false;
                         _this.progressvalue = 100;
-                        console.log('Success update database photo - ' + _this.displayImg);
+                        //console.log('Success update database photo - ' + this.displayImg)
                         _this.toastr.success(data.message);
                         _this.progressvalue = 0;
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.progressvalue = 0;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
+    /*   uploadNewPhoto(newFileData:any): void {
+        const files: Array<File> = newFileData;
+        let lformData: FormData = new FormData();
+        this.progressvalue = 10;
+        lformData.append('fileinputsrc',files[0],files[0]['name']);
+        lformData.append('uploadpath',this.artistuploadpath);
+        lformData.append('artistphotoname',this.artistForm.value.artistphotoname);
+        lformData.append('labelid',this.userObj.userid);
+        this.loading = true;
+        this.progressvalue = 30;
+        this.artistService.pubupdateArtistphoto(this.artistid, lformData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            this.progressvalue = 50;
+            //this.displayImg = data.filedata.filepath;
+            this.progressvalue = 70;
+            this.progressvalue = 80;
+            this.progressvalue = 100;
+            this.toastr.success(data.message);
+            this.progressvalue = 0;
+            this.router.navigate(['/listartist'], { preserveQueryParams: true });
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
+    /*   uploadNewPhoto(newFileData:any): void {
+        const files: Array<File> = newFileData;
+        let lformData: FormData = new FormData();
+        this.progressvalue = 10;
+        lformData.append('fileinputsrc',files[0],files[0]['name']);
+        lformData.append('uploadpath',this.artistuploadpath);
+        this.loading = true;
+        this.progressvalue = 30;
+        this.ftService.uploadInputFile(lformData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            this.toastr.error(data.message);
+          } else {
+            this.progressvalue = 50;
+            this.displayImg = data.filedata.filepath;
+            let payloadData: any = {};
+            payloadData.uploadpath = this.artistuploadpath;
+            payloadData.filename = this.artistForm.value.artistphotoname;
+            this.progressvalue = 70;
+            this.ftService.deleteInputFile(payloadData)
+            .subscribe(data => {
+               if (data.success === false) {
+                  //this.toastr.error(data.message);
+                  this.progressvalue = 0;
+                  console.log('Error deleted ' + data.message);
+                } else {
+                  console.log('File deleted - ' + payloadData.filename);
+                }
+              },
+              err => {
+                console.log(err);
+              });
+            this.progressvalue = 80;
+            this.artistForm.value.artistphotopath = data.filedata.filepath;
+            this.artistForm.value.artistphotoname = data.filedata.filename;
+    
+            //console.log('Update database photo - ' + this.displayImg);
+            this.artistService.updateArtistphoto(this.artistid, this.artistForm.value)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.loading = false;
+                this.progressvalue = 100;
+                //console.log('Success update database photo - ' + this.displayImg)
+                this.toastr.success(data.message);
+                this.progressvalue = 0;
+              }
+            },
+            err => {
+              this.loading = false;
+              this.progressvalue = 0;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+    
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
     EditartistphotoComponent.prototype.onBack = function () {
         this.router.navigate(['/listartist'], { preserveQueryParams: true });
     };
@@ -2982,6 +4249,8 @@ var ListartistComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ListartistComponent.prototype.getReport = function (formdata) {
@@ -3025,6 +4294,10 @@ var ListartistComponent = /** @class */ (function () {
                   this.reportTitle = 'Selected inactive Artists'
                 } */
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListartistComponent.prototype.setPage = function (page) {
@@ -3065,10 +4338,10 @@ var ListartistComponent = /** @class */ (function () {
                 else {
                     if (confirm('Do you really want to delete this artist: ' + artistname + ' record?')) {
                         var payloadData = {};
-                        payloadData.uploadpath = _this.artistuploadpath;
-                        payloadData.filename = artistphotoname;
+                        payloadData.artistphotoname = artistphotoname;
+                        payloadData.labelid = _this.userObj.userid;
                         _this.loading = true;
-                        _this.ftService.deleteInputFile(payloadData)
+                        _this.artistService.pubdeleteArtist(artistid, payloadData)
                             .subscribe(function (data) {
                             if (data.success === false) {
                                 _this.loading = false;
@@ -3079,30 +4352,95 @@ var ListartistComponent = /** @class */ (function () {
                                 _this.toastr.error(data.message);
                             }
                             else {
-                                _this.artistService.deleteArtist(artistid)
-                                    .subscribe(function (data) {
-                                    if (data.success === false) {
-                                        _this.loading = false;
-                                        if (data.errcode) {
-                                            _this.authService.logout();
-                                            _this.router.navigate(['login']);
-                                        }
-                                        _this.toastr.error(data.message);
-                                    }
-                                    else {
-                                        _this.loading = false;
-                                        _this.artists.splice(idx, 1);
-                                        _this.totalrows = _this.totalrows - 1;
-                                        _this.toastr.success(data.message);
-                                    }
-                                });
+                                _this.loading = false;
+                                _this.artists.splice(idx, 1);
+                                _this.totalrows = _this.totalrows - 1;
+                                _this.toastr.success(data.message);
                             }
+                        }, function (err) {
+                            _this.loading = false;
+                            //console.log(err);
+                            _this.toastr.error(err);
                         });
                     }
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
+    /*   confirmDel(idx: number, artistid: string, artistname:string, artistphotoname:string) {
+        var totalalbum: number;
+        
+        let payload: any = {};
+        payload.artistid = artistid;
+        this.loading = true;
+        this.albumService.getArtistAlbums(this.userObj.userid, payload)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.toastr.error(data.message);
+          } else {
+            this.loading = false;
+            totalalbum = +data.totalcount;
+            if (totalalbum > 0) {
+              this.toastr.warning('Can not delete artist. It already has albums.');
+            } else {
+              if(confirm('Do you really want to delete this artist: ' + artistname + ' record?')){
+                let payloadData: any = {};
+                payloadData.uploadpath = this.artistuploadpath;
+                payloadData.filename = artistphotoname;
+                this.loading = true;
+                this.ftService.deleteInputFile(payloadData)
+                .subscribe(data => {
+                   if (data.success === false) {
+                    this.loading = false;
+                      if (data.errcode){
+                        this.authService.logout();
+                        this.router.navigate(['login']);
+                      }
+                      this.toastr.error(data.message);
+                    } else {
+                      this.artistService.deleteArtist(artistid)
+                      .subscribe(data => {
+                        if (data.success === false) {
+                          this.loading = false;
+                          if (data.errcode){
+                            this.authService.logout();
+                            this.router.navigate(['login']);
+                          }
+                          this.toastr.error(data.message);
+                        } else {
+                          this.loading = false;
+                          this.artists.splice(idx, 1);
+                          this.totalrows = this.totalrows - 1;
+                          this.toastr.success(data.message);
+                        }
+                      },
+                      err => {
+                        this.loading = false;
+                        //console.log(err);
+                        this.toastr.error(err);
+                      });
+                    }
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }
+            }
+          }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
     ListartistComponent.prototype.editArtist = function (artistid) {
         this.router.navigate(["editartist/" + artistid], {
             queryParams: { artistname: this.qartistname, status: this.qstatus, page: this.qpage || 1, sortby: this.qsort }
@@ -3249,6 +4587,8 @@ var ViewartistComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ViewartistComponent.prototype.getArtist = function (id) {
@@ -3270,6 +4610,9 @@ var ViewartistComponent = /** @class */ (function () {
                     _this.toastr.error('Artist id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewartistComponent.prototype.populateForm = function (data) {
@@ -3295,6 +4638,9 @@ var ViewartistComponent = /** @class */ (function () {
                 _this.qartistid = formval.artistid;
                 _this.reportTitle = 'Albums Result';
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewartistComponent.prototype.setPage = function (page) {
@@ -3460,6 +4806,8 @@ var ArtiststatsComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ArtiststatsComponent.prototype.getLabels = function () {
@@ -3474,6 +4822,8 @@ var ArtiststatsComponent = /** @class */ (function () {
                     _this.userlist = [{ _id: '', name: 'Error label list' }];
                 }
             }
+        }, function (err) {
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
         });
     };
     ArtiststatsComponent.prototype.getReport = function (formdata) {
@@ -3519,6 +4869,10 @@ var ArtiststatsComponent = /** @class */ (function () {
                   this.reportTitle = 'Selected inactive Artists'
                 } */
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ArtiststatsComponent.prototype.setPage = function (page) {
@@ -3549,16 +4903,14 @@ var ArtiststatsComponent = /** @class */ (function () {
     };
     ArtiststatsComponent.prototype.showArtist = function (artistid, labelid) {
         //console.log(artistid + '  ' + labelid);
-        if (this.qlabelid) {
-            this.router.navigate(["viewartiststats/" + artistid], {
-                queryParams: { labelid: this.qlabelid, artistname: this.qartistname, status: this.qstatus, page: this.qpage || 1, sortby: this.qsort }
-            });
-        }
-        else {
-            this.router.navigate(["viewartiststats/" + artistid], {
-                queryParams: { labelid: labelid, artistname: this.qartistname, status: this.qstatus, page: this.qpage || 1, sortby: this.qsort }
-            });
-        }
+        this.router.navigate(["viewartiststats/" + artistid], {
+            queryParams: { label: labelid,
+                labelid: this.qlabelid,
+                artistname: this.qartistname,
+                status: this.qstatus,
+                page: this.qpage || 1,
+                sortby: this.qsort }
+        });
     };
     ArtiststatsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -3652,7 +5004,7 @@ var ViewartiststatsComponent = /** @class */ (function () {
             _this.getArtist(artistid);
         });
         this.route.queryParams.forEach(function (params) {
-            _this.qlabelid = params['labelid'] || '';
+            _this.qlabelid = params['label'] || '';
             _this.qartistid = params['artistid'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
@@ -3682,6 +5034,8 @@ var ViewartiststatsComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
         });
     };
     ViewartiststatsComponent.prototype.getArtist = function (id) {
@@ -3703,6 +5057,9 @@ var ViewartiststatsComponent = /** @class */ (function () {
                     _this.toastr.error('Artist id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewartiststatsComponent.prototype.populateForm = function (data) {
@@ -3729,6 +5086,9 @@ var ViewartiststatsComponent = /** @class */ (function () {
                 _this.qartistid = formval.artistid;
                 _this.reportTitle = 'Albums Result';
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewartiststatsComponent.prototype.setPage = function (page) {
@@ -3798,7 +5158,7 @@ module.exports = ""
 /***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div class=\"form-group\">\n        <label for=\"labelname\" class=\"control-label\">Name</label>\n        <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.name }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\" class=\"control-label\">Email</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\">@</div>\n            <div class=\"form-ele\">{{ this.email }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <label for=\"contactno\" class=\"control-label\">Contact No</label>\n      <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n          <div class=\"form-ele\">{{ this.contactno }}</div>\n      </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\"> \n            <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-11 col-sm-8\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-1 col-sm-4\"></div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div class=\"form-group\">\n        <label for=\"labelname\" class=\"control-label\">Name</label>\n        <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.name }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\" class=\"control-label\">Email</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\">@</div>\n            <div class=\"form-ele\">{{ this.email }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <label for=\"contactno\" class=\"control-label\">Contact No</label>\n      <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n          <div class=\"form-ele\">{{ this.contactno }}</div>\n      </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\"> \n            <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                    <a style=\"cursor:pointer\" routerLink=\"../activitylog\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Activity Log</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Activity Log</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" routerLink=\"../activitylogstats\" routerLinkActive=\"active\" class=\"list-group-item borderless bordersideless\">View Activity Log</a>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -3878,6 +5238,9 @@ var DashboardComponent = /** @class */ (function () {
                 _this.contactno = _this.user.contactno;
                 _this.balance = _this.user.balance;
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
         if (this.userObj.usertype === 'ADM') {
             this.fetchReportAdm(this.userObj.userid);
@@ -3926,10 +5289,19 @@ var DashboardComponent = /** @class */ (function () {
                             else {
                                 _this.totalsongs = +data.totalcount;
                             }
+                        }, function (err) {
+                            //console.log(err);
+                            _this.toastr.error(err);
                         });
                     }
+                }, function (err) {
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
         //songpurchaseService.getPendingSongpurchaseCount
         var payload = {};
@@ -3946,6 +5318,9 @@ var DashboardComponent = /** @class */ (function () {
             else {
                 _this.totalpendingpurchase = +data.totalcount;
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     DashboardComponent.prototype.fetchReportAdm = function (userid) {
@@ -3966,6 +5341,9 @@ var DashboardComponent = /** @class */ (function () {
             else {
                 _this.totalpendinglabel = +data.totalcount;
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
         var payloadsg = {};
         payloadsg.songpublish = 'N';
@@ -3981,6 +5359,9 @@ var DashboardComponent = /** @class */ (function () {
             else {
                 _this.totalpendingsong = +data.totalcount;
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     DashboardComponent.prototype.toArtists = function () {
@@ -4180,6 +5561,9 @@ var LabelbalancedialogComponent = /** @class */ (function () {
                     _this.totalstr = "0";
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.success = false;
         });
     };
     LabelbalancedialogComponent.prototype.onCloseCancel = function () {
@@ -4330,6 +5714,9 @@ var LabelstatsComponent = /** @class */ (function () {
                     _this.yn = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.yn = [{ code: '', value: 'Error ms config list' }];
         });
     };
     LabelstatsComponent.prototype.getReport = function (formdata) {
@@ -4377,6 +5764,10 @@ var LabelstatsComponent = /** @class */ (function () {
                     veremail: _this.qveremail
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     LabelstatsComponent.prototype.setPage = function (page) {
@@ -4434,8 +5825,12 @@ var LabelstatsComponent = /** @class */ (function () {
             else {
                 if (confirm('Do you really want to activate this label: ' + labelname + ' record?')) {
                     var payloadData = {};
+                    payloadData.labelid = userid;
+                    payloadData.emailto = email;
+                    payloadData.vlink = this.urlkaxet;
+                    payloadData.username = username;
                     payloadData.status = 'STSACT';
-                    this.labelmgtService.updateLabelStatus(userid, payloadData)
+                    this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -4446,23 +5841,14 @@ var LabelstatsComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            var payload = {};
-                            payload.emailto = email;
-                            payload.vlink = _this.urlkaxet;
-                            payload.username = username;
-                            var successmsg_1 = data.message;
-                            _this.notifService.sendemailwelcome(payload)
-                                .subscribe(function (data) {
-                                _this.loading = false;
-                                if (data.success === true) {
-                                    _this.toastr.success(successmsg_1);
-                                }
-                                else {
-                                    _this.toastr.warning(successmsg_1 + '. However welcome email not send. ' + data.message);
-                                }
-                                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
-                            });
+                            _this.loading = false;
+                            _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+                            _this.toastr.success(data.message);
                         }
+                    }, function (err) {
+                        _this.loading = false;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
                 else {
@@ -4471,14 +5857,74 @@ var LabelstatsComponent = /** @class */ (function () {
             }
         }
     };
+    /*   activateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+    
+        this.loading = true;
+        if (status == 'STSACT') {
+          this.loading = false;
+          this.toastr.warning('The label is already active.');
+        } else {
+          if (status === 'STSRJCT') {
+            this.loading = false;
+            this.toastr.warning('The label is already rejected.');
+          } else {
+            if(confirm('Do you really want to activate this label: ' + labelname + ' record?')){
+              let payloadData: any = {};
+              payloadData.status = 'STSACT';
+              this.labelmgtService.updateLabelStatus(userid, payloadData)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  if (data.errcode){
+                    this.authService.logout();
+                    this.router.navigate(['login']);
+                  }
+                  this.toastr.error(data.message);
+                } else {
+                  let payload: any = {};
+                  payload.emailto = email;
+                  payload.vlink = this.urlkaxet;
+                  payload.username = username;
+                  let successmsg = data.message;
+                  this.notifService.sendemailwelcome(payload)
+                  .subscribe(data => {
+                    this.loading = false;
+                    if (data.success === true) {
+                      this.toastr.success(successmsg);
+                    } else {
+                      this.toastr.warning(successmsg + '. However welcome email not send. ' + data.message);
+                    }
+                    this.fetchReport(this.userObj.userid, this.reportForm.value);
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                    this.fetchReport(this.userObj.userid, this.reportForm.value);
+                  });
+                }
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+              });
+            } else {
+              this.loading = false;
+            }
+          }
+        }
+      } */
     LabelstatsComponent.prototype.deactivateLabel = function (userid, labelname, status, email, username) {
         var _this = this;
         this.loading = true;
         if (status === 'STSPEND') {
             if (confirm('Do you really want to reject this label: ' + labelname + ' record?')) {
                 var payloadData = {};
+                payloadData.labelid = userid;
+                payloadData.username = username;
                 payloadData.status = 'STSRJCT';
-                this.labelmgtService.updateLabelStatus(userid, payloadData)
+                this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -4493,6 +5939,10 @@ var LabelstatsComponent = /** @class */ (function () {
                         _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
                         _this.toastr.success(data.message);
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
             else {
@@ -4507,8 +5957,11 @@ var LabelstatsComponent = /** @class */ (function () {
             else {
                 if (confirm('Do you really want to deactivate this label: ' + labelname + ' record?')) {
                     var payloadData = {};
+                    payloadData.labelid = userid;
+                    payloadData.emailto = email;
+                    payloadData.username = username;
                     payloadData.status = 'STSINACT';
-                    this.labelmgtService.updateLabelStatus(userid, payloadData)
+                    this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -4519,22 +5972,14 @@ var LabelstatsComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            var payload = {};
-                            payload.emailto = email;
-                            payload.username = username;
-                            var successmsg_2 = data.message;
-                            _this.notifService.senddeactivation(payload)
-                                .subscribe(function (data) {
-                                _this.loading = false;
-                                if (data.success === true) {
-                                    _this.toastr.success(successmsg_2);
-                                }
-                                else {
-                                    _this.toastr.warning(successmsg_2 + '. However welcome email not send. ' + data.message);
-                                }
-                                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
-                            });
+                            _this.loading = false;
+                            _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+                            _this.toastr.success(data.message);
                         }
+                    }, function (err) {
+                        _this.loading = false;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
                 else {
@@ -4543,6 +5988,86 @@ var LabelstatsComponent = /** @class */ (function () {
             }
         }
     };
+    /*   deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+        
+        this.loading = true;
+        if (status === 'STSPEND') {
+          if(confirm('Do you really want to reject this label: ' + labelname + ' record?')){
+            let payloadData: any = {};
+            payloadData.status = 'STSRJCT';
+            this.labelmgtService.updateLabelStatus(userid, payloadData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.loading = false;
+                this.fetchReport(this.userObj.userid, this.reportForm.value);
+                this.toastr.success(data.message);
+              }
+            },
+            err => {
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          } else {
+            this.loading = false;
+          }
+        } else {
+          if (status != 'STSACT') {
+            this.loading = false;
+            this.toastr.warning('The label is already NOT active.');
+          } else {
+            if(confirm('Do you really want to deactivate this label: ' + labelname + ' record?')){
+              let payloadData: any = {};
+              payloadData.status = 'STSINACT';
+              this.labelmgtService.updateLabelStatus(userid, payloadData)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  if (data.errcode){
+                    this.authService.logout();
+                    this.router.navigate(['login']);
+                  }
+                  this.toastr.error(data.message);
+                } else {
+                  let payload: any = {};
+                  payload.emailto = email;
+                  payload.username = username;
+                  let successmsg = data.message;
+                  this.notifService.senddeactivation(payload)
+                  .subscribe(data => {
+                    this.loading = false;
+                    if (data.success === true) {
+                      this.toastr.success(successmsg);
+                    } else {
+                      this.toastr.warning(successmsg + '. However welcome email not send. ' + data.message);
+                    }
+                    this.fetchReport(this.userObj.userid, this.reportForm.value);
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+                }
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+              });
+            } else {
+              this.loading = false;
+            }
+          }
+        }
+      } */
     LabelstatsComponent.prototype.showLabel = function (userid) {
         this.router.navigate(["viewlabelstats/" + userid], {
             queryParams: {
@@ -4669,6 +6194,10 @@ var ViewlabelstatsComponent = /** @class */ (function () {
                 _this.user = data.data[0];
                 _this.populateForm(_this.user);
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewlabelstatsComponent.prototype.populateForm = function (data) {
@@ -4800,6 +6329,8 @@ var AddconfigComponent = /** @class */ (function () {
                     _this.grouplist = [{ code: '', value: 'Error group list' }];
                 }
             }
+        }, function (err) {
+            _this.grouplist = [{ code: '', value: 'Error group list' }];
         });
     };
     AddconfigComponent.prototype.getMsconfigVal = function (code, groupid) {
@@ -4813,6 +6344,8 @@ var AddconfigComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.maxfilesize = { code: '', value: '0' };
         });
     };
     AddconfigComponent.prototype.addMsconfig = function (formdata) {
@@ -4867,8 +6400,18 @@ var AddconfigComponent = /** @class */ (function () {
                             _this.inputgroupVar.nativeElement.selectedIndex = 0;
                             _this.genreimageVar.nativeElement.value = "";
                             _this.progressvalue = 0;
+                        }, function (err) {
+                            _this.loading = false;
+                            _this.progressvalue = 0;
+                            //console.log(err);
+                            _this.toastr.error(err);
                         });
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
             else {
@@ -4897,6 +6440,11 @@ var AddconfigComponent = /** @class */ (function () {
                     _this.inputgroupVar.nativeElement.selectedIndex = 0;
                     _this.genreimageVar.nativeElement.value = "";
                     _this.progressvalue = 0;
+                }, function (err) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
         }
@@ -5036,6 +6584,10 @@ var AddgroupComponent = /** @class */ (function () {
                     //this.router.navigate(['listartist']);
                 }
                 _this.addGroupForm.reset();
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -5149,6 +6701,8 @@ var EditconfigComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
         });
     };
     EditconfigComponent.prototype.getMsconfiggroup = function () {
@@ -5163,6 +6717,8 @@ var EditconfigComponent = /** @class */ (function () {
                     _this.grouplist = [{ code: '', value: 'Error group list' }];
                 }
             }
+        }, function (err) {
+            _this.grouplist = [{ code: '', value: 'Error group list' }];
         });
     };
     EditconfigComponent.prototype.getMsconfig = function (id) {
@@ -5183,6 +6739,10 @@ var EditconfigComponent = /** @class */ (function () {
                     _this.toastr.error('MsConfig id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditconfigComponent.prototype.populateForm = function (data) {
@@ -5219,6 +6779,10 @@ var EditconfigComponent = /** @class */ (function () {
                 if (!_this.msconfigid) {
                     _this.msconfigForm.reset();
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -5333,6 +6897,8 @@ var EditconfigfileComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.maxfilesize = { code: '', value: '0' };
         });
     };
     EditconfigfileComponent.prototype.getMsconfig = function (id) {
@@ -5354,6 +6920,10 @@ var EditconfigfileComponent = /** @class */ (function () {
                     _this.toastr.error('MsConfig id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditconfigfileComponent.prototype.populateForm = function (data) {
@@ -5420,6 +6990,8 @@ var EditconfigfileComponent = /** @class */ (function () {
                     else {
                         console.log('File deleted - ' + payloadData_1.filename);
                     }
+                }, function (err) {
+                    console.log('Error deleted ' + err);
                 });
                 _this.msconfigForm.value.msconfigid = _this.msconfigid;
                 _this.msconfigForm.value.filepath = data.filedata.filepath;
@@ -5444,8 +7016,18 @@ var EditconfigfileComponent = /** @class */ (function () {
                         _this.toastr.success(data.message);
                         _this.progressvalue = 0;
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.progressvalue = 0;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditconfigfileComponent.prototype.onBack = function () {
@@ -5586,6 +7168,10 @@ var ListconfigComponent = /** @class */ (function () {
                     }
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListconfigComponent.prototype.getReport = function (formdata) {
@@ -5633,6 +7219,10 @@ var ListconfigComponent = /** @class */ (function () {
                     status: _this.qstatus
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListconfigComponent.prototype.setPage = function (page) {
@@ -5728,6 +7318,8 @@ var ListconfigComponent = /** @class */ (function () {
                     else {
                         console.log('File deleted - ' + payloadData_1.filename);
                     }
+                }, function (err) {
+                    console.log('Error deleted ' + err);
                 });
             }
             this.msconfigService.deleteMsconfig(msconfigid)
@@ -5746,6 +7338,10 @@ var ListconfigComponent = /** @class */ (function () {
                     _this.totalrows = _this.totalrows - 1;
                     _this.toastr.success(data.message);
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -5848,6 +7444,10 @@ var ViewconfigComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewconfigComponent.prototype.getMsconfig = function (id) {
@@ -5869,6 +7469,9 @@ var ViewconfigComponent = /** @class */ (function () {
                     _this.toastr.error('MsConfig id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewconfigComponent.prototype.populateForm = function (data) {
@@ -6131,6 +7734,12 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                     _this.pmtd = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.pmtd = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongcompletepurchaseComponent.prototype.getReport = function (formdata) {
@@ -6245,6 +7854,10 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                     enddt: _this.qenddt,
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongcompletepurchaseComponent.prototype.setPage = function (page) {
@@ -6523,6 +8136,11 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     _this.pfee = { code: '', value: 'Error ms config list' };
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.pfee = { code: '', value: 'Error ms config list' };
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongpendingpurchaseComponent.prototype.getReport = function (formdata) {
@@ -6660,6 +8278,10 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     enddt: _this.qenddt,
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongpendingpurchaseComponent.prototype.setPage = function (page) {
@@ -6746,73 +8368,17 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
             this.loading = true;
             var payload = {};
             payload.status = 'STSAPV';
-            this.songpurchaseService.updateStatuspurchase(songpurchaseid, payload)
+            payload.listenerid = listenerid;
+            payload.songpurchaseid = songpurchaseid;
+            payload.paymentmtd = 'PMTCASH';
+            payload.producttype = 'SONG';
+            payload.songid = songid;
+            payload.dbcr = '-';
+            payload.amount = Number(this.pfee.value) * (parseInt(songprice) / 100);
+            this.songpurchaseService.pubSaveSongpurchasePayment(this.userObj.userid, payload)
                 .subscribe(function (data) {
                 if (data.success === true) {
-                    var payload1 = {};
-                    payload1.listenerid = listenerid;
-                    payload1.purchaseid = songpurchaseid;
-                    payload1.paymentmtd = 'PMTCASH';
-                    payload1.producttype = 'SONG';
-                    payload1.productid = songid;
-                    payload1.dbcr = '-';
-                    payload1.amount = Number(_this.pfee.value) * (parseInt(songprice) / 100);
-                    _this.transactionService.saveTransaction(_this.userObj.userid, payload1)
-                        .subscribe(function (data) {
-                        if (data.success === true) {
-                            var payload2 = {};
-                            _this.songService.songbuyincrement(songid, payload2)
-                                .subscribe(function (data) {
-                                if (data.success === true) {
-                                    _this.loading = false;
-                                    _this.toastr.success('Approve payment success !');
-                                }
-                                else {
-                                    _this.toastr.warning('Error increment total purchase in song data...');
-                                }
-                                _this.router.navigate(['songpendingpurchase'], {
-                                    queryParams: {
-                                        artistname: _this.qartistname,
-                                        //albumname: this.qalbumname,
-                                        buyername: _this.qbuyername,
-                                        songname: _this.qsongname,
-                                        rptype: _this.qrptype,
-                                        startdt: _this.qstartdt,
-                                        enddt: _this.qenddt,
-                                        page: _this.qpage || 1,
-                                        sortby: _this.qsort
-                                    }
-                                });
-                            });
-                        }
-                        else {
-                            _this.toastr.error('Error saving the payment transaction...');
-                        }
-                    });
-                }
-                else {
-                    _this.loading = false;
-                    if (data.errcode) {
-                        _this.authService.logout();
-                        _this.router.navigate(['login']);
-                    }
-                    _this.toastr.error(data.message + '. Error updating the purchase status...');
-                }
-            });
-        }
-    };
-    SongpendingpurchaseComponent.prototype.rejectPayment = function (songpurchaseid, songname) {
-        var _this = this;
-        if (confirm('Do you really want to reject this song payment: ' + songname + ' record?')) {
-            this.loading = true;
-            var payload = {};
-            payload.status = 'STSRJCT';
-            this.songpurchaseService.updateStatuspurchase(songpurchaseid, payload)
-                .subscribe(function (data) {
-                if (data.success === true) {
-                    _this.loading = false;
-                    _this.toastr.success(data.message);
-                    _this.router.navigate(['songpendingpurchase'], {
+                    setTimeout(_this.router.navigate(['songpendingpurchase'], {
                         queryParams: {
                             artistname: _this.qartistname,
                             //albumname: this.qalbumname,
@@ -6824,7 +8390,139 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                             page: _this.qpage || 1,
                             sortby: _this.qsort
                         }
-                    });
+                    }), 1000);
+                    _this.loading = false;
+                    _this.toastr.success('Approve payment success !');
+                }
+                else {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['login']);
+                    }
+                    _this.toastr.error(data.message + '. Error updating the purchase payment...');
+                }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+    };
+    /*   approvePayment(songpurchaseid, songname, songid, listenerid, songprice): void {
+        if(confirm('Do you really want to approve this song payment: ' + songname + ' record?')){
+          this.loading = true;
+          let payload: any = {};
+          payload.status = 'STSAPV';
+          this.songpurchaseService.updateStatuspurchase(songpurchaseid, payload)
+          .subscribe(data => {
+            if (data.success === true) {
+              let payload1: any = {};
+              payload1.listenerid = listenerid;
+              payload1.purchaseid = songpurchaseid;
+              payload1.paymentmtd = 'PMTCASH';
+              payload1.producttype = 'SONG';
+              payload1.productid = songid;
+              payload1.dbcr = '-'
+              payload1.amount = Number(this.pfee.value) * (parseInt(songprice) / 100);
+              this.transactionService.saveTransaction(this.userObj.userid, payload1)
+              .subscribe(data => {
+                if (data.success === true) {
+                  let payload2: any = {};
+                  this.songService.songbuyincrement(songid, payload2)
+                  .subscribe(data => {
+                    if (data.success === true) {
+                      this.loading = false;
+                      this.toastr.success('Approve payment success !');
+                    } else {
+                      this.toastr.warning('Error increment total purchase in song data...');
+                    }
+                    this.router.navigate(['songpendingpurchase'],
+                      {
+                          queryParams: {
+                            artistname: this.qartistname,
+                            //albumname: this.qalbumname,
+                            buyername: this.qbuyername,
+                            songname: this.qsongname,
+                            rptype: this.qrptype,
+                            startdt: this.qstartdt,
+                            enddt: this.qenddt,
+                            page: this.qpage || 1,
+                            sortby: this.qsort }
+                      }
+                    );
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                    this.router.navigate(['songpendingpurchase'],
+                      {
+                          queryParams: {
+                            artistname: this.qartistname,
+                            //albumname: this.qalbumname,
+                            buyername: this.qbuyername,
+                            songname: this.qsongname,
+                            rptype: this.qrptype,
+                            startdt: this.qstartdt,
+                            enddt: this.qenddt,
+                            page: this.qpage || 1,
+                            sortby: this.qsort }
+                      }
+                    );
+                  });
+                } else {
+                  this.loading = false;
+                  this.toastr.error('Error saving the payment transaction...');
+                }
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+              });
+    
+            } else {
+              this.loading = false;
+              if (data.errcode){
+                this.authService.logout();
+                this.router.navigate(['login']);
+              }
+              this.toastr.error(data.message + '. Error updating the purchase status...');
+            }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        }
+      } */
+    SongpendingpurchaseComponent.prototype.rejectPayment = function (songpurchaseid, songname) {
+        var _this = this;
+        if (confirm('Do you really want to reject this song payment: ' + songname + ' record?')) {
+            this.loading = true;
+            var payload = {};
+            payload.status = 'STSRJCT';
+            payload.songpurchaseid = songpurchaseid;
+            this.songpurchaseService.pubSaveSongpurchasePayment(this.userObj.userid, payload)
+                .subscribe(function (data) {
+                if (data.success === true) {
+                    setTimeout(_this.router.navigate(['songpendingpurchase'], {
+                        queryParams: {
+                            artistname: _this.qartistname,
+                            //albumname: this.qalbumname,
+                            buyername: _this.qbuyername,
+                            songname: _this.qsongname,
+                            rptype: _this.qrptype,
+                            startdt: _this.qstartdt,
+                            enddt: _this.qenddt,
+                            page: _this.qpage || 1,
+                            sortby: _this.qsort
+                        }
+                    }), 1000);
+                    _this.loading = false;
+                    _this.toastr.success(data.message);
                 }
                 else {
                     _this.loading = false;
@@ -6834,6 +8532,10 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     }
                     _this.toastr.error(data.message);
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -7049,6 +8751,12 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     _this.pmtd = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.pmtd = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongpurchasestatsComponent.prototype.getLabels = function () {
@@ -7063,6 +8771,11 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     _this.userlist = [{ _id: '', name: 'Error label list' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongpurchasestatsComponent.prototype.getReport = function (formdata) {
@@ -7181,6 +8894,10 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     enddt: _this.qenddt,
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongpurchasestatsComponent.prototype.setPage = function (page) {
@@ -7379,6 +9096,9 @@ var ViewpurchaseComponent = /** @class */ (function () {
                     _this.toastr.error('Song purchase id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewpurchaseComponent.prototype.onBack = function () {
@@ -7513,6 +9233,10 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
                     _this.sts = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewsongpurchaseComponent.prototype.getSong = function (id) {
@@ -7534,6 +9258,9 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
                     _this.toastr.error('Song id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewsongpurchaseComponent.prototype.populateForm = function (data) {
@@ -7695,6 +9422,11 @@ var AddsongComponent = /** @class */ (function () {
                     _this.genre = [{ code: '', value: 'Error ms config list' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     AddsongComponent.prototype.getMsconfigVal = function (code, groupid) {
@@ -7708,6 +9440,11 @@ var AddsongComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.maxfilesize = { code: '', value: '0' };
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     AddsongComponent.prototype.getArtistList = function (id) {
@@ -7722,6 +9459,11 @@ var AddsongComponent = /** @class */ (function () {
                     _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     AddsongComponent.prototype.getAlbumList = function (id) {
@@ -7736,6 +9478,11 @@ var AddsongComponent = /** @class */ (function () {
                     _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     AddsongComponent.prototype.getAlbumListbyArtist = function (id, artistid) {
@@ -7751,6 +9498,11 @@ var AddsongComponent = /** @class */ (function () {
                     _this.albumlist = [{ _id: '', albumname: 'No album list available' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.albumlist = [{ _id: '', albumname: 'No album list available' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     AddsongComponent.prototype.addSong = function (formdata) {
@@ -7762,14 +9514,16 @@ var AddsongComponent = /** @class */ (function () {
             this.progressvalue = 10;
             //const prvwfiles: Array<File> = this.PrvwfilesToUpload;
             var theForm_1 = this.addSongForm.value;
-            this.progressvalue = 20;
+            this.progressvalue = 40;
             var lformData = new FormData();
             //console.log('Ini file: '+ prvwfiles[0]['name']);
-            lformData.append('fileinputsrc', prvwfiles[0], prvwfiles[0]['name']);
-            lformData.append('uploadpath', this.prvwuploadpath);
+            lformData.append('prvwfileinputsrc', prvwfiles[0], prvwfiles[0]['name']);
+            lformData.append('prvwuploadpath', this.prvwuploadpath);
+            lformData.append('songfileinputsrc', songfiles[0], songfiles[0]['name']);
+            lformData.append('songuploadpath', this.songuploadpath);
             this.loading = true;
-            this.progressvalue = 30;
-            this.ftService.uploadInputFile(lformData)
+            this.progressvalue = 70;
+            this.songService.uploadSongfiles(this.userObj.userid, lformData)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
@@ -7777,18 +9531,33 @@ var AddsongComponent = /** @class */ (function () {
                     _this.toastr.error(data.message);
                 }
                 else {
-                    _this.progressvalue = 40;
-                    theForm_1.songprvwpath = data.filedata.filepath;
-                    theForm_1.songprvwname = data.filedata.filename;
-                    //const songfiles: Array<File> = this.SongfilesToUpload;
-                    var lformData1 = new FormData();
-                    lformData1.append('fileinputsrc', songfiles[0], songfiles[0]['name']);
-                    lformData1.append('uploadpath', _this.songuploadpath);
-                    //formdata.set is not supported in Safari and other browsers
-                    //lformData.set('fileinputsrc',songfiles[0],songfiles[0]['name']);
-                    //lformData.set('uploadpath',this.songuploadpath);
-                    _this.progressvalue = 50;
-                    _this.ftService.uploadInputFile(lformData1)
+                    _this.progressvalue = 80;
+                    /* let sgformData: FormData = new FormData();
+                    sgformData.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
+                    sgformData.append('uploadpath',this.songuploadpath);
+                    sgformData.append('artistid',theForm.artistid);
+                    sgformData.append('albumid',theForm.albumid);
+                    sgformData.append('songname',theForm.songname);
+                    sgformData.append('songlyric',theForm.songlyric);
+                    sgformData.append('songgenre',theForm.songgenre);
+                    sgformData.append('songprice',theForm.songprice);
+                    sgformData.append('songprvwpath',data.filedata.filepath);
+                    sgformData.append('songprvwname',data.filedata.filename);
+                    sgformData.append('status','STSACT'); */
+                    var payload = {};
+                    payload.artistid = theForm_1.artistid;
+                    payload.albumid = theForm_1.albumid;
+                    payload.songname = theForm_1.songname;
+                    payload.songlyric = theForm_1.songlyric;
+                    payload.songgenre = theForm_1.songgenre;
+                    payload.songprice = theForm_1.songprice;
+                    payload.songprvwpath = data.preview.prvwfilepath;
+                    payload.songprvwname = data.preview.prvwfilename;
+                    payload.songfilepath = data.song.songfilepath;
+                    payload.songfilename = data.song.songfilename;
+                    payload.status = 'STSACT';
+                    _this.progressvalue = 90;
+                    _this.songService.pubsaveSong(_this.userObj.userid, payload)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -7796,44 +9565,132 @@ var AddsongComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.progressvalue = 60;
-                            theForm_1.songfilepath = data.filedata.filepath;
-                            theForm_1.songfilename = data.filedata.filename;
-                            theForm_1.status = 'STSACT';
-                            if (_this.songid !== '') {
-                                theForm_1.songid = _this.songid;
-                            }
-                            _this.progressvalue = 80;
-                            _this.songService.saveSong(_this.userObj.userid, theForm_1.artistid, theForm_1.albumid, theForm_1)
-                                .subscribe(function (data) {
-                                if (data.success === false) {
-                                    _this.loading = false;
-                                    _this.progressvalue = 0;
-                                    _this.toastr.error(data.message);
-                                }
-                                else {
-                                    _this.loading = false;
-                                    _this.progressvalue = 100;
-                                    _this.toastr.success(data.message);
-                                    //this.router.navigate(['listsong']);
-                                }
-                                _this.addSongForm.reset();
-                                _this.progressvalue = 0;
-                                _this.artistVar.nativeElement.selectedIndex = 0;
-                                _this.albumVar.nativeElement.selectedIndex = 0;
-                                _this.genreVar.nativeElement.selectedIndex = 0;
-                                _this.inputpreVar.nativeElement.value = "";
-                                _this.inputsongVar.nativeElement.value = "";
-                            });
+                            _this.loading = false;
+                            _this.progressvalue = 100;
+                            _this.toastr.success(data.message);
+                            //this.router.navigate(['listsong']);
                         }
+                        _this.addSongForm.reset();
+                        _this.progressvalue = 0;
+                        _this.artistVar.nativeElement.selectedIndex = 0;
+                        _this.albumVar.nativeElement.selectedIndex = 0;
+                        _this.genreVar.nativeElement.selectedIndex = 0;
+                        _this.inputpreVar.nativeElement.value = "";
+                        _this.inputsongVar.nativeElement.value = "";
+                    }, function (err) {
+                        _this.loading = false;
+                        _this.progressvalue = 0;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
+            }, function (err) {
+                _this.loading = false;
+                _this.progressvalue = 0;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
         else {
             this.toastr.error('Please provide BOTH Song Preview and Song File...');
         }
     };
+    /* addSong(formdata:any): void {
+      this.progressvalue = 0;
+      const prvwfiles: Array<File> = this.PrvwfilesToUpload;
+      const songfiles: Array<File> = this.SongfilesToUpload;
+      if (this.addSongForm.dirty && this.addSongForm.valid && prvwfiles[0] && songfiles[0]) {
+        this.progressvalue = 10;
+        //const prvwfiles: Array<File> = this.PrvwfilesToUpload;
+        let theForm = this.addSongForm.value;
+        this.progressvalue = 20;
+        let lformData: FormData = new FormData();
+        //console.log('Ini file: '+ prvwfiles[0]['name']);
+        lformData.append('fileinputsrc',prvwfiles[0],prvwfiles[0]['name']);
+        lformData.append('uploadpath',this.prvwuploadpath);
+  
+        this.loading = true;
+        this.progressvalue = 30;
+        this.ftService.uploadInputFile(lformData)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              this.progressvalue = 0;
+              this.toastr.error(data.message);
+            } else {
+              this.progressvalue = 40;
+                theForm.songprvwpath = data.filedata.filepath;
+                theForm.songprvwname = data.filedata.filename;
+                //const songfiles: Array<File> = this.SongfilesToUpload;
+                let lformData1: FormData = new FormData();
+                lformData1.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
+                lformData1.append('uploadpath',this.songuploadpath);
+                //formdata.set is not supported in Safari and other browsers
+                //lformData.set('fileinputsrc',songfiles[0],songfiles[0]['name']);
+                //lformData.set('uploadpath',this.songuploadpath);
+                this.progressvalue = 50;
+                this.ftService.uploadInputFile(lformData1)
+                .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      this.progressvalue = 0;
+                      this.toastr.error(data.message);
+                    } else {
+                      this.progressvalue = 60;
+                      theForm.songfilepath = data.filedata.filepath;
+                      theForm.songfilename = data.filedata.filename;
+                      theForm.status = 'STSACT';
+                      if (this.songid !== '') {
+                        theForm.songid = this.songid;
+                      }
+                      this.progressvalue = 80;
+                      this.songService.saveSong(this.userObj.userid, theForm.artistid, theForm.albumid, theForm)
+                      .subscribe(data => {
+                        if (data.success === false) {
+                          this.loading = false;
+                          this.progressvalue = 0;
+                          this.toastr.error(data.message);
+                        } else {
+                          this.loading = false;
+                          this.progressvalue = 100;
+                          this.toastr.success(data.message);
+                          //this.router.navigate(['listsong']);
+                        }
+                        this.addSongForm.reset();
+                        this.progressvalue = 0;
+                        this.artistVar.nativeElement.selectedIndex = 0;
+                        this.albumVar.nativeElement.selectedIndex = 0;
+                        this.genreVar.nativeElement.selectedIndex = 0;
+                        this.inputpreVar.nativeElement.value = "";
+                        this.inputsongVar.nativeElement.value = "";
+                      },
+                      err => {
+                        this.loading = false;
+                        this.progressvalue = 0;
+                        //console.log(err);
+                        this.toastr.error(err);
+                      });
+                    }
+                },
+                err => {
+                  this.loading = false;
+                  this.progressvalue = 0;
+                  //console.log(err);
+                  this.toastr.error(err);
+                });
+            }
+          },
+          err => {
+            this.loading = false;
+            this.progressvalue = 0;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+   
+      } else {
+        this.toastr.error('Please provide BOTH Song Preview and Song File...');
+      }
+    } */
     AddsongComponent.prototype.prvwfileChangeEvent = function (fileInput) {
         var files = fileInput.target.files;
         //console.log('content file: ' + this.filesToUpload);
@@ -8029,9 +9886,20 @@ var EditsongComponent = /** @class */ (function () {
                     }
                 }
                 else {
-                    _this.genre = [{ code: '', value: 'Error ms config list' }];
+                    _this.sts = [{ code: '', value: 'Empty list' }];
+                    _this.genre = [{ code: '', value: 'Empty list' }];
                 }
             }
+            else {
+                _this.sts = [{ code: '', value: 'Error ms config list' }];
+                _this.genre = [{ code: '', value: 'Error ms config list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditsongComponent.prototype.getArtistList = function (id) {
@@ -8043,16 +9911,24 @@ var EditsongComponent = /** @class */ (function () {
                     //console.log(this.artistlist);
                 }
                 else {
-                    _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+                    _this.artistlist = [{ _id: '', artistname: 'Empty artist list' }];
                 }
             }
+            else {
+                _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditsongComponent.prototype.getAlbumListbyArtist = function (id, artistid) {
         var _this = this;
         this.albumService.getAlbumListbyArtist(id, artistid).subscribe(function (data) {
             if (data.success === true) {
-                console.log(data.data[0]);
+                //console.log(data.data[0]);
                 if (data.data[0]) {
                     _this.albumlist = data.data;
                     //console.log(this.albumlist);
@@ -8061,6 +9937,14 @@ var EditsongComponent = /** @class */ (function () {
                     _this.albumlist = [{ _id: '', albumname: 'No album list available' }];
                 }
             }
+            else {
+                _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditsongComponent.prototype.getSelectedSong = function (id) {
@@ -8073,10 +9957,19 @@ var EditsongComponent = /** @class */ (function () {
                     _this.populateForm(data.data[0]);
                 }
                 else {
-                    _this.toastr.error('Song id is incorrect in the URL');
+                    _this.toastr.error('Empty song result');
                     _this.router.navigate(['listsong']);
                 }
             }
+            else {
+                _this.toastr.error('Song id is incorrect in the URL');
+                _this.router.navigate(['listsong']);
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listsong']);
         });
     };
     EditsongComponent.prototype.populateForm = function (data) {
@@ -8102,7 +9995,7 @@ var EditsongComponent = /** @class */ (function () {
                 theForm.songid = this.songid;
             }
             this.loading = true;
-            this.songService.saveSong(this.userObj.userid, theForm.artistid, theForm.albumid, theForm)
+            this.songService.pubeditSong(this.userObj.userid, theForm)
                 .subscribe(function (data) {
                 _this.loading = false;
                 if (data.success === false) {
@@ -8118,9 +10011,44 @@ var EditsongComponent = /** @class */ (function () {
                 if (!_this.songid) {
                     _this.songForm.reset();
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
+    /*   saveSong(formdata:any): void {
+        if (this.songForm.valid) {
+          const theForm:any = this.songForm.value;
+          if (this.songid !== '') {
+            theForm.songid = this.songid;
+          
+          }
+          this.loading = true;
+          this.songService.saveSong(this.userObj.userid,theForm.artistid, theForm.albumid,theForm)
+            .subscribe(data => {
+              this.loading = false;
+              if (data.success === false) {
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.toastr.success(data.message);
+              }
+              if (!this.songid) {
+                this.songForm.reset();
+              }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        }
+      } */
     EditsongComponent.prototype.onBack = function () {
         this.router.navigate(['/listsong'], { preserveQueryParams: true });
     };
@@ -8249,6 +10177,14 @@ var EditsongfilesComponent = /** @class */ (function () {
                     _this.maxfilesize = { code: '', value: '0' };
                 }
             }
+            else {
+                _this.maxfilesize = { code: '', value: '0' };
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.maxfilesize = { code: '', value: '0' };
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EditsongfilesComponent.prototype.getSong = function (id) {
@@ -8260,10 +10196,19 @@ var EditsongfilesComponent = /** @class */ (function () {
                     _this.populateForm(data.data[0]);
                 }
                 else {
-                    _this.toastr.error('Song id is incorrect in the URL');
+                    _this.toastr.error('Empty Song result...');
                     _this.router.navigate(['listsong']);
                 }
             }
+            else {
+                _this.toastr.error('Song id is incorrect in the URL...');
+                _this.router.navigate(['listsong']);
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listsong']);
         });
     };
     EditsongfilesComponent.prototype.populateForm = function (data) {
@@ -8336,25 +10281,14 @@ var EditsongfilesComponent = /** @class */ (function () {
             else {
                 //let payloadData: any = this.songForm.value;
                 _this.progressvalue = 60;
-                var payloadData_1 = {};
-                payloadData_1.uploadpath = _this.prvwuploadpath;
-                payloadData_1.filename = _this.songForm.value.songprvwname;
+                var payloadData = {};
+                payloadData.songprvwpath = data.filedata.filepath;
+                payloadData.songprvwname = data.filedata.filename;
+                payloadData.oldsongprvwname = _this.songForm.value.songprvwname;
+                payloadData.labelid = _this.userObj.userid;
                 _this.progressvalue = 80;
-                _this.ftService.deleteInputFile(payloadData_1)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        console.log('Error deleted ' + data.message);
-                    }
-                    else {
-                        if (payloadData_1) {
-                            console.log('File deleted - ' + payloadData_1.filename);
-                        }
-                    }
-                });
                 _this.progressvalue = 90;
-                _this.songForm.value.songprvwpath = data.filedata.filepath;
-                _this.songForm.value.songprvwname = data.filedata.filename;
-                _this.songService.updateSongPreview(_this.songid, _this.songForm.value)
+                _this.songService.pubupdateSongPreview(_this.songid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -8372,10 +10306,94 @@ var EditsongfilesComponent = /** @class */ (function () {
                         _this.toastr.success(data.message);
                         _this.progressvalue = 0;
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
+                //this.songForm.value.songprvwpath = data.filedata.filepath;
+                //this.songForm.value.songprvwname = data.filedata.filename;
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.progressvalue = 0;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
+    /*   uploadNewPreview(newFileData:any): void {
+        const files: Array<File> = newFileData;
+        let lformData: FormData = new FormData();
+        this.progressvalue = 10;
+        //lformData.append('songprvw',files[0],files[0]['name']);
+        lformData.append('fileinputsrc',files[0],files[0]['name']);
+        lformData.append('uploadpath',this.prvwuploadpath);
+        this.loading = true;
+        this.progressvalue = 40;
+        this.ftService.uploadInputFile(lformData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            this.toastr.error(data.message);
+          } else {
+            //let payloadData: any = this.songForm.value;
+            this.progressvalue = 60;
+            let payloadData: any = {};
+            payloadData.uploadpath = this.prvwuploadpath;
+            payloadData.filename = this.songForm.value.songprvwname;
+            this.progressvalue = 80;
+            this.ftService.deleteInputFile(payloadData)
+            .subscribe(data => {
+               if (data.success === false) {
+                  console.log('Error deleted ' + data.message);
+                } else {
+                  if (payloadData) {
+                    console.log('File deleted - ' + payloadData.filename);
+                  }
+                }
+              },
+              err => {
+                console.log('Error deleted ' + err);
+              });
+            this.progressvalue = 90;
+            this.songForm.value.songprvwpath = data.filedata.filepath;
+            this.songForm.value.songprvwname = data.filedata.filename;
+              
+            this.songService.updateSongPreview(this.songid, this.songForm.value)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.progressvalue = 100;
+                this.loading = false;
+                console.log('Success update song preview.');
+                this.toastr.success(data.message);
+                this.progressvalue = 0;
+              }
+            },
+            err => {
+              this.loading = false;
+              this.progressvalue = 0;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
     EditsongfilesComponent.prototype.uploadNewSong = function (newFileData) {
         var _this = this;
         var files = newFileData;
@@ -8396,23 +10414,14 @@ var EditsongfilesComponent = /** @class */ (function () {
             else {
                 //let payloadData: any = this.songForm.value;
                 _this.progressvalue = 60;
-                var payloadData_2 = {};
-                payloadData_2.uploadpath = _this.songuploadpath;
-                payloadData_2.filename = _this.songForm.value.songfilename;
+                var payloadData = {};
+                payloadData.songfilepath = data.filedata.filepath;
+                payloadData.songfilename = data.filedata.filename;
+                payloadData.oldsongfilename = _this.songForm.value.songfilename;
+                payloadData.labelid = _this.userObj.userid;
                 _this.progressvalue = 80;
-                _this.ftService.deleteInputFile(payloadData_2)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        console.log('Error deleted ' + data.message);
-                    }
-                    else {
-                        console.log('File deleted - ' + payloadData_2.filename);
-                    }
-                });
                 _this.progressvalue = 90;
-                _this.songForm.value.songfilepath = data.filedata.filepath;
-                _this.songForm.value.songfilename = data.filedata.filename;
-                _this.songService.updateSongFile(_this.songid, _this.songForm.value)
+                _this.songService.pubupdateSongFile(_this.songid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -8430,10 +10439,92 @@ var EditsongfilesComponent = /** @class */ (function () {
                         _this.toastr.success(data.message);
                         _this.progressvalue = 0;
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
+                //this.songForm.value.songfilepath = data.filedata.filepath;
+                //this.songForm.value.songfilename = data.filedata.filename;
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.progressvalue = 0;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
+    /*   uploadNewSong(newFileData:any): void {
+        const files: Array<File> = newFileData;
+        let lformData: FormData = new FormData();
+        this.progressvalue = 10;
+        //lformData.append('songfile',files[0],files[0]['name']);
+        lformData.append('fileinputsrc',files[0],files[0]['name']);
+        lformData.append('uploadpath',this.songuploadpath);
+        this.loading = true;
+        this.progressvalue = 40;
+        this.ftService.uploadInputFile(lformData)
+        .subscribe(data => {
+          if (data.success === false) {
+            this.loading = false;
+            this.progressvalue = 0;
+            this.toastr.error(data.message);
+          } else {
+            //let payloadData: any = this.songForm.value;
+            this.progressvalue = 60;
+            let payloadData: any = {};
+            payloadData.uploadpath = this.songuploadpath;
+            payloadData.filename = this.songForm.value.songfilename;
+            this.progressvalue = 80;
+            this.ftService.deleteInputFile(payloadData)
+            .subscribe(data => {
+               if (data.success === false) {
+                  console.log('Error deleted ' + data.message);
+                } else {
+                  console.log('File deleted - ' + payloadData.filename);
+                }
+              },
+              err => {
+                console.log('Error deleted ' + err);
+              });
+            this.progressvalue = 90;
+            this.songForm.value.songfilepath = data.filedata.filepath;
+            this.songForm.value.songfilename = data.filedata.filename;
+    
+            this.songService.updateSongFile(this.songid, this.songForm.value)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.progressvalue = 100;
+                this.loading = false;
+                console.log('Success update song file.');
+                this.toastr.success(data.message);
+                this.progressvalue = 0;
+              }
+            },
+            err => {
+              this.loading = false;
+              this.progressvalue = 0;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          }
+        },
+        err => {
+          this.loading = false;
+          this.progressvalue = 0;
+          //console.log(err);
+          this.toastr.error(err);
+        });
+      } */
     EditsongfilesComponent.prototype.onBack = function () {
         this.router.navigate(['/listsong'], { preserveQueryParams: true });
     };
@@ -8607,9 +10698,23 @@ var ListsongComponent = /** @class */ (function () {
                     }
                 }
                 else {
-                    _this.genre = [{ code: '', value: 'Error ms config list' }];
+                    _this.sts = [{ code: '', value: 'Empty list...' }];
+                    _this.genre = [{ code: '', value: 'Empty list...' }];
+                    _this.ynlist = [{ code: '', value: 'Empty list...' }];
                 }
             }
+            else {
+                _this.sts = [{ code: '', value: 'Error ms config list' }];
+                _this.ynlist = [{ code: '', value: 'Error ms config list' }];
+                _this.genre = [{ code: '', value: 'Error ms config list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.ynlist = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListsongComponent.prototype.getArtistList = function (id) {
@@ -8621,9 +10726,17 @@ var ListsongComponent = /** @class */ (function () {
                     //console.log(this.artistlist);
                 }
                 else {
-                    _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+                    _this.artistlist = [{ _id: '', artistname: 'Empty list...' }];
                 }
             }
+            else {
+                _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.artistlist = [{ _id: '', artistname: 'Error artist list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListsongComponent.prototype.getAlbumList = function (id) {
@@ -8635,16 +10748,24 @@ var ListsongComponent = /** @class */ (function () {
                     //console.log(this.artistlist);
                 }
                 else {
-                    _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+                    _this.albumlist = [{ _id: '', albumname: 'Empty list...' }];
                 }
             }
+            else {
+                _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListsongComponent.prototype.getAlbumListbyArtist = function (id, artistid) {
         var _this = this;
         this.albumService.getAlbumListbyArtist(id, artistid).subscribe(function (data) {
             if (data.success === true) {
-                console.log(data.data[0]);
+                //console.log(data.data[0]);
                 if (data.data[0]) {
                     _this.albumlist = data.data;
                     //console.log(this.albumlist);
@@ -8653,6 +10774,14 @@ var ListsongComponent = /** @class */ (function () {
                     _this.albumlist = [{ _id: '', albumname: 'No album list available' }];
                 }
             }
+            else {
+                _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListsongComponent.prototype.getReport = function (formdata) {
@@ -8718,6 +10847,10 @@ var ListsongComponent = /** @class */ (function () {
                     status: _this.qstatus
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ListsongComponent.prototype.setPage = function (page) {
@@ -8848,33 +10981,11 @@ var ListsongComponent = /** @class */ (function () {
         else {
             if (confirm('Do you really want to delete this song: ' + songname + ' record?')) {
                 this.loading = true;
-                var payload = {};
-                payload.uploadpath = this.prvwuploadpath;
-                payload.filename = songprvwname;
-                //payload.songprvwname = songprvwname;
-                this.ftService.deleteInputFile(payload)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        console.log('Error delete preview' + data.message);
-                    }
-                    else {
-                        console.log('Success delete preview...');
-                    }
-                });
                 var payloadData = {};
-                //payloadData.songfilename = songfilename;
-                payloadData.uploadpath = this.songuploadpath;
-                payloadData.filename = songfilename;
-                this.ftService.deleteInputFile(payloadData)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        console.log('Error delete songfile' + data.message);
-                    }
-                    else {
-                        console.log('Success delete SongFile... ');
-                    }
-                });
-                this.songService.deleteSong(songid)
+                payloadData.labelid = this.userObj.userid;
+                payloadData.songprvwname = songprvwname;
+                payloadData.songfilename = songfilename;
+                this.songService.pubdeleteSong(songid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -8890,10 +11001,76 @@ var ListsongComponent = /** @class */ (function () {
                         _this.totalrows = _this.totalrows - 1;
                         _this.toastr.success(data.message);
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
         }
     };
+    /*   confirmDel(idx: number, songid: string, songpublish, songbuy, songname, songprvwname, songfilename) {
+        
+        //if (songbuy > 0) {
+        if (songpublish == 'Y') {
+          this.toastr.warning("This song has been published. Data can not be deleted");
+        } else {
+          if(confirm('Do you really want to delete this song: ' + songname + ' record?')){
+            this.loading = true;
+            let payload: any = {};
+            payload.uploadpath = this.prvwuploadpath;
+            payload.filename = songprvwname;
+            //payload.songprvwname = songprvwname;
+            this.ftService.deleteInputFile(payload)
+            .subscribe(data => {
+               if (data.success === false) {
+                  console.log('Error delete preview' + data.message);
+                } else {
+                  console.log('Success delete preview...');
+                }
+              },
+              err => {
+                console.log('Error delete preview' + err);
+              });
+            let payloadData: any = {};
+            //payloadData.songfilename = songfilename;
+            payloadData.uploadpath = this.songuploadpath;
+            payloadData.filename = songfilename;
+            this.ftService.deleteInputFile(payloadData)
+            .subscribe(data => {
+                if (data.success === false) {
+                  console.log('Error delete songfile' + data.message);
+                } else {
+                  console.log('Success delete SongFile... ');
+                }
+              },
+              err => {
+                console.log('Error delete songfile' + err);
+              });
+            this.songService.deleteSong(songid)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.loading = false;
+                this.songs.splice(idx, 1);
+                this.totalrows = this.totalrows - 1;
+                this.toastr.success(data.message);
+              }
+            },
+            err => {
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          }
+        }
+      } */
     ListsongComponent.prototype.toaddSongs = function () {
         this.router.navigate(['/addsong']);
     };
@@ -9007,9 +11184,19 @@ var ViewsongComponent = /** @class */ (function () {
                     }
                 }
                 else {
-                    _this.sts = [{ code: '', value: 'Error ms config list' }];
+                    _this.sts = [{ code: '', value: 'Empty list...' }];
+                    _this.genre = [{ code: '', value: 'Empty list...' }];
                 }
             }
+            else {
+                _this.sts = [{ code: '', value: 'Error ms config list' }];
+                _this.genre = [{ code: '', value: 'Error ms config list' }];
+            }
+        }, function (err) {
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewsongComponent.prototype.getSong = function (id) {
@@ -9031,6 +11218,9 @@ var ViewsongComponent = /** @class */ (function () {
                     _this.toastr.error('Song id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewsongComponent.prototype.populateForm = function (data) {
@@ -9221,9 +11411,26 @@ var SongmgtComponent = /** @class */ (function () {
                     }
                 }
                 else {
-                    _this.genre = [{ code: '', value: 'Error ms config list' }];
+                    if (groupid == 'CSTATUS')
+                        _this.sts = [{ code: '', value: 'Empty list...' }];
+                    if (groupid == 'GENRE')
+                        _this.genre = [{ code: '', value: 'Empty list...' }];
+                    if (groupid == 'YRN')
+                        _this.ynlist = [{ code: '', value: 'Empty list...' }];
                 }
             }
+            else {
+                _this.sts = [{ code: '', value: 'Error ms config list' }];
+                _this.genre = [{ code: '', value: 'Error ms config list' }];
+                _this.ynlist = [{ code: '', value: 'Error ms config list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            _this.genre = [{ code: '', value: 'Error ms config list' }];
+            _this.ynlist = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongmgtComponent.prototype.getLabels = function () {
@@ -9235,9 +11442,17 @@ var SongmgtComponent = /** @class */ (function () {
                     //console.log(this.artistlist);
                 }
                 else {
-                    _this.userlist = [{ _id: '', name: 'Error label list' }];
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
                 }
             }
+            else {
+                _this.userlist = [{ _id: '', name: 'Error label list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongmgtComponent.prototype.getReport = function (formdata) {
@@ -9297,6 +11512,10 @@ var SongmgtComponent = /** @class */ (function () {
                     status: _this.qstatus
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongmgtComponent.prototype.setPage = function (page) {
@@ -9389,6 +11608,10 @@ var SongmgtComponent = /** @class */ (function () {
                         _this.fetchReport(_this.reportForm.value);
                         _this.toastr.success(data.message);
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
             else {
@@ -9422,6 +11645,10 @@ var SongmgtComponent = /** @class */ (function () {
                         _this.fetchReport(_this.reportForm.value);
                         _this.toastr.success(data.message);
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
             else {
@@ -9591,10 +11818,11 @@ var SongstatsComponent = /** @class */ (function () {
                         _this.ynlist = data.data;
                     }
                 }
-                else {
-                    _this.genre = [{ code: '', value: 'Error ms config list' }];
-                }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongstatsComponent.prototype.getLabels = function () {
@@ -9606,9 +11834,14 @@ var SongstatsComponent = /** @class */ (function () {
                     //console.log(this.artistlist);
                 }
                 else {
-                    _this.userlist = [{ _id: '', name: 'Error label list' }];
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongstatsComponent.prototype.getReport = function (formdata) {
@@ -9671,6 +11904,10 @@ var SongstatsComponent = /** @class */ (function () {
                     status: _this.qstatus
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     SongstatsComponent.prototype.setPage = function (page) {
@@ -9766,6 +12003,10 @@ var SongstatsComponent = /** @class */ (function () {
                         _this.fetchReport(_this.reportForm.value);
                         _this.toastr.success(data.message);
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
             else {
@@ -9879,10 +12120,10 @@ var ViewsongstatsComponent = /** @class */ (function () {
                         _this.genre = data.data;
                     }
                 }
-                else {
-                    _this.sts = [{ code: '', value: 'Error ms config list' }];
-                }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewsongstatsComponent.prototype.getSong = function (id) {
@@ -9904,6 +12145,9 @@ var ViewsongstatsComponent = /** @class */ (function () {
                     _this.toastr.error('Song id is incorrect in the URL');
                 }
             }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewsongstatsComponent.prototype.populateForm = function (data) {
@@ -10211,6 +12455,10 @@ var TransactionComponent = /** @class */ (function () {
                     enddt: _this.qenddt,
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     TransactionComponent.prototype.setPage = function (page) {
@@ -10502,9 +12750,14 @@ var TransactionstatsComponent = /** @class */ (function () {
                     //console.log(this.artistlist);
                 }
                 else {
-                    _this.userlist = [{ _id: '', name: 'Error label list' }];
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     TransactionstatsComponent.prototype.getReport = function (formdata) {
@@ -10623,6 +12876,10 @@ var TransactionstatsComponent = /** @class */ (function () {
                     enddt: _this.qenddt,
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     TransactionstatsComponent.prototype.setPage = function (page) {
@@ -10795,6 +13052,11 @@ var EmailverificationComponent = /** @class */ (function () {
                         _this.getMsconfigVal('REMARKS2', 'REMARKS');
                     }
                 }
+            }, function (err) {
+                _this.loading = false;
+                _this.router.navigate(['login']);
+                //console.log(err);
+                _this.toastr.error(err);
             });
         });
         this.getMsconfigVal('CSEML', 'EMAIL');
@@ -10835,6 +13097,10 @@ var EmailverificationComponent = /** @class */ (function () {
                     _this.remarks2 = { code: '', value: 'Error ms config list' };
                 }
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     EmailverificationComponent = __decorate([
@@ -10928,6 +13194,31 @@ var ForgotpasswordComponent = /** @class */ (function () {
                 _this.toastr.error(data.message);
             }
             else {
+                _this.loading = false;
+                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
+                    disableClose: true,
+                    width: '400px',
+                    data: 'Email to reset password has been sent to ' + _this.profileForm.value.email + '. Please follow the instruction in the email.'
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ForgotpasswordComponent.prototype.sendEmail_OLD = function (formdata) {
+        var _this = this;
+        var payload = {};
+        payload.email = this.profileForm.value.email;
+        this.loading = true;
+        this.userService.resetPasswd(payload)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                _this.toastr.error(data.message);
+            }
+            else {
                 var payload1 = {};
                 payload1.emailto = _this.profileForm.value.email;
                 payload1.vlink = data.vlink;
@@ -10954,8 +13245,20 @@ var ForgotpasswordComponent = /** @class */ (function () {
                             data: 'Email to reset password has been sent to ' + _this.profileForm.value.email + '. Please follow the instruction in the email.'
                         });
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
+                        disableClose: true,
+                        width: '400px',
+                        data: err
+                    });
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ForgotpasswordComponent = __decorate([
@@ -11062,6 +13365,10 @@ var LoginComponent = /** @class */ (function () {
                     _this.router.navigate(['report']);
                 }
                 _this.loginForm.reset();
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -11228,6 +13535,10 @@ var PasswordComponent = /** @class */ (function () {
                     _this.toastr.success(data.message);
                 }
                 _this.passwordForm.reset();
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -11274,7 +13585,7 @@ module.exports = ""
 /***/ "./src/app/components/user/postregistered/postregistered.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Confirmation</h3>\n  </div>\n  <div *ngIf=\"this.uname != 'err'\" class=\"panel panel-success\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Success</h3>\n      </div>\n      <div class=\"panel-body\">\n          <h4>Thank You !</h4>\n          <p>{{ this.getremarksvalue('REMARKS3') }}</p>\n          <p>Below is the account information for your reference,</p>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-xs-3 col-sm-2\" style=\"text-align:right;\">Label:</div>\n              <div class=\"col-xs-9 col-sm-10\" style=\"padding:0;\">{{ this.uname }}</div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n              <div class=\"col-xs-3 col-sm-2\" style=\"text-align:right;\">Email:</div>\n              <div class=\"col-xs-9 col-sm-10\" style=\"padding:0;\">{{ this.qemailto }}</div>\n            </div>\n          <br>\n          <div class=\"col-sm-12\" style=\"margin:0;padding:0;\">\n              <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>  \n      </div>\n  </div>\n  <div *ngIf=\"this.uname == 'err'\" class=\"panel panel-danger\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Error</h3>\n      </div>\n      <div class=\"panel-body\">\n          <p>Oops, Sorry.. {{ this.getremarksvalue('REMARKS4') }}</p>\n          <br>\n          <div class=\"col-sm-12\" style=\"margin:0;padding:0;\">\n              <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>  \n      </div>\n  </div>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Confirmation</h3>\n  </div>\n  <div *ngIf=\"this.uname != 'err'\" class=\"panel panel-success\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Success</h3>\n      </div>\n      <div class=\"panel-body\">\n          <h4>Thank You !</h4>\n          <!-- <p>{{ this.remarks3.value }}</p> -->\n          <p>An email has been sent to your email address. Please access your email account and do verification.</p>\n          <p>Below is the account information for your reference,</p>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-xs-3 col-sm-2\" style=\"text-align:right;\">Label:</div>\n              <div class=\"col-xs-9 col-sm-10\" style=\"padding:0;\">{{ this.uname }}</div>\n            </div>\n            <div class=\"row rowmarginsearch\">\n              <div class=\"col-xs-3 col-sm-2\" style=\"text-align:right;\">Email:</div>\n              <div class=\"col-xs-9 col-sm-10\" style=\"padding:0;\">{{ this.qemailto }}</div>\n            </div>\n          <br>\n          <div class=\"col-sm-12\" style=\"margin:0;padding:0;\">\n              <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>  \n      </div>\n  </div>\n  <div *ngIf=\"this.uname == 'err'\" class=\"panel panel-danger\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Error</h3>\n      </div>\n      <div class=\"panel-body\">\n          <!-- <p>Oops, Sorry.. {{ this.remarks4.value }}</p> -->\n          <p>Oops, Sorry.. There is failure while our system process the registration. Please try again later.</p>\n          <br>\n          <div class=\"col-sm-12\" style=\"margin:0;padding:0;\">\n              <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>  \n      </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -11312,48 +13623,68 @@ var PostregisteredComponent = /** @class */ (function () {
             _this.uname = strlist[0];
             _this.qemailto = strlist[1];
         });
-        this.getMsconfigGroupList('REMARKS');
+        //this.getMsconfigGroupList('REMARKS');
+        this.getMsconfigVal('REMARKS3', 'REMARKS');
+        this.getMsconfigVal('REMARKS4', 'REMARKS');
         this.getMsconfigVal('CSEML', 'EMAIL');
     };
     PostregisteredComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    PostregisteredComponent.prototype.getMsconfigGroupList = function (groupid) {
-        var _this = this;
-        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
-            if (data.success === true) {
-                if (data.data[0]) {
-                    _this.remarks = data.data;
-                }
-                else {
-                    _this.remarks = [{ code: '', value: 'Error ms config list' }];
-                }
+    /*   getMsconfigGroupList(groupid){
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(data => {
+          if (data.success === true) {
+            if (data.data[0]) {
+              this.remarks = data.data;
+            } else {
+              this.remarks = [{code:'', value:'Empty list...'}];
             }
+          }
+        },
+        err => {
+          this.remarks = [{code:'', value:'Error ms config list'}];
+          //console.log(err);
         });
-    };
+        
+      } */
     PostregisteredComponent.prototype.getMsconfigVal = function (code, groupid) {
         var _this = this;
         this.msconfigService.getMsconfigvalue(code, groupid).subscribe(function (data) {
             if (data.success === true) {
                 if (data.data[0]) {
-                    _this.csemail = data.data[0];
+                    if (code === 'CSEML') {
+                        _this.csemail = data.data[0];
+                    }
+                    else if (code === 'REMARKS3') {
+                        _this.remarks3 = data.data[0];
+                    }
+                    else if (code === 'REMARKS4') {
+                        _this.remarks4 = data.data[0];
+                    }
                 }
                 else {
-                    _this.csemail = { code: '', value: 'Error ms config list' };
+                    _this.csemail = { code: '', value: 'Empty list...' };
+                    _this.remarks3 = { code: '', value: 'Empty list...' };
+                    _this.remarks4 = { code: '', value: 'Empty list...' };
                 }
             }
+        }, function (err) {
+            _this.csemail = { code: '', value: 'Error ms config list' };
+            _this.remarks3 = { code: '', value: 'Error ms config list' };
+            _this.remarks4 = { code: '', value: 'Error ms config list' };
+            //console.log(err);
         });
     };
-    PostregisteredComponent.prototype.getremarksvalue = function (premarks) {
-        var result = '';
-        for (var _i = 0, _a = this.remarks; _i < _a.length; _i++) {
-            var oremark = _a[_i];
-            if (premarks === oremark.code) {
-                result = oremark.value;
-            }
+    /*   getremarksvalue(premarks) : String {
+        var result: String = '';
+    
+        for (let oremark of this.remarks) {
+          if (premarks === oremark.code){
+            result = oremark.value;
+         }
         }
         return result;
-    };
+      } */
     PostregisteredComponent.prototype.onLogin = function () {
         this.router.navigate(['/login']);
     };
@@ -11460,6 +13791,10 @@ var ProfileComponent = /** @class */ (function () {
                 _this.user = data.data[0];
                 _this.populateForm(_this.user);
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ProfileComponent.prototype.populateForm = function (data) {
@@ -11493,6 +13828,10 @@ var ProfileComponent = /** @class */ (function () {
                     theUser.user.name = _this.profileForm.value.name;
                     localStorage.setItem('currentUser', JSON.stringify(theUser));
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -11537,8 +13876,20 @@ var ProfileComponent = /** @class */ (function () {
                             data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
                         });
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
+                        disableClose: true,
+                        width: '400px',
+                        data: err
+                    });
+                    //console.log(err);
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ProfileComponent.prototype.onBack = function () {
@@ -11638,6 +13989,53 @@ var RegisterComponent = /** @class */ (function () {
             }, { validator: comparePassword })
         });
     };
+    /*   registerUser(formdata:any): void {
+        if (this.registerForm.dirty && this.registerForm.valid) {
+          let theForm = this.registerForm.value;
+          const thePass = this.registerForm.value.passwordGroup.password;
+          theForm.password = thePass;
+          delete theForm.passwordGroup;
+          this.loading = true;
+          this.userService.register(theForm)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              this.registerForm.reset();
+              this.toastr.error(data.message);
+            } else {
+              //this.toastr.success(data.message);
+              //this.loading = false;
+              const nm = data.name;
+              let payload: any = {};
+              payload.emailto = theForm.email;
+              payload.vlink = data.vlink;
+              this.notifService.sendemailverification(payload)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  this.router.navigate([`postregistered/err?${theForm.email}`]);
+                } else {
+                  this.loading = false;
+                  this.router.navigate([`postregistered/${nm}?${theForm.email}`]);
+                }
+              },
+              err => {
+                this.loading = false;
+                this.toastr.error(err);
+                //console.log(err);
+              });
+              this.registerForm.reset();
+            }
+            //this.registerForm.reset();
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+    
+        }
+      } */
     RegisterComponent.prototype.registerUser = function (formdata) {
         var _this = this;
         if (this.registerForm.dirty && this.registerForm.valid) {
@@ -11646,34 +14044,25 @@ var RegisterComponent = /** @class */ (function () {
             theForm_1.password = thePass;
             delete theForm_1.passwordGroup;
             this.loading = true;
-            this.userService.register(theForm_1)
+            this.userService.registerlabel(theForm_1)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
-                    _this.registerForm.reset();
                     _this.toastr.error(data.message);
+                    _this.router.navigate(["postregistered/err?" + theForm_1.email]);
                 }
                 else {
                     //this.toastr.success(data.message);
                     //this.loading = false;
-                    var nm_1 = data.name;
-                    var payload = {};
-                    payload.emailto = theForm_1.email;
-                    payload.vlink = data.vlink;
-                    _this.notifService.sendemailverification(payload)
-                        .subscribe(function (data) {
-                        if (data.success === false) {
-                            _this.loading = false;
-                            _this.router.navigate(["postregistered/err?" + theForm_1.email]);
-                        }
-                        else {
-                            _this.loading = false;
-                            _this.router.navigate(["postregistered/" + nm_1 + "?" + theForm_1.email]);
-                        }
-                    });
-                    _this.registerForm.reset();
+                    var nm = data.name;
+                    _this.loading = false;
+                    _this.router.navigate(["postregistered/" + nm + "?" + theForm_1.email]);
                 }
-                //this.registerForm.reset();
+                _this.registerForm.reset();
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -11778,6 +14167,11 @@ var ResetuserpasswdComponent = /** @class */ (function () {
                     _this.loading = false;
                     _this.vhash = data.hash;
                 }
+            }, function (err) {
+                _this.loading = false;
+                _this.router.navigate(['login']);
+                //console.log(err);
+                _this.toastr.error(err);
             });
         });
         this.passwordForm = this.fb.group({
@@ -11811,6 +14205,10 @@ var ResetuserpasswdComponent = /** @class */ (function () {
                 }
                 _this.passwordForm.reset();
                 _this.router.navigate(['login']);
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -11924,6 +14322,10 @@ var UpdateemailComponent = /** @class */ (function () {
                     theUser.user.verified_email = "N";
                     localStorage.setItem('currentUser', JSON.stringify(theUser));
                 }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
             });
         }
     };
@@ -12091,6 +14493,10 @@ var UsermgtComponent = /** @class */ (function () {
                     username: _this.qusername
                 });
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     UsermgtComponent.prototype.setPage = function (page) {
@@ -12144,8 +14550,12 @@ var UsermgtComponent = /** @class */ (function () {
             else {
                 if (confirm('Do you really want to activate this label: ' + labelname + ' record?')) {
                     var payloadData = {};
+                    payloadData.labelid = userid;
+                    payloadData.emailto = email;
+                    payloadData.vlink = this.urlkaxet;
+                    payloadData.username = username;
                     payloadData.status = 'STSACT';
-                    this.labelmgtService.updateLabelStatus(userid, payloadData)
+                    this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -12156,30 +14566,21 @@ var UsermgtComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            var payload = {};
-                            payload.emailto = email;
-                            payload.vlink = _this.urlkaxet;
-                            payload.username = username;
-                            var successmsg_1 = data.message;
-                            _this.notifService.sendemailwelcome(payload)
-                                .subscribe(function (data) {
-                                _this.loading = false;
-                                if (data.success === true) {
-                                    _this.toastr.success(successmsg_1);
+                            _this.loading = false;
+                            _this.toastr.success(data.message);
+                            _this.router.navigate(['usermanagement'], {
+                                queryParams: {
+                                    name: _this.qlabelname,
+                                    username: _this.qusername,
+                                    page: _this.qpage || 1,
+                                    sortby: _this.qsort
                                 }
-                                else {
-                                    _this.toastr.warning(successmsg_1 + '. However welcome email not send. ' + data.message);
-                                }
-                                _this.router.navigate(['usermanagement'], {
-                                    queryParams: {
-                                        name: _this.qlabelname,
-                                        username: _this.qusername,
-                                        page: _this.qpage || 1,
-                                        sortby: _this.qsort
-                                    }
-                                });
                             });
                         }
+                    }, function (err) {
+                        _this.loading = false;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
                 else {
@@ -12188,14 +14589,81 @@ var UsermgtComponent = /** @class */ (function () {
             }
         }
     };
+    /*   activateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+    
+        this.loading = true;
+        if (status == 'STSACT') {
+          this.loading = false;
+          this.toastr.warning('The label is already active.');
+        } else {
+          if (status === 'STSRJCT') {
+            this.loading = false;
+            this.toastr.warning('The label is already rejected.');
+          } else {
+            if(confirm('Do you really want to activate this label: ' + labelname + ' record?')){
+              let payloadData: any = {};
+              payloadData.status = 'STSACT';
+              this.labelmgtService.updateLabelStatus(userid, payloadData)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  if (data.errcode){
+                    this.authService.logout();
+                    this.router.navigate(['login']);
+                  }
+                  this.toastr.error(data.message);
+                } else {
+                  let payload: any = {};
+                  payload.emailto = email;
+                  payload.vlink = this.urlkaxet;
+                  payload.username = username;
+                  let successmsg = data.message;
+                  this.notifService.sendemailwelcome(payload)
+                  .subscribe(data => {
+                    this.loading = false;
+                    if (data.success === true) {
+                      this.toastr.success(successmsg);
+                    } else {
+                      this.toastr.warning(successmsg + '. However welcome email not send. ' + data.message);
+                    }
+                    this.router.navigate(['usermanagement'],
+                      {
+                        queryParams: {
+                          name: this.qlabelname,
+                          username: this.qusername,
+                          page: this.qpage || 1,
+                          sortby: this.qsort }
+                      }
+                    );
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+                }
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+              });
+            } else {
+              this.loading = false;
+            }
+          }
+        }
+      } */
     UsermgtComponent.prototype.deactivateLabel = function (userid, labelname, status, email, username) {
         var _this = this;
         this.loading = true;
         if (status === 'STSPEND') {
             if (confirm('Do you really want to reject this label: ' + labelname + ' record?')) {
                 var payloadData = {};
+                payloadData.labelid = userid;
+                payloadData.username = username;
                 payloadData.status = 'STSRJCT';
-                this.labelmgtService.updateLabelStatus(userid, payloadData)
+                this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {
                         _this.loading = false;
@@ -12217,6 +14685,10 @@ var UsermgtComponent = /** @class */ (function () {
                             }
                         });
                     }
+                }, function (err) {
+                    _this.loading = false;
+                    //console.log(err);
+                    _this.toastr.error(err);
                 });
             }
             else {
@@ -12231,8 +14703,11 @@ var UsermgtComponent = /** @class */ (function () {
             else {
                 if (confirm('Do you really want to deactivate this label: ' + labelname + ' record?')) {
                     var payloadData = {};
+                    payloadData.labelid = userid;
+                    payloadData.emailto = email;
+                    payloadData.username = username;
                     payloadData.status = 'STSINACT';
-                    this.labelmgtService.updateLabelStatus(userid, payloadData)
+                    this.labelmgtService.pubupdateLabelstatus(this.userObj.userid, payloadData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -12243,29 +14718,21 @@ var UsermgtComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            var payload = {};
-                            payload.emailto = email;
-                            payload.username = username;
-                            var successmsg_2 = data.message;
-                            _this.notifService.senddeactivation(payload)
-                                .subscribe(function (data) {
-                                _this.loading = false;
-                                if (data.success === true) {
-                                    _this.toastr.success(successmsg_2);
+                            _this.loading = false;
+                            _this.toastr.success(data.message);
+                            _this.router.navigate(['usermanagement'], {
+                                queryParams: {
+                                    name: _this.qlabelname,
+                                    username: _this.qusername,
+                                    page: _this.qpage || 1,
+                                    sortby: _this.qsort
                                 }
-                                else {
-                                    _this.toastr.warning(successmsg_2 + '. However welcome email not send. ' + data.message);
-                                }
-                                _this.router.navigate(['usermanagement'], {
-                                    queryParams: {
-                                        name: _this.qlabelname,
-                                        username: _this.qusername,
-                                        page: _this.qpage || 1,
-                                        sortby: _this.qsort
-                                    }
-                                });
                             });
                         }
+                    }, function (err) {
+                        _this.loading = false;
+                        //console.log(err);
+                        _this.toastr.error(err);
                     });
                 }
                 else {
@@ -12274,6 +14741,102 @@ var UsermgtComponent = /** @class */ (function () {
             }
         }
     };
+    /*   deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+        
+        this.loading = true;
+        if (status === 'STSPEND') {
+          if(confirm('Do you really want to reject this label: ' + labelname + ' record?')){
+            let payloadData: any = {};
+            payloadData.status = 'STSRJCT';
+            this.labelmgtService.updateLabelStatus(userid, payloadData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                if (data.errcode){
+                  this.authService.logout();
+                  this.router.navigate(['login']);
+                }
+                this.toastr.error(data.message);
+              } else {
+                this.loading = false;
+                this.toastr.success(data.message);
+                this.router.navigate(['usermanagement'],
+                    {
+                      queryParams: {
+                        name: this.qlabelname,
+                        username: this.qusername,
+                        page: this.qpage || 1,
+                        sortby: this.qsort }
+                    }
+                );
+              }
+            },
+            err => {
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+          } else {
+            this.loading = false;
+          }
+        } else {
+          if (status != 'STSACT') {
+            this.loading = false;
+            this.toastr.warning('The label is already NOT active.');
+          } else {
+            if(confirm('Do you really want to deactivate this label: ' + labelname + ' record?')){
+              let payloadData: any = {};
+              payloadData.status = 'STSINACT';
+              this.labelmgtService.updateLabelStatus(userid, payloadData)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  if (data.errcode){
+                    this.authService.logout();
+                    this.router.navigate(['login']);
+                  }
+                  this.toastr.error(data.message);
+                } else {
+                  let payload: any = {};
+                  payload.emailto = email;
+                  payload.username = username;
+                  let successmsg = data.message;
+                  this.notifService.senddeactivation(payload)
+                  .subscribe(data => {
+                    this.loading = false;
+                    if (data.success === true) {
+                      this.toastr.success(successmsg);
+                    } else {
+                      this.toastr.warning(successmsg + '. However welcome email not send. ' + data.message);
+                    }
+                    this.router.navigate(['usermanagement'],
+                        {
+                          queryParams: {
+                            name: this.qlabelname,
+                            username: this.qusername,
+                            page: this.qpage || 1,
+                            sortby: this.qsort }
+                        }
+                    );
+                  },
+                  err => {
+                    this.loading = false;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+                }
+              },
+              err => {
+                this.loading = false;
+                //console.log(err);
+                this.toastr.error(err);
+              });
+            } else {
+              this.loading = false;
+            }
+          }
+        }
+      } */
     UsermgtComponent.prototype.showLabel = function (userid) {
         this.router.navigate(["viewlabel/" + userid], {
             queryParams: {
@@ -12398,6 +14961,10 @@ var ViewlabelComponent = /** @class */ (function () {
                 _this.user = data.data[0];
                 _this.populateForm(_this.user);
             }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
         });
     };
     ViewlabelComponent.prototype.populateForm = function (data) {
@@ -12480,6 +15047,76 @@ var AuthGuard = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
     ], AuthGuard);
     return AuthGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/activitylog.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActivitylogService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var ActivitylogService = /** @class */ (function () {
+    function ActivitylogService(http) {
+        this.http = http;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    ActivitylogService.prototype.getActivitylogAggs = function (userid, oActivitylog) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/activitylogagg/" + userid, JSON.stringify(oActivitylog), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    ActivitylogService.prototype.getAdmActivitylogAggs = function (userid, oActivitylog) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/admactivitylogagg/" + userid, JSON.stringify(oActivitylog), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    ActivitylogService.prototype.handleError = function (error) {
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
+    };
+    ActivitylogService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], ActivitylogService);
+    return ActivitylogService;
 }());
 
 
@@ -12621,8 +15258,9 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     MsconfigService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -12739,8 +15377,9 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     SongadminService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -12836,6 +15475,15 @@ var UsermgtService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    UsermgtService.prototype.pubupdateLabelstatus = function (userid, oUser) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubchangelabelstatus/" + userid, JSON.stringify(oUser), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     UsermgtService.prototype.updateLabelBalance = function (labelid, oLabel) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
@@ -12855,8 +15503,9 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     UsermgtService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13013,9 +15662,37 @@ var AlbumService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    AlbumService.prototype.pubsaveAlbum = function (userid, oAlbum) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubaddalbum/" + userid, JSON.stringify(oAlbum), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AlbumService.prototype.pubupdateAlbumphoto = function (albumid, oAlbum) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubeditalbumphoto/" + albumid, JSON.stringify(oAlbum), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AlbumService.prototype.pubdeleteAlbum = function (albumid, oAlbum) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubdeletealbum/" + albumid, JSON.stringify(oAlbum), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     AlbumService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     AlbumService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13073,12 +15750,28 @@ var ArtistService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    ArtistService.prototype.pubsaveArtist = function (userid, oArtist) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubartist/" + userid, oArtist, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     ArtistService.prototype.updateArtistphoto = function (artistid, oArtist) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.put("api/updateartistphoto/" + artistid, JSON.stringify(oArtist), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    ArtistService.prototype.pubupdateArtistphoto = function (artistid, oArtist) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubupdateartistphoto/" + artistid, oArtist, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -13145,9 +15838,19 @@ var ArtistService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    ArtistService.prototype.pubdeleteArtist = function (artistid, oArtist) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubdelartist/" + artistid, JSON.stringify(oArtist), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     ArtistService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     ArtistService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13228,8 +15931,9 @@ var AuthService = /** @class */ (function () {
         var logoutTimer = setTimeout(function () { localStorage.clear(); }, 100);
     };
     AuthService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13300,8 +16004,9 @@ var FiletransferService = /** @class */ (function () {
             .catch(this.handleError);
     };
     FiletransferService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     FiletransferService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13397,8 +16102,9 @@ var NotifService = /** @class */ (function () {
             .catch(this.handleError);
     };
     NotifService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     NotifService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13456,6 +16162,32 @@ var SongService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongService.prototype.pubsaveSong = function (userid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubsong/" + userid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongService.prototype.pubeditSong = function (userid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubeditsong/" + userid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongService.prototype.uploadSongfiles = function (userid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/uploadsong/" + userid, oSong, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongService.prototype.publishSong = function (songid, oSong) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
@@ -13483,12 +16215,30 @@ var SongService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongService.prototype.pubupdateSongPreview = function (songid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubeditsongprvw/" + songid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongService.prototype.updateSongFile = function (songid, oSong) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.put("api/updatesongfile/" + songid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongService.prototype.pubupdateSongFile = function (songid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubeditsongfile/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -13516,6 +16266,15 @@ var SongService = /** @class */ (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.delete("api/song/" + songid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    SongService.prototype.pubdeleteSong = function (songid, oSong) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/pubdeletesong/" + songid, JSON.stringify(oSong), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -13574,8 +16333,9 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     SongService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13705,9 +16465,19 @@ var SongpurchaseService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongpurchaseService.prototype.pubSaveSongpurchasePayment = function (userid, oSongpurchase) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/actionpmtpurchase/" + userid, JSON.stringify(oSongpurchase), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongpurchaseService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     SongpurchaseService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13793,8 +16563,9 @@ var TransactionService = /** @class */ (function () {
             .catch(this.handleError);
     };
     TransactionService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     TransactionService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -13854,6 +16625,13 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.post('register', JSON.stringify(oUser), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    UserService.prototype.registerlabel = function (oUser) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post('registerlabel', JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -13941,8 +16719,9 @@ var UserService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UserService.prototype.handleError = function (error) {
-        console.error(error);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.json().error || 'Server error');
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
     };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

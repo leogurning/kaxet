@@ -134,10 +134,13 @@ export class SongstatsComponent implements OnInit {
           if (groupid == 'YRN') {
             this.ynlist = data.data;
           }
-        } else {
-          this.genre = [{code:'', value:'Error ms config list'}];
-        }
-      }
+        } 
+      } 
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getLabels(){
@@ -147,9 +150,15 @@ export class SongstatsComponent implements OnInit {
           this.userlist = data.data;
           //console.log(this.artistlist);
         } else {
-          this.userlist = [{_id:'', name:'Error label list'}];
+          this.userlist = [{_id:'', name:'Empty list...'}];
         }
       }
+    },
+    err => {
+      this.loading = false;
+      this.userlist = [{_id:'', name:'Error label list'}];
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   getReport(formdata:any): void {
@@ -212,6 +221,11 @@ export class SongstatsComponent implements OnInit {
           status: this.qstatus
         });
       }
+    },
+    err => {
+      this.loading = false;
+      //console.log(err);
+      this.toastr.error(err);
     });
   }
   setPage(page): void {
@@ -308,6 +322,11 @@ export class SongstatsComponent implements OnInit {
             this.fetchReport(this.reportForm.value);
             this.toastr.success(data.message);
           }
+        },
+        err => {
+          this.loading = false;
+          //console.log(err);
+          this.toastr.error(err);
         });
       } else {
         this.loading = false;

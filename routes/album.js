@@ -3,6 +3,10 @@ const Album = require('../models/album');
 const config = require('../config');
 const fs = require('fs');
 var rediscli = require('../redisconn');
+var amqpConn = null;
+var amqp = require('amqplib/callback_api');
+//const fetch = require('node-fetch');
+//var FormData = require('form-data');
 
 var merge = function() {
     var obj = {},
@@ -18,6 +22,8 @@ var merge = function() {
     }
     return obj;
 };
+
+startpubRMQalbum();
 
 exports.testalbum = function(req, res, next){
     const labelid = req.params.id;
@@ -1023,4 +1029,256 @@ exports.albumaggstats = function(req, res, next){
             });
         }
     });
+}
+exports.pubaddalbum = function(req, res, next){
+    const labelid = req.params.id;
+    const artistid = req.body.artistid;
+    const albumname = req.body.albumname;
+    const albumyear = req.body.albumyear;
+    const albumgenre = req.body.albumgenre;
+    const albumprice = req.body.albumprice;
+    const albumphotopath = req.body.albumphotopath;
+    const albumphotoname = req.body.albumphotoname;
+    const status = req.body.status;
+    const albumid = req.body.albumid;
+
+    const q = 'addAlbumQueue';
+
+    if (!labelid || !albumname || !albumyear || !albumgenre || !albumprice || !status) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objlabelid = {labelid: labelid};
+    var objmsg = Object.assign(objbody,objlabelid);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubadd = addAlbumpublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to save Album received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+exports.pubeditalbumphoto = function(req, res, next){
+    const albumid = req.params.id;
+    const albumphotoname = req.body.albumphotoname;
+    const albumphotopath = req.body.albumphotopath;
+    const oldalbumphotoname = req.body.oldalbumphotoname;
+    //const uploadpath = req.body.uploadpath;
+    const labelid = req.body.labelid;
+    const token = req.headers['authorization'];
+    const q = 'editAlbumphotoQueue';
+
+    if (!albumid || !albumphotoname || !albumphotopath || !labelid ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objalbumid = {albumid: albumid};
+    //var objfile = { fileinputsrc: req.files.fileinputsrc };
+    var headers = {token: token};
+    //var objmsg = Object.assign(objbody,objartistid,objfile, headers);
+    var objmsg = Object.assign(objbody,objalbumid, headers);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubeditphoto = editAlbumphotopublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to edit Album photo received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+exports.pubdeletealbum = function(req, res, next){
+    const albumid = req.params.id;
+    const albumphotoname = req.body.albumphotoname;
+    const labelid = req.body.labelid;
+    const token = req.headers['authorization'];
+    const q = 'deleteAlbumQueue';
+
+    if (!albumid || !albumphotoname || !labelid ) {
+        return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
+    }
+
+    var objbody = req.body;
+    var objalbumid = {albumid: albumid};
+    var headers = {token: token};
+    var objmsg = Object.assign(objbody,objalbumid, headers);
+    var msg = JSON.stringify(objmsg);
+    //ch.assertExchange(exchange, 'direct', {durable: false})
+    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+
+    let pubdelalbum = deleteAlbumpublish('', q, new Buffer(msg));    
+    res.status(200).json({
+        success: true,
+        message: 'Request to delete Album received successfully.'
+    });
+    //ch.bindQueue(q, exchange, 'registerlabel');
+}
+
+//Start RabbitMQ Connection for PUBLISHERS
+function startpubRMQalbum() {
+    amqp.connect(config.amqpURL, function(err, conn) {
+      if (err) {
+        console.error("[AMQP ALBUM]", err.message);
+        return setTimeout(startpubRMQalbum, 1000);
+      }
+      conn.on("error", function(err) {
+        if (err.message !== "Connection closing") {
+          console.error("[AMQP ALBUM] conn error", err.message);
+        }
+      });
+      conn.on("close", function() {
+        console.error("[AMQP ALBUM] reconnecting");
+        return setTimeout(startpubRMQalbum, 1000);
+      });
+      console.log("[AMQP ALBUM] connected");
+      amqpConn = conn;
+      addAlbumPub('addAlbumQueue');
+      editAlbumphotoPub('editAlbumphotoQueue');
+      deleteAlbumPub('deleteAlbumQueue');
+    });
+}
+
+var addAlbumPubChannel = null;
+var addAlbumofflinePubQueue = [];
+function addAlbumPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP ALBUM] add album channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP ALBUM] add album channel closed");
+    });
+    
+    addAlbumPubChannel = ch;
+    addAlbumPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = addAlbumofflinePubQueue.shift();
+        if (!m) break;
+        addAlbumpublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function addAlbumpublish(exchange, routingKey, content) {
+    try {
+        addAlbumPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP ALBUM] add album publish", err);
+            addAlbumofflinePubQueue.push([exchange, routingKey, content]);
+            addAlbumPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP ALBUM] add album publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP ALBUM] add album publish", e.message);
+      addAlbumofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+var editAlbumphotoPubChannel = null;
+var editAlbumphotoofflinePubQueue = [];
+function editAlbumphotoPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP ALBUM] edit album photo channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP ALBUM] edit album photo channel closed");
+    });
+    
+    editAlbumphotoPubChannel = ch;
+    editAlbumphotoPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = editAlbumphotoofflinePubQueue.shift();
+        if (!m) break;
+        editAlbumphotopublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function editAlbumphotopublish(exchange, routingKey, content) {
+    try {
+        editAlbumphotoPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP ALBUM] edit album photo publish", err);
+            editAlbumphotoofflinePubQueue.push([exchange, routingKey, content]);
+            editAlbumphotoPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP ALBUM] edit album photo publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP ALBUM] edit album photo publish", e.message);
+      editAlbumphotoofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+var deleteAlbumPubChannel = null;
+var deleteAlbumofflinePubQueue = [];
+function deleteAlbumPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP ALBUM] delete album channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP ALBUM] delete album channel closed");
+    });
+    
+    deleteAlbumPubChannel = ch;
+    deleteAlbumPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = deleteAlbumofflinePubQueue.shift();
+        if (!m) break;
+        deleteAlbumpublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function deleteAlbumpublish(exchange, routingKey, content) {
+    try {
+        deleteAlbumPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP ALBUM] delete album publish", err);
+            deleteAlbumofflinePubQueue.push([exchange, routingKey, content]);
+            deleteAlbumPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP ALBUM] delete album publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP ALBUM] delete album publish", e.message);
+      deleteAlbumofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+function closeOnErr(err) {
+    if (!err) return false;
+    console.error("[AMQP ALBUM] error", err);
+    amqpConn.close();
+    return true;
 }
