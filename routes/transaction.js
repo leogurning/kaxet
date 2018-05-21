@@ -149,21 +149,21 @@ exports.transactionagg = function(req, res, next){
 		} else if (rptype === 'opt2'){
             // return records within given date range
             fromdt.setDate(fromdt.getDate());
-            fromdt.setUTCHours(0,0,0);
+            fromdt.setHours(0,0,0);
             todt.setDate(todt.getDate());
-            todt.setUTCHours(23,59,59);
+            todt.setHours(23,59,59);
             query = merge(query, { transactiondt:{$gte: fromdt, $lte: todt} });
 
 		} else if (rptype === 'opt3') {
             // returns today expense records for the user
             let ptodt = new Date();
-            let dt = ptodt.getUTCDate() + 1;
-			let month = ptodt.getUTCMonth() + 1; //months from 1-12
-			let year = ptodt.getUTCFullYear();
+            let dt = ptodt.getDate();
+			let month = ptodt.getMonth() + 1; //months from 1-12
+			let year = ptodt.getFullYear();
             let pfromdt = new Date(year + "/" + month + "/" + dt);
-            pfromdt.setUTCHours(0,0,0);
+            pfromdt.setHours(0,0,0);
             let todt = new Date(year + "/" + month + "/" + dt);
-            todt.setUTCHours(23,59,59);
+            todt.setHours(23,59,59);
             query = merge(query, { transactiondt:{$gte: pfromdt, $lte: todt} });
         }
         
@@ -355,21 +355,21 @@ exports.admtransactionagg = function(req, res, next){
 		} else if (rptype === 'opt2'){
             // return records within given date range
             fromdt.setDate(fromdt.getDate());
-            fromdt.setUTCHours(0,0,0);
+            fromdt.setHours(0,0,0);
             todt.setDate(todt.getDate());
-            todt.setUTCHours(23,59,59);
+            todt.setHours(23,59,59);
             query = merge(query, { transactiondt:{$gte: fromdt, $lte: todt} });
 
 		} else if (rptype === 'opt3') {
             // returns today expense records for the user
             let ptodt = new Date();
-            let dt = ptodt.getUTCDate() + 1;
-			let month = ptodt.getUTCMonth() + 1; //months from 1-12
-			let year = ptodt.getUTCFullYear();
+            let dt = ptodt.getDate();
+			let month = ptodt.getMonth() + 1; //months from 1-12
+			let year = ptodt.getFullYear();
             let pfromdt = new Date(year + "/" + month + "/" + dt);
-            pfromdt.setUTCHours(0,0,0);
+            pfromdt.setHours(0,0,0);
             let todt = new Date(year + "/" + month + "/" + dt);
-            todt.setUTCHours(23,59,59);
+            todt.setHours(23,59,59);
             query = merge(query, { transactiondt:{$gte: pfromdt, $lte: todt} });
         }
         if (labelid) {

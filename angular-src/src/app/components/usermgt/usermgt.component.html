@@ -76,12 +76,12 @@
                                             <!-- <button type="button" class="btn-xs btn-success" aria-label="Activate" (click)="activateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Activate Label">
                                                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                                             </button> -->
-                                            <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="activateLabel(lbl._id, lbl.name, lbl.status, lbl.email,lbl.username)" data-toggle="tooltip" data-placement="top" title="Approve Label"><i class="fa fa-check fa-2x"></i></a>
+                                            <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="activateLabel(lblIndex, lbl._id, lbl.name, lbl.status, lbl.email,lbl.username)" data-toggle="tooltip" data-placement="top" title="Approve Label"><i class="fa fa-check fa-2x"></i></a>
                                             <!-- <button type="button" class="btn-xs btn-danger" aria-label="Deactivate" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status)" data-toggle="tooltip" data-placement="top" title="Deactivate Label">
                                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                             </button> -->
                                             &nbsp;&nbsp;&nbsp;
-                                            <a style="cursor:pointer;color:red" aria-label="Reject" (click)="deactivateLabel(lbl._id, lbl.name, lbl.status, lbl.email, lbl.username)" data-toggle="tooltip" data-placement="top" title="Reject Label"><i class="fa fa-times fa-2x"></i></a>
+                                            <a style="cursor:pointer;color:red" aria-label="Reject" (click)="deactivateLabel(lblIndex, lbl._id, lbl.name, lbl.status, lbl.email, lbl.username)" data-toggle="tooltip" data-placement="top" title="Reject Label"><i class="fa fa-times fa-2x"></i></a>
                                         </td>
                                     </tr>     
                                 </tbody>    

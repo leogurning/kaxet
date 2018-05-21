@@ -389,7 +389,7 @@ export class SongpendingpurchaseComponent implements OnInit {
     );
   }
   
-  approvePayment(songpurchaseid, songname, songid, listenerid, songprice): void {
+  approvePayment(idx, songpurchaseid, songname, songid, listenerid, songprice): void {
     if(confirm('Do you really want to approve this song payment: ' + songname + ' record?')){ 
       this.loading = true;
       let payload: any = {};
@@ -404,7 +404,9 @@ export class SongpendingpurchaseComponent implements OnInit {
       this.songpurchaseService.pubSaveSongpurchasePayment(this.userObj.userid, payload)
       .subscribe(data => {
         if (data.success === true) {
-          setTimeout(
+          this.songpendings.splice(idx, 1);
+          this.totalrows = this.totalrows - 1;
+          /* setTimeout(
             this.router.navigate(['songpendingpurchase'],
               {
                 queryParams: { 
@@ -418,7 +420,7 @@ export class SongpendingpurchaseComponent implements OnInit {
                   page: this.qpage || 1, 
                   sortby: this.qsort }
               }
-            ), 1000); 
+            ), 1000);  */
           this.loading = false;
           this.toastr.success('Approve payment success !');
         } else {
@@ -527,7 +529,7 @@ export class SongpendingpurchaseComponent implements OnInit {
     }
   } */
 
-  rejectPayment(songpurchaseid, songname): void {
+  rejectPayment(idx, songpurchaseid, songname): void {
     if(confirm('Do you really want to reject this song payment: ' + songname + ' record?')){
       this.loading = true;
       let payload: any = {};
@@ -536,7 +538,9 @@ export class SongpendingpurchaseComponent implements OnInit {
       this.songpurchaseService.pubSaveSongpurchasePayment(this.userObj.userid, payload)
       .subscribe(data => {
         if (data.success === true) {
-          setTimeout(
+          this.songpendings.splice(idx, 1);
+          this.totalrows = this.totalrows - 1;
+          /* setTimeout(
             this.router.navigate(['songpendingpurchase'],
               {
                 queryParams: { 
@@ -550,9 +554,10 @@ export class SongpendingpurchaseComponent implements OnInit {
                   page: this.qpage || 1, 
                   sortby: this.qsort }
               }
-            ), 1000);
+            ), 1000); */
             this.loading = false;
-            this.toastr.success(data.message);
+            //this.toastr.success(data.message);
+            this.toastr.success('Reject payment success !');
         } else {
           this.loading = false;
           if (data.errcode){

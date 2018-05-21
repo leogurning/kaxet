@@ -139,10 +139,10 @@
                             <td data-label="Price" class="text-right">{{ songpending.songprice | currency: 'IDR':'symbol-narrow' }}</td>
                             <td data-label="Action">
                                 <!-- <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)" data-toggle="tooltip" data-placement="top" title="Approve Payment"><i class="fa fa-check fa-2x"></i></a> -->
-                                <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)" data-toggle="tooltip" data-placement="top" title="Approve Payment">Approve</a>
+                                <a style="cursor:pointer;color:darkgreen" aria-label="Approve" (click)="approvePayment(songIndex, songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)" data-toggle="tooltip" data-placement="top" title="Approve Payment">Approve</a>
                                 &nbsp;&nbsp;&nbsp;
                                 <!-- <a style="cursor:pointer;color:red" aria-label="Reject" (click)="rejectPayment(songpending._id, songpending.song)" data-toggle="tooltip" data-placement="top" title="Reject Payment"><i class="fa fa-times fa-2x"></i></a> -->
-                                <a style="cursor:pointer;color:red" aria-label="Reject" (click)="rejectPayment(songpending._id, songpending.song)" data-toggle="tooltip" data-placement="top" title="Reject Payment">Reject</a>
+                                <a style="cursor:pointer;color:red" aria-label="Reject" (click)="rejectPayment(songIndex, songpending._id, songpending.song)" data-toggle="tooltip" data-placement="top" title="Reject Payment">Reject</a>
                             </td>
                         </tr>
                     </tbody>

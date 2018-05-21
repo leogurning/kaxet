@@ -174,7 +174,7 @@ export class UsermgtComponent implements OnInit {
     );
   }
   
-  activateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+  activateLabel(idx, userid: string, labelname: string, status: string, email: string, username: string) {
     
     this.loading = true;
     if (status == 'STSACT') {
@@ -203,8 +203,10 @@ export class UsermgtComponent implements OnInit {
               this.toastr.error(data.message);
             } else {
               this.loading = false;
+              this.labellist.splice(idx, 1);
+              this.totalrows = this.totalrows - 1;
               this.toastr.success(data.message);
-              this.router.navigate(['usermanagement'],
+              /* this.router.navigate(['usermanagement'],
                 {
                   queryParams: { 
                     name: this.qlabelname,
@@ -212,7 +214,7 @@ export class UsermgtComponent implements OnInit {
                     page: this.qpage || 1, 
                     sortby: this.qsort }
                 }
-              );
+              ); */
             }
           },
           err => {
@@ -292,7 +294,7 @@ export class UsermgtComponent implements OnInit {
     }
   } */
   
-  deactivateLabel(userid: string, labelname: string, status: string, email: string, username: string) {
+  deactivateLabel(idx, userid: string, labelname: string, status: string, email: string, username: string) {
     
     this.loading = true;
     if (status === 'STSPEND') {
@@ -312,8 +314,10 @@ export class UsermgtComponent implements OnInit {
             this.toastr.error(data.message);
           } else {
             this.loading = false;
+            this.labellist.splice(idx, 1);
+            this.totalrows = this.totalrows - 1;
             this.toastr.success(data.message);
-            this.router.navigate(['usermanagement'],
+            /* this.router.navigate(['usermanagement'],
                 {
                   queryParams: { 
                     name: this.qlabelname,
@@ -321,7 +325,7 @@ export class UsermgtComponent implements OnInit {
                     page: this.qpage || 1, 
                     sortby: this.qsort }
                 }
-            );
+            ); */
           }
         },
         err => {
@@ -354,8 +358,10 @@ export class UsermgtComponent implements OnInit {
               this.toastr.error(data.message);
             } else {
               this.loading = false;
+              this.labellist.splice(idx, 1);
+              this.totalrows = this.totalrows - 1;
               this.toastr.success(data.message);
-              this.router.navigate(['usermanagement'],
+/*               this.router.navigate(['usermanagement'],
                   {
                     queryParams: { 
                       name: this.qlabelname,
@@ -363,7 +369,7 @@ export class UsermgtComponent implements OnInit {
                       page: this.qpage || 1, 
                       sortby: this.qsort }
                   }
-              );
+              ); */
             }
           },
           err => {
