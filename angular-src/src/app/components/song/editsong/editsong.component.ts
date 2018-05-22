@@ -131,6 +131,27 @@ export class EditsongComponent implements OnInit {
         //console.log(data.data[0]);
         if (data.data[0]) {
           this.albumlist = data.data;
+          //console.log(this.albumlist);
+        } else {
+          this.albumlist = [{_id:'', albumname:'No album list available'}];
+        }
+      } else {
+        this.albumlist = [{_id:'', albumname:'Error album list'}];
+      }
+    },
+    err => {
+      this.loading = false;
+      this.albumlist = [{_id:'', albumname:'Error album list'}];
+      //console.log(err);
+      this.toastr.error(err);
+    });
+  }
+  getAlbumListbyArtist2(id, artistid){
+    this.albumService.getAlbumListbyArtist(id, artistid).subscribe(data => {
+      if (data.success === true) {
+        //console.log(data.data[0]);
+        if (data.data[0]) {
+          this.albumlist = data.data;
           this.songForm.patchValue({
             albumid: this.albumlist[0]._id
           });
@@ -262,7 +283,7 @@ export class EditsongComponent implements OnInit {
     // result is 1: artistid. Therefore need split
     var res = result.split(" ");
     this.albumlist.length = 0;
-    this.getAlbumListbyArtist(this.userObj.userid,res[1]);
+    this.getAlbumListbyArtist2(this.userObj.userid,res[1]);
   }
 
 }

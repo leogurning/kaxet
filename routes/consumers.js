@@ -1142,8 +1142,9 @@ function editSongConsumerChannel(q){
                     }
                         
                     if(song) {
-                        song.artistid = artistid,
-                        song.albumid = albumid,
+                        const pvalbumid = song.albumid;
+                        song.artistid = artistid;
+                        song.albumid = albumid;
                         song.songname = songname;
                         song.songlyric = songlyric;
                         song.songgenre = songgenre;
@@ -1152,6 +1153,7 @@ function editSongConsumerChannel(q){
                         song.objartistid = artistid;
                         song.objalbumid = albumid;
                         song.modifydt = new Date();
+                        if (pvalbumid != albumid) { rediscli.del('redis-user-songlist-'+pvalbumid+labelid) }
                     }
                     song.save(function(err) {
                         if(err){ 
@@ -1162,7 +1164,7 @@ function editSongConsumerChannel(q){
                         console.log("[EDITSONGCONS] song " + songname + " saved successfuly.");
                         let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] song " + songname + " saved successfuly.", 'STSSCS');    
                         //Delete redis respective keys
-                        rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);
+                        rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);  
                         return;
                     });
                 });
@@ -1218,6 +1220,7 @@ function addAlbumConsumerChannel(q){
                     }
                         
                     if(album) {
+                        const pvartistid = album.artistid;
                         album.artistid = artistid,
                         album.albumname = albumname;
                         album.albumyear = albumyear;
@@ -1226,6 +1229,7 @@ function addAlbumConsumerChannel(q){
                         album.status = status;
                         album.objartistid = artistid;
                         album.modifydt = new Date();
+                        if (pvartistid != artistid) { rediscli.del('redis-user-artistalbumlist-'+pvartistid+labelid) }
                     }
                     album.save(function(err) {
                         if(err){ 

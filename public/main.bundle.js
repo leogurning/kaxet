@@ -9942,6 +9942,29 @@ var EditsongComponent = /** @class */ (function () {
                 //console.log(data.data[0]);
                 if (data.data[0]) {
                     _this.albumlist = data.data;
+                    //console.log(this.albumlist);
+                }
+                else {
+                    _this.albumlist = [{ _id: '', albumname: 'No album list available' }];
+                }
+            }
+            else {
+                _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.albumlist = [{ _id: '', albumname: 'Error album list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    EditsongComponent.prototype.getAlbumListbyArtist2 = function (id, artistid) {
+        var _this = this;
+        this.albumService.getAlbumListbyArtist(id, artistid).subscribe(function (data) {
+            if (data.success === true) {
+                //console.log(data.data[0]);
+                if (data.data[0]) {
+                    _this.albumlist = data.data;
                     _this.songForm.patchValue({
                         albumid: _this.albumlist[0]._id
                     });
@@ -10071,7 +10094,7 @@ var EditsongComponent = /** @class */ (function () {
         // result is 1: artistid. Therefore need split
         var res = result.split(" ");
         this.albumlist.length = 0;
-        this.getAlbumListbyArtist(this.userObj.userid, res[1]);
+        this.getAlbumListbyArtist2(this.userObj.userid, res[1]);
     };
     EditsongComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
