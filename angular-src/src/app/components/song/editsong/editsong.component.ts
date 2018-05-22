@@ -131,6 +131,9 @@ export class EditsongComponent implements OnInit {
         //console.log(data.data[0]);
         if (data.data[0]) {
           this.albumlist = data.data;
+          this.songForm.patchValue({
+            albumid: this.albumlist[0]._id
+          });
           //console.log(this.albumlist);
         } else {
           this.albumlist = [{_id:'', albumname:'No album list available'}];
@@ -258,6 +261,7 @@ export class EditsongComponent implements OnInit {
     var result = <String>selectedValue.target.value;
     // result is 1: artistid. Therefore need split
     var res = result.split(" ");
+    this.albumlist.length = 0;
     this.getAlbumListbyArtist(this.userObj.userid,res[1]);
   }
 

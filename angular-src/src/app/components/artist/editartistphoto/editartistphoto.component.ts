@@ -138,7 +138,7 @@ export class EditartistphotoComponent implements OnInit {
         this.progressvalue = 50;
         this.displayImg = data.filedata.filepath;
         let payloadData: any = {};
-        //payloadData.uploadpath = this.artistuploadpath;
+        payloadData.uploadpath = this.artistuploadpath;
         payloadData.oldartistphotoname = this.artistForm.value.artistphotoname;
         payloadData.artistphotoname = data.filedata.filename;
         payloadData.artistphotopath = data.filedata.filepath;

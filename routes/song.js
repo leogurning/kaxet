@@ -1054,7 +1054,8 @@ exports.pubeditsongprvw = function(req, res, next){
   const labelid = req.body.labelid;
   const songprvwpath = req.body.songprvwpath;
   const songprvwname = req.body.songprvwname;
-  const oldsongprvwname = req.body.oldsongprvwname;  
+  const oldsongprvwname = req.body.oldsongprvwname;
+  const uploadpath = req.body.uploadpath;  
   const token = req.headers['authorization'];
 
   const q = 'editSongprvwQueue';
@@ -1083,7 +1084,8 @@ exports.pubeditsongfile = function(req, res, next){
   const labelid = req.body.labelid;
   const songfilepath = req.body.songfilepath;
   const songfilename = req.body.songfilename;
-  const oldsongfilename = req.body.oldsongfilename;  
+  const oldsongfilename = req.body.oldsongfilename;
+  const uploadpath = req.body.uploadpath;  
   const token = req.headers['authorization'];
 
   const q = 'editSongfileQueue';
@@ -1112,6 +1114,8 @@ exports.pubdeletesong = function(req, res, next){
   const songid = req.params.id;
   const songprvwname = req.body.songprvwname;
   const songfilename = req.body.songfilename;
+  const prvwuploadpath = req.body.prvwuploadpath;
+  const songuploadpath = req.body.songuploadpath;
   const labelid = req.body.labelid;
   const token = req.headers['authorization'];
 

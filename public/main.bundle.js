@@ -1952,6 +1952,7 @@ var EditalbumphotoComponent = /** @class */ (function () {
                 _this.displayImg = data.filedata.filepath;
                 var payloadData = {};
                 payloadData.oldalbumphotoname = _this.albumForm.value.albumphotoname;
+                payloadData.uploadpath = _this.albumuploadpath;
                 payloadData.albumphotoname = data.filedata.filename;
                 payloadData.albumphotopath = data.filedata.filepath;
                 payloadData.labelid = _this.userObj.userid;
@@ -2372,6 +2373,7 @@ var ListalbumComponent = /** @class */ (function () {
                         var payloadData = {};
                         payloadData.labelid = _this.userObj.userid;
                         payloadData.albumphotoname = albumphotoname;
+                        payloadData.uploadpath = _this.albumuploadpath;
                         _this.loading = true;
                         _this.albumService.pubdeleteAlbum(albumid, payloadData)
                             .subscribe(function (data) {
@@ -3971,7 +3973,7 @@ var EditartistphotoComponent = /** @class */ (function () {
                 _this.progressvalue = 50;
                 _this.displayImg = data.filedata.filepath;
                 var payloadData = {};
-                //payloadData.uploadpath = this.artistuploadpath;
+                payloadData.uploadpath = _this.artistuploadpath;
                 payloadData.oldartistphotoname = _this.artistForm.value.artistphotoname;
                 payloadData.artistphotoname = data.filedata.filename;
                 payloadData.artistphotopath = data.filedata.filepath;
@@ -4338,6 +4340,7 @@ var ListartistComponent = /** @class */ (function () {
                     if (confirm('Do you really want to delete this artist: ' + artistname + ' record?')) {
                         var payloadData = {};
                         payloadData.artistphotoname = artistphotoname;
+                        payloadData.uploadpath = _this.artistuploadpath;
                         payloadData.labelid = _this.userObj.userid;
                         _this.loading = true;
                         _this.artistService.pubdeleteArtist(artistid, payloadData)
@@ -9939,6 +9942,9 @@ var EditsongComponent = /** @class */ (function () {
                 //console.log(data.data[0]);
                 if (data.data[0]) {
                     _this.albumlist = data.data;
+                    _this.songForm.patchValue({
+                        albumid: _this.albumlist[0]._id
+                    });
                     //console.log(this.albumlist);
                 }
                 else {
@@ -10064,6 +10070,7 @@ var EditsongComponent = /** @class */ (function () {
         var result = selectedValue.target.value;
         // result is 1: artistid. Therefore need split
         var res = result.split(" ");
+        this.albumlist.length = 0;
         this.getAlbumListbyArtist(this.userObj.userid, res[1]);
     };
     EditsongComponent = __decorate([
@@ -10293,6 +10300,7 @@ var EditsongfilesComponent = /** @class */ (function () {
                 payloadData.songprvwpath = data.filedata.filepath;
                 payloadData.songprvwname = data.filedata.filename;
                 payloadData.oldsongprvwname = _this.songForm.value.songprvwname;
+                payloadData.uploadpath = _this.prvwuploadpath;
                 payloadData.labelid = _this.userObj.userid;
                 _this.progressvalue = 80;
                 _this.progressvalue = 90;
@@ -10426,6 +10434,7 @@ var EditsongfilesComponent = /** @class */ (function () {
                 payloadData.songfilepath = data.filedata.filepath;
                 payloadData.songfilename = data.filedata.filename;
                 payloadData.oldsongfilename = _this.songForm.value.songfilename;
+                payloadData.uploadpath = _this.songuploadpath;
                 payloadData.labelid = _this.userObj.userid;
                 _this.progressvalue = 80;
                 _this.progressvalue = 90;
@@ -10993,6 +11002,8 @@ var ListsongComponent = /** @class */ (function () {
                 payloadData.labelid = this.userObj.userid;
                 payloadData.songprvwname = songprvwname;
                 payloadData.songfilename = songfilename;
+                payloadData.prvwuploadpath = this.prvwuploadpath;
+                payloadData.songuploadpath = this.songuploadpath;
                 this.songService.pubdeleteSong(songid, payloadData)
                     .subscribe(function (data) {
                     if (data.success === false) {

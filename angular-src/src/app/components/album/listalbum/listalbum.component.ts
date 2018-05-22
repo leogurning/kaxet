@@ -286,6 +286,7 @@ export class ListalbumComponent implements OnInit {
             let payloadData: any = {};
             payloadData.labelid = this.userObj.userid;
             payloadData.albumphotoname = albumphotoname;
+            payloadData.uploadpath = this.albumuploadpath;
             this.loading = true;
             this.albumService.pubdeleteAlbum(albumid, payloadData)
             .subscribe(data => {

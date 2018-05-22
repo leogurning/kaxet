@@ -178,6 +178,7 @@ export class EditsongfilesComponent implements OnInit {
         payloadData.songprvwpath = data.filedata.filepath;
         payloadData.songprvwname = data.filedata.filename;
         payloadData.oldsongprvwname = this.songForm.value.songprvwname;
+        payloadData.uploadpath = this.prvwuploadpath;
         payloadData.labelid = this.userObj.userid;
         this.progressvalue = 80;
         this.progressvalue = 90;
@@ -312,6 +313,7 @@ export class EditsongfilesComponent implements OnInit {
         payloadData.songfilepath = data.filedata.filepath;
         payloadData.songfilename = data.filedata.filename;
         payloadData.oldsongfilename = this.songForm.value.songfilename;
+        payloadData.uploadpath = this.songuploadpath;
         payloadData.labelid = this.userObj.userid;
         this.progressvalue = 80;
         this.progressvalue = 90;   

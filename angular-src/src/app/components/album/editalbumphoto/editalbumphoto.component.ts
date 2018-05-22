@@ -141,6 +141,7 @@ export class EditalbumphotoComponent implements OnInit {
         this.displayImg = data.filedata.filepath;
         let payloadData: any = {};
         payloadData.oldalbumphotoname = this.albumForm.value.albumphotoname;
+        payloadData.uploadpath = this.albumuploadpath;
         payloadData.albumphotoname = data.filedata.filename;
         payloadData.albumphotopath = data.filedata.filepath;
         payloadData.labelid = this.userObj.userid;

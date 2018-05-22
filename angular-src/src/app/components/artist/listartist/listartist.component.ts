@@ -188,6 +188,7 @@ export class ListartistComponent implements OnInit {
           if(confirm('Do you really want to delete this artist: ' + artistname + ' record?')){
             let payloadData: any = {};
             payloadData.artistphotoname = artistphotoname;
+            payloadData.uploadpath = this.artistuploadpath;
             payloadData.labelid = this.userObj.userid;
             this.loading = true;
             this.artistService.pubdeleteArtist(artistid, payloadData)

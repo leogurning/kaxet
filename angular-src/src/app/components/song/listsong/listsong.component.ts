@@ -440,7 +440,9 @@ export class ListsongComponent implements OnInit {
         let payloadData: any = {};
         payloadData.labelid = this.userObj.userid;
         payloadData.songprvwname = songprvwname;
-        payloadData.songfilename = songfilename;        
+        payloadData.songfilename = songfilename;  
+        payloadData.prvwuploadpath = this.prvwuploadpath; 
+        payloadData.songuploadpath = this.songuploadpath;  
         this.songService.pubdeleteSong(songid, payloadData)
         .subscribe(data => {
           if (data.success === false) {

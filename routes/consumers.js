@@ -485,6 +485,7 @@ function editArtistphotoConsumerChannel(q){
             let artistphotoname = obj.artistphotoname;
             let artistphotopath = obj.artistphotopath;
             let oldartistphotoname = obj.oldartistphotoname;
+            let uploadpath = obj.uploadpath;
             let artistid = obj.artistid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -512,7 +513,8 @@ function editArtistphotoConsumerChannel(q){
                     //delete old artist photo filename
                     const xheaders = { 'Authorization': token,
                                 'Content-Type': 'application/json' }; 
-                    const xbody = { filename: oldartistphotoname };
+                    const xbody = { filename: oldartistphotoname,
+                                    uploadpath: uploadpath };
                     // Call notification API to delete file
                     fetch(config.filetransferurl+'/api/inputfiledelete', { 
                         method: 'POST',
@@ -613,6 +615,7 @@ function deleteArtistConsumerChannel(q){
             let obj = JSON.parse(msg.content.toString());
             // Assign the parametrs
             let artistphotoname = obj.artistphotoname;
+            let uploadpath = obj.uploadpath;
             let artistid = obj.artistid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -639,7 +642,8 @@ function deleteArtistConsumerChannel(q){
                     //delete old artist photo filename
                     const xheaders = { 'Authorization': token,
                                     'Content-Type': 'application/json' }; 
-                    const xbody = { filename: artistphotoname };
+                    const xbody = { filename: artistphotoname,
+                                    uploadpath: uploadpath };
                     // Call notification API to delete file
                     fetch(config.filetransferurl+'/api/inputfiledelete', { 
                         method: 'POST',
@@ -833,6 +837,7 @@ function editSongprvwConsumerChannel(q){
             let songprvwpath = obj.songprvwpath;
             let songprvwname = obj.songprvwname;
             let oldsongprvwname = obj.oldsongprvwname;
+            let uploadpath = obj.uploadpath; 
             let songid = obj.songid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -870,7 +875,8 @@ function editSongprvwConsumerChannel(q){
                         //delete old song preview filename
                         const xheaders = { 'Authorization': token,
                                         'Content-Type': 'application/json' }; 
-                        const xbody = { filename: oldsongprvwname };
+                        const xbody = { filename: oldsongprvwname,
+                                        uploadpath: uploadpath  };
                         // Call notification API to delete file
                         fetch(config.filetransferurl+'/api/inputfiledelete', { 
                             method: 'POST',
@@ -926,6 +932,7 @@ function editSongfileConsumerChannel(q){
             let songfilepath = obj.songfilepath;
             let songfilename = obj.songfilename;
             let oldsongfilename = obj.oldsongfilename;
+            let uploadpath = obj.uploadpath; 
             let songid = obj.songid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -963,7 +970,8 @@ function editSongfileConsumerChannel(q){
                         //delete old song preview filename
                         const xheaders = { 'Authorization': token,
                                         'Content-Type': 'application/json' }; 
-                        const xbody = { filename: oldsongfilename };
+                        const xbody = { filename: oldsongfilename,
+                                        uploadpath: uploadpath  };
                         // Call notification API to delete file
                         fetch(config.filetransferurl+'/api/inputfiledelete', { 
                             method: 'POST',
@@ -1018,6 +1026,8 @@ function deleteSongConsumerChannel(q){
             // Assign the parametrs
             let songprvwname = obj.songprvwname;
             let songfilename = obj.songfilename;
+            let prvwuploadpath = obj.prvwuploadpath;
+            let songuploadpath = obj.songuploadpath;
             let songid = obj.songid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -1045,7 +1055,8 @@ function deleteSongConsumerChannel(q){
                     //delete old song filename
                     const xheaders = { 'Authorization': token,
                                     'Content-Type': 'application/json' }; 
-                    const xbody = { filename: songfilename };
+                    const xbody = { filename: songfilename,
+                                    uploadpath: songuploadpath };
                     // Call notification API to delete file
                     fetch(config.filetransferurl+'/api/inputfiledelete', { 
                         method: 'POST',
@@ -1064,7 +1075,8 @@ function deleteSongConsumerChannel(q){
                         console.log("[DELSONGCONS] error delete old song file with message: "+err.message);
                     });
                     //delete old song preview
-                    const body = { filename: songprvwname };
+                    const body = { filename: songprvwname,
+                                    uploadpath: prvwuploadpath };
                     // Call notification API to delete file
                     fetch(config.filetransferurl+'/api/inputfiledelete', { 
                         method: 'POST',
@@ -1289,6 +1301,7 @@ function editAlbumphotoConsumerChannel(q){
             let albumphotoname = obj.albumphotoname;
             let albumphotopath = obj.albumphotopath;
             let oldalbumphotoname = obj.oldalbumphotoname;
+            let uploadpath = obj.uploadpath;
             let albumid = obj.albumid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -1316,7 +1329,8 @@ function editAlbumphotoConsumerChannel(q){
                     //delete old artist photo filename
                     const xheaders = { 'Authorization': token,
                                 'Content-Type': 'application/json' }; 
-                    const xbody = { filename: oldalbumphotoname };
+                    const xbody = { filename: oldalbumphotoname,
+                                    uploadpath: uploadpath };
                     // Call notification API to delete file
                     fetch(config.filetransferurl+'/api/inputfiledelete', { 
                         method: 'POST',
@@ -1363,6 +1377,7 @@ function deleteAlbumConsumerChannel(q){
             let obj = JSON.parse(msg.content.toString());
             // Assign the parametrs
             let albumphotoname = obj.albumphotoname;
+            let uploadpath = obj.uploadpath;
             let albumid = obj.albumid;
             let labelid = obj.labelid;
             let token = obj.token;
@@ -1391,7 +1406,8 @@ function deleteAlbumConsumerChannel(q){
                     //delete old artist photo filename
                     const xheaders = { 'Authorization': token,
                                     'Content-Type': 'application/json' }; 
-                    const xbody = { filename: albumphotoname };
+                    const xbody = { filename: albumphotoname,
+                                    uploadpath: uploadpath };
                     // Call notification API to delete file
                     fetch(config.filetransferurl+'/api/inputfiledelete', { 
                         method: 'POST',
