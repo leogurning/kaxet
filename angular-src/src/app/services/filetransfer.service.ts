@@ -14,7 +14,9 @@ export class FiletransferService {
 
   constructor(private http: Http, private globals: Globals) { 
     this.filetransferurl = globals.filetransferurl;
-    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    var theUser: any;
+    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
     if (theUser) {  
       this.jwtToken = theUser.token;
     }    

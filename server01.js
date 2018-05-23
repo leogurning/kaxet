@@ -77,6 +77,7 @@ apiRoutes.put('/password/:id', user.updatePassword); // API updates user passwor
 apiRoutes.put('/email/:id', user.updateEmail); // API updates user email
 apiRoutes.put('/emailverify', user.emailverification); // API to verify user email
 apiRoutes.post('/pubchangelabelstatus/:id', user.pubchangelabelstatus); // API updates user label status
+apiRoutes.put('/pubemailverify', user.pubemailverification); // API to verify user email
 
 apiRoutes.post('/artist/:id', artist.saveartist); // API adds & update artist of the label
 apiRoutes.post('/pubartist/:id', artist.pubaddartist); // API adds artist of the label

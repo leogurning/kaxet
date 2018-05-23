@@ -104,8 +104,40 @@ export class ProfileComponent implements OnInit {
         });
       }
     }
-
+    
     verifyEmail(username, name, email) {
+      let payload: any = {};
+      payload.userid = this.userObj.userid;
+      payload.email = email;
+      payload.name = name;
+      payload.username = username;
+      this.loading = true;
+      this.userService.pubemailVerify(payload)
+      .subscribe(data => {
+        if (data.success === false) {
+          this.loading = false;
+          let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+            disableClose: true,
+            width: '400px',
+            data: 'Hi ' + name + ', We are sorry to inform that the email verification failed to be sent to ' + email + '. Please try again in few minutes.'
+          });
+          //this.toastr.error(data.message);
+        } else {
+          this.loading = false;
+          let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+            disableClose: true,
+            width: '400px',
+            data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
+          });   
+        }
+      },
+      err => {
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+    }
+/*  verifyEmail(username, name, email) {
       let payload: any = {};
       payload.email = email;
       payload.name = name;
@@ -131,10 +163,10 @@ export class ProfileComponent implements OnInit {
                 data: 'Hi ' + name + ', We are sorry to inform that the email verification failed to be sent to ' + email + '. Please try again in few minutes.'
               });
               //below code is to get result from modal dialog
-        /*       dialogRef.afterClosed().subscribe(result => {
-                console.log(`Dialog closed: ${result}`);
-                this.dialogResult = result;
-              }); */
+              // dialogRef.afterClosed().subscribe(result => {
+              //  console.log(`Dialog closed: ${result}`);
+              //  this.dialogResult = result;
+              //}); 
             } else {
               this.loading = false;
               let dialogRef = this.dialog.open(KxInfoDialogComponent, {
@@ -160,7 +192,7 @@ export class ProfileComponent implements OnInit {
         //console.log(err);
         this.toastr.error(err);
       });
-    }
+    } */
 
     onBack(): void {
       this.router.navigate(['/report']);

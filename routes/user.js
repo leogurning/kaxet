@@ -570,6 +570,57 @@ exports.pubchangelabelstatus = function(req, res, next){
     }     
 }
 
+exports.pubemailverification = function(req, res, next){
+    // assign request params
+    const userid = req.body.userid;
+    const name = req.body.name;
+    const email = req.body.email;
+    const username = req.body.username;
+    var rand,randhash,link;
+
+    const q = 'emailverificationQueue';
+
+    if (!name || !email || !username ) {
+        return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
+    }
+    User.findOne({ username: username, status:'STSACT' }, function(err, existingUser) {
+        if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+        if (existingUser) {
+           
+           if (existingUser.vhash) {
+               randhash = existingUser.vhash;
+           } else {
+               rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+               randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+           }
+           link= getProtocol(req)+"://"+req.get('host')+"/verify?id="+randhash+"&post=Y";
+            //Add to the queue
+            var objbody = req.body;
+            var objlink = {link: link};
+            var objhash = { randhash: randhash }
+            var objmsg = Object.assign(objbody,objlink,objhash);
+            var msg = JSON.stringify(objmsg);
+            //ch.assertExchange(exchange, 'direct', {durable: false})
+            //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+            try {
+                emailVerificationpublish('',q, new Buffer(msg));
+                res.status(200).json({
+                    success: true,
+                    message: 'System has received your request to send email verification. Please access and check your email: ' + email + ' to do verification.'
+                });            
+            } catch (e) {
+                console.error("[AMQP USER] email verification publish", e.message);
+                res.status(201).json({
+                    success: false,
+                    message: "[AMQP USER] error email verification publish. " + e.message
+                });
+            }
+       } else {
+           return res.status(201).json({ success: false, message:'Error in Finding user data.'});
+       }
+    });
+}
 //Start RabbitMQ Connection for Consumers
 function startpubRMQuser() {
     amqp.connect(config.amqpURL, function(err, conn) {
@@ -591,6 +642,7 @@ function startpubRMQuser() {
       registerLabelPub('registerlabelQueue');
       resetpasswdPub('resetpasswdQueue');
       updatelabelstatusPub('updatelabelstatusQueue');
+      emailVerificationPub('emailverificationQueue');
     });
 }
 
@@ -717,9 +769,50 @@ function updatelabelstatuspublish(exchange, routingKey, content) {
     }
 }
 
+var emailVerificationpubChannel = null;
+var emailVerificationofflinePubQueue = [];
+function emailVerificationPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP USER] email Verification channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP USER] email Verification channel closed");
+    });
+    
+    emailVerificationpubChannel = ch;
+    emailVerificationpubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = emailVerificationofflinePubQueue.shift();
+        if (!m) break;
+        emailVerificationpublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function emailVerificationpublish(exchange, routingKey, content) {
+    try {
+        emailVerificationpubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP USER] email verification publish", err);
+            emailVerificationofflinePubQueue.push([exchange, routingKey, content]);
+            emailVerificationpubChannel.connection.close();
+          }
+          console.log("[AMQP USER] email verification publisher completed");
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP USER] email verification publish", e.message);
+      emailVerificationofflinePubQueue.push([exchange, routingKey, content]);
+    }
+}
+
 function closeOnErr(err) {
     if (!err) return false;
     console.error("[AMQP USER] error", err);
-    amqpConn1.close();
+    amqpConn.close();
     return true;
 }

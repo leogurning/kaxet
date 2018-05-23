@@ -10,8 +10,9 @@ import 'rxjs/add/observable/throw';
 export class ArtistService {
   public jwtToken: String;
 
-  constructor(private http: Http) { 
-    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private http: Http) {
+    var theUser: any;
+    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
     if (theUser) {
         this.jwtToken = theUser.token;
     }

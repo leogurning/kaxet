@@ -11,7 +11,9 @@ export class UserService {
   public jwtToken: string;
 
   constructor(private http: Http) {
-      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+      //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+      var theUser: any;
+      setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
       if (theUser) {  
         this.jwtToken = theUser.token;
       }    
@@ -114,6 +116,16 @@ export class UserService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http.put(`api/emailverify`, JSON.stringify(oUser), options)
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
+  }
+  pubemailVerify(oUser){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`api/pubemailverify`, JSON.stringify(oUser), options)
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }

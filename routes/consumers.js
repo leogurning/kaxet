@@ -54,6 +54,7 @@ function startRMQ() {
 
       actionPaymentConsumerChannel('purchaseQueue');
       updatelabelstatusConsumerChannel('updatelabelstatusQueue');
+      emailverificationConsumerChannel('emailverificationQueue');
     });
 }
 
@@ -1702,6 +1703,121 @@ function updatelabelstatusConsumerChannel(q){
                     console.log("[UPDLABELSTATSCONS] no sending any email to Label User " + username + ". Status is updated.");
             }
             return;
+        }
+    });
+}
+
+function emailverificationConsumerChannel(q){
+    
+    amqpConn.createConfirmChannel(function(err, ch) {
+        if (closeOnErr(err)) return ;
+        ch.on("error", function(err) {
+          console.error("[AMQP] channel error", err.message);
+        });
+        ch.on("close", function() {
+          console.log("[AMQP] channel closed");
+        });
+        ch.prefetch(10);
+        ch.assertQueue(q, { durable: false }, function(err, _ok) {
+          if (closeOnErr(err)) return;
+          ch.consume(q, emailverificationConsumer, { noAck: true });
+          console.log("email verification consumer is started");
+        });
+        function emailverificationConsumer(msg){
+
+            let obj = JSON.parse(msg.content.toString());
+            // Check for input errors
+            let userid = obj.userid;
+            let name = obj.name;
+            let email = obj.email;
+            let username = obj.username;
+            let link = obj.link;
+            let randhash = obj.randhash;
+
+            User.findOne({ username: username, status:'STSACT' }, function(err, existingUser) {
+                if(err){ 
+                    console.error('[EMAILVERCONS] Error processing request finding user ', err); 
+                    return;  
+                }
+        
+                if (existingUser) {
+                   
+                   if (existingUser.vhash) {
+                        console.log('[EMAILVERCONS] vhash has been provided. ');
+                        //send email reset passwd
+                        const headers = { 'Content-Type': 'application/json' } 
+                        const body = { emailto: email,
+                                    vlink: link };
+                        var sentsts = false;             
+                        // Call notification API to send verification email
+                        fetch(config.notifurl+'/sendverification', { 
+                            method: 'POST',
+                            body:    JSON.stringify(body),
+                            headers: headers
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            if (data.success === true) {
+                                sentsts = true
+                                console.log("[EMAILVERCONS] Email verification has been sent to " + email +". Email sent?: "+ sentsts);
+                                let savelog= saveactivitylog(userid, 'ACTEMVR', "[EMAILVERCONS] Email verification has been sent to " + email +". Email sent?: "+ sentsts, 'STSSCS');
+                            } else {
+                                console.log("[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts);
+                                let savelog= saveactivitylog(userid, 'ACTEMVR', "[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts, 'STSERR');
+                            }
+                            return;
+                        })
+                        .catch(err => {
+                            console.log("[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts);
+                            //add to activity log
+                            let savelog= saveactivitylog(userid, 'ACTEMVR', "[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts, 'STSERR');
+                            return;
+                        });
+                   } else {
+                        existingUser.vhash = randhash;
+                        existingUser.save(function(err) {
+                            if(err){
+                                console.error('[EMAILVERCONS] Error processing request when saving user hash value. ', err); 
+                                let savelog= saveactivitylog(userid, 'ACTEMVR', '[EMAILVERCONS] Error processing request when saving user hash value. '+ err.message, 'STSERR');
+                                return; 
+                            }
+                            //send email reset passwd
+                            const headers = { 'Content-Type': 'application/json' } 
+                            const body = { emailto: email,
+                                        vlink: link };
+                            var sentsts = false;             
+                            // Call notification API to send verification email
+                            fetch(config.notifurl+'/sendverification', { 
+                                method: 'POST',
+                                body:    JSON.stringify(body),
+                                headers: headers
+                            })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data);
+                                if (data.success === true) {
+                                    sentsts = true
+                                    console.log("[EMAILVERCONS] Email verification has been sent to " + email +". Email sent?: "+ sentsts);
+                                    let savelog= saveactivitylog(userid, 'ACTEMVR', "[EMAILVERCONS] Email verification has been sent to " + email +". Email sent?: "+ sentsts, 'STSSCS');
+                                } else {
+                                    console.log("[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts);
+                                    let savelog= saveactivitylog(userid, 'ACTEMVR', "[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts, 'STSERR');
+                                }
+                                return;
+                            })
+                            .catch(err => {
+                                console.log("[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts);
+                                //add to activity log
+                                let savelog= saveactivitylog(userid, 'ACTEMVR', "[EMAILVERCONS] Email verification failed to be sent to " + email +". Email sent?: "+ sentsts, 'STSERR');
+                                return;
+                            });
+                        });   
+                   }
+               } else {
+                    console.log('[EMAILVERCONS] Error in Finding user data. There is no active user account found.');
+               }
+            });
         }
     });
 }

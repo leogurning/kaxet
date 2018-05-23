@@ -14,7 +14,9 @@ export class SongadminService {
   
   constructor(private http: Http, private globals: Globals) {
       this.adminurl = globals.adminurl;
-      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+      //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+      var theUser: any;
+      setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
       if (theUser) {
         this.jwtToken = theUser.token;
       }        

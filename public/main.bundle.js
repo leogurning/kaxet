@@ -13880,52 +13880,28 @@ var ProfileComponent = /** @class */ (function () {
     ProfileComponent.prototype.verifyEmail = function (username, name, email) {
         var _this = this;
         var payload = {};
+        payload.userid = this.userObj.userid;
         payload.email = email;
         payload.name = name;
         payload.username = username;
         this.loading = true;
-        this.userService.emailVerify(payload)
+        this.userService.pubemailVerify(payload)
             .subscribe(function (data) {
             if (data.success === false) {
                 _this.loading = false;
-                _this.toastr.error(data.message);
+                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
+                    disableClose: true,
+                    width: '400px',
+                    data: 'Hi ' + name + ', We are sorry to inform that the email verification failed to be sent to ' + email + '. Please try again in few minutes.'
+                });
+                //this.toastr.error(data.message);
             }
             else {
-                var nm = data.name;
-                var payload1 = {};
-                payload1.emailto = email;
-                payload1.vlink = data.vlink;
-                _this.notifService.sendemailverification(payload1)
-                    .subscribe(function (data) {
-                    if (data.success === false) {
-                        _this.loading = false;
-                        var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
-                            disableClose: true,
-                            width: '400px',
-                            data: 'Hi ' + name + ', We are sorry to inform that the email verification failed to be sent to ' + email + '. Please try again in few minutes.'
-                        });
-                        //below code is to get result from modal dialog
-                        /*       dialogRef.afterClosed().subscribe(result => {
-                                console.log(`Dialog closed: ${result}`);
-                                this.dialogResult = result;
-                              }); */
-                    }
-                    else {
-                        _this.loading = false;
-                        var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
-                            disableClose: true,
-                            width: '400px',
-                            data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
-                        });
-                    }
-                }, function (err) {
-                    _this.loading = false;
-                    var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
-                        disableClose: true,
-                        width: '400px',
-                        data: err
-                    });
-                    //console.log(err);
+                _this.loading = false;
+                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */], {
+                    disableClose: true,
+                    width: '400px',
+                    data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
                 });
             }
         }, function (err) {
@@ -13934,6 +13910,62 @@ var ProfileComponent = /** @class */ (function () {
             _this.toastr.error(err);
         });
     };
+    /*  verifyEmail(username, name, email) {
+          let payload: any = {};
+          payload.email = email;
+          payload.name = name;
+          payload.username = username;
+          this.loading = true;
+          this.userService.emailVerify(payload)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              this.toastr.error(data.message);
+            } else {
+              const nm = data.name;
+              let payload1: any = {};
+              payload1.emailto = email;
+              payload1.vlink = data.vlink;
+              this.notifService.sendemailverification(payload1)
+              .subscribe(data => {
+                if (data.success === false) {
+                  this.loading = false;
+                  let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+                    disableClose: true,
+                    width: '400px',
+                    data: 'Hi ' + name + ', We are sorry to inform that the email verification failed to be sent to ' + email + '. Please try again in few minutes.'
+                  });
+                  //below code is to get result from modal dialog
+                  // dialogRef.afterClosed().subscribe(result => {
+                  //  console.log(`Dialog closed: ${result}`);
+                  //  this.dialogResult = result;
+                  //});
+                } else {
+                  this.loading = false;
+                  let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+                    disableClose: true,
+                    width: '400px',
+                    data: 'Hi ' + name + ', email verification has been sent to ' + email + '. Please follow the instruction in the email.'
+                  });
+                }
+              },
+              err => {
+                this.loading = false;
+                let dialogRef = this.dialog.open(KxInfoDialogComponent, {
+                  disableClose: true,
+                  width: '400px',
+                  data: err
+                });
+                //console.log(err);
+              });
+            }
+          },
+          err => {
+            this.loading = false;
+            //console.log(err);
+            this.toastr.error(err);
+          });
+        } */
     ProfileComponent.prototype.onBack = function () {
         this.router.navigate(['/report']);
     };
@@ -15135,7 +15167,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ActivitylogService = /** @class */ (function () {
     function ActivitylogService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15209,7 +15243,9 @@ var MsconfigService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.adminurl = globals.adminurl;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15359,7 +15395,9 @@ var SongadminService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.adminurl = globals.adminurl;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15478,7 +15516,9 @@ var UsermgtService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.adminurl = globals.adminurl;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15600,7 +15640,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AlbumService = /** @class */ (function () {
     function AlbumService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15787,7 +15829,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ArtistService = /** @class */ (function () {
     function ArtistService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15948,7 +15991,9 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.isLoggedIn = function () {
         try {
-            var theUser = JSON.parse(localStorage.getItem('currentUser'));
+            //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+            var theUser;
+            setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
             if (theUser) {
                 this.currentUser = theUser.user;
             }
@@ -15977,9 +16022,9 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.logout = function () {
         this.currentUser = null;
-        localStorage.removeItem('currentUser');
+        setTimeout(localStorage.removeItem('currentUser'), 100);
         //Clear storage after specific time
-        var logoutTimer = setTimeout(function () { localStorage.clear(); }, 100);
+        var logoutTimer = setTimeout(localStorage.clear(), 100);
     };
     AuthService.prototype.handleError = function (error) {
         var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
@@ -16032,7 +16077,9 @@ var FiletransferService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.filetransferurl = globals.filetransferurl;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -16199,7 +16246,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SongService = /** @class */ (function () {
     function SongService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -16430,7 +16479,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SongpurchaseService = /** @class */ (function () {
     function SongpurchaseService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -16572,7 +16623,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TransactionService = /** @class */ (function () {
     function TransactionService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -16660,7 +16713,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        var theUser;
+        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -16750,6 +16805,15 @@ var UserService = /** @class */ (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.put("api/emailverify", JSON.stringify(oUser), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    UserService.prototype.pubemailVerify = function (oUser) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put("api/pubemailverify", JSON.stringify(oUser), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };

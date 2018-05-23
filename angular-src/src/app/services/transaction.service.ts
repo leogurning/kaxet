@@ -10,7 +10,9 @@ import 'rxjs/add/observable/throw';
 export class TransactionService {
   public jwtToken: String;
   constructor(private http: Http) { 
-    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    var theUser: any;
+    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
     if (theUser) {
         this.jwtToken = theUser.token;
     }
