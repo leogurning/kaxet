@@ -352,12 +352,12 @@ var Globals = /** @class */ (function () {
         this.prvwuploadpath = 'kaxet/previews/';
         this.songuploadpath = 'kaxet/songs/';
         //adminurl: String = 'http://localhost:2002';
-        this.adminurl = 'https://kxadmin.herokuapp.com';
+        this.adminurl = 'https://kxadminp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
         //notifurl: String = 'http://localhost:2004';
-        this.notifurl = 'https://kxnotif.herokuapp.com';
+        this.notifurl = 'https://kxnotifp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
         //filetransferurl: String = 'http://localhost:2005';
-        this.filetransferurl = 'https://kxfiletrf.herokuapp.com';
-        this.kaxeturl = 'https://kaxet.herokuapp.com';
+        this.filetransferurl = 'https://kxfiletrfp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
+        this.kaxeturl = 'https://www.kaxet.com';
         //kaxeturl: String = 'http://localhost:2000';
     }
     Globals = __decorate([
@@ -19428,12 +19428,8 @@ var UserService = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: true
 };
 
 
