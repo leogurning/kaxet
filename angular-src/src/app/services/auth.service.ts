@@ -17,9 +17,9 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     try {
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser: any;
-        setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+        const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+        /* var theUser: any;
+        setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100);  */
         if (theUser) {
             this.currentUser = theUser.user;
         }
@@ -50,9 +50,11 @@ export class AuthService {
 
   logout(): void {
     this.currentUser = null;
-    setTimeout(localStorage.removeItem('currentUser'),100);
+    //setTimeout(localStorage.removeItem('currentUser'),100);
+    localStorage.removeItem('currentUser');
     //Clear storage after specific time
-    var logoutTimer = setTimeout(localStorage.clear(), 100);
+    //var logoutTimer = setTimeout(localStorage.clear(), 100);
+    localStorage.clear();
   }
 
   private handleError(error: Response) {

@@ -7,6 +7,8 @@ import { IUser } from '../../../interface/user';
 import { MatDialog } from '@angular/material';
 import { KxInfoDialogComponent } from '../../kx-info-dialog/kx-info-dialog.component';
 import { NotifService } from '../../../services/notif.service';
+import { Globals } from '../../../app.global';
+import { NavbarService } from '../../../services/navbar.service';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -23,11 +25,16 @@ export class ForgotpasswordComponent implements OnInit {
     private notifService: NotifService,
     private router: Router,
     private toastr: ToastrService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private globals: Globals,
+    public nav: NavbarService
   ) { }
   email = new FormControl('', [Validators.email]);
+  kaxeturl:String;
 
   ngOnInit() {
+    this.nav.disableLink();
+    this.kaxeturl = this.globals.kaxeturl;
     this.profileForm = this.fb.group({
       email: this.email,
     });
@@ -36,6 +43,7 @@ export class ForgotpasswordComponent implements OnInit {
   sendEmail(formdata:any): void {
     let payload: any = {};
     payload.email = this.profileForm.value.email;
+    payload.usertype = 'LBL';
     this.loading = true;
     this.userService.resetPasswd(payload)
     .subscribe(data => {
@@ -110,5 +118,8 @@ export class ForgotpasswordComponent implements OnInit {
       //console.log(err);
       this.toastr.error(err);
     });
+  }
+  onLogin(): void {
+    window.open(this.kaxeturl.toString());
   }
 }

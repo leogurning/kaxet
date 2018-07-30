@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Globals {
-    artistuploadpath = 'images/artists/';
-    albumuploadpath = 'images/albums/';
-    configuploadpath = 'images/genres/';
-    prvwuploadpath = 'previews/';
-    songuploadpath = 'songs/';
+    artistuploadpath = 'kaxet/images/artists/';
+    albumuploadpath = 'kaxet/images/albums/';
+    configuploadpath = 'kaxet/images/genres/';
+    prvwuploadpath = 'kaxet/previews/';
+    songuploadpath = 'kaxet/songs/';
     //adminurl: String = 'http://localhost:2002';
-    adminurl: String = 'https://apikxadmin-dot-kaxetd.appspot.com';
+    adminurl: String = 'https://kxadminp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
     //notifurl: String = 'http://localhost:2004';
-    notifurl: String = 'https://apikxnotif-dot-kaxetd.appspot.com';
+    notifurl: String = 'https://kxnotifp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
     //filetransferurl: String = 'http://localhost:2005';
-    filetransferurl: String = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
-    kaxeturl: String = 'https://kaxetd.appspot.com';
+    filetransferurl: String = 'https://kxfiletrfp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
+    kaxeturl: String = 'https://www.kaxet.com';
+    //kaxeturl: String = 'http://localhost:2000';
 }

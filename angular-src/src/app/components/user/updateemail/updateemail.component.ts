@@ -33,6 +33,7 @@ export class UpdateemailComponent implements OnInit {
 
   updateEmail(formdata:any): void {
     if (this.profileForm.dirty && this.profileForm.valid) {
+        this.profileForm.value.usertype = this.userObj.usertype;
         this.loading = true;
         this.userService.updateEmail(this.userObj.userid, this.profileForm.value)
         .subscribe(data => {
@@ -40,7 +41,7 @@ export class UpdateemailComponent implements OnInit {
             this.loading = false;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['../errorpage']);
             }
             this.toastr.error(data.message);
           } else {

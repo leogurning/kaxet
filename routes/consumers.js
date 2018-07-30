@@ -55,6 +55,7 @@ function startRMQ() {
       actionPaymentConsumerChannel('purchaseQueue');
       updatelabelstatusConsumerChannel('updatelabelstatusQueue');
       emailverificationConsumerChannel('emailverificationQueue');
+      actionPaymentCodaConsumerChannel('purchaseQueueCoda');
     });
 }
 
@@ -91,7 +92,8 @@ function registerLabelConsumerChannel(q){
             let link = obj.link;
             let randhash = obj.randhash;
             let usertype = 'LBL';
-            User.findOne({ $or:[{username:username},{email:email.toLowerCase()}] }, function(err, existingUser) {
+            //User.findOne({ $or:[{username:username},{email:email.toLowerCase()}], usertype: usertype }, function(err, existingUser) {
+            User.findOne({ username: username }, function(err, existingUser) {
                 if(err){
                     console.error('[REGLABELCONS] Error processing request finding user ', err); 
                     let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Error processing request finding user '+ username +'. '+err.message, 'STSERR');
@@ -99,80 +101,93 @@ function registerLabelConsumerChannel(q){
                 }
                 // If user is not unique, return error
                 if (existingUser && existingUser.status != 'STSRJCT') {
-                    console.error('[REGLABELCONS] Username OR Email address already exists. ['+ username +']'); 
-                    let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Username OR Email address already exists. ['+ username +']', 'STSERR');
+                    console.error('[REGLABELCONS] Username already exists. ['+ username +']'); 
+                    let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Username already exists. ['+ username +']', 'STSERR');
                     return;
                 }
-                try {
-                    //console.log("Got msg", obj.name); 
-                    // If no error, create account
-                    let oUser = new User({
-                            name: name,
-                            email: email.toLowerCase(),
-                            contactno: contactno,
-                            bankaccno: bankaccno,
-                            bankcode: bankcode,
-                            bankname: bankname,
-                            username: username,
-                            password: password,
-                            usertype: usertype,
-                            status: 'STSPEND',
-                            balance: 0,
-                            balance_idx:0,
-                            verified_no:'N',
-                            verified_email:'N',
-                            pmtmethod: null,
-                            ccno: null,
-                            ccholdername: null,
-                            ccissuerbank: null,
-                            expmth: null,
-                            expyr: null,
-                            ccvno: null,
-                            vhash: randhash
-                        });
-                    
-                    oUser.save(function(err, ouser) {
-                        if(err){ 
-                            console.error('[REGLABELCONS] Error processing request when saving user details. ', err); 
-                            let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Error processing request when saving user '+ username +' details. '+err.message, 'STSERR');
-                            return;
-                        }
+                User.findOne({ $and:[{email:email.toLowerCase()}, {usertype: usertype}] }, function(err, eUser) {
+                    if(err){
+                        console.error('[REGLABELCONS] Error processing request finding user ', err); 
+                        let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Error processing request finding user '+ username +'. '+err.message, 'STSERR');
+                        return;  
+                    }
+                    // If user is not unique, return error
+                    if (eUser && eUser.status != 'STSRJCT') {
+                        console.error('[REGLABELCONS] Email address is already linked to another label user. ['+ email +']'); 
+                        let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Email address is already linked to another label user. ['+ email +']', 'STSERR');
+                        return;
+                    }
+                    try {
+                        //console.log("Got msg", obj.name); 
+                        // If no error, create account
+                        let oUser = new User({
+                                name: name,
+                                email: email.toLowerCase(),
+                                contactno: contactno,
+                                bankaccno: bankaccno,
+                                bankcode: bankcode,
+                                bankname: bankname,
+                                username: username,
+                                password: password,
+                                usertype: usertype,
+                                status: 'STSPEND',
+                                balance: 0,
+                                balance_idx:0,
+                                verified_no:'N',
+                                verified_email:'N',
+                                pmtmethod: null,
+                                ccno: null,
+                                ccholdername: null,
+                                ccissuerbank: null,
+                                expmth: null,
+                                expyr: null,
+                                ccvno: null,
+                                vhash: randhash
+                            });
                         
-                        //const token = req.headers['authorization'];
-                        const headers = { 'Content-Type': 'application/json' } 
-                        const body = { emailto: email,
-                                    vlink: link };
-                        var sentsts = false;             
-                        // Call notification API to send verification email
-                        fetch(config.notifurl+'/sendverification', { 
-                            method: 'POST',
-                            body:    JSON.stringify(body),
-                            headers: headers
-                        })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log(data);
-                            if (data.success === true) {
-                                sentsts = true
-                                console.log("[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts);
-                                let savelog= saveactivitylog('', 'ACTREGS', "[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts, 'STSSCS');
-                            } else {
-                                console.log("[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts);
-                                let savelog= saveactivitylog('', 'ACTREGS', "[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts, 'STSERR');
+                        oUser.save(function(err, ouser) {
+                            if(err){ 
+                                console.error('[REGLABELCONS] Error processing request when saving user details. ', err); 
+                                let savelog= saveactivitylog('', 'ACTREGS', '[REGLABELCONS] Error processing request when saving user '+ username +' details. '+err.message, 'STSERR');
+                                return;
                             }
-                            return;
-                        })
-                        .catch(err => {
-                            console.log("[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts);
-                            //add to activity log
-                            let savelog= saveactivitylog('', 'ACTREGS', "[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts, 'STSERR');
-                            return;
+                            
+                            //const token = req.headers['authorization'];
+                            const headers = { 'Content-Type': 'application/json' } 
+                            const body = { emailto: email,
+                                        vlink: link };
+                            var sentsts = false;             
+                            // Call notification API to send verification email
+                            fetch(config.notifurl+'/sendverification', { 
+                                method: 'POST',
+                                body:    JSON.stringify(body),
+                                headers: headers
+                            })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data);
+                                if (data.success === true) {
+                                    sentsts = true
+                                    console.log("[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts);
+                                    let savelog= saveactivitylog('', 'ACTREGS', "[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts, 'STSSCS');
+                                } else {
+                                    console.log("[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts);
+                                    let savelog= saveactivitylog('', 'ACTREGS', "[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts, 'STSERR');
+                                }
+                                return;
+                            })
+                            .catch(err => {
+                                console.log("[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts);
+                                //add to activity log
+                                let savelog= saveactivitylog('', 'ACTREGS', "[REGLABELCONS] Label User " + name + " created successfully with status:PENDING APPROVAL. Email sent?: "+ sentsts, 'STSERR');
+                                return;
+                            });
+    
                         });
-
-                    });
-                } catch (e) {
-                    closeOnErr(e);
-                }                
+                    } catch (e) {
+                        closeOnErr(e);
+                    }  
+                });              
             });
         }
     });
@@ -200,7 +215,9 @@ function resetpasswdConsumerChannel(q){
             let email = obj.email;
             let link = obj.link;
             let randhash = obj.randhash;
-            User.findOne({ email: email.toLowerCase(), status:'STSACT' }, function(err, existingUser) {
+            //const usertype = 'LBL';
+            let usertype = obj.usertype;
+            User.findOne({ email: email.toLowerCase(), status:'STSACT', usertype: usertype }, function(err, existingUser) {
                 if(err){ 
                     console.error('[RESETPASSWDCONS] Error processing request finding user ', err); 
                     return;  
@@ -319,60 +336,125 @@ function addArtistConsumerChannel(q){
             let artistphotoname = obj.artistphotoname;
             let labelid = obj.labelid;
             let artistid = obj.artistid;
+            let about = obj.about;
+            let searchval = obj.artistname.replace(/\s/g, "");
 
             if (artistid) {
-                //Edit artist
-                Artist.findById(artistid).exec(function(err, artist){
-                    if(err){ 
-                        console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message);
-                        let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                checkArtistName(labelid, artistname, function(err, result) {
+                    if (err) { 
+                        console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err);
+                        let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err, 'STSERR');    
                         return; 
                     }
-                        
-                    if(artist) {
-                        artist.artistname = artistname;
-                        artist.status = status;
-                        artist.modifydt = new Date();
-                    }
-                    artist.save(function(err) {
-                        if(err){ 
-                            console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message);
-                            let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                    //console.log('hasil: '+result);
+                    if (result === 'NF') {
+                        //Edit artist if there is no artist name exist
+                        Artist.findById(artistid).exec(function(err, artist){
+                            if(err){ 
+                                console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message);
+                                let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                                return; 
+                            }
+                                
+                            if(artist) {
+                                artist.artistname = artistname;
+                                artist.status = status;
+                                artist.about = about;
+                                artist.searchstr = searchval.toUpperCase();
+                                artist.modifydt = new Date();
+                            }
+                            artist.save(function(err) {
+                                if(err){ 
+                                    console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message);
+                                    let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                                    return; 
+                                }
+                                //Delete redis respective keys
+                                rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
+                                console.log("[EDITARTISTCONS] artist " + artistname + " saved successfuly.");
+                                let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] artist " + artistname + " saved successfully.", 'STSSCS');    
+                                return; 
+                            });
+                        });
+                    } else {
+                        if (result == artistid) {
+                            //Edit artist if it's still the same record
+                            Artist.findById(artistid).exec(function(err, artist){
+                                if(err){ 
+                                    console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message);
+                                    let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                                    return; 
+                                }
+                                    
+                                if(artist) {
+                                    artist.artistname = artistname;
+                                    artist.status = status;
+                                    artist.about = about;
+                                    artist.searchstr = searchval.toUpperCase();
+                                    artist.modifydt = new Date();
+                                }
+                                artist.save(function(err) {
+                                    if(err){ 
+                                        console.log("[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message);
+                                        let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] edit artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                                        return; 
+                                    }
+                                    //Delete redis respective keys
+                                    rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
+                                    console.log("[EDITARTISTCONS] artist " + artistname + " saved successfuly.");
+                                    let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] artist " + artistname + " saved successfully.", 'STSSCS');    
+                                    return; 
+                                });
+                            });
+                        } else {
+                            console.log("[EDITARTISTCONS] Error edit artist " + artistname + ". Artist name already exist.");
+                            let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] Error edit artist " + artistname + ". Artist name already exist.", 'STSERR');    
                             return; 
                         }
-                        //Delete redis respective keys
-                        rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
-                        console.log("[EDITARTISTCONS] artist " + artistname + " saved successfuly.");
-                        let savelog= saveactivitylog(labelid, 'ACTUPAR', "[EDITARTISTCONS] artist " + artistname + " saved successfully.", 'STSSCS');    
-                        return; 
-                    });
+                    }
                 });
     
             }else {
-                //Add new artits
-                let oArtist = new Artist({
-                    labelid: labelid,
-                    artistname: artistname,
-                    artistphotopath: artistphotopath,
-                    artistphotoname: artistphotoname,
-                    status: status,
-                    objlabelid: labelid,
-                    createddt: new Date(),
-                    modifydt: new Date()
-                });
-        
-                oArtist.save(function(err) {
+                checkArtistName(labelid, artistname, function(err, result) {
                     if(err){ 
-                        console.log("[ADDARTISTCONS] add artist " + artistname + " error with message: "+ err.message);
-                        let savelog= saveactivitylog(labelid, 'ACTADAR', "[ADDARTISTCONS] add artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                        console.log("[ADDARTISTCONS] add artist " + artistname + " error with message: "+ err);
+                        let savelog= saveactivitylog(labelid, 'ACTADAR', "[ADDARTISTCONS] add artist " + artistname + " error with message: "+ err, 'STSERR');    
                         return; 
                     }
-                        
-                    //Delete redis respective keys
-                    rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
-                    console.log("[ADDARTISTCONS] artist " + artistname + " saved successfuly.");
-                    let savelog= saveactivitylog(labelid, 'ACTADAR', "[ADDARTISTCONS] artist " + artistname + " saved successfully.", 'STSSCS');    
-                    return; 
+
+                    if (result === 'NF') {
+                        //Add new artits
+                        let oArtist = new Artist({
+                            labelid: labelid,
+                            artistname: artistname,
+                            artistphotopath: artistphotopath,
+                            artistphotoname: artistphotoname,
+                            status: status,
+                            about: about,
+                            searchstr: searchval.toUpperCase(),
+                            objlabelid: labelid,
+                            createddt: new Date(),
+                            modifydt: new Date()
+                        });
+                
+                        oArtist.save(function(err) {
+                            if(err){ 
+                                console.log("[ADDARTISTCONS] add artist " + artistname + " error with message: "+ err.message);
+                                let savelog= saveactivitylog(labelid, 'ACTADAR', "[ADDARTISTCONS] add artist " + artistname + " error with message: "+ err.message, 'STSERR');    
+                                return; 
+                            }
+                                
+                            //Delete redis respective keys
+                            rediscli.del('redis-user-artist-'+labelid, 'redis-user-artistcnt-'+labelid, 'redis-user-artistlist-'+labelid); 
+                            console.log("[ADDARTISTCONS] artist " + artistname + " saved successfuly.");
+                            let savelog= saveactivitylog(labelid, 'ACTADAR', "[ADDARTISTCONS] artist " + artistname + " saved successfully.", 'STSSCS');    
+                            return; 
+                        });
+                    } else {
+                        console.log("[ADDARTISTCONS] Error add artist " + artistname + ". Artist name already exist.");
+                        let savelog= saveactivitylog(labelid, 'ACTADAR', "[ADDARTISTCONS] Error add artist " + artistname + ". Artist name already exist.", 'STSERR');    
+                        return; 
+                    }
                 });
             }
         }
@@ -703,46 +785,70 @@ function addSongConsumerChannel(q){
             let songfilename = obj.songfilename;
             //let uploadpath = obj.uploadpath;
             let status = obj.status;
+            let searchval = obj.songname.replace(/\s/g, "");
 
-            let oSong = new Song({
-                labelid: labelid,
-                artistid: artistid,
-                albumid: albumid,
-                songname: songname,
-                songlyric: songlyric,
-                songgenre: songgenre,
-                songcntrate:1,
-                songrate: 5,
-                songprice: songprice,
-                songprvwpath: songprvwpath,
-                songprvwname: songprvwname,
-                songfilepath: songfilepath,
-                songfilename: songfilename,
-                songpublish: 'N',
-                songbuy: 0,
-                songshared:0,
-                status: status,
-                objartistid: artistid,
-                objalbumid: albumid,
-                objlabelid: labelid,
-                createddt: new Date(),
-                modifydt: new Date()
-            });
-
-            oSong.save(function(err) {
+            checkSongName(labelid, artistid, albumid, songname, function(err, result) {
                 if(err){ 
-                    console.log("[ADDSONGCONS] add song " + songname + " error with message: "+ err.message);
-                    let savelog= saveactivitylog(labelid, 'ACTADSG', "[ADDSONGCONS] add song " + songname + " error with message: "+ err.message, 'STSERR');    
+                    console.log("[ADDSONGCONS] add song " + songname + " error with message: "+ err);
+                    let savelog= saveactivitylog(labelid, 'ACTADSG', "[ADDSONGCONS] add song " + songname + " error with message: "+ err, 'STSERR');    
                     return; 
                 }
-                    
-                //Delete redis respective keys
-                rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);
-                console.log("[ADDSONGCONS] song " + songname + " saved successfuly.");
-                let savelog= saveactivitylog(labelid, 'ACTADSG', "[ADDSONGCONS] song " + songname + " saved successfuly.", 'STSSCS');    
-                return; 
-            });
+                //console.log('hasil: '+result);
+                if (result === 'NF') {
+                    let oSong = new Song({
+                        labelid: labelid,
+                        artistid: artistid,
+                        albumid: albumid,
+                        songname: songname,
+                        songlyric: songlyric,
+                        songgenre: songgenre,
+                        songcntrate:1,
+                        songrate: 5,
+                        songprice: songprice,
+                        songprvwpath: songprvwpath,
+                        songprvwname: songprvwname,
+                        songfilepath: songfilepath,
+                        songfilename: songfilename,
+                        songpublish: 'N',
+                        songbuy: 0,
+                        songshared:0,
+                        status: status,
+                        objartistid: artistid,
+                        objalbumid: albumid,
+                        objlabelid: labelid,
+                        createddt: new Date(),
+                        modifydt: new Date(),
+                        searchstr: searchval.toUpperCase()
+                    });
+        
+                    oSong.save(function(err) {
+                        if(err){ 
+                            console.log("[ADDSONGCONS] add song " + songname + " error with message: "+ err.message);
+                            let savelog= saveactivitylog(labelid, 'ACTADSG', "[ADDSONGCONS] add song " + songname + " error with message: "+ err.message, 'STSERR');    
+                            return; 
+                        }
 
+                        //Delete redis respective keys
+                        rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);                                                
+                        updateAlbumprice(labelid, albumid, function(err, result1) {
+                            if (err) { console.log('Update album: '+albumid+' price error with message: '+err) }
+                            if (result1) {
+                                console.log('Update album: '+albumid+' price is successful.');
+                            } else {
+                                console.log('Update album: '+albumid+' price error. No result !')
+                            }   
+                        });    
+                        console.log("[ADDSONGCONS] song " + songname + " saved successfuly.");
+                        let savelog= saveactivitylog(labelid, 'ACTADSG', "[ADDSONGCONS] song " + songname + " saved successfuly.", 'STSSCS');    
+                        return; 
+                    });
+        
+                } else {
+                    console.log("[ADDSONGCONS] add song " + result.songname + " ERROR. Songname already exists.");
+                    let savelog= saveactivitylog(labelid, 'ACTADSG', "[ADDSONGCONS] add song " + result.songname + " ERROR. Songname already exists.", 'STSERR');    
+                    return; 
+                }
+            });
 /*             let token = obj.token;
             //console.log(token);
             const headers = { 'Authorization': token }; 
@@ -1044,6 +1150,14 @@ function deleteSongConsumerChannel(q){
                   let albumid = song.albumid;
                   //Delete redis respective keys
                   rediscli.del('redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);                
+                  updateAlbumprice(labelid, albumid, function(err, result1) {
+                    if (err) { console.log('Update album: '+albumid+' price error with message: '+err) }
+                    if (result1) {
+                        console.log('Update album: '+albumid+' price is successful.');
+                    } else {
+                        console.log('Update album: '+albumid+' price error. No result !')
+                    }   
+                  });    
                 }
                 Song.remove({_id: songid}, function(err){
                     if(err){ 
@@ -1132,44 +1246,138 @@ function editSongConsumerChannel(q){
             let songgenre = obj.songgenre;
             let songprice = obj.songprice;
             let status = obj.status;
-
+            let searchval = obj.songname.replace(/\s/g, "");
+            var pvalbumid;
             if (songid) {
-                //Edit song
-                Song.findById(songid).exec(function(err, song){
+                checkSongName(labelid, artistid, albumid, songname, function(err, result) {
                     if(err){ 
-                        console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message);
-                        let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message, 'STSERR');    
+                        console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err);
+                        let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err, 'STSERR');    
                         return; 
                     }
-                        
-                    if(song) {
-                        const pvalbumid = song.albumid;
-                        song.artistid = artistid;
-                        song.albumid = albumid;
-                        song.songname = songname;
-                        song.songlyric = songlyric;
-                        song.songgenre = songgenre;
-                        song.songprice = songprice;
-                        song.status = status;
-                        song.objartistid = artistid;
-                        song.objalbumid = albumid;
-                        song.modifydt = new Date();
-                        if (pvalbumid != albumid) { rediscli.del('redis-user-songlist-'+pvalbumid+labelid) }
-                    }
-                    song.save(function(err) {
-                        if(err){ 
-                            console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message);
-                            let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message, 'STSERR');    
-                            return; 
+                    //console.log('hasil: '+result);
+                    if (result === 'NF') {
+                        //Edit song
+                        Song.findById(songid).exec(function(err, song){
+                            if(err){ 
+                                console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message);
+                                let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message, 'STSERR');    
+                                return; 
+                            }
+                                
+                            if(song) {
+                                pvalbumid = song.albumid;
+                                song.artistid = artistid;
+                                song.albumid = albumid;
+                                song.songname = songname;
+                                song.songlyric = songlyric;
+                                song.songgenre = songgenre;
+                                song.songprice = songprice;
+                                song.status = status;
+                                song.objartistid = artistid;
+                                song.objalbumid = albumid;
+                                song.modifydt = new Date();
+                                song.searchstr = searchval.toUpperCase();
+                                if (pvalbumid != albumid) { 
+                                    rediscli.del('redis-user-songlist-'+pvalbumid+labelid); 
+                                }
+                            }
+                            song.save(function(err) {
+                                if(err){ 
+                                    console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message);
+                                    let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message, 'STSERR');    
+                                    return; 
+                                }
+                                console.log('update previous album: '+pvalbumid);
+                                updateAlbumprice(labelid, pvalbumid, function(err, result1) {
+                                    if (err) { console.log('Update album: '+pvalbumid+' price error with message: '+err) }
+                                    if (result1) {
+                                        console.log('Update album: '+pvalbumid+' price is successful.');
+                                    } else {
+                                        console.log('Update album: '+pvalbumid+' price error. No result !')
+                                    }   
+                                }); 
+                                console.log('update current album: '+albumid);
+                                updateAlbumprice(labelid, albumid, function(err, result1) {
+                                    if (err) { console.log('Update album: '+albumid+' price error with message: '+err) }
+                                    if (result1) {
+                                        console.log('Update album: '+albumid+' price is successful.');
+                                    } else {
+                                        console.log('Update album: '+albumid+' price error. No result !')
+                                    }   
+                                }); 
+                                console.log("[EDITSONGCONS] song " + songname + " saved successfuly.");
+                                let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] song " + songname + " saved successfuly.", 'STSSCS');    
+                                //Delete redis respective keys
+                                rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);  
+                                return;
+                            });
+                        });
+                    } else {
+                        if (result.id == songid) {
+                            //Edit song
+                            Song.findById(songid).exec(function(err, song){
+                                if(err){ 
+                                    console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message);
+                                    let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message, 'STSERR');    
+                                    return; 
+                                }
+                                    
+                                if(song) {
+                                    pvalbumid = song.albumid;
+                                    song.artistid = artistid;
+                                    song.albumid = albumid;
+                                    song.songname = songname;
+                                    song.songlyric = songlyric;
+                                    song.songgenre = songgenre;
+                                    song.songprice = songprice;
+                                    song.status = status;
+                                    song.objartistid = artistid;
+                                    song.objalbumid = albumid;
+                                    song.modifydt = new Date();
+                                    song.searchstr = searchval.toUpperCase();
+                                    if (pvalbumid != albumid) { 
+                                        rediscli.del('redis-user-songlist-'+pvalbumid+labelid); 
+                                    }
+                                }
+                                song.save(function(err) {
+                                    if(err){ 
+                                        console.log("[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message);
+                                        let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: "+ err.message, 'STSERR');    
+                                        return; 
+                                    }
+                                    console.log('update previous album: '+pvalbumid);
+                                    updateAlbumprice(labelid, pvalbumid, function(err, result1) {
+                                        if (err) { console.log('Update album: '+pvalbumid+' price error with message: '+err) }
+                                        if (result1) {
+                                            console.log('Update album: '+pvalbumid+' price is successful.');
+                                        } else {
+                                            console.log('Update album: '+pvalbumid+' price error. No result !')
+                                        }   
+                                    }); 
+                                    console.log('update current album: '+albumid);
+                                    updateAlbumprice(labelid, albumid, function(err, result1) {
+                                        if (err) { console.log('Update album: '+albumid+' price error with message: '+err) }
+                                        if (result1) {
+                                            console.log('Update album: '+albumid+' price is successful.');
+                                        } else {
+                                            console.log('Update album: '+albumid+' price error. No result !')
+                                        }   
+                                    }); 
+                                    console.log("[EDITSONGCONS] song " + songname + " saved successfuly.");
+                                    let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] song " + songname + " saved successfuly.", 'STSSCS');    
+                                    //Delete redis respective keys
+                                    rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);  
+                                    return;
+                                });
+                            });                            
+                        } else {
+                            console.log("[EDITSONGCONS] edit song " + result.songname + " error. Songname already exists.");
+                            let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + result.songname + " error. Songname already exists.", 'STSERR');
+                            return;
                         }
-                        console.log("[EDITSONGCONS] song " + songname + " saved successfuly.");
-                        let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] song " + songname + " saved successfuly.", 'STSSCS');    
-                        //Delete redis respective keys
-                        rediscli.del('redis-recentsongs','redis-user-song-'+labelid, 'redis-user-songcnt-'+labelid, 'redis-user-songlist-'+albumid+labelid);  
-                        return;
-                    });
-                });
-      
+                    }
+                });     
             }else {
                 console.log("[EDITSONGCONS] edit song " + songname + " error with message: No song selected !");
                 let savelog= saveactivitylog(labelid, 'ACTUPSG', "[EDITSONGCONS] edit song " + songname + " error with message: No song selected !", 'STSERR');    
@@ -1205,77 +1413,147 @@ function addAlbumConsumerChannel(q){
             let albumname = obj.albumname;
             let albumyear = obj.albumyear;
             let albumgenre = obj.albumgenre;
-            let albumprice = obj.albumprice;
+            //let albumprice = obj.albumprice;
             let albumphotopath = obj.albumphotopath;
             let albumphotoname = obj.albumphotoname;
             let status = obj.status;
             let albumid = obj.albumid;
+            let searchval = obj.albumname.replace(/\s/g, "");
 
             if (albumid) {
-                //Edit album
-                Album.findById(albumid).exec(function(err, album){
+                checkAlbumName(labelid, artistid, albumname, function(err, result) {
                     if(err){ 
-                        console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message);
-                        let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                        console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err);
+                        let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err, 'STSERR');    
                         return; 
                     }
-                        
-                    if(album) {
-                        const pvartistid = album.artistid;
-                        album.artistid = artistid,
-                        album.albumname = albumname;
-                        album.albumyear = albumyear;
-                        album.albumgenre = albumgenre;
-                        album.albumprice = albumprice;
-                        album.status = status;
-                        album.objartistid = artistid;
-                        album.modifydt = new Date();
-                        if (pvartistid != artistid) { rediscli.del('redis-user-artistalbumlist-'+pvartistid+labelid) }
-                    }
-                    album.save(function(err) {
-                        if(err){ 
-                            console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message);
-                            let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                    //console.log('hasil: '+result);
+                    if (result === 'NF') {
+                        //Edit album
+                        Album.findById(albumid).exec(function(err, album){
+                            if(err){ 
+                                console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message);
+                                let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                                return; 
+                            }
+                                
+                            if(album) {
+                                const pvartistid = album.artistid;
+                                album.artistid = artistid,
+                                album.albumname = albumname;
+                                album.albumyear = albumyear;
+                                album.albumgenre = albumgenre;
+                                //album.albumprice = albumprice;
+                                album.status = status;
+                                album.searchstr = searchval.toUpperCase();
+                                album.objartistid = artistid;
+                                album.modifydt = new Date();
+                                if (pvartistid != artistid) { rediscli.del('redis-user-artistalbumlist-'+pvartistid+labelid) }
+                            }
+                            album.save(function(err) {
+                                if(err){ 
+                                    console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message);
+                                    let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                                    return; 
+                                }
+                                //Delete redis respective keys
+                                rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);
+                                console.log("[EDITALBUMCONS] album " + albumname + " saved successfuly.");
+                                let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] album " + albumname + " saved successfuly.", 'STSSCS');    
+                                return; 
+                            });
+                        });
+
+                    } else {
+                        if (result == albumid) {
+                            //Edit album
+                            Album.findById(albumid).exec(function(err, album){
+                                if(err){ 
+                                    console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message);
+                                    let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                                    return; 
+                                }
+                                    
+                                if(album) {
+                                    const pvartistid = album.artistid;
+                                    album.artistid = artistid,
+                                    album.albumname = albumname;
+                                    album.albumyear = albumyear;
+                                    album.albumgenre = albumgenre;
+                                    //album.albumprice = albumprice;
+                                    album.status = status;
+                                    album.searchstr = searchval.toUpperCase();
+                                    album.objartistid = artistid;
+                                    album.modifydt = new Date();
+                                    if (pvartistid != artistid) { rediscli.del('redis-user-artistalbumlist-'+pvartistid+labelid) }
+                                }
+                                album.save(function(err) {
+                                    if(err){ 
+                                        console.log("[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message);
+                                        let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] edit album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                                        return; 
+                                    }
+                                    //Delete redis respective keys
+                                    rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);
+                                    console.log("[EDITALBUMCONS] album " + albumname + " saved successfuly.");
+                                    let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] album " + albumname + " saved successfuly.", 'STSSCS');    
+                                    return; 
+                                });
+                            });
+                        } else {
+                            console.log("[EDITALBUMCONS] error edit album " + albumname + ". Albumname already exists.");
+                            let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] error edit album " + albumname + ". Albumname already exists.", 'STSERR');    
                             return; 
                         }
-                        //Delete redis respective keys
-                        rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);
-                        console.log("[EDITALBUMCONS] album " + albumname + " saved successfuly.");
-                        let savelog= saveactivitylog(labelid, 'ACTUPAL', "[EDITALBUMCONS] album " + albumname + " saved successfuly.", 'STSSCS');    
-                        return; 
-                    });
+                    }
                 });
+                
     
             }else {
-                let oAlbum = new Album({
-                    labelid: labelid,
-                    artistid: artistid,
-                    albumname: albumname,
-                    albumyear: albumyear,
-                    albumgenre: albumgenre,
-                    albumcntrate:1,
-                    albumrate: 5,
-                    albumprice: albumprice,
-                    albumphotopath: albumphotopath,
-                    albumphotoname: albumphotoname,
-                    status: status,
-                    objartistid: artistid,
-                    objlabelid: labelid,
-                    createddt: new Date(),
-                    modifydt: new Date()
-                });
-        
-                oAlbum.save(function(err) {
+                checkAlbumName(labelid, artistid, albumname, function(err, result) {
                     if(err){ 
-                        console.log("[ADDALBUMCONS] add album " + albumname + " error with message: "+ err.message);
-                        let savelog= saveactivitylog(labelid, 'ACTADAL', "[ADDALBUMCONS] add album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                        console.log("[ADDALBUMCONS] add album " + albumname + " error with message: "+ err);
+                        let savelog= saveactivitylog(labelid, 'ACTADAL', "[ADDALBUMCONS] add album " + albumname + " error with message: "+ err, 'STSERR');    
                         return; 
                     }
-                    //Delete redis respective keys
-                    rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);    
-                    console.log("[ADDALBUMCONS] album " + albumname + " saved successfuly.");
-                    let savelog= saveactivitylog(labelid, 'ACTADAL', "[ADDALBUMCONS] album " + albumname + " saved successfuly.", 'STSSCS');    
-                    return; 
+                    //console.log('hasil: '+result);
+                    if (result === 'NF') {
+                        let oAlbum = new Album({
+                            labelid: labelid,
+                            artistid: artistid,
+                            albumname: albumname,
+                            albumyear: albumyear,
+                            albumgenre: albumgenre,
+                            albumcntrate:1,
+                            albumrate: 5,
+                            albumprice: 0,
+                            albumphotopath: albumphotopath,
+                            albumphotoname: albumphotoname,
+                            status: status,
+                            searchstr: searchval.toUpperCase(),
+                            objartistid: artistid,
+                            objlabelid: labelid,
+                            createddt: new Date(),
+                            modifydt: new Date()
+                        });
+                
+                        oAlbum.save(function(err) {
+                            if(err){ 
+                                console.log("[ADDALBUMCONS] add album " + albumname + " error with message: "+ err.message);
+                                let savelog= saveactivitylog(labelid, 'ACTADAL', "[ADDALBUMCONS] add album " + albumname + " error with message: "+ err.message, 'STSERR');    
+                                return; 
+                            }
+                            //Delete redis respective keys
+                            rediscli.del('redis-user-album-'+labelid, 'redis-user-albumcnt-'+labelid, 'redis-user-artistalbumlist-'+artistid+labelid, 'redis-user-albumlist-'+labelid);    
+                            console.log("[ADDALBUMCONS] album " + albumname + " saved successfuly.");
+                            let savelog= saveactivitylog(labelid, 'ACTADAL', "[ADDALBUMCONS] album " + albumname + " saved successfuly.", 'STSSCS');    
+                            return; 
+                        });
+                    } else {
+                        console.log("[ADDALBUMCONS] error saving album " + albumname + ". Album name already exists.");
+                        let savelog= saveactivitylog(labelid, 'ACTADAL', "[ADDALBUMCONS] error saving album " + albumname + ". Album name already exists.", 'STSERR');    
+                        return; 
+                    }
                 });
             }
         }
@@ -1542,7 +1820,7 @@ function actionPaymentConsumerChannel(q) {
                                         } else {                                       
                                             console.log("[PURCHASECONS] songbuy increment saved successfully.");
                                             //Delete redis respective keys
-                                            rediscli.del('redis-topsongs','redis-user-song-'+labelid, 'redis-user-songlist-'+albumid+labelid);
+                                            rediscli.del('redis-topsongs-'+listenerid, 'redis-recentsongs','redis-topsongs','redis-topsongs-chart','redis-user-song-'+labelid, 'redis-user-songlist-'+albumid+labelid);
                                         }
                                     });
                                 }
@@ -1589,6 +1867,145 @@ function actionPaymentConsumerChannel(q) {
                 console.log("[PURCHASECONS] there is no purchasing data to be processed.");
                 return; 
             }
+        }    
+    });
+}
+
+function actionPaymentCodaConsumerChannel(q) {
+    amqpConn.createConfirmChannel(function(err, ch) {
+        if (closeOnErr(err)) return ;
+        ch.on("error", function(err) {
+            console.error("[AMQP] channel error", err.message);
+        });
+        ch.on("close", function() {
+            console.log("[AMQP] channel closed");
+        });
+        ch.prefetch(10);
+        ch.assertQueue(q, { durable: false }, function(err, _ok) {
+            if (closeOnErr(err)) return;
+            ch.consume(q, actionPaymentCodaConsumer, { noAck: true });
+            console.log("action Payment Coda consumer is started");
+        });
+        
+        function actionPaymentCodaConsumer(msg) {
+            let obj = JSON.parse(msg.content.toString());
+            // Assign the parametrs
+            let TxnId = obj.TxnId;
+            let OrderId = obj.OrderId;
+            let ResultCode = obj.ResultCode;
+            let TotalPrice = obj.TotalPrice;
+            let PaymentType = obj.PaymentType;
+            let Checksum = obj.Checksum;
+            let MnoId = obj.MnoId;
+            var errmsg = '';
+            var paymentmtd = '';
+            if (PaymentType == 1) {
+                paymentmtd = 'PMTPULSA';
+            } else if (PaymentType == 227) {
+                paymentmtd = 'PMTGOPAY';
+            }
+            var oFee = obj.oFee;
+            var trxfee = parseInt(oFee) * parseInt(TotalPrice) / 100 ;
+            var trxamt = parseInt(TotalPrice) - trxfee;
+            console.log(String(trxamt));
+            Songpurchase.findById(OrderId).exec(function(err, songpurchase){
+                if(err){ 
+                    console.log("[PURCHASECONS] purchasing using CODAPAY error with message: "+ err);
+                    let savelog= saveactivitylog('', 'ACTBUYS', "[PURCHASECONS] purchasing using CODAPAY error with message: "+ err, 'STSERR');    
+                    return;  
+                }
+                    
+                if(songpurchase){
+
+                    let pvstatus = songpurchase.status;
+                    if (pvstatus === 'STSPEND') {
+                        songpurchase.status = 'STSAPV';
+                        songpurchase.approvedt = new Date();
+                        let labelid = songpurchase.labelid;
+                        let listenerid = songpurchase.listenerid;
+                        let songid = songpurchase.songid;
+
+                        songpurchase.save(function(err){
+                            if(err){ 
+                                console.log("[PURCHASECONS] purchasing using CODAPAY error with message: "+ err);
+                                let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] purchasing using CODAPAY error with message: "+ err, 'STSERR');    
+                                return;  
+                            }        
+                            //Delete redis respective keys
+                            rediscli.del('redis-user-pendingsongpurchase-cnt-'+labelid);
+                            console.log("[PURCHASECONS] purchasing using CODAPAY approved successfully.");
+                            //let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] purchasing approved successfully.", 'STSSCS');    
+                            // Add new transaction
+                            let oTransaction = new Transaction({
+                                labelid: labelid,
+                                listenerid: listenerid,
+                                purchaseid: OrderId,
+                                producttype: 'SONG',
+                                productid: songid,
+                                paymentmtd: paymentmtd,
+                                dbcr: '+',
+                                amount: trxamt,
+                                transactiondt: new Date(),
+                                objlistenerid: listenerid,
+                                objlabelid: labelid,
+                                objpurchaseid: OrderId,
+                                objproductid: songid
+                            });
+    
+                            oTransaction.save(function(err) {
+                                if(err){ 
+                                    console.log("[PURCHASECONS] saving CODAPAY transaction error with message: "+ err);
+                                    //let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] saving transaction error with message: "+ err, 'STSERR');    
+                                    //return;
+                                    errmsg = errmsg + "saving CODAPAY transaction error with message: "+ err; 
+                                } else {
+                                    console.log("[PURCHASECONS] purchasing using CODAPAY approved successfully. CODAPAY Transaction saved successfully.");
+                                    //let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] purchasing approved successfully. Transaction saved successfully.", 'STSSCS');    
+                                    //Delete redis respective keys
+                                    //rediscli.del('redis-user-songpurchase-'+labelid, 'redis-user-songpurchasecnt-'+labelid);
+                                }       
+                            });
+    
+                            Song.findById(songid).exec(function(err, song){
+                                if(err){ 
+                                    console.log("[PURCHASECONS] songbuy increment error with message: "+ err);
+                                    //let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] songbuy increment error with message: "+ err, 'STSERR');    
+                                    //return;
+                                    errmsg = errmsg + "[PURCHASECONS] songbuy increment error with message: "+ err;  
+                                }                                        
+                                    
+                                if(song){
+                                    let labelid = song.labelid;
+                                    let albumid = song.albumid;
+                                    song.songbuy = song.songbuy + 1 ;
+                                    song.save(function(err){
+                                        if(err){ 
+                                            console.log("[PURCHASECONS] songbuy increment error with message: "+ err);
+                                            //let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] songbuy increment error with message: "+ err, 'STSERR');    
+                                            //return;
+                                            errmsg = errmsg + "[PURCHASECONS] songbuy increment error with message: "+ err;  
+                                        } else {                                       
+                                            console.log("[PURCHASECONS] songbuy increment saved successfully.");
+                                            //Delete redis respective keys
+                                            rediscli.del('redis-topsongs-'+listenerid, 'redis-recentsongs','redis-topsongs','redis-topsongs-chart','redis-user-song-'+labelid, 'redis-user-songlist-'+albumid+labelid);
+                                        }
+                                    });
+                                }
+                            });
+                            if (errmsg) {
+                                console.log("[PURCHASECONS] purchasing using CODAPAY error with message: "+ errmsg);
+                                let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] purchasing using CODAPAY approval error with message: "+ errmsg, 'STSERR');    
+                                return
+                            } else {
+                                console.log("[PURCHASECONS] purchasing using CODAPAY approved successfully.");
+                                let savelog= saveactivitylog(labelid, 'ACTBUYS', "[PURCHASECONS] purchasing using CODAPAY is approved successfully.", 'STSSCS');    
+                                return
+                            }
+                        });  
+                    }
+                }
+            });
+            
         }    
     });
 }
@@ -1868,3 +2285,111 @@ function closeOnErr(err) {
     amqpConn.close();
     return true;
 } 
+
+function checkArtistName(labelid, pname, cb) {
+    try {
+        var query = {};
+        searchval = pname.replace(/\s/g, "");
+        query = {labelid: labelid, searchstr: searchval.toUpperCase()};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Artist.findOne(query).exec(function(err, artist){
+            if (err) { cb(err, null);}
+            if (artist) {
+                //console.log(true);
+                cb(null, artist._id);
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+function checkAlbumName(labelid, artistid, pname, cb) {
+    try {
+        var query = {};
+        searchval = pname.replace(/\s/g, "");
+        query = {labelid: labelid, artistid: artistid, searchstr: searchval.toUpperCase()};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Album.findOne(query).exec(function(err, album){
+            if (err) { cb(err, null);}
+            if (album) {
+                //console.log(true);
+                cb(null, album._id);
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+function checkSongName(labelid, artistid, albumid, pname, cb) {
+    try {
+        var query = {};
+        searchval = pname.replace(/\s/g, "");
+        query = {labelid: labelid, artistid: artistid, albumid:albumid, searchstr: searchval.toUpperCase()};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Song.findOne(query).exec(function(err, song){
+            if (err) { cb(err, null);}
+            if (song) {
+                var songres = {
+                    "id" : song._id,
+                    "songname" : song.songname
+                };
+                //console.log(true);
+                cb(null, songres);
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+function updateAlbumprice(labelid, albumid, cb) {
+    try {
+        var query = {};
+        var finalprice;
+        query = {labelid:labelid, albumid:albumid};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        group = { _id: "$albumid" , 
+                  totalprice: { $sum: "$songprice"},
+                  count: { $sum: 1}
+                };      
+        var aggregate = Song.aggregate();  
+        aggregate.match(query);
+        aggregate.group(group);    
+        aggregate.exec(function(err, result) {
+            if (err) { cb(err, null);}
+            if (result[0]) {
+              finalprice = parseInt(result[0].totalprice);
+            } else {
+              finalprice = 0;
+            }
+            Album.findByIdAndUpdate(albumid, {$set: { albumprice: finalprice}}, {new: true}, function(err, result1) {
+              if (err) { cb(err, null);}
+              if (result1) {
+                  cb(null, result1);
+              } else {
+                  cb('Album not found', null);                
+              }
+            });
+        })
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}

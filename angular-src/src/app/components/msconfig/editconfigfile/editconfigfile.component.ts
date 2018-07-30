@@ -75,7 +75,7 @@ export class EditconfigfileComponent implements OnInit {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -171,7 +171,7 @@ export class EditconfigfileComponent implements OnInit {
             this.progressvalue = 0;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {

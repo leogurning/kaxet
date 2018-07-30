@@ -48,9 +48,9 @@ export class AddalbumComponent implements OnInit {
 
   artistid = new FormControl('', [Validators.required]);  
   albumname = new FormControl('', [Validators.required]);
-  albumyear = new FormControl('', [Validators.required]);
+  albumyear = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
   albumgenre = new FormControl('', [Validators.required]);
-  albumprice = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+  //albumprice = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
   albumphotopath: String;
   albumphotoname: String;
 
@@ -67,7 +67,7 @@ export class AddalbumComponent implements OnInit {
       albumname: this.albumname,
       albumyear: this.albumyear,
       albumgenre: this.albumgenre,
-      albumprice: this.albumprice,
+      //albumprice: this.albumprice,
       albumimage: this.filesToUpload,
       albumphotopath: this.albumphotopath,
       albumphotoname: this.albumphotoname
@@ -126,62 +126,79 @@ export class AddalbumComponent implements OnInit {
       this.progressvalue = 10;
       //const files: Array<File> = this.filesToUpload;
       let theForm = this.addAlbumForm.value;
-      let lformData: FormData = new FormData();
-      //console.log('Ini file: '+ files[0]['name']);
-      this.progressvalue = 20;
-      //lformData.append('albumimage',files[0],files[0]['name']);
-      lformData.append('fileinputsrc',files[0],files[0]['name']);
-      lformData.append('uploadpath',this.albumuploadpath);
-      //console.dir(theForm);
-      this.loading = true;
-      this.progressvalue = 40;
-      this.ftService.uploadInputFile(lformData)
-        .subscribe(data => {
-          if (data.success === false) {
-            this.loading = false;
-            this.progressvalue = 0;
-            this.toastr.error(data.message);
-          } else {
-              this.progressvalue = 60;
-              theForm.albumphotopath = data.filedata.filepath;
-              theForm.albumphotoname = data.filedata.filename;
-              theForm.status = 'STSACT';
-              if (this.albumid !== '') {
-                theForm.albumid = this.albumid;
-              }
-              this.progressvalue = 80;
-              this.albumService.pubsaveAlbum(this.userObj.userid, theForm)
-              .subscribe(data => {
-                if (data.success === false) {
-                  this.loading = false;
-                  this.progressvalue = 0;
-                  this.toastr.error(data.message);
-                } else {
-                  this.progressvalue = 90;
-                  this.loading = false;
-                  this.toastr.success(data.message);
-                  //this.router.navigate(['listalbum']);
-                  this.progressvalue = 100;
-                }
-                this.addAlbumForm.reset();
-                this.artistVar.nativeElement.selectedIndex = 0;
-                this.genreVar.nativeElement.selectedIndex = 0;
-                this.albumimageVar.nativeElement.value = "";
-                this.progressvalue = 0;
-              },
-              err => {
-                this.loading = false;
-                //console.log(err);
-                this.toastr.error(err);
-              });
-          }   
-        },
-        err => {
+      this.albumService.checkAlbum(this.userObj.userid, theForm)
+      .subscribe(data => {
+        if (data.success === false) {
           this.loading = false;
-          //console.log(err);
-          this.toastr.error(err);
-        });
- 
+          this.progressvalue = 0;
+          this.toastr.error(data.message);
+        } else {
+          let lformData: FormData = new FormData();
+          //console.log('Ini file: '+ files[0]['name']);
+          this.progressvalue = 20;
+          //lformData.append('albumimage',files[0],files[0]['name']);
+          lformData.append('fileinputsrc',files[0],files[0]['name']);
+          lformData.append('uploadpath',this.albumuploadpath);
+          //console.dir(theForm);
+          this.loading = true;
+          this.progressvalue = 40;
+          this.ftService.uploadInputFile(lformData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                this.toastr.error(data.message);
+              } else {
+                  this.progressvalue = 60;
+                  theForm.albumphotopath = data.filedata.filepath;
+                  theForm.albumphotoname = data.filedata.filename;
+                  theForm.status = 'STSACT';
+                  if (this.albumid !== '') {
+                    theForm.albumid = this.albumid;
+                  }
+                  this.progressvalue = 80;
+                  this.albumService.pubsaveAlbum(this.userObj.userid, theForm)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      this.progressvalue = 0;
+                      this.toastr.error(data.message);
+                    } else {
+                      this.progressvalue = 90;
+                      this.loading = false;
+                      this.toastr.success(data.message);
+                      //this.router.navigate(['listalbum']);
+                      this.progressvalue = 100;
+                    }
+                    this.addAlbumForm.reset();
+                    this.artistVar.nativeElement.selectedIndex = 0;
+                    this.genreVar.nativeElement.selectedIndex = 0;
+                    this.albumimageVar.nativeElement.value = "";
+                    this.progressvalue = 0;
+                  },
+                  err => {
+                    this.loading = false;
+                    this.progressvalue = 0;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }   
+            },
+            err => {
+              this.loading = false;
+              this.progressvalue = 0;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+        }
+      },
+      err => {
+        this.loading = false;
+        this.progressvalue = 0;
+        //console.log(err);
+        this.toastr.error(err);
+      });
+
     } else {
       this.toastr.error('Please provide the album cover/image...');
     }

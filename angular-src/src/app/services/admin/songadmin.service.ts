@@ -14,15 +14,17 @@ export class SongadminService {
   
   constructor(private http: Http, private globals: Globals) {
       this.adminurl = globals.adminurl;
-      //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-      var theUser: any;
-      setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
       if (theUser) {
         this.jwtToken = theUser.token;
       }        
    }
   
   publishSong(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -34,6 +36,10 @@ export class SongadminService {
   }
 
   cancelpublishSong(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -45,6 +51,10 @@ export class SongadminService {
   }
   
   getAggSongs(oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -56,6 +66,10 @@ export class SongadminService {
   }
   
   getAggSongsnonpublish(oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -67,6 +81,10 @@ export class SongadminService {
   }
   
   getPendingSongCount(userid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -77,6 +95,10 @@ export class SongadminService {
         .catch(this.handleError);
   }
   getSong(songid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -88,6 +110,10 @@ export class SongadminService {
   }
 
   getSongAgg(songid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

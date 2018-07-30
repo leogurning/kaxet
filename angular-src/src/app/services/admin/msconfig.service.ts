@@ -14,15 +14,17 @@ export class MsconfigService {
 
   constructor(private http: Http, private globals: Globals) {
       this.adminurl = globals.adminurl;
-      //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-      var theUser: any;
-      setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
       if (theUser) {
         this.jwtToken = theUser.token;
       }            
    }
 
   uploadGenrephoto(oFile){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
@@ -32,6 +34,10 @@ export class MsconfigService {
   }
   
   deleteGenrephoto(oGenre){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
@@ -41,6 +47,10 @@ export class MsconfigService {
   }
 
   saveMsconfig(userid, oMsconfig){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -52,6 +62,10 @@ export class MsconfigService {
   }
 
   deleteMsconfig(msconfigid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -63,6 +77,10 @@ export class MsconfigService {
   }
 
   updateMsconfigfile(userid, oMsconfig){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -74,6 +92,10 @@ export class MsconfigService {
   }
 
   getAggMsconfig(oMsconfig) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -85,6 +107,10 @@ export class MsconfigService {
   }
 
   getMsconfigAgg(msconfigid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -96,6 +122,10 @@ export class MsconfigService {
   }
 
   getMsconfig(msconfigid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

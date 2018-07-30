@@ -139,6 +139,7 @@
           <div class="col-sm-5" style="padding:0;margin:0;">
               <button type="submit" [disabled]="registerForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
               <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
+              <button type="button" [disabled]="this.loading == true" (click)="onLogin()" class="btn btn-info">Back to Login</button>
           </div>
           <div class="col-sm-5" style="text-align:right">
               <sup>*</sup> required

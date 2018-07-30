@@ -3,7 +3,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { ToastrService } from '../../../common/toastr.service'
 import { AuthService } from '../../../services/auth.service';
-
+import { NavbarService } from '../../../services/navbar.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, 
     private authService: AuthService,
     private router: Router,
-    private toastr: ToastrService) { 
+    private toastr: ToastrService,
+    public nav: NavbarService) { 
       this.navigationSubscription = this.router.events.subscribe((e: any) => {
         // If it is a NavigationEnd event re-initalise the component
         if (e instanceof NavigationEnd) {

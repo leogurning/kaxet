@@ -17,7 +17,12 @@
             </span>
         </div>
     </div>
-
+    <div class="form-group">
+        <label for="about" class="col-sm-2 control-label">About <sup>&nbsp;</sup></label>
+        <div class="input-group col-sm-10">
+            <textarea [disabled]="this.loading == true" class="form-control" id="about" rows="10" [formControl]="about" placeholder="About"></textarea>
+        </div>
+    </div>
     <div class="form-group" [ngClass]="{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}">
         <label for="artistimage" class="col-sm-2 control-label">Artist Photo <sup>*</sup></label>
         <div class="input-group col-sm-10">

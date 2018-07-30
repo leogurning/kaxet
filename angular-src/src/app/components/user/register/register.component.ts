@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from '../../../common/toastr.service'
 import { UserService } from '../../../services/user.service';
 import { NotifService } from '../../../services/notif.service';
+import { Globals } from '../../../app.global';
+import { NavbarService } from '../../../services/navbar.service';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +21,9 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private notifService: NotifService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private globals: Globals,
+    public nav: NavbarService
   ) { }
   
   name = new FormControl('', [Validators.required]);
@@ -31,8 +35,11 @@ export class RegisterComponent implements OnInit {
   username = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(16)]);
   password = new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,12}$')]);
   retypepass = new FormControl('', [Validators.required]);
+  kaxeturl:String;
 
   ngOnInit() {
+    this.nav.disableLink();
+    this.kaxeturl = this.globals.kaxeturl;
     this.registerForm = this.fb.group({
       name: this.name,
       email: this.email,
@@ -122,6 +129,9 @@ export class RegisterComponent implements OnInit {
         this.toastr.error(err);
       });
     }
+  }
+  onLogin(): void {
+    window.open(this.kaxeturl.toString());
   }
 }
 function comparePassword(c: AbstractControl): {[key: string]: boolean} | null {

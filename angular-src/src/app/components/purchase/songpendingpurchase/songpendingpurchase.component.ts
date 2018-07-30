@@ -34,6 +34,7 @@ export class SongpendingpurchaseComponent implements OnInit {
   qsort: String;
   pfee: IMsconfigGroupList;
   loading = false;
+  qpurchaseid : string;
 
   constructor(
     private fb: FormBuilder, 
@@ -62,6 +63,7 @@ export class SongpendingpurchaseComponent implements OnInit {
   rptype = new FormControl('opt3');
   startdt = new FormControl({value: '', disabled: true});
   enddt = new FormControl({value: '', disabled: true});  
+  purchaseid = new FormControl('',[Validators.nullValidator]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -72,7 +74,8 @@ export class SongpendingpurchaseComponent implements OnInit {
       songname: this.songname,
       rptype: this.rptype,
       startdt: this.startdt,
-      enddt: this.enddt
+      enddt: this.enddt,
+      purchaseid: this.purchaseid
     });
     this.getMsconfigVal('PFEE','FEE');
     this.route.queryParams.forEach((params: Params) => {
@@ -85,7 +88,8 @@ export class SongpendingpurchaseComponent implements OnInit {
       this.qenddt = params['enddt'] || '';
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
-      
+      this.qpurchaseid = params['purchaseid'] || '';
+
       if(this.qrptype !== '') {
         let payload: any = {};
         payload.artistname = this.qartistname;
@@ -100,6 +104,7 @@ export class SongpendingpurchaseComponent implements OnInit {
           this.reportForm.get('startdt').enable();
           this.reportForm.get('enddt').enable();
         }
+        payload.purchaseid = this.qpurchaseid;
         payload.page = this.qpage;
         payload.sortby = this.qsort;
         this.fetchReport(this.userObj.userid, payload);
@@ -111,7 +116,8 @@ export class SongpendingpurchaseComponent implements OnInit {
           songname: this.qsongname,
           rptype: this.qrptype,
           startdt: this.qstartdt,
-          enddt: this.qenddt
+          enddt: this.qenddt,
+          purchaseid: this.qpurchaseid
         });
       } else {
         this.fetchReport(this.userObj.userid, this.reportForm.value);
@@ -188,6 +194,7 @@ export class SongpendingpurchaseComponent implements OnInit {
               this.router.navigate(['songpendingpurchase'],
                   {
                     queryParams: {
+                      purchaseid: this.reportForm.value.purchaseid,
                       artistname: this.reportForm.value.artistname,
                       //albumname: this.reportForm.value.albumname,
                       buyername: this.reportForm.value.buyername,
@@ -236,6 +243,7 @@ export class SongpendingpurchaseComponent implements OnInit {
             this.router.navigate(['songpendingpurchase'],
                 {
                   queryParams: {
+                    purchaseid: this.reportForm.value.purchaseid,
                     artistname: this.reportForm.value.artistname,
                     //albumname: this.reportForm.value.albumname,
                     buyername: this.reportForm.value.buyername,
@@ -259,7 +267,7 @@ export class SongpendingpurchaseComponent implements OnInit {
         this.loading = false;
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -267,6 +275,7 @@ export class SongpendingpurchaseComponent implements OnInit {
         this.songpendings = data.data;
         this.totalrows = +data.totalcount;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);
+        this.qpurchaseid = formval.purchaseid;
         this.qartistname = formval.artistname;
         //this.qalbumname = formval.albumname;
         this.qbuyername = formval.buyername;
@@ -287,6 +296,7 @@ export class SongpendingpurchaseComponent implements OnInit {
         } */
         this.reportTitle = 'Search Result - ';
         this.reportForm.patchValue({
+          purchaseid: this.qpurchaseid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
           buyername: this.qbuyername,
@@ -307,6 +317,7 @@ export class SongpendingpurchaseComponent implements OnInit {
     this.router.navigate(['songpendingpurchase'],
       {
         queryParams: {
+          purchaseid: this.qpurchaseid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
           buyername: this.qbuyername,
@@ -340,6 +351,7 @@ export class SongpendingpurchaseComponent implements OnInit {
     this.router.navigate(['songpendingpurchase'],
       {
         queryParams: { 
+          purchaseid: this.qpurchaseid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
           buyername: this.qbuyername,
@@ -358,6 +370,7 @@ export class SongpendingpurchaseComponent implements OnInit {
       {
         queryParams: { 
           srcpg:'pend',
+          purchaseid: this.qpurchaseid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
           buyername: this.qbuyername,
@@ -376,6 +389,7 @@ export class SongpendingpurchaseComponent implements OnInit {
       {
         queryParams: { 
           srcpg:'pend',
+          purchaseid: this.qpurchaseid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
           buyername: this.qbuyername,
@@ -427,7 +441,7 @@ export class SongpendingpurchaseComponent implements OnInit {
           this.loading = false;
           if (data.errcode){
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
           }
           this.toastr.error(data.message + '. Error updating the purchase payment...');
         }
@@ -516,7 +530,7 @@ export class SongpendingpurchaseComponent implements OnInit {
           this.loading = false;
           if (data.errcode){
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
           }
           this.toastr.error(data.message + '. Error updating the purchase status...');
         }
@@ -562,7 +576,7 @@ export class SongpendingpurchaseComponent implements OnInit {
           this.loading = false;
           if (data.errcode){
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
           }
           this.toastr.error(data.message);
         }
@@ -602,7 +616,7 @@ export class SongpendingpurchaseComponent implements OnInit {
           this.loading = false;
           if (data.errcode){
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
           }
           this.toastr.error(data.message);
         }

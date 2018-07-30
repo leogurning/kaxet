@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { ToastrService } from '../../../common/toastr.service'
+import { ToastrService } from '../../../common/toastr.service';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
 import { UserService } from '../../../services/user.service';
 import { NotifService } from '../../../services/notif.service';
+import { NavbarService } from '../../../services/navbar.service';
 
 @Component({
   selector: 'app-resetuserpasswd',
@@ -24,13 +25,15 @@ export class ResetuserpasswdComponent implements OnInit {
     private notifService: NotifService,
     private msconfigService: MsconfigService,
     private toastr: ToastrService,
-    private userService: UserService
+    private userService: UserService,
+    public nav: NavbarService
   ) { }
     vhash: String;
     password = new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,12}$')]);
     retypepass = new FormControl('', [Validators.required]);
 
   ngOnInit() {
+    this.nav.disableLink();
     this.loading = true;
     this.sub = this.route.queryParams.subscribe(
       params => {
@@ -39,7 +42,7 @@ export class ResetuserpasswdComponent implements OnInit {
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
-            this.router.navigate(['login']);
+            this.router.navigate(['../errorpage']);
             this.toastr.error(data.message);
           } else {
             this.loading = false;
@@ -48,7 +51,7 @@ export class ResetuserpasswdComponent implements OnInit {
         },
         err => {
           this.loading = false;
-          this.router.navigate(['login']);
+          this.router.navigate(['../errorpage']);
           //console.log(err);
           this.toastr.error(err);
         }); 
@@ -78,12 +81,25 @@ export class ResetuserpasswdComponent implements OnInit {
           if (data.success === false) {
             this.loading = false;
             this.toastr.error(data.message);
+            this.router.navigate(['postresetpasswd'], 
+            {
+              queryParams: { 
+                id: this.vhash,
+                hasl: 'err'
+              }
+            });
           } else {
             this.loading = false;
-            this.toastr.success(data.message);
+            //this.toastr.success(data.message);
+            this.router.navigate(['postresetpasswd'], 
+            {
+              queryParams: { 
+                id: this.vhash,
+                hasl: 'scs'
+              }
+            });
           }
           this.passwordForm.reset();
-          this.router.navigate(['login']);
       },
       err => {
         this.loading = false;

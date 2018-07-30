@@ -11,14 +11,17 @@ export class ArtistService {
   public jwtToken: String;
 
   constructor(private http: Http) {
-    var theUser: any;
-    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
-    if (theUser) {
-        this.jwtToken = theUser.token;
-    }
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
   }
 
   saveArtist(userid, oArtist){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -29,6 +32,10 @@ export class ArtistService {
         .catch(this.handleError);
   }
   pubsaveArtist(userid, oArtist){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
@@ -39,6 +46,10 @@ export class ArtistService {
   }
   
   updateArtistphoto(artistid, oArtist){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -49,6 +60,10 @@ export class ArtistService {
         .catch(this.handleError);
   }
   pubupdateArtistphoto(artistid, oArtist){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
@@ -59,6 +74,10 @@ export class ArtistService {
   }
 
   getArtists(userid, oArtist) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -68,8 +87,26 @@ export class ArtistService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  
+  checkArtist(userid, oArtist){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
+    let headers = new Headers();
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/checkartistname/${userid}`, oArtist, options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   getArtistCount(userid, oArtist) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -81,6 +118,10 @@ export class ArtistService {
   }
 
   getAggArtists(userid, oArtist) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -92,6 +133,10 @@ export class ArtistService {
   }
   
   getAggArtiststats(userid, oArtist) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -102,6 +147,10 @@ export class ArtistService {
         .catch(this.handleError);
   }
   getArtist(artistid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -113,6 +162,10 @@ export class ArtistService {
   }
 
   getArtistList(userid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -124,6 +177,10 @@ export class ArtistService {
   }
 
   deleteArtist(artistid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -134,6 +191,10 @@ export class ArtistService {
         .catch(this.handleError);
   }
   pubdeleteArtist(artistid, oArtist) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

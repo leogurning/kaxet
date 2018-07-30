@@ -76,7 +76,7 @@
                     </div>
                 </div>  
                 <div class="col-sm-6 col-md-6">
-                    <label for="songbuy" class="col-sm-2 paddingsearch">Buy?</label>
+                    <label for="songbuy" class="col-sm-2 paddingsearch">Purchased?</label>
                     <div class="col-sm-10">
                         <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
                         <select class="form-control" [formControl]="songbuy">
@@ -129,14 +129,14 @@
                             <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortSong('songname')">Song Title</a></th>
                             <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortSong('label')">Label</a></th>
                             <th scope="col" width="10%">Artist</th>
-                            <th scope="col" width="20%">Album</th>
+                            <th scope="col" width="10%">Album</th>
                             <th scope="col" width="5%"><a style="cursor:pointer" (click)="sortSong('songbuy')">Purchase</a></th>
                             <th scope="col" width="10%"><a style="cursor:pointer" (click)="sortSong('songprice')">Price</a></th>
-                            <th scope="col" width="10%">Publish?</th>
+                            <th scope="col" width="5%">Publish?</th>
                             <!-- <th width="5%">Preview</th> -->
                             <th scope="col" width="5%">Song</th>
                             <!-- <th width="6%"><a style="cursor:pointer" (click)="sortAlbum('status')">Status</a></th> -->
-                            <th scope="col" width="5%">Action</th>
+                            <th scope="col" width="20%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -149,11 +149,18 @@
                             <td class="text-right" data-label="Price">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
                             <td data-label="Publish?">{{ song.songpublish }}</td>
                             <!-- <td><a href="{{ song.songprvwpath }}" style="cursor:pointer;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a></td> -->
-                            <td data-label="Song"><a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                            <td data-label="Song">
+                                <!-- <a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a> -->
+                                <a *ngIf="this.state[songIndex].playing && !this.state[songIndex].loading" (click)="toggleAudio(songIndex, song?.songfilepath)" style="cursor:pointer;float:center;color:#CF2222" data-toggle="tooltip" data-placement="top" title="Pause Song"><i class="fa fa-pause-circle fa-2x"></i></a>
+                                <span *ngIf="this.state[songIndex].loading"><i class="fa fa-spinner fa-2x"></i></span>
+                                <a *ngIf="!this.state[songIndex].playing && !this.state[songIndex].loading" (click)="toggleAudio(songIndex, song?.songfilepath)" style="cursor:pointer;float:center;color:#0B9111" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a>
+                            </td>
                             <!-- <td>{{ albm.status}}</td> -->
                             <td data-label="Action">
-                                <a *ngIf="song.songpublish === 'Y' && song.songbuy === 0" alt="Unpublish" style="cursor:pointer;float:center;color:grey" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish"><i class="fa fa-cloud-download fa-2x"></i></a>
-                                <span *ngIf="song.songpublish !== 'Y' || song.songbuy !== 0" style="color:#eee">No Action</span>
+                                <a *ngIf="song.songpublish === 'Y'" alt="Unpublish" style="cursor:pointer;float:center;color:grey" (click)="unpublishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Unpublish"><i class="fa fa-cloud-download fa-2x"></i></a>
+                                <span style="color:#eee;float:center">&nbsp;&nbsp;</span> 
+                                <a alt="Delete" style="cursor:pointer;float:center;color:#E42020" (click)="confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)" data-toggle="tooltip" data-placement="top" title="Delete Song"><i class="fa fa-trash fa-2x"></i></a>
+                                <!-- <span *ngIf="song.songpublish !== 'Y'" style="color:#eee">No</span>-->
                             </td>
                         </tr>
                     </tbody>

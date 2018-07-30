@@ -11,15 +11,17 @@ export class AlbumService {
   public jwtToken: String;
 
   constructor(private http: Http) { 
-    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-    var theUser: any;
-    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {
         this.jwtToken = theUser.token;
     }
   }
 
   saveAlbum(userid, artistid, oAlbum){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -29,8 +31,26 @@ export class AlbumService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  checkAlbum(userid, oAlbum){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/checkalbumname/${userid}`, JSON.stringify(oAlbum), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   updateAlbumphoto(albumid, oAlbum){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -42,6 +62,10 @@ export class AlbumService {
   }
 
   getAlbums(userid, oAlbum) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -53,6 +77,10 @@ export class AlbumService {
   }
 
   getAlbumCount(userid, oAlbum) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -64,6 +92,10 @@ export class AlbumService {
   }
 
   getArtistAlbums(userid, oAlbum) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -75,6 +107,10 @@ export class AlbumService {
   }
   
   getArtistAlbumsStats(userid, oAlbum) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -86,6 +122,10 @@ export class AlbumService {
   }
 
   getAggAlbums(userid, oAlbum) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -97,6 +137,10 @@ export class AlbumService {
   }
 
   getAggAlbumstats(userid, oAlbum) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -107,6 +151,10 @@ export class AlbumService {
         .catch(this.handleError);
   }
   getAlbum(albumid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -118,6 +166,10 @@ export class AlbumService {
   }
 
   getAlbumList(userid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -129,6 +181,10 @@ export class AlbumService {
   }
 
   getAlbumListbyArtist(userid,artistid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -140,6 +196,10 @@ export class AlbumService {
   }
 
   deleteAlbum(albumid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -151,6 +211,10 @@ export class AlbumService {
   }
 
   pubsaveAlbum(userid, oAlbum){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -162,6 +226,10 @@ export class AlbumService {
   }
 
   pubupdateAlbumphoto(albumid, oAlbum){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -172,6 +240,10 @@ export class AlbumService {
         .catch(this.handleError);
   }
   pubdeleteAlbum(albumid, oAlbum){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

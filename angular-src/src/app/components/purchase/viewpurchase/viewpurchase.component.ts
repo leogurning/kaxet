@@ -48,7 +48,7 @@ export class ViewpurchaseComponent implements OnInit {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -77,7 +77,7 @@ export class ViewpurchaseComponent implements OnInit {
       this.router.navigate(['/transactionstats'], { preserveQueryParams: true }); 
     } else {
       this.authService.logout();
-      this.router.navigate(['login']);
+      this.router.navigate(['errorpage']);
       this.toastr.error('Incorrect param in the URL');
     }
   }

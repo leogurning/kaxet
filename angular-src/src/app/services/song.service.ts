@@ -11,15 +11,17 @@ export class SongService {
   public jwtToken: String;
 
   constructor(private http: Http) { 
-    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-    var theUser: any;
-    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {
         this.jwtToken = theUser.token;
     }
   }
 
   saveSong(userid, artistid, albumid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -29,8 +31,26 @@ export class SongService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  checkSong(userid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/checksongname/${userid}`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   pubsaveSong(userid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -41,6 +61,10 @@ export class SongService {
         .catch(this.handleError);
   }
   pubeditSong(userid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -52,6 +76,10 @@ export class SongService {
   }
   
   uploadSongfiles(userid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
@@ -62,6 +90,10 @@ export class SongService {
   }
 
   publishSong(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -73,6 +105,10 @@ export class SongService {
   }
 
   cancelPublishSong(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -84,6 +120,10 @@ export class SongService {
   }
 
   updateSongPreview(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -94,6 +134,10 @@ export class SongService {
         .catch(this.handleError);
   }
   pubupdateSongPreview(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -104,6 +148,10 @@ export class SongService {
         .catch(this.handleError);
   }
   updateSongFile(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -114,6 +162,10 @@ export class SongService {
         .catch(this.handleError);
   }
   pubupdateSongFile(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -125,6 +177,10 @@ export class SongService {
   }
 
   getSong(songid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -136,6 +192,10 @@ export class SongService {
   }
 
   getSongAgg(songid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -145,8 +205,26 @@ export class SongService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  getAggTopSongs(oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/topaggreportln`, JSON.stringify(oSong), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
 
   deleteSong(songid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -157,6 +235,10 @@ export class SongService {
         .catch(this.handleError);
   }
   pubdeleteSong(songid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -168,6 +250,10 @@ export class SongService {
   }
 
   getAggSongs(userid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -179,6 +265,10 @@ export class SongService {
   }
 
   getSongs(userid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -190,6 +280,10 @@ export class SongService {
   }
   
   getSongCount(userid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -201,6 +295,10 @@ export class SongService {
   }
 
   getSongList(userid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -212,6 +310,10 @@ export class SongService {
   }
   
   getSongListstats(userid, oSong) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -223,6 +325,10 @@ export class SongService {
   }
 
   songbuyincrement(songid, oSong){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

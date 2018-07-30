@@ -135,7 +135,7 @@ export class LabelstatsComponent implements OnInit {
         this.loading = false;
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -233,7 +233,7 @@ export class LabelstatsComponent implements OnInit {
               this.loading = false;
               if (data.errcode){
                 this.authService.logout();
-                this.router.navigate(['login']);
+                this.router.navigate(['errorpage']);
               }
               this.toastr.error(data.message);
             } else {
@@ -273,7 +273,7 @@ export class LabelstatsComponent implements OnInit {
               this.loading = false;
               if (data.errcode){
                 this.authService.logout();
-                this.router.navigate(['login']);
+                this.router.navigate(['errorpage']);
               }
               this.toastr.error(data.message);
             } else {
@@ -327,7 +327,7 @@ export class LabelstatsComponent implements OnInit {
             this.loading = false;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -361,7 +361,7 @@ export class LabelstatsComponent implements OnInit {
               this.loading = false;
               if (data.errcode){
                 this.authService.logout();
-                this.router.navigate(['login']);
+                this.router.navigate(['errorpage']);
               }
               this.toastr.error(data.message);
             } else {
@@ -394,7 +394,7 @@ export class LabelstatsComponent implements OnInit {
             this.loading = false;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -425,7 +425,7 @@ export class LabelstatsComponent implements OnInit {
               this.loading = false;
               if (data.errcode){
                 this.authService.logout();
-                this.router.navigate(['login']);
+                this.router.navigate(['errorpage']);
               }
               this.toastr.error(data.message);
             } else {

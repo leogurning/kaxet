@@ -30,6 +30,7 @@ import { FiletransferService } from './services/filetransfer.service';
 import { SongpurchaseService } from './services/songpurchase.service';
 import { TransactionService } from './services/transaction.service';
 import { ActivitylogService } from './services/activitylog.service';
+import { NavbarService } from './services/navbar.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -92,6 +93,8 @@ import { TransactionstatsComponent } from './components/transactionstats/transac
 import { LabelbalancedialogComponent } from './components/labelbalancedialog/labelbalancedialog.component';
 import { ActivitylogComponent } from './components/activitylog/activitylog.component';
 import { ActivitylogstatsComponent } from './components/activitylogstats/activitylogstats.component';
+import { PostresetpasswdComponent } from './components/user/postresetpasswd/postresetpasswd.component';
+import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'login',pathMatch:'full'},
@@ -148,6 +151,8 @@ const appRoutes: Routes = [
   {path: 'transactionstats', canActivate: [ AuthGuard], component: TransactionstatsComponent ,runGuardsAndResolvers: 'always'},
   {path: 'activitylog', canActivate: [ AuthGuard], component: ActivitylogComponent ,runGuardsAndResolvers: 'always'},
   {path: 'activitylogstats', canActivate: [ AuthGuard], component: ActivitylogstatsComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'postresetpasswd', component:PostresetpasswdComponent},
+  {path: 'errorpage', component:ErrorpageComponent},
 ];
 
 @NgModule({
@@ -209,6 +214,8 @@ const appRoutes: Routes = [
     LabelbalancedialogComponent,
     ActivitylogComponent,
     ActivitylogstatsComponent,
+    PostresetpasswdComponent,
+    ErrorpageComponent,
   ],
   imports: [
     BrowserModule,
@@ -252,7 +259,8 @@ const appRoutes: Routes = [
     FiletransferService,
     SongpurchaseService,
     TransactionService,
-    ActivitylogService ],
+    ActivitylogService,
+    NavbarService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

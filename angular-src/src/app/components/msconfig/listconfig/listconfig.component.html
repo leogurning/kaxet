@@ -83,7 +83,7 @@
                             <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('value')">Value</a></th>
                             <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('group')">Group</a></th>
                             <th scope="col" width="20%"><a style="cursor:pointer" (click)="sortConfig('status')">Status</a></th>
-                            <th scope="col" width="20%">Action</th>
+                            <th *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'" scope="col" width="20%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,7 +92,7 @@
                             <td data-label="Value">{{ config.value }}</td>
                             <td data-label="Group">{{ config.groupname }}</td>
                             <td data-label="Status">{{ config.stsvalue}}</td>
-                            <td data-label="Action">
+                            <td *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'" data-label="Action">
                                 <button type="button" class="btn-xs btn-info" aria-label="View" (click)="editConfigFiles(config._id)">
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Config File"></span>
                                 </button>

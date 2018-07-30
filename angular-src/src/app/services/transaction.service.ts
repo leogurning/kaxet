@@ -10,15 +10,17 @@ import 'rxjs/add/observable/throw';
 export class TransactionService {
   public jwtToken: String;
   constructor(private http: Http) { 
-    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-    var theUser: any;
-    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {
         this.jwtToken = theUser.token;
     }
   }
 
   saveTransaction(userid, oTransaction){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -30,6 +32,10 @@ export class TransactionService {
   }
 
   getTransactionAggs(userid, oTransaction) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -40,6 +46,10 @@ export class TransactionService {
         .catch(this.handleError);
   }
   getAdmTransactionAggs(userid, oTransaction) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -51,6 +61,10 @@ export class TransactionService {
   }
 
   getLabelbalance(userid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

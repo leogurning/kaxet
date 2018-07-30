@@ -34,7 +34,8 @@ export class EditartistComponent implements OnInit {
 
   artistname = new FormControl('', [Validators.required]);
   status = new FormControl('', [Validators.required]);
-  
+  about = new FormControl('', [Validators.nullValidator]);
+
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
       this.artistid = params['id'];
@@ -46,7 +47,8 @@ export class EditartistComponent implements OnInit {
     this.userObj =  this.authService.currentUser;
     this.artistForm = this.fb.group({
       artistname: this.artistname,
-      status: this.status
+      status: this.status,
+      about: this.about
     });
   }
 
@@ -86,7 +88,8 @@ export class EditartistComponent implements OnInit {
   populateForm(data): void {
     this.artistForm.patchValue({
       artistname: data.artistname,
-      status: data.status
+      status: data.status,
+      about: data.about
     });
   }
 
@@ -104,7 +107,7 @@ export class EditartistComponent implements OnInit {
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -135,7 +138,7 @@ export class EditartistComponent implements OnInit {
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {

@@ -189,82 +189,97 @@ export class AddsongComponent implements OnInit {
       this.progressvalue = 10;
       //const prvwfiles: Array<File> = this.PrvwfilesToUpload;
       let theForm = this.addSongForm.value;
-      this.progressvalue = 40;
-      let lformData: FormData = new FormData();
-      //console.log('Ini file: '+ prvwfiles[0]['name']);
-      lformData.append('prvwfileinputsrc',prvwfiles[0],prvwfiles[0]['name']);
-      lformData.append('prvwuploadpath',this.prvwuploadpath);
-      lformData.append('songfileinputsrc',songfiles[0],songfiles[0]['name']);
-      lformData.append('songuploadpath',this.songuploadpath);
-      this.loading = true;
-      this.progressvalue = 70;
-      this.songService.uploadSongfiles(this.userObj.userid, lformData)
-        .subscribe(data => {
-          if (data.success === false) {
-            this.loading = false;
-            this.progressvalue = 0;
-            this.toastr.error(data.message);
-          } else {
-            this.progressvalue = 80;           
-              /* let sgformData: FormData = new FormData();
-              sgformData.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
-              sgformData.append('uploadpath',this.songuploadpath);
-              sgformData.append('artistid',theForm.artistid);
-              sgformData.append('albumid',theForm.albumid);
-              sgformData.append('songname',theForm.songname);
-              sgformData.append('songlyric',theForm.songlyric);
-              sgformData.append('songgenre',theForm.songgenre);
-              sgformData.append('songprice',theForm.songprice);
-              sgformData.append('songprvwpath',data.filedata.filepath);
-              sgformData.append('songprvwname',data.filedata.filename);
-              sgformData.append('status','STSACT'); */
-              let payload:any = {};
-              payload.artistid = theForm.artistid;
-              payload.albumid = theForm.albumid;
-              payload.songname = theForm.songname;
-              payload.songlyric = theForm.songlyric;
-              payload.songgenre = theForm.songgenre;
-              payload.songprice = theForm.songprice;
-              payload.songprvwpath = data.preview.prvwfilepath;
-              payload.songprvwname = data.preview.prvwfilename;
-              payload.songfilepath = data.song.songfilepath;
-              payload.songfilename = data.song.songfilename;
-              payload.status = 'STSACT';
-              this.progressvalue = 90;    
-              this.songService.pubsaveSong(this.userObj.userid, payload)
-              .subscribe(data => {
-                if (data.success === false) {
-                  this.loading = false;
-                  this.progressvalue = 0;
-                  this.toastr.error(data.message);
-                } else {
-                  this.loading = false;
-                  this.progressvalue = 100;
-                  this.toastr.success(data.message);
-                  //this.router.navigate(['listsong']);
-                }
-                this.addSongForm.reset();
-                this.progressvalue = 0;
-                this.artistVar.nativeElement.selectedIndex = 0;
-                this.albumVar.nativeElement.selectedIndex = 0;
-                this.genreVar.nativeElement.selectedIndex = 0;
-                this.inputpreVar.nativeElement.value = "";
-                this.inputsongVar.nativeElement.value = "";
-              },
-              err => {
-                this.loading = false;
-                this.progressvalue = 0;
-                //console.log(err);
-                this.toastr.error(err);
-              });
-          }   
-        },
-        err => {
+      this.songService.checkSong(this.userObj.userid, theForm)
+      .subscribe(data => {
+        if (data.success === false) {
           this.loading = false;
           this.progressvalue = 0;
-          //console.log(err);
-          this.toastr.error(err);
-        });
+          this.toastr.error(data.message);
+        } else {
+          this.progressvalue = 40;
+          let lformData: FormData = new FormData();
+          //console.log('Ini file: '+ prvwfiles[0]['name']);
+          lformData.append('prvwfileinputsrc',prvwfiles[0],prvwfiles[0]['name']);
+          lformData.append('prvwuploadpath',this.prvwuploadpath);
+          lformData.append('songfileinputsrc',songfiles[0],songfiles[0]['name']);
+          lformData.append('songuploadpath',this.songuploadpath);
+          this.loading = true;
+          this.progressvalue = 70;
+          this.songService.uploadSongfiles(this.userObj.userid, lformData)
+            .subscribe(data => {
+              if (data.success === false) {
+                this.loading = false;
+                this.progressvalue = 0;
+                this.toastr.error(data.message);
+              } else {
+                this.progressvalue = 80;           
+                  /* let sgformData: FormData = new FormData();
+                  sgformData.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
+                  sgformData.append('uploadpath',this.songuploadpath);
+                  sgformData.append('artistid',theForm.artistid);
+                  sgformData.append('albumid',theForm.albumid);
+                  sgformData.append('songname',theForm.songname);
+                  sgformData.append('songlyric',theForm.songlyric);
+                  sgformData.append('songgenre',theForm.songgenre);
+                  sgformData.append('songprice',theForm.songprice);
+                  sgformData.append('songprvwpath',data.filedata.filepath);
+                  sgformData.append('songprvwname',data.filedata.filename);
+                  sgformData.append('status','STSACT'); */
+                  let payload:any = {};
+                  payload.artistid = theForm.artistid;
+                  payload.albumid = theForm.albumid;
+                  payload.songname = theForm.songname;
+                  payload.songlyric = theForm.songlyric;
+                  payload.songgenre = theForm.songgenre;
+                  payload.songprice = theForm.songprice;
+                  payload.songprvwpath = data.preview.prvwfilepath;
+                  payload.songprvwname = data.preview.prvwfilename;
+                  payload.songfilepath = data.song.songfilepath;
+                  payload.songfilename = data.song.songfilename;
+                  payload.status = 'STSACT';
+                  this.progressvalue = 90;    
+                  this.songService.pubsaveSong(this.userObj.userid, payload)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      this.progressvalue = 0;
+                      this.toastr.error(data.message);
+                    } else {
+                      this.loading = false;
+                      this.progressvalue = 100;
+                      this.toastr.success(data.message);
+                      //this.router.navigate(['listsong']);
+                    }
+                    this.addSongForm.reset();
+                    this.progressvalue = 0;
+                    this.artistVar.nativeElement.selectedIndex = 0;
+                    this.albumVar.nativeElement.selectedIndex = 0;
+                    this.genreVar.nativeElement.selectedIndex = 0;
+                    this.inputpreVar.nativeElement.value = "";
+                    this.inputsongVar.nativeElement.value = "";
+                  },
+                  err => {
+                    this.loading = false;
+                    this.progressvalue = 0;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }   
+            },
+            err => {
+              this.loading = false;
+              this.progressvalue = 0;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+        }
+      },
+      err => {
+        this.loading = false;
+        this.progressvalue = 0;
+        //console.log(err);
+        this.toastr.error(err);
+      });
  
     } else {
       this.toastr.error('Please provide BOTH Song Preview and Song File...');

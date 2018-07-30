@@ -134,8 +134,18 @@
                           <td data-label="Album">{{ song.album }}</td>
                           <td data-label="Publish">{{ song.songpublish }}</td>
                           <td class="text-right" data-label="Song Price">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>
-                          <td data-label="Song Preview"><a href="{{ song.songprvwpath }}" style="cursor:pointer;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a></td>
-                          <td data-label="Song File"><a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                          <td data-label="Song Preview">
+                                <!-- <a href="{{ song.songprvwpath }}" style="cursor:pointer;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a> -->
+                                <a *ngIf="this.state[songIndex].playingprvw && !this.state[songIndex].loadingprvw" (click)="toggleAudio(songIndex,'prvw',song?.songprvwpath)" style="cursor:pointer;float:center;color:#2748B4" data-toggle="tooltip" data-placement="top" title="Pause Preview"><i class="fa fa-pause-circle fa-2x"></i></a>
+                                <span *ngIf="this.state[songIndex].loadingprvw"><i class="fa fa-spinner fa-2x"></i></span>
+                                <a *ngIf="!this.state[songIndex].playingprvw && !this.state[songIndex].loadingprvw" (click)="toggleAudio(songIndex,'prvw',song?.songprvwpath)" style="cursor:pointer;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a>
+                          </td>
+                          <td data-label="Song File">
+                              <!-- <a href="{{ song.songfilepath }}" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a> -->
+                              <a *ngIf="this.state[songIndex].playingsong && !this.state[songIndex].loadingsong" (click)="toggleAudio(songIndex,'song',song?.songfilepath)" style="cursor:pointer;float:center;color:#2748B4" data-toggle="tooltip" data-placement="top" title="Pause Song"><i class="fa fa-pause-circle fa-2x"></i></a>
+                              <span *ngIf="this.state[songIndex].loadingsong"><i class="fa fa-spinner fa-2x"></i></span>
+                              <a *ngIf="!this.state[songIndex].playingsong && !this.state[songIndex].loadingsong" (click)="toggleAudio(songIndex,'song',song?.songfilepath)" style="cursor:pointer;float:center;color:#19663B" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a>
+                          </td>
                           <!-- <td>{{ albm.status}}</td> -->
                           <td data-label="Action">
                                <a alt="Publish" style="cursor:pointer;float:center;color:#11DFDF" (click)="publishSong(song._id, song.songname, song.songpublish)" data-toggle="tooltip" data-placement="top" title="Publish"><i class="fa fa-cloud-upload fa-2x"></i></a>

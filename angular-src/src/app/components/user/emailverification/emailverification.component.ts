@@ -5,6 +5,7 @@ import { ToastrService } from '../../../common/toastr.service'
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
 import { NotifService } from '../../../services/notif.service';
+import { NavbarService } from '../../../services/navbar.service';
 
 @Component({
   selector: 'app-emailverification',
@@ -26,10 +27,12 @@ export class EmailverificationComponent implements OnInit {
               private router: Router,
               private notifService: NotifService,
               private msconfigService: MsconfigService,
-              private toastr: ToastrService,) 
+              private toastr: ToastrService,
+              public nav: NavbarService) 
               { }
 
   ngOnInit() {
+    this.nav.disableLink();
     this.loading = true;
     this.sub = this.route.queryParams.subscribe(
       params => {
@@ -40,7 +43,7 @@ export class EmailverificationComponent implements OnInit {
         .subscribe(data => {
           if (data.success === false) {
             this.loading = false;
-            this.router.navigate(['login']);
+            this.router.navigate(['../errorpage']);
             this.toastr.error(data.message);
           } else {
             this.loading = false;
@@ -59,7 +62,7 @@ export class EmailverificationComponent implements OnInit {
         },
         err => {
           this.loading = false;
-          this.router.navigate(['login']);
+          this.router.navigate(['../errorpage']);
           //console.log(err);
           this.toastr.error(err);
         });    

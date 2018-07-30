@@ -14,9 +14,7 @@ export class UsermgtService {
 
   constructor(private http: Http, private globals: Globals) {
       this.adminurl = globals.adminurl;
-      //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-      var theUser: any;
-      setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
       if (theUser) {
         this.jwtToken = theUser.token;
       }    
@@ -31,6 +29,10 @@ export class UsermgtService {
   } 
 
   getUserLabels(oLabels) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -42,6 +44,10 @@ export class UsermgtService {
   }
   
   getPendingUserLabels(oLabels) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -53,6 +59,10 @@ export class UsermgtService {
   }
 
   getPendingLabelCount(userid, oLabels) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -64,6 +74,10 @@ export class UsermgtService {
   }
 
   updateLabelStatus(labelid, oLabel){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -74,6 +88,10 @@ export class UsermgtService {
         .catch(this.handleError);
   }
   pubupdateLabelstatus(userid, oUser){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -84,6 +102,10 @@ export class UsermgtService {
       .catch(this.handleError);
   }
   updateLabelBalance(labelid, oLabel){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -95,6 +117,10 @@ export class UsermgtService {
   }
 
   getLabelList() {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

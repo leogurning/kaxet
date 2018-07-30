@@ -1,5 +1,274 @@
 webpackJsonp(["main"],{
 
+/***/ "./node_modules/moment/locale recursive ^\\.\\/.*$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
@@ -77,18 +346,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var Globals = /** @class */ (function () {
     function Globals() {
-        this.artistuploadpath = 'images/artists/';
-        this.albumuploadpath = 'images/albums/';
-        this.configuploadpath = 'images/genres/';
-        this.prvwuploadpath = 'previews/';
-        this.songuploadpath = 'songs/';
+        this.artistuploadpath = 'kaxet/images/artists/';
+        this.albumuploadpath = 'kaxet/images/albums/';
+        this.configuploadpath = 'kaxet/images/genres/';
+        this.prvwuploadpath = 'kaxet/previews/';
+        this.songuploadpath = 'kaxet/songs/';
         //adminurl: String = 'http://localhost:2002';
-        this.adminurl = 'https://apikxadmin-dot-kaxetd.appspot.com';
+        this.adminurl = 'https://kxadmin.herokuapp.com';
         //notifurl: String = 'http://localhost:2004';
-        this.notifurl = 'https://apikxnotif-dot-kaxetd.appspot.com';
+        this.notifurl = 'https://kxnotif.herokuapp.com';
         //filetransferurl: String = 'http://localhost:2005';
-        this.filetransferurl = 'https://apikxfiletrf-dot-kaxetd.appspot.com';
-        this.kaxeturl = 'https://kaxetd.appspot.com';
+        this.filetransferurl = 'https://kxfiletrf.herokuapp.com';
+        this.kaxeturl = 'https://kaxet.herokuapp.com';
+        //kaxeturl: String = 'http://localhost:2000';
     }
     Globals = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
@@ -132,65 +402,68 @@ var Globals = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__ = __webpack_require__("./src/app/services/activitylog.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__components_activitylog_activitylog_component__ = __webpack_require__("./src/app/components/activitylog/activitylog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__components_activitylogstats_activitylogstats_component__ = __webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__components_activitylog_activitylog_component__ = __webpack_require__("./src/app/components/activitylog/activitylog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__components_activitylogstats_activitylogstats_component__ = __webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__components_user_postresetpasswd_postresetpasswd_component__ = __webpack_require__("./src/app/components/user/postresetpasswd/postresetpasswd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__components_errorpage_errorpage_component__ = __webpack_require__("./src/app/components/errorpage/errorpage.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -213,6 +486,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 /* Global Variables */
 
 /* Services Modules */
+
 
 
 
@@ -287,61 +561,65 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_31__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_65__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
-    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_52__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_30__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_35__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_34__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_33__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_32__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_36__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_37__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_41__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_46__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_49__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_50__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_53__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_56__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
-    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_57__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_60__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_61__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_66__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
-    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_67__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_81__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'activitylog', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_83__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'activitylogstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_84__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
+    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_31__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_36__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_35__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_34__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_33__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_37__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_42__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_47__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_50__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_56__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_57__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
+    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_60__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_61__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_64__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_67__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
+    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_81__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_82__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'activitylog', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_84__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'activitylogstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_85__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'postresetpasswd', component: __WEBPACK_IMPORTED_MODULE_86__components_user_postresetpasswd_postresetpasswd_component__["a" /* PostresetpasswdComponent */] },
+    { path: 'errorpage', component: __WEBPACK_IMPORTED_MODULE_87__components_errorpage_errorpage_component__["a" /* ErrorpageComponent */] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -349,63 +627,65 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_28__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__components_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__components_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__components_user_password_password_component__["a" /* PasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__components_user_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__components_user_logout_component__["a" /* LogoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__components_about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_41__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_42__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_43__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_44__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_45__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_46__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_47__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_48__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_49__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-                __WEBPACK_IMPORTED_MODULE_50__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_51__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_52__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
-                __WEBPACK_IMPORTED_MODULE_53__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
-                __WEBPACK_IMPORTED_MODULE_55__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
-                __WEBPACK_IMPORTED_MODULE_56__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
-                __WEBPACK_IMPORTED_MODULE_57__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_58__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
-                __WEBPACK_IMPORTED_MODULE_60__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_61__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_64__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_65__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_66__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
-                __WEBPACK_IMPORTED_MODULE_67__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_68__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_69__components_songstats_songstats_component__["a" /* SongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_70__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_71__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_72__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_73__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_74__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_75__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_76__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_77__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_79__components_transaction_transaction_component__["a" /* TransactionComponent */],
-                __WEBPACK_IMPORTED_MODULE_80__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_81__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_82__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_83__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */],
-                __WEBPACK_IMPORTED_MODULE_84__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__components_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_user_password_password_component__["a" /* PasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__components_user_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__components_user_logout_component__["a" /* LogoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__components_about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_42__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_43__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_44__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_45__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_46__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_47__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_49__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_50__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_52__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
+                __WEBPACK_IMPORTED_MODULE_56__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
+                __WEBPACK_IMPORTED_MODULE_57__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
+                __WEBPACK_IMPORTED_MODULE_58__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_60__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_64__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_65__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_67__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
+                __WEBPACK_IMPORTED_MODULE_68__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_69__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_70__components_songstats_songstats_component__["a" /* SongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_71__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_72__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_73__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_74__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_75__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_76__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_77__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_79__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_80__components_transaction_transaction_component__["a" /* TransactionComponent */],
+                __WEBPACK_IMPORTED_MODULE_81__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_82__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_83__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_84__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */],
+                __WEBPACK_IMPORTED_MODULE_85__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_86__components_user_postresetpasswd_postresetpasswd_component__["a" /* PostresetpasswdComponent */],
+                __WEBPACK_IMPORTED_MODULE_87__components_errorpage_errorpage_component__["a" /* ErrorpageComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -427,21 +707,21 @@ var AppModule = /** @class */ (function () {
                     tertiaryColour: '#ce3b3b'
                 }),
                 __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_datepicker__["a" /* BsDatepickerModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["d" /* RouterModule */].forRoot(appRoutes, { onSameUrlNavigation: 'reload' })
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["e" /* RouterModule */].forRoot(appRoutes, { onSameUrlNavigation: 'reload' })
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_64__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_82__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
+                __WEBPACK_IMPORTED_MODULE_65__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_83__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */],
-                __WEBPACK_IMPORTED_MODULE_26__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_27__common_toastr_service__["a" /* ToastrService */],
                 __WEBPACK_IMPORTED_MODULE_12__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */],
                 __WEBPACK_IMPORTED_MODULE_14__services_user_service__["a" /* UserService */],
                 __WEBPACK_IMPORTED_MODULE_15__services_artist_service__["a" /* ArtistService */],
                 __WEBPACK_IMPORTED_MODULE_16__services_album_service__["a" /* AlbumService */],
                 __WEBPACK_IMPORTED_MODULE_17__services_song_service__["a" /* SongService */],
-                __WEBPACK_IMPORTED_MODULE_27__angular_common__["DatePipe"],
+                __WEBPACK_IMPORTED_MODULE_28__angular_common__["DatePipe"],
                 __WEBPACK_IMPORTED_MODULE_18__services_admin_usermgt_service__["a" /* UsermgtService */],
                 __WEBPACK_IMPORTED_MODULE_19__services_admin_songadmin_service__["a" /* SongadminService */],
                 __WEBPACK_IMPORTED_MODULE_20__services_admin_msconfig_service__["a" /* MsconfigService */],
@@ -449,8 +729,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_22__services_filetransfer_service__["a" /* FiletransferService */],
                 __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__["a" /* SongpurchaseService */],
                 __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__["a" /* TransactionService */],
-                __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__["a" /* ActivitylogService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_28__app_component__["a" /* AppComponent */]]
+                __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__["a" /* ActivitylogService */],
+                __WEBPACK_IMPORTED_MODULE_26__services_navbar_service__["a" /* NavbarService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -775,7 +1056,7 @@ var ActivitylogComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -861,7 +1142,7 @@ var ActivitylogComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_6__services_activitylog_service__["a" /* ActivitylogService */],
@@ -1116,7 +1397,7 @@ var ActivitylogstatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -1206,7 +1487,7 @@ var ActivitylogstatsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */],
@@ -1230,7 +1511,7 @@ module.exports = ""
 /***/ "./src/app/components/album/addalbum/addalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputartist [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select #inputgenre [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n            <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Album</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"addAlbumForm\" (ngSubmit)=\"addAlbum(addAlbumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('artistid').invalid && addAlbumForm.get('artistid').dirty}\">\n      <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist Id <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n        <select #inputartist [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n            <option ng-selected=\"true\" value=\"\">Select the artist</option>\n            <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n        </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('artistid').dirty && addAlbumForm.get('artistid').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('artistid').errors.required\">\n              Please enter the artist\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumname').invalid && addAlbumForm.get('albumname').dirty}\">\n        <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumname\" id=\"albumname\" placeholder=\"Album Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumname').dirty && addAlbumForm.get('albumname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumname').errors.required\">\n                Please enter the album name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumyear').invalid && addAlbumForm.get('albumyear').dirty}\">\n      <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year <sup>*</sup></label>\n      <div class=\"input-group col-sm-6\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n          <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"albumyear\" id=\"albumyear\" placeholder=\"Album Year\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumyear').dirty && addAlbumForm.get('albumyear').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumyear').errors.required\">\n              Please enter the album year\n          </span>\n      </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumgenre').invalid && addAlbumForm.get('albumgenre').dirty}\">\n      <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Genre <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n          <select #inputgenre [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n              <option ng-selected=\"true\" value=\"\">Select the genre</option>\n              <option *ngFor=\"let a of genre\" [ngValue]=\"a.code\">{{a.value}}</option>\n          </select>\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumgenre').dirty && addAlbumForm.get('albumgenre').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumgenre').errors.required\">\n              Please select album genre\n          </span>\n      </div>\n    </div>\n<!--     <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumprice').invalid && addAlbumForm.get('albumprice').dirty}\">\n      <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price <sup>*</sup></label>\n      <div class=\"input-group col-sm-10\">\n          <div class=\"input-group-addon\">Rp</div>\n          <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Album Price\">\n      </div>\n      <div class=\"text-danger\" *ngIf=\"addAlbumForm.get('albumprice').dirty && addAlbumForm.get('albumprice').errors\">\n          <span class=\"col-sm-2\"></span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.required\">\n              Please enter price\n          </span>\n          <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addAlbumForm.get('albumprice').errors.pattern\">\n              Please enter a valid amount\n          </span>\n      </div>\n    </div> -->\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addAlbumForm.get('albumimage').invalid && addAlbumForm.get('albumimage').dirty}\">\n        <label for=\"albumimage\" class=\"col-sm-2 control-label\">Album Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"albumimage\" id=\"albumimage\" placeholder=\"Album image\">\n            <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\">  </label>\n      <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n      <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n   </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addAlbumForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -1288,9 +1569,8 @@ var AddalbumComponent = /** @class */ (function () {
         this.progressvalue = 0;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.albumname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
-        this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
         this.albumgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
-        this.albumprice = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
     }
     AddalbumComponent.prototype.ngOnInit = function () {
         this.userObj = this.authService.currentUser;
@@ -1305,7 +1585,7 @@ var AddalbumComponent = /** @class */ (function () {
             albumname: this.albumname,
             albumyear: this.albumyear,
             albumgenre: this.albumgenre,
-            albumprice: this.albumprice,
+            //albumprice: this.albumprice,
             albumimage: this.filesToUpload,
             albumphotopath: this.albumphotopath,
             albumphotoname: this.albumphotoname
@@ -1365,16 +1645,7 @@ var AddalbumComponent = /** @class */ (function () {
             this.progressvalue = 10;
             //const files: Array<File> = this.filesToUpload;
             var theForm_1 = this.addAlbumForm.value;
-            var lformData = new FormData();
-            //console.log('Ini file: '+ files[0]['name']);
-            this.progressvalue = 20;
-            //lformData.append('albumimage',files[0],files[0]['name']);
-            lformData.append('fileinputsrc', files[0], files[0]['name']);
-            lformData.append('uploadpath', this.albumuploadpath);
-            //console.dir(theForm);
-            this.loading = true;
-            this.progressvalue = 40;
-            this.ftService.uploadInputFile(lformData)
+            this.albumService.checkAlbum(this.userObj.userid, theForm_1)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
@@ -1382,15 +1653,16 @@ var AddalbumComponent = /** @class */ (function () {
                     _this.toastr.error(data.message);
                 }
                 else {
-                    _this.progressvalue = 60;
-                    theForm_1.albumphotopath = data.filedata.filepath;
-                    theForm_1.albumphotoname = data.filedata.filename;
-                    theForm_1.status = 'STSACT';
-                    if (_this.albumid !== '') {
-                        theForm_1.albumid = _this.albumid;
-                    }
-                    _this.progressvalue = 80;
-                    _this.albumService.pubsaveAlbum(_this.userObj.userid, theForm_1)
+                    var lformData = new FormData();
+                    //console.log('Ini file: '+ files[0]['name']);
+                    _this.progressvalue = 20;
+                    //lformData.append('albumimage',files[0],files[0]['name']);
+                    lformData.append('fileinputsrc', files[0], files[0]['name']);
+                    lformData.append('uploadpath', _this.albumuploadpath);
+                    //console.dir(theForm);
+                    _this.loading = true;
+                    _this.progressvalue = 40;
+                    _this.ftService.uploadInputFile(lformData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -1398,25 +1670,50 @@ var AddalbumComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.progressvalue = 90;
-                            _this.loading = false;
-                            _this.toastr.success(data.message);
-                            //this.router.navigate(['listalbum']);
-                            _this.progressvalue = 100;
+                            _this.progressvalue = 60;
+                            theForm_1.albumphotopath = data.filedata.filepath;
+                            theForm_1.albumphotoname = data.filedata.filename;
+                            theForm_1.status = 'STSACT';
+                            if (_this.albumid !== '') {
+                                theForm_1.albumid = _this.albumid;
+                            }
+                            _this.progressvalue = 80;
+                            _this.albumService.pubsaveAlbum(_this.userObj.userid, theForm_1)
+                                .subscribe(function (data) {
+                                if (data.success === false) {
+                                    _this.loading = false;
+                                    _this.progressvalue = 0;
+                                    _this.toastr.error(data.message);
+                                }
+                                else {
+                                    _this.progressvalue = 90;
+                                    _this.loading = false;
+                                    _this.toastr.success(data.message);
+                                    //this.router.navigate(['listalbum']);
+                                    _this.progressvalue = 100;
+                                }
+                                _this.addAlbumForm.reset();
+                                _this.artistVar.nativeElement.selectedIndex = 0;
+                                _this.genreVar.nativeElement.selectedIndex = 0;
+                                _this.albumimageVar.nativeElement.value = "";
+                                _this.progressvalue = 0;
+                            }, function (err) {
+                                _this.loading = false;
+                                _this.progressvalue = 0;
+                                //console.log(err);
+                                _this.toastr.error(err);
+                            });
                         }
-                        _this.addAlbumForm.reset();
-                        _this.artistVar.nativeElement.selectedIndex = 0;
-                        _this.genreVar.nativeElement.selectedIndex = 0;
-                        _this.albumimageVar.nativeElement.value = "";
-                        _this.progressvalue = 0;
                     }, function (err) {
                         _this.loading = false;
+                        _this.progressvalue = 0;
                         //console.log(err);
                         _this.toastr.error(err);
                     });
                 }
             }, function (err) {
                 _this.loading = false;
+                _this.progressvalue = 0;
                 //console.log(err);
                 _this.toastr.error(err);
             });
@@ -1535,7 +1832,7 @@ var AddalbumComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_album_service__["a" /* AlbumService */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_9__services_filetransfer_service__["a" /* FiletransferService */],
@@ -1558,7 +1855,7 @@ module.exports = ""
 /***/ "./src/app/components/album/editalbum/editalbum.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Edit Album</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"saveAlbum(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumname').invalid && albumForm.get('albumname').dirty}\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumname').dirty && albumForm.get('albumname').invalid\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} album name</span>\n            </div>\n        </div>\n        \n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('artistid').invalid && albumForm.get('artistid').dirty}\">\n            <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n                    <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('artistid').dirty && albumForm.get('artistid').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('artistid').errors.required\">\n                    Please select artist status\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumyear').invalid && albumForm.get('albumyear').dirty}\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumyear').dirty && albumForm.get('albumyear').invalid\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter album year</span>\n            </div>\n        </div>\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumgenre').invalid && albumForm.get('albumgenre').dirty}\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n                    <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumgenre').dirty && albumForm.get('albumgenre').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('albumgenre').errors.required\">\n                    Please select album genre\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumprice').invalid && albumForm.get('albumprice').dirty}\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Enter price\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumprice').dirty && albumForm.get('albumprice').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('albumprice').errors.required\">\n                    Please enter price\n                </span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('albumprice').errors.pattern\">\n                    Please enter a valid amount\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('status').invalid && albumForm.get('status').dirty}\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"status\">\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('status').dirty && albumForm.get('status').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('status').errors.required\">\n                    Please select album status\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"albumForm.invalid || this.loading == true\" class=\"btn btn-primary\">{{ btnLbl }}</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Edit Album</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"albumForm\" (ngSubmit)=\"saveAlbum(albumForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumname').invalid && albumForm.get('albumname').dirty}\">\n            <label for=\"albumname\" class=\"col-sm-2 control-label\">Album Name</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumname').dirty && albumForm.get('albumname').invalid\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} album name</span>\n            </div>\n        </div>\n        \n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('artistid').invalid && albumForm.get('artistid').dirty}\">\n            <label for=\"artistid\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"artistid\">\n                    <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('artistid').dirty && albumForm.get('artistid').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('artistid').errors.required\">\n                    Please select artist status\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumyear').invalid && albumForm.get('albumyear').dirty}\">\n            <label for=\"albumyear\" class=\"col-sm-2 control-label\">Album Year</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumyear').dirty && albumForm.get('albumyear').invalid\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter album year</span>\n            </div>\n        </div>\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumgenre').invalid && albumForm.get('albumgenre').dirty}\">\n            <label for=\"albumgenre\" class=\"col-sm-2 control-label\">Album Genre</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"albumgenre\">\n                    <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumgenre').dirty && albumForm.get('albumgenre').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('albumgenre').errors.required\">\n                    Please select album genre\n                </span>\n            </div>\n        </div>\n<!--         <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('albumprice').invalid && albumForm.get('albumprice').dirty}\">\n            <label for=\"albumprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">Rp</div>\n                <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"albumprice\" [formControl]=\"albumprice\" placeholder=\"Enter price\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('albumprice').dirty && albumForm.get('albumprice').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('albumprice').errors.required\">\n                    Please enter price\n                </span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('albumprice').errors.pattern\">\n                    Please enter a valid amount\n                </span>\n            </div>\n        </div> -->\n\n        <div class=\"form-group\" [ngClass]=\"{'has-error': albumForm.get('status').invalid && albumForm.get('status').dirty}\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"status\">\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"albumForm.get('status').dirty && albumForm.get('status').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"albumForm.get('status').errors.required\">\n                    Please select album status\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"albumForm.invalid || this.loading == true\" class=\"btn btn-primary\">{{ btnLbl }}</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
 
 /***/ }),
 
@@ -1608,9 +1905,9 @@ var EditalbumComponent = /** @class */ (function () {
         this.loading = false;
         this.artistid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.albumname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
-        this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.albumyear = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
         this.albumgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
-        this.albumprice = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        //albumprice = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
     }
     EditalbumComponent.prototype.ngOnInit = function () {
@@ -1629,7 +1926,7 @@ var EditalbumComponent = /** @class */ (function () {
             albumname: this.albumname,
             albumyear: this.albumyear,
             albumgenre: this.albumgenre,
-            albumprice: this.albumprice,
+            //albumprice: this.albumprice,
             status: this.status
         });
     };
@@ -1696,7 +1993,7 @@ var EditalbumComponent = /** @class */ (function () {
             albumname: data.albumname,
             albumyear: data.albumyear,
             albumgenre: data.albumgenre,
-            albumprice: data.albumprice,
+            //albumprice: data.albumprice,
             status: data.status
         });
     };
@@ -1714,7 +2011,7 @@ var EditalbumComponent = /** @class */ (function () {
                 if (data.success === false) {
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -1745,7 +2042,7 @@ var EditalbumComponent = /** @class */ (function () {
               if (data.success === false) {
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -1777,7 +2074,7 @@ var EditalbumComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_album_service__["a" /* AlbumService */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
     ], EditalbumComponent);
@@ -1965,7 +2262,7 @@ var EditalbumphotoComponent = /** @class */ (function () {
                         _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -2036,7 +2333,7 @@ var EditalbumphotoComponent = /** @class */ (function () {
                 this.progressvalue = 0;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -2076,7 +2373,7 @@ var EditalbumphotoComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_album_service__["a" /* AlbumService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */],
@@ -2257,7 +2554,7 @@ var ListalbumComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -2381,7 +2678,7 @@ var ListalbumComponent = /** @class */ (function () {
                                 _this.loading = false;
                                 if (data.errcode) {
                                     _this.authService.logout();
-                                    _this.router.navigate(['login']);
+                                    _this.router.navigate(['errorpage']);
                                 }
                                 _this.toastr.error(data.message);
                             }
@@ -2433,7 +2730,7 @@ var ListalbumComponent = /** @class */ (function () {
                     this.loading = false;
                       if (data.errcode){
                         this.authService.logout();
-                        this.router.navigate(['login']);
+                        this.router.navigate(['errorpage']);
                       }
                       this.toastr.error(data.message);
                     } else {
@@ -2443,7 +2740,7 @@ var ListalbumComponent = /** @class */ (function () {
                           this.loading = false;
                           if (data.errcode){
                             this.authService.logout();
-                            this.router.navigate(['login']);
+                            this.router.navigate(['errorpage']);
                           }
                           this.toastr.error(data.message);
                         } else {
@@ -2513,7 +2810,7 @@ var ListalbumComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
@@ -2644,7 +2941,7 @@ var ViewalbumComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -2692,7 +2989,7 @@ var ViewalbumComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -2755,7 +3052,7 @@ var ViewalbumComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_7__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewalbumComponent);
     return ViewalbumComponent;
 }());
@@ -2940,7 +3237,7 @@ var AlbumstatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -3038,7 +3335,7 @@ var AlbumstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_10__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_11__services_filetransfer_service__["a" /* FiletransferService */],
@@ -3285,7 +3582,7 @@ var ViewalbumstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_7__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewalbumstatsComponent);
     return ViewalbumstatsComponent;
 }());
@@ -3304,7 +3601,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/addartist/addartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n            <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-2 control-label\">  </label>\n       <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n       <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Add Artist</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form  [formGroup]=\"addArtistForm\" (ngSubmit)=\"addArtist(addArtistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistname').invalid && addArtistForm.get('artistname').dirty}\">\n        <label for=\"artistname\" class=\"col-sm-2 control-label\">Artist Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"artistname\" id=\"artistname\" placeholder=\"Artist Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"addArtistForm.get('artistname').dirty && addArtistForm.get('artistname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addArtistForm.get('artistname').errors.required\">\n                Please enter the artist name\n            </span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"about\" class=\"col-sm-2 control-label\">About <sup>&nbsp;</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"about\" rows=\"10\" [formControl]=\"about\" placeholder=\"About\"></textarea>\n        </div>\n    </div>\n    <div class=\"form-group\" [ngClass]=\"{'has-error': addArtistForm.get('artistimage').invalid && addArtistForm.get('artistimage').dirty}\">\n        <label for=\"artistimage\" class=\"col-sm-2 control-label\">Artist Photo <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-file\"></i></div>\n            <input [disabled]=\"this.loading == true\" #inputimg type=\"file\" accept=\"image/*\" (change)=\"fileChangeEvent($event)\" name=\"artistimage\" id=\"artistimage\" placeholder=\"Artistimage\">\n            <span class=\"control-label\" style=\"text-align:bottom;font-size:10px;color:red;\">&nbsp;&nbsp;<u><b>(MAX {{ +this.maxfilesize?.value/1000 }} KB)</b></u></span>\n        </div>\n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-2 control-label\">  </label>\n       <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n       <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n            <button type=\"submit\" [disabled]=\"addArtistForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n            <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n        </div>\n        <div class=\"col-sm-5\" style=\"text-align:right\">\n            <sup>*</sup> required\n        </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -3359,6 +3656,7 @@ var AddartistComponent = /** @class */ (function () {
         this.loading = false;
         this.progressvalue = 0;
         this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.about = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
     }
     AddartistComponent.prototype.ngOnInit = function () {
         this.userObj = this.authService.currentUser;
@@ -3368,6 +3666,7 @@ var AddartistComponent = /** @class */ (function () {
         this.progressvalue = 0;
         this.addArtistForm = this.fb.group({
             artistname: this.artistname,
+            about: this.about,
             artistimage: this.filesToUpload,
             artistphotopath: this.artistphotopath,
             artistphotoname: this.artistphotoname
@@ -3461,16 +3760,7 @@ var AddartistComponent = /** @class */ (function () {
         if (this.addArtistForm.dirty && this.addArtistForm.valid && files[0]) {
             this.progressvalue = 10;
             var theForm_1 = this.addArtistForm.value;
-            var lformData = new FormData();
-            //console.log('Ini file: '+ files[0]['name']);
-            this.progressvalue = 30;
-            lformData.append('fileinputsrc', files[0], files[0]['name']);
-            lformData.append('uploadpath', this.artistuploadpath);
-            //console.log(lformData.getAll('artistimage'));
-            //console.dir(theForm);
-            this.loading = true;
-            this.progressvalue = 50;
-            this.ftService.uploadInputFile(lformData)
+            this.artistService.checkArtist(this.userObj.userid, theForm_1)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
@@ -3478,16 +3768,16 @@ var AddartistComponent = /** @class */ (function () {
                     _this.toastr.error(data.message);
                 }
                 else {
-                    _this.progressvalue = 70;
-                    theForm_1.artistphotopath = data.filedata.filepath;
-                    theForm_1.artistphotoname = data.filedata.filename;
-                    theForm_1.status = 'STSACT';
-                    _this.progressvalue = 90;
-                    //console.log('Ini file path: '+ theForm.artistphotopath);
-                    if (_this.artistid !== '') {
-                        theForm_1.artistid = _this.artistid;
-                    }
-                    _this.artistService.pubsaveArtist(_this.userObj.userid, theForm_1)
+                    var lformData = new FormData();
+                    //console.log('Ini file: '+ files[0]['name']);
+                    _this.progressvalue = 30;
+                    lformData.append('fileinputsrc', files[0], files[0]['name']);
+                    lformData.append('uploadpath', _this.artistuploadpath);
+                    //console.log(lformData.getAll('artistimage'));
+                    //console.dir(theForm);
+                    _this.loading = true;
+                    _this.progressvalue = 50;
+                    _this.ftService.uploadInputFile(lformData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -3495,17 +3785,41 @@ var AddartistComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.loading = false;
-                            _this.progressvalue = 100;
-                            _this.toastr.success(data.message);
-                            //this.router.navigate(['listartist']);
+                            _this.progressvalue = 70;
+                            theForm_1.artistphotopath = data.filedata.filepath;
+                            theForm_1.artistphotoname = data.filedata.filename;
+                            theForm_1.status = 'STSACT';
+                            _this.progressvalue = 90;
+                            //console.log('Ini file path: '+ theForm.artistphotopath);
+                            if (_this.artistid !== '') {
+                                theForm_1.artistid = _this.artistid;
+                            }
+                            _this.artistService.pubsaveArtist(_this.userObj.userid, theForm_1)
+                                .subscribe(function (data) {
+                                if (data.success === false) {
+                                    _this.loading = false;
+                                    _this.progressvalue = 0;
+                                    _this.toastr.error(data.message);
+                                }
+                                else {
+                                    _this.loading = false;
+                                    _this.progressvalue = 100;
+                                    _this.toastr.success(data.message);
+                                    //this.router.navigate(['listartist']);
+                                }
+                                _this.addArtistForm.reset();
+                                _this.artistimageVar.nativeElement.value = "";
+                                _this.progressvalue = 0;
+                            }, function (err) {
+                                _this.loading = false;
+                                _this.progressvalue = 0;
+                                //console.log(err);
+                                _this.toastr.error(err);
+                            });
                         }
-                        _this.addArtistForm.reset();
-                        _this.artistimageVar.nativeElement.value = "";
-                        _this.progressvalue = 0;
                     }, function (err) {
-                        _this.loading = false;
                         _this.progressvalue = 0;
+                        _this.loading = false;
                         //console.log(err);
                         _this.toastr.error(err);
                     });
@@ -3600,7 +3914,7 @@ var AddartistComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_artist_service__["a" /* ArtistService */],
             __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */],
@@ -3623,7 +3937,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/editartist/editartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Edit Artist</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"artistForm\" (ngSubmit)=\"saveArtist(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': artistForm.get('artistname').invalid && artistForm.get('artistname').dirty}\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Name\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"artistForm.get('artistname').dirty && artistForm.get('artistname').invalid\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} artist name</span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': artistForm.get('status').invalid && artistForm.get('status').dirty}\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"status\">\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"artistForm.get('status').dirty && artistForm.get('status').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"artistForm.get('status').errors.required\">\n                    Please select artist status\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"artistForm.invalid || this.loading == true\" class=\"btn btn-primary\">{{ btnLbl }}</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Edit Artist</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"artistForm\" (ngSubmit)=\"saveArtist(artistForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\" [ngClass]=\"{'has-error': artistForm.get('artistname').invalid && artistForm.get('artistname').dirty}\">\n            <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Name\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"artistForm.get('artistname').dirty && artistForm.get('artistname').invalid\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} artist name</span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"about\" class=\"col-sm-2 control-label\">About</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <textarea class=\"form-control\" [disabled]=\"this.loading == true\" id=\"about\" rows=\"10\" [formControl]=\"about\" placeholder=\"About\"></textarea>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': artistForm.get('status').invalid && artistForm.get('status').dirty}\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                <select [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"status\">\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"artistForm.get('status').dirty && artistForm.get('status').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"artistForm.get('status').errors.required\">\n                    Please select artist status\n                </span>\n            </div>\n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"artistForm.invalid || this.loading == true\" class=\"btn btn-primary\">{{ btnLbl }}</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n            </div>\n        </div>\n    </form>\n  </div>"
 
 /***/ }),
 
@@ -3670,6 +3984,7 @@ var EditartistComponent = /** @class */ (function () {
         this.loading = false;
         this.artistname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.about = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
     }
     EditartistComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -3682,7 +3997,8 @@ var EditartistComponent = /** @class */ (function () {
         this.userObj = this.authService.currentUser;
         this.artistForm = this.fb.group({
             artistname: this.artistname,
-            status: this.status
+            status: this.status,
+            about: this.about
         });
     };
     EditartistComponent.prototype.getMsconfigGroupList = function (groupid) {
@@ -3722,7 +4038,8 @@ var EditartistComponent = /** @class */ (function () {
     EditartistComponent.prototype.populateForm = function (data) {
         this.artistForm.patchValue({
             artistname: data.artistname,
-            status: data.status
+            status: data.status,
+            about: data.about
         });
     };
     EditartistComponent.prototype.saveArtist = function (formdata) {
@@ -3739,7 +4056,7 @@ var EditartistComponent = /** @class */ (function () {
                 if (data.success === false) {
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -3770,7 +4087,7 @@ var EditartistComponent = /** @class */ (function () {
               if (data.success === false) {
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -3801,7 +4118,7 @@ var EditartistComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_artist_service__["a" /* ArtistService */],
             __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
     ], EditartistComponent);
@@ -3986,7 +4303,7 @@ var EditartistphotoComponent = /** @class */ (function () {
                         _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -4092,7 +4409,7 @@ var EditartistphotoComponent = /** @class */ (function () {
                 this.progressvalue = 0;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -4133,7 +4450,7 @@ var EditartistphotoComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_4__services_artist_service__["a" /* ArtistService */],
             __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
@@ -4271,7 +4588,7 @@ var ListartistComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -4349,7 +4666,7 @@ var ListartistComponent = /** @class */ (function () {
                                 _this.loading = false;
                                 if (data.errcode) {
                                     _this.authService.logout();
-                                    _this.router.navigate(['login']);
+                                    _this.router.navigate(['errorpage']);
                                 }
                                 _this.toastr.error(data.message);
                             }
@@ -4401,7 +4718,7 @@ var ListartistComponent = /** @class */ (function () {
                     this.loading = false;
                       if (data.errcode){
                         this.authService.logout();
-                        this.router.navigate(['login']);
+                        this.router.navigate(['errorpage']);
                       }
                       this.toastr.error(data.message);
                     } else {
@@ -4411,7 +4728,7 @@ var ListartistComponent = /** @class */ (function () {
                           this.loading = false;
                           if (data.errcode){
                             this.authService.logout();
-                            this.router.navigate(['login']);
+                            this.router.navigate(['errorpage']);
                           }
                           this.toastr.error(data.message);
                         } else {
@@ -4483,7 +4800,7 @@ var ListartistComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_9__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_10__app_global__["a" /* Globals */]])
@@ -4505,7 +4822,7 @@ module.exports = ""
 /***/ "./src/app/components/artist/viewartist/viewartist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Artist Details</h3>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-8\">\n        <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                </div>\n            </div>\n        </form>\n    </div>\n    <div class=\"col-sm-4 thumbpadding\">        \n        <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n    </div>\n  </div>\n  \n    <div class=\"row\">\n        <div class=\"dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n            <div class=\"col-md-11 col-lg-11\">\n                <b>( TOTAL : {{ totalrows }} albums ) </b> \n                <div class=\"table-responsive\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor='let albm of albums; let albIndex = index'>\n                                <td scope=\"row\" data-label=\"Album Name\">{{ albm.albumname}}</td>\n                                <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                                <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                                <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                <td data-label=\"Status\">{{ albm.stsvalue}}</td>\n                            </tr>\n                            \n                        </tbody>\n                    </table>\n                </div>\n    \n                <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                    <nav aria-label=\"Page navigation\">\n                        <ul class=\"pagination\">\n                            <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                            </li>\n                        </ul>\n                    </nav>\n                </div>\n    \n            </div>\n            <div class=\"col-md-1 col-lg-11\"></div>\n        </div>      \n    </div>\n\n      <div class=\"row\">\n          <div class=\"col-sm-12\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n          <br>\n      </div>\n\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Artist Details</h3>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-8\">\n        <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                    <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"about\" class=\"col-sm-2 control-label\">About</label>\n                <div class=\"form-ele col-sm-10\">{{ artist?.about }}</div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                    <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                </div>\n            </div>\n        </form>\n    </div>\n    <div class=\"col-sm-4 thumbpadding\">        \n        <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n    </div>\n  </div>\n  \n    <div class=\"row\">\n        <div class=\"dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n            <div class=\"col-md-11 col-lg-11\">\n                <b>( TOTAL : {{ totalrows }} albums ) </b> \n                <div class=\"table-responsive\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor='let albm of albums; let albIndex = index'>\n                                <td scope=\"row\" data-label=\"Album Name\">{{ albm.albumname}}</td>\n                                <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                                <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                                <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                <td data-label=\"Status\">{{ albm.stsvalue}}</td>\n                            </tr>\n                            \n                        </tbody>\n                    </table>\n                </div>\n    \n                <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                    <nav aria-label=\"Page navigation\">\n                        <ul class=\"pagination\">\n                            <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                            </li>\n                        </ul>\n                    </nav>\n                </div>\n    \n            </div>\n            <div class=\"col-md-1 col-lg-11\"></div>\n        </div>      \n    </div>\n\n      <div class=\"row\">\n          <div class=\"col-sm-12\">\n              <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n          </div>\n          <br>\n      </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -4599,7 +4916,7 @@ var ViewartistComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -4629,7 +4946,7 @@ var ViewartistComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -4691,7 +5008,7 @@ var ViewartistComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_6__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewartistComponent);
     return ViewartistComponent;
 }());
@@ -4845,7 +5162,7 @@ var ArtiststatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -4928,7 +5245,7 @@ var ArtiststatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */]])
@@ -4950,7 +5267,7 @@ module.exports = ""
 /***/ "./src/app/components/artiststats/viewartiststats/viewartiststats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Artist Details</h3>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-8\">\n          <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n              <div class=\"form-group\">\n                  <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                  <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                  </div>\n              </div>\n              <div class=\"form-group\">\n                  <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                  <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                      <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                  </div>\n              </div>\n          </form>\n      </div>\n      <div class=\"col-sm-4 thumbpadding\">        \n          <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n      </div>\n    </div>\n    \n      <div class=\"row\">\n          <div class=\"dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n                <div class=\"col-md-11 col-lg-11\">\n                  <b>( TOTAL : {{ totalrows }} albums ) </b>\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\">\n                          <thead>\n                              <tr>\n                                  <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td scope=\"row\" data-label=\"Album Name\">{{ albm.albumname}}</td>\n                                  <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                                  <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                                  <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                  <td data-label=\"Status\">{{ albm.stsvalue}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n      \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n      \n              </div>\n              <div class=\"col-md-1 col-lg-1\"></div>\n          </div>      \n      </div>\n  \n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n            <br>\n        </div>\n  \n  </div>\n  "
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Artist Details</h3>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-8\">\n          <form [formGroup]=\"artistForm\" class=\"form-horizontal\">\n              <div class=\"form-group\">\n                  <label for=\"artistname\" class=\"col-sm-2 control-label\">Name</label>\n                  <div class=\"col-sm-10 form-ele\">{{ artist?.artistname }}\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                      <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                  </div>\n              </div>\n              <div class=\"form-group\">\n                    <label for=\"about\" class=\"col-sm-2 control-label\">About</label>\n                    <div class=\"form-ele col-sm-10\">{{ artist?.about }}</div>\n                </div>\n              <div class=\"form-group\">\n                  <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n                  <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                      <!-- <div class=\"form-ele\">{{ artist?.status }}</div> -->\n                  </div>\n              </div>\n          </form>\n      </div>\n      <div class=\"col-sm-4 thumbpadding\">        \n          <img src=\"{{ artist?.artistphotopath }}\" class=\"img-thumbnail thumbviewsize\">\n      </div>\n    </div>\n    \n      <div class=\"row\">\n          <div class=\"dtlpadding\" *ngIf=\"albums && totalrows > 0\">\n                <div class=\"col-md-11 col-lg-11\">\n                  <b>( TOTAL : {{ totalrows }} albums ) </b>\n                  <div class=\"table-responsive\">\n                      <table class=\"table table-striped\">\n                          <thead>\n                              <tr>\n                                  <th scope=\"col\" width=\"30%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumname')\">Album Name</a></th>\n                                  <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumyear')\">Year</a></th>\n                                  <th scope=\"col\" width=\"9%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumgenre')\">Genre</a></th>\n                                  <th scope=\"col\" width=\"10%\" class=\"text-right\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('albumprice')\">Price</a></th>\n                                  <th scope=\"col\" width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th>\n                              </tr>\n                          </thead>\n                          <tbody>\n                              <tr *ngFor='let albm of albums; let albIndex = index'>\n                                  <td scope=\"row\" data-label=\"Album Name\">{{ albm.albumname}}</td>\n                                  <td data-label=\"Album Year\">{{ albm.albumyear}}</td>\n                                  <td data-label=\"Genre\">{{ albm.genrevalue}}</td>\n                                  <td data-label=\"Album Price\" class=\"text-right\">{{ albm.albumprice | currency: 'IDR':'symbol-narrow' }}</td>\n                                  <td data-label=\"Status\">{{ albm.stsvalue}}</td>\n                              </tr>\n                              \n                          </tbody>\n                      </table>\n                  </div>\n      \n                  <div style=\"text-align:center\" *ngIf=\"albums && totalrows > 10\">\n                      <nav aria-label=\"Page navigation\">\n                          <ul class=\"pagination\">\n                              <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                                  <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                              </li>\n                          </ul>\n                      </nav>\n                  </div>\n      \n              </div>\n              <div class=\"col-md-1 col-lg-1\"></div>\n          </div>      \n      </div>\n  \n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n            <br>\n        </div>\n  \n  </div>\n  "
 
 /***/ }),
 
@@ -5046,7 +5363,7 @@ var ViewartiststatsComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5076,7 +5393,7 @@ var ViewartiststatsComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5141,7 +5458,7 @@ var ViewartiststatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_6__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewartiststatsComponent);
     return ViewartiststatsComponent;
 }());
@@ -5160,7 +5477,7 @@ module.exports = ""
 /***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div class=\"form-group\">\n        <label for=\"labelname\" class=\"control-label\">Name</label>\n        <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n            <div class=\"form-ele\">{{ this.name }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\" class=\"control-label\">Email</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\">@</div>\n            <div class=\"form-ele\">{{ this.email }}</div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <label for=\"contactno\" class=\"control-label\">Contact No</label>\n      <div class=\"input-group col-sm-12\">\n          <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n          <div class=\"form-ele\">{{ this.contactno }}</div>\n      </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\"> \n            <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                    <a style=\"cursor:pointer\" routerLink=\"../activitylog\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Activity Log</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Activity Log</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" routerLink=\"../activitylogstats\" routerLinkActive=\"active\" class=\"list-group-item borderless bordersideless\">View Activity Log</a>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div *ngIf=\"chart\">\n        <canvas id=\"canvas\"> {{ chart }}</canvas>\n    </div>\n    <div *ngIf=\"!chart\">\n        <div class=\"form-group\">\n            <label for=\"labelname\" class=\"control-label\">Name</label>\n            <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ this.name }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"control-label\">Email</label>\n            <div class=\"input-group col-sm-12\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ this.email }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"contactno\" class=\"control-label\">Contact No</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n            <div class=\"form-ele\">{{ this.contactno }}</div>\n        </div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\"> \n            <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                    <a style=\"cursor:pointer\" routerLink=\"../activitylog\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Activity Log</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Activity Log</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" routerLink=\"../activitylogstats\" routerLinkActive=\"active\" class=\"list-group-item borderless bordersideless\">View Activity Log</a>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -5182,6 +5499,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_songpurchase_service__ = __webpack_require__("./src/app/services/songpurchase.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_chart_js__ = __webpack_require__("./node_modules/chart.js/src/chart.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5191,6 +5510,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -5221,16 +5541,114 @@ var DashboardComponent = /** @class */ (function () {
         this.totalpendinglabel = 0;
         this.totalpendingsong = 0;
         this.totalpendingpurchase = 0;
+        this.chart = [];
     }
+    //topsongs:any = [];
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
         this.name = this.userObj.name;
+        var payloadn = {};
+        payloadn.status = 'STSACT';
+        this.songService.getAggTopSongs(payloadn).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                //this.topsongs = data.data;
+                var songbuy = data.data.map(function (res) { return res.songbuy; });
+                var songname = data.data.map(function (res) { return res.songname; });
+                //let labelnsong = data.data.map(res => res.labelnsong);
+                __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontFamily = 'Arial';
+                __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontSize = 12;
+                __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontColor = '#333';
+                //console.log(labelnsong);
+                /* let formattedLabels = [];
+                songname.forEach((res) => {
+                    let labelitem = formatLabel(res, 15);
+                    formattedLabels.push(labelitem);
+                }); */
+                _this.chart = new __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"]('canvas', {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: songname,
+                        datasets: [
+                            {
+                                label: 'Total Purchased',
+                                data: songbuy,
+                                backgroundColor: '#fce86c',
+                                borderWidth: 1,
+                                borderColor: '#333',
+                                hoverBorderWidth: 2,
+                                hoverBorderColor: '#000'
+                            }
+                        ]
+                    },
+                    options: {
+                        scaleLabel: function (object) {
+                            return "      " + object.value;
+                        },
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        title: {
+                            display: true,
+                            text: 'Global Top 10 Purchased Songs',
+                            fontSize: 14
+                        },
+                        legend: {
+                            display: false,
+                            position: 'right'
+                        },
+                        scales: {
+                            xAxes: [{
+                                    gridLines: {
+                                        display: true,
+                                        drawBorder: true
+                                    },
+                                    ticks: {
+                                        stepSize: 1
+                                    }
+                                }],
+                            yAxes: [{
+                                    gridLines: {
+                                        display: false,
+                                        drawBorder: false
+                                    }
+                                }]
+                        },
+                        layout: {
+                            padding: {
+                                left: 40,
+                                right: 0,
+                                top: 0,
+                                bottom: 0
+                            }
+                        }
+                        /* tooltips: {
+                          callbacks: {
+                            label: function(tooltipItem, data) {
+                              //let songdtl: any = this.topsongs[tooltipItem.index];
+                              //return this.topsongs[tooltipItem.index].artistname+":"+this.topsongs[tooltipItem.index].labelname;
+                              return tooltipItem.index +'.' + tooltipItem.yLabel;
+                            }
+                          }
+                        } */
+                    }
+                });
+            }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
+        });
         this.userService.getUser(this.userObj.userid).subscribe(function (data) {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5260,7 +5678,7 @@ var DashboardComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5272,7 +5690,7 @@ var DashboardComponent = /** @class */ (function () {
                     if (data.success === false) {
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -5284,7 +5702,7 @@ var DashboardComponent = /** @class */ (function () {
                             if (data.success === false) {
                                 if (data.errcode) {
                                     _this.authService.logout();
-                                    _this.router.navigate(['login']);
+                                    _this.router.navigate(['errorpage']);
                                 }
                                 _this.toastr.error(data.message);
                             }
@@ -5313,7 +5731,7 @@ var DashboardComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5336,7 +5754,7 @@ var DashboardComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5354,7 +5772,7 @@ var DashboardComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5406,11 +5824,77 @@ var DashboardComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_9__services_admin_songadmin_service__["a" /* SongadminService */],
             __WEBPACK_IMPORTED_MODULE_2__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_10__services_songpurchase_service__["a" /* SongpurchaseService */],
             __WEBPACK_IMPORTED_MODULE_11__angular_material__["d" /* MatDialog */]])
     ], DashboardComponent);
     return DashboardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/errorpage/errorpage.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/errorpage/errorpage.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Error page</h3>\n  </div>\n  <div class=\"panel panel-danger\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Error !</h3>\n    </div>\n    <div class=\"panel-body\">\n        <p>There has been an Unauthorised activity OR Processing Error !<br>\n        </p>\n        <br>\n        <div class=\"col-sm-12\" style=\"margin:0;padding:0;\">\n          <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Login</button>\n        </div>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/errorpage/errorpage.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ErrorpageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var ErrorpageComponent = /** @class */ (function () {
+    function ErrorpageComponent(authService, globals, nav) {
+        this.authService = authService;
+        this.globals = globals;
+        this.nav = nav;
+    }
+    ErrorpageComponent.prototype.ngOnInit = function () {
+        this.nav.disableLink();
+        this.kaxeturl = this.globals.kaxeturl;
+        this.authService.logout();
+    };
+    ErrorpageComponent.prototype.onLogin = function () {
+        window.open(this.kaxeturl.toString());
+    };
+    ErrorpageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-errorpage',
+            template: __webpack_require__("./src/app/components/errorpage/errorpage.component.html"),
+            styles: [__webpack_require__("./src/app/components/errorpage/errorpage.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__["a" /* NavbarService */]])
+    ], ErrorpageComponent);
+    return ErrorpageComponent;
 }());
 
 
@@ -5552,10 +6036,15 @@ var LabelbalancedialogComponent = /** @class */ (function () {
                 _this.loading = false;
                 _this.reportTitle = _this.data;
                 _this.balances = data.data;
-                if (_this.balances[0]) {
+                if (_this.balances.length > 1) {
                     var amt = _this.getbalanceamt(_this.balances[0]._id, _this.balances[0].balance);
                     var amt1 = _this.getbalanceamt(_this.balances[1]._id, _this.balances[1].balance);
                     _this.total = amt + amt1;
+                    _this.totalstr = _this.total.toLocaleString();
+                }
+                else if (_this.balances.length === 1) {
+                    var amt = _this.getbalanceamt(_this.balances[0]._id, _this.balances[0].balance);
+                    _this.total = amt;
                     _this.totalstr = _this.total.toLocaleString();
                 }
                 else {
@@ -5745,7 +6234,7 @@ var LabelstatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -5838,7 +6327,7 @@ var LabelstatsComponent = /** @class */ (function () {
                             _this.loading = false;
                             if (data.errcode) {
                                 _this.authService.logout();
-                                _this.router.navigate(['login']);
+                                _this.router.navigate(['errorpage']);
                             }
                             _this.toastr.error(data.message);
                         }
@@ -5879,7 +6368,7 @@ var LabelstatsComponent = /** @class */ (function () {
                   this.loading = false;
                   if (data.errcode){
                     this.authService.logout();
-                    this.router.navigate(['login']);
+                    this.router.navigate(['errorpage']);
                   }
                   this.toastr.error(data.message);
                 } else {
@@ -5932,7 +6421,7 @@ var LabelstatsComponent = /** @class */ (function () {
                         _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -5969,7 +6458,7 @@ var LabelstatsComponent = /** @class */ (function () {
                             _this.loading = false;
                             if (data.errcode) {
                                 _this.authService.logout();
-                                _this.router.navigate(['login']);
+                                _this.router.navigate(['errorpage']);
                             }
                             _this.toastr.error(data.message);
                         }
@@ -6003,7 +6492,7 @@ var LabelstatsComponent = /** @class */ (function () {
                 this.loading = false;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -6034,7 +6523,7 @@ var LabelstatsComponent = /** @class */ (function () {
                   this.loading = false;
                   if (data.errcode){
                     this.authService.logout();
-                    this.router.navigate(['login']);
+                    this.router.navigate(['errorpage']);
                   }
                   this.toastr.error(data.message);
                 } else {
@@ -6093,7 +6582,7 @@ var LabelstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */],
             __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_8__services_notif_service__["a" /* NotifService */],
@@ -6188,7 +6677,7 @@ var ViewlabelstatsComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -6226,7 +6715,7 @@ var ViewlabelstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
     ], ViewlabelstatsComponent);
     return ViewlabelstatsComponent;
@@ -6488,7 +6977,7 @@ var AddconfigComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__["a" /* FiletransferService */],
@@ -6603,7 +7092,7 @@ var AddgroupComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
     ], AddgroupComponent);
@@ -6729,7 +7218,7 @@ var EditconfigComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -6771,7 +7260,7 @@ var EditconfigComponent = /** @class */ (function () {
                 if (data.success === false) {
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -6801,7 +7290,7 @@ var EditconfigComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
     ], EditconfigComponent);
@@ -6909,7 +7398,7 @@ var EditconfigfileComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -7007,7 +7496,7 @@ var EditconfigfileComponent = /** @class */ (function () {
                         _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -7045,7 +7534,7 @@ var EditconfigfileComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_5__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */]])
@@ -7067,7 +7556,7 @@ module.exports = ""
 /***/ "./src/app/components/msconfig/listconfig/listconfig.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"code\" class=\"col-sm-2 paddingsearch\">Code</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"code\" [formControl]=\"code\" placeholder=\"Ms Code\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"value\" class=\"col-sm-2 paddingsearch\">Value</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"value\" [formControl]=\"value\" placeholder=\"Ms Value\">\n                      </div>\n                  </div>\n                </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"group\" class=\"col-sm-2 paddingsearch\">Group</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"group\">\n                                <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                                <option ng-selected=\"true\" value=\"\">Select the group</option>\n                                <option value=\"GROUP\">Group Config</option>\n                                <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                            </select>\n                          </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                            </select>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">    \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\"> </label>\n                        <div class=\"col-sm-10\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n\n            </form>\n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"msconfigs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No config found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any configs found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"msconfigs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('code')\">Code</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('value')\">Value</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('group')\">Group</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('status')\">Status</a></th>\n                            <th scope=\"col\" width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let config of msconfigs; let cfgIndex = index'>\n                            <td scope=\"row\" data-label=\"Code\"><a style=\"cursor:pointer\" (click)=\"showConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ config.code}}</a></td>\n                            <td data-label=\"Value\">{{ config.value }}</td>\n                            <td data-label=\"Group\">{{ config.groupname }}</td>\n                            <td data-label=\"Status\">{{ config.stsvalue}}</td>\n                            <td data-label=\"Action\">\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editConfigFiles(config._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config File\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(cfgIndex, config._id, config.code, config.filename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Config\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"msconfigs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Config</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"code\" class=\"col-sm-2 paddingsearch\">Code</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"code\" [formControl]=\"code\" placeholder=\"Ms Code\">\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"value\" class=\"col-sm-2 paddingsearch\">Value</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"value\" [formControl]=\"value\" placeholder=\"Ms Value\">\n                      </div>\n                  </div>\n                </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"group\" class=\"col-sm-2 paddingsearch\">Group</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"group\">\n                                <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                                <option ng-selected=\"true\" value=\"\">Select the group</option>\n                                <option value=\"GROUP\">Group Config</option>\n                                <option *ngFor=\"let g of grouplist\" [ngValue]=\"g.code\">{{g.value}}</option>\n                            </select>\n                          </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                            <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                            </select>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">    \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\"> </label>\n                        <div class=\"col-sm-10\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n\n            </form>\n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"msconfigs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No config found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any configs found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"msconfigs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('code')\">Code</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('value')\">Value</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('group')\">Group</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortConfig('status')\">Status</a></th>\n                            <th *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\" scope=\"col\" width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let config of msconfigs; let cfgIndex = index'>\n                            <td scope=\"row\" data-label=\"Code\"><a style=\"cursor:pointer\" (click)=\"showConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ config.code}}</a></td>\n                            <td data-label=\"Value\">{{ config.value }}</td>\n                            <td data-label=\"Group\">{{ config.groupname }}</td>\n                            <td data-label=\"Status\">{{ config.stsvalue}}</td>\n                            <td *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\" data-label=\"Action\">\n                                <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editConfigFiles(config._id)\">\n                                    <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config File\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editConfig(config._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Config Data\">\n                                    <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                                </button>\n                                <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(cfgIndex, config._id, config.code, config.filename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Config\">\n                                    <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                                </button>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"msconfigs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -7200,7 +7689,7 @@ var ListconfigComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -7330,7 +7819,7 @@ var ListconfigComponent = /** @class */ (function () {
                     _this.loading = false;
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -7357,7 +7846,7 @@ var ListconfigComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_7__services_filetransfer_service__["a" /* FiletransferService */],
@@ -7458,7 +7947,7 @@ var ViewconfigComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -7495,7 +7984,7 @@ var ViewconfigComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewconfigComponent);
     return ViewconfigComponent;
 }());
@@ -7514,7 +8003,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a class=\"logo\" routerLink=\"about\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <a id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn()\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
+module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" class=\"logo\" routerLink=\"about\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <span *ngIf=\"this.qhashid != '' || !nav.linkaccess\" class=\"logo\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></span>\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
 
 /***/ }),
 
@@ -7524,7 +8013,9 @@ module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <heade
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7536,11 +8027,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(authService) {
+    function NavbarComponent(authService, route, nav) {
         this.authService = authService;
+        this.route = route;
+        this.nav = nav;
     }
     NavbarComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.queryParams.forEach(function (params) {
+            _this.qhashid = params['id'] || '';
+        });
     };
     NavbarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -7548,7 +8047,9 @@ var NavbarComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/navbar/navbar.component.html"),
             styles: [__webpack_require__("./src/app/components/navbar/navbar.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__["a" /* NavbarService */]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -7567,7 +8068,7 @@ module.exports = ""
 /***/ "./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Summary</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>         \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                      </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"paymentmtd\" class=\"col-sm-2 paddingsearch\">Payment</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"paymentmtd\">\n                            <option ng-selected=\"true\" value=\"\">Select the method</option>\n                            <option *ngFor=\"let pmt of pmtd\" [ngValue]=\"pmt.code\">{{pmt.value}}</option>\n                        </select>\n                      </div>\n                    </div> \n                    <div class=\"col-sm-6 col-md-6\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songpurchase && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No song purchase found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO song purchase found for the selected criteria.\n      </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpurchase && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"5%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('listener')\">Buyer</a></th>\n                            <th width=\"25%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('song')\">Song Title</a></th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('artist')\">Artist</a></th>\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('songprice')\">Price</a></th>\n                            <th width=\"5%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('approvedt')\">Response date</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>\n                            <td data-label=\"Purchase Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showPurchase(songpuritem._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  \n                            <td data-label=\"Payment\">{{ songpuritem.payment }}</td>\n                            <td data-label=\"Buyer\">{{ songpuritem.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(songpuritem.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpuritem.song}}</a></td>\n                            <td data-label=\"Artist\">{{ songpuritem.artist }}</td>\n                            <!-- <td style=\"font-size:12px\">{{ songpuritem.album }}</td> -->\n                            <td data-label=\"Song Price\" class=\"text-right\">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Status\">{{ songpuritem.stsvalue }}</td>\n                            <td data-label=\"Response date\">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpurchase && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Summary</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>         \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                      </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Payment Ref</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"24 chars Payment Ref\">\n                        </div>\n                    </div>  \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"paymentmtd\" class=\"col-sm-2 paddingsearch\">Payment</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"paymentmtd\">\n                            <option ng-selected=\"true\" value=\"\">Select the method</option>\n                            <option *ngFor=\"let pmt of pmtd\" [ngValue]=\"pmt.code\">{{pmt.value}}</option>\n                        </select>\n                      </div>\n                    </div> \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songpurchase && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No song purchase found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO song purchase found for the selected criteria.\n      </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpurchase && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"5%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('listener')\">Buyer</a></th>\n                            <th width=\"25%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('song')\">Song Title</a></th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('artist')\">Artist</a></th>\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('songprice')\">Price</a></th>\n                            <th width=\"5%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('approvedt')\">Response date</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>\n                            <td data-label=\"Purchase Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showPurchase(songpuritem._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  \n                            <td data-label=\"Payment\">{{ songpuritem.payment }}</td>\n                            <td data-label=\"Buyer\">{{ songpuritem.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(songpuritem.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpuritem.song}}</a></td>\n                            <td data-label=\"Artist\">{{ songpuritem.artist }}</td>\n                            <!-- <td style=\"font-size:12px\">{{ songpuritem.album }}</td> -->\n                            <td data-label=\"Song Price\" class=\"text-right\">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Status\">{{ songpuritem.stsvalue }}</td>\n                            <td data-label=\"Response date\">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpurchase && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
 
 /***/ }),
 
@@ -7622,6 +8123,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
         this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
         this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
         this.paymentmtd = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.navigationSubscription = this.router.events.subscribe(function (e) {
             // If it is a NavigationEnd event re-initalise the component
             if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
@@ -7641,7 +8143,8 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
             rptype: this.rptype,
             startdt: this.startdt,
             enddt: this.enddt,
-            paymentmtd: this.paymentmtd
+            paymentmtd: this.paymentmtd,
+            purchaseid: this.purchaseid
         });
         this.getMsconfigGroupList('PMTSTATUS');
         this.getMsconfigGroupList('PMTMETHOD');
@@ -7657,6 +8160,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
             _this.qenddt = params['enddt'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
+            _this.qpurchaseid = params['purchaseid'] || '';
             if (_this.qrptype !== '') {
                 var payload = {};
                 payload.artistname = _this.qartistname;
@@ -7672,6 +8176,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                     _this.reportForm.get('startdt').enable();
                     _this.reportForm.get('enddt').enable();
                 }
+                payload.purchaseid = _this.qpurchaseid;
                 payload.page = _this.qpage;
                 payload.sortby = _this.qsort;
                 _this.fetchReport(_this.userObj.userid, payload);
@@ -7684,7 +8189,8 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                     paymentmtd: _this.qpaymentmtd,
                     rptype: _this.qrptype,
                     startdt: _this.qstartdt,
-                    enddt: _this.qenddt
+                    enddt: _this.qenddt,
+                    purchaseid: _this.qpurchaseid
                 });
             }
             else {
@@ -7771,6 +8277,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                     else {
                         this.router.navigate(['songcompletepurchase'], {
                             queryParams: {
+                                purchaseid: this.reportForm.value.purchaseid,
                                 artistname: this.reportForm.value.artistname,
                                 //albumname: this.reportForm.value.albumname,
                                 buyername: this.reportForm.value.buyername,
@@ -7790,6 +8297,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
             else {
                 this.router.navigate(['songcompletepurchase'], {
                     queryParams: {
+                        purchaseid: this.reportForm.value.purchaseid,
                         artistname: this.reportForm.value.artistname,
                         //albumname: this.reportForm.value.albumname,
                         buyername: this.reportForm.value.buyername,
@@ -7815,7 +8323,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -7824,6 +8332,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                 _this.songpurchase = data.data;
                 _this.totalrows = +data.totalcount;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qpurchaseid = formval.purchaseid;
                 _this.qartistname = formval.artistname;
                 //this.qalbumname = formval.albumname;
                 _this.qbuyername = formval.buyername;
@@ -7845,6 +8354,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
                 } */
                 _this.reportTitle = 'Search Result - ';
                 _this.reportForm.patchValue({
+                    purchaseid: _this.qpurchaseid,
                     artistname: _this.qartistname,
                     //albumname: this.qalbumname,
                     buyername: _this.qbuyername,
@@ -7865,6 +8375,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
     SongcompletepurchaseComponent.prototype.setPage = function (page) {
         this.router.navigate(['songcompletepurchase'], {
             queryParams: {
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -7898,6 +8409,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
         }
         this.router.navigate(['songcompletepurchase'], {
             queryParams: {
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -7916,6 +8428,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
         this.router.navigate(["viewsongpurchase/" + songid], {
             queryParams: {
                 srcpg: 'comp',
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -7934,6 +8447,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
         this.router.navigate(["viewpurchase/" + songpurchaseid], {
             queryParams: {
                 srcpg: 'comp',
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -7957,7 +8471,7 @@ var SongcompletepurchaseComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__["a" /* SongpurchaseService */],
@@ -7980,7 +8494,7 @@ module.exports = ""
 /***/ "./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Pending Song purchase (Cash)</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>         \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                      </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>    \n    <div class=\"panel panel-danger\" *ngIf=\"songpendings && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No pending song purchase found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO pending song purchase found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpendings && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('listener')\">Buyer</a></th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('song')\">Song Name</a></th>\n                            <!-- <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('artist')\">Artist</a></th> -->\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('songprice')\">Price</a></th>\n                            <th width=\"15%\" scope=\"col\" >Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpending of songpendings; let songIndex = index'>\n                            <td data-label=\"Purchase Date\" scope=\"row\">{{ songpending.purchasedt | date: 'd MMM y'}}</td>  \n                            <td data-label=\"Buyer\">{{ songpending.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(songpending.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpending.song}}</a></td>\n                            <!-- <td style=\"font-size:12px\">{{ songpending.artist }}</td> -->\n                            <!-- <td style=\"font-size:12px\">{{ songpending.album }}</td> -->\n                            <td data-label=\"Price\" class=\"text-right\">{{ songpending.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Action\">\n                                <!-- <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\"><i class=\"fa fa-check fa-2x\"></i></a> -->\n                                <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songIndex, songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\">Approve</a>\n                                &nbsp;&nbsp;&nbsp;\n                                <!-- <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\"><i class=\"fa fa-times fa-2x\"></i></a> -->\n                                <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songIndex, songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\">Reject</a>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpendings && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Pending Song purchase (Cash)</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Payment Ref</label>\n                        <div class=\"col-sm-10\">\n                            <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"24 chars Payment Ref\">\n                        </div>\n                    </div>            \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                        </div>\n                    </div> \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                        </div>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>    \n    <div class=\"panel panel-danger\" *ngIf=\"songpendings && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No pending song purchase found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO pending song purchase found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpendings && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('listener')\">Buyer</a></th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('song')\">Song Name</a></th>\n                            <!-- <th width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('artist')\">Artist</a></th> -->\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpending('songprice')\">Price</a></th>\n                            <th width=\"15%\" scope=\"col\" >Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpending of songpendings; let songIndex = index'>\n                            <td data-label=\"Purchase Date\" scope=\"row\">{{ songpending.purchasedt | date: 'd MMM y'}}</td>  \n                            <td data-label=\"Buyer\">{{ songpending.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(songpending.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpending.song}}</a></td>\n                            <!-- <td style=\"font-size:12px\">{{ songpending.artist }}</td> -->\n                            <!-- <td style=\"font-size:12px\">{{ songpending.album }}</td> -->\n                            <td data-label=\"Price\" class=\"text-right\">{{ songpending.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Action\">\n                                <!-- <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\"><i class=\"fa fa-check fa-2x\"></i></a> -->\n                                <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songIndex, songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\">Approve</a>\n                                &nbsp;&nbsp;&nbsp;\n                                <!-- <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\"><i class=\"fa fa-times fa-2x\"></i></a> -->\n                                <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songIndex, songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\">Reject</a>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpendings && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
 
 /***/ }),
 
@@ -8039,6 +8553,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
         this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
         this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
         this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.navigationSubscription = this.router.events.subscribe(function (e) {
             // If it is a NavigationEnd event re-initalise the component
             if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
@@ -8056,7 +8571,8 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
             songname: this.songname,
             rptype: this.rptype,
             startdt: this.startdt,
-            enddt: this.enddt
+            enddt: this.enddt,
+            purchaseid: this.purchaseid
         });
         this.getMsconfigVal('PFEE', 'FEE');
         this.route.queryParams.forEach(function (params) {
@@ -8069,6 +8585,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
             _this.qenddt = params['enddt'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
+            _this.qpurchaseid = params['purchaseid'] || '';
             if (_this.qrptype !== '') {
                 var payload = {};
                 payload.artistname = _this.qartistname;
@@ -8082,6 +8599,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     _this.reportForm.get('startdt').enable();
                     _this.reportForm.get('enddt').enable();
                 }
+                payload.purchaseid = _this.qpurchaseid;
                 payload.page = _this.qpage;
                 payload.sortby = _this.qsort;
                 _this.fetchReport(_this.userObj.userid, payload);
@@ -8092,7 +8610,8 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     songname: _this.qsongname,
                     rptype: _this.qrptype,
                     startdt: _this.qstartdt,
-                    enddt: _this.qenddt
+                    enddt: _this.qenddt,
+                    purchaseid: _this.qpurchaseid
                 });
             }
             else {
@@ -8172,6 +8691,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     else {
                         this.router.navigate(['songpendingpurchase'], {
                             queryParams: {
+                                purchaseid: this.reportForm.value.purchaseid,
                                 artistname: this.reportForm.value.artistname,
                                 //albumname: this.reportForm.value.albumname,
                                 buyername: this.reportForm.value.buyername,
@@ -8220,6 +8740,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
             else {
                 this.router.navigate(['songpendingpurchase'], {
                     queryParams: {
+                        purchaseid: this.reportForm.value.purchaseid,
                         artistname: this.reportForm.value.artistname,
                         //albumname: this.reportForm.value.albumname,
                         buyername: this.reportForm.value.buyername,
@@ -8243,7 +8764,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -8252,6 +8773,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                 _this.songpendings = data.data;
                 _this.totalrows = +data.totalcount;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qpurchaseid = formval.purchaseid;
                 _this.qartistname = formval.artistname;
                 //this.qalbumname = formval.albumname;
                 _this.qbuyername = formval.buyername;
@@ -8271,6 +8793,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                 } */
                 _this.reportTitle = 'Search Result - ';
                 _this.reportForm.patchValue({
+                    purchaseid: _this.qpurchaseid,
                     artistname: _this.qartistname,
                     //albumname: this.qalbumname,
                     buyername: _this.qbuyername,
@@ -8289,6 +8812,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
     SongpendingpurchaseComponent.prototype.setPage = function (page) {
         this.router.navigate(['songpendingpurchase'], {
             queryParams: {
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -8320,6 +8844,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
         }
         this.router.navigate(['songpendingpurchase'], {
             queryParams: {
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -8336,6 +8861,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
         this.router.navigate(["viewsongpurchase/" + songid], {
             queryParams: {
                 srcpg: 'pend',
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -8352,6 +8878,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
         this.router.navigate(["viewpurchase/" + songpurchaseid], {
             queryParams: {
                 srcpg: 'pend',
+                purchaseid: this.qpurchaseid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
                 buyername: this.qbuyername,
@@ -8404,7 +8931,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     _this.loading = false;
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message + '. Error updating the purchase payment...');
                 }
@@ -8492,7 +9019,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
               this.loading = false;
               if (data.errcode){
                 this.authService.logout();
-                this.router.navigate(['login']);
+                this.router.navigate(['errorpage']);
               }
               this.toastr.error(data.message + '. Error updating the purchase status...');
             }
@@ -8539,7 +9066,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
                     _this.loading = false;
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -8559,7 +9086,7 @@ var SongpendingpurchaseComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__["a" /* SongpurchaseService */],
@@ -8584,7 +9111,7 @@ module.exports = ""
 /***/ "./src/app/components/purchase/songpurchasestats/songpurchasestats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Summary</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <!-- <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div> -->         \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                        <div class=\"col-sm-10\">\n                          <select class=\"form-control\" [formControl]=\"labelid\">\n                            <option value=\"\">Select the label</option>\n                            <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                          </select>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                        </div>\n                      </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"paymentmtd\" class=\"col-sm-2 paddingsearch\">Payment</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"paymentmtd\">\n                            <option ng-selected=\"true\" value=\"\">Select the method</option>\n                            <option *ngFor=\"let pmt of pmtd\" [ngValue]=\"pmt.code\">{{pmt.value}}</option>\n                        </select>\n                      </div>\n                    </div> \n                    <div class=\"col-sm-6 col-md-6\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songpurchase && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No song purchase found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO song purchase found for the selected criteria.\n      </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpurchase && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('label')\">Label</a></th>  \n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"5%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('listener')\">Buyer</a></th>\n                            <th width=\"25%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('song')\">Song Title</a></th>\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('songprice')\">Price</a></th>\n                            <th width=\"5%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('approvedt')\">Response date</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>\n                            <td data-label=\"Label\">{{ songpuritem.label }}</td>  \n                            <td data-label=\"Purchase Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showPurchase(songpuritem._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  \n                            <td data-label=\"Payment\">{{ songpuritem.payment }}</td>\n                            <td data-label=\"Buyer\">{{ songpuritem.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(songpuritem.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpuritem.song}}</a></td>\n                            <!-- <td style=\"font-size:12px\">{{ songpuritem.album }}</td> -->\n                            <td data-label=\"Song Price\" class=\"text-right\">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Status\">{{ songpuritem.stsvalue }}</td>\n                            <td data-label=\"Response date\">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpurchase && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Purchase Summary</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n                <div class=\"row rowmarginsearch\">\n                    <!-- <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                        <div class=\"col-sm-10\">\n                            <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                        </div>\n                    </div> -->         \n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                        <div class=\"col-sm-10\">\n                          <select class=\"form-control\" [formControl]=\"labelid\">\n                            <option value=\"\">Select the label</option>\n                            <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                          </select>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Song</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                        </div>\n                    </div>            \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"buyername\" class=\"col-sm-2 paddingsearch\">Buyer</label>\n                        <div class=\"col-sm-10\">\n                            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                            <input type=\"text\" class=\"form-control\" id=\"buyername\" [formControl]=\"buyername\" placeholder=\"Buyer Name\">\n                        </div>\n                      </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                          <select class=\"form-control\" [formControl]=\"status\">\n                              <option ng-selected=\"true\" value=\"\">Select the status</option>\n                              <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                          </select>\n                      </div>\n                    </div>         \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                      <label class=\"col-sm-6 paddingsearch\">Purchase Date</label>\n                    </div>  \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                                Today\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-3 col-md-3\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                                Current month\n                            </label>\n                        </div>\n                    </div>\n                    <div class=\"col-sm-6 col-md-6\">\n                        <div class=\"radio\">\n                            <label>\n                                <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                                Date Range (yyyy-mm-dd)\n                            </label>\n                        </div>\n                        <div class=\"row\" style=\"padding: 8px\">\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"col-sm-6 col-md-6\">\n                                <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                    <div class=\"input-group\">\n                                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                    </div>\n                                    <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                        <span class=\"col-sm-2\"></span>\n                                        <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div> \n\n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Payment Ref</label>\n                        <div class=\"col-sm-10\">\n                            <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"24 chars Payment Ref\">\n                        </div>\n                    </div>   \n                    <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"paymentmtd\" class=\"col-sm-2 paddingsearch\">Payment</label>\n                      <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"paymentmtd\">\n                            <option ng-selected=\"true\" value=\"\">Select the method</option>\n                            <option *ngFor=\"let pmt of pmtd\" [ngValue]=\"pmt.code\">{{pmt.value}}</option>\n                        </select>\n                      </div>\n                    </div> \n                </div>\n                <div class=\"row rowmarginsearch\">\n                    <div class=\"col-sm-6 col-md-6\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                    </div>                  \n                </div>\n            </form>  \n        </div>\n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songpurchase && totalrows < 1\">\n      <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">No song purchase found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n        There is NO song purchase found for the selected criteria.\n      </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"songpurchase && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('label')\">Label</a></th>  \n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('purchasedt')\">Purchase Date</a></th>\n                            <th width=\"5%\" scope=\"col\">Payment</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('listener')\">Buyer</a></th>\n                            <th width=\"25%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('song')\">Song Title</a></th>\n                            <!-- <th width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('album')\">Album</a></th> -->                            \n                            <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('songprice')\">Price</a></th>\n                            <th width=\"5%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('status')\">Status</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSongpurchase('approvedt')\">Response date</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let songpuritem of songpurchase; let songIndex = index'>\n                            <td data-label=\"Label\">{{ songpuritem.label }}</td>  \n                            <td data-label=\"Purchase Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showPurchase(songpuritem._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ songpuritem.purchasedt | date: 'd MMM y'}}</a></td>  \n                            <td data-label=\"Payment\">{{ songpuritem.payment }}</td>\n                            <td data-label=\"Buyer\">{{ songpuritem.listener }}</td>\n                            <td data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(songpuritem.songid)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Song\">{{ songpuritem.song}}</a></td>\n                            <!-- <td style=\"font-size:12px\">{{ songpuritem.album }}</td> -->\n                            <td data-label=\"Song Price\" class=\"text-right\">{{ songpuritem.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Status\">{{ songpuritem.stsvalue }}</td>\n                            <td data-label=\"Response date\">{{ songpuritem.approvedt | date: 'd MMM y'}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songpurchase && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
 
 /***/ }),
 
@@ -8643,6 +9170,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
         this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
         this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
         this.paymentmtd = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.navigationSubscription = this.router.events.subscribe(function (e) {
             // If it is a NavigationEnd event re-initalise the component
             if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
@@ -8663,7 +9191,8 @@ var SongpurchasestatsComponent = /** @class */ (function () {
             rptype: this.rptype,
             startdt: this.startdt,
             enddt: this.enddt,
-            paymentmtd: this.paymentmtd
+            paymentmtd: this.paymentmtd,
+            purchaseid: this.purchaseid
         });
         this.getMsconfigGroupList('PMTSTATUS');
         this.getMsconfigGroupList('PMTMETHOD');
@@ -8681,6 +9210,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
             _this.qenddt = params['enddt'] || '';
             _this.qpage = params['page'] || '';
             _this.qsort = params['sortby'] || '';
+            _this.qpurchaseid = params['purchaseid'] || '';
             if (_this.qrptype !== '') {
                 var payload = {};
                 payload.labelid = _this.qlabelid;
@@ -8697,6 +9227,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     _this.reportForm.get('startdt').enable();
                     _this.reportForm.get('enddt').enable();
                 }
+                payload.purchaseid = _this.qpurchaseid;
                 payload.page = _this.qpage;
                 payload.sortby = _this.qsort;
                 _this.fetchReport(_this.userObj.userid, payload);
@@ -8710,7 +9241,8 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     paymentmtd: _this.qpaymentmtd,
                     rptype: _this.qrptype,
                     startdt: _this.qstartdt,
-                    enddt: _this.qenddt
+                    enddt: _this.qenddt,
+                    purchaseid: _this.qpurchaseid
                 });
             }
             else {
@@ -8816,6 +9348,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     else {
                         this.router.navigate(['songpurchasestats'], {
                             queryParams: {
+                                purchaseid: this.reportForm.value.purchaseid,
                                 labelid: this.reportForm.value.labelid,
                                 artistname: this.reportForm.value.artistname,
                                 //albumname: this.reportForm.value.albumname,
@@ -8836,6 +9369,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
             else {
                 this.router.navigate(['songpurchasestats'], {
                     queryParams: {
+                        purchaseid: this.reportForm.value.purchaseid,
                         labelid: this.reportForm.value.labelid,
                         artistname: this.reportForm.value.artistname,
                         //albumname: this.reportForm.value.albumname,
@@ -8862,7 +9396,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -8883,6 +9417,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                     _this.qstartdt = formval.startdt;
                     _this.qenddt = formval.enddt;
                 }
+                _this.qpurchaseid = formval.purchaseid;
                 /* if (formval.rptype === 'opt1') {
                   this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
                 } else if (formval.rptype === 'opt2') {
@@ -8893,6 +9428,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
                 } */
                 _this.reportTitle = 'Search Result - ';
                 _this.reportForm.patchValue({
+                    purchaseid: _this.qpurchaseid,
                     labelid: _this.qlabelid,
                     artistname: _this.qartistname,
                     //albumname: this.qalbumname,
@@ -8914,6 +9450,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
     SongpurchasestatsComponent.prototype.setPage = function (page) {
         this.router.navigate(['songpurchasestats'], {
             queryParams: {
+                purchaseid: this.qpurchaseid,
                 labelid: this.qlabelid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
@@ -8948,6 +9485,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
         }
         this.router.navigate(['songpurchasestats'], {
             queryParams: {
+                purchaseid: this.qpurchaseid,
                 labelid: this.qlabelid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
@@ -8967,6 +9505,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
         this.router.navigate(["viewsongpurchase/" + songid], {
             queryParams: {
                 srcpg: 'stats',
+                purchaseid: this.qpurchaseid,
                 labelid: this.qlabelid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
@@ -8986,6 +9525,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
         this.router.navigate(["viewpurchase/" + songpurchaseid], {
             queryParams: {
                 srcpg: 'stats',
+                purchaseid: this.qpurchaseid,
                 labelid: this.qlabelid,
                 artistname: this.qartistname,
                 //albumname: this.qalbumname,
@@ -9010,7 +9550,7 @@ var SongpurchasestatsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_6__services_songpurchase_service__["a" /* SongpurchaseService */],
@@ -9095,7 +9635,7 @@ var ViewpurchaseComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -9130,7 +9670,7 @@ var ViewpurchaseComponent = /** @class */ (function () {
         }
         else {
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
             this.toastr.error('Incorrect param in the URL');
         }
     };
@@ -9145,7 +9685,7 @@ var ViewpurchaseComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__services_songpurchase_service__["a" /* SongpurchaseService */],
             __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewpurchaseComponent);
     return ViewpurchaseComponent;
 }());
@@ -9164,7 +9704,7 @@ module.exports = ""
 /***/ "./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <!-- <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n              <a *ngIf=\"this.state.prvwplaying && !this.state.loadingprvw\" (click)=\"togglePrvw(song?.songprvwpath)\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Preview\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n              <span *ngIf=\"this.state.loadingprvw\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n              <a *ngIf=\"!this.state.prvwplaying && !this.state.loadingprvw\" (click)=\"togglePrvw(song?.songprvwpath)\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <!-- <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n                <a *ngIf=\"this.state.songplaying && !this.state.loadingsong\" (click)=\"toggleSong(song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Song\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n                <span *ngIf=\"this.state.loadingsong\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n                <a *ngIf=\"!this.state.songplaying && !this.state.loadingsong\" (click)=\"toggleSong(song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
 
 /***/ }),
 
@@ -9198,6 +9738,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ViewsongpurchaseComponent = /** @class */ (function () {
     function ViewsongpurchaseComponent(fb, authService, songService, msconfigService, toastr, route, router) {
+        var _this = this;
         this.fb = fb;
         this.authService = authService;
         this.songService = songService;
@@ -9207,6 +9748,26 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
         this.router = router;
         this.songgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.state = { prvwplaying: false, songplaying: false,
+            loadingprvw: false, loadingsong: false };
+        this.audiotag = false;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.pausePrvw();
+                _this.pausePrvwAudio();
+                _this.pauseSong();
+                _this.pauseSongAudio();
+                _this.resetAudioElement();
+            }
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* NavigationStart */]) {
+                _this.pausePrvw();
+                _this.pausePrvwAudio();
+                _this.pauseSong();
+                _this.pauseSongAudio();
+                _this.resetAudioElement();
+            }
+        });
     }
     ViewsongpurchaseComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -9224,9 +9785,268 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
             songgenre: this.songgenre,
             status: this.status
         });
+        try {
+            this.audioContext = new AudioContext();
+            if (this.audioContext) {
+                this.prvwBuffer = null;
+                this.songBuffer = null;
+                this.prvwbufferSource = null;
+                this.songbufferSource = null;
+            }
+        }
+        catch (error) {
+            this.audiotag = true;
+            this.prvwaudio = new Audio();
+            this.songaudio = new Audio();
+        }
     };
     ViewsongpurchaseComponent.prototype.ngOnDestroy = function () {
+        this.resetAudioElement();
         this.sub.unsubscribe();
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ViewsongpurchaseComponent.prototype.resetAudioElement = function () {
+        this.audioContext = null;
+        this.prvwBuffer = null;
+        this.songBuffer = null;
+        this.prvwbufferSource = null;
+        this.songbufferSource = null;
+        this.prvwaudio = null;
+        this.songaudio = null;
+    };
+    ViewsongpurchaseComponent.prototype.fetchSong = function (songurl) {
+        var _this = this;
+        return fetch(songurl)
+            .then(function (response) { return response.arrayBuffer(); })
+            .then(function (buffer) {
+            return new Promise(function (resolve, reject) {
+                _this.audioContext.decodeAudioData(buffer, resolve, reject);
+            });
+        });
+    };
+    ViewsongpurchaseComponent.prototype.togglePrvw = function (audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state.prvwplaying) {
+                this.playPrvwAudio(audiourl);
+            }
+            else {
+                this.pausePrvwAudio();
+            }
+        }
+        else {
+            if (!this.state.prvwplaying) {
+                this.playPrvw(audiourl);
+            }
+            else {
+                this.pausePrvw();
+            }
+        }
+    };
+    ViewsongpurchaseComponent.prototype.toggleSong = function (audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state.songplaying) {
+                this.playSongAudio(audiourl);
+            }
+            else {
+                this.pauseSongAudio();
+            }
+        }
+        else {
+            if (!this.state.songplaying) {
+                this.playSong(audiourl);
+            }
+            else {
+                this.pauseSong();
+            }
+        }
+    };
+    ViewsongpurchaseComponent.prototype.stopAllplaying = function (type) {
+        if (type === 'song') {
+            if (this.songBuffer && this.songbufferSource) {
+                this.state.songplaying = false;
+                this.songbufferSource.stop();
+            }
+        }
+        else if (type === 'prvw') {
+            if (this.prvwBuffer && this.prvwbufferSource) {
+                this.state.prvwplaying = false;
+                this.prvwbufferSource.stop();
+            }
+        }
+    };
+    ViewsongpurchaseComponent.prototype.stopAllplayingaudio = function (type) {
+        if (type === 'song') {
+            if (this.songaudio && this.songaudio.src) {
+                this.state.songplaying = false;
+                this.songaudio.pause();
+            }
+        }
+        else if (type === 'prvw') {
+            if (this.prvwaudio && this.prvwaudio.src) {
+                this.state.prvwplaying = false;
+                this.prvwaudio.pause();
+            }
+        }
+    };
+    ViewsongpurchaseComponent.prototype.playPrvw = function (audiourl) {
+        var _this = this;
+        if (this.state.songplaying) {
+            this.stopAllplaying('song');
+        }
+        if (this.prvwBuffer) {
+            this.state.prvwplaying = true;
+            this.prvwbufferSource = null;
+            this.prvwbufferSource = this.audioContext.createBufferSource();
+            this.prvwbufferSource.buffer = this.prvwBuffer;
+            this.prvwbufferSource.connect(this.audioContext.destination);
+            this.prvwbufferSource.start(0);
+        }
+        else {
+            this.state.loadingprvw = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state.loadingprvw = false;
+                _this.state.prvwplaying = true;
+                _this.prvwBuffer = audioBuffer;
+                _this.prvwbufferSource = _this.audioContext.createBufferSource();
+                _this.prvwbufferSource.buffer = _this.prvwBuffer;
+                _this.prvwbufferSource.connect(_this.audioContext.destination);
+                _this.prvwbufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+    };
+    ViewsongpurchaseComponent.prototype.playPrvwAudio = function (audiourl) {
+        var _this = this;
+        if (this.state.songplaying) {
+            this.stopAllplayingaudio('song');
+        }
+        if (this.prvwaudio.src === '') {
+            this.prvwaudio.src = audiourl;
+            this.state.loadingprvw = true;
+            this.prvwaudio.load();
+            this.state.loadingprvw = false;
+            //this.prvwaudio.play();
+            var promise = this.prvwaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state.prvwplaying = true;
+        }
+        else {
+            this.state.prvwplaying = true;
+            //this.prvwaudio.play();
+            var promise = this.prvwaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+    };
+    ViewsongpurchaseComponent.prototype.playSong = function (audiourl) {
+        var _this = this;
+        if (this.state.prvwplaying) {
+            this.stopAllplaying('prvw');
+        }
+        if (this.songBuffer) {
+            this.state.songplaying = true;
+            this.songbufferSource = null;
+            this.songbufferSource = this.audioContext.createBufferSource();
+            this.songbufferSource.buffer = this.songBuffer;
+            this.songbufferSource.connect(this.audioContext.destination);
+            this.songbufferSource.start(0);
+        }
+        else {
+            this.state.loadingsong = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state.loadingsong = false;
+                _this.state.songplaying = true;
+                _this.songBuffer = audioBuffer;
+                _this.songbufferSource = _this.audioContext.createBufferSource();
+                _this.songbufferSource.buffer = _this.songBuffer;
+                _this.songbufferSource.connect(_this.audioContext.destination);
+                _this.songbufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+    };
+    ViewsongpurchaseComponent.prototype.playSongAudio = function (audiourl) {
+        var _this = this;
+        if (this.state.prvwplaying) {
+            this.stopAllplayingaudio('prvw');
+        }
+        if (this.songaudio.src === '') {
+            this.songaudio.src = audiourl;
+            this.state.loadingsong = true;
+            this.songaudio.load();
+            this.state.loadingsong = false;
+            //this.songaudio.play();
+            var promise = this.songaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state.songplaying = true;
+        }
+        else {
+            this.state.songplaying = true;
+            //this.songaudio.play();
+            var promise = this.songaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+    };
+    ViewsongpurchaseComponent.prototype.pausePrvw = function () {
+        if (this.prvwBuffer && this.prvwbufferSource) {
+            this.state.prvwplaying = false;
+            this.prvwbufferSource.stop();
+        }
+    };
+    ViewsongpurchaseComponent.prototype.pausePrvwAudio = function () {
+        if (this.prvwaudio && this.prvwaudio.src) {
+            this.state.prvwplaying = false;
+            this.prvwaudio.pause();
+        }
+    };
+    ViewsongpurchaseComponent.prototype.pauseSong = function () {
+        if (this.songBuffer && this.songbufferSource) {
+            this.state.songplaying = false;
+            this.songbufferSource.stop();
+        }
+    };
+    ViewsongpurchaseComponent.prototype.pauseSongAudio = function () {
+        if (this.songaudio && this.songaudio.src) {
+            this.state.songplaying = false;
+            this.songaudio.pause();
+        }
     };
     ViewsongpurchaseComponent.prototype.getMsconfigGroupList = function (groupid) {
         var _this = this;
@@ -9256,7 +10076,7 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -9295,7 +10115,7 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
         }
         else {
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
             this.toastr.error('Incorrect param in the URL');
         }
     };
@@ -9311,7 +10131,7 @@ var ViewsongpurchaseComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewsongpurchaseComponent);
     return ViewsongpurchaseComponent;
 }());
@@ -9525,16 +10345,7 @@ var AddsongComponent = /** @class */ (function () {
             this.progressvalue = 10;
             //const prvwfiles: Array<File> = this.PrvwfilesToUpload;
             var theForm_1 = this.addSongForm.value;
-            this.progressvalue = 40;
-            var lformData = new FormData();
-            //console.log('Ini file: '+ prvwfiles[0]['name']);
-            lformData.append('prvwfileinputsrc', prvwfiles[0], prvwfiles[0]['name']);
-            lformData.append('prvwuploadpath', this.prvwuploadpath);
-            lformData.append('songfileinputsrc', songfiles[0], songfiles[0]['name']);
-            lformData.append('songuploadpath', this.songuploadpath);
-            this.loading = true;
-            this.progressvalue = 70;
-            this.songService.uploadSongfiles(this.userObj.userid, lformData)
+            this.songService.checkSong(this.userObj.userid, theForm_1)
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
@@ -9542,33 +10353,16 @@ var AddsongComponent = /** @class */ (function () {
                     _this.toastr.error(data.message);
                 }
                 else {
-                    _this.progressvalue = 80;
-                    /* let sgformData: FormData = new FormData();
-                    sgformData.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
-                    sgformData.append('uploadpath',this.songuploadpath);
-                    sgformData.append('artistid',theForm.artistid);
-                    sgformData.append('albumid',theForm.albumid);
-                    sgformData.append('songname',theForm.songname);
-                    sgformData.append('songlyric',theForm.songlyric);
-                    sgformData.append('songgenre',theForm.songgenre);
-                    sgformData.append('songprice',theForm.songprice);
-                    sgformData.append('songprvwpath',data.filedata.filepath);
-                    sgformData.append('songprvwname',data.filedata.filename);
-                    sgformData.append('status','STSACT'); */
-                    var payload = {};
-                    payload.artistid = theForm_1.artistid;
-                    payload.albumid = theForm_1.albumid;
-                    payload.songname = theForm_1.songname;
-                    payload.songlyric = theForm_1.songlyric;
-                    payload.songgenre = theForm_1.songgenre;
-                    payload.songprice = theForm_1.songprice;
-                    payload.songprvwpath = data.preview.prvwfilepath;
-                    payload.songprvwname = data.preview.prvwfilename;
-                    payload.songfilepath = data.song.songfilepath;
-                    payload.songfilename = data.song.songfilename;
-                    payload.status = 'STSACT';
-                    _this.progressvalue = 90;
-                    _this.songService.pubsaveSong(_this.userObj.userid, payload)
+                    _this.progressvalue = 40;
+                    var lformData = new FormData();
+                    //console.log('Ini file: '+ prvwfiles[0]['name']);
+                    lformData.append('prvwfileinputsrc', prvwfiles[0], prvwfiles[0]['name']);
+                    lformData.append('prvwuploadpath', _this.prvwuploadpath);
+                    lformData.append('songfileinputsrc', songfiles[0], songfiles[0]['name']);
+                    lformData.append('songuploadpath', _this.songuploadpath);
+                    _this.loading = true;
+                    _this.progressvalue = 70;
+                    _this.songService.uploadSongfiles(_this.userObj.userid, lformData)
                         .subscribe(function (data) {
                         if (data.success === false) {
                             _this.loading = false;
@@ -9576,18 +10370,59 @@ var AddsongComponent = /** @class */ (function () {
                             _this.toastr.error(data.message);
                         }
                         else {
-                            _this.loading = false;
-                            _this.progressvalue = 100;
-                            _this.toastr.success(data.message);
-                            //this.router.navigate(['listsong']);
+                            _this.progressvalue = 80;
+                            /* let sgformData: FormData = new FormData();
+                            sgformData.append('fileinputsrc',songfiles[0],songfiles[0]['name']);
+                            sgformData.append('uploadpath',this.songuploadpath);
+                            sgformData.append('artistid',theForm.artistid);
+                            sgformData.append('albumid',theForm.albumid);
+                            sgformData.append('songname',theForm.songname);
+                            sgformData.append('songlyric',theForm.songlyric);
+                            sgformData.append('songgenre',theForm.songgenre);
+                            sgformData.append('songprice',theForm.songprice);
+                            sgformData.append('songprvwpath',data.filedata.filepath);
+                            sgformData.append('songprvwname',data.filedata.filename);
+                            sgformData.append('status','STSACT'); */
+                            var payload = {};
+                            payload.artistid = theForm_1.artistid;
+                            payload.albumid = theForm_1.albumid;
+                            payload.songname = theForm_1.songname;
+                            payload.songlyric = theForm_1.songlyric;
+                            payload.songgenre = theForm_1.songgenre;
+                            payload.songprice = theForm_1.songprice;
+                            payload.songprvwpath = data.preview.prvwfilepath;
+                            payload.songprvwname = data.preview.prvwfilename;
+                            payload.songfilepath = data.song.songfilepath;
+                            payload.songfilename = data.song.songfilename;
+                            payload.status = 'STSACT';
+                            _this.progressvalue = 90;
+                            _this.songService.pubsaveSong(_this.userObj.userid, payload)
+                                .subscribe(function (data) {
+                                if (data.success === false) {
+                                    _this.loading = false;
+                                    _this.progressvalue = 0;
+                                    _this.toastr.error(data.message);
+                                }
+                                else {
+                                    _this.loading = false;
+                                    _this.progressvalue = 100;
+                                    _this.toastr.success(data.message);
+                                    //this.router.navigate(['listsong']);
+                                }
+                                _this.addSongForm.reset();
+                                _this.progressvalue = 0;
+                                _this.artistVar.nativeElement.selectedIndex = 0;
+                                _this.albumVar.nativeElement.selectedIndex = 0;
+                                _this.genreVar.nativeElement.selectedIndex = 0;
+                                _this.inputpreVar.nativeElement.value = "";
+                                _this.inputsongVar.nativeElement.value = "";
+                            }, function (err) {
+                                _this.loading = false;
+                                _this.progressvalue = 0;
+                                //console.log(err);
+                                _this.toastr.error(err);
+                            });
                         }
-                        _this.addSongForm.reset();
-                        _this.progressvalue = 0;
-                        _this.artistVar.nativeElement.selectedIndex = 0;
-                        _this.albumVar.nativeElement.selectedIndex = 0;
-                        _this.genreVar.nativeElement.selectedIndex = 0;
-                        _this.inputpreVar.nativeElement.value = "";
-                        _this.inputsongVar.nativeElement.value = "";
                     }, function (err) {
                         _this.loading = false;
                         _this.progressvalue = 0;
@@ -9779,7 +10614,7 @@ var AddsongComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
@@ -10038,7 +10873,7 @@ var EditsongComponent = /** @class */ (function () {
                 if (data.success === false) {
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -10069,7 +10904,7 @@ var EditsongComponent = /** @class */ (function () {
               if (data.success === false) {
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -10109,7 +10944,7 @@ var EditsongComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
     ], EditsongComponent);
@@ -10334,7 +11169,7 @@ var EditsongfilesComponent = /** @class */ (function () {
                         _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -10407,7 +11242,7 @@ var EditsongfilesComponent = /** @class */ (function () {
                 this.progressvalue = 0;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -10468,7 +11303,7 @@ var EditsongfilesComponent = /** @class */ (function () {
                         _this.progressvalue = 0;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -10539,7 +11374,7 @@ var EditsongfilesComponent = /** @class */ (function () {
                 this.progressvalue = 0;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -10578,7 +11413,7 @@ var EditsongfilesComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_6__services_filetransfer_service__["a" /* FiletransferService */],
             __WEBPACK_IMPORTED_MODULE_7__app_global__["a" /* Globals */],
@@ -10601,7 +11436,7 @@ module.exports = ""
 /***/ "./src/app/components/song/listsong/listsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"artistid\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                <div class=\"col-sm-10\">\n                <!-- <div class=\"input-group col-sm-10\"> -->\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the artist</option>\n                        <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumid\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"albumid\">\n                        <option value=\"\">Select the album</option>\n                        <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n                    </select>\n                  </div>\n            </div>\n\n\n          </div>\n\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                  </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songpublish\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n                </div>  \n              </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-2 paddingsearch\"></label>\n                  <div class=\"col-sm-10\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>\n                </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No song found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any songs for the selected criteria. Please add the song <a style=\"cursor:pointer\" (click)=\"toaddSongs()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                          <th width=\"20%\" scope=\"col\">Artist</th>\n                          <th width=\"20%\" scope=\"col\">Album</th>\n                          <!-- <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('albumyear')\">Year</a></th> -->\n                          <th width=\"9%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songgenre')\">Genre</a></th>\n                          <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\" scope=\"col\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td scope=\"row\" data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td data-label=\"Artist\">{{ song.artist }}</td>\n                          <td data-label=\"Album\">{{ song.album }}</td>\n                          <!-- <td>{{ song.albumyear}}</td> -->\n                          <td data-label=\"Genre\">{{ song.genrevalue}}</td>\n                          <td data-label=\"Price\" class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editSongFiles(song._id, song.songpublish, song.songbuy)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song File\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editSong(song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>List Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"artistid\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                <div class=\"col-sm-10\">\n                <!-- <div class=\"input-group col-sm-10\"> -->\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"artistid\" (change)=\"artistChangeEvent($event)\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the artist</option>\n                        <option *ngFor=\"let artist of artistlist\" [ngValue]=\"artist._id\">{{artist.artistname}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumid\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"albumid\">\n                        <option value=\"\">Select the album</option>\n                        <option *ngFor=\"let album of albumlist\" [ngValue]=\"album._id\">{{album.albumname}}</option>\n                    </select>\n                  </div>\n            </div>\n\n\n          </div>\n\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Album Year\">\n                  </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                            <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                            <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songpublish\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Purchased?</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n                </div>  \n              </div>\n            <div class=\"row rowmarginsearch\">  \n                <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-2 paddingsearch\"></label>\n                  <div class=\"col-sm-10\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                  </div>\n                </div>                  \n          </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No song found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          It seems like you havn't entered any songs for the selected criteria. Please add the song <a style=\"cursor:pointer\" (click)=\"toaddSongs()\">here</a>.\n      </div>\n  </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                          <th width=\"20%\" scope=\"col\">Artist</th>\n                          <th width=\"20%\" scope=\"col\">Album</th>\n                          <!-- <th width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('albumyear')\">Year</a></th> -->\n                          <th width=\"9%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songgenre')\">Genre</a></th>\n                          <th width=\"10%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th width=\"20%\" scope=\"col\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td scope=\"row\" data-label=\"Song Title\"><a style=\"cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td data-label=\"Artist\">{{ song.artist }}</td>\n                          <td data-label=\"Album\">{{ song.album }}</td>\n                          <!-- <td>{{ song.albumyear}}</td> -->\n                          <td data-label=\"Genre\">{{ song.genrevalue}}</td>\n                          <td data-label=\"Price\" class=\"text-right\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                              <button type=\"button\" class=\"btn-xs btn-info\" aria-label=\"View\" (click)=\"editSongFiles(song._id, song.songpublish, song.songbuy)\">\n                                  <span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song File\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"Edit\" (click)=\"editSong(song._id, song.songpublish, song.songbuy)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Change Song Data\">\n                                  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-primary\" aria-label=\"Delete\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\">\n                                  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n                              </button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -10852,7 +11687,7 @@ var ListsongComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -11033,7 +11868,7 @@ var ListsongComponent = /** @class */ (function () {
                         _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -11095,7 +11930,7 @@ var ListsongComponent = /** @class */ (function () {
                 this.loading = false;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -11129,7 +11964,7 @@ var ListsongComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_7__services_song_service__["a" /* SongService */],
             __WEBPACK_IMPORTED_MODULE_9__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_10__services_filetransfer_service__["a" /* FiletransferService */],
@@ -11152,7 +11987,7 @@ module.exports = ""
 /***/ "./src/app/components/song/viewsong/viewsong.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <!-- <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n              <a *ngIf=\"this.state.prvwplaying && !this.state.loadingprvw\" (click)=\"togglePrvw(song?.songprvwpath)\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Preview\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n              <span *ngIf=\"this.state.loadingprvw\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n              <a *ngIf=\"!this.state.prvwplaying && !this.state.loadingprvw\" (click)=\"togglePrvw(song?.songprvwpath)\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <!-- <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n                <a *ngIf=\"this.state.songplaying && !this.state.loadingsong\" (click)=\"toggleSong(song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Song\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n                <span *ngIf=\"this.state.loadingsong\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n                <a *ngIf=\"!this.state.songplaying && !this.state.loadingsong\" (click)=\"toggleSong(song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
 
 /***/ }),
 
@@ -11186,6 +12021,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ViewsongComponent = /** @class */ (function () {
     function ViewsongComponent(fb, authService, songService, msconfigService, toastr, route, router) {
+        var _this = this;
         this.fb = fb;
         this.authService = authService;
         this.songService = songService;
@@ -11195,6 +12031,26 @@ var ViewsongComponent = /** @class */ (function () {
         this.router = router;
         this.songgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.state = { prvwplaying: false, songplaying: false,
+            loadingprvw: false, loadingsong: false };
+        this.audiotag = false;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.pausePrvw();
+                _this.pausePrvwAudio();
+                _this.pauseSong();
+                _this.pauseSongAudio();
+                _this.resetAudioElement();
+            }
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* NavigationStart */]) {
+                _this.pausePrvw();
+                _this.pausePrvwAudio();
+                _this.pauseSong();
+                _this.pauseSongAudio();
+                _this.resetAudioElement();
+            }
+        });
     }
     ViewsongComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -11209,9 +12065,268 @@ var ViewsongComponent = /** @class */ (function () {
             songgenre: this.songgenre,
             status: this.status
         });
+        try {
+            this.audioContext = new AudioContext();
+            if (this.audioContext) {
+                this.prvwBuffer = null;
+                this.songBuffer = null;
+                this.prvwbufferSource = null;
+                this.songbufferSource = null;
+            }
+        }
+        catch (error) {
+            this.audiotag = true;
+            this.prvwaudio = new Audio();
+            this.songaudio = new Audio();
+        }
     };
     ViewsongComponent.prototype.ngOnDestroy = function () {
+        this.resetAudioElement();
         this.sub.unsubscribe();
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ViewsongComponent.prototype.resetAudioElement = function () {
+        this.audioContext = null;
+        this.prvwBuffer = null;
+        this.songBuffer = null;
+        this.prvwbufferSource = null;
+        this.songbufferSource = null;
+        this.prvwaudio = null;
+        this.songaudio = null;
+    };
+    ViewsongComponent.prototype.fetchSong = function (songurl) {
+        var _this = this;
+        return fetch(songurl)
+            .then(function (response) { return response.arrayBuffer(); })
+            .then(function (buffer) {
+            return new Promise(function (resolve, reject) {
+                _this.audioContext.decodeAudioData(buffer, resolve, reject);
+            });
+        });
+    };
+    ViewsongComponent.prototype.togglePrvw = function (audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state.prvwplaying) {
+                this.playPrvwAudio(audiourl);
+            }
+            else {
+                this.pausePrvwAudio();
+            }
+        }
+        else {
+            if (!this.state.prvwplaying) {
+                this.playPrvw(audiourl);
+            }
+            else {
+                this.pausePrvw();
+            }
+        }
+    };
+    ViewsongComponent.prototype.toggleSong = function (audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state.songplaying) {
+                this.playSongAudio(audiourl);
+            }
+            else {
+                this.pauseSongAudio();
+            }
+        }
+        else {
+            if (!this.state.songplaying) {
+                this.playSong(audiourl);
+            }
+            else {
+                this.pauseSong();
+            }
+        }
+    };
+    ViewsongComponent.prototype.stopAllplaying = function (type) {
+        if (type === 'song') {
+            if (this.songBuffer && this.songbufferSource) {
+                this.state.songplaying = false;
+                this.songbufferSource.stop();
+            }
+        }
+        else if (type === 'prvw') {
+            if (this.prvwBuffer && this.prvwbufferSource) {
+                this.state.prvwplaying = false;
+                this.prvwbufferSource.stop();
+            }
+        }
+    };
+    ViewsongComponent.prototype.stopAllplayingaudio = function (type) {
+        if (type === 'song') {
+            if (this.songaudio && this.songaudio.src) {
+                this.state.songplaying = false;
+                this.songaudio.pause();
+            }
+        }
+        else if (type === 'prvw') {
+            if (this.prvwaudio && this.prvwaudio.src) {
+                this.state.prvwplaying = false;
+                this.prvwaudio.pause();
+            }
+        }
+    };
+    ViewsongComponent.prototype.playPrvw = function (audiourl) {
+        var _this = this;
+        if (this.state.songplaying) {
+            this.stopAllplaying('song');
+        }
+        if (this.prvwBuffer) {
+            this.state.prvwplaying = true;
+            this.prvwbufferSource = null;
+            this.prvwbufferSource = this.audioContext.createBufferSource();
+            this.prvwbufferSource.buffer = this.prvwBuffer;
+            this.prvwbufferSource.connect(this.audioContext.destination);
+            this.prvwbufferSource.start(0);
+        }
+        else {
+            this.state.loadingprvw = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state.loadingprvw = false;
+                _this.state.prvwplaying = true;
+                _this.prvwBuffer = audioBuffer;
+                _this.prvwbufferSource = _this.audioContext.createBufferSource();
+                _this.prvwbufferSource.buffer = _this.prvwBuffer;
+                _this.prvwbufferSource.connect(_this.audioContext.destination);
+                _this.prvwbufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+    };
+    ViewsongComponent.prototype.playPrvwAudio = function (audiourl) {
+        var _this = this;
+        if (this.state.songplaying) {
+            this.stopAllplayingaudio('song');
+        }
+        if (this.prvwaudio.src === '') {
+            this.prvwaudio.src = audiourl;
+            this.state.loadingprvw = true;
+            this.prvwaudio.load();
+            this.state.loadingprvw = false;
+            //this.prvwaudio.play();
+            var promise = this.prvwaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state.prvwplaying = true;
+        }
+        else {
+            this.state.prvwplaying = true;
+            //this.prvwaudio.play();
+            var promise = this.prvwaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+    };
+    ViewsongComponent.prototype.playSong = function (audiourl) {
+        var _this = this;
+        if (this.state.prvwplaying) {
+            this.stopAllplaying('prvw');
+        }
+        if (this.songBuffer) {
+            this.state.songplaying = true;
+            this.songbufferSource = null;
+            this.songbufferSource = this.audioContext.createBufferSource();
+            this.songbufferSource.buffer = this.songBuffer;
+            this.songbufferSource.connect(this.audioContext.destination);
+            this.songbufferSource.start(0);
+        }
+        else {
+            this.state.loadingsong = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state.loadingsong = false;
+                _this.state.songplaying = true;
+                _this.songBuffer = audioBuffer;
+                _this.songbufferSource = _this.audioContext.createBufferSource();
+                _this.songbufferSource.buffer = _this.songBuffer;
+                _this.songbufferSource.connect(_this.audioContext.destination);
+                _this.songbufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+    };
+    ViewsongComponent.prototype.playSongAudio = function (audiourl) {
+        var _this = this;
+        if (this.state.prvwplaying) {
+            this.stopAllplayingaudio('prvw');
+        }
+        if (this.songaudio.src === '') {
+            this.songaudio.src = audiourl;
+            this.state.loadingsong = true;
+            this.songaudio.load();
+            this.state.loadingsong = false;
+            //this.songaudio.play();
+            var promise = this.songaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state.songplaying = true;
+        }
+        else {
+            this.state.songplaying = true;
+            //this.songaudio.play();
+            var promise = this.songaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+    };
+    ViewsongComponent.prototype.pausePrvw = function () {
+        if (this.prvwBuffer && this.prvwbufferSource) {
+            this.state.prvwplaying = false;
+            this.prvwbufferSource.stop();
+        }
+    };
+    ViewsongComponent.prototype.pausePrvwAudio = function () {
+        if (this.prvwaudio && this.prvwaudio.src) {
+            this.state.prvwplaying = false;
+            this.prvwaudio.pause();
+        }
+    };
+    ViewsongComponent.prototype.pauseSong = function () {
+        if (this.songBuffer && this.songbufferSource) {
+            this.state.songplaying = false;
+            this.songbufferSource.stop();
+        }
+    };
+    ViewsongComponent.prototype.pauseSongAudio = function () {
+        if (this.songaudio && this.songaudio.src) {
+            this.state.songplaying = false;
+            this.songaudio.pause();
+        }
     };
     ViewsongComponent.prototype.getMsconfigGroupList = function (groupid) {
         var _this = this;
@@ -11247,7 +12362,7 @@ var ViewsongComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -11280,7 +12395,7 @@ var ViewsongComponent = /** @class */ (function () {
         }
         else {
             this.authService.logout();
-            this.router.navigate(['login']);
+            this.router.navigate(['errorpage']);
             this.toastr.error('Incorrect param in the URL');
         }
     };
@@ -11296,7 +12411,7 @@ var ViewsongComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewsongComponent);
     return ViewsongComponent;
 }());
@@ -11315,7 +12430,7 @@ module.exports = ""
 /***/ "./src/app/components/songmgt/songmgt.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Publish Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"labelid\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the label</option>\n                        <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n              <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n              <div class=\"col-sm-10\">\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                  <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n              </div>\n            </div>            \n        </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">    \n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songgenre\">\n                        <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                      </select>\n                  </div>\n              </div>\n           </div>\n          <div class=\"row rowmarginsearch\">        \n<!--               <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>   -->\n              <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                        <div class=\"col-sm-5\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                </div>                  \n            </div>\n      </form>\n    </div>\n  </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No song found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any songs found for the selected criteria.\n        </div>\n    </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                          <th scope=\"col\" width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                          <th scope=\"col\" width=\"20%\">Artist</th>\n                          <th scope=\"col\" width=\"20%\">Album</th>\n                          <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Publish?</a></th>\n                          <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <th scope=\"col\" width=\"5%\">Preview</th>\n                          <th scope=\"col\" width=\"5%\">Song</th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th scope=\"col\" width=\"5%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td scope=\"row\" data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td data-label=\"Label\">{{ song.label }}</td>\n                          <td data-label=\"Artist\">{{ song.artist }}</td>\n                          <td data-label=\"Album\">{{ song.album }}</td>\n                          <td data-label=\"Publish\">{{ song.songpublish }}</td>\n                          <td class=\"text-right\" data-label=\"Song Price\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td data-label=\"Song Preview\"><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                          <td data-label=\"Song File\"><a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                               <a alt=\"Publish\" style=\"cursor:pointer;float:center;color:#11DFDF\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish\"><i class=\"fa fa-cloud-upload fa-2x\"></i></a>\n                               <!-- <a alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a> -->\n<!--                               <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Publish\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish Song\">\n                                  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"UnPublish\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Cancel Publish Song\">\n                                  <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                              </button> -->\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Publish Song</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Search Parameter</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-sm-6 col-md-6\">\n                <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"labelid\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the label</option>\n                        <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                    </select>\n                  </div>\n            </div>\n            <div class=\"col-sm-6 col-md-6\">\n              <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n              <div class=\"col-sm-10\">\n                  <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                  <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n              </div>\n            </div>            \n        </div>\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                </div>\n              </div>\n          </div>\n          <div class=\"row rowmarginsearch\">    \n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"songgenre\">\n                        <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                        <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                      </select>\n                  </div>\n              </div>\n           </div>\n          <div class=\"row rowmarginsearch\">        \n<!--               <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                  <div class=\"col-sm-10\">\n                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div>\n                      <select class=\"form-control\" [formControl]=\"songbuy\">\n                        <option ng-selected=\"true\" value=\"\">Select the option</option>\n                        <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                  </div>\n              </div>   -->\n              <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                        <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                        <div class=\"col-sm-5\">\n                          <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                        </div>\n                </div>                  \n            </div>\n      </form>\n    </div>\n  </div>\n    <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No song found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO any songs found for the selected criteria.\n        </div>\n    </div>\n\n  <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n      </div>\n      <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                          <th scope=\"col\" width=\"15%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                          <th scope=\"col\" width=\"20%\">Artist</th>\n                          <th scope=\"col\" width=\"20%\">Album</th>\n                          <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songpublish')\">Publish?</a></th>\n                          <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                          <th scope=\"col\" width=\"5%\">Preview</th>\n                          <th scope=\"col\" width=\"5%\">Song</th>\n                          <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                          <th scope=\"col\" width=\"5%\">Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let song of songs; let songIndex = index'>\n                          <td scope=\"row\" data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                          <td data-label=\"Label\">{{ song.label }}</td>\n                          <td data-label=\"Artist\">{{ song.artist }}</td>\n                          <td data-label=\"Album\">{{ song.album }}</td>\n                          <td data-label=\"Publish\">{{ song.songpublish }}</td>\n                          <td class=\"text-right\" data-label=\"Song Price\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td data-label=\"Song Preview\">\n                                <!-- <a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n                                <a *ngIf=\"this.state[songIndex].playingprvw && !this.state[songIndex].loadingprvw\" (click)=\"toggleAudio(songIndex,'prvw',song?.songprvwpath)\" style=\"cursor:pointer;float:center;color:#2748B4\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Preview\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n                                <span *ngIf=\"this.state[songIndex].loadingprvw\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n                                <a *ngIf=\"!this.state[songIndex].playingprvw && !this.state[songIndex].loadingprvw\" (click)=\"toggleAudio(songIndex,'prvw',song?.songprvwpath)\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                          </td>\n                          <td data-label=\"Song File\">\n                              <!-- <a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n                              <a *ngIf=\"this.state[songIndex].playingsong && !this.state[songIndex].loadingsong\" (click)=\"toggleAudio(songIndex,'song',song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#2748B4\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Song\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n                              <span *ngIf=\"this.state[songIndex].loadingsong\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n                              <a *ngIf=\"!this.state[songIndex].playingsong && !this.state[songIndex].loadingsong\" (click)=\"toggleAudio(songIndex,'song',song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                          </td>\n                          <!-- <td>{{ albm.status}}</td> -->\n                          <td data-label=\"Action\">\n                               <a alt=\"Publish\" style=\"cursor:pointer;float:center;color:#11DFDF\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish\"><i class=\"fa fa-cloud-upload fa-2x\"></i></a>\n                               <!-- <a alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a> -->\n<!--                               <button type=\"button\" class=\"btn-xs btn-success\" aria-label=\"Publish\" (click)=\"publishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Publish Song\">\n                                  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\n                              </button>\n                              <button type=\"button\" class=\"btn-xs btn-danger\" aria-label=\"UnPublish\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Cancel Publish Song\">\n                                  <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                              </button> -->\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n      </div>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -11373,10 +12488,22 @@ var SongmgtComponent = /** @class */ (function () {
         this.songgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         //songbuy = new FormControl('',[Validators.nullValidator]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        //private state = {playing:false, loading:false};
+        this.state = [];
+        this.audiotag = false;
+        this.currentPlaying = -1;
         this.navigationSubscription = this.router.events.subscribe(function (e) {
             // If it is a NavigationEnd event re-initalise the component
             if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.pauseanyAudiostream();
+                _this.pauseanyAudiocontext();
+                _this.resetAudioElement();
                 _this.ngOnInit();
+            }
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* NavigationStart */]) {
+                _this.pauseanyAudiostream();
+                _this.pauseanyAudiocontext();
+                _this.resetAudioElement();
             }
         });
     }
@@ -11431,10 +12558,295 @@ var SongmgtComponent = /** @class */ (function () {
                 status: _this.qstatus
             });
         });
+        try {
+            this.audioContext = new AudioContext();
+            if (this.audioContext) {
+                this.audioBuffer = null;
+                this.audiobufferSource = null;
+            }
+        }
+        catch (error) {
+            this.audiotag = true;
+            this.audio = null;
+        }
     };
     SongmgtComponent.prototype.ngOnDestroy = function () {
+        this.resetAudioElement();
         if (this.navigationSubscription) {
             this.navigationSubscription.unsubscribe();
+        }
+    };
+    SongmgtComponent.prototype.resetAudioElement = function () {
+        this.audioContext = null;
+        this.audioBuffer = null;
+        this.audiobufferSource = null;
+        this.audio = null;
+        this.state = [];
+    };
+    SongmgtComponent.prototype.fetchSong = function (audiourl) {
+        var _this = this;
+        return fetch(audiourl)
+            .then(function (response) { return response.arrayBuffer(); })
+            .then(function (buffer) {
+            return new Promise(function (resolve, reject) {
+                _this.audioContext.decodeAudioData(buffer, resolve, reject);
+            });
+        });
+    };
+    SongmgtComponent.prototype.toggleAudio = function (selectedItem, audiotype, audiourl) {
+        console.log(this.audiotag);
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (audiotype === 'prvw') {
+                if (!this.state[selectedItem].playingprvw) {
+                    this.playAudiostream(selectedItem, audiotype, audiourl);
+                }
+                else {
+                    this.pauseAudiostream(selectedItem, audiotype);
+                }
+            }
+            else if (audiotype === 'song') {
+                if (!this.state[selectedItem].playingsong) {
+                    this.playAudiostream(selectedItem, audiotype, audiourl);
+                }
+                else {
+                    this.pauseAudiostream(selectedItem, audiotype);
+                }
+            }
+        }
+        else {
+            if (audiotype === 'prvw') {
+                if (!this.state[selectedItem].playingprvw) {
+                    this.playAudiocontext(selectedItem, audiotype, audiourl);
+                }
+                else {
+                    this.pauseAudiocontext(selectedItem, audiotype);
+                }
+            }
+            else if (audiotype === 'song') {
+                if (!this.state[selectedItem].playingsong) {
+                    this.playAudiocontext(selectedItem, audiotype, audiourl);
+                }
+                else {
+                    this.pauseAudiocontext(selectedItem, audiotype);
+                }
+            }
+        }
+    };
+    SongmgtComponent.prototype.stopAllplaying = function (selectedItem, audiotype) {
+        var curState = true;
+        if (this.state[this.currentPlaying]) {
+            curState = this.state[this.currentPlaying].playingprvw || this.state[this.currentPlaying].playingsong;
+        }
+        if (this.currentPlaying != selectedItem && curState) {
+            if (this.state[this.currentPlaying]) {
+                this.state[this.currentPlaying].playingprvw = false;
+                this.state[this.currentPlaying].playingsong = false;
+            }
+            if (this.audiotag) {
+                if (this.audio) {
+                    this.audio.pause();
+                }
+                this.audio = null;
+            }
+            else {
+                if (this.audiobufferSource) {
+                    this.audiobufferSource.stop();
+                }
+                this.audioBuffer = null;
+                this.audiobufferSource = null;
+            }
+        }
+        else {
+            if (this.currentPlaying == selectedItem && curState) {
+                if (audiotype === 'prvw') {
+                    if (this.state[this.currentPlaying]) {
+                        if (this.state[this.currentPlaying].playingsong) {
+                            if (this.audiotag) {
+                                if (this.audio) {
+                                    this.audio.pause();
+                                }
+                                this.audio = null;
+                            }
+                            else {
+                                if (this.audiobufferSource) {
+                                    this.audiobufferSource.stop();
+                                }
+                                this.audioBuffer = null;
+                                this.audiobufferSource = null;
+                            }
+                            this.state[this.currentPlaying].playingsong = false;
+                        }
+                    }
+                }
+                else if (audiotype === 'song') {
+                    if (this.state[this.currentPlaying]) {
+                        if (this.state[this.currentPlaying].playingprvw) {
+                            if (this.audiotag) {
+                                if (this.audio) {
+                                    this.audio.pause();
+                                }
+                                this.audio = null;
+                            }
+                            else {
+                                if (this.audiobufferSource) {
+                                    this.audiobufferSource.stop();
+                                }
+                                this.audioBuffer = null;
+                                this.audiobufferSource = null;
+                            }
+                            this.state[this.currentPlaying].playingprvw = false;
+                        }
+                    }
+                }
+            }
+        }
+    };
+    SongmgtComponent.prototype.playAudiocontext = function (selectedItem, audiotype, audiourl) {
+        var _this = this;
+        this.stopAllplaying(selectedItem, audiotype);
+        if (!this.audioContext) {
+            this.audioContext = new AudioContext();
+        }
+        if (this.audioBuffer) {
+            if (audiotype === 'prvw') {
+                this.state[selectedItem].playingprvw = true;
+            }
+            else if (audiotype === 'song') {
+                this.state[selectedItem].playingsong = true;
+            }
+            this.audiobufferSource = null;
+            this.audiobufferSource = this.audioContext.createBufferSource();
+            this.audiobufferSource.buffer = this.audioBuffer;
+            this.audiobufferSource.connect(this.audioContext.destination);
+            this.audiobufferSource.start(0);
+        }
+        else {
+            if (audiotype === 'prvw') {
+                this.state[selectedItem].loadingprvw = true;
+            }
+            else if (audiotype === 'song') {
+                this.state[selectedItem].loadingsong = true;
+            }
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                if (audiotype === 'prvw') {
+                    _this.state[selectedItem].loadingprvw = false;
+                    _this.state[selectedItem].playingprvw = true;
+                }
+                else if (audiotype === 'song') {
+                    _this.state[selectedItem].loadingsong = false;
+                    _this.state[selectedItem].playingsong = true;
+                }
+                _this.audioBuffer = audioBuffer;
+                _this.audiobufferSource = _this.audioContext.createBufferSource();
+                _this.audiobufferSource.buffer = _this.audioBuffer;
+                _this.audiobufferSource.connect(_this.audioContext.destination);
+                _this.audiobufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+        this.currentPlaying = selectedItem;
+    };
+    SongmgtComponent.prototype.playAudiostream = function (selectedItem, audiotype, audiourl) {
+        var _this = this;
+        this.stopAllplaying(selectedItem, audiotype);
+        if (!this.audio) {
+            console.log('create new audio');
+            try {
+                this.audio = new Audio();
+                if (this.audio) {
+                    this.audio.src = audiourl;
+                    if (audiotype === 'prvw') {
+                        this.state[selectedItem].loadingprvw = true;
+                    }
+                    else if (audiotype === 'song') {
+                        this.state[selectedItem].loadingsong = true;
+                    }
+                    this.audio.load();
+                    if (audiotype === 'prvw') {
+                        this.state[selectedItem].loadingprvw = false;
+                    }
+                    else if (audiotype === 'song') {
+                        this.state[selectedItem].loadingsong = false;
+                    }
+                    //this.audio.play();
+                    var promise = this.audio.play();
+                    if (promise !== undefined) {
+                        promise.then(function (_) {
+                            // Autoplay started!
+                        }).catch(function (error) {
+                            // Autoplay was prevented.
+                            // Show a "Play" button so that user can start playback.
+                            _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                        });
+                    }
+                    if (audiotype === 'prvw') {
+                        this.state[selectedItem].playingprvw = true;
+                    }
+                    else if (audiotype === 'song') {
+                        this.state[selectedItem].playingsong = true;
+                    }
+                }
+                else {
+                    this.toastr.error('Error creating Audio element.');
+                }
+            }
+            catch (error) {
+                this.toastr.error(error);
+            }
+        }
+        else {
+            if (audiotype === 'prvw') {
+                this.state[selectedItem].playingprvw = true;
+            }
+            else if (audiotype === 'song') {
+                this.state[selectedItem].playingsong = true;
+            }
+            //this.audio.play();
+            var promise = this.audio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+        this.currentPlaying = selectedItem;
+    };
+    SongmgtComponent.prototype.pauseAudiocontext = function (selectedItem, audiotype) {
+        if (this.audioBuffer && this.audiobufferSource) {
+            if (audiotype === 'prvw') {
+                this.state[selectedItem].playingprvw = false;
+            }
+            else if (audiotype === 'song') {
+                this.state[selectedItem].playingsong = false;
+            }
+            this.audiobufferSource.stop();
+        }
+    };
+    SongmgtComponent.prototype.pauseAudiostream = function (selectedItem, audiotype) {
+        if (this.audio && this.audio.src) {
+            if (audiotype === 'prvw') {
+                this.state[selectedItem].playingprvw = false;
+            }
+            else if (audiotype === 'song') {
+                this.state[selectedItem].playingsong = false;
+            }
+            this.audio.pause();
+        }
+    };
+    SongmgtComponent.prototype.pauseanyAudiocontext = function () {
+        if (this.audioBuffer && this.audiobufferSource) {
+            this.audiobufferSource.stop();
+        }
+    };
+    SongmgtComponent.prototype.pauseanyAudiostream = function () {
+        if (this.audio && this.audio.src) {
+            this.audio.pause();
         }
     };
     SongmgtComponent.prototype.getMsconfigGroupList = function (groupid) {
@@ -11525,13 +12937,17 @@ var SongmgtComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
             else {
                 _this.loading = false;
                 _this.songs = data.data;
+                _this.songs.forEach(function (res) {
+                    var stateitem = { playingprvw: false, playingsong: false, loadingprvw: false, loadingsong: false };
+                    _this.state.push(stateitem);
+                });
                 _this.totalrows = +data.totalcount;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
                 _this.qlabelid = formval.labelid;
@@ -11633,6 +13049,9 @@ var SongmgtComponent = /** @class */ (function () {
         }
         else {
             if (confirm('Do you really want to publish this song: ' + songname + ' record?')) {
+                this.pauseanyAudiostream();
+                this.pauseanyAudiocontext();
+                this.resetAudioElement();
                 var payload = {};
                 payload.status = 'STSACT';
                 this.songadminService.publishSong(songid, payload)
@@ -11641,7 +13060,7 @@ var SongmgtComponent = /** @class */ (function () {
                         _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -11678,7 +13097,7 @@ var SongmgtComponent = /** @class */ (function () {
                         _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -11709,7 +13128,7 @@ var SongmgtComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_7__services_admin_songadmin_service__["a" /* SongadminService */]])
@@ -11731,7 +13150,7 @@ module.exports = ""
 /***/ "./src/app/components/songstats/songstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Songs</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                </div>\n              </div>            \n          </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                  </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">    \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                          <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                          <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n                </div>\n             </div>\n            <div class=\"row rowmarginsearch\">        \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songpublish\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Buy?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songbuy\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                    <div class=\"col-sm-5\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                </div>                  \n            </div>\n        </form>\n      </div>\n    </div>\n      <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n          <div class=\"panel-heading\">\n              <h3 class=\"panel-title\">No song found</h3> \n          </div>\n    \n          <div class=\"panel-body\">\n              There is NO any songs found for the selected criteria.\n          </div>\n      </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                            <th scope=\"col\" width=\"10%\">Artist</th>\n                            <th scope=\"col\" width=\"20%\">Album</th>\n                            <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Purchase</a></th>\n                            <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                            <th scope=\"col\" width=\"10%\">Publish?</th>\n                            <!-- <th width=\"5%\">Preview</th> -->\n                            <th scope=\"col\" width=\"5%\">Song</th>\n                            <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                            <th scope=\"col\" width=\"5%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let song of songs; let songIndex = index'>\n                            <td scope=\"row\" data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                            <td data-label=\"Label\">{{ song.label }}</td>\n                            <td data-label=\"Artist\">{{ song.artist }}</td>\n                            <td data-label=\"Album\">{{ song.album }}</td>\n                            <td class=\"text-right\" data-label=\"Purchase\">{{ song.songbuy}}</td>\n                            <td class=\"text-right\" data-label=\"Price\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Publish?\">{{ song.songpublish }}</td>\n                            <!-- <td><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td> -->\n                            <td data-label=\"Song\"><a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td>\n                            <!-- <td>{{ albm.status}}</td> -->\n                            <td data-label=\"Action\">\n                                <a *ngIf=\"song.songpublish === 'Y' && song.songbuy === 0\" alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a>\n                                <span *ngIf=\"song.songpublish !== 'Y' || song.songbuy !== 0\" style=\"color:#eee\">No Action</span>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n  </div>\n  "
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Songs</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n        <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"songname\" class=\"col-sm-2 paddingsearch\">Title</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                    <input type=\"text\" class=\"form-control\" id=\"songname\" [formControl]=\"songname\" placeholder=\"Song Name\">\n                </div>\n              </div>            \n          </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"artistname\" class=\"col-sm-2 paddingsearch\">Artist</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"artistname\" [formControl]=\"artistname\" placeholder=\"Artist Name\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"albumname\" class=\"col-sm-2 paddingsearch\">Album</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"albumname\" [formControl]=\"albumname\" placeholder=\"Album Name\">\n                  </div>\n                </div>\n            </div>\n            <div class=\"row rowmarginsearch\">    \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"albumyear\" class=\"col-sm-2 paddingsearch\">Year</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"albumyear\" [formControl]=\"albumyear\" placeholder=\"Year\">\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songgenre\" class=\"col-sm-2 paddingsearch\">Genre</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songgenre\">\n                          <option ng-selected=\"true\" value=\"\">Select the genre</option>\n                          <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n                        </select>\n                    </div>\n                </div>\n             </div>\n            <div class=\"row rowmarginsearch\">        \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songpublish\" class=\"col-sm-2 paddingsearch\">Publish?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songpublish\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"songbuy\" class=\"col-sm-2 paddingsearch\">Purchased?</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"songbuy\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of ynlist\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                          <option ng-selected=\"true\" value=\"\">Select the status</option>\n                          <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"submit\" class=\"col-sm-2 paddingsearch\">     </label>\n                    <div class=\"col-sm-5\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"reportForm.invalid\">Submit</button>\n                    </div>\n                </div>                  \n            </div>\n        </form>\n      </div>\n    </div>\n      <div class=\"panel panel-danger\" *ngIf=\"songs && totalrows < 1\">\n          <div class=\"panel-heading\">\n              <h3 class=\"panel-title\">No song found</h3> \n          </div>\n    \n          <div class=\"panel-body\">\n              There is NO any songs found for the selected criteria.\n          </div>\n      </div>\n  \n    <div class=\"panel panel-default\" *ngIf=\"songs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songname')\">Song Title</a></th>\n                            <th scope=\"col\" width=\"20%\"><a style=\"cursor:pointer\" (click)=\"sortSong('label')\">Label</a></th>\n                            <th scope=\"col\" width=\"10%\">Artist</th>\n                            <th scope=\"col\" width=\"10%\">Album</th>\n                            <th scope=\"col\" width=\"5%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songbuy')\">Purchase</a></th>\n                            <th scope=\"col\" width=\"10%\"><a style=\"cursor:pointer\" (click)=\"sortSong('songprice')\">Price</a></th>\n                            <th scope=\"col\" width=\"5%\">Publish?</th>\n                            <!-- <th width=\"5%\">Preview</th> -->\n                            <th scope=\"col\" width=\"5%\">Song</th>\n                            <!-- <th width=\"6%\"><a style=\"cursor:pointer\" (click)=\"sortAlbum('status')\">Status</a></th> -->\n                            <th scope=\"col\" width=\"20%\">Action</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let song of songs; let songIndex = index'>\n                            <td scope=\"row\" data-label=\"Song Title\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showSong(song._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ song.songname}}</a></td>\n                            <td data-label=\"Label\">{{ song.label }}</td>\n                            <td data-label=\"Artist\">{{ song.artist }}</td>\n                            <td data-label=\"Album\">{{ song.album }}</td>\n                            <td class=\"text-right\" data-label=\"Purchase\">{{ song.songbuy}}</td>\n                            <td class=\"text-right\" data-label=\"Price\">{{ song.songprice | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Publish?\">{{ song.songpublish }}</td>\n                            <!-- <td><a href=\"{{ song.songprvwpath }}\" style=\"cursor:pointer;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a></td> -->\n                            <td data-label=\"Song\">\n                                <!-- <a href=\"{{ song.songfilepath }}\" style=\"cursor:pointer;float:center;color:#19663B\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n                                <a *ngIf=\"this.state[songIndex].playing && !this.state[songIndex].loading\" (click)=\"toggleAudio(songIndex, song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#CF2222\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Song\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n                                <span *ngIf=\"this.state[songIndex].loading\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n                                <a *ngIf=\"!this.state[songIndex].playing && !this.state[songIndex].loading\" (click)=\"toggleAudio(songIndex, song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#0B9111\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                            </td>\n                            <!-- <td>{{ albm.status}}</td> -->\n                            <td data-label=\"Action\">\n                                <a *ngIf=\"song.songpublish === 'Y'\" alt=\"Unpublish\" style=\"cursor:pointer;float:center;color:grey\" (click)=\"unpublishSong(song._id, song.songname, song.songpublish)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Unpublish\"><i class=\"fa fa-cloud-download fa-2x\"></i></a>\n                                <span style=\"color:#eee;float:center\">&nbsp;&nbsp;</span> \n                                <a alt=\"Delete\" style=\"cursor:pointer;float:center;color:#E42020\" (click)=\"confirmDel(songIndex, song._id, song.songpublish, song.songbuy, song.songname, song.songprvwname, song.songfilename)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete Song\"><i class=\"fa fa-trash fa-2x\"></i></a>\n                                <!-- <span *ngIf=\"song.songpublish !== 'Y'\" style=\"color:#eee\">No</span>-->\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"songs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n  </div>\n  "
 
 /***/ }),
 
@@ -11749,6 +13168,8 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_songadmin_service__ = __webpack_require__("./src/app/services/admin/songadmin.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_song_service__ = __webpack_require__("./src/app/services/song.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11767,8 +13188,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var SongstatsComponent = /** @class */ (function () {
-    function SongstatsComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe, songadminService) {
+    function SongstatsComponent(fb, authService, labelmgtService, msconfigService, route, router, toastr, datePipe, songadminService, globals, songService) {
+        var _this = this;
         this.fb = fb;
         this.authService = authService;
         this.labelmgtService = labelmgtService;
@@ -11778,6 +13202,8 @@ var SongstatsComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.datePipe = datePipe;
         this.songadminService = songadminService;
+        this.globals = globals;
+        this.songService = songService;
         this.loading = false;
         this.songname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
@@ -11788,10 +13214,29 @@ var SongstatsComponent = /** @class */ (function () {
         this.songpublish = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.songbuy = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        //private state = {playing:false, loading:false};
+        this.state = [];
+        this.audiotag = false;
+        this.currentPlaying = -1;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.pauseanyAudiostream();
+                _this.pauseanyAudiocontext();
+                _this.resetAudioElement();
+            }
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* NavigationStart */]) {
+                _this.pauseanyAudiostream();
+                _this.pauseanyAudiocontext();
+                _this.resetAudioElement();
+            }
+        });
     }
     SongstatsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userObj = this.authService.currentUser;
+        this.prvwuploadpath = this.globals.prvwuploadpath;
+        this.songuploadpath = this.globals.songuploadpath;
         this.reportForm = this.fb.group({
             labelid: this.labelid,
             songname: this.songname,
@@ -11844,6 +13289,173 @@ var SongstatsComponent = /** @class */ (function () {
                 status: _this.qstatus
             });
         });
+        try {
+            this.audioContext = new AudioContext();
+            if (this.audioContext) {
+                this.audioBuffer = null;
+                this.audiobufferSource = null;
+            }
+        }
+        catch (error) {
+            this.audiotag = true;
+            this.audio = null;
+        }
+    };
+    SongstatsComponent.prototype.ngOnDestroy = function () {
+        this.resetAudioElement();
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    SongstatsComponent.prototype.resetAudioElement = function () {
+        this.audioContext = null;
+        this.audioBuffer = null;
+        this.audiobufferSource = null;
+        this.audio = null;
+        this.state = [];
+    };
+    SongstatsComponent.prototype.fetchSong = function (audiourl) {
+        var _this = this;
+        return fetch(audiourl)
+            .then(function (response) { return response.arrayBuffer(); })
+            .then(function (buffer) {
+            return new Promise(function (resolve, reject) {
+                _this.audioContext.decodeAudioData(buffer, resolve, reject);
+            });
+        });
+    };
+    SongstatsComponent.prototype.toggleAudio = function (selectedItem, audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state[selectedItem].playing) {
+                this.playAudiostream(selectedItem, audiourl);
+            }
+            else {
+                this.pauseAudiostream(selectedItem);
+            }
+        }
+        else {
+            if (!this.state[selectedItem].playing) {
+                this.playAudiocontext(selectedItem, audiourl);
+            }
+            else {
+                this.pauseAudiocontext(selectedItem);
+            }
+        }
+    };
+    SongstatsComponent.prototype.stopAllplaying = function (selectedItem) {
+        var curState = true;
+        if (this.state[this.currentPlaying]) {
+            curState = this.state[this.currentPlaying].playing;
+        }
+        if (this.currentPlaying != selectedItem && curState) {
+            if (this.state[this.currentPlaying]) {
+                this.state[this.currentPlaying].playing = false;
+            }
+            if (this.audiotag) {
+                if (this.audio) {
+                    this.audio.pause();
+                }
+                this.audio = null;
+            }
+            else {
+                if (this.audiobufferSource) {
+                    this.audiobufferSource.stop();
+                }
+                this.audioBuffer = null;
+                this.audiobufferSource = null;
+            }
+        }
+    };
+    SongstatsComponent.prototype.playAudiocontext = function (selectedItem, audiourl) {
+        var _this = this;
+        this.stopAllplaying(selectedItem);
+        if (!this.audioContext) {
+            this.audioContext = new AudioContext();
+        }
+        if (this.audioBuffer) {
+            this.state[selectedItem].playing = true;
+            this.audiobufferSource = null;
+            this.audiobufferSource = this.audioContext.createBufferSource();
+            this.audiobufferSource.buffer = this.audioBuffer;
+            this.audiobufferSource.connect(this.audioContext.destination);
+            this.audiobufferSource.start(0);
+        }
+        else {
+            this.state[selectedItem].loading = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state[selectedItem].loading = false;
+                _this.state[selectedItem].playing = true;
+                _this.audioBuffer = audioBuffer;
+                _this.audiobufferSource = _this.audioContext.createBufferSource();
+                _this.audiobufferSource.buffer = _this.audioBuffer;
+                _this.audiobufferSource.connect(_this.audioContext.destination);
+                _this.audiobufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+        this.currentPlaying = selectedItem;
+    };
+    SongstatsComponent.prototype.playAudiostream = function (selectedItem, audiourl) {
+        var _this = this;
+        this.stopAllplaying(selectedItem);
+        if (!this.audio) {
+            this.audio = new Audio();
+            this.audio.src = audiourl;
+            this.state[selectedItem].loading = true;
+            this.audio.load();
+            this.state[selectedItem].loading = false;
+            //this.audio.play();
+            var promise = this.audio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state[selectedItem].playing = true;
+        }
+        else {
+            this.state[selectedItem].playing = true;
+            //this.audio.play();
+            var promise = this.audio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+        this.currentPlaying = selectedItem;
+    };
+    SongstatsComponent.prototype.pauseAudiocontext = function (selectedItem) {
+        if (this.audioBuffer && this.audiobufferSource) {
+            this.state[selectedItem].playing = false;
+            this.audiobufferSource.stop();
+        }
+    };
+    SongstatsComponent.prototype.pauseAudiostream = function (selectedItem) {
+        if (this.audio && this.audio.src) {
+            this.state[selectedItem].playing = false;
+            this.audio.pause();
+        }
+    };
+    SongstatsComponent.prototype.pauseanyAudiocontext = function () {
+        if (this.audioBuffer && this.audiobufferSource) {
+            this.audiobufferSource.stop();
+        }
+    };
+    SongstatsComponent.prototype.pauseanyAudiostream = function () {
+        if (this.audio && this.audio.src) {
+            this.audio.pause();
+        }
     };
     SongstatsComponent.prototype.getMsconfigGroupList = function (groupid) {
         var _this = this;
@@ -11915,13 +13527,17 @@ var SongstatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
             else {
                 _this.loading = false;
                 _this.songs = data.data;
+                _this.songs.forEach(function (res) {
+                    var stateitem = { playing: false, loading: false };
+                    _this.state.push(stateitem);
+                });
                 _this.totalrows = +data.totalcount;
                 _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
                 _this.qlabelid = formval.labelid;
@@ -12028,6 +13644,9 @@ var SongstatsComponent = /** @class */ (function () {
         }
         else {
             if (confirm('Do you really want to unpublish this song: ' + songname + ' record?')) {
+                this.pauseanyAudiostream();
+                this.pauseanyAudiocontext();
+                this.resetAudioElement();
                 var payload = {};
                 payload.status = 'STSACT';
                 this.songadminService.cancelpublishSong(songid, payload)
@@ -12036,7 +13655,7 @@ var SongstatsComponent = /** @class */ (function () {
                         _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -12056,6 +13675,43 @@ var SongstatsComponent = /** @class */ (function () {
             }
         }
     };
+    SongstatsComponent.prototype.confirmDel = function (idx, songid, songpublish, songbuy, songname, songprvwname, songfilename) {
+        var _this = this;
+        //if (songbuy > 0) {
+        if (confirm('Do you really want to delete this song: ' + songname + ' record?')) {
+            this.pauseanyAudiostream();
+            this.pauseanyAudiocontext();
+            this.resetAudioElement();
+            this.loading = true;
+            var payloadData = {};
+            payloadData.labelid = this.userObj.userid;
+            payloadData.songprvwname = songprvwname;
+            payloadData.songfilename = songfilename;
+            payloadData.prvwuploadpath = this.prvwuploadpath;
+            payloadData.songuploadpath = this.songuploadpath;
+            this.songService.pubdeleteSong(songid, payloadData)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['errorpage']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.loading = false;
+                    _this.songs.splice(idx, 1);
+                    _this.totalrows = _this.totalrows - 1;
+                    _this.toastr.success(data.message);
+                }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+    };
     SongstatsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-songstats',
@@ -12067,10 +13723,12 @@ var SongstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */],
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
-            __WEBPACK_IMPORTED_MODULE_7__services_admin_songadmin_service__["a" /* SongadminService */]])
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_songadmin_service__["a" /* SongadminService */],
+            __WEBPACK_IMPORTED_MODULE_10__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_9__services_song_service__["a" /* SongService */]])
     ], SongstatsComponent);
     return SongstatsComponent;
 }());
@@ -12089,7 +13747,7 @@ module.exports = ""
 /***/ "./src/app/components/songstats/viewsongstats/viewsongstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Song Details</h3>\n    </div>\n    <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label for=\"songname\" class=\"col-sm-2 control-label\">Title</label>\n            <div class=\"form-ele col-sm-10\"> {{ song?.songname }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n              <!-- <div class=\"form-ele\">{{ song?.songname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"artist\" class=\"col-sm-2 control-label\">Artist</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.artist }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.artist }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"album\" class=\"col-sm-2 control-label\">Album</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.album }} \n<!--               <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.album }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songlyric\" class=\"col-sm-2 control-label\">Lyric</label>\n            \n            <div class=\"form-ele col-sm-10\">{{ song?.songlyric }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songlyric }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songgenre\" class=\"col-sm-2 control-label\">Genre</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select disabled class=\"form-control selectfontsize\" [formControl]=\"songgenre\">\n                  <option *ngFor=\"let g of genre\" [ngValue]=\"g.code\">{{g.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.songgenre }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprice\" class=\"col-sm-2 control-label\">Price</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songprice | currency: 'IDR':'symbol-narrow' }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songprvwpath\" class=\"col-sm-2 control-label\">Preview</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n              <!-- <a href=\"{{ song?.songprvwpath }}\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n              <a *ngIf=\"this.state.prvwplaying && !this.state.loadingprvw\" (click)=\"togglePrvw(song?.songprvwpath)\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Preview\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n              <span *ngIf=\"this.state.loadingprvw\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n              <a *ngIf=\"!this.state.prvwplaying && !this.state.loadingprvw\" (click)=\"togglePrvw(song?.songprvwpath)\" style=\"cursor:pointer;padding-right:5px;float:center;color:#C92020\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Preview\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n              <!-- <div class=\"form-ele\">{{ song?.songprvwpath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songfilepath\" class=\"col-sm-2 control-label\">File</label>\n            <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\" style=\"border:1px\"><i class=\"glyphicon glyphicon-music\"></i></div>\n                <!-- <a href=\"{{ song?.songfilepath }}\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a> -->\n                <a *ngIf=\"this.state.songplaying && !this.state.loadingsong\" (click)=\"toggleSong(song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pause Song\"><i class=\"fa fa-pause-circle fa-2x\"></i></a>\n                <span *ngIf=\"this.state.loadingsong\"><i class=\"fa fa-spinner fa-2x\"></i></span>\n                <a *ngIf=\"!this.state.songplaying && !this.state.loadingsong\" (click)=\"toggleSong(song?.songfilepath)\" style=\"cursor:pointer;float:center;color:#11DFDF\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Play Song\"><i class=\"fa fa-play-circle fa-2x\"></i></a>\n                <!-- <div class=\"form-ele\">{{ song?.songfilepath }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songpublish\" class=\"col-sm-2 control-label\">Publish?</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songpublish }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ song?.songpublish }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"songbuy\" class=\"col-sm-2 control-label\">Total Purchased</label>\n            <div class=\"form-ele col-sm-10\">{{ song?.songbuy }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-download\"></i></div>\n                <div class=\"form-ele\">{{ song?.songbuy }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></div> -->\n              <select class=\"form-control selectfontsize\" [formControl]=\"status\" disabled>\n                    <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n              <!-- <div class=\"form-ele\">{{ song?.status }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>\n</div>\n"
 
 /***/ }),
 
@@ -12123,6 +13781,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ViewsongstatsComponent = /** @class */ (function () {
     function ViewsongstatsComponent(fb, authService, songService, msconfigService, toastr, route, router) {
+        var _this = this;
         this.fb = fb;
         this.authService = authService;
         this.songService = songService;
@@ -12132,6 +13791,26 @@ var ViewsongstatsComponent = /** @class */ (function () {
         this.router = router;
         this.songgenre = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.state = { prvwplaying: false, songplaying: false,
+            loadingprvw: false, loadingsong: false };
+        this.audiotag = false;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.pausePrvw();
+                _this.pausePrvwAudio();
+                _this.pauseSong();
+                _this.pauseSongAudio();
+                _this.resetAudioElement();
+            }
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* NavigationStart */]) {
+                _this.pausePrvw();
+                _this.pausePrvwAudio();
+                _this.pauseSong();
+                _this.pauseSongAudio();
+                _this.resetAudioElement();
+            }
+        });
     }
     ViewsongstatsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -12146,9 +13825,268 @@ var ViewsongstatsComponent = /** @class */ (function () {
             songgenre: this.songgenre,
             status: this.status
         });
+        try {
+            this.audioContext = new AudioContext();
+            if (this.audioContext) {
+                this.prvwBuffer = null;
+                this.songBuffer = null;
+                this.prvwbufferSource = null;
+                this.songbufferSource = null;
+            }
+        }
+        catch (error) {
+            this.audiotag = true;
+            this.prvwaudio = new Audio();
+            this.songaudio = new Audio();
+        }
     };
     ViewsongstatsComponent.prototype.ngOnDestroy = function () {
+        this.resetAudioElement();
         this.sub.unsubscribe();
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ViewsongstatsComponent.prototype.resetAudioElement = function () {
+        this.audioContext = null;
+        this.prvwBuffer = null;
+        this.songBuffer = null;
+        this.prvwbufferSource = null;
+        this.songbufferSource = null;
+        this.prvwaudio = null;
+        this.songaudio = null;
+    };
+    ViewsongstatsComponent.prototype.fetchSong = function (songurl) {
+        var _this = this;
+        return fetch(songurl)
+            .then(function (response) { return response.arrayBuffer(); })
+            .then(function (buffer) {
+            return new Promise(function (resolve, reject) {
+                _this.audioContext.decodeAudioData(buffer, resolve, reject);
+            });
+        });
+    };
+    ViewsongstatsComponent.prototype.togglePrvw = function (audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state.prvwplaying) {
+                this.playPrvwAudio(audiourl);
+            }
+            else {
+                this.pausePrvwAudio();
+            }
+        }
+        else {
+            if (!this.state.prvwplaying) {
+                this.playPrvw(audiourl);
+            }
+            else {
+                this.pausePrvw();
+            }
+        }
+    };
+    ViewsongstatsComponent.prototype.toggleSong = function (audiourl) {
+        if (this.audiotag) {
+            //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+            if (!this.state.songplaying) {
+                this.playSongAudio(audiourl);
+            }
+            else {
+                this.pauseSongAudio();
+            }
+        }
+        else {
+            if (!this.state.songplaying) {
+                this.playSong(audiourl);
+            }
+            else {
+                this.pauseSong();
+            }
+        }
+    };
+    ViewsongstatsComponent.prototype.stopAllplaying = function (type) {
+        if (type === 'song') {
+            if (this.songBuffer && this.songbufferSource) {
+                this.state.songplaying = false;
+                this.songbufferSource.stop();
+            }
+        }
+        else if (type === 'prvw') {
+            if (this.prvwBuffer && this.prvwbufferSource) {
+                this.state.prvwplaying = false;
+                this.prvwbufferSource.stop();
+            }
+        }
+    };
+    ViewsongstatsComponent.prototype.stopAllplayingaudio = function (type) {
+        if (type === 'song') {
+            if (this.songaudio && this.songaudio.src) {
+                this.state.songplaying = false;
+                this.songaudio.pause();
+            }
+        }
+        else if (type === 'prvw') {
+            if (this.prvwaudio && this.prvwaudio.src) {
+                this.state.prvwplaying = false;
+                this.prvwaudio.pause();
+            }
+        }
+    };
+    ViewsongstatsComponent.prototype.playPrvw = function (audiourl) {
+        var _this = this;
+        if (this.state.songplaying) {
+            this.stopAllplaying('song');
+        }
+        if (this.prvwBuffer) {
+            this.state.prvwplaying = true;
+            this.prvwbufferSource = null;
+            this.prvwbufferSource = this.audioContext.createBufferSource();
+            this.prvwbufferSource.buffer = this.prvwBuffer;
+            this.prvwbufferSource.connect(this.audioContext.destination);
+            this.prvwbufferSource.start(0);
+        }
+        else {
+            this.state.loadingprvw = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state.loadingprvw = false;
+                _this.state.prvwplaying = true;
+                _this.prvwBuffer = audioBuffer;
+                _this.prvwbufferSource = _this.audioContext.createBufferSource();
+                _this.prvwbufferSource.buffer = _this.prvwBuffer;
+                _this.prvwbufferSource.connect(_this.audioContext.destination);
+                _this.prvwbufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+    };
+    ViewsongstatsComponent.prototype.playPrvwAudio = function (audiourl) {
+        var _this = this;
+        if (this.state.songplaying) {
+            this.stopAllplayingaudio('song');
+        }
+        if (this.prvwaudio.src === '') {
+            this.prvwaudio.src = audiourl;
+            this.state.loadingprvw = true;
+            this.prvwaudio.load();
+            this.state.loadingprvw = false;
+            //this.prvwaudio.play();
+            var promise = this.prvwaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state.prvwplaying = true;
+        }
+        else {
+            this.state.prvwplaying = true;
+            //this.prvwaudio.play();
+            var promise = this.prvwaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+    };
+    ViewsongstatsComponent.prototype.playSong = function (audiourl) {
+        var _this = this;
+        if (this.state.prvwplaying) {
+            this.stopAllplaying('prvw');
+        }
+        if (this.songBuffer) {
+            this.state.songplaying = true;
+            this.songbufferSource = null;
+            this.songbufferSource = this.audioContext.createBufferSource();
+            this.songbufferSource.buffer = this.songBuffer;
+            this.songbufferSource.connect(this.audioContext.destination);
+            this.songbufferSource.start(0);
+        }
+        else {
+            this.state.loadingsong = true;
+            this.fetchSong(audiourl)
+                .then(function (audioBuffer) {
+                _this.state.loadingsong = false;
+                _this.state.songplaying = true;
+                _this.songBuffer = audioBuffer;
+                _this.songbufferSource = _this.audioContext.createBufferSource();
+                _this.songbufferSource.buffer = _this.songBuffer;
+                _this.songbufferSource.connect(_this.audioContext.destination);
+                _this.songbufferSource.start(0);
+            })
+                .catch(function (error) { _this.toastr.error(error); });
+        }
+    };
+    ViewsongstatsComponent.prototype.playSongAudio = function (audiourl) {
+        var _this = this;
+        if (this.state.prvwplaying) {
+            this.stopAllplayingaudio('prvw');
+        }
+        if (this.songaudio.src === '') {
+            this.songaudio.src = audiourl;
+            this.state.loadingsong = true;
+            this.songaudio.load();
+            this.state.loadingsong = false;
+            //this.songaudio.play();
+            var promise = this.songaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+            this.state.songplaying = true;
+        }
+        else {
+            this.state.songplaying = true;
+            //this.songaudio.play();
+            var promise = this.songaudio.play();
+            if (promise !== undefined) {
+                promise.then(function (_) {
+                    // Autoplay started!
+                }).catch(function (error) {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    _this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+                });
+            }
+        }
+    };
+    ViewsongstatsComponent.prototype.pausePrvw = function () {
+        if (this.prvwBuffer && this.prvwbufferSource) {
+            this.state.prvwplaying = false;
+            this.prvwbufferSource.stop();
+        }
+    };
+    ViewsongstatsComponent.prototype.pausePrvwAudio = function () {
+        if (this.prvwaudio && this.prvwaudio.src) {
+            this.state.prvwplaying = false;
+            this.prvwaudio.pause();
+        }
+    };
+    ViewsongstatsComponent.prototype.pauseSong = function () {
+        if (this.songBuffer && this.songbufferSource) {
+            this.state.songplaying = false;
+            this.songbufferSource.stop();
+        }
+    };
+    ViewsongstatsComponent.prototype.pauseSongAudio = function () {
+        if (this.songaudio && this.songaudio.src) {
+            this.state.songplaying = false;
+            this.songaudio.pause();
+        }
     };
     ViewsongstatsComponent.prototype.getMsconfigGroupList = function (groupid) {
         var _this = this;
@@ -12174,7 +14112,7 @@ var ViewsongstatsComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -12213,7 +14151,7 @@ var ViewsongstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
     ], ViewsongstatsComponent);
     return ViewsongstatsComponent;
 }());
@@ -12456,7 +14394,7 @@ var TransactionComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -12598,7 +14536,7 @@ var TransactionComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__["a" /* TransactionService */],
@@ -12875,7 +14813,7 @@ var TransactionstatsComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -13004,7 +14942,7 @@ var TransactionstatsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__["a" /* TransactionService */],
@@ -13042,6 +14980,7 @@ module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13056,17 +14995,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EmailverificationComponent = /** @class */ (function () {
-    function EmailverificationComponent(route, router, notifService, msconfigService, toastr) {
+    function EmailverificationComponent(route, router, notifService, msconfigService, toastr, nav) {
         this.route = route;
         this.router = router;
         this.notifService = notifService;
         this.msconfigService = msconfigService;
         this.toastr = toastr;
+        this.nav = nav;
         this.loading = false;
     }
     EmailverificationComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.nav.disableLink();
         this.loading = true;
         this.sub = this.route.queryParams.subscribe(function (params) {
             var hash = params['id'];
@@ -13076,7 +15018,7 @@ var EmailverificationComponent = /** @class */ (function () {
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['../errorpage']);
                     _this.toastr.error(data.message);
                 }
                 else {
@@ -13096,7 +15038,7 @@ var EmailverificationComponent = /** @class */ (function () {
                 }
             }, function (err) {
                 _this.loading = false;
-                _this.router.navigate(['login']);
+                _this.router.navigate(['../errorpage']);
                 //console.log(err);
                 _this.toastr.error(err);
             });
@@ -13152,10 +15094,11 @@ var EmailverificationComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/components/user/emailverification/emailverification.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__services_notif_service__["a" /* NotifService */],
             __WEBPACK_IMPORTED_MODULE_3__services_admin_msconfig_service__["a" /* MsconfigService */],
-            __WEBPACK_IMPORTED_MODULE_2__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_2__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_5__services_navbar_service__["a" /* NavbarService */]])
     ], EmailverificationComponent);
     return EmailverificationComponent;
 }());
@@ -13174,7 +15117,7 @@ module.exports = ""
 /***/ "./src/app/components/user/forgotpassword/forgotpassword.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Reset Password</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  \n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"sendEmail(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <p style=\"margin:0;padding-right:20px;\" class=\"col-sm-12\">\n                If you forgot your password, we can help you reset your password using your email address link to your account.\n            </p>\n        </div>        \n        <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">@</div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"profileForm.get('email').invalid\">\n                    Please enter a valid email\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-5\" style=\"margin:0;padding:0;\">\n                <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n            </div>\n            <div class=\"col-sm-5\" style=\"text-align:right\">\n                <sup>*</sup> required\n            </div>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Reset Password</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  \n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"sendEmail(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <p style=\"margin:0;padding-right:20px;\" class=\"col-sm-12\">\n                If you forgot your password, we can help you reset your password using your email address link to your account.\n            </p>\n        </div>        \n        <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">@</div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"profileForm.get('email').invalid\">\n                    Please enter a valid email\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\"></label>\n            <div class=\"col-sm-5\" style=\"margin:0;padding:0;\">\n                <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n                <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n            </div>\n            <div class=\"col-sm-5\" style=\"text-align:right\">\n                <sup>*</sup> required\n            </div>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -13191,6 +15134,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13208,18 +15153,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ForgotpasswordComponent = /** @class */ (function () {
-    function ForgotpasswordComponent(fb, userService, notifService, router, toastr, dialog) {
+    function ForgotpasswordComponent(fb, userService, notifService, router, toastr, dialog, globals, nav) {
         this.fb = fb;
         this.userService = userService;
         this.notifService = notifService;
         this.router = router;
         this.toastr = toastr;
         this.dialog = dialog;
+        this.globals = globals;
+        this.nav = nav;
         this.loading = false;
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
     }
     ForgotpasswordComponent.prototype.ngOnInit = function () {
+        this.nav.disableLink();
+        this.kaxeturl = this.globals.kaxeturl;
         this.profileForm = this.fb.group({
             email: this.email,
         });
@@ -13228,6 +15179,7 @@ var ForgotpasswordComponent = /** @class */ (function () {
         var _this = this;
         var payload = {};
         payload.email = this.profileForm.value.email;
+        payload.usertype = 'LBL';
         this.loading = true;
         this.userService.resetPasswd(payload)
             .subscribe(function (data) {
@@ -13303,6 +15255,9 @@ var ForgotpasswordComponent = /** @class */ (function () {
             _this.toastr.error(err);
         });
     };
+    ForgotpasswordComponent.prototype.onLogin = function () {
+        window.open(this.kaxeturl.toString());
+    };
     ForgotpasswordComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-forgotpassword',
@@ -13312,9 +15267,11 @@ var ForgotpasswordComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_7__services_notif_service__["a" /* NotifService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatDialog */]])
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_8__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_9__services_navbar_service__["a" /* NavbarService */]])
     ], ForgotpasswordComponent);
     return ForgotpasswordComponent;
 }());
@@ -13347,6 +15304,7 @@ module.exports = "<div class=\"container pagecontainer\">\n  <ngx-loading [show]
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13361,13 +15319,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(fb, authService, router, toastr) {
+    function LoginComponent(fb, authService, router, toastr, nav) {
         var _this = this;
         this.fb = fb;
         this.authService = authService;
         this.router = router;
         this.toastr = toastr;
+        this.nav = nav;
         this.loading = false;
         this.username = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.password = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
@@ -13422,8 +15382,9 @@ var LoginComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_5__services_navbar_service__["a" /* NavbarService */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -13482,7 +15443,7 @@ var LogoutComponent = /** @class */ (function () {
             template: ''
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_2__common_toastr_service__["a" /* ToastrService */]])
     ], LogoutComponent);
     return LogoutComponent;
@@ -13568,7 +15529,7 @@ var PasswordComponent = /** @class */ (function () {
                     _this.loading = false;
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['../errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -13596,7 +15557,7 @@ var PasswordComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
     ], PasswordComponent);
     return PasswordComponent;
@@ -13639,6 +15600,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13651,14 +15614,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var PostregisteredComponent = /** @class */ (function () {
-    function PostregisteredComponent(route, router, msconfigService) {
+    function PostregisteredComponent(route, router, msconfigService, nav, globals) {
         this.route = route;
         this.router = router;
         this.msconfigService = msconfigService;
+        this.nav = nav;
+        this.globals = globals;
     }
     PostregisteredComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.nav.disableLink();
+        this.kaxeturl = this.globals.kaxeturl;
         this.sub = this.route.params.subscribe(function (params) {
             var param = params['nm'];
             var strlist = param.split("?");
@@ -13728,7 +15697,8 @@ var PostregisteredComponent = /** @class */ (function () {
         return result;
       } */
     PostregisteredComponent.prototype.onLogin = function () {
-        this.router.navigate(['/login']);
+        //this.router.navigate(['/login']);
+        window.open(this.kaxeturl.toString());
     };
     PostregisteredComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -13737,10 +15707,136 @@ var PostregisteredComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/components/user/postregistered/postregistered.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_2__services_admin_msconfig_service__["a" /* MsconfigService */]])
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__services_admin_msconfig_service__["a" /* MsconfigService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__["a" /* NavbarService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_global__["a" /* Globals */]])
     ], PostregisteredComponent);
     return PostregisteredComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/user/postresetpasswd/postresetpasswd.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/user/postresetpasswd/postresetpasswd.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n    <h3>Reset Password</h3>\n  </div>\n  <div *ngIf=\"this.hash && this.hasl === 'scs'\" class=\"panel panel-success\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Success</h3>\n    </div>\n    <div class=\"panel-body\">\n        <h4>Thank You !</h4>\n        <!-- <p>{{ this.remarks3.value }}</p> -->\n        <p>Your password has been successfully reset. Please access your kaxet account with the new password.</p>\n<!--         <p>Below is the account information for your reference,</p>\n        <div class=\"row rowmarginsearch\">\n            <div class=\"col-xs-3 col-sm-2\" style=\"text-align:right;\">Label:</div>\n            <div class=\"col-xs-9 col-sm-10\" style=\"padding:0;\">{{ this.uname }}</div>\n          </div>\n          <div class=\"row rowmarginsearch\">\n            <div class=\"col-xs-3 col-sm-2\" style=\"text-align:right;\">Email:</div>\n            <div class=\"col-xs-9 col-sm-10\" style=\"padding:0;\">{{ this.qemailto }}</div>\n          </div> -->\n        <br>\n        <div class=\"col-sm-12\" style=\"margin:0;padding:0;\">\n            <button type=\"button\" (click)=\"onLogin()\" class=\"btn btn-info\">Login</button>\n        </div>  \n    </div>\n  </div>\n  <div *ngIf=\"this.hash && this.hasl !== 'scs'\" class=\"panel panel-danger\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Error</h3>\n    </div>\n    <div class=\"panel-body\">\n        <!-- <p>Oops, Sorry.. {{ this.remarks4.value }}</p> -->\n        <p>Oops, Sorry.. There is failure while our system process the password reset. Please try again later.</p>\n    </div>\n  </div>\n<!--   <div *ngIf=\"!this.hash || !this.hasl\" class=\"panel panel-danger\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Error</h3>\n    </div>\n    <div class=\"panel-body\">\n        <p>Unauthorised activity !!</p>\n    </div>\n  </div> -->\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/user/postresetpasswd/postresetpasswd.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostresetpasswdComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var PostresetpasswdComponent = /** @class */ (function () {
+    function PostresetpasswdComponent(route, router, notifService, toastr, userService, globals, nav) {
+        this.route = route;
+        this.router = router;
+        this.notifService = notifService;
+        this.toastr = toastr;
+        this.userService = userService;
+        this.globals = globals;
+        this.nav = nav;
+        this.loading = false;
+    }
+    PostresetpasswdComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.nav.disableLink();
+        this.kaxeturl = this.globals.kaxeturl;
+        this.loading = true;
+        this.sub = this.route.queryParams.subscribe(function (params) {
+            var phash = params['id'];
+            _this.hasl = params['hasl'];
+            _this.notifService.pageverification(phash)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    _this.toastr.error(data.message);
+                    _this.router.navigate(['../errorpage']);
+                }
+                else {
+                    //this.loading = false;
+                    _this.hash = data.hash;
+                    _this.userService.updatehash(_this.hash)
+                        .subscribe(function (data) {
+                        if (data.success === false) {
+                            _this.loading = false;
+                            _this.toastr.error(data.message);
+                            _this.router.navigate(['../errorpage']);
+                        }
+                        else {
+                            _this.loading = false;
+                            _this.toastr.success(data.message);
+                        }
+                    }, function (err) {
+                        _this.loading = false;
+                        //console.log(err);
+                        _this.toastr.error(err);
+                        _this.router.navigate(['../errorpage']);
+                    });
+                }
+            }, function (err) {
+                _this.loading = false;
+                _this.toastr.error(err);
+                _this.router.navigate(['../errorpage']);
+                //console.log(err);
+            });
+        });
+    };
+    PostresetpasswdComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    PostresetpasswdComponent.prototype.onLogin = function () {
+        window.open(this.kaxeturl.toString());
+    };
+    PostresetpasswdComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-postresetpasswd',
+            template: __webpack_require__("./src/app/components/user/postresetpasswd/postresetpasswd.component.html"),
+            styles: [__webpack_require__("./src/app/components/user/postresetpasswd/postresetpasswd.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__services_notif_service__["a" /* NotifService */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_6__services_navbar_service__["a" /* NavbarService */]])
+    ], PostresetpasswdComponent);
+    return PostresetpasswdComponent;
 }());
 
 
@@ -13825,7 +15921,7 @@ var ProfileComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['../errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -13859,7 +15955,7 @@ var ProfileComponent = /** @class */ (function () {
                     _this.loading = false;
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['../errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -13979,7 +16075,7 @@ var ProfileComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_8__services_notif_service__["a" /* NotifService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MatDialog */]])
     ], ProfileComponent);
@@ -14000,7 +16096,7 @@ module.exports = ""
 /***/ "./src/app/components/user/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain capital letter, number or special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain capital letter, number or special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -14015,6 +16111,8 @@ module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-h
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -14030,13 +16128,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(fb, userService, notifService, router, toastr) {
+    function RegisterComponent(fb, userService, notifService, router, toastr, globals, nav) {
         this.fb = fb;
         this.userService = userService;
         this.notifService = notifService;
         this.router = router;
         this.toastr = toastr;
+        this.globals = globals;
+        this.nav = nav;
         this.loading = false;
         this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
@@ -14049,6 +16151,8 @@ var RegisterComponent = /** @class */ (function () {
         this.retypepass = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
     }
     RegisterComponent.prototype.ngOnInit = function () {
+        this.nav.disableLink();
+        this.kaxeturl = this.globals.kaxeturl;
         this.registerForm = this.fb.group({
             name: this.name,
             email: this.email,
@@ -14140,6 +16244,9 @@ var RegisterComponent = /** @class */ (function () {
             });
         }
     };
+    RegisterComponent.prototype.onLogin = function () {
+        window.open(this.kaxeturl.toString());
+    };
     RegisterComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-register',
@@ -14149,8 +16256,10 @@ var RegisterComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_5__services_notif_service__["a" /* NotifService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_6__app_global__["a" /* Globals */],
+            __WEBPACK_IMPORTED_MODULE_7__services_navbar_service__["a" /* NavbarService */]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -14196,6 +16305,7 @@ module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_notif_service__ = __webpack_require__("./src/app/services/notif.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -14212,8 +16322,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ResetuserpasswdComponent = /** @class */ (function () {
-    function ResetuserpasswdComponent(fb, route, router, notifService, msconfigService, toastr, userService) {
+    function ResetuserpasswdComponent(fb, route, router, notifService, msconfigService, toastr, userService, nav) {
         this.fb = fb;
         this.route = route;
         this.router = router;
@@ -14221,12 +16332,14 @@ var ResetuserpasswdComponent = /** @class */ (function () {
         this.msconfigService = msconfigService;
         this.toastr = toastr;
         this.userService = userService;
+        this.nav = nav;
         this.loading = false;
         this.password = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,12}$')]);
         this.retypepass = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
     }
     ResetuserpasswdComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.nav.disableLink();
         this.loading = true;
         this.sub = this.route.queryParams.subscribe(function (params) {
             var hash = params['id'];
@@ -14234,7 +16347,7 @@ var ResetuserpasswdComponent = /** @class */ (function () {
                 .subscribe(function (data) {
                 if (data.success === false) {
                     _this.loading = false;
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['../errorpage']);
                     _this.toastr.error(data.message);
                 }
                 else {
@@ -14243,7 +16356,7 @@ var ResetuserpasswdComponent = /** @class */ (function () {
                 }
             }, function (err) {
                 _this.loading = false;
-                _this.router.navigate(['login']);
+                _this.router.navigate(['../errorpage']);
                 //console.log(err);
                 _this.toastr.error(err);
             });
@@ -14272,13 +16385,24 @@ var ResetuserpasswdComponent = /** @class */ (function () {
                 if (data.success === false) {
                     _this.loading = false;
                     _this.toastr.error(data.message);
+                    _this.router.navigate(['postresetpasswd'], {
+                        queryParams: {
+                            id: _this.vhash,
+                            hasl: 'err'
+                        }
+                    });
                 }
                 else {
                     _this.loading = false;
-                    _this.toastr.success(data.message);
+                    //this.toastr.success(data.message);
+                    _this.router.navigate(['postresetpasswd'], {
+                        queryParams: {
+                            id: _this.vhash,
+                            hasl: 'scs'
+                        }
+                    });
                 }
                 _this.passwordForm.reset();
-                _this.router.navigate(['login']);
             }, function (err) {
                 _this.loading = false;
                 //console.log(err);
@@ -14294,11 +16418,12 @@ var ResetuserpasswdComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_6__services_notif_service__["a" /* NotifService */],
             __WEBPACK_IMPORTED_MODULE_4__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */]])
+            __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_navbar_service__["a" /* NavbarService */]])
     ], ResetuserpasswdComponent);
     return ResetuserpasswdComponent;
 }());
@@ -14377,6 +16502,7 @@ var UpdateemailComponent = /** @class */ (function () {
     UpdateemailComponent.prototype.updateEmail = function (formdata) {
         var _this = this;
         if (this.profileForm.dirty && this.profileForm.valid) {
+            this.profileForm.value.usertype = this.userObj.usertype;
             this.loading = true;
             this.userService.updateEmail(this.userObj.userid, this.profileForm.value)
                 .subscribe(function (data) {
@@ -14384,7 +16510,7 @@ var UpdateemailComponent = /** @class */ (function () {
                     _this.loading = false;
                     if (data.errcode) {
                         _this.authService.logout();
-                        _this.router.navigate(['login']);
+                        _this.router.navigate(['../errorpage']);
                     }
                     _this.toastr.error(data.message);
                 }
@@ -14415,7 +16541,7 @@ var UpdateemailComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
     ], UpdateemailComponent);
     return UpdateemailComponent;
@@ -14550,7 +16676,7 @@ var UsermgtComponent = /** @class */ (function () {
                 _this.loading = false;
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -14635,7 +16761,7 @@ var UsermgtComponent = /** @class */ (function () {
                             _this.loading = false;
                             if (data.errcode) {
                                 _this.authService.logout();
-                                _this.router.navigate(['login']);
+                                _this.router.navigate(['errorpage']);
                             }
                             _this.toastr.error(data.message);
                         }
@@ -14686,7 +16812,7 @@ var UsermgtComponent = /** @class */ (function () {
                   this.loading = false;
                   if (data.errcode){
                     this.authService.logout();
-                    this.router.navigate(['login']);
+                    this.router.navigate(['errorpage']);
                   }
                   this.toastr.error(data.message);
                 } else {
@@ -14746,7 +16872,7 @@ var UsermgtComponent = /** @class */ (function () {
                         _this.loading = false;
                         if (data.errcode) {
                             _this.authService.logout();
-                            _this.router.navigate(['login']);
+                            _this.router.navigate(['errorpage']);
                         }
                         _this.toastr.error(data.message);
                     }
@@ -14793,7 +16919,7 @@ var UsermgtComponent = /** @class */ (function () {
                             _this.loading = false;
                             if (data.errcode) {
                                 _this.authService.logout();
-                                _this.router.navigate(['login']);
+                                _this.router.navigate(['errorpage']);
                             }
                             _this.toastr.error(data.message);
                         }
@@ -14837,7 +16963,7 @@ var UsermgtComponent = /** @class */ (function () {
                 this.loading = false;
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -14876,7 +17002,7 @@ var UsermgtComponent = /** @class */ (function () {
                   this.loading = false;
                   if (data.errcode){
                     this.authService.logout();
-                    this.router.navigate(['login']);
+                    this.router.navigate(['errorpage']);
                   }
                   this.toastr.error(data.message);
                 } else {
@@ -14941,7 +17067,7 @@ var UsermgtComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_admin_usermgt_service__["a" /* UsermgtService */],
             __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
             __WEBPACK_IMPORTED_MODULE_8__services_notif_service__["a" /* NotifService */],
@@ -15036,7 +17162,7 @@ var ViewlabelComponent = /** @class */ (function () {
             if (data.success === false) {
                 if (data.errcode) {
                     _this.authService.logout();
-                    _this.router.navigate(['login']);
+                    _this.router.navigate(['errorpage']);
                 }
                 _this.toastr.error(data.message);
             }
@@ -15074,7 +17200,7 @@ var ViewlabelComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
     ], ViewlabelComponent);
     return ViewlabelComponent;
@@ -15126,7 +17252,7 @@ var AuthGuard = /** @class */ (function () {
     AuthGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */]])
     ], AuthGuard);
     return AuthGuard;
@@ -15167,14 +17293,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ActivitylogService = /** @class */ (function () {
     function ActivitylogService(http) {
         this.http = http;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     ActivitylogService.prototype.getActivitylogAggs = function (userid, oActivitylog) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15184,6 +17312,10 @@ var ActivitylogService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ActivitylogService.prototype.getAdmActivitylogAggs = function (userid, oActivitylog) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15243,14 +17375,16 @@ var MsconfigService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.adminurl = globals.adminurl;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     MsconfigService.prototype.uploadGenrephoto = function (oFile) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -15259,6 +17393,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.deleteGenrephoto = function (oGenre) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -15267,6 +17405,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.saveMsconfig = function (userid, oMsconfig) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15276,6 +17418,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.deleteMsconfig = function (msconfigid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15285,6 +17431,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.updateMsconfigfile = function (userid, oMsconfig) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15294,6 +17444,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.getAggMsconfig = function (oMsconfig) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15303,6 +17457,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.getMsconfigAgg = function (msconfigid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15312,6 +17470,10 @@ var MsconfigService = /** @class */ (function () {
             .catch(this.handleError);
     };
     MsconfigService.prototype.getMsconfig = function (msconfigid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15395,14 +17557,16 @@ var SongadminService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.adminurl = globals.adminurl;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     SongadminService.prototype.publishSong = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15412,6 +17576,10 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.cancelpublishSong = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15421,6 +17589,10 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.getAggSongs = function (oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15430,6 +17602,10 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.getAggSongsnonpublish = function (oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15439,6 +17615,10 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.getPendingSongCount = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15448,6 +17628,10 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.getSong = function (songid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15457,6 +17641,10 @@ var SongadminService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongadminService.prototype.getSongAgg = function (songid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15516,9 +17704,7 @@ var UsermgtService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.adminurl = globals.adminurl;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -15531,6 +17717,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.getUserLabels = function (oLabels) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15540,6 +17730,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.getPendingUserLabels = function (oLabels) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15549,6 +17743,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.getPendingLabelCount = function (userid, oLabels) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15558,6 +17756,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.updateLabelStatus = function (labelid, oLabel) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15567,6 +17769,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.pubupdateLabelstatus = function (userid, oUser) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15576,6 +17782,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.updateLabelBalance = function (labelid, oLabel) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15585,6 +17795,10 @@ var UsermgtService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UsermgtService.prototype.getLabelList = function () {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15640,14 +17854,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AlbumService = /** @class */ (function () {
     function AlbumService(http) {
         this.http = http;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     AlbumService.prototype.saveAlbum = function (userid, artistid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15656,7 +17872,24 @@ var AlbumService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    AlbumService.prototype.checkAlbum = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/checkalbumname/" + userid, JSON.stringify(oAlbum), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     AlbumService.prototype.updateAlbumphoto = function (albumid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15666,6 +17899,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAlbums = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15675,6 +17912,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAlbumCount = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15684,6 +17925,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getArtistAlbums = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15693,6 +17938,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getArtistAlbumsStats = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15702,6 +17951,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAggAlbums = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15711,6 +17964,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAggAlbumstats = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15720,6 +17977,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAlbum = function (albumid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15729,6 +17990,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAlbumList = function (userid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15738,6 +18003,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.getAlbumListbyArtist = function (userid, artistid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15747,6 +18016,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.deleteAlbum = function (albumid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15756,6 +18029,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.pubsaveAlbum = function (userid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15765,6 +18042,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.pubupdateAlbumphoto = function (albumid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15774,6 +18055,10 @@ var AlbumService = /** @class */ (function () {
             .catch(this.handleError);
     };
     AlbumService.prototype.pubdeleteAlbum = function (albumid, oAlbum) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15829,13 +18114,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ArtistService = /** @class */ (function () {
     function ArtistService(http) {
         this.http = http;
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     ArtistService.prototype.saveArtist = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15845,6 +18133,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.pubsaveArtist = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -15853,6 +18145,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.updateArtistphoto = function (artistid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15862,6 +18158,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.pubupdateArtistphoto = function (artistid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -15870,6 +18170,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.getArtists = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15878,7 +18182,23 @@ var ArtistService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    ArtistService.prototype.checkArtist = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/checkartistname/" + userid, oArtist, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     ArtistService.prototype.getArtistCount = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15888,6 +18208,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.getAggArtists = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15897,6 +18221,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.getAggArtiststats = function (userid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15906,6 +18234,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.getArtist = function (artistid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15915,6 +18247,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.getArtistList = function (userid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15924,6 +18260,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.deleteArtist = function (artistid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15933,6 +18273,10 @@ var ArtistService = /** @class */ (function () {
             .catch(this.handleError);
     };
     ArtistService.prototype.pubdeleteArtist = function (artistid, oArtist) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -15991,9 +18335,9 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.isLoggedIn = function () {
         try {
-            //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-            var theUser;
-            setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+            var theUser = JSON.parse(localStorage.getItem('currentUser'));
+            /* var theUser: any;
+            setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100);  */
             if (theUser) {
                 this.currentUser = theUser.user;
             }
@@ -16022,9 +18366,11 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.logout = function () {
         this.currentUser = null;
-        setTimeout(localStorage.removeItem('currentUser'), 100);
+        //setTimeout(localStorage.removeItem('currentUser'),100);
+        localStorage.removeItem('currentUser');
         //Clear storage after specific time
-        var logoutTimer = setTimeout(localStorage.clear(), 100);
+        //var logoutTimer = setTimeout(localStorage.clear(), 100);
+        localStorage.clear();
     };
     AuthService.prototype.handleError = function (error) {
         var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
@@ -16077,14 +18423,16 @@ var FiletransferService = /** @class */ (function () {
         this.http = http;
         this.globals = globals;
         this.filetransferurl = globals.filetransferurl;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     FiletransferService.prototype.uploadInputFile = function (oFile) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -16094,6 +18442,10 @@ var FiletransferService = /** @class */ (function () {
             .catch(this.handleError);
     };
     FiletransferService.prototype.deleteInputFile = function (oFile) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -16111,6 +18463,42 @@ var FiletransferService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]])
     ], FiletransferService);
     return FiletransferService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/navbar.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NavbarService = /** @class */ (function () {
+    function NavbarService() {
+        this.visible = true;
+        this.linkaccess = true;
+    }
+    NavbarService.prototype.hide = function () { this.visible = false; };
+    NavbarService.prototype.show = function () { this.visible = true; };
+    NavbarService.prototype.toggle = function () { this.visible = !this.visible; };
+    NavbarService.prototype.disableLink = function () { this.linkaccess = false; };
+    NavbarService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], NavbarService);
+    return NavbarService;
 }());
 
 
@@ -16246,14 +18634,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SongService = /** @class */ (function () {
     function SongService(http) {
         this.http = http;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     SongService.prototype.saveSong = function (userid, artistid, albumid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16262,7 +18652,24 @@ var SongService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongService.prototype.checkSong = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/checksongname/" + userid, JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongService.prototype.pubsaveSong = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16272,6 +18679,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.pubeditSong = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16281,6 +18692,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.uploadSongfiles = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
@@ -16289,6 +18704,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.publishSong = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16298,6 +18717,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.cancelPublishSong = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16307,6 +18730,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.updateSongPreview = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16316,6 +18743,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.pubupdateSongPreview = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16325,6 +18756,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.updateSongFile = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16334,6 +18769,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.pubupdateSongFile = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16343,6 +18782,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getSong = function (songid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16352,6 +18795,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getSongAgg = function (songid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16360,7 +18807,24 @@ var SongService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    SongService.prototype.getAggTopSongs = function (oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/topaggreportln", JSON.stringify(oSong), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     SongService.prototype.deleteSong = function (songid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16370,6 +18834,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.pubdeleteSong = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16379,6 +18847,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getAggSongs = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16388,6 +18860,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getSongs = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16397,6 +18873,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getSongCount = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16406,6 +18886,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getSongList = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16415,6 +18899,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.getSongListstats = function (userid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16424,6 +18912,10 @@ var SongService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongService.prototype.songbuyincrement = function (songid, oSong) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16479,14 +18971,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SongpurchaseService = /** @class */ (function () {
     function SongpurchaseService(http) {
         this.http = http;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     SongpurchaseService.prototype.saveSongpurchase = function (userid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16496,6 +18990,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.getSongpurchase = function (songpurchaseid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16505,6 +19003,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.deleteSongpurchase = function (songpurchaseid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16514,6 +19016,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.updateStatuspurchase = function (songpurchaseid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16523,6 +19029,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.getSongpurchaseAggs = function (userid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16532,6 +19042,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.getSongpurchaseAgg = function (songpurchaseid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16541,6 +19055,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.getPendingsongpurchaseAggs = function (userid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16550,6 +19068,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.getPendingSongpurchaseCount = function (userid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16559,6 +19081,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.getAdmSongpurchaseAggs = function (userid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16568,6 +19094,10 @@ var SongpurchaseService = /** @class */ (function () {
             .catch(this.handleError);
     };
     SongpurchaseService.prototype.pubSaveSongpurchasePayment = function (userid, oSongpurchase) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16623,14 +19153,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TransactionService = /** @class */ (function () {
     function TransactionService(http) {
         this.http = http;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
     }
     TransactionService.prototype.saveTransaction = function (userid, oTransaction) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16640,6 +19172,10 @@ var TransactionService = /** @class */ (function () {
             .catch(this.handleError);
     };
     TransactionService.prototype.getTransactionAggs = function (userid, oTransaction) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16649,6 +19185,10 @@ var TransactionService = /** @class */ (function () {
             .catch(this.handleError);
     };
     TransactionService.prototype.getAdmTransactionAggs = function (userid, oTransaction) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16658,6 +19198,10 @@ var TransactionService = /** @class */ (function () {
             .catch(this.handleError);
     };
     TransactionService.prototype.getLabelbalance = function (userid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16713,9 +19257,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-        var theUser;
-        setTimeout(theUser = JSON.parse(localStorage.getItem('currentUser')), 100);
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
             this.jwtToken = theUser.token;
         }
@@ -16742,6 +19284,10 @@ var UserService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UserService.prototype.getUser = function (userid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16751,6 +19297,10 @@ var UserService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UserService.prototype.updateUser = function (userid, oUser) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16782,6 +19332,10 @@ var UserService = /** @class */ (function () {
       }
     */
     UserService.prototype.updatePassword = function (userid, oUser) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16791,6 +19345,10 @@ var UserService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UserService.prototype.updateEmail = function (userid, oUser) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16799,7 +19357,19 @@ var UserService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    UserService.prototype.updatehash = function (hashid) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put("updatehash/" + hashid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     UserService.prototype.emailVerify = function (oUser) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);
@@ -16809,6 +19379,10 @@ var UserService = /** @class */ (function () {
             .catch(this.handleError);
     };
     UserService.prototype.pubemailVerify = function (oUser) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', "" + this.jwtToken);

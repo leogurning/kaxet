@@ -154,7 +154,7 @@ export class EditalbumphotoComponent implements OnInit {
             this.progressvalue = 0;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -228,7 +228,7 @@ export class EditalbumphotoComponent implements OnInit {
             this.progressvalue = 0;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {

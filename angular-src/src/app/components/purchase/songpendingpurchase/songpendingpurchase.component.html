@@ -11,21 +11,27 @@
             <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
                 <div class="row rowmarginsearch">
                     <div class="col-sm-6 col-md-6">
+                        <label for="purchaseid" class="col-sm-2 paddingsearch">Payment Ref</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="purchaseid" [formControl]="purchaseid" placeholder="24 chars Payment Ref">
+                        </div>
+                    </div>            
+                    <div class="col-sm-6 col-md-6">
                         <label for="artistname" class="col-sm-2 paddingsearch">Artist</label>
                         <div class="col-sm-10">
                             <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
                             <input type="text" class="form-control" id="artistname" [formControl]="artistname" placeholder="Artist Name">
                         </div>
                     </div>         
-                    <div class="col-sm-6 col-md-6">
-                      <label for="buyername" class="col-sm-2 paddingsearch">Buyer</label>
-                      <div class="col-sm-10">
-                          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
-                          <input type="text" class="form-control" id="buyername" [formControl]="buyername" placeholder="Buyer Name">
-                      </div>
-                    </div>            
                 </div>
                 <div class="row rowmarginsearch">
+                    <div class="col-sm-6 col-md-6">
+                        <label for="buyername" class="col-sm-2 paddingsearch">Buyer</label>
+                        <div class="col-sm-10">
+                            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                            <input type="text" class="form-control" id="buyername" [formControl]="buyername" placeholder="Buyer Name">
+                        </div>
+                    </div> 
                     <div class="col-sm-6 col-md-6">
                         <label for="songname" class="col-sm-2 paddingsearch">Song</label>
                         <div class="col-sm-10">

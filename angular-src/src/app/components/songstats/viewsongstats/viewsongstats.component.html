@@ -53,7 +53,10 @@
             <label for="songprvwpath" class="col-sm-2 control-label">Preview</label>
             <div class="input-group col-sm-10">
               <div class="input-group-addon" style="border:1px"><i class="glyphicon glyphicon-music"></i></div>
-              <a href="{{ song?.songprvwpath }}" style="cursor:pointer;padding-right:5px;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a>
+              <!-- <a href="{{ song?.songprvwpath }}" style="cursor:pointer;padding-right:5px;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a> -->
+              <a *ngIf="this.state.prvwplaying && !this.state.loadingprvw" (click)="togglePrvw(song?.songprvwpath)" style="cursor:pointer;padding-right:5px;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Pause Preview"><i class="fa fa-pause-circle fa-2x"></i></a>
+              <span *ngIf="this.state.loadingprvw"><i class="fa fa-spinner fa-2x"></i></span>
+              <a *ngIf="!this.state.prvwplaying && !this.state.loadingprvw" (click)="togglePrvw(song?.songprvwpath)" style="cursor:pointer;padding-right:5px;float:center;color:#C92020" data-toggle="tooltip" data-placement="top" title="Play Preview"><i class="fa fa-play-circle fa-2x"></i></a>
               <!-- <div class="form-ele">{{ song?.songprvwpath }}</div> -->
             </div>
         </div>
@@ -61,7 +64,10 @@
             <label for="songfilepath" class="col-sm-2 control-label">File</label>
             <div class="input-group col-sm-10">
               <div class="input-group-addon" style="border:1px"><i class="glyphicon glyphicon-music"></i></div>
-                <a href="{{ song?.songfilepath }}" style="cursor:pointer;float:center;color:#11DFDF" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a>
+                <!-- <a href="{{ song?.songfilepath }}" style="cursor:pointer;float:center;color:#11DFDF" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a> -->
+                <a *ngIf="this.state.songplaying && !this.state.loadingsong" (click)="toggleSong(song?.songfilepath)" style="cursor:pointer;float:center;color:#11DFDF" data-toggle="tooltip" data-placement="top" title="Pause Song"><i class="fa fa-pause-circle fa-2x"></i></a>
+                <span *ngIf="this.state.loadingsong"><i class="fa fa-spinner fa-2x"></i></span>
+                <a *ngIf="!this.state.songplaying && !this.state.loadingsong" (click)="toggleSong(song?.songfilepath)" style="cursor:pointer;float:center;color:#11DFDF" data-toggle="tooltip" data-placement="top" title="Play Song"><i class="fa fa-play-circle fa-2x"></i></a>
                 <!-- <div class="form-ele">{{ song?.songfilepath }}</div> -->
             </div>
         </div>

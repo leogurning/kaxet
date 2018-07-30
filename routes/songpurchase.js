@@ -5,6 +5,9 @@ const config = require('../config');
 var rediscli = require('../redisconn');
 var amqpConn = null;
 var amqp = require('amqplib/callback_api');
+var crypto = require('crypto');
+const codaapikey = '35315a3ccda36e7483e0e6ebabd3fd6a';
+const Msconfig = require('../models/masterconfig');
 
 var ObjId = mongoose.Types.ObjectId;
 var merge = function() {
@@ -152,6 +155,7 @@ exports.songpurchaseagg = function(req, res, next){
     const msconfigsts = 'STSACT';
     const msconfiggrp1 = 'PMTMETHOD';
     const msconfigsts1 = 'STSACT';
+    const purchaseid = req.body.purchaseid || req.query.purchaseid;;
 
     var totalcount;
   
@@ -234,6 +238,15 @@ exports.songpurchaseagg = function(req, res, next){
         }
         if (paymentmtd) {
             query = merge(query, {paymentmtd:paymentmtd});
+        }
+        if (purchaseid) {
+            var pcid;
+            if (purchaseid.length === 24) {
+                pcid = new mongoose.Types.ObjectId(purchaseid);
+            } else {
+                pcid = new mongoose.Types.ObjectId('123456789012345678901234');
+            }
+            query = merge(query, {_id:pcid});
         }
         console.log(query);
         if(!sortby) {
@@ -364,6 +377,7 @@ exports.pendingsongpurchaseagg = function(req, res, next){
     const to_dt = req.body.enddt || req.query.enddt;
     const fromdt = new Date(from_dt);
     const todt = new Date(to_dt);
+    const purchaseid = req.body.purchaseid || req.query.purchaseid;;
 
     var totalcount;
   
@@ -439,6 +453,15 @@ exports.pendingsongpurchaseagg = function(req, res, next){
         }    
         if (status) {
             query = merge(query, {status:status});
+        }
+        if (purchaseid) {
+            var pcid;
+            if (purchaseid.length === 24) {
+                pcid = new mongoose.Types.ObjectId(purchaseid);
+            } else {
+                pcid = new mongoose.Types.ObjectId('123456789012345678901234');
+            }
+            query = merge(query, {_id:pcid});
         }
         console.log(query);
         if(!sortby) {
@@ -721,6 +744,7 @@ exports.admsongpurchaseagg = function(req, res, next){
     const msconfigsts = 'STSACT';
     const msconfiggrp1 = 'PMTMETHOD';
     const msconfigsts1 = 'STSACT';
+    const purchaseid = req.body.purchaseid || req.query.purchaseid;
 
     var totalcount;
   
@@ -806,6 +830,15 @@ exports.admsongpurchaseagg = function(req, res, next){
         }
         if (paymentmtd) {
             query = merge(query, {paymentmtd:paymentmtd});
+        }
+        if (purchaseid) {
+            var pcid;
+            if (purchaseid.length === 24) {
+                pcid = new mongoose.Types.ObjectId(purchaseid);
+            } else {
+                pcid = new mongoose.Types.ObjectId('123456789012345678901234');
+            }
+            query = merge(query, {_id:pcid});
         }
         console.log(query);
         if(!sortby) {
@@ -963,6 +996,142 @@ exports.pubactionPayment = function(req, res, next){
     //ch.bindQueue(q, exchange, 'registerlabel');
 }
 
+exports.pubactionPaymentCoda = function(req, res, next){
+    const TxnId = req.query.TxnId;
+    const OrderId = req.query.OrderId;
+    const ResultCode = req.query.ResultCode;
+    const TotalPrice = req.query.TotalPrice;
+    const PaymentType = req.query.PaymentType;
+    const Checksum = req.query.Checksum;
+    const MnoId = req.query.MnoId;
+    const code = 'VFEE';
+    const group = 'FEE';
+    const status = 'STSACT';
+
+    const q = 'purchaseQueueCoda';
+
+    if (!TxnId || !OrderId || !ResultCode || !PaymentType || !TotalPrice || !Checksum) {
+        return res.status(201).send({ success: false, result: "ResultCode=999", message: 'Main posted data is not correct or incompleted.' });
+    }
+    if (ResultCode == 0) {
+        if (PaymentType == 1 || PaymentType == 227) {
+            //var objbody = querystring.parse(req.url.replace(/^.*\?/, ''));
+            const strChecksum = TxnId + codaapikey + OrderId + ResultCode;
+            if (validChecksum(strChecksum, Checksum)) {
+                Songpurchase.findById(OrderId).exec(function(err, songpurchase){
+                    if(err){
+                        return res.status(201).send({ success: false, result: "ResultCode=909", message: 'Error finding data purchase.: '+err }); 
+                    }
+                    if(songpurchase){
+                        let pvstatus = songpurchase.status;
+                        let pvprice = songpurchase.songprice;
+                        if (pvstatus === 'STSPEND') {
+                            if (pvprice == TotalPrice) {
+                                let keyredis = 'redis-lis-'+code+group;
+                                //check on redis
+                                //rediscli.del(keyredis);
+                                rediscli.get(keyredis, function(error,obj) { 
+                                    if (obj) {
+                                        
+                                        var objfee = {oFee: JSON.parse(obj).value};
+                                        //console.log(objfee);
+                                        var objbody = req.query;
+                                        var objmsg = Object.assign(objbody,objfee);
+                                        var msg = JSON.stringify(objmsg);
+                                        //ch.assertExchange(exchange, 'direct', {durable: false})
+                                        //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+                                        
+                                        let pubadd = actionPaymentCodapublish('', q, new Buffer.from(msg));    
+                                        res.status(200).json({
+                                            success: true,
+                                            //obj: objbody,
+                                            result: "ResultCode=0",
+                                            message: 'Request to save purchase data received successfully.'
+                                        });
+                                        //ch.bindQueue(q, exchange, 'registerlabel');    
+                                    } else {
+                                        //console.log('key NOT on redis...');
+                                        // returns config value records based on query
+                                        let query = { code:code, group:group, status: status};        
+                                        var fields = { 
+                                            _id:0,
+                                            code:1, 
+                                            value:1,
+                                            filepath:1,
+                                            filename:1  
+                                        };
+                        
+                                        var psort = { code: 1 };
+                        
+                                        Msconfig.findOne(query, fields).sort(psort).exec(function(err, result) {
+                                            if(err) {
+                                                res.status(201).json({
+                                                    success: false,
+                                                    //obj: objbody,
+                                                    result: "ResultCode=906",
+                                                    message: 'Error processing the request. Failed to get FEE configs.'
+                                                }); 
+                                            } 
+                                            var objfee = {oFee: result.value};
+                                            //console.log(objfee);
+                                            var objbody = req.query;
+                                            var objmsg = Object.assign(objbody,objfee);
+                                            var msg = JSON.stringify(objmsg);
+                                            //ch.assertExchange(exchange, 'direct', {durable: false})
+                                            //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+                                            
+                                            let pubadd = actionPaymentCodapublish('', q, new Buffer.from(msg));    
+                                            res.status(200).json({
+                                                success: true,
+                                                //obj: objbody,
+                                                result: "ResultCode=0",
+                                                message: 'Request to save purchase data received successfully.'
+                                            });
+                                            //ch.bindQueue(q, exchange, 'registerlabel');    
+                                            //set in redis
+                                            rediscli.set(keyredis,JSON.stringify(result), function(error) {
+                                                if (error) { throw error; }
+                                            });                    
+                                        });
+                                    }
+                                });
+
+                            } else {
+                                res.status(201).json({
+                                    success: false,
+                                    //obj: objbody,
+                                    result: "ResultCode=905",
+                                    message: 'Error processing the request. Purchase data TotalPrice is inconsistent.'
+                                });
+                            }
+                        } else {
+                            res.status(201).json({
+                                success: false,
+                                //obj: objbody,
+                                result: "ResultCode=903",
+                                message: 'Error processing the request. Purchase data status is not Pending anymore.'
+                            });
+                        }
+                    } else {
+                        res.status(201).json({
+                            success: false,
+                            //obj: objbody,
+                            result: "ResultCode=902",
+                            message: 'Error processing the request. Purchase data not found.'
+                        });
+                    }
+                });
+            } else {
+                return res.status(201).send({ success: false, result: "ResultCode=904", message: 'Error processing transaction. Invalid checksum !' });
+            }            
+        } else {
+            return res.status(201).send({ success: false, result: "ResultCode=901", message: 'Error processing transaction. Payment type is not recognized: '+PaymentType });
+        }
+    } else {
+        return res.status(201).send({ success: false, result: "ResultCode=900", message: 'Error processing from Codapay with error code: '+ResultCode });
+    }
+}
+
 //Start RabbitMQ Connection for PUBLISHERS
 function startpubRMQpurchase() {
     amqp.connect(config.amqpURL, function(err, conn) {
@@ -982,6 +1151,7 @@ function startpubRMQpurchase() {
       console.log("[AMQP PURCHASE] connected");
       amqpConn = conn;
       actionPaymentPub('purchaseQueue');
+      actionPaymentCodaPub('purchaseQueueCoda');
     });
 }
 
@@ -1027,6 +1197,75 @@ function actionPaymentpublish(exchange, routingKey, content) {
       actionPaymentofflinePubQueue.push([exchange, routingKey, content]);
       return false;
     }
+}
+
+var actionPaymentCodaPubChannel = null;
+var actionPaymentCodaofflinePubQueue = [];
+function actionPaymentCodaPub(q) {
+  amqpConn.createConfirmChannel(function(err, ch) {
+    if (closeOnErr(err)) return;
+    ch.on("error", function(err) {
+        console.error("[AMQP PURCHASE] action payment coda channel error", err.message);
+    });
+    ch.on("close", function() {
+        console.log("[AMQP PURCHASE] action payment coda channel closed");
+    });
+    
+    actionPaymentCodaPubChannel = ch;
+    actionPaymentCodaPubChannel.assertQueue(q, {durable: false});
+    
+    while (true) {
+        var m = actionPaymentCodaofflinePubQueue.shift();
+        if (!m) break;
+        actionPaymentCodapublish(m[0], m[1], m[2]);
+    }
+  });
+}
+
+function actionPaymentCodapublish(exchange, routingKey, content) {
+    try {
+        actionPaymentCodaPubChannel.publish(exchange, routingKey, content, { persistent: false },
+        function(err, ok) {
+          if (err) {
+            console.error("[AMQP PURCHASE] action payment coda publish", err);
+            actionPaymentCodaofflinePubQueue.push([exchange, routingKey, content]);
+            actionPaymentCodaPubChannel.connection.close();
+            return false;
+          }
+          console.log("[AMQP PURCHASE] action payment coda publisher completed");
+          return true;
+        }
+      );
+    } catch (e) {
+      console.error("[AMQP PURCHASE] action payment coda publish", e.message);
+      actionPaymentCodaofflinePubQueue.push([exchange, routingKey, content]);
+      return false;
+    }
+}
+
+exports.generateMd5 = function(req, res, next){ 
+    const TxnId = req.body.TxnId;
+    const OrderId = req.body.OrderId;
+    const ResultCode = req.body.ResultCode;
+    
+    if (!TxnId || !OrderId || !ResultCode ) {
+        return res.status(201).send({ success: false, result: "ResultCode=999", message: 'Main posted data is not correct or incompleted.' });
+    }
+    const strinput = TxnId + codaapikey + OrderId + ResultCode;
+    var hash = crypto.createHash('md5').update(strinput).digest('hex');
+
+    res.status(200).json({
+        success: true,
+        result: hash
+    });
+}
+function validChecksum(str, checkSum) {
+    var result = false;
+    var hash = crypto.createHash('md5').update(str).digest('hex');
+    if (hash == checkSum) {
+        result = true;
+    }
+    return result;
 }
 
 function closeOnErr(err) {

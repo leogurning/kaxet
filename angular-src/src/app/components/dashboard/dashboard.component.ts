@@ -16,6 +16,7 @@ import { SongadminService } from '../../services/admin/songadmin.service';
 import { SongpurchaseService } from '../../services/songpurchase.service';
 import { MatDialog } from '@angular/material';
 import { LabelbalancedialogComponent } from '../labelbalancedialog/labelbalancedialog.component';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -54,16 +55,113 @@ export class DashboardComponent implements OnInit {
   email: String;
   contactno: String;
   balance: Number;
-  
+  chart = [];
+  //topsongs:any = [];
+
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
     this.name = this.userObj.name;
-
+    let payloadn: any = {};
+    payloadn.status = 'STSACT';
+    this.songService.getAggTopSongs(payloadn).subscribe(data => {
+      if (data.success === false) {
+        if (data.errcode){
+          this.authService.logout();
+          this.router.navigate(['errorpage']);
+        }
+        this.toastr.error(data.message);
+      } else {
+        //this.topsongs = data.data;
+        let songbuy = data.data.map(res => res.songbuy);
+        let songname = data.data.map(res => res.songname);
+        //let labelnsong = data.data.map(res => res.labelnsong);
+        Chart.defaults.global.defaultFontFamily = 'Arial';
+        Chart.defaults.global.defaultFontSize = 12;
+        Chart.defaults.global.defaultFontColor = '#333';
+        //console.log(labelnsong);
+        /* let formattedLabels = [];
+        songname.forEach((res) => {
+            let labelitem = formatLabel(res, 15);
+            formattedLabels.push(labelitem);
+        }); */
+        this.chart = new Chart('canvas', {
+          type: 'horizontalBar',
+          data: {
+            labels: songname,
+            datasets: [
+              {
+                label: 'Total Purchased',
+                data: songbuy,
+                backgroundColor:'#fce86c',
+                borderWidth: 1,
+                borderColor: '#333',
+                hoverBorderWidth: 2,
+                hoverBorderColor: '#000'
+              }
+            ]
+          },
+          options: {
+            scaleLabel: function(object) {
+                          return "      " + object.value;
+                        },
+            responsive: true,
+            maintainAspectRatio: true,
+            title: {
+              display: true,
+              text: 'Global Top 10 Purchased Songs',
+              fontSize: 14
+            },
+            legend: {
+              display: false,
+              position: 'right'
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: true,
+                  drawBorder: true
+                },
+                ticks: {
+                  stepSize: 1
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                }
+              }]
+            },
+            layout: {
+              padding: {
+                  left: 40,
+                  right: 0,
+                  top: 0,
+                  bottom: 0
+              }
+            }
+            /* tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  //let songdtl: any = this.topsongs[tooltipItem.index];
+                  //return this.topsongs[tooltipItem.index].artistname+":"+this.topsongs[tooltipItem.index].labelname;
+                  return tooltipItem.index +'.' + tooltipItem.yLabel;
+                }
+              }
+            } */
+          }
+        });
+      }
+    },
+    err => {
+      //console.log(err);
+      this.toastr.error(err);
+    });
     this.userService.getUser(this.userObj.userid).subscribe(data => {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -94,7 +192,7 @@ export class DashboardComponent implements OnInit {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -105,7 +203,7 @@ export class DashboardComponent implements OnInit {
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -116,7 +214,7 @@ export class DashboardComponent implements OnInit {
               if (data.success === false) {
                 if (data.errcode){
                   this.authService.logout();
-                  this.router.navigate(['login']);
+                  this.router.navigate(['errorpage']);
                 }
                 this.toastr.error(data.message);
               } else {
@@ -147,7 +245,7 @@ export class DashboardComponent implements OnInit {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -169,7 +267,7 @@ export class DashboardComponent implements OnInit {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -187,7 +285,7 @@ export class DashboardComponent implements OnInit {
       if (data.success === false) {
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {

@@ -43,6 +43,7 @@ export class AddartistComponent implements OnInit {
   ) { }
   
   artistname = new FormControl('', [Validators.required]);
+  about = new FormControl('', [Validators.nullValidator]);
   artistphotopath: String;
   artistphotoname: String;
 
@@ -54,6 +55,7 @@ export class AddartistComponent implements OnInit {
     this.progressvalue = 0;
     this.addArtistForm = this.fb.group({
       artistname: this.artistname,
+      about: this.about,
       artistimage: this.filesToUpload,
       artistphotopath: this.artistphotopath,
       artistphotoname: this.artistphotoname
@@ -148,62 +150,76 @@ export class AddartistComponent implements OnInit {
     if (this.addArtistForm.dirty && this.addArtistForm.valid && files[0]) {
       this.progressvalue = 10;
       let theForm = this.addArtistForm.value;
-      let lformData: FormData = new FormData();
-      //console.log('Ini file: '+ files[0]['name']);
-      this.progressvalue = 30;
-      lformData.append('fileinputsrc',files[0],files[0]['name']);
-      lformData.append('uploadpath',this.artistuploadpath);
-      //console.log(lformData.getAll('artistimage'));
-      //console.dir(theForm);
-      this.loading = true;
-      this.progressvalue = 50;
-      this.ftService.uploadInputFile(lformData)
-        .subscribe(data => {
-          if (data.success === false) {
-            this.loading = false;
-            this.progressvalue = 0;
-            this.toastr.error(data.message);
-          } else {
-              this.progressvalue = 70;
-              theForm.artistphotopath = data.filedata.filepath;
-              theForm.artistphotoname = data.filedata.filename;
-              theForm.status = 'STSACT';
-              this.progressvalue = 90;
-              //console.log('Ini file path: '+ theForm.artistphotopath);
-              if (this.artistid !== '') {
-                theForm.artistid = this.artistid;
-              }
-              this.artistService.pubsaveArtist(this.userObj.userid, theForm)
-              .subscribe(data => {
-                if (data.success === false) {
-                  this.loading = false;
-                  this.progressvalue = 0;
-                  this.toastr.error(data.message);
-                } else {
-                  this.loading = false;
-                  this.progressvalue = 100;
-                  this.toastr.success(data.message);
-                  //this.router.navigate(['listartist']);
-                }
-                this.addArtistForm.reset();
-                this.artistimageVar.nativeElement.value = "";
-                this.progressvalue = 0;
-              },
-              err => {
+      this.artistService.checkArtist(this.userObj.userid, theForm)
+      .subscribe(data => {
+        if (data.success === false) {
+          this.loading = false;
+          this.progressvalue = 0;
+          this.toastr.error(data.message);
+        } else {
+          let lformData: FormData = new FormData();
+          //console.log('Ini file: '+ files[0]['name']);
+          this.progressvalue = 30;
+          lformData.append('fileinputsrc',files[0],files[0]['name']);
+          lformData.append('uploadpath',this.artistuploadpath);
+          //console.log(lformData.getAll('artistimage'));
+          //console.dir(theForm);
+          this.loading = true;
+          this.progressvalue = 50;
+          this.ftService.uploadInputFile(lformData)
+            .subscribe(data => {
+              if (data.success === false) {
                 this.loading = false;
                 this.progressvalue = 0;
-                //console.log(err);
-                this.toastr.error(err);
-              });
-          }   
-        },
-        err => {
-          this.progressvalue = 0;
-          this.loading = false;
-          //console.log(err);
-          this.toastr.error(err);
-        });
- 
+                this.toastr.error(data.message);
+              } else {
+                  this.progressvalue = 70;
+                  theForm.artistphotopath = data.filedata.filepath;
+                  theForm.artistphotoname = data.filedata.filename;
+                  theForm.status = 'STSACT';
+                  this.progressvalue = 90;
+                  //console.log('Ini file path: '+ theForm.artistphotopath);
+                  if (this.artistid !== '') {
+                    theForm.artistid = this.artistid;
+                  }
+                  this.artistService.pubsaveArtist(this.userObj.userid, theForm)
+                  .subscribe(data => {
+                    if (data.success === false) {
+                      this.loading = false;
+                      this.progressvalue = 0;
+                      this.toastr.error(data.message);
+                    } else {
+                      this.loading = false;
+                      this.progressvalue = 100;
+                      this.toastr.success(data.message);
+                      //this.router.navigate(['listartist']);
+                    }
+                    this.addArtistForm.reset();
+                    this.artistimageVar.nativeElement.value = "";
+                    this.progressvalue = 0;
+                  },
+                  err => {
+                    this.loading = false;
+                    this.progressvalue = 0;
+                    //console.log(err);
+                    this.toastr.error(err);
+                  });
+              }   
+            },
+            err => {
+              this.progressvalue = 0;
+              this.loading = false;
+              //console.log(err);
+              this.toastr.error(err);
+            });
+        }
+      },
+      err => {
+        this.progressvalue = 0;
+        this.loading = false;
+        //console.log(err);
+        this.toastr.error(err);
+      });
     } else {
         this.toastr.error('Please provide artist photo...');
     }

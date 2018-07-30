@@ -19,7 +19,8 @@ const AlbumSchema = new Schema({
     objartistid: { type:mongoose.Schema.ObjectId, required: true},
     objlabelid: { type:mongoose.Schema.ObjectId, required: true},
     createddt: {type:Date, required: true},
-    modifydt: {type:Date, required: true}
+    modifydt: {type:Date, required: true},
+    searchstr: {type:String, required: true}
 });
 
 AlbumSchema.plugin(mongoosePaginate);

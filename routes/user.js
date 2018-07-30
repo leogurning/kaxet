@@ -28,7 +28,7 @@ exports.signup = function(req, res, next){
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
-     User.findOne({ $or:[{username:username},{email:email}] }, function(err, existingUser) {
+     User.findOne({ $or:[{username:username},{email:email}], usertype: usertype }, function(err, existingUser) {
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          // If user is not unique, return error
@@ -251,11 +251,12 @@ exports.updatePassword = function(req, res, next){
 exports.updateEmail = function(req, res, next){
     const userid = req.params.id;
     const newemail = req.body.email;
+    const usertype = req.body.usertype;
     var rand,randhash;
     if (!newemail || !userid) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
     } else {
-        User.findOne({ email: newemail, status:{ $ne: 'STSRJCT' }}, function(err, existingUser) {
+        User.findOne({ email: newemail, status:{ $ne: 'STSRJCT' }, usertype: usertype}, function(err, existingUser) {
             if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
             if (existingUser) {
                 res.status(201).json({ success: false, message:'Error in Updating user email. The new email address has been used/linked to another user account.'});
@@ -339,12 +340,13 @@ exports.resetpassword = function(req, res, next){
     // Check for registration errors
     const email = req.body.email;
     var rand,randhash,link;
-
+    //const usertype = 'LBL';
+    const usertype = req.body.usertype;
      if (!email ) {
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
-     User.findOne({ email: email, status:'STSACT' }, function(err, existingUser) {
+     User.findOne({ email: email, status:'STSACT', usertype: usertype }, function(err, existingUser) {
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          if (existingUser) {
@@ -398,13 +400,43 @@ exports.doresetpassword = function(req, res, next){
             if (user.status == 'STSACT') {
                 // login success update last login
                 user.password = password;
-                user.vhash = '';
+                //user.vhash = '';
                 user.save(function(err) {
                     if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
 
                     res.status(200).json({
                         success: true,
                         message: 'Password reset successfully'
+                    });
+                });
+            } else {
+                //console.log('This not active condition.');
+                res.status(201).json({ success: false, message: 'Process STOP. User account is NOT ACTIVE.' });
+            }
+        }
+    });
+
+}
+
+exports.doupdatehash = function(req, res, next){
+    const hash = req.params.id;
+    
+    // find the user
+    User.findOne({ vhash: hash }, function(err, user) {
+        if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+        if (!user) {
+            res.status(201).json({ success: false, message: 'UNAuthorised ! Incorrect hash value provided.' });
+        }else if (user) {
+            if (user.status == 'STSACT') {
+                // login success update last login
+                user.vhash = '';
+                user.save(function(err) {
+                    if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+
+                    res.status(200).json({
+                        success: true,
+                        message: 'Reset password completed successfully'
                     });
                 });
             } else {
@@ -441,48 +473,63 @@ exports.pubregisterlabel = function(req, res, next){
     if (!name || !email || !contactno || !bankaccno || !bankname || !username || !password|| !usertype) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
     }
-    User.findOne({ $or:[{username:username},{email:email.toLowerCase()}] }, function(err, existingUser) {
+    console.log(username);
+    //User.findOne({ $or:[{username:username},{email:email.toLowerCase()}], usertype: usertype }, function(err, existingUser) {
+    User.findOne({ username: username }, function(err, existingUser) {
         if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
 
         // If user is not unique, return error
         if (existingUser && existingUser.status != 'STSRJCT') {
+            console.log(username);
             return res.status(201).json({
                 success: false,
-                message: 'Username OR Email address already exists.'
+                message: 'Username already exists.'
             });
         }
-        rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
-        randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
-        link= getProtocol(req)+"://"+req.get('host')+"/verify?id="+randhash;
-
-        var objbody = req.body;
-        var objlink = {link: link};
-        var objhash = { randhash: randhash }
-        var objmsg = Object.assign(objbody,objlink,objhash);
-        var msg = JSON.stringify(objmsg);
-        //ch.assertExchange(exchange, 'direct', {durable: false})
-        //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
-        try {
-            registerLabelpublish('', q, new Buffer(msg));
-            res.status(200).json({
-                success: true,
-                name: name + ' (' + username + ')',
-                message: 'Label User created successfully with status:PENDING APPROVAL'
-            });
-        } catch (e) {
-            console.error("[AMQP USER] register Label publish", e.message);
-            res.status(201).json({
-                success: false,
-                message: "[AMQP USER] error register Label publish. " + e.message
-            });
-        }
-        //ch.bindQueue(q, exchange, 'registerlabel');
+        User.findOne({ $and:[{email:email.toLowerCase()}, {usertype: usertype}] }, function(err, eUser) {
+            if(err){ return res.status(400).json({ success: false, message:'Error processing request '+ err}); }
+                    // If user is not unique, return error
+            if (eUser && eUser.status != 'STSRJCT') {
+                return res.status(201).json({
+                    success: false,
+                    message: 'Email address is already linked to another label user.'
+                });
+            }
+            rand=Math.floor((Math.random() * 5455588811110019777546) + (Math.random() * 5455588822220019777546));
+            randhash = crypto.createHmac('sha256', config.secret).update('randomNo:'+rand.toString()).digest('hex');
+            link= getProtocol(req)+"://"+req.get('host')+"/verify?id="+randhash;
+    
+            var objbody = req.body;
+            var objlink = {link: link};
+            var objhash = { randhash: randhash }
+            var objmsg = Object.assign(objbody,objlink,objhash);
+            var msg = JSON.stringify(objmsg);
+            //ch.assertExchange(exchange, 'direct', {durable: false})
+            //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+            try {
+                registerLabelpublish('', q, new Buffer(msg));
+                res.status(200).json({
+                    success: true,
+                    name: name + ' (' + username + ')',
+                    message: 'Label User created successfully with status:PENDING APPROVAL'
+                });
+            } catch (e) {
+                console.error("[AMQP USER] register Label publish", e.message);
+                res.status(201).json({
+                    success: false,
+                    message: "[AMQP USER] error register Label publish. " + e.message
+                });
+            }
+            //ch.bindQueue(q, exchange, 'registerlabel');
+        });
     });
 }
 
 exports.pubresetpassword = function(req, res, next){
     // Check for registration errors
     const email = req.body.email;
+    //const usertype = 'LBL';
+    const usertype = req.body.usertype;
     var rand,randhash,link;
     const q = 'resetpasswdQueue';
 
@@ -490,7 +537,7 @@ exports.pubresetpassword = function(req, res, next){
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
-     User.findOne({ email: email.toLowerCase(), status:'STSACT' }, function(err, existingUser) {
+     User.findOne({ email: email.toLowerCase(), status:'STSACT', usertype: usertype }, function(err, existingUser) {
          if(err){ res.status(400).json({ success: false, message:'Error processing request '+ err}); }
  
          if (existingUser) {

@@ -10,14 +10,16 @@ import 'rxjs/add/observable/throw';
 export class SongpurchaseService {
   public jwtToken: String;
   constructor(private http: Http) { 
-    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-    var theUser: any;
-    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {
         this.jwtToken = theUser.token;
     }
   }
   saveSongpurchase(userid, oSongpurchase){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -28,6 +30,10 @@ export class SongpurchaseService {
         .catch(this.handleError);
   }
   getSongpurchase(songpurchaseid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -39,6 +45,10 @@ export class SongpurchaseService {
   }
 
   deleteSongpurchase(songpurchaseid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -50,6 +60,10 @@ export class SongpurchaseService {
   }
 
   updateStatuspurchase(songpurchaseid, oSongpurchase){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -61,6 +75,10 @@ export class SongpurchaseService {
   }
   
   getSongpurchaseAggs(userid, oSongpurchase) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -72,6 +90,10 @@ export class SongpurchaseService {
   }
 
   getSongpurchaseAgg(songpurchaseid) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -83,6 +105,10 @@ export class SongpurchaseService {
   }
 
   getPendingsongpurchaseAggs(userid, oSongpurchase) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -94,6 +120,10 @@ export class SongpurchaseService {
   }
 
   getPendingSongpurchaseCount(userid, oSongpurchase) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -105,6 +135,10 @@ export class SongpurchaseService {
   }
   
   getAdmSongpurchaseAggs(userid, oSongpurchase) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -115,6 +149,10 @@ export class SongpurchaseService {
         .catch(this.handleError);
   }
   pubSaveSongpurchasePayment(userid, oSongpurchase) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

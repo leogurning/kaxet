@@ -1,4 +1,5 @@
 const mongoose = require( 'mongoose' );
+const Album = require('../models/album');
 const Song = require('../models/song');
 const config = require('../config');
 const fs = require('fs');
@@ -997,23 +998,35 @@ exports.pubaddsong = function(req, res, next){
   if (!labelid ||!artistid ||!albumid || !songname || !songlyric || !songgenre || !songprice || !status) {
       return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
   }
-
-  var objbody = req.body;
-  var objlabelid = {labelid: labelid};
-  //var objfile = { fileinputsrc: req.files.fileinputsrc };
-  //var headers = {token: token};
-  //var objmsg = Object.assign(objbody,objlabelid,objfile, headers);
-  var objmsg = Object.assign(objbody,objlabelid);
-  var msg = JSON.stringify(objmsg);
-  //ch.assertExchange(exchange, 'direct', {durable: false})
-  //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
-
-  let pubaddsong = addSongpublish('', q, new Buffer(msg));    
-  res.status(200).json({
-    success: true,
-    message: 'Request to save Song received successfully.'
+  checkName(labelid, artistid, albumid, songname, function(err, result) {
+    if (err) { return res.status(400).json({success: false, message:err}); }
+    //console.log('hasil: '+result);
+    if (result === 'NF') {
+      var objbody = req.body;
+      var objlabelid = {labelid: labelid};
+      //var objfile = { fileinputsrc: req.files.fileinputsrc };
+      //var headers = {token: token};
+      //var objmsg = Object.assign(objbody,objlabelid,objfile, headers);
+      var objmsg = Object.assign(objbody,objlabelid);
+      var msg = JSON.stringify(objmsg);
+      //ch.assertExchange(exchange, 'direct', {durable: false})
+      //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+    
+      let pubaddsong = addSongpublish('', q, new Buffer(msg));    
+      res.status(200).json({
+        success: true,
+        message: 'Request to save Song received successfully.'
+      });
+      //ch.bindQueue(q, exchange, 'registerlabel');
+    } else {
+        res.status(201).json({
+            success: false,
+            song: result,
+            message: 'Song with name: ' + result.songname+' already exists.'
+            //rname: rname.toUpperCase()
+        });
+    }
   });
-  //ch.bindQueue(q, exchange, 'registerlabel');
 }
 
 exports.pubeditsong = function(req, res, next){
@@ -1033,20 +1046,47 @@ exports.pubeditsong = function(req, res, next){
   if (!songid || !labelid ||!artistid ||!albumid || !songname || !songlyric || !songgenre || !songprice || !status) {
       return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
   }
-
-  var objbody = req.body;
-  var objlabelid = {labelid: labelid};
-  var objmsg = Object.assign(objbody,objlabelid);
-  var msg = JSON.stringify(objmsg);
-  //ch.assertExchange(exchange, 'direct', {durable: false})
-  //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
-
-  let pubeditsong = editSongpublish('', q, new Buffer(msg));    
-  res.status(200).json({
-    success: true,
-    message: 'Request to update Song received successfully.'
+  checkName(labelid, artistid, albumid, songname, function(err, result) {
+    if (err) { return res.status(400).json({success: false, message:err}); }
+    //console.log('hasil: '+result);
+    if (result === 'NF') {
+      var objbody = req.body;
+      var objlabelid = {labelid: labelid};
+      var objmsg = Object.assign(objbody,objlabelid);
+      var msg = JSON.stringify(objmsg);
+      //ch.assertExchange(exchange, 'direct', {durable: false})
+      //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+      let pubeditsong = editSongpublish('', q, new Buffer(msg));    
+      res.status(200).json({
+        success: true,
+        message: 'Request to update Song received successfully.'
+      });
+      //ch.bindQueue(q, exchange, 'registerlabel');
+    } else {
+      if (result.id == songid) {
+        var objbody = req.body;
+        var objlabelid = {labelid: labelid};
+        var objmsg = Object.assign(objbody,objlabelid);
+        var msg = JSON.stringify(objmsg);
+        //ch.assertExchange(exchange, 'direct', {durable: false})
+        //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+      
+        let pubeditsong = editSongpublish('', q, new Buffer(msg));    
+        res.status(200).json({
+          success: true,
+          message: 'Request to update Song received successfully.'
+        });
+        //ch.bindQueue(q, exchange, 'registerlabel');
+      } else {
+        res.status(201).json({
+          success: false,
+          song: result,
+          message: 'Song with name: ' + result.songname+' already exists.'
+          //rname: rname.toUpperCase()
+        });
+      }
+    }
   });
-  //ch.bindQueue(q, exchange, 'registerlabel');
 }
 
 exports.pubeditsongprvw = function(req, res, next){
@@ -1412,4 +1452,495 @@ function closeOnErr(err) {
   console.error("[AMQP SONG] error", err);
   amqpConn.close();
   return true;
+}
+
+exports.apiupdatealbumprice = function(req, res, next){
+  const labelid = req.params.id;
+  const albumid = req.body.albumid;
+
+  //const rname = artistname.replace(/\s/g, ""); 
+  updateAlbumprice(labelid, albumid, function(err, result) {
+    if (err) { return res.status(400).json({success: false, message:err}); }
+    //console.log('hasil: '+result);
+    res.status(200).json({
+        success: true,
+        result: result
+        //rname: rname.toUpperCase()
+    });
+  });
+}
+
+exports.apiallvalidatesong = function(req, res, next){
+  const labelid = req.params.id;
+  const artistid = req.body.artistid;
+  const albumid = req.body.albumid;
+  const songname = req.body.songname;
+  const songprice = req.body.songprice;
+  var result;
+  //const rname = artistname.replace(/\s/g, ""); 
+  checkAllreqs(labelid, artistid, albumid, songprice, songname, function(err, result) {
+    if (err) { return res.status(400).json({success: false, message:err}); }
+    //console.log('hasil: '+result);
+    if (result === 'NF') {
+        res.status(200).json({
+            success: true,
+            song: 'NOT FOUND'
+            //rname: rname.toUpperCase()
+        });
+    } else {
+        res.status(201).json({
+            success: false,
+            song: result,
+            message: 'Song with name: ' + result.songname+' already exists.'
+            //rname: rname.toUpperCase()
+        });
+    }
+  });
+}
+
+exports.apicheckname = function(req, res, next){
+  const labelid = req.params.id;
+  const artistid = req.body.artistid;
+  const albumid = req.body.albumid;
+  const songname = req.body.songname;
+  var result;
+  //const rname = artistname.replace(/\s/g, ""); 
+  checkName(labelid, artistid, albumid, songname, function(err, result) {
+      if (err) { return res.status(400).json({success: false, message:err.message}); }
+      //console.log('hasil: '+result);
+      if (result === 'NF') {
+          res.status(200).json({
+              success: true,
+              song: 'NOT FOUND'
+              //rname: rname.toUpperCase()
+          });
+      } else {
+          res.status(201).json({
+              success: false,
+              song: result,
+              message: 'Song with name: ' + result.songname+' already exists.'
+              //rname: rname.toUpperCase()
+          });
+      }
+  });
+}
+
+exports.apicheckalbum = function(req, res, next){
+  const labelid = req.params.id;
+  const artistid = req.body.artistid;
+  const albumid = req.body.albumid;
+  var result;
+  //const rname = artistname.replace(/\s/g, ""); 
+  checkAlbum(labelid, artistid, albumid, function(err, result) {
+      if (err) { return res.status(400).json({success: false, message:err.message}); }
+      //console.log('hasil: '+result);
+      if (result === 'NF') {
+          res.status(200).json({
+              success: true,
+              song: 'NOT FOUND'
+              //rname: rname.toUpperCase()
+          });
+      } else {
+          res.status(201).json({
+              success: false,
+              song: result,
+              message: 'Song with name: ' + result.songname+' already published in album.'
+              //rname: rname.toUpperCase()
+          });
+      }
+  });
+}
+
+exports.apicheckprice = function(req, res, next){
+  const labelid = req.params.id;
+  const artistid = req.body.artistid;
+  const albumid = req.body.albumid;
+  const price = req.body.price;
+  var result;
+  //const rname = artistname.replace(/\s/g, ""); 
+  checkPrice(labelid, artistid, albumid, price, function(err, result) {
+      if (err) { return res.status(400).json({success: false, message:err}); }
+      //console.log('hasil: '+result);
+      if (result) {
+          res.status(200).json({
+              success: true,
+              finalprice: 'Final price '+result+ ' is OK'
+              //rname: rname.toUpperCase()
+          });
+      } else {
+          res.status(201).json({
+              success: false,
+              finalprice: '-1',
+              message: 'Final price error.'
+              //rname: rname.toUpperCase()
+          });
+      }
+  });
+}
+
+function checkAllreqs(labelid, artistid, albumid, price, pname, cb) {
+  try {
+    checkAlbum(labelid, artistid, albumid, function(err, result) {
+      if (err) { cb(err, null);}
+      if (result === 'NF') {
+        checkPrice(labelid, artistid, albumid, price, function(err, result1) {
+          if (err) { cb(err, null);}
+          if (result1) {
+            checkName(labelid, artistid, albumid, pname, function(err, result2) {
+              if (err) { cb(err, null);}
+              cb(null, result2);
+            });
+          } else {
+            cb('Final price error. No result found.', null);
+          }
+        });
+      } else {
+        cb('Album already has published song with name: ' + result.songname, null);
+      }
+    });
+  } catch (error) {
+      //console.error(false, error.message);
+      cb(error,null);
+  }
+}
+
+function checkName(labelid, artistid, albumid, pname, cb) {
+  try {
+      var query = {};
+      searchval = pname.replace(/\s/g, "");
+      query = {labelid: labelid, artistid: artistid, albumid:albumid, searchstr: searchval.toUpperCase()};
+      //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+      //console.log(query);
+      Song.findOne(query).exec(function(err, song){
+          if (err) { cb(err, null);}
+          if (song) {
+              var songres = {
+                  "id" : song._id,
+                  "songname" : song.songname
+              };
+              //console.log(true);
+              cb(null, songres);
+          } else {
+              //console.log(false);
+              cb(null, 'NF');                
+          }
+      });        
+  } catch (error) {
+      //console.error(false, error.message);
+      cb(error,null);
+  }
+}
+
+function checkAlbum(labelid, artistid, albumid, cb) {
+  try {
+      var query = {};
+      query = {labelid: labelid, artistid: artistid, albumid:albumid, songpublish: 'Y'};
+      //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+      //console.log(query);
+      Song.findOne(query).exec(function(err, song){
+          if (err) { cb(err, null);}
+          if (song) {
+              var songres = {
+                  "id" : song._id,
+                  "songname" : song.songname
+              };
+              //console.log(true);
+              cb(null, songres);
+          } else {
+              //console.log(false);
+              cb(null, 'NF');                
+          }
+      });        
+  } catch (error) {
+      //console.error(false, error.message);
+      cb(error,null);
+  }
+}
+
+function checkPrice(labelid, artistid, albumid, price, cb) {
+  try {
+      var query = {};
+      var finalprice = 0;
+      query = {labelid: labelid, artistid: artistid, albumid:albumid};
+      //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+      group = { _id: "$albumid" , 
+                totalprice: { $sum: "$songprice"},
+                count: { $sum: 1}
+              };      
+      var aggregate = Song.aggregate();  
+      aggregate.match(query);
+      aggregate.group(group);    
+      aggregate.exec(function(err, result) {
+          if (err) { cb(err, null);}
+          if (result) {
+            finalprice = parseInt(price) + parseInt(result[0].totalprice);
+            const query1 = {_id:albumid, labelid: labelid, artistid: artistid};
+            Album.findOne(query1).exec(function(err, album){
+              if (err) { cb(err, null);}
+              if (album) {
+                  const albumprice = parseInt(album.albumprice);
+                  if (finalprice > albumprice) {
+                    cb('Error! Final price: '+finalprice+' greater than album price: '+albumprice, null);
+                  } else {
+                    cb(null, finalprice);
+                  }       
+              } else {
+                  cb('Album not found', null);                
+              }
+            });        
+          } else {
+            cb('Error! Group result Null', null);
+          }
+      })
+  } catch (error) {
+      //console.error(false, error.message);
+      cb(error,null);
+  }
+}
+
+function updateAlbumprice(labelid, albumid, cb) {
+  try {
+      var query = {};
+      var finalprice;
+      query = {labelid:labelid, albumid:albumid};
+      //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+      group = { _id: "$albumid" , 
+                totalprice: { $sum: "$songprice"},
+                count: { $sum: 1}
+              };      
+      var aggregate = Song.aggregate();  
+      aggregate.match(query);
+      aggregate.group(group);    
+      aggregate.exec(function(err, result) {
+          if (err) { cb(err, null);}
+          if (result[0]) {
+            finalprice = parseInt(result[0].totalprice);
+          } else {
+            finalprice = 0;
+          }
+          Album.findByIdAndUpdate(albumid, {$set: { albumprice: finalprice}}, {new: true}, function(err, result1) {
+            if (err) { cb(err, null);}
+            if (result1) {
+                cb(null, result1);
+            } else {
+                cb('Album not found', null);                
+            }
+          });
+      })
+  } catch (error) {
+      //console.error(false, error.message);
+      cb(error,null);
+  }
+}
+
+exports.apiupdatesearchstrsong = function(req, res, next){
+  const status = req.body.status;
+  var query = {}
+  var rcnt = 0;
+  try {
+      query = {status: status};
+      var searchval;
+      var songstream = Song.find(query).cursor();
+      songstream.on('data',function(doc){
+          searchval = doc.songname.replace(/\s/g, "");
+          Song.update({_id: doc._id}, {$set: {searchstr : searchval.toUpperCase() }}, function(err, result) 
+          {   if (err) { console.log(err) }
+              rcnt = rcnt + result.nModified;    
+              console.log(result); /* result == true? */
+          });
+      });
+      songstream.on('error', function(err) {
+          return res.status(400).json({success: false, message:err.message}); 
+      });
+      songstream.on('end', function(){
+        console.log('completed');  
+        return res.status(200).json({success: true, records:rcnt});
+          
+          // stream can end before all your updates do if you have a lot
+      });
+  } catch (err) {
+      return res.status(400).json({success: false, message:err.message});        
+  }
+}
+
+exports.topsongaggregate = function(req, res, next){
+  
+  const status = req.body.status || req.query.status;
+  const msconfiggrp = 'GENRE';
+  const msconfigsts = 'STSACT';
+  const songpublish = 'Y';
+  const estatus = 'STSACT';
+  var totalcount;
+  //rediscli.del('redis-topsongs-chart');
+  let keyredis = 'redis-topsongs-chart';
+  rediscli.get(keyredis, function(err, obj) { 
+      if (obj) {
+        //console.log('key on redis...');
+        res.status(201).json({
+            success: true,
+            data: JSON.parse(obj)
+        }); 
+      } else {
+          let limit = parseInt(req.query.limit);
+          let page = parseInt(req.body.page || req.query.page);
+          let sortby = req.body.sortby || req.query.sortby;
+          let query = {};
+          //let qmatch = {};
+          
+          if(!limit || limit < 1) {
+              limit = 10;
+          }
+          
+          if(!page || page < 1) {
+              page = 1;
+          }
+          
+          // returns songs records based on query
+          query = { "msconfigdetails.group": msconfiggrp,
+              "msconfigdetails.status": msconfigsts,
+              "artistdetails.status": estatus,
+              "albumdetails.status": estatus,
+              "labeldetails.status": estatus  
+          };
+      
+          if (estatus) {
+              query = merge(query, {status:estatus});
+          }
+          query = merge(query, {songpublish: songpublish});
+          //console.log(query);
+      
+          if(!sortby) {
+              var options = {
+                  page: page,
+                  limit: limit
+              }
+          }
+          else {
+              var options = {
+                  page: page,
+                  limit: limit,
+                  sortBy: sortby
+              }
+          }
+          
+          var aggregate = Song.aggregate();        
+          var olookup = {
+              from: 'artist',
+              localField: 'objartistid',
+              foreignField: '_id',
+              as: 'artistdetails'
+          };
+          var olookup1 = {
+              from: 'album',
+              localField: 'objalbumid',
+              foreignField: '_id',
+              as: 'albumdetails'
+          };
+          var olookup2 = {
+              from: 'msconfig',
+              localField: 'songgenre',
+              foreignField: 'code',
+              as: 'msconfigdetails'
+          };    
+          var olookup3 = {
+              from: 'user',
+              localField: 'objlabelid',
+              foreignField: '_id',
+              as: 'labeldetails'
+          };
+          var ounwind = 'artistdetails';
+          var ounwind1 = 'albumdetails';
+          var ounwind2 = 'msconfigdetails';
+          var ounwind3 = 'labeldetails';
+
+          var oproject = { 
+              _id:1,
+              labelid:1,
+              artistid:1,
+              albumid:1,
+              songname: 1,
+              songgenre:1,
+              "genrevalue": "$msconfigdetails.value",
+              songlyric:1,
+              songprice:1,
+              "artist": "$artistdetails.artistname",
+              "album": "$albumdetails.albumname",
+              "albumphoto": "$albumdetails.albumphotopath",
+              "albumyear": "$albumdetails.albumyear",
+              "labelname": "$labeldetails.name",
+              "labelnsong": { $concat: [ "$songname", " (label: ", "$labeldetails.name",")" ] },
+              objartistid:1,
+              objalbumid:1,
+              objlabelid:1,
+              songpublish:1,
+              songbuy:1,
+              status:1,
+              songprvwpath:1,
+              songprvwname:1,    
+              songfilepath:1,
+              songfilename:1,
+          };
+              
+          aggregate.limit(10);
+          aggregate.lookup(olookup).unwind(ounwind);
+          aggregate.lookup(olookup1).unwind(ounwind1);  
+          aggregate.lookup(olookup2).unwind(ounwind2);  
+          aggregate.lookup(olookup3).unwind(ounwind3);  
+          aggregate.match(query);  
+          aggregate.project(oproject);  
+          
+          if(!sortby) {
+              var osort = { songbuy:-1};
+              aggregate.sort(osort);
+          }
+          
+          aggregate.exec(function(err, results){
+            if(err) 
+            {
+                res.status(400).json({
+                    success: false, 
+                    message: err.message
+                });
+            }
+            else
+            { 
+                res.status(201).json({
+                    success: true, 
+                    data: results
+                });
+                //set in redis
+                rediscli.set(keyredis, JSON.stringify(results), function(err, reply) {
+                  if (err) {  console.log(err); }
+                  console.log(reply);
+                }); 
+              }
+          });
+         /*  Song.aggregatePaginate(aggregate, options, function(err, results, pageCount, count) {
+              if(err) 
+              {
+                  res.status(400).json({
+                      success: false, 
+                      message: err.message
+                  });
+              }
+              else
+              { 
+                  res.status(201).json({
+                      success: true, 
+                      data: results,
+                      npage: pageCount,
+                      totalcount: count
+                  });
+                  //set in redis
+                  rediscli.hmset(keyredis, [ 
+                      'songs', JSON.stringify(results),
+                      'npage', pageCount,
+                      'totalcount', count ], function(err, reply) {
+                      if (err) {  console.log(err); }
+                      console.log(reply);
+                  }); 
+              }
+          }) */
+      }    
+  });
 }

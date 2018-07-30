@@ -26,7 +26,8 @@ const SongSchema = new Schema({
     objalbumid: { type:mongoose.Schema.ObjectId, required: true},
     objlabelid: { type:mongoose.Schema.ObjectId, required: true},
     createddt: {type:Date, required: true},
-    modifydt: {type:Date, required: true}
+    modifydt: {type:Date, required: true},
+    searchstr: {type:String, required: true}
 });
 
 SongSchema.plugin(mongoosePaginate);

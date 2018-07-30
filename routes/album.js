@@ -1036,7 +1036,7 @@ exports.pubaddalbum = function(req, res, next){
     const albumname = req.body.albumname;
     const albumyear = req.body.albumyear;
     const albumgenre = req.body.albumgenre;
-    const albumprice = req.body.albumprice;
+    //const albumprice = req.body.albumprice;
     const albumphotopath = req.body.albumphotopath;
     const albumphotoname = req.body.albumphotoname;
     const status = req.body.status;
@@ -1044,23 +1044,51 @@ exports.pubaddalbum = function(req, res, next){
 
     const q = 'addAlbumQueue';
 
-    if (!labelid || !albumname || !albumyear || !albumgenre || !albumprice || !status) {
+    if (!labelid || !albumname || !albumyear || !albumgenre || !status) {
         return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
     }
-
-    var objbody = req.body;
-    var objlabelid = {labelid: labelid};
-    var objmsg = Object.assign(objbody,objlabelid);
-    var msg = JSON.stringify(objmsg);
-    //ch.assertExchange(exchange, 'direct', {durable: false})
-    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
-
-    let pubadd = addAlbumpublish('', q, new Buffer(msg));    
-    res.status(200).json({
-        success: true,
-        message: 'Request to save Album received successfully.'
+    checkName(labelid, artistid, albumname, function(err, result) {
+        if (err) { return res.status(400).json({success: false, message:err.message}); }
+        //console.log('hasil: '+result);
+        if (result === 'NF') {
+            var objbody = req.body;
+            var objlabelid = {labelid: labelid};
+            var objmsg = Object.assign(objbody,objlabelid);
+            var msg = JSON.stringify(objmsg);
+            //ch.assertExchange(exchange, 'direct', {durable: false})
+            //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+        
+            let pubadd = addAlbumpublish('', q, new Buffer(msg));    
+            res.status(200).json({
+                success: true,
+                message: 'Request to save Album received successfully.'
+            });
+            //ch.bindQueue(q, exchange, 'registerlabel');
+        } else {
+            if (result.id == albumid) {
+                var objbody = req.body;
+                var objlabelid = {labelid: labelid};
+                var objmsg = Object.assign(objbody,objlabelid);
+                var msg = JSON.stringify(objmsg);
+                //ch.assertExchange(exchange, 'direct', {durable: false})
+                //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+            
+                let pubadd = addAlbumpublish('', q, new Buffer(msg));    
+                res.status(200).json({
+                    success: true,
+                    message: 'Request to save Album received successfully.'
+                });
+                //ch.bindQueue(q, exchange, 'registerlabel');
+            } else {
+                res.status(201).json({
+                    success: false,
+                    album: result,
+                    message: 'Album with name: ' + result.albumname+' already exists.'
+                    //rname: rname.toUpperCase()
+                });
+            }
+        }
     });
-    //ch.bindQueue(q, exchange, 'registerlabel');
 }
 exports.pubeditalbumphoto = function(req, res, next){
     const albumid = req.params.id;
@@ -1282,4 +1310,86 @@ function closeOnErr(err) {
     console.error("[AMQP ALBUM] error", err);
     amqpConn.close();
     return true;
+}
+
+exports.apicheckname = function(req, res, next){
+    const labelid = req.params.id;
+    const artistid = req.body.artistid;
+    const albumname = req.body.albumname;
+    var result;
+    //const rname = artistname.replace(/\s/g, ""); 
+    checkName(labelid, artistid, albumname, function(err, result) {
+        if (err) { return res.status(400).json({success: false, message:err.message}); }
+        //console.log('hasil: '+result);
+        if (result === 'NF') {
+            res.status(200).json({
+                success: true,
+                album: 'NOT FOUND'
+                //rname: rname.toUpperCase()
+            });
+        } else {
+            res.status(201).json({
+                success: false,
+                album: result,
+                message: 'Album with name: ' + result.albumname+' already exists.'
+                //rname: rname.toUpperCase()
+            });
+        }
+    });
+}
+
+function checkName(labelid, artistid, pname, cb) {
+    try {
+        var query = {};
+        searchval = pname.replace(/\s/g, "");
+        query = {labelid: labelid, artistid: artistid, searchstr: searchval.toUpperCase()};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Album.findOne(query).exec(function(err, album){
+            if (err) { cb(err, null);}
+            if (album) {
+                var albumres = {
+                    "id" : album._id,
+                    "albumname" : album.albumname
+                };
+                //console.log(true);
+                cb(null, albumres);
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+exports.apiupdatesearchstralbum = function(req, res, next){
+    const status = req.body.status;
+    var query = {}
+    var rcnt = 0;
+    try {
+        query = {status: status};
+        var searchval;
+        var albumstream = Album.find(query).cursor();
+        albumstream.on('data',function(doc){
+            searchval = doc.albumname.replace(/\s/g, "");
+            Album.update({_id: doc._id}, {$set: {searchstr : searchval.toUpperCase() }}, function(err, result) 
+            {   if (err) { console.log(err) }
+                rcnt = rcnt + result.nModified;    
+                console.log(result); /* result == true? */
+            });
+        });
+        albumstream.on('error', function(err) {
+            return res.status(400).json({success: false, message:err.message}); 
+        });
+        albumstream.on('end', function(){
+            return res.status(200).json({success: true, records:rcnt});
+            console.log('completed');
+            // stream can end before all your updates do if you have a lot
+        });
+    } catch (err) {
+        return res.status(400).json({success: false, message:err.message});        
+    }
 }

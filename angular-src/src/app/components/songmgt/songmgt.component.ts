@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params,NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, Params,NavigationStart,NavigationEnd } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from '../../common/toastr.service'
 import { AuthService } from '../../services/auth.service';
@@ -58,7 +58,15 @@ export class SongmgtComponent implements OnInit {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
       if (e instanceof NavigationEnd) {
+        this.pauseanyAudiostream();
+        this.pauseanyAudiocontext();
+        this.resetAudioElement();
         this.ngOnInit();
+      }
+      if (e instanceof NavigationStart) {
+        this.pauseanyAudiostream();
+        this.pauseanyAudiocontext();
+        this.resetAudioElement();
       }
     });
   }
@@ -71,6 +79,15 @@ export class SongmgtComponent implements OnInit {
   songgenre = new FormControl('',[Validators.nullValidator]);
   //songbuy = new FormControl('',[Validators.nullValidator]);
   status = new FormControl('', [Validators.nullValidator]);
+  
+  private audioContext: AudioContext;
+  private audio: HTMLAudioElement;
+  private audioBuffer: AudioBuffer;
+  private audiobufferSource: AudioBufferSourceNode;
+  //private state = {playing:false, loading:false};
+  private state: any = [];
+  private audiotag = false;
+  private currentPlaying = -1;
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -124,10 +141,266 @@ export class SongmgtComponent implements OnInit {
         status: this.qstatus
       });
     })
+    try {
+      this.audioContext = new AudioContext();
+      if (this.audioContext) {
+        this.audioBuffer = null;
+        this.audiobufferSource = null;
+      }     
+    } catch (error) {
+      this.audiotag = true;
+      this.audio = null;
+    }
   }
   ngOnDestroy() {
+    this.resetAudioElement();
     if (this.navigationSubscription) {
       this.navigationSubscription.unsubscribe();
+    }
+  }
+  resetAudioElement(){
+    this.audioContext = null;
+    this.audioBuffer = null;
+    this.audiobufferSource = null;
+    this.audio = null;
+    this.state = [];
+  }
+  fetchSong(audiourl): Promise<any> {
+    return fetch(audiourl)
+        .then(response => response.arrayBuffer())
+        .then(buffer => {
+            return new Promise((resolve, reject) => {
+                this.audioContext.decodeAudioData(
+                    buffer,
+                    resolve,
+                    reject
+                );
+            })
+        });
+  }
+  toggleAudio(selectedItem, audiotype, audiourl){
+    console.log(this.audiotag);
+    if (this.audiotag) {
+      //this.toastr.error("Error. Your browser doesn't support Web Audio API.");
+      if (audiotype === 'prvw') {
+        if (!this.state[selectedItem].playingprvw) {
+          this.playAudiostream(selectedItem, audiotype, audiourl);
+        } else {
+          this.pauseAudiostream(selectedItem, audiotype);
+        }      
+      } else if (audiotype === 'song') {
+        if (!this.state[selectedItem].playingsong) {
+          this.playAudiostream(selectedItem, audiotype, audiourl);
+        } else {
+          this.pauseAudiostream(selectedItem, audiotype);
+        }      
+      }
+    } else {
+      if (audiotype === 'prvw') {
+        if (!this.state[selectedItem].playingprvw) {
+          this.playAudiocontext(selectedItem, audiotype, audiourl);
+        } else {
+          this.pauseAudiocontext(selectedItem, audiotype);
+        }      
+      } else if (audiotype === 'song') {
+        if (!this.state[selectedItem].playingsong) {
+          this.playAudiocontext(selectedItem, audiotype, audiourl);
+        } else {
+          this.pauseAudiocontext(selectedItem, audiotype);
+        }   
+      }
+
+    }
+  }
+  stopAllplaying(selectedItem, audiotype) {
+    let curState = true;
+    
+    if (this.state[this.currentPlaying]) {
+      curState = this.state[this.currentPlaying].playingprvw || this.state[this.currentPlaying].playingsong;
+    }
+    if (this.currentPlaying != selectedItem && curState) {
+      if (this.state[this.currentPlaying]) {
+        this.state[this.currentPlaying].playingprvw = false;
+        this.state[this.currentPlaying].playingsong = false;
+      }
+      if (this.audiotag) {
+        if (this.audio) { this.audio.pause(); }
+        this.audio = null;
+      } else {
+        if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+        this.audioBuffer = null;
+        this.audiobufferSource = null;
+      }
+      
+    } else {
+      if (this.currentPlaying == selectedItem && curState) {
+        if (audiotype === 'prvw') {
+          if (this.state[this.currentPlaying]) {
+            if (this.state[this.currentPlaying].playingsong) {
+              if (this.audiotag) {
+                if (this.audio) { this.audio.pause(); }
+                this.audio = null;
+              } else {
+                if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+                this.audioBuffer = null;
+                this.audiobufferSource = null;
+              }
+              this.state[this.currentPlaying].playingsong = false;
+            }          
+          }
+        } else if (audiotype === 'song') {
+          if (this.state[this.currentPlaying]) {
+            if (this.state[this.currentPlaying].playingprvw) {
+              if (this.audiotag) {
+                if (this.audio) { this.audio.pause(); }
+                this.audio = null;
+              } else {
+                if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+                this.audioBuffer = null;
+                this.audiobufferSource = null;
+              }
+              this.state[this.currentPlaying].playingprvw = false;
+            }          
+          }
+        }
+      }
+    }    
+
+  }
+  playAudiocontext(selectedItem, audiotype, audiourl) {
+    
+    this.stopAllplaying(selectedItem, audiotype);
+    
+    if (!this.audioContext) {
+      this.audioContext = new AudioContext();
+    }
+    if (this.audioBuffer) {
+      if (audiotype === 'prvw') {
+        this.state[selectedItem].playingprvw = true;
+      } else if (audiotype === 'song') {
+        this.state[selectedItem].playingsong = true;
+      }   
+      this.audiobufferSource = null;
+      this.audiobufferSource = this.audioContext.createBufferSource();
+      this.audiobufferSource.buffer = this.audioBuffer;
+      this.audiobufferSource.connect(this.audioContext.destination);              
+      this.audiobufferSource.start(0);    
+    } else {
+      if (audiotype === 'prvw') {
+        this.state[selectedItem].loadingprvw = true;
+      } else if (audiotype === 'song') {
+        this.state[selectedItem].loadingsong = true;
+      }
+      this.fetchSong(audiourl)
+          .then(audioBuffer => {
+              if (audiotype === 'prvw') {
+                this.state[selectedItem].loadingprvw = false;
+                this.state[selectedItem].playingprvw = true;
+              } else if (audiotype === 'song') {
+                this.state[selectedItem].loadingsong = false;
+                this.state[selectedItem].playingsong = true;
+              }   
+              this.audioBuffer = audioBuffer;
+              this.audiobufferSource = this.audioContext.createBufferSource();
+              this.audiobufferSource.buffer = this.audioBuffer;
+              this.audiobufferSource.connect(this.audioContext.destination);        
+              this.audiobufferSource.start(0);
+          })
+          .catch(error => { this.toastr.error(error); });
+    }
+    this.currentPlaying = selectedItem;
+  }
+  playAudiostream(selectedItem, audiotype, audiourl) {
+    
+    this.stopAllplaying(selectedItem, audiotype);
+    
+    if (!this.audio) {
+      console.log('create new audio');
+      try {
+        this.audio = new Audio();
+        if (this.audio) {
+          this.audio.src = audiourl;
+          if (audiotype === 'prvw') {
+            this.state[selectedItem].loadingprvw = true;
+          } else if (audiotype === 'song') {
+            this.state[selectedItem].loadingsong = true;
+          }
+          this.audio.load();
+          if (audiotype === 'prvw') {
+            this.state[selectedItem].loadingprvw = false;
+          } else if (audiotype === 'song') {
+            this.state[selectedItem].loadingsong = false;
+          }   
+          //this.audio.play();
+          var promise = this.audio.play();          
+          if (promise !== undefined) {
+            promise.then(_ => {
+              // Autoplay started!
+            }).catch(error => {
+              // Autoplay was prevented.
+              // Show a "Play" button so that user can start playback.
+              this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+            });
+          }
+          if (audiotype === 'prvw') {
+            this.state[selectedItem].playingprvw = true;
+          } else if (audiotype === 'song') {
+            this.state[selectedItem].playingsong = true;
+          }
+        } else {
+          this.toastr.error('Error creating Audio element.');  
+        }
+      } catch (error) {
+        this.toastr.error(error);
+      }
+    } else {
+      if (audiotype === 'prvw') {
+        this.state[selectedItem].playingprvw = true;
+      } else if (audiotype === 'song') {
+        this.state[selectedItem].playingsong = true;
+      } 
+      //this.audio.play();
+      var promise = this.audio.play();          
+      if (promise !== undefined) {
+        promise.then(_ => {
+          // Autoplay started!
+        }).catch(error => {
+          // Autoplay was prevented.
+          // Show a "Play" button so that user can start playback.
+          this.toastr.error('Can not play audio file. File type is not supported to be played in this browser.');
+        });
+      }
+    }
+    this.currentPlaying = selectedItem;
+  }
+  pauseAudiocontext(selectedItem, audiotype) {
+    if (this.audioBuffer && this.audiobufferSource) {
+      if (audiotype === 'prvw') {
+        this.state[selectedItem].playingprvw = false;
+      } else if (audiotype === 'song') {
+        this.state[selectedItem].playingsong = false;
+      }
+      this.audiobufferSource.stop();    
+    }
+  }
+  pauseAudiostream(selectedItem, audiotype) {
+    if (this.audio && this.audio.src) {
+      if (audiotype === 'prvw') {
+        this.state[selectedItem].playingprvw = false;
+      } else if (audiotype === 'song') {
+        this.state[selectedItem].playingsong = false;
+      }
+      this.audio.pause();   
+    }
+  }
+  pauseanyAudiocontext() {
+    if (this.audioBuffer && this.audiobufferSource) {
+      this.audiobufferSource.stop();    
+    }
+  }
+  pauseanyAudiostream() {
+    if (this.audio && this.audio.src) {
+      this.audio.pause();   
     }
   }
   getMsconfigGroupList(groupid){
@@ -214,12 +487,16 @@ export class SongmgtComponent implements OnInit {
         this.loading = false;
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
         this.loading = false;
         this.songs = data.data;
+        this.songs.forEach((res) => {
+          let stateitem = {playingprvw:false, playingsong:false, loadingprvw:false, loadingsong:false};
+          this.state.push(stateitem);
+        });
         this.totalrows = +data.totalcount;
         this.pgCounter = Math.floor((this.totalrows + 10 - 1) / 10);
         this.qlabelid = formval.labelid;
@@ -329,6 +606,9 @@ export class SongmgtComponent implements OnInit {
       this.toastr.warning('This song has already been published.');
     } else {
       if(confirm('Do you really want to publish this song: ' + songname + ' record?')){
+        this.pauseanyAudiostream();
+        this.pauseanyAudiocontext();
+        this.resetAudioElement();
         let payload: any = {};
         payload.status = 'STSACT';
         this.songadminService.publishSong(songid, payload)
@@ -337,7 +617,7 @@ export class SongmgtComponent implements OnInit {
             this.loading = false;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -373,7 +653,7 @@ export class SongmgtComponent implements OnInit {
             this.loading = false;
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {

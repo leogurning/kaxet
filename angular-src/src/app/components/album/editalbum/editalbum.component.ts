@@ -39,9 +39,9 @@ export class EditalbumComponent implements OnInit {
   
   artistid = new FormControl('', [Validators.required]);  
   albumname = new FormControl('', [Validators.required]);
-  albumyear = new FormControl('', [Validators.required]);
+  albumyear = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
   albumgenre = new FormControl('', [Validators.required]);
-  albumprice = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+  //albumprice = new FormControl('', [Validators.required, Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]);
   status = new FormControl('', [Validators.required]);
 
   ngOnInit() {
@@ -60,7 +60,7 @@ export class EditalbumComponent implements OnInit {
       albumname: this.albumname,
       albumyear: this.albumyear,
       albumgenre: this.albumgenre,
-      albumprice: this.albumprice,
+      //albumprice: this.albumprice,
       status: this.status
     });
   }
@@ -126,7 +126,7 @@ export class EditalbumComponent implements OnInit {
       albumname: data.albumname,
       albumyear: data.albumyear,
       albumgenre: data.albumgenre,
-      albumprice: data.albumprice,
+      //albumprice: data.albumprice,
       status: data.status
     });
   }
@@ -145,7 +145,7 @@ export class EditalbumComponent implements OnInit {
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {
@@ -176,7 +176,7 @@ export class EditalbumComponent implements OnInit {
           if (data.success === false) {
             if (data.errcode){
               this.authService.logout();
-              this.router.navigate(['login']);
+              this.router.navigate(['errorpage']);
             }
             this.toastr.error(data.message);
           } else {

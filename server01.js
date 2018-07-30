@@ -18,7 +18,7 @@ const activitylog = require('./routes/activitylog.js');
 
 const consumers = require('./routes/consumers.js');
 
-const port = process.env.PORT || config.serverport;
+const port = process.env.PORT || process.env.KAXETP_SERVICE_PORT || config.serverport;
 
 mongoose.connect(config.database, function(err){
 	if(err){
@@ -60,6 +60,18 @@ app.post('/registerlabel', user.pubregisterlabel);
 //app.post('/resetpwd', user.resetpassword); // API to reset password user
 app.post('/resetpwd', user.pubresetpassword); // API to reset password user
 app.post('/doresetpwd', user.doresetpassword); // API to do reset password user
+app.put('/updatehash/:id', user.doupdatehash); // API to do update user hash
+//app.post('/checkname/:id', song.apicheckname); // API to check name first
+//app.post('/checkalbum/:id', song.apicheckalbum); // API to check name first
+//app.post('/checkprice/:id', song.apicheckprice); // API to check name first
+//app.post('/checkallreqs/:id', song.apiallvalidatesong); // API to check name first
+//app.post('/updatesearchstrartist', artist.apiupdatesearchstrartist); // API to update searchstr artist
+//app.post('/updatesearchstralbum', album.apiupdatesearchstralbum); // API to update searchstr album
+//app.post('/updatesearchstrsong', song.apiupdatesearchstrsong); // API to update searchstr song
+//app.post('/updatealbumprice/:id', song.apiupdatealbumprice); // API to update album price
+app.get('/actionpmtpurchasecoda', songpurchase.pubactionPaymentCoda); // API to action song payment purchase of the label from Codapay
+app.post('/generateMd5hash', songpurchase.generateMd5); // API to generate Md5 hash hex
+
 // express router
 var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
@@ -91,6 +103,7 @@ apiRoutes.post('/artist/report/:labelid', artist.artistreport); //API returns ar
 apiRoutes.post('/artist/aggreport/:labelid', artist.artistaggreport); //API returns artist report based on user input 
 apiRoutes.post('/artist/aggstats/:id', artist.artistaggstats); //API returns artist report based on user input 
 apiRoutes.post('/artistcount/:labelid', artist.totalartistcount); //API returns total artist based on user input
+apiRoutes.post('/checkartistname/:id', artist.apicheckname); // API to check name first
 
 //apiRoutes.post('/testalbum/:id', album.testalbum); // API test album of the label
 apiRoutes.post('/album/:id', album.savealbum); // API adds & update album of the label
@@ -108,6 +121,7 @@ apiRoutes.post('/album/aggstats/:id', album.albumaggstats); //API returns album 
 apiRoutes.post('/pubaddalbum/:id', album.pubaddalbum); // API adds album of the label
 apiRoutes.post('/pubeditalbumphoto/:id', album.pubeditalbumphoto); // API updates album photo of the label
 apiRoutes.post('/pubdeletealbum/:id', album.pubdeletealbum); // API removes album of the label
+apiRoutes.post('/checkalbumname/:id', album.apicheckname); // API to check name first
 
 apiRoutes.post('/song/:id', song.savesong); // API adds & update song of the label
 apiRoutes.put('/publishsong/:id', song.publishsong); // API to publish song of the label
@@ -129,6 +143,8 @@ apiRoutes.post('/pubeditsongprvw/:id', song.pubeditsongprvw); // API update song
 apiRoutes.post('/pubeditsongfile/:id', song.pubeditsongfile); // API update song file of the label
 apiRoutes.post('/pubdeletesong/:id', song.pubdeletesong); // API delete song of the label
 apiRoutes.post('/pubeditsong/:id', song.pubeditsong); // API update song of the label
+apiRoutes.post('/checksongname/:id', song.apicheckname); // API to check song name first
+apiRoutes.post('/topaggreportln', song.topsongaggregate); //API returns topbuy song report based on user input
 
 apiRoutes.post('/songpurchase/:id', songpurchase.savesongpurchase); // API adds song purchase of the label
 apiRoutes.get('/songpurchase/:id', songpurchase.getsongpurchase); // API get song purchase of the label

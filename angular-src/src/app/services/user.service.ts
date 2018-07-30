@@ -11,9 +11,7 @@ export class UserService {
   public jwtToken: string;
 
   constructor(private http: Http) {
-      //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-      var theUser: any;
-      setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
       if (theUser) {  
         this.jwtToken = theUser.token;
       }    
@@ -43,6 +41,10 @@ export class UserService {
   }
 
   getUser(userid) {
+      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+      if (theUser) {  
+        this.jwtToken = theUser.token;
+      }    
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       headers.append('Authorization', `${this.jwtToken}`);
@@ -54,6 +56,10 @@ export class UserService {
   }
 
   updateUser(userid, oUser){
+      const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+      if (theUser) {  
+        this.jwtToken = theUser.token;
+      }    
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       headers.append('Authorization', `${this.jwtToken}`);
@@ -88,6 +94,10 @@ export class UserService {
 */
 
   updatePassword(userid, oUser){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       headers.append('Authorization', `${this.jwtToken}`);
@@ -99,6 +109,10 @@ export class UserService {
   }
 
   updateEmail(userid, oUser){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -109,7 +123,21 @@ export class UserService {
       .catch(this.handleError);
   }
   
+  updatehash(hashid){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`updatehash/${hashid}`, options)
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
+  }
+  
   emailVerify(oUser){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);
@@ -120,6 +148,10 @@ export class UserService {
       .catch(this.handleError);
   }
   pubemailVerify(oUser){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `${this.jwtToken}`);

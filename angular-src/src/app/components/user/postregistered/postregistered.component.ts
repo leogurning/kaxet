@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { MsconfigService } from '../../../services/admin/msconfig.service';
 import { IMsconfigGroupList } from '../../../interface/msconfig';
+import { NavbarService } from '../../../services/navbar.service';
+import { Globals } from '../../../app.global';
 
 @Component({
   selector: 'app-postregistered',
@@ -20,10 +22,15 @@ export class PostregisteredComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private msconfigService: MsconfigService
+              private msconfigService: MsconfigService,
+              public nav: NavbarService,
+              private globals: Globals
               ) { }
+  kaxeturl:String;
 
   ngOnInit() {
+    this.nav.disableLink();
+    this.kaxeturl = this.globals.kaxeturl;
     this.sub = this.route.params.subscribe(
       params => {
         let param = params['nm'];
@@ -92,6 +99,7 @@ export class PostregisteredComponent implements OnInit {
   } */
 
   onLogin(): void {
-    this.router.navigate(['/login']);
+    //this.router.navigate(['/login']);
+    window.open(this.kaxeturl.toString());
   }
 }

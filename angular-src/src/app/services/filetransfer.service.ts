@@ -14,14 +14,16 @@ export class FiletransferService {
 
   constructor(private http: Http, private globals: Globals) { 
     this.filetransferurl = globals.filetransferurl;
-    //const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
-    var theUser: any;
-    setTimeout( theUser = JSON.parse(localStorage.getItem('currentUser')), 100); 
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {  
       this.jwtToken = theUser.token;
     }    
   }
   uploadInputFile(oFile){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });
@@ -32,6 +34,10 @@ export class FiletransferService {
   }
 
   deleteInputFile(oFile){
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
     let headers = new Headers();
     headers.append('Authorization', `${this.jwtToken}`);
     let options = new RequestOptions({ headers: headers });

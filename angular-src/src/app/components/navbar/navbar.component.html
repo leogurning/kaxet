@@ -3,8 +3,9 @@
     
         <header>   
             <div class="inner relative">
-                <a class="logo" routerLink="about"><img src="KXLOGO6.png" alt="kaxet"></a>
-                <a id="menu-toggle" class="button dark" href="#"><i class="fa fa-bars fa-2x"></i></a>
+                <a *ngIf="this.qhashid === '' && nav.linkaccess" class="logo" routerLink="about"><img src="KXLOGO6.png" alt="kaxet"></a>
+                <span *ngIf="this.qhashid != '' || !nav.linkaccess" class="logo"><img src="KXLOGO6.png" alt="kaxet"></span>
+                <a *ngIf="this.qhashid === '' && nav.linkaccess" id="menu-toggle" class="button dark" href="#"><i class="fa fa-bars fa-2x"></i></a>
                 <nav id="navigation">
                     <ul id="main-menu" onclick="toggleMenu()">
                         <li *ngIf="authService.isLoggedIn()">
@@ -60,6 +61,12 @@
                             </ul>
                         </li>                        
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
+                            <a routerLink="listconfig" routerLinkActive="active">Master Config  <i class="fa fa-wrench"></i></a>
+                            <ul class="sub-menu">
+                                <li><a routerLink="listconfig" routerLinkActive="active">Manage Config</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'">
                                 <a routerLink="listconfig" routerLinkActive="active">Master Config  <i class="fa fa-wrench"></i></a>
                                 <ul class="sub-menu">
                                     <li><a routerLink="addconfig" routerLinkActive="active">Add Config</a></li>
@@ -67,7 +74,7 @@
                                     <li><a routerLink="listconfig" routerLinkActive="active">Manage Config</a></li>
                                 </ul>
                         </li>
-                        <li class="current-menu-item" *ngIf="!authService.isLoggedIn()"><a routerLink="login" routerLinkActive="active"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>  Login</a></li>
+                        <li class="current-menu-item" *ngIf="!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess"><a routerLink="login" routerLinkActive="active"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>  Login</a></li>
                         <li class="parent" *ngIf="authService.isLoggedIn()">
                                 <a routerLink="profile" routerLinkActive="active">Hi, {{ authService.currentUser.name }}  <i class="fa fa-user"></i></a>
                                 <ul class="sub-menu">

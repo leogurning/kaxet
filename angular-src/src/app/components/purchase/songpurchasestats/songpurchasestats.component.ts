@@ -39,6 +39,7 @@ export class SongpurchasestatsComponent implements OnInit {
   sts: IMsconfigGroupList[];
   pmtd: IMsconfigGroupList[];
   loading = false;
+  qpurchaseid : string;
 
   constructor(
     private fb: FormBuilder, 
@@ -68,6 +69,7 @@ export class SongpurchasestatsComponent implements OnInit {
   startdt = new FormControl({value: '', disabled: true});
   enddt = new FormControl({value: '', disabled: true});
   paymentmtd = new FormControl('',[Validators.nullValidator]);
+  purchaseid = new FormControl('',[Validators.nullValidator]);
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -81,7 +83,8 @@ export class SongpurchasestatsComponent implements OnInit {
       rptype: this.rptype,
       startdt: this.startdt,
       enddt: this.enddt,
-      paymentmtd: this.paymentmtd
+      paymentmtd: this.paymentmtd,
+      purchaseid: this.purchaseid
     });
     this.getMsconfigGroupList('PMTSTATUS');
     this.getMsconfigGroupList('PMTMETHOD');
@@ -99,6 +102,7 @@ export class SongpurchasestatsComponent implements OnInit {
       this.qenddt = params['enddt'] || '';
       this.qpage = params['page'] || '';
       this.qsort = params['sortby'] || '';
+      this.qpurchaseid = params['purchaseid'] || '';
       
       if(this.qrptype !== '') {
         let payload: any = {};
@@ -117,6 +121,7 @@ export class SongpurchasestatsComponent implements OnInit {
           this.reportForm.get('startdt').enable();
           this.reportForm.get('enddt').enable();
         }
+        payload.purchaseid = this.qpurchaseid;
         payload.page = this.qpage;
         payload.sortby = this.qsort;
         this.fetchReport(this.userObj.userid, payload);
@@ -131,7 +136,8 @@ export class SongpurchasestatsComponent implements OnInit {
           paymentmtd: this.qpaymentmtd,
           rptype: this.qrptype,
           startdt: this.qstartdt,
-          enddt: this.qenddt
+          enddt: this.qenddt,
+          purchaseid: this.qpurchaseid
         });
       } else {
         this.fetchReport(this.userObj.userid, this.reportForm.value);
@@ -233,6 +239,7 @@ export class SongpurchasestatsComponent implements OnInit {
               this.router.navigate(['songpurchasestats'],
                   {
                     queryParams: {
+                      purchaseid: this.reportForm.value.purchaseid,
                       labelid: this.reportForm.value.labelid,
                       artistname: this.reportForm.value.artistname,
                       //albumname: this.reportForm.value.albumname,
@@ -253,6 +260,7 @@ export class SongpurchasestatsComponent implements OnInit {
             this.router.navigate(['songpurchasestats'],
                 {
                   queryParams: {
+                    purchaseid: this.reportForm.value.purchaseid,
                     labelid: this.reportForm.value.labelid,
                     artistname: this.reportForm.value.artistname,
                     //albumname: this.reportForm.value.albumname,
@@ -278,7 +286,7 @@ export class SongpurchasestatsComponent implements OnInit {
         this.loading = false;
         if (data.errcode){
           this.authService.logout();
-          this.router.navigate(['login']);
+          this.router.navigate(['errorpage']);
         }
         this.toastr.error(data.message);
       } else {
@@ -299,7 +307,7 @@ export class SongpurchasestatsComponent implements OnInit {
           this.qstartdt = formval.startdt;
           this.qenddt = formval.enddt;
         }
-
+        this.qpurchaseid = formval.purchaseid;
         /* if (formval.rptype === 'opt1') {
           this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
         } else if (formval.rptype === 'opt2') {
@@ -310,6 +318,7 @@ export class SongpurchasestatsComponent implements OnInit {
         } */
         this.reportTitle = 'Search Result - ';
         this.reportForm.patchValue({
+          purchaseid: this.qpurchaseid,
           labelid: this.qlabelid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
@@ -333,6 +342,7 @@ export class SongpurchasestatsComponent implements OnInit {
     this.router.navigate(['songpurchasestats'],
       {
         queryParams: {
+          purchaseid: this.qpurchaseid,
           labelid: this.qlabelid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
@@ -368,6 +378,7 @@ export class SongpurchasestatsComponent implements OnInit {
     this.router.navigate(['songpurchasestats'],
       {
         queryParams: { 
+          purchaseid: this.qpurchaseid,
           labelid: this.qlabelid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
@@ -388,6 +399,7 @@ export class SongpurchasestatsComponent implements OnInit {
       {
         queryParams: { 
           srcpg:'stats',
+          purchaseid: this.qpurchaseid,
           labelid: this.qlabelid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,
@@ -408,6 +420,7 @@ export class SongpurchasestatsComponent implements OnInit {
       {
         queryParams: { 
           srcpg:'stats',
+          purchaseid: this.qpurchaseid,
           labelid: this.qlabelid,
           artistname: this.qartistname,
           //albumname: this.qalbumname,

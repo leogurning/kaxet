@@ -41,16 +41,20 @@ export class LabelbalancedialogComponent implements OnInit {
         this.loading = false;
         this.reportTitle = this.data;
         this.balances = data.data;
-        if (this.balances[0]) {
+        if (this.balances.length > 1 ) {
           let amt = this.getbalanceamt(this.balances[0]._id,this.balances[0].balance);
           let amt1 = this.getbalanceamt(this.balances[1]._id,this.balances[1].balance);
           this.total = amt + amt1;
           this.totalstr = this.total.toLocaleString();
+        } else if (this.balances.length === 1 ) {
+          let amt = this.getbalanceamt(this.balances[0]._id,this.balances[0].balance);
+          this.total = amt;
+          this.totalstr = this.total.toLocaleString();
         } else {
           this.total = 0;
-          this.totalstr = "0";
-        } 
-
+          this.totalstr = "0";          
+        }
+        
       }
     },
     err => {

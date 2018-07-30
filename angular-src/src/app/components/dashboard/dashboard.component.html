@@ -4,26 +4,31 @@
   </div>
 
   <form class="form-horizontal">
-    <div class="form-group">
-        <label for="labelname" class="control-label">Name</label>
-        <div class="input-group col-sm-12">
-          <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
-            <div class="form-ele">{{ this.name }}</div>
-        </div>
+    <div *ngIf="chart">
+        <canvas id="canvas"> {{ chart }}</canvas>
     </div>
-    <div class="form-group">
-        <label for="email" class="control-label">Email</label>
-        <div class="input-group col-sm-12">
-            <div class="input-group-addon">@</div>
-            <div class="form-ele">{{ this.email }}</div>
+    <div *ngIf="!chart">
+        <div class="form-group">
+            <label for="labelname" class="control-label">Name</label>
+            <div class="input-group col-sm-12">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+                <div class="form-ele">{{ this.name }}</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
-      <label for="contactno" class="control-label">Contact No</label>
-      <div class="input-group col-sm-12">
-          <div class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></div>
-          <div class="form-ele">{{ this.contactno }}</div>
-      </div>
+        <div class="form-group">
+            <label for="email" class="control-label">Email</label>
+            <div class="input-group col-sm-12">
+                <div class="input-group-addon">@</div>
+                <div class="form-ele">{{ this.email }}</div>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
+        <label for="contactno" class="control-label">Contact No</label>
+        <div class="input-group col-sm-12">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></div>
+            <div class="form-ele">{{ this.contactno }}</div>
+        </div>
+        </div>
     </div>
     <div class="form-group" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'">
         <label for="balance" class="control-label">Balance</label>

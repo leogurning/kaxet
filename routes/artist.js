@@ -335,6 +335,7 @@ exports.artistaggreport = function(req, res, next){
       var oproject = { 
           _id:1,
           artistname: 1,
+          about:1,
           status:1,
           "stsvalue": "$msconfigdetails.value",
           artistphotopath:1,
@@ -440,6 +441,7 @@ exports.artistaggstats = function(req, res, next){
         labelid:1,
         artistname: 1,
         "label": "$labeldetails.name",
+        about:1,
         status:1,
         "stsvalue": "$msconfigdetails.value",
         artistphotopath:1,
@@ -529,6 +531,7 @@ exports.pubaddartist = function(req, res, next){
     const artistphotopath = req.body.artistphotopath;
     const artistphotoname = req.body.artistphotoname;
     const artistid = req.body.artistid;
+    const about = req.body.about;
 
     const q = 'addArtistQueue';
 
@@ -536,19 +539,50 @@ exports.pubaddartist = function(req, res, next){
         return res.status(422).send({ success: false, message: 'Main posted data is not correct or incompleted.' });
     }
 
-    var objbody = req.body;
-    var objlabelid = {labelid: labelid};
-    var objmsg = Object.assign(objbody,objlabelid);
-    var msg = JSON.stringify(objmsg);
-    //ch.assertExchange(exchange, 'direct', {durable: false})
-    //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+    checkName(labelid, artistname, function(err, result) {
+        if (err) { return res.status(400).json({success: false, message:err.message}); }
+        //console.log('hasil: '+result);
+        if (result === 'NF') {
+            //if not found, artist can be added
+            var objbody = req.body;
+            var objlabelid = {labelid: labelid};
+            var objmsg = Object.assign(objbody,objlabelid);
+            var msg = JSON.stringify(objmsg);
+            //ch.assertExchange(exchange, 'direct', {durable: false})
+            //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
+        
+            let pubadd = addArtistpublish('', q, new Buffer(msg));    
+            res.status(200).json({
+                success: true,
+                message: 'Request to save Artist received successfully.'
+            });
+            //ch.bindQueue(q, exchange, 'registerlabel');
+        } else {
+            if (result.id == artistid) {
+                //if edit same record, artist can be edited
+                var objbody = req.body;
+                var objlabelid = {labelid: labelid};
+                var objmsg = Object.assign(objbody,objlabelid);
+                var msg = JSON.stringify(objmsg);
+                //ch.assertExchange(exchange, 'direct', {durable: false})
+                //ch.sendToQueue(q, new Buffer(msg), {persistent: false})
 
-    let pubadd = addArtistpublish('', q, new Buffer(msg));    
-    res.status(200).json({
-        success: true,
-        message: 'Request to save Artist received successfully.'
+                let pubadd = addArtistpublish('', q, new Buffer(msg));    
+                res.status(200).json({
+                    success: true,
+                    message: 'Request to save Artist received successfully.'
+                });
+                //ch.bindQueue(q, exchange, 'registerlabel');
+            } else {
+                res.status(201).json({
+                    success: false,
+                    message: 'Artis with name: ' + result.artistname+' already exist.',
+                    artist: result,
+                    //rname: rname.toUpperCase()
+                });
+            }
+        }
     });
-    //ch.bindQueue(q, exchange, 'registerlabel');
 }
 
 /* exports.pubaddartist = function(req, res, next){
@@ -801,4 +835,85 @@ function closeOnErr(err) {
     console.error("[AMQP ARTIST] error", err);
     amqpConn.close();
     return true;
+}
+
+exports.apicheckname = function(req, res, next){
+    const labelid = req.params.id;
+    const artistname = req.body.artistname;
+    var result;
+    //const rname = artistname.replace(/\s/g, ""); 
+    checkName(labelid, artistname, function(err, result) {
+        if (err) { return res.status(400).json({success: false, message:err.message}); }
+        //console.log('hasil: '+result);
+        if (result === 'NF') {
+            res.status(201).json({
+                success: true,
+                artist: 'NOT FOUND'
+                //rname: rname.toUpperCase()
+            });
+        } else {
+            res.status(200).json({
+                success: false,
+                artist: result,
+                message: 'Artis with name: ' + result.artistname+' already exist.'
+                //rname: rname.toUpperCase()
+            });
+        }
+    });
+}
+
+function checkName(labelid, pname, cb) {
+    try {
+        var query = {};
+        searchval = pname.replace(/\s/g, "");
+        query = {labelid: labelid, searchstr: searchval.toUpperCase()};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Artist.findOne(query).exec(function(err, artist){
+            if (err) { cb(err, null);}
+            if (artist) {
+                var artistres = {
+                    "id" : artist._id,
+                    "artistname" : artist.artistname
+                };
+                //console.log(true);
+                cb(null, artistres);
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+exports.apiupdatesearchstrartist = function(req, res, next){
+    const status = req.body.status;
+    var query = {}
+    var rcnt = 0;
+    try {
+        query = {status: status};
+        var searchval;
+        var artiststream = Artist.find(query).cursor();
+        artiststream.on('data',function(doc){
+            searchval = doc.artistname.replace(/\s/g, "");
+            Artist.update({_id: doc._id}, {$set: {searchstr : searchval.toUpperCase() }}, function(err, result) 
+            {   if (err) { console.log(err) }
+                rcnt = rcnt + result.nModified;    
+                console.log(result); /* result == true? */
+            });
+        });
+        artiststream.on('error', function(err) {
+            return res.status(400).json({success: false, message:err.message}); 
+        });
+        artiststream.on('end', function(){
+            return res.status(200).json({success: true, records:rcnt});
+            console.log('completed');
+            // stream can end before all your updates do if you have a lot
+        });
+    } catch (err) {
+        return res.status(400).json({success: false, message:err.message});        
+    }
 }

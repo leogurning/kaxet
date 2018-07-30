@@ -12,7 +12,9 @@ const ArtistSchema = new Schema({
     status: {type:String, required: true},
     objlabelid: { type:mongoose.Schema.ObjectId, required: true},
     createddt: {type:Date, required: true},
-    modifydt: {type:Date, required: true}
+    modifydt: {type:Date, required: true},
+    searchstr: {type:String, required: true},
+    about: {type:String}
 });
 
 ArtistSchema.plugin(mongoosePaginate);
