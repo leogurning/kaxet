@@ -13,6 +13,6 @@ export class Globals {
     notifurl: String = 'https://kxnotifp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
     //filetransferurl: String = 'http://localhost:2005';
     filetransferurl: String = 'https://kxfiletrfp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
-    kaxeturl: String = 'https://www.kaxet.com';
+    kaxeturl: String = 'https://www.kaxet.id';
     //kaxeturl: String = 'http://localhost:2000';
 }

@@ -357,7 +357,7 @@ var Globals = /** @class */ (function () {
         this.notifurl = 'https://kxnotifp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
         //filetransferurl: String = 'http://localhost:2005';
         this.filetransferurl = 'https://kxfiletrfp-kaxetprd.4b63.pro-ap-southeast-2.openshiftapps.com';
-        this.kaxeturl = 'https://www.kaxet.com';
+        this.kaxeturl = 'https://www.kaxet.id';
         //kaxeturl: String = 'http://localhost:2000';
     }
     Globals = __decorate([
