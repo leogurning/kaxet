@@ -3,7 +3,7 @@
     
         <header>   
             <div class="inner relative">
-                <a *ngIf="this.qhashid === '' && nav.linkaccess" class="logo" routerLink="about"><img src="KXLOGO6.png" alt="kaxet"></a>
+                <a *ngIf="this.qhashid === '' && nav.linkaccess" class="logo" href="{{this.homepath}}"><img src="KXLOGO6.png" alt="kaxet"></a>
                 <span *ngIf="this.qhashid != '' || !nav.linkaccess" class="logo"><img src="KXLOGO6.png" alt="kaxet"></span>
                 <a *ngIf="this.qhashid === '' && nav.linkaccess" id="menu-toggle" class="button dark" href="#"><i class="fa fa-bars fa-2x"></i></a>
                 <nav id="navigation">

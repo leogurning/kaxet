@@ -97,7 +97,7 @@ import { PostresetpasswdComponent } from './components/user/postresetpasswd/post
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 
 const appRoutes: Routes = [
-  {path: '',redirectTo:'login',pathMatch:'full'},
+  {path: '',redirectTo:'about',pathMatch:'full'},
   {path:'register', component:RegisterComponent},
   {path:'forgotpassword', component:ForgotpasswordComponent},
   {path:'postregistered/:nm', component:PostregisteredComponent},

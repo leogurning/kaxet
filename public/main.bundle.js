@@ -296,7 +296,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"footer\">\n  <div class=\"container\">\n      <p class=\"text-muted\">&copy; Copyright 2017 | kaXet app</p>\n  </div>\n</footer>"
+module.exports = "<app-navbar></app-navbar>\n<!-- <div class=\"container\"> -->\n  <router-outlet></router-outlet>\n<!-- </div> -->\n<footer class=\"footer\">\n  <div class=\"container\">\n      <p class=\"text-muted\">&copy; Copyright 2018 by PT CERDAS | kaXet app&trade;</p>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -564,7 +564,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '', redirectTo: 'about', pathMatch: 'full' },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__["a" /* RegisterComponent */] },
     { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
     { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
@@ -794,14 +794,14 @@ var ToastrService = /** @class */ (function () {
 /***/ "./src/app/components/about/about.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/*------------------------------------------------------------------\n    [Full Screen Carousel]\n------------------------------------------------------------------*/\n.full-screen {\n    background-size: cover;\n    background-position: center;\n    background-repeat: no-repeat;\n  }\n/*------------------------------------------------------------------\n      [Carousel]\n  ------------------------------------------------------------------*/\n.carousel-indicators {\n    left: auto;\n    width: auto;\n    padding-left: 0;\n    margin-left: 0;\n  }\n.carousel-centered {\n    position: absolute;\n    top: 50%;\n    -webkit-transform: translate3d(0, -50%, 0);\n    transform: translate3d(0, -50%, 0);\n  }\n.carousel-title {\n    font-size: 60px;\n    font-weight: 700;\n    /* color: #fff; */\n    color: #fce86c;\n    line-height: 1.1;\n    text-transform: uppercase;\n  }\n#carousel-example-generic .item img {\n    /* opacity: 0.0;\n    filter: alpha(opacity=0); */\n    width: 100%;\n    height: 700px;\n  }\n@media (max-width: 768px) {\n    .carousel-title {\n      font-size: 40px;\n    }\n    #carousel-example-generic .item img {\n      height:100%;\n      -o-object-fit:cover;\n         object-fit:cover;\n    }\n  }\n/*------------------------------------------------------------------\n        [Button]\n  ------------------------------------------------------------------*/\n.btn-theme {\n    position: relative;\n    display: inline-block;\n    line-height: 1.4;\n    text-align: center;\n    background-image: none;\n    border-style: solid;\n    white-space: nowrap;\n    vertical-align: middle;\n    -ms-touch-action: manipulation;\n    touch-action: manipulation;\n    cursor: pointer;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n.btn-theme:focus, .btn-theme:active:focus, .btn-theme.active:focus, .btn-theme.focus, .btn-theme:active.focus, .btn-theme.active.focus {\n    outline: none;\n  }\n.btn-theme:hover {\n    -webkit-transition-duration: 300ms;\n            transition-duration: 300ms;\n    -webkit-transition-property: all;\n    transition-property: all;\n    -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n            transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n  }\n.btn-theme:hover, .btn-theme:focus, .btn-theme.focus {\n    text-decoration: none;\n  }\n.btn-theme:active, .btn-theme.active {\n    background-image: none;\n    outline: 0;\n  }\n.btn-theme.disabled, .btn-theme[disabled],\n  fieldset[disabled] .btn-theme {\n    cursor: not-allowed;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    opacity: .65;\n    pointer-events: none;\n  }\n.btn-white-brd {\n    color: #fff;\n    background: transparent;\n    border-color: rgba(255, 255, 255, 0.3);\n    border-width: 1px;\n  }\n.btn-white-brd:hover, .btn-white-brd:focus, .btn-white-brd.focus {\n    color: #515769;\n    background: #fff;\n    border-color: transparent;\n  }\n.btn-yellow-brd {\n    color: #fce86c;\n    background: transparent;\n    border-color: rgba(255, 255, 255, 0.3);\n    border-width: 1px;\n  }\n.btn-yellow-brd:hover, .btn-yellow-brd:focus, .btn-yellow-brd.focus {\n    color: #515769;\n    background: #fce86c;\n    border-color: transparent;\n  }\n.btn-default-bg {\n    color: #515769;\n    background: #f3f4f5;\n    border-color: transparent;\n    border-width: 0;\n  }\n.btn-default-bg:hover, .btn-default-bg:focus, .btn-default-bg.focus {\n    color: #fff;\n    background: #17bed2;\n    border-color: transparent;\n  }\n.btn-base-bg {\n    color: #fff;\n    background: #17bed2;\n    border-color: transparent;\n    border-width: 0;\n  }\n.btn-base-bg:hover, .btn-base-bg:focus, .btn-base-bg.focus {\n    color: #fff;\n    background: #63cbd7;\n    border-color: transparent;\n  }\n.btn-theme-sm {\n    font-size: 13px;\n    font-weight: 600;\n    padding: 15px 30px;\n  }\n.pcarousel {\n    font-size:16px;\n    color:#fce86c;\n}\n@media (max-width: 768px) {\n    .pcarousel {\n        font-size:14px;\n    }\n    .sm-margin-b-2 {\n        margin-bottom: 2px !important;\n    }\n}\n.bg-color-sky-light {\n    background: #fafafa;\n}\n.content-lg {\n    padding-top: 50px;\n    padding-bottom: 100px;\n}\n.row-space-1 {\n    margin-right: -1px;\n    margin-left: -1px;\n}\n.margin-b-2 {\n    margin-bottom: 2px !important;\n}\n.margin-b-5 {\n    margin-bottom: 5px !important;\n}\n.margin-b-40 {\n    margin-bottom: 40px !important;\n}\n.center {\n    margin: auto;\n    text-align: center;\n    width: 100%;\n    /* border: 3px solid #73AD21; */\n    padding-bottom: 20px;\n}\n.service-header {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    /* margin-top: 0.3em;  */\n    /* margin-left: 1em; */\n}\n.service-header > label {\n    margin-left: 0.5em;\n}\n.service-header > .headericon {\n    margin-top: 0.3em;\n    font-size: 20px;\n}\n.service-header > .headericon-right {\n    margin-top: 0.3em;\n    margin-left: 0.5em;\n    font-size: 20px;\n}\n.service {\n    background: #333;\n    padding: 50px;\n}\n.service .service-element,\n.service .service-info {\n  color: #fce86c;\n  -webkit-transform: translate3d(0, 0, 0);\n  transform: translate3d(0, 0, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.service .service-icon {\n  display: block;\n  font-size: 50px;\n  color: #fce86c;\n  margin-bottom: 30px;\n}\n.service:hover .service-element {\n  opacity: 0;\n  -webkit-transform: translate3d(0, -100%, 0);\n  transform: translate3d(0, -100%, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.service:hover .service-info {\n  -webkit-transform: translate3d(0, -30%, 0);\n  transform: translate3d(0, -30%, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.content-wrapper-link {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: block;\n    z-index: 3;\n    text-decoration: none;\n}\nhr.line-grey-center {\n    border: 0;\n    height: 3px;\n    background-color: #333;\n    width: 166px;}"
 
 /***/ }),
 
 /***/ "./src/app/components/about/about.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n    <h1></h1>\n</div>\n  <div class=\"jumbotron\">\n    <img src=\"../../../cassetteicon.png\">\n      <h2>kaXet v1.0</h2>\n      <p>An app for inspiring and commercial music</p>\n  </div>\n\n</div>"
+module.exports = "  <!-- <div class=\"page-header\">\n    <h1></h1>\n  </div> -->\n  <!-- <div class=\"jumbotron\">\n    <img src=\"../../../cassetteicon.png\">\n      <h2>kaXet v1.0</h2>\n      <p>An app for inspiring and commercial music</p>\n  </div> -->\n  <!--========== SLIDER ==========-->\n  <div id=\"carousel-example-generic\" class=\"carousel slide\" data-ride=\"carousel\">\n    <div class=\"container\">\n        <!-- Indicators -->\n        <ol class=\"carousel-indicators\">\n            <li data-target=\"#carousel-example-generic\" data-slide-to=\"0\" class=\"active\"></li>\n            <li data-target=\"#carousel-example-generic\" data-slide-to=\"1\"></li>\n        </ol>\n    </div>\n\n    <!-- Wrapper for slides -->\n    <div class=\"carousel-inner\" role=\"listbox\">\n        <div class=\"item active\" id=\"slide1\">\n            <img src=\"assets/images/earphones.jpeg\" alt=\"Slider Image\">\n            <div class=\"container\">\n                <div class=\"carousel-centered\">\n                    <div class=\"margin-b-40\">\n                        <h2 class=\"carousel-title\">Level UP</h2>\n                        <p class=\"pcarousel\">We bring your music to the Next Level <br/> Kaxet is online music store for artists who want to get fair and worth royalty of their music art</p>\n                    </div>\n                    <a class=\"btn-theme btn-theme-sm btn-yellow-brd text-uppercase\" routerLink=\"../login\" routerLinkActive=\"active\">Login / Register</a>\n                </div>\n                \n            </div>\n        </div>\n        <div class=\"item\" id=\"slide2\">\n           <img src=\"assets/images/saxophone-3.jpg\" alt=\"Slider Image\">\n            <div class=\"container\">\n                <div class=\"carousel-centered\">\n                    <div class=\"margin-b-40\">\n                        <h1 class=\"carousel-title\">Profit UP</h1>\n                        <p class=\"pcarousel\">Monetize your music is never been easier.<br/>Sign up and publish your song anywhere </p>\n                    </div>\n                    <!-- <a routerLink=\"../login\" routerLinkActive=\"active\" class=\"btn-theme btn-theme-sm btn-yellow-brd text-uppercase\">Login / Register</a> -->\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!--========== SLIDER ==========-->\n\n  <!-- Service -->\n  <div class=\"bg-color-sky-light\" data-auto-height=\"true\">\n    <div class=\"content-lg container\">\n        <hr class=\"line-grey-center\">\n        <div class=\"center\">\n            <div class=\"service-header\">\n                <div class=\"headericon\">\n                    <i class=\"service-icon icon-action-redo\"></i>\n                </div>\n                <label><h3>Getting started is As simple As ever</h3></label>\n                <div class=\"headericon-right\">\n                    <i class=\"service-icon icon-action-undo\"></i>\n                </div>\n            </div>\n        </div>\n        <div class=\"row row-space-1 margin-b-2\">\n            <div class=\"col-sm-4 sm-margin-b-2\">\n                <div class=\"wow fadeInLeft\" data-wow-duration=\".3\" data-wow-delay=\".3s\">\n                    <div class=\"service\" data-height=\"height\">\n                        <div class=\"service-element\">\n                            <i class=\"service-icon icon-cloud-download\"></i>\n                        </div>\n                        <div class=\"service-info\">\n                            <h3>Download Kaxet app. FREE</h3>\n                            <p class=\"margin-b-5\">To purchase songs, Download kaxet app through Play Store and install it.</p>\n                        </div>\n                        <a href=\"#\" class=\"content-wrapper-link\"></a>    \n                    </div>\n                </div>\n            </div>\n            <div class=\"col-sm-4 sm-margin-b-2\">\n                <div class=\"wow fadeInLeft\" data-wow-duration=\".3\" data-wow-delay=\".2s\">\n                    <div class=\"service\" data-height=\"height\">\n                        <div class=\"service-element\">\n                            <i class=\"service-icon icon-note\"></i>\n                        </div>\n                        <div class=\"service-info\">\n                            <h3>Sign UP</h3>\n                            <p class=\"margin-b-5\">Sign UP through this website as a label to publish your songs.</p>\n                        </div>\n                        <a routerLink=\"../login\" routerLinkActive=\"active\" class=\"content-wrapper-link\"></a>    \n                    </div>\n                </div>\n            </div>\n            <div class=\"col-sm-4\">\n                <div class=\"wow fadeInLeft\" data-wow-duration=\".3\" data-wow-delay=\".1s\">\n                    <div class=\"service\" data-height=\"height\">\n                        <div class=\"service-element\">\n                            <i class=\"service-icon icon-check\"></i>\n                        </div>\n                        <div class=\"service-info\">\n                            <h3>Ready for Business</h3>\n                            <p class=\"margin-b-5\">Use the app to sell your music, anywhere, anytime.</p>\n                        </div>\n                        <!-- <a href=\"#\" class=\"content-wrapper-link\"></a>     -->\n                    </div>\n                </div>\n            </div>\n        </div>\n        <!--// end row -->\n    </div>\n  </div>\n  <!-- End Service -->"
 
 /***/ }),
 
@@ -823,6 +823,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AboutComponent = /** @class */ (function () {
     function AboutComponent() {
+        try {
+            document.getElementById("layout").remove();
+            var layoutScript = document.createElement("script");
+            layoutScript.setAttribute("id", "layout");
+            layoutScript.setAttribute("src", "assets/js/layout.js");
+            document.body.appendChild(layoutScript);
+        }
+        catch (error) {
+            console.log('first time loading layout. Err: ' + error);
+            var layoutScript = document.createElement("script");
+            layoutScript.setAttribute("id", "layout");
+            layoutScript.setAttribute("src", "assets/js/layout.js");
+            document.body.appendChild(layoutScript);
+        }
+        try {
+            document.getElementById("jquerywow").remove();
+            var jquery1Script = document.createElement("script");
+            jquery1Script.setAttribute("id", "jquerywow");
+            jquery1Script.setAttribute("src", "assets/js/jquery.wow.min.js");
+            document.body.appendChild(jquery1Script);
+        }
+        catch (error) {
+            console.log('first time loading jquerywow. Err: ' + error);
+            var jquery1Script = document.createElement("script");
+            jquery1Script.setAttribute("id", "jquerywow");
+            jquery1Script.setAttribute("src", "assets/js/jquery.wow.min.js");
+            document.body.appendChild(jquery1Script);
+        }
+        try {
+            document.getElementById("jswow").remove();
+            var jswowScript = document.createElement("script");
+            jswowScript.setAttribute("id", "jswow");
+            jswowScript.setAttribute("src", "assets/js/wow.min.js");
+            document.body.appendChild(jswowScript);
+        }
+        catch (error) {
+            console.log('first time loading jswow. Err: ' + error);
+            var jswowScript = document.createElement("script");
+            jswowScript.setAttribute("id", "jswow");
+            jswowScript.setAttribute("src", "assets/js/wow.min.js");
+            document.body.appendChild(jswowScript);
+        }
+        try {
+            document.getElementById("bootstrapjs").remove();
+            var bootstrapScript = document.createElement("script");
+            bootstrapScript.setAttribute("id", "bootstrapjs");
+            bootstrapScript.setAttribute("src", "assets/js/bootstrap.min.js");
+            document.body.appendChild(bootstrapScript);
+        }
+        catch (error) {
+            console.log('first time loading bootstrapjs. Err: ' + error);
+            var bootstrapScript = document.createElement("script");
+            bootstrapScript.setAttribute("id", "bootstrapjs");
+            bootstrapScript.setAttribute("src", "assets/js/bootstrap.min.js");
+            document.body.appendChild(bootstrapScript);
+        }
     }
     AboutComponent.prototype.ngOnInit = function () {
     };
@@ -5560,85 +5616,87 @@ var DashboardComponent = /** @class */ (function () {
             }
             else {
                 //this.topsongs = data.data;
-                var songbuy = data.data.map(function (res) { return res.songbuy; });
-                var songname = data.data.map(function (res) { return res.songname; });
-                //let labelnsong = data.data.map(res => res.labelnsong);
-                __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontFamily = 'Arial';
-                __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontSize = 12;
-                __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontColor = '#333';
-                //console.log(labelnsong);
-                /* let formattedLabels = [];
-                songname.forEach((res) => {
-                    let labelitem = formatLabel(res, 15);
-                    formattedLabels.push(labelitem);
-                }); */
-                _this.chart = new __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"]('canvas', {
-                    type: 'horizontalBar',
-                    data: {
-                        labels: songname,
-                        datasets: [
-                            {
-                                label: 'Total Purchased',
-                                data: songbuy,
-                                backgroundColor: '#fce86c',
-                                borderWidth: 1,
-                                borderColor: '#333',
-                                hoverBorderWidth: 2,
-                                hoverBorderColor: '#000'
+                if (data.data[0]) {
+                    var songbuy = data.data.map(function (res) { return res.songbuy; });
+                    var songname = data.data.map(function (res) { return res.songname; });
+                    //let labelnsong = data.data.map(res => res.labelnsong);
+                    __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontFamily = 'Arial';
+                    __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontSize = 12;
+                    __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"].defaults.global.defaultFontColor = '#333';
+                    //console.log(labelnsong);
+                    /* let formattedLabels = [];
+                    songname.forEach((res) => {
+                        let labelitem = formatLabel(res, 15);
+                        formattedLabels.push(labelitem);
+                    }); */
+                    _this.chart = new __WEBPACK_IMPORTED_MODULE_13_chart_js__["Chart"]('canvas', {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: songname,
+                            datasets: [
+                                {
+                                    label: 'Total Purchased',
+                                    data: songbuy,
+                                    backgroundColor: '#fce86c',
+                                    borderWidth: 1,
+                                    borderColor: '#333',
+                                    hoverBorderWidth: 2,
+                                    hoverBorderColor: '#000'
+                                }
+                            ]
+                        },
+                        options: {
+                            scaleLabel: function (object) {
+                                return "      " + object.value;
+                            },
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            title: {
+                                display: true,
+                                text: 'Global Top 10 Purchased Songs',
+                                fontSize: 14
+                            },
+                            legend: {
+                                display: false,
+                                position: 'right'
+                            },
+                            scales: {
+                                xAxes: [{
+                                        gridLines: {
+                                            display: true,
+                                            drawBorder: true
+                                        },
+                                        ticks: {
+                                            stepSize: 1
+                                        }
+                                    }],
+                                yAxes: [{
+                                        gridLines: {
+                                            display: false,
+                                            drawBorder: false
+                                        }
+                                    }]
+                            },
+                            layout: {
+                                padding: {
+                                    left: 40,
+                                    right: 0,
+                                    top: 0,
+                                    bottom: 0
+                                }
                             }
-                        ]
-                    },
-                    options: {
-                        scaleLabel: function (object) {
-                            return "      " + object.value;
-                        },
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        title: {
-                            display: true,
-                            text: 'Global Top 10 Purchased Songs',
-                            fontSize: 14
-                        },
-                        legend: {
-                            display: false,
-                            position: 'right'
-                        },
-                        scales: {
-                            xAxes: [{
-                                    gridLines: {
-                                        display: true,
-                                        drawBorder: true
-                                    },
-                                    ticks: {
-                                        stepSize: 1
-                                    }
-                                }],
-                            yAxes: [{
-                                    gridLines: {
-                                        display: false,
-                                        drawBorder: false
-                                    }
-                                }]
-                        },
-                        layout: {
-                            padding: {
-                                left: 40,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
-                            }
+                            /* tooltips: {
+                              callbacks: {
+                                label: function(tooltipItem, data) {
+                                  //let songdtl: any = this.topsongs[tooltipItem.index];
+                                  //return this.topsongs[tooltipItem.index].artistname+":"+this.topsongs[tooltipItem.index].labelname;
+                                  return tooltipItem.index +'.' + tooltipItem.yLabel;
+                                }
+                              }
+                            } */
                         }
-                        /* tooltips: {
-                          callbacks: {
-                            label: function(tooltipItem, data) {
-                              //let songdtl: any = this.topsongs[tooltipItem.index];
-                              //return this.topsongs[tooltipItem.index].artistname+":"+this.topsongs[tooltipItem.index].labelname;
-                              return tooltipItem.index +'.' + tooltipItem.yLabel;
-                            }
-                          }
-                        } */
-                    }
-                });
+                    });
+                }
             }
         }, function (err) {
             //console.log(err);
@@ -8003,7 +8061,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" class=\"logo\" routerLink=\"about\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <span *ngIf=\"this.qhashid != '' || !nav.linkaccess\" class=\"logo\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></span>\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
+module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" class=\"logo\" href=\"{{this.homepath}}\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <span *ngIf=\"this.qhashid != '' || !nav.linkaccess\" class=\"logo\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></span>\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
 
 /***/ }),
 
@@ -8016,6 +8074,7 @@ module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <heade
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_global__ = __webpack_require__("./src/app/app.global.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8029,14 +8088,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(authService, route, nav) {
+    function NavbarComponent(authService, route, nav, globals) {
         this.authService = authService;
         this.route = route;
         this.nav = nav;
+        this.globals = globals;
     }
     NavbarComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.homepath = this.globals.kaxeturl;
         this.route.queryParams.forEach(function (params) {
             _this.qhashid = params['id'] || '';
         });
@@ -8049,7 +8111,8 @@ var NavbarComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__["a" /* NavbarService */]])
+            __WEBPACK_IMPORTED_MODULE_3__services_navbar_service__["a" /* NavbarService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_global__["a" /* Globals */]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
