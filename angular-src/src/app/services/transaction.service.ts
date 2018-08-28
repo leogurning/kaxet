@@ -45,6 +45,21 @@ export class TransactionService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  getOtherTransactionAggs(userid, oTransaction) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`api/othertransactionagg/${userid}`, JSON.stringify(oTransaction), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
+  
   getAdmTransactionAggs(userid, oTransaction) {
     const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {  
@@ -59,7 +74,20 @@ export class TransactionService {
         .map((response: Response) => response.json())
         .catch(this.handleError);
   }
+  getAdmOtherTransactionAggs(userid, oTransaction) {
+    const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
+    if (theUser) {  
+      this.jwtToken = theUser.token;
+    }    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `${this.jwtToken}`);
+    let options = new RequestOptions({ headers: headers });
 
+    return this.http.post(`api/admothertransactionagg/${userid}`, JSON.stringify(oTransaction), options)
+        .map((response: Response) => response.json())
+        .catch(this.handleError);
+  }
   getLabelbalance(userid) {
     const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
     if (theUser) {  

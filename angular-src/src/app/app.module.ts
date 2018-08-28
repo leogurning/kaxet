@@ -31,6 +31,9 @@ import { SongpurchaseService } from './services/songpurchase.service';
 import { TransactionService } from './services/transaction.service';
 import { ActivitylogService } from './services/activitylog.service';
 import { NavbarService } from './services/navbar.service';
+import { TrfbalanceService } from './services/trfbalance.service';
+import { TrfbalancemgtService } from './services/admin/trfbalancemgt.service';
+import { AdjustmentService } from './services/admin/adjustment.service';
 
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
@@ -95,6 +98,20 @@ import { ActivitylogComponent } from './components/activitylog/activitylog.compo
 import { ActivitylogstatsComponent } from './components/activitylogstats/activitylogstats.component';
 import { PostresetpasswdComponent } from './components/user/postresetpasswd/postresetpasswd.component';
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
+import { AddtrfbalancereqComponent } from './components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component';
+import { ListtrfbalancereqComponent } from './components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component';
+import { ViewtrfbalancereqComponent } from './components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component';
+import { PendingtrfbalancereqComponent } from './components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component';
+import { UpdatetrfbalancereqComponent } from './components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component';
+import { AdmlisttransferbalancereqComponent } from './components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component';
+import { EditposttransferbalancereqComponent } from './components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component';
+import { AddadjustmentComponent } from './components/adjustment/addadjustment/addadjustment.component';
+import { ListadjustmentComponent } from './components/adjustment/listadjustment/listadjustment.component';
+import { ViewadjustmentComponent } from './components/adjustment/viewadjustment/viewadjustment.component';
+import { EditadjustmentComponent } from './components/adjustment/editadjustment/editadjustment.component';
+import { PendingadjustmentComponent } from './components/adjustment/pendingadjustment/pendingadjustment.component';
+import { OthertransactionComponent } from './components/othertransaction/othertransaction.component';
+import { OthertransactionstatsComponent } from './components/othertransactionstats/othertransactionstats.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo:'about',pathMatch:'full'},
@@ -153,6 +170,20 @@ const appRoutes: Routes = [
   {path: 'activitylogstats', canActivate: [ AuthGuard], component: ActivitylogstatsComponent ,runGuardsAndResolvers: 'always'},
   {path: 'postresetpasswd', component:PostresetpasswdComponent},
   {path: 'errorpage', component:ErrorpageComponent},
+  {path: 'addtrfbalancereq', canActivate: [ AuthGuard], component: AddtrfbalancereqComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'listtrfbalancereq', canActivate: [ AuthGuard], component: ListtrfbalancereqComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewtrfbalancereq/:id', canActivate: [ AuthGuard], component: ViewtrfbalancereqComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'pendingtrfbalancereq', canActivate: [ AuthGuard], component: PendingtrfbalancereqComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'updatetrfbalancereq/:id', component:UpdatetrfbalancereqComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'admlisttrfbalancereq', canActivate: [ AuthGuard], component: AdmlisttransferbalancereqComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editposttrfbalancereq/:id', component:EditposttransferbalancereqComponent, canActivate:[AuthGuard],runGuardsAndResolvers: 'always'},
+  {path: 'addadjustment', canActivate: [ AuthGuard], component: AddadjustmentComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'listadjustment', canActivate: [ AuthGuard], component: ListadjustmentComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'viewadjustment/:id', canActivate: [ AuthGuard], component: ViewadjustmentComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'editadjustment/:id', canActivate: [ AuthGuard], component: EditadjustmentComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'pendingadjustment', canActivate: [ AuthGuard], component: PendingadjustmentComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'othertransaction', canActivate: [ AuthGuard], component: OthertransactionComponent ,runGuardsAndResolvers: 'always'},
+  {path: 'othertransactionstats', canActivate: [ AuthGuard], component: OthertransactionstatsComponent ,runGuardsAndResolvers: 'always'},
 ];
 
 @NgModule({
@@ -216,6 +247,20 @@ const appRoutes: Routes = [
     ActivitylogstatsComponent,
     PostresetpasswdComponent,
     ErrorpageComponent,
+    AddtrfbalancereqComponent,
+    ListtrfbalancereqComponent,
+    ViewtrfbalancereqComponent,
+    PendingtrfbalancereqComponent,
+    UpdatetrfbalancereqComponent,
+    AdmlisttransferbalancereqComponent,
+    EditposttransferbalancereqComponent,
+    AddadjustmentComponent,
+    ListadjustmentComponent,
+    ViewadjustmentComponent,
+    EditadjustmentComponent,
+    PendingadjustmentComponent,
+    OthertransactionComponent,
+    OthertransactionstatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -260,7 +305,10 @@ const appRoutes: Routes = [
     SongpurchaseService,
     TransactionService,
     ActivitylogService,
-    NavbarService ],
+    NavbarService,
+    TrfbalanceService,
+    TrfbalancemgtService,
+    AdjustmentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -242,3 +242,9 @@ a.bordersideless {
     border-bottom: 5px solid #333;
   }
 }
+
+hr.line-grey-center {
+  border: 0;
+  height: 3px;
+  background-color: #333;
+  width: 166px;}

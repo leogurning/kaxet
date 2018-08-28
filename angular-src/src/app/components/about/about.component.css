@@ -274,9 +274,3 @@
     z-index: 3;
     text-decoration: none;
 }
-
-hr.line-grey-center {
-    border: 0;
-    height: 3px;
-    background-color: #333;
-    width: 166px;}

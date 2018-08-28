@@ -1,0 +1,90 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>TRANSFER REQUEST LIST</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <div *ngIf="this.loading == false" class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Parameter</h3>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="reportForm" (ngSubmit)="getReport(reportForm.value)" class="form-horizontal" novalidate autocomplete="off">
+              <div class="row rowmarginsearch">
+                <div class="col-sm-6 col-md-6">
+                    <label for="insref" class="col-sm-2 paddingsearch">Ins Ref</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div> -->
+                        <input type="text" class="form-control" id="insref" [formControl]="insref" placeholder="Ins Reference">
+                    </div>
+                </div>         
+                <div class="col-sm-6 col-md-6">
+                    <label for="status" class="col-sm-2 paddingsearch">Status</label>
+                    <div class="col-sm-10">
+                        <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+                        <select class="form-control" [formControl]="status">
+                            <option ng-selected="true" value="">Select the status</option>
+                            <option *ngFor="let a of sts" [ngValue]="a.code">{{a.value}}</option>
+                        </select>
+                    </div>
+                </div>            
+              </div>
+
+              <div class="row rowmarginsearch">
+                  <div class="col-sm-6 col-md-6">
+                      <label for="submit" class="col-sm-2 paddingsearch"></label>
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary" [disabled]="this.loading == false && reportForm.invalid">Submit</button>
+                      </div>
+                  </div>                  
+              </div>
+            </form>
+        </div>    
+    </div>
+
+    <div class="panel panel-danger" *ngIf="trfbalancereqs && totalrows < 1">
+        <div class="panel-heading">
+            <h3 class="panel-title">No transfer request found</h3> 
+        </div>
+  
+        <div class="panel-body">
+            There is no Transfer balance request found.
+        </div>
+    </div>
+
+    <div class="panel panel-default" *ngIf="trfbalancereqs && totalrows > 0 && this.loading == false">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> 
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortTrfbalancereq('requestdt')">Request Date</a></th>
+                            <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortTrfbalancereq('amount')">Amount</a></th>
+                            <th width="20%" scope="col">Ins Reference</th>
+                            <th width="20%" scope="col"><a style="cursor:pointer" (click)="sortTrfbalancereq('status')">Status</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let trf of trfbalancereqs; let trfIndex = index'>
+                            <td scope="row" data-label="Request Date"><a style="cursor:pointer" (click)="showTrfbalancereq(trf._id)" data-toggle="tooltip" data-placement="top" title="View Detail">{{ trf.requestdt | date: 'd MMM y'}}</a></td>
+                            <td data-label="Amount">{{ trf.amount | currency: 'IDR':'symbol-narrow' }}</td>
+                            <td data-label="Ins Reference">{{ trf.insref }}</td>
+                            <td data-label="Status">{{ trf.stsvalue}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            <div style="text-align:center" *ngIf="trfbalancereqs && totalrows > 10">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li *ngFor="let item of createPager(pgCounter); let idx = index">
+                            <a [ngClass]="{'selected': qpage == idx + 1 }" class="selected" style="cursor:pointer" (click) = "setPage(idx + 1)">{{ idx + 1 }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
+        </div>
+    </div>
+</div>

@@ -29,6 +29,7 @@ export class ViewlabelstatsComponent implements OnInit {
   email = new FormControl('', [Validators.email]);
   contactno = new FormControl('', [Validators.required]);
   bankaccno = new FormControl('', [Validators.required]);
+  bankaccname = new FormControl('', [Validators.required]);
   bankname = new FormControl('', [Validators.required]);
   lastlogin = new FormControl('', [Validators.required]);
   balance = new FormControl('', [Validators.required]);
@@ -44,6 +45,7 @@ export class ViewlabelstatsComponent implements OnInit {
       email: this.email,
       contactno: this.contactno,
       bankaccno: this.bankaccno,
+      bankaccname: this.bankaccname,
       bankname: this.bankname,
       lastlogin: this.lastlogin,
       balance: this.balance
@@ -78,6 +80,7 @@ export class ViewlabelstatsComponent implements OnInit {
       email: data.email,
       contactno: data.contactno,
       bankaccno: data.bankaccno,
+      bankaccname: data.bankaccname,
       bankname: data.bankname,
       lastlogin: this.lastlogin,
       balance: this.balance

@@ -686,7 +686,7 @@ exports.getsongpurchaseagg = function(req, res, next){
 exports.pendingsongpurchasecount = function(req, res, next){
     const labelid = req.params.labelid || req.query.labelid;
     const status = req.body.status || req.query.status;
-
+    const paymentmtd = 'PMTCASH';
     let query = {};
 
     if (!labelid) {
@@ -704,9 +704,9 @@ exports.pendingsongpurchasecount = function(req, res, next){
             } else {
                 // returns all artists records for the label
                 if (!status) {
-                    query = { labelid:labelid };
+                    query = { labelid:labelid, paymentmtd:paymentmtd };
                 }else{
-                    query = { labelid:labelid, status: status};
+                    query = { labelid:labelid, status: status, paymentmtd:paymentmtd};
                 }
                 
                 Songpurchase.count(query, function(err, count){

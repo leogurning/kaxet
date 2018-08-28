@@ -326,4 +326,7 @@ export class DashboardComponent implements OnInit {
       data: 'Hi ' + labelname + ', Please find below your balance.'
     });
   }
+  trflabelbalance():void {
+    this.router.navigate(['/addtrfbalancereq']);
+  }
 }

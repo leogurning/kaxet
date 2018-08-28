@@ -15,6 +15,7 @@ const fetch = require('node-fetch');
 var amqpConn = null;
 var amqp = require('amqplib/callback_api');
 var FormData = require('form-data');
+const Trfbalance = require('../models/trfbalance');
 
 startRMQ();
 
@@ -56,6 +57,8 @@ function startRMQ() {
       updatelabelstatusConsumerChannel('updatelabelstatusQueue');
       emailverificationConsumerChannel('emailverificationQueue');
       actionPaymentCodaConsumerChannel('purchaseQueueCoda');
+
+      addTrfbalancereqConsumerChannel('addTrfbalanceQueue');
     });
 }
 
@@ -85,6 +88,7 @@ function registerLabelConsumerChannel(q){
             let email = obj.email;
             let contactno = obj.contactno;
             let bankaccno = obj.bankaccno;
+            let bankaccname = obj.bankaccname;
             let bankcode = obj.bankcode;
             let bankname = obj.bankname;
             let username = obj.username;
@@ -125,6 +129,7 @@ function registerLabelConsumerChannel(q){
                                 email: email.toLowerCase(),
                                 contactno: contactno,
                                 bankaccno: bankaccno,
+                                bankaccname: bankaccname,
                                 bankcode: bankcode,
                                 bankname: bankname,
                                 username: username,
@@ -2388,6 +2393,208 @@ function updateAlbumprice(labelid, albumid, cb) {
               }
             });
         })
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+function addTrfbalancereqConsumerChannel(q){
+    
+    amqpConn.createConfirmChannel(function(err, ch) {
+        if (closeOnErr(err)) return ;
+        ch.on("error", function(err) {
+            console.error("[AMQP] channel error", err.message);
+        });
+        ch.on("close", function() {
+            console.log("[AMQP] channel closed");
+        });
+        ch.prefetch(10);
+        ch.assertQueue(q, { durable: false }, function(err, _ok) {
+            if (closeOnErr(err)) return;
+            ch.consume(q, addTrfbalancereqConsumer, { noAck: true });
+            console.log("add Trf balance req consumer is started");
+        });
+
+        function addTrfbalancereqConsumer(msg){
+
+            let obj = JSON.parse(msg.content.toString());
+            // Check for parameters
+            let labelid = obj.labelid;
+            let amount = obj.amount;
+            let insref = obj.insref;
+            let bankaccno = obj.bankaccno;
+            let bankaccname = obj.bankaccname;
+            let bankname = obj.bankname;
+            let status = obj.status;
+
+            checkBalance(labelid, amount, function(err, result) {
+                if(err){ 
+                    console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err);
+                    let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err, 'STSERR');    
+                    return; 
+                }
+                
+                //console.log('hasil: '+result);
+                if (result === 'Y') {
+                    checkPendingTrf(labelid, function(err, trfresult){
+                        if(err){ 
+                            console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err);
+                            let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err, 'STSERR');    
+                            return; 
+                        }
+                        if (trfresult === 'NF') {
+                            checkPendingCash(labelid, function(err, cashresult){
+                                if(err){ 
+                                    console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err);
+                                    let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err, 'STSERR');    
+                                    return; 
+                                }
+                                if (cashresult === 'NF') {
+                                    // Add new transaction
+                                    let oTrfbalance = new Trfbalance({
+                                        labelid: labelid,
+                                        amount: amount,
+                                        insref: insref,
+                                        bankaccno: bankaccno,
+                                        bankaccname: bankaccname,
+                                        bankname: bankname,
+                                        requestdt: new Date(),
+                                        status: status,
+                                        objlabelid: labelid
+                                    });
+
+                                    oTrfbalance.save(function(err) {
+                                        if(err){
+                                            console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " error with message: "+ err.message);
+                                            let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount:  " + amount + " error with message: "+ err.message, 'STSERR');    
+                                            return;  
+                                        }
+                                            
+                                        console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " saved successfuly.");
+                                        let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " saved successfuly.", 'STSSCS');    
+                                        return; 
+                                        //Delete redis respective keys
+                                        //rediscli.del('redis-user-songpurchase-'+labelid, 'redis-user-songpurchasecnt-'+labelid);
+                                    });
+                                } else {
+                                    console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " ERROR. You still have pending cash purchase transaction. Please complete it first.");
+                                    let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " ERROR. You still have pending cash purchase transaction. Please complete it first.", 'STSERR');    
+                                    return;                                     
+                                }      
+                            })
+                        } else {
+                            console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " ERROR. You still have pending OR in progress transfer balance request.");
+                            let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " ERROR. You still have pending OR in progress transfer balance request.", 'STSERR');    
+                            return;                                         
+                        }  
+                    })
+                    
+                } else {
+                    console.log("[ADDTRFBLCONS] add transfer balance, amount: " + amount + " ERROR. Invalid balance checking.");
+                    let savelog= saveactivitylog(labelid, 'ACTTFBL', "[ADDTRFBLCONS] add transfer balance, amount: " + amount + " ERROR. Invalid balance checking.", 'STSERR');    
+                    return; 
+                }
+            });
+
+        }
+    });
+}
+
+function checkBalance(labelid, amount, cb) {
+    try {
+
+        let query = {};
+        let group = {};
+        var amt, amt1, totalbalance, totalnet;
+        // returns transaction records based on query
+        query = {labelid:labelid};
+        group = { _id: "$dbcr" , 
+                    balance: { $sum: "$amount"},
+                    count: { $sum: 1}
+                };
+        var aggregate = Transaction.aggregate();  
+        aggregate.match(query);
+        aggregate.group(group);    
+        aggregate.exec(function(err, result) {
+            if(err) 
+            {
+                cb(err,null);
+            }
+            else
+            { 
+                if (result.length > 1) {
+                    amt = getamount(result[0]._id,result[0].balance);
+                    amt1 = getamount(result[1]._id,result[1].balance);
+                    totalbalance = amt + amt1;
+                } else if (result.length === 1) {
+                    amt = getamount(result[0]._id,result[0].balance);
+                    totalbalance = amt;
+                } else {
+                    totalbalance = 0;
+                }
+                totalnet = totalbalance - amount;
+                if (totalnet < 0) {
+                    cb(null, 'N');
+                } else {
+                    cb(null, 'Y');
+                }
+
+            }
+        })        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+function getamount(sign, amount) {
+    var result = amount;
+    if (sign === "-") {
+        result = -1 * amount;
+      }
+    return result;
+}
+
+function checkPendingTrf(labelid, cb) {
+    try {
+        var query = {};
+        //query = {labelid: labelid, status:{ $ne: 'STSCMPL' }};
+        query = {labelid: labelid, status:'STSPEND'};
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Trfbalance.findOne(query).exec(function(err, result){
+            if (err) { cb(err, null);}
+            if (result) {
+                //console.log(true);
+                cb(null, 'FN');
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
+    } catch (error) {
+        //console.error(false, error.message);
+        cb(error,null);
+    }
+}
+
+function checkPendingCash(labelid, cb) {
+    try {
+        var query = {};
+        query = {labelid: labelid, status:'STSPEND', paymentmtd:'PMTCASH' };
+        //query = {labelid: labelid, artistname: {$regex: pname, $options:"0i"}};
+        //console.log(query);
+        Songpurchase.findOne(query).exec(function(err, result){
+            if (err) { cb(err, null);}
+            if (result) {
+                //console.log(true);
+                cb(null, 'FN');
+            } else {
+                //console.log(false);
+                cb(null, 'NF');                
+            }
+        });        
     } catch (error) {
         //console.error(false, error.message);
         cb(error,null);

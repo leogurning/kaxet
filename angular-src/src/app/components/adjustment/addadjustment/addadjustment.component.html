@@ -1,0 +1,85 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Add Adjustment</h3>
+    </div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <form  [formGroup]="addAdjustmentForm" (ngSubmit)="addAdjustment(addAdjustmentForm.value)" class="form-horizontal" novalidate autocomplete="off">
+      <div class="form-group" [ngClass]="{'has-error': addAdjustmentForm.get('labelid').invalid && addAdjustmentForm.get('labelid').dirty}">
+          <label for="labelid" class="col-sm-2 control-label">Label <sup>*</sup></label>
+          <div class="col-sm-10">
+              <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+              <select #inputlabel [disabled]="this.loading == true" class="form-control" [formControl]="labelid">
+                  <!-- <option ng-selected="true" value="">Select the artist</option> -->
+                  <option value="">Select the label</option>
+                  <option *ngFor="let label of userlist" [ngValue]="label._id">{{label.name}}</option>
+              </select>
+            </div>
+          <div class="text-danger" *ngIf="addAdjustmentForm.get('labelid').dirty && addAdjustmentForm.get('labelid').errors">
+              <span class="col-sm-2"></span>
+              <span class="col-sm-10" style="padding:4px 15px 0" *ngIf="addAdjustmentForm.get('labelid').errors.required">
+                  Please enter label
+              </span>
+          </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': addAdjustmentForm.get('amount').invalid && addAdjustmentForm.get('amount').dirty}">
+          <label for="amount" class="col-sm-2 control-label">Amount<sup>*</sup></label>
+          <div class="input-group col-sm-10" style="padding:0 15px">
+              <div class="input-group-addon">Rp</div>
+              <input [disabled]="this.loading == true" type="number" class="form-control" id="amount" [formControl]="amount" placeholder="Amount">
+          </div>
+          <div class="text-danger" *ngIf="addAdjustmentForm.get('amount').dirty && addAdjustmentForm.get('amount').errors">
+              <span class="col-sm-2"></span>
+              <span class="col-sm-10" style="padding:4px 15px 0" *ngIf="addAdjustmentForm.get('amount').errors.required">
+                  Please enter amount
+              </span>
+              <span class="col-sm-10" style="padding:4px 15px 0" *ngIf="addAdjustmentForm.get('amount').errors.pattern">
+                  Please enter a valid amount
+              </span>
+          </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': addAdjustmentForm.get('dbcr').invalid && addAdjustmentForm.get('dbcr').dirty}">
+          <label for="dbcr" class="col-sm-2 control-label">IN/OUT<sup>*</sup></label>
+          <div class="col-sm-10">
+            <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div> -->
+            <select #inputdbcr [disabled]="this.loading == true" class="form-control" [formControl]="dbcr">
+                <option ng-selected="true" value="">Select the option</option>
+                <option *ngFor="let a of dc" [ngValue]="a.code">{{a.value}}</option>
+            </select>
+          </div>
+          <div class="text-danger" *ngIf="addAdjustmentForm.get('dbcr').dirty && addAdjustmentForm.get('dbcr').errors">
+              <span class="col-sm-2"></span>
+              <span class="col-sm-10" style="padding:4px 15px 0" *ngIf="addAdjustmentForm.get('dbcr').errors.required">
+                  Please enter IN or OUT sign
+              </span>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="remarks" class="col-sm-2 control-label">Remarks <sup>*</sup></label>
+          <div class="input-group col-xs-12 col-sm-10" style="padding:0 15px">
+              <textarea [disabled]="this.loading == true" class="form-control" id="remarks" rows="10" [formControl]="remarks" placeholder="Remarks"></textarea>
+          </div>
+          <div class="text-danger" *ngIf="addAdjustmentForm.get('remarks').dirty && addAdjustmentForm.get('remarks').errors">
+              <span class="col-sm-2"></span>
+              <span class="col-sm-10" style="padding:4px 15px 0" *ngIf="addAdjustmentForm.get('remarks').errors.required">
+                  Please input the adjustment remarks
+              </span>
+          </div>
+      </div>
+
+      <div class="form-group">
+           <label class="col-sm-2 control-label">  </label>
+         <mat-progress-bar mode="determinate" value="{{this.progressvalue}}"></mat-progress-bar>
+         <sup *ngIf="progressvalue > 0">{{ this.progressvalue }} %</sup>
+      </div>
+      <div class="form-group">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-5" style="padding:0 15px;margin:0;">
+              <button type="submit" [disabled]="addAdjustmentForm.invalid || this.loading == true" class="btn btn-primary">Submit</button>
+              <button type="reset" [disabled]="this.loading == true" class="btn btn-default">Reset</button>
+          </div>
+          <div class="col-sm-5" style="text-align:right">
+              <sup>*</sup> required
+          </div>
+      </div>
+    </form>
+</div>

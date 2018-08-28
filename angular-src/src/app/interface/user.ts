@@ -3,6 +3,7 @@ export interface IUser {
     email: String,
     contactno: String,
     bankaccno: String,
+    bankaccname: String,
     bankcode: String,
     bankname: String,  
     username: String,

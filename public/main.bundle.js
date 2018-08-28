@@ -403,67 +403,84 @@ var Globals = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__ = __webpack_require__("./src/app/services/activitylog.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_navbar_service__ = __webpack_require__("./src/app/services/navbar.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__components_activitylog_activitylog_component__ = __webpack_require__("./src/app/components/activitylog/activitylog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__components_activitylogstats_activitylogstats_component__ = __webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__components_user_postresetpasswd_postresetpasswd_component__ = __webpack_require__("./src/app/components/user/postresetpasswd/postresetpasswd.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__components_errorpage_errorpage_component__ = __webpack_require__("./src/app/components/errorpage/errorpage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_trfbalance_service__ = __webpack_require__("./src/app/services/trfbalance.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_admin_trfbalancemgt_service__ = __webpack_require__("./src/app/services/admin/trfbalancemgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_admin_adjustment_service__ = __webpack_require__("./src/app/services/admin/adjustment.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_login_login_component__ = __webpack_require__("./src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_user_register_register_component__ = __webpack_require__("./src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_user_password_password_component__ = __webpack_require__("./src/app/components/user/password/password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_user_profile_profile_component__ = __webpack_require__("./src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_user_logout_component__ = __webpack_require__("./src/app/components/user/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_about_about_component__ = __webpack_require__("./src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_artist_editartist_editartist_component__ = __webpack_require__("./src/app/components/artist/editartist/editartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_artist_listartist_listartist_component__ = __webpack_require__("./src/app/components/artist/listartist/listartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_artist_viewartist_viewartist_component__ = __webpack_require__("./src/app/components/artist/viewartist/viewartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_artist_addartist_addartist_component__ = __webpack_require__("./src/app/components/artist/addartist/addartist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_artist_editartistphoto_editartistphoto_component__ = __webpack_require__("./src/app/components/artist/editartistphoto/editartistphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_album_addalbum_addalbum_component__ = __webpack_require__("./src/app/components/album/addalbum/addalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_album_listalbum_listalbum_component__ = __webpack_require__("./src/app/components/album/listalbum/listalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_album_viewalbum_viewalbum_component__ = __webpack_require__("./src/app/components/album/viewalbum/viewalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_album_editalbum_editalbum_component__ = __webpack_require__("./src/app/components/album/editalbum/editalbum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_album_editalbumphoto_editalbumphoto_component__ = __webpack_require__("./src/app/components/album/editalbumphoto/editalbumphoto.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_song_addsong_addsong_component__ = __webpack_require__("./src/app/components/song/addsong/addsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_song_listsong_listsong_component__ = __webpack_require__("./src/app/components/song/listsong/listsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_song_editsongfiles_editsongfiles_component__ = __webpack_require__("./src/app/components/song/editsongfiles/editsongfiles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_song_viewsong_viewsong_component__ = __webpack_require__("./src/app/components/song/viewsong/viewsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_song_editsong_editsong_component__ = __webpack_require__("./src/app/components/song/editsong/editsong.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_user_postregistered_postregistered_component__ = __webpack_require__("./src/app/components/user/postregistered/postregistered.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_usermgt_usermgt_component__ = __webpack_require__("./src/app/components/usermgt/usermgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_usermgt_viewlabel_viewlabel_component__ = __webpack_require__("./src/app/components/usermgt/viewlabel/viewlabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_user_updateemail_updateemail_component__ = __webpack_require__("./src/app/components/user/updateemail/updateemail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_user_emailverification_emailverification_component__ = __webpack_require__("./src/app/components/user/emailverification/emailverification.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_songmgt_songmgt_component__ = __webpack_require__("./src/app/components/songmgt/songmgt.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__components_msconfig_addconfig_addconfig_component__ = __webpack_require__("./src/app/components/msconfig/addconfig/addconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__components_msconfig_addgroup_addgroup_component__ = __webpack_require__("./src/app/components/msconfig/addgroup/addgroup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__components_msconfig_listconfig_listconfig_component__ = __webpack_require__("./src/app/components/msconfig/listconfig/listconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__components_msconfig_viewconfig_viewconfig_component__ = __webpack_require__("./src/app/components/msconfig/viewconfig/viewconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__components_msconfig_editconfigfile_editconfigfile_component__ = __webpack_require__("./src/app/components/msconfig/editconfigfile/editconfigfile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__components_msconfig_editconfig_editconfig_component__ = __webpack_require__("./src/app/components/msconfig/editconfig/editconfig.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_kx_info_dialog_kx_info_dialog_component__ = __webpack_require__("./src/app/components/kx-info-dialog/kx-info-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_user_forgotpassword_forgotpassword_component__ = __webpack_require__("./src/app/components/user/forgotpassword/forgotpassword.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_user_resetuserpasswd_resetuserpasswd_component__ = __webpack_require__("./src/app/components/user/resetuserpasswd/resetuserpasswd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_artiststats_artiststats_component__ = __webpack_require__("./src/app/components/artiststats/artiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__components_albumstats_albumstats_component__ = __webpack_require__("./src/app/components/albumstats/albumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__components_songstats_songstats_component__ = __webpack_require__("./src/app/components/songstats/songstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__components_labelstats_labelstats_component__ = __webpack_require__("./src/app/components/labelstats/labelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__components_labelstats_viewlabelstats_viewlabelstats_component__ = __webpack_require__("./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__components_artiststats_viewartiststats_viewartiststats_component__ = __webpack_require__("./src/app/components/artiststats/viewartiststats/viewartiststats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__components_albumstats_viewalbumstats_viewalbumstats_component__ = __webpack_require__("./src/app/components/albumstats/viewalbumstats/viewalbumstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__components_songstats_viewsongstats_viewsongstats_component__ = __webpack_require__("./src/app/components/songstats/viewsongstats/viewsongstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpendingpurchase_songpendingpurchase_component__ = __webpack_require__("./src/app/components/purchase/songpendingpurchase/songpendingpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__components_purchase_songcompletepurchase_songcompletepurchase_component__ = __webpack_require__("./src/app/components/purchase/songcompletepurchase/songcompletepurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__components_purchase_viewsongpurchase_viewsongpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewsongpurchase/viewsongpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__components_purchase_viewpurchase_viewpurchase_component__ = __webpack_require__("./src/app/components/purchase/viewpurchase/viewpurchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__components_transaction_transaction_component__ = __webpack_require__("./src/app/components/transaction/transaction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__components_purchase_songpurchasestats_songpurchasestats_component__ = __webpack_require__("./src/app/components/purchase/songpurchasestats/songpurchasestats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__components_transactionstats_transactionstats_component__ = __webpack_require__("./src/app/components/transactionstats/transactionstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__components_labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__components_activitylog_activitylog_component__ = __webpack_require__("./src/app/components/activitylog/activitylog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__components_activitylogstats_activitylogstats_component__ = __webpack_require__("./src/app/components/activitylogstats/activitylogstats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_89__components_user_postresetpasswd_postresetpasswd_component__ = __webpack_require__("./src/app/components/user/postresetpasswd/postresetpasswd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_90__components_errorpage_errorpage_component__ = __webpack_require__("./src/app/components/errorpage/errorpage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_91__components_trfbalancereq_addtrfbalancereq_addtrfbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_92__components_trfbalancereq_listtrfbalancereq_listtrfbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_93__components_trfbalancereq_viewtrfbalancereq_viewtrfbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_94__components_trfbalancereq_pendingtrfbalancereq_pendingtrfbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_95__components_trfbalancereq_updatetrfbalancereq_updatetrfbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_96__components_trfbalancereq_admlisttransferbalancereq_admlisttransferbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_97__components_trfbalancereq_editposttransferbalancereq_editposttransferbalancereq_component__ = __webpack_require__("./src/app/components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_98__components_adjustment_addadjustment_addadjustment_component__ = __webpack_require__("./src/app/components/adjustment/addadjustment/addadjustment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_99__components_adjustment_listadjustment_listadjustment_component__ = __webpack_require__("./src/app/components/adjustment/listadjustment/listadjustment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_100__components_adjustment_viewadjustment_viewadjustment_component__ = __webpack_require__("./src/app/components/adjustment/viewadjustment/viewadjustment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_101__components_adjustment_editadjustment_editadjustment_component__ = __webpack_require__("./src/app/components/adjustment/editadjustment/editadjustment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_102__components_adjustment_pendingadjustment_pendingadjustment_component__ = __webpack_require__("./src/app/components/adjustment/pendingadjustment/pendingadjustment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_103__components_othertransaction_othertransaction_component__ = __webpack_require__("./src/app/components/othertransaction/othertransaction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_104__components_othertransactionstats_othertransactionstats_component__ = __webpack_require__("./src/app/components/othertransactionstats/othertransactionstats.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -486,6 +503,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 /* Global Variables */
 
 /* Services Modules */
+
+
+
 
 
 
@@ -563,63 +583,91 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var appRoutes = [
     { path: '', redirectTo: 'about', pathMatch: 'full' },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
-    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_31__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_36__components_about_about_component__["a" /* AboutComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_35__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_34__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_33__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_37__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_38__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_39__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_42__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_40__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_45__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_47__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_50__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_56__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_57__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
-    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_60__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_61__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_64__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
-    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_67__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
-    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_68__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_69__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_70__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_81__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_82__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'activitylog', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_84__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'activitylogstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_85__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */], runGuardsAndResolvers: 'always' },
-    { path: 'postresetpasswd', component: __WEBPACK_IMPORTED_MODULE_86__components_user_postresetpasswd_postresetpasswd_component__["a" /* PostresetpasswdComponent */] },
-    { path: 'errorpage', component: __WEBPACK_IMPORTED_MODULE_87__components_errorpage_errorpage_component__["a" /* ErrorpageComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_35__components_user_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'forgotpassword', component: __WEBPACK_IMPORTED_MODULE_69__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
+    { path: 'postregistered/:nm', component: __WEBPACK_IMPORTED_MODULE_56__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_34__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_39__components_about_about_component__["a" /* AboutComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_38__components_user_logout_component__["a" /* LogoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_37__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'password', component: __WEBPACK_IMPORTED_MODULE_36__components_user_password_password_component__["a" /* PasswordComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'report', component: __WEBPACK_IMPORTED_MODULE_40__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_44__components_artist_addartist_addartist_component__["a" /* AddartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_41__components_artist_editartist_editartist_component__["a" /* EditartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listartist', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_42__components_artist_listartist_listartist_component__["a" /* ListartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editartistphoto/:id', component: __WEBPACK_IMPORTED_MODULE_45__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewartist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_43__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_46__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listalbum', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_47__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_48__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbum/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_49__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editalbumphoto/:id', component: __WEBPACK_IMPORTED_MODULE_50__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_51__components_song_addsong_addsong_component__["a" /* AddsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listsong', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_52__components_song_listsong_listsong_component__["a" /* ListsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsongfiles/:id', component: __WEBPACK_IMPORTED_MODULE_53__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'viewsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_54__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editsong/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_55__components_song_editsong_editsong_component__["a" /* EditsongComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'usermanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_57__components_usermgt_usermgt_component__["a" /* UsermgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabel/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_58__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'updateemail', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_59__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_60__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */] },
+    { path: 'songmanagement', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_61__components_songmgt_songmgt_component__["a" /* SongmgtComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_62__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'addgroup', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_63__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listconfig', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_64__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewconfig/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_65__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editconfigfile/:id', component: __WEBPACK_IMPORTED_MODULE_66__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'editconfig/:id', component: __WEBPACK_IMPORTED_MODULE_67__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_70__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */] },
+    { path: 'labelstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_74__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'artiststats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_71__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'albumstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_72__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_73__components_songstats_songstats_component__["a" /* SongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewlabelstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_75__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewartiststats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_76__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewalbumstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_77__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongstats/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_78__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpendingpurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songcompletepurchase', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_80__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewsongpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_81__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewpurchase/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_82__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_83__components_transaction_transaction_component__["a" /* TransactionComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'songpurchasestats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_84__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'transactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_85__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'activitylog', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_87__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'activitylogstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_88__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'postresetpasswd', component: __WEBPACK_IMPORTED_MODULE_89__components_user_postresetpasswd_postresetpasswd_component__["a" /* PostresetpasswdComponent */] },
+    { path: 'errorpage', component: __WEBPACK_IMPORTED_MODULE_90__components_errorpage_errorpage_component__["a" /* ErrorpageComponent */] },
+    { path: 'addtrfbalancereq', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_91__components_trfbalancereq_addtrfbalancereq_addtrfbalancereq_component__["a" /* AddtrfbalancereqComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listtrfbalancereq', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_92__components_trfbalancereq_listtrfbalancereq_listtrfbalancereq_component__["a" /* ListtrfbalancereqComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewtrfbalancereq/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_93__components_trfbalancereq_viewtrfbalancereq_viewtrfbalancereq_component__["a" /* ViewtrfbalancereqComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'pendingtrfbalancereq', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_94__components_trfbalancereq_pendingtrfbalancereq_pendingtrfbalancereq_component__["a" /* PendingtrfbalancereqComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'updatetrfbalancereq/:id', component: __WEBPACK_IMPORTED_MODULE_95__components_trfbalancereq_updatetrfbalancereq_updatetrfbalancereq_component__["a" /* UpdatetrfbalancereqComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'admlisttrfbalancereq', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_96__components_trfbalancereq_admlisttransferbalancereq_admlisttransferbalancereq_component__["a" /* AdmlisttransferbalancereqComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editposttrfbalancereq/:id', component: __WEBPACK_IMPORTED_MODULE_97__components_trfbalancereq_editposttransferbalancereq_editposttransferbalancereq_component__["a" /* EditposttransferbalancereqComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], runGuardsAndResolvers: 'always' },
+    { path: 'addadjustment', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_98__components_adjustment_addadjustment_addadjustment_component__["a" /* AddadjustmentComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'listadjustment', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_99__components_adjustment_listadjustment_listadjustment_component__["a" /* ListadjustmentComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'viewadjustment/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_100__components_adjustment_viewadjustment_viewadjustment_component__["a" /* ViewadjustmentComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'editadjustment/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_101__components_adjustment_editadjustment_editadjustment_component__["a" /* EditadjustmentComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'pendingadjustment', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_102__components_adjustment_pendingadjustment_pendingadjustment_component__["a" /* PendingadjustmentComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'othertransaction', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_103__components_othertransaction_othertransaction_component__["a" /* OthertransactionComponent */], runGuardsAndResolvers: 'always' },
+    { path: 'othertransactionstats', canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */]], component: __WEBPACK_IMPORTED_MODULE_104__components_othertransactionstats_othertransactionstats_component__["a" /* OthertransactionstatsComponent */], runGuardsAndResolvers: 'always' },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -627,65 +675,79 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__components_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__components_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__components_user_password_password_component__["a" /* PasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__components_user_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__components_user_logout_component__["a" /* LogoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__components_about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_41__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
-                __WEBPACK_IMPORTED_MODULE_42__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_43__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_44__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_45__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_46__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
-                __WEBPACK_IMPORTED_MODULE_47__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
-                __WEBPACK_IMPORTED_MODULE_48__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_49__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_50__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
-                __WEBPACK_IMPORTED_MODULE_51__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_52__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
-                __WEBPACK_IMPORTED_MODULE_53__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_55__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
-                __WEBPACK_IMPORTED_MODULE_56__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
-                __WEBPACK_IMPORTED_MODULE_57__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
-                __WEBPACK_IMPORTED_MODULE_58__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
-                __WEBPACK_IMPORTED_MODULE_59__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_60__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
-                __WEBPACK_IMPORTED_MODULE_61__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_63__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_64__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
-                __WEBPACK_IMPORTED_MODULE_65__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_66__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_67__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
-                __WEBPACK_IMPORTED_MODULE_68__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_69__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_70__components_songstats_songstats_component__["a" /* SongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_71__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_72__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_73__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_74__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_75__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_76__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_77__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_78__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_79__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
-                __WEBPACK_IMPORTED_MODULE_80__components_transaction_transaction_component__["a" /* TransactionComponent */],
-                __WEBPACK_IMPORTED_MODULE_81__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_82__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_83__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_84__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */],
-                __WEBPACK_IMPORTED_MODULE_85__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_86__components_user_postresetpasswd_postresetpasswd_component__["a" /* PostresetpasswdComponent */],
-                __WEBPACK_IMPORTED_MODULE_87__components_errorpage_errorpage_component__["a" /* ErrorpageComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__components_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__components_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__components_user_password_password_component__["a" /* PasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__components_user_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__components_user_logout_component__["a" /* LogoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__components_about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__components_artist_editartist_editartist_component__["a" /* EditartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_42__components_artist_listartist_listartist_component__["a" /* ListartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_43__components_artist_viewartist_viewartist_component__["a" /* ViewartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_44__components_artist_addartist_addartist_component__["a" /* AddartistComponent */],
+                __WEBPACK_IMPORTED_MODULE_45__components_artist_editartistphoto_editartistphoto_component__["a" /* EditartistphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_46__components_album_addalbum_addalbum_component__["a" /* AddalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_47__components_album_listalbum_listalbum_component__["a" /* ListalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__components_album_viewalbum_viewalbum_component__["a" /* ViewalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_49__components_album_editalbum_editalbum_component__["a" /* EditalbumComponent */],
+                __WEBPACK_IMPORTED_MODULE_50__components_album_editalbumphoto_editalbumphoto_component__["a" /* EditalbumphotoComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__components_song_addsong_addsong_component__["a" /* AddsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_52__components_song_listsong_listsong_component__["a" /* ListsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__components_song_editsongfiles_editsongfiles_component__["a" /* EditsongfilesComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__components_song_viewsong_viewsong_component__["a" /* ViewsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__components_song_editsong_editsong_component__["a" /* EditsongComponent */],
+                __WEBPACK_IMPORTED_MODULE_56__components_user_postregistered_postregistered_component__["a" /* PostregisteredComponent */],
+                __WEBPACK_IMPORTED_MODULE_57__components_usermgt_usermgt_component__["a" /* UsermgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_58__components_usermgt_viewlabel_viewlabel_component__["a" /* ViewlabelComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__components_user_updateemail_updateemail_component__["a" /* UpdateemailComponent */],
+                __WEBPACK_IMPORTED_MODULE_60__components_user_emailverification_emailverification_component__["a" /* EmailverificationComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__components_songmgt_songmgt_component__["a" /* SongmgtComponent */],
+                __WEBPACK_IMPORTED_MODULE_62__components_msconfig_addconfig_addconfig_component__["a" /* AddconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_63__components_msconfig_addgroup_addgroup_component__["a" /* AddgroupComponent */],
+                __WEBPACK_IMPORTED_MODULE_64__components_msconfig_listconfig_listconfig_component__["a" /* ListconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_65__components_msconfig_viewconfig_viewconfig_component__["a" /* ViewconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_66__components_msconfig_editconfigfile_editconfigfile_component__["a" /* EditconfigfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_67__components_msconfig_editconfig_editconfig_component__["a" /* EditconfigComponent */],
+                __WEBPACK_IMPORTED_MODULE_68__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_69__components_user_forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_70__components_user_resetuserpasswd_resetuserpasswd_component__["a" /* ResetuserpasswdComponent */],
+                __WEBPACK_IMPORTED_MODULE_71__components_artiststats_artiststats_component__["a" /* ArtiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_72__components_albumstats_albumstats_component__["a" /* AlbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_73__components_songstats_songstats_component__["a" /* SongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_74__components_labelstats_labelstats_component__["a" /* LabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_75__components_labelstats_viewlabelstats_viewlabelstats_component__["a" /* ViewlabelstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_76__components_artiststats_viewartiststats_viewartiststats_component__["a" /* ViewartiststatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_77__components_albumstats_viewalbumstats_viewalbumstats_component__["a" /* ViewalbumstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_78__components_songstats_viewsongstats_viewsongstats_component__["a" /* ViewsongstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_79__components_purchase_songpendingpurchase_songpendingpurchase_component__["a" /* SongpendingpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_80__components_purchase_songcompletepurchase_songcompletepurchase_component__["a" /* SongcompletepurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_81__components_purchase_viewsongpurchase_viewsongpurchase_component__["a" /* ViewsongpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_82__components_purchase_viewpurchase_viewpurchase_component__["a" /* ViewpurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_83__components_transaction_transaction_component__["a" /* TransactionComponent */],
+                __WEBPACK_IMPORTED_MODULE_84__components_purchase_songpurchasestats_songpurchasestats_component__["a" /* SongpurchasestatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_85__components_transactionstats_transactionstats_component__["a" /* TransactionstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_86__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_87__components_activitylog_activitylog_component__["a" /* ActivitylogComponent */],
+                __WEBPACK_IMPORTED_MODULE_88__components_activitylogstats_activitylogstats_component__["a" /* ActivitylogstatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_89__components_user_postresetpasswd_postresetpasswd_component__["a" /* PostresetpasswdComponent */],
+                __WEBPACK_IMPORTED_MODULE_90__components_errorpage_errorpage_component__["a" /* ErrorpageComponent */],
+                __WEBPACK_IMPORTED_MODULE_91__components_trfbalancereq_addtrfbalancereq_addtrfbalancereq_component__["a" /* AddtrfbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_92__components_trfbalancereq_listtrfbalancereq_listtrfbalancereq_component__["a" /* ListtrfbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_93__components_trfbalancereq_viewtrfbalancereq_viewtrfbalancereq_component__["a" /* ViewtrfbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_94__components_trfbalancereq_pendingtrfbalancereq_pendingtrfbalancereq_component__["a" /* PendingtrfbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_95__components_trfbalancereq_updatetrfbalancereq_updatetrfbalancereq_component__["a" /* UpdatetrfbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_96__components_trfbalancereq_admlisttransferbalancereq_admlisttransferbalancereq_component__["a" /* AdmlisttransferbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_97__components_trfbalancereq_editposttransferbalancereq_editposttransferbalancereq_component__["a" /* EditposttransferbalancereqComponent */],
+                __WEBPACK_IMPORTED_MODULE_98__components_adjustment_addadjustment_addadjustment_component__["a" /* AddadjustmentComponent */],
+                __WEBPACK_IMPORTED_MODULE_99__components_adjustment_listadjustment_listadjustment_component__["a" /* ListadjustmentComponent */],
+                __WEBPACK_IMPORTED_MODULE_100__components_adjustment_viewadjustment_viewadjustment_component__["a" /* ViewadjustmentComponent */],
+                __WEBPACK_IMPORTED_MODULE_101__components_adjustment_editadjustment_editadjustment_component__["a" /* EditadjustmentComponent */],
+                __WEBPACK_IMPORTED_MODULE_102__components_adjustment_pendingadjustment_pendingadjustment_component__["a" /* PendingadjustmentComponent */],
+                __WEBPACK_IMPORTED_MODULE_103__components_othertransaction_othertransaction_component__["a" /* OthertransactionComponent */],
+                __WEBPACK_IMPORTED_MODULE_104__components_othertransactionstats_othertransactionstats_component__["a" /* OthertransactionstatsComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -710,18 +772,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["e" /* RouterModule */].forRoot(appRoutes, { onSameUrlNavigation: 'reload' })
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_65__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_83__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
+                __WEBPACK_IMPORTED_MODULE_68__components_kx_info_dialog_kx_info_dialog_component__["a" /* KxInfoDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_86__components_labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_11__app_global__["a" /* Globals */],
-                __WEBPACK_IMPORTED_MODULE_27__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_30__common_toastr_service__["a" /* ToastrService */],
                 __WEBPACK_IMPORTED_MODULE_12__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_13__guards_auth_guard__["a" /* AuthGuard */],
                 __WEBPACK_IMPORTED_MODULE_14__services_user_service__["a" /* UserService */],
                 __WEBPACK_IMPORTED_MODULE_15__services_artist_service__["a" /* ArtistService */],
                 __WEBPACK_IMPORTED_MODULE_16__services_album_service__["a" /* AlbumService */],
                 __WEBPACK_IMPORTED_MODULE_17__services_song_service__["a" /* SongService */],
-                __WEBPACK_IMPORTED_MODULE_28__angular_common__["DatePipe"],
+                __WEBPACK_IMPORTED_MODULE_31__angular_common__["DatePipe"],
                 __WEBPACK_IMPORTED_MODULE_18__services_admin_usermgt_service__["a" /* UsermgtService */],
                 __WEBPACK_IMPORTED_MODULE_19__services_admin_songadmin_service__["a" /* SongadminService */],
                 __WEBPACK_IMPORTED_MODULE_20__services_admin_msconfig_service__["a" /* MsconfigService */],
@@ -730,8 +792,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_23__services_songpurchase_service__["a" /* SongpurchaseService */],
                 __WEBPACK_IMPORTED_MODULE_24__services_transaction_service__["a" /* TransactionService */],
                 __WEBPACK_IMPORTED_MODULE_25__services_activitylog_service__["a" /* ActivitylogService */],
-                __WEBPACK_IMPORTED_MODULE_26__services_navbar_service__["a" /* NavbarService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */]]
+                __WEBPACK_IMPORTED_MODULE_26__services_navbar_service__["a" /* NavbarService */],
+                __WEBPACK_IMPORTED_MODULE_27__services_trfbalance_service__["a" /* TrfbalanceService */],
+                __WEBPACK_IMPORTED_MODULE_28__services_admin_trfbalancemgt_service__["a" /* TrfbalancemgtService */],
+                __WEBPACK_IMPORTED_MODULE_29__services_admin_adjustment_service__["a" /* AdjustmentService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_32__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -794,7 +859,7 @@ var ToastrService = /** @class */ (function () {
 /***/ "./src/app/components/about/about.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "/*------------------------------------------------------------------\n    [Full Screen Carousel]\n------------------------------------------------------------------*/\n.full-screen {\n    background-size: cover;\n    background-position: center;\n    background-repeat: no-repeat;\n  }\n/*------------------------------------------------------------------\n      [Carousel]\n  ------------------------------------------------------------------*/\n.carousel-indicators {\n    left: auto;\n    width: auto;\n    padding-left: 0;\n    margin-left: 0;\n  }\n.carousel-centered {\n    position: absolute;\n    top: 50%;\n    -webkit-transform: translate3d(0, -50%, 0);\n    transform: translate3d(0, -50%, 0);\n  }\n.carousel-title {\n    font-size: 60px;\n    font-weight: 700;\n    /* color: #fff; */\n    color: #fce86c;\n    line-height: 1.1;\n    text-transform: uppercase;\n  }\n#carousel-example-generic .item img {\n    /* opacity: 0.0;\n    filter: alpha(opacity=0); */\n    width: 100%;\n    height: 700px;\n  }\n@media (max-width: 768px) {\n    .carousel-title {\n      font-size: 40px;\n    }\n    #carousel-example-generic .item img {\n      height:100%;\n      -o-object-fit:cover;\n         object-fit:cover;\n    }\n  }\n/*------------------------------------------------------------------\n        [Button]\n  ------------------------------------------------------------------*/\n.btn-theme {\n    position: relative;\n    display: inline-block;\n    line-height: 1.4;\n    text-align: center;\n    background-image: none;\n    border-style: solid;\n    white-space: nowrap;\n    vertical-align: middle;\n    -ms-touch-action: manipulation;\n    touch-action: manipulation;\n    cursor: pointer;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n.btn-theme:focus, .btn-theme:active:focus, .btn-theme.active:focus, .btn-theme.focus, .btn-theme:active.focus, .btn-theme.active.focus {\n    outline: none;\n  }\n.btn-theme:hover {\n    -webkit-transition-duration: 300ms;\n            transition-duration: 300ms;\n    -webkit-transition-property: all;\n    transition-property: all;\n    -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n            transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n  }\n.btn-theme:hover, .btn-theme:focus, .btn-theme.focus {\n    text-decoration: none;\n  }\n.btn-theme:active, .btn-theme.active {\n    background-image: none;\n    outline: 0;\n  }\n.btn-theme.disabled, .btn-theme[disabled],\n  fieldset[disabled] .btn-theme {\n    cursor: not-allowed;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    opacity: .65;\n    pointer-events: none;\n  }\n.btn-white-brd {\n    color: #fff;\n    background: transparent;\n    border-color: rgba(255, 255, 255, 0.3);\n    border-width: 1px;\n  }\n.btn-white-brd:hover, .btn-white-brd:focus, .btn-white-brd.focus {\n    color: #515769;\n    background: #fff;\n    border-color: transparent;\n  }\n.btn-yellow-brd {\n    color: #fce86c;\n    background: transparent;\n    border-color: rgba(255, 255, 255, 0.3);\n    border-width: 1px;\n  }\n.btn-yellow-brd:hover, .btn-yellow-brd:focus, .btn-yellow-brd.focus {\n    color: #515769;\n    background: #fce86c;\n    border-color: transparent;\n  }\n.btn-default-bg {\n    color: #515769;\n    background: #f3f4f5;\n    border-color: transparent;\n    border-width: 0;\n  }\n.btn-default-bg:hover, .btn-default-bg:focus, .btn-default-bg.focus {\n    color: #fff;\n    background: #17bed2;\n    border-color: transparent;\n  }\n.btn-base-bg {\n    color: #fff;\n    background: #17bed2;\n    border-color: transparent;\n    border-width: 0;\n  }\n.btn-base-bg:hover, .btn-base-bg:focus, .btn-base-bg.focus {\n    color: #fff;\n    background: #63cbd7;\n    border-color: transparent;\n  }\n.btn-theme-sm {\n    font-size: 13px;\n    font-weight: 600;\n    padding: 15px 30px;\n  }\n.pcarousel {\n    font-size:16px;\n    color:#fce86c;\n}\n@media (max-width: 768px) {\n    .pcarousel {\n        font-size:14px;\n    }\n    .sm-margin-b-2 {\n        margin-bottom: 2px !important;\n    }\n}\n.bg-color-sky-light {\n    background: #fafafa;\n}\n.content-lg {\n    padding-top: 50px;\n    padding-bottom: 100px;\n}\n.row-space-1 {\n    margin-right: -1px;\n    margin-left: -1px;\n}\n.margin-b-2 {\n    margin-bottom: 2px !important;\n}\n.margin-b-5 {\n    margin-bottom: 5px !important;\n}\n.margin-b-40 {\n    margin-bottom: 40px !important;\n}\n.center {\n    margin: auto;\n    text-align: center;\n    width: 100%;\n    /* border: 3px solid #73AD21; */\n    padding-bottom: 20px;\n}\n.service-header {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    /* margin-top: 0.3em;  */\n    /* margin-left: 1em; */\n}\n.service-header > label {\n    margin-left: 0.5em;\n}\n.service-header > .headericon {\n    margin-top: 0.3em;\n    font-size: 20px;\n}\n.service-header > .headericon-right {\n    margin-top: 0.3em;\n    margin-left: 0.5em;\n    font-size: 20px;\n}\n.service {\n    background: #333;\n    padding: 50px;\n}\n.service .service-element,\n.service .service-info {\n  color: #fce86c;\n  -webkit-transform: translate3d(0, 0, 0);\n  transform: translate3d(0, 0, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.service .service-icon {\n  display: block;\n  font-size: 50px;\n  color: #fce86c;\n  margin-bottom: 30px;\n}\n.service:hover .service-element {\n  opacity: 0;\n  -webkit-transform: translate3d(0, -100%, 0);\n  transform: translate3d(0, -100%, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.service:hover .service-info {\n  -webkit-transform: translate3d(0, -30%, 0);\n  transform: translate3d(0, -30%, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.content-wrapper-link {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: block;\n    z-index: 3;\n    text-decoration: none;\n}\nhr.line-grey-center {\n    border: 0;\n    height: 3px;\n    background-color: #333;\n    width: 166px;}"
+module.exports = "/*------------------------------------------------------------------\n    [Full Screen Carousel]\n------------------------------------------------------------------*/\n.full-screen {\n    background-size: cover;\n    background-position: center;\n    background-repeat: no-repeat;\n  }\n/*------------------------------------------------------------------\n      [Carousel]\n  ------------------------------------------------------------------*/\n.carousel-indicators {\n    left: auto;\n    width: auto;\n    padding-left: 0;\n    margin-left: 0;\n  }\n.carousel-centered {\n    position: absolute;\n    top: 50%;\n    -webkit-transform: translate3d(0, -50%, 0);\n    transform: translate3d(0, -50%, 0);\n  }\n.carousel-title {\n    font-size: 60px;\n    font-weight: 700;\n    /* color: #fff; */\n    color: #fce86c;\n    line-height: 1.1;\n    text-transform: uppercase;\n  }\n#carousel-example-generic .item img {\n    /* opacity: 0.0;\n    filter: alpha(opacity=0); */\n    width: 100%;\n    height: 700px;\n  }\n@media (max-width: 768px) {\n    .carousel-title {\n      font-size: 40px;\n    }\n    #carousel-example-generic .item img {\n      height:100%;\n      -o-object-fit:cover;\n         object-fit:cover;\n    }\n  }\n/*------------------------------------------------------------------\n        [Button]\n  ------------------------------------------------------------------*/\n.btn-theme {\n    position: relative;\n    display: inline-block;\n    line-height: 1.4;\n    text-align: center;\n    background-image: none;\n    border-style: solid;\n    white-space: nowrap;\n    vertical-align: middle;\n    -ms-touch-action: manipulation;\n    touch-action: manipulation;\n    cursor: pointer;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n.btn-theme:focus, .btn-theme:active:focus, .btn-theme.active:focus, .btn-theme.focus, .btn-theme:active.focus, .btn-theme.active.focus {\n    outline: none;\n  }\n.btn-theme:hover {\n    -webkit-transition-duration: 300ms;\n            transition-duration: 300ms;\n    -webkit-transition-property: all;\n    transition-property: all;\n    -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n            transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n  }\n.btn-theme:hover, .btn-theme:focus, .btn-theme.focus {\n    text-decoration: none;\n  }\n.btn-theme:active, .btn-theme.active {\n    background-image: none;\n    outline: 0;\n  }\n.btn-theme.disabled, .btn-theme[disabled],\n  fieldset[disabled] .btn-theme {\n    cursor: not-allowed;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    opacity: .65;\n    pointer-events: none;\n  }\n.btn-white-brd {\n    color: #fff;\n    background: transparent;\n    border-color: rgba(255, 255, 255, 0.3);\n    border-width: 1px;\n  }\n.btn-white-brd:hover, .btn-white-brd:focus, .btn-white-brd.focus {\n    color: #515769;\n    background: #fff;\n    border-color: transparent;\n  }\n.btn-yellow-brd {\n    color: #fce86c;\n    background: transparent;\n    border-color: rgba(255, 255, 255, 0.3);\n    border-width: 1px;\n  }\n.btn-yellow-brd:hover, .btn-yellow-brd:focus, .btn-yellow-brd.focus {\n    color: #515769;\n    background: #fce86c;\n    border-color: transparent;\n  }\n.btn-default-bg {\n    color: #515769;\n    background: #f3f4f5;\n    border-color: transparent;\n    border-width: 0;\n  }\n.btn-default-bg:hover, .btn-default-bg:focus, .btn-default-bg.focus {\n    color: #fff;\n    background: #17bed2;\n    border-color: transparent;\n  }\n.btn-base-bg {\n    color: #fff;\n    background: #17bed2;\n    border-color: transparent;\n    border-width: 0;\n  }\n.btn-base-bg:hover, .btn-base-bg:focus, .btn-base-bg.focus {\n    color: #fff;\n    background: #63cbd7;\n    border-color: transparent;\n  }\n.btn-theme-sm {\n    font-size: 13px;\n    font-weight: 600;\n    padding: 15px 30px;\n  }\n.pcarousel {\n    font-size:16px;\n    color:#fce86c;\n}\n@media (max-width: 768px) {\n    .pcarousel {\n        font-size:14px;\n    }\n    .sm-margin-b-2 {\n        margin-bottom: 2px !important;\n    }\n}\n.bg-color-sky-light {\n    background: #fafafa;\n}\n.content-lg {\n    padding-top: 50px;\n    padding-bottom: 100px;\n}\n.row-space-1 {\n    margin-right: -1px;\n    margin-left: -1px;\n}\n.margin-b-2 {\n    margin-bottom: 2px !important;\n}\n.margin-b-5 {\n    margin-bottom: 5px !important;\n}\n.margin-b-40 {\n    margin-bottom: 40px !important;\n}\n.center {\n    margin: auto;\n    text-align: center;\n    width: 100%;\n    /* border: 3px solid #73AD21; */\n    padding-bottom: 20px;\n}\n.service-header {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    /* margin-top: 0.3em;  */\n    /* margin-left: 1em; */\n}\n.service-header > label {\n    margin-left: 0.5em;\n}\n.service-header > .headericon {\n    margin-top: 0.3em;\n    font-size: 20px;\n}\n.service-header > .headericon-right {\n    margin-top: 0.3em;\n    margin-left: 0.5em;\n    font-size: 20px;\n}\n.service {\n    background: #333;\n    padding: 50px;\n}\n.service .service-element,\n.service .service-info {\n  color: #fce86c;\n  -webkit-transform: translate3d(0, 0, 0);\n  transform: translate3d(0, 0, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.service .service-icon {\n  display: block;\n  font-size: 50px;\n  color: #fce86c;\n  margin-bottom: 30px;\n}\n.service:hover .service-element {\n  opacity: 0;\n  -webkit-transform: translate3d(0, -100%, 0);\n  transform: translate3d(0, -100%, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.service:hover .service-info {\n  -webkit-transform: translate3d(0, -30%, 0);\n  transform: translate3d(0, -30%, 0);\n  -webkit-transition-duration: 300ms;\n          transition-duration: 300ms;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n          transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);\n}\n.content-wrapper-link {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: block;\n    z-index: 3;\n    text-decoration: none;\n}"
 
 /***/ }),
 
@@ -1551,6 +1616,1285 @@ var ActivitylogstatsComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
     ], ActivitylogstatsComponent);
     return ActivitylogstatsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/addadjustment/addadjustment.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/addadjustment/addadjustment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Add Adjustment</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form  [formGroup]=\"addAdjustmentForm\" (ngSubmit)=\"addAdjustment(addAdjustmentForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': addAdjustmentForm.get('labelid').invalid && addAdjustmentForm.get('labelid').dirty}\">\n          <label for=\"labelid\" class=\"col-sm-2 control-label\">Label <sup>*</sup></label>\n          <div class=\"col-sm-10\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n              <select #inputlabel [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"labelid\">\n                  <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                  <option value=\"\">Select the label</option>\n                  <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n              </select>\n            </div>\n          <div class=\"text-danger\" *ngIf=\"addAdjustmentForm.get('labelid').dirty && addAdjustmentForm.get('labelid').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"addAdjustmentForm.get('labelid').errors.required\">\n                  Please enter label\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': addAdjustmentForm.get('amount').invalid && addAdjustmentForm.get('amount').dirty}\">\n          <label for=\"amount\" class=\"col-sm-2 control-label\">Amount<sup>*</sup></label>\n          <div class=\"input-group col-sm-10\" style=\"padding:0 15px\">\n              <div class=\"input-group-addon\">Rp</div>\n              <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"amount\" [formControl]=\"amount\" placeholder=\"Amount\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"addAdjustmentForm.get('amount').dirty && addAdjustmentForm.get('amount').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"addAdjustmentForm.get('amount').errors.required\">\n                  Please enter amount\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"addAdjustmentForm.get('amount').errors.pattern\">\n                  Please enter a valid amount\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': addAdjustmentForm.get('dbcr').invalid && addAdjustmentForm.get('dbcr').dirty}\">\n          <label for=\"dbcr\" class=\"col-sm-2 control-label\">IN/OUT<sup>*</sup></label>\n          <div class=\"col-sm-10\">\n            <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n            <select #inputdbcr [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"dbcr\">\n                <option ng-selected=\"true\" value=\"\">Select the option</option>\n                <option *ngFor=\"let a of dc\" [ngValue]=\"a.code\">{{a.value}}</option>\n            </select>\n          </div>\n          <div class=\"text-danger\" *ngIf=\"addAdjustmentForm.get('dbcr').dirty && addAdjustmentForm.get('dbcr').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"addAdjustmentForm.get('dbcr').errors.required\">\n                  Please enter IN or OUT sign\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"remarks\" class=\"col-sm-2 control-label\">Remarks <sup>*</sup></label>\n          <div class=\"input-group col-xs-12 col-sm-10\" style=\"padding:0 15px\">\n              <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"remarks\" rows=\"10\" [formControl]=\"remarks\" placeholder=\"Remarks\"></textarea>\n          </div>\n          <div class=\"text-danger\" *ngIf=\"addAdjustmentForm.get('remarks').dirty && addAdjustmentForm.get('remarks').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"addAdjustmentForm.get('remarks').errors.required\">\n                  Please input the adjustment remarks\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\">\n           <label class=\"col-sm-2 control-label\">  </label>\n         <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n         <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0 15px;margin:0;\">\n              <button type=\"submit\" [disabled]=\"addAdjustmentForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n    </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/addadjustment/addadjustment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddadjustmentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__ = __webpack_require__("./src/app/services/admin/adjustment.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var AddadjustmentComponent = /** @class */ (function () {
+    function AddadjustmentComponent(fb, authService, route, router, toastr, datePipe, adjustmentService, labelmgtService) {
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.adjustmentService = adjustmentService;
+        this.labelmgtService = labelmgtService;
+        this.dc = [{ code: '-', value: 'OUT / -' },
+            { code: '+', value: 'IN / +' }];
+        this.loading = false;
+        this.progressvalue = 0;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.amount = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.remarks = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.dbcr = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+    }
+    AddadjustmentComponent.prototype.ngOnInit = function () {
+        this.userObj = this.authService.currentUser;
+        this.progressvalue = 0;
+        this.getLabels();
+        this.addAdjustmentForm = this.fb.group({
+            labelid: this.labelid,
+            amount: this.amount,
+            remarks: this.remarks,
+            dbcr: this.dbcr
+        });
+        //saveAdjustment
+    };
+    AddadjustmentComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    AddadjustmentComponent.prototype.addAdjustment = function (formdata) {
+        var _this = this;
+        this.progressvalue = 0;
+        if (this.addAdjustmentForm.dirty && this.addAdjustmentForm.valid) {
+            this.progressvalue = 10;
+            var theForm = this.addAdjustmentForm.value;
+            this.progressvalue = 30;
+            theForm.username = this.userObj.username;
+            this.loading = true;
+            this.adjustmentService.saveAdjustment(this.userObj.userid, theForm)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.progressvalue = 50;
+                    _this.loading = false;
+                    _this.progressvalue = 100;
+                    _this.toastr.success(data.message);
+                }
+                _this.addAdjustmentForm.reset();
+                _this.labelVar.nativeElement.selectedIndex = 0;
+                _this.dbcrVar.nativeElement.selectedIndex = 0;
+                _this.progressvalue = 0;
+            }, function (err) {
+                _this.progressvalue = 0;
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+        else {
+            this.toastr.error('Please provide correct input...');
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('inputlabel'),
+        __metadata("design:type", Object)
+    ], AddadjustmentComponent.prototype, "labelVar", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('inputdbcr'),
+        __metadata("design:type", Object)
+    ], AddadjustmentComponent.prototype, "dbcrVar", void 0);
+    AddadjustmentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-addadjustment',
+            template: __webpack_require__("./src/app/components/adjustment/addadjustment/addadjustment.component.html"),
+            styles: [__webpack_require__("./src/app/components/adjustment/addadjustment/addadjustment.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__["a" /* AdjustmentService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], AddadjustmentComponent);
+    return AddadjustmentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/editadjustment/editadjustment.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/editadjustment/editadjustment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Edit Adjustment Detail</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form [formGroup]=\"adjustmentForm\" (ngSubmit)=\"saveAdjustment(adjustmentForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"label\" class=\"col-sm-2 control-label\">Label </label>\n            <div class=\"col-sm-10\" style=\"padding:7px 15px 0\">{{ adjustment?.label }}\n                <!-- <div class=\"input-group-addon\">Rp</div> -->\n                <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"requestdt\" class=\"col-sm-2 control-label\">Request Date</label>\n            <div class=\"input-group col-sm-10\" style=\"padding:7px 15px 0\"> {{ adjustment?.requestdt | date: 'd MMM y'}}</div>\n        </div> \n        <div class=\"form-group\">\n            <label for=\"requestby\" class=\"col-sm-2 control-label\">Request By</label>\n            <div class=\"input-group col-sm-10\" style=\"padding:7px 15px 0\">{{ adjustment?.requestby }}\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"status\" class=\"col-sm-2 control-label\">Status</label>\n            <div class=\"col-sm-10\" style=\"padding:7px 15px 0\">{{ adjustment?.stsvalue }}</div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': adjustmentForm.get('amount').invalid && adjustmentForm.get('amount').dirty}\">\n            <label for=\"amount\" class=\"col-sm-2 control-label\">Amount <sup>*</sup></label>\n            <div class=\"input-group col-sm-10\" style=\"padding:0 15px 0\">\n                <div class=\"input-group-addon\">Rp</div>\n                <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"amount\" [formControl]=\"amount\" placeholder=\"Amount\">\n            </div>\n            <div class=\"text-danger\" *ngIf=\"adjustmentForm.get('amount').dirty && adjustmentForm.get('amount').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"adjustmentForm.get('amount').errors.required\">\n                    Please input the amount\n                </span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"adjustmentForm.get('amount').errors.pattern\">\n                    Please enter a valid amount\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': adjustmentForm.get('dbcr').invalid && adjustmentForm.get('dbcr').dirty}\">\n            <label for=\"dbcr\" class=\"col-sm-2 control-label\">IN/OUT<sup>*</sup></label>\n            <div class=\"col-sm-10\">\n              <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n              <select #inputdbcr [disabled]=\"this.loading == true\" class=\"form-control\" [formControl]=\"dbcr\">\n                  <option ng-selected=\"true\" value=\"\">Select the option</option>\n                  <option *ngFor=\"let a of dc\" [ngValue]=\"a.code\">{{a.value}}</option>\n              </select>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"adjustmentForm.get('dbcr').dirty && adjustmentForm.get('dbcr').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"adjustmentForm.get('dbcr').errors.required\">\n                    Please enter IN or OUT sign\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\" [ngClass]=\"{'has-error': adjustmentForm.get('remarks').invalid && adjustmentForm.get('remarks').dirty}\">\n            <label for=\"remarks\" class=\"col-sm-2 control-label\">Remarks <sup>*</sup></label>\n            <div class=\"input-group col-xs-12 col-sm-10\" style=\"padding:0 15px\">\n                <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"remarks\" rows=\"10\" [formControl]=\"remarks\" placeholder=\"Remarks\"></textarea>\n            </div>\n            <div class=\"text-danger\" *ngIf=\"adjustmentForm.get('remarks').dirty && adjustmentForm.get('remarks').errors\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 15px 0\" *ngIf=\"adjustmentForm.get('remarks').errors.required\">\n                    Please input the adjustment remarks\n                </span>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">  </label>\n          <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n          <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n       </div>\n       <div class=\"form-group\">\n           <label class=\"col-sm-2 control-label\"></label>\n           <div class=\"col-sm-5\" style=\"padding:0 15px;margin:0;\">\n               <button type=\"submit\" [disabled]=\"adjustmentForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n               <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n           </div>\n           <div class=\"col-sm-5\" style=\"text-align:right\">\n               <sup>*</sup> required\n           </div>\n       </div>\n    </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/editadjustment/editadjustment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditadjustmentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__ = __webpack_require__("./src/app/services/admin/adjustment.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var EditadjustmentComponent = /** @class */ (function () {
+    function EditadjustmentComponent(fb, authService, route, router, toastr, datePipe, adjustmentService, labelmgtService) {
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.adjustmentService = adjustmentService;
+        this.labelmgtService = labelmgtService;
+        this.loading = false;
+        this.dc = [{ code: '-', value: 'OUT / -' },
+            { code: '+', value: 'IN / +' }];
+        this.progressvalue = 0;
+        this.amount = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.remarks = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.dbcr = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+    }
+    EditadjustmentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.adjid = params['id'];
+            _this.btnLbl = "Update";
+        });
+        this.getSelectedAdj(this.adjid);
+        this.userObj = this.authService.currentUser;
+        this.adjustmentForm = this.fb.group({
+            amount: this.amount,
+            remarks: this.remarks,
+            dbcr: this.dbcr
+        });
+    };
+    EditadjustmentComponent.prototype.getSelectedAdj = function (id) {
+        var _this = this;
+        this.adjustmentService.getAdjustmentAgg(id).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.adjustment = data.data[0];
+                    _this.populateForm(data.data[0]);
+                }
+                else {
+                    _this.toastr.error('Empty adjustment data result');
+                    _this.router.navigate(['listadjustment']);
+                }
+            }
+            else {
+                _this.toastr.error('Adjustment id is incorrect in the URL');
+                _this.router.navigate(['listadjustment']);
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['listadjustment']);
+        });
+    };
+    EditadjustmentComponent.prototype.populateForm = function (data) {
+        this.adjustmentForm.patchValue({
+            amount: data.amount,
+            remarks: data.remarks,
+            dbcr: data.dbcr
+        });
+    };
+    EditadjustmentComponent.prototype.saveAdjustment = function (formdata) {
+        var _this = this;
+        if (this.adjustmentForm.valid) {
+            var theForm = this.adjustmentForm.value;
+            theForm.adminuser = this.userObj.username;
+            theForm.adminuserid = this.userObj.userid;
+            this.loading = true;
+            this.adjustmentService.editAdjustment(this.adjid, theForm)
+                .subscribe(function (data) {
+                _this.loading = false;
+                if (data.success === false) {
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['errorpage']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.toastr.success(data.message);
+                }
+                if (!_this.adjid) {
+                    _this.adjustmentForm.reset();
+                }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+    };
+    EditadjustmentComponent.prototype.onBack = function () {
+        this.router.navigate(['/listadjustment'], { preserveQueryParams: true });
+    };
+    EditadjustmentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-editadjustment',
+            template: __webpack_require__("./src/app/components/adjustment/editadjustment/editadjustment.component.html"),
+            styles: [__webpack_require__("./src/app/components/adjustment/editadjustment/editadjustment.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__["a" /* AdjustmentService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], EditadjustmentComponent);
+    return EditadjustmentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/listadjustment/listadjustment.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/listadjustment/listadjustment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>List Adjustment</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n  \n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Request Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                  <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"status\">\n                        <option ng-selected=\"true\" value=\"\">Select the status</option>\n                        <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                    </select>\n                  </div>\n                </div>                    \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                  </div>\n              </div>\n            </form>\n        </div>    \n    </div>  \n    <div class=\"panel panel-danger\" *ngIf=\"adjustments && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No adjustment found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n          There is NO adjustment data found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"adjustments && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n        </div>\n        <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAdjustment('requestdt')\">Request Date</a></th>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAdjustment('label')\">Label</a></th>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAdjustment('amount')\">Amount</a></th>\n                          <th width=\"10%\" scope=\"col\">IN+ / OUT-</th>\n                          <th width=\"15%\" scope=\"col\">Status</th>\n                          <th width=\"25%\" scope=\"col\" >Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let adj of adjustments; let adjIndex = index'>\n                          <td data-label=\"Request Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showAdjustment(adj._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Adjustment\">{{ adj.requestdt | date: 'd MMM y'}}</a></td>  \n                          <td data-label=\"Label\">{{ adj.label }}</td>\n                          <td data-label=\"Amount\" class=\"text-right\">{{ adj.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td data-label=\"IN+ / OUT-\">{{ adj.dbcr}}</td>\n                          <td data-label=\"Status\">{{ adj.stsvalue}}</td>\n                          <td data-label=\"Action\">\n                              <a *ngIf=\"adj.status === 'STSPEND' && authService.currentUser.usertype == 'ADM'\" style=\"cursor:pointer;color:darkgreen\" aria-label=\"Edit\" (click)=\"updateAdjustment(adjIndex, adj._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Update Adjustment\">Edit</a>\n                              <!-- &nbsp;&nbsp;\n                              <a *ngIf=\"adj.status === 'STSPEND'\" style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectAdjustment(adjIndex, adj._id, adj.label)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Adjustment\">Reject</a> -->\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"adjustments && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/listadjustment/listadjustment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListadjustmentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__ = __webpack_require__("./src/app/services/admin/adjustment.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var ListadjustmentComponent = /** @class */ (function () {
+    function ListadjustmentComponent(fb, authService, route, router, toastr, datePipe, adjustmentService, labelmgtService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.adjustmentService = adjustmentService;
+        this.labelmgtService = labelmgtService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    ListadjustmentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt,
+            status: this.status,
+        });
+        this.getLabels();
+        this.getMsconfigGroupList('TRFBLSTATUS');
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qstatus = params['status'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.status = _this.qstatus;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    status: _this.qstatus,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    ListadjustmentComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ListadjustmentComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    ListadjustmentComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ListadjustmentComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'TRFBLSTATUS') {
+                        _this.sts = data.data;
+                    }
+                }
+                else {
+                    _this.sts = [{ code: '', value: 'Error ms config list' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ListadjustmentComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['listadjustment'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                status: this.reportForm.value.status,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['listadjustment'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        status: this.reportForm.value.status,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    ListadjustmentComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.adjustmentService.getSumAdjustmentAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.adjustments = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid;
+                _this.qstatus = formval.status;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    status: _this.qstatus,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ListadjustmentComponent.prototype.setPage = function (page) {
+        this.router.navigate(['listadjustment'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                status: this.qstatus,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    ListadjustmentComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    ListadjustmentComponent.prototype.sortAdjustment = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['listadjustment'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                status: this.qstatus,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    ListadjustmentComponent.prototype.showAdjustment = function (adjustmentid) {
+        this.router.navigate(["viewadjustment/" + adjustmentid], {
+            queryParams: {
+                src: 'list',
+                labelid: this.qlabelid,
+                status: this.qstatus,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    /* rejectAdjustment(idx, adjid, label): void {
+      
+      if(confirm('Do you really want to reject this adjustment of: ' + label + ' record?')){
+          
+          this.loading = true;
+          let payloadData: any = {};
+          payloadData.status = 'STSRJCT';
+          this.adjustmentService.updateStatusadjustment(adjid, payloadData)
+          .subscribe(data => {
+            if (data.success === false) {
+              this.loading = false;
+              if (data.errcode){
+                this.authService.logout();
+                this.router.navigate(['errorpage']);
+              }
+              this.toastr.error(data.message);
+            } else {
+              this.loading = false;
+              this.adjustments.splice(idx, 1);
+              this.totalrows = this.totalrows - 1;
+              this.toastr.success(data.message);
+            }
+          },
+          err => {
+            this.loading = false;
+            
+            this.toastr.error(err);
+          });
+        }
+    } */
+    ListadjustmentComponent.prototype.updateAdjustment = function (idx, adjid) {
+        this.router.navigate(["editadjustment/" + adjid], {
+            queryParams: {
+                labelid: this.qlabelid,
+                status: this.qstatus,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    ListadjustmentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-listadjustment',
+            template: __webpack_require__("./src/app/components/adjustment/listadjustment/listadjustment.component.html"),
+            styles: [__webpack_require__("./src/app/components/adjustment/listadjustment/listadjustment.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__["a" /* AdjustmentService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], ListadjustmentComponent);
+    return ListadjustmentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/pendingadjustment/pendingadjustment.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/pendingadjustment/pendingadjustment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Pending Adjustment</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n  \n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Request Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>                  \n                </div>                    \n              </div>\n\n            </form>\n        </div>    \n    </div>  \n    <div class=\"panel panel-danger\" *ngIf=\"adjustments && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No adjustment found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n          There is NO adjustment data found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"adjustments && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n        </div>\n        <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAdjustment('requestdt')\">Request Date</a></th>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAdjustment('label')\">Label</a></th>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortAdjustment('amount')\">Amount</a></th>\n                          <th width=\"10%\" scope=\"col\">IN+ / OUT-</th>\n                          <th width=\"15%\" scope=\"col\">Status</th>\n                          <th width=\"25%\" scope=\"col\" >Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let adj of adjustments; let adjIndex = index'>\n                          <td data-label=\"Request Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showAdjustment(adj._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Adjustment\">{{ adj.requestdt | date: 'd MMM y'}}</a></td>  \n                          <td data-label=\"Label\">{{ adj.label }}</td>\n                          <td data-label=\"Amount\" class=\"text-right\">{{ adj.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td data-label=\"IN+ / OUT-\">{{ adj.dbcr}}</td>\n                          <td data-label=\"Status\">{{ adj.stsvalue}}</td>\n                          <td data-label=\"Action\">\n                              <a *ngIf=\"adj.status === 'STSPEND'\" style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approveAdjustment(adjIndex, adj._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Adjustment\">Approve</a>\n                               &nbsp;&nbsp;\n                              <a *ngIf=\"adj.status === 'STSPEND'\" style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectAdjustment(adjIndex, adj._id, adj.label)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Adjustment\">Reject</a>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"adjustments && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/pendingadjustment/pendingadjustment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PendingadjustmentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__ = __webpack_require__("./src/app/services/admin/adjustment.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var PendingadjustmentComponent = /** @class */ (function () {
+    function PendingadjustmentComponent(fb, authService, route, router, toastr, datePipe, adjustmentService, labelmgtService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.adjustmentService = adjustmentService;
+        this.labelmgtService = labelmgtService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    PendingadjustmentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.status = 'STSPEND';
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.reportForm.value.status = 'STSPEND';
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    PendingadjustmentComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    PendingadjustmentComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    PendingadjustmentComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    PendingadjustmentComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['pendingadjustment'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['pendingadjustment'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    PendingadjustmentComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.adjustmentService.getSumAdjustmentAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.adjustments = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    PendingadjustmentComponent.prototype.setPage = function (page) {
+        this.router.navigate(['pendingadjustment'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingadjustmentComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    PendingadjustmentComponent.prototype.sortAdjustment = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['pendingadjustment'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingadjustmentComponent.prototype.showAdjustment = function (adjustmentid) {
+        this.router.navigate(["viewadjustment/" + adjustmentid], {
+            queryParams: {
+                src: 'pend',
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingadjustmentComponent.prototype.rejectAdjustment = function (idx, adjid, label) {
+        var _this = this;
+        if (confirm('Do you really want to reject this adjustment of: ' + label + ' record?')) {
+            this.loading = true;
+            var payloadData = {};
+            payloadData.status = 'STSRJCT';
+            payloadData.adminuser = this.userObj.username;
+            payloadData.adminuserid = this.userObj.userid;
+            this.adjustmentService.updateStatusadjustment(adjid, payloadData)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['errorpage']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.loading = false;
+                    _this.adjustments.splice(idx, 1);
+                    _this.totalrows = _this.totalrows - 1;
+                    _this.toastr.success(data.message);
+                }
+            }, function (err) {
+                _this.loading = false;
+                _this.toastr.error(err);
+            });
+        }
+    };
+    PendingadjustmentComponent.prototype.approveAdjustment = function (idx, adjid) {
+        var _this = this;
+        this.loading = true;
+        var payloadData = {};
+        payloadData.status = 'STSCMPL';
+        payloadData.adminuser = this.userObj.username;
+        payloadData.adminuserid = this.userObj.userid;
+        this.adjustmentService.updateStatusadjustment(adjid, payloadData)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.adjustments.splice(idx, 1);
+                _this.totalrows = _this.totalrows - 1;
+                _this.toastr.success(data.message);
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.toastr.error(err);
+        });
+    };
+    PendingadjustmentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-pendingadjustment',
+            template: __webpack_require__("./src/app/components/adjustment/pendingadjustment/pendingadjustment.component.html"),
+            styles: [__webpack_require__("./src/app/components/adjustment/pendingadjustment/pendingadjustment.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_adjustment_service__["a" /* AdjustmentService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], PendingadjustmentComponent);
+    return PendingadjustmentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/viewadjustment/viewadjustment.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/viewadjustment/viewadjustment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Adjustment Detail</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-10\">\n            <form class=\"form-horizontal\">\n                <div class=\"form-group\">\n                    <label for=\"reqdate\" class=\"col-sm-4 control-label\">Request Date</label>\n                    <div class=\"form-ele col-sm-8\"> {{ adjustment?.requestdt | date: 'd MMM y'}}</div>\n                </div> \n                <div class=\"form-group\">\n                    <label for=\"label\" class=\"col-sm-4 control-label\">Label</label>\n                    <div class=\"form-ele col-sm-8\">{{ adjustment?.label }}\n                        <!-- <div class=\"input-group-addon\">Rp</div> -->\n                        <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"amount\" class=\"col-sm-4 control-label\">Amount</label>\n                    <div class=\"form-ele col-sm-8\">{{ adjustment?.amount | currency: 'IDR':'symbol-narrow' }}\n                        <!-- <div class=\"input-group-addon\">Rp</div> -->\n                        <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n                    </div>\n                </div>\n              <div class=\"form-group\">\n                    <label for=\"dbcr\" class=\"col-sm-4 control-label\">IN+ / OUT-</label>\n                    <div class=\"col-sm-8 form-ele\">{{ adjustment?.dbcr }}\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                        <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"status\" class=\"col-sm-4 control-label\">Status</label>\n                    <div class=\"col-sm-8 form-ele\">{{ adjustment?.stsvalue }}</div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"requestby\" class=\"col-sm-4 control-label\">Request By</label>\n                    <div class=\"col-sm-8 form-ele\">{{ adjustment?.requestby }}\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                        <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"remarks\" class=\"col-sm-4 control-label\">Remarks</label>\n                    <div class=\"form-ele col-sm-8\">{{ adjustment?.remarks }}</div>\n                </div>\n                <hr class=\"line-grey-center\">\n              \n                <div class=\"form-group\">\n                    <label for=\"apvdate\" class=\"col-sm-4 control-label\">Approve Date</label>\n                    <div class=\"form-ele col-sm-8\"> {{ adjustment?.approvedt | date: 'd MMM y'}}</div>\n                </div> \n                <div class=\"form-group\">\n                    <label for=\"apvby\" class=\"col-sm-4 control-label\">Approved By</label>\n                    <div class=\"col-sm-8 form-ele\">{{ adjustment?.approveby }}\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                        <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"editlog\" class=\"col-sm-4 control-label\">Edit Log</label>\n                    <div class=\"col-sm-8 form-ele\">{{ adjustment?.extfield1 }}\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                        <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                    </div>\n                </div>      \n            </form>\n        </div>\n        <div class=\"col-sm-2 thumbpadding\">\n\n        </div>\n        \n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-1\"></label>\n        <div class=\"col-sm-11\">\n            <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n        </div>\n    </div>\n    <hr>   \n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/adjustment/viewadjustment/viewadjustment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewadjustmentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_admin_adjustment_service__ = __webpack_require__("./src/app/services/admin/adjustment.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ViewadjustmentComponent = /** @class */ (function () {
+    function ViewadjustmentComponent(fb, authService, adjustmentService, toastr, route, router) {
+        this.fb = fb;
+        this.authService = authService;
+        this.adjustmentService = adjustmentService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+    }
+    ViewadjustmentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.sub = this.route.params.subscribe(function (params) {
+            var adjid = params['id'];
+            _this.adjid = adjid;
+            _this.getAdjustment(adjid);
+        });
+        this.route.queryParams.forEach(function (params) {
+            _this.qsrcpg = params['src'] || '';
+        });
+    };
+    ViewadjustmentComponent.prototype.getAdjustment = function (id) {
+        var _this = this;
+        this.adjustmentService.getAdjustmentAgg(id).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                if (data.data[0]) {
+                    _this.adjustment = data.data[0];
+                }
+                else {
+                    _this.toastr.error('Adjustment id is incorrect in the URL');
+                }
+            }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ViewadjustmentComponent.prototype.onBack = function () {
+        if (this.qsrcpg === 'list') {
+            this.router.navigate(['/listadjustment'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'pend') {
+            this.router.navigate(['/pendingadjustment'], { preserveQueryParams: true });
+        } /*else if (this.qsrcpg === 'cmpl') {
+          this.router.navigate(['/admlisttrfbalancereq'], { preserveQueryParams: true });
+        } */
+    };
+    ViewadjustmentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-viewadjustment',
+            template: __webpack_require__("./src/app/components/adjustment/viewadjustment/viewadjustment.component.html"),
+            styles: [__webpack_require__("./src/app/components/adjustment/viewadjustment/viewadjustment.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_admin_adjustment_service__["a" /* AdjustmentService */],
+            __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
+    ], ViewadjustmentComponent);
+    return ViewadjustmentComponent;
 }());
 
 
@@ -5533,7 +6877,7 @@ module.exports = ""
 /***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div *ngIf=\"chart\">\n        <canvas id=\"canvas\"> {{ chart }}</canvas>\n    </div>\n    <div *ngIf=\"!chart\">\n        <div class=\"form-group\">\n            <label for=\"labelname\" class=\"control-label\">Name</label>\n            <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ this.name }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"control-label\">Email</label>\n            <div class=\"input-group col-sm-12\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ this.email }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"contactno\" class=\"control-label\">Contact No</label>\n        <div class=\"input-group col-sm-12\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></div>\n            <div class=\"form-ele\">{{ this.contactno }}</div>\n        </div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <label for=\"balance\" class=\"control-label\">Balance</label>\n        <div class=\"input-group col-sm-12\"> \n            <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                    <a style=\"cursor:pointer\" routerLink=\"../activitylog\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Activity Log</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Activity Log</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" routerLink=\"../activitylogstats\" routerLinkActive=\"active\" class=\"list-group-item borderless bordersideless\">View Activity Log</a>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Dashboard</h3>\n  </div>\n\n  <form class=\"form-horizontal\">\n    <div *ngIf=\"chart\">\n        <canvas id=\"canvas\"> {{ chart }}</canvas>\n    </div>\n    <div *ngIf=\"chart?.length <= 0\">\n        <div class=\"form-group\">\n            <label for=\"labelname\" class=\"control-label\">Name</label>\n            <div class=\"input-group col-sm-12\">\n                <div class=\"input-group-addon\">\n                    <i class=\"glyphicon glyphicon-user\"></i>\n                </div>\n                <div class=\"form-ele\">{{ this.name }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"control-label\">Email</label>\n            <div class=\"input-group col-sm-12\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ this.email }}</div>\n            </div>\n        </div>\n        <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n            <label for=\"contactno\" class=\"control-label\">Contact No</label>\n            <div class=\"input-group col-sm-12\">\n                <div class=\"input-group-addon\">\n                    <i class=\"glyphicon glyphicon-earphone\"></i>\n                </div>\n                <div class=\"form-ele\">{{ this.contactno }}</div>\n            </div>\n        </div>\n    </div>\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <label for=\"balance\" class=\"control-label\">Balance</label>\n            <div class=\"input-group col-sm-12\"> \n                <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">View balance</button>\n                &nbsp;\n                <button style=\"padding:5px;\"type=\"button\" (click)=\"trflabelbalance()\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">Transfer balance</button>\n            </div>\n        </div>\n    </div>\n    <hr style=\"color:#333\">\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n      <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Total Assets</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toArtists()\" class=\"list-group-item borderless bordersideless\">Total active artists <span class=\"badge\"><b><i>{{ this.totalrows }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toAlbums()\" class=\"list-group-item bordersideless\">Total active albums <span class=\"badge\"><b><i>{{ this.totalalbums }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" (click)=\"toSongs()\" class=\"list-group-item bordersideless\">Total active songs <span class=\"badge\"><b><i>{{ this.totalsongs }}</i></b></span></a>\n                </ul>\n            </div>\n        </div>\n      </div>  \n      <div class=\"col-xs-12 col-sm-6 col-md-6\">\n        <div class=\"panel panel-info\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Transactions</h3>\n            </div>\n            <div class=\"panel-body\">\n                <ul class=\"list-group\">\n                    <a style=\"cursor:pointer\" (click)=\"toPendingSongpurchase()\" class=\"list-group-item borderless bordersideless\">Pending purchase <span class=\"badge\"><b><i>{{ this.totalpendingpurchase }}</i></b></span></a>\n                    <a style=\"cursor:pointer\" routerLink=\"../transaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Transactions</a>\n                    <a style=\"cursor:pointer\" routerLink=\"../othertransaction\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Bank Transfer/Adjustment</a>\n                    <a style=\"cursor:pointer\" routerLink=\"../activitylog\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Activity Log</a>\n                </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n    </div>\n    \n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n        <div class=\"input-group col-xs-12\">\n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Approval Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" (click)=\"toLabelApv()\" class=\"list-group-item borderless bordersideless\">Total pending labels <span class=\"badge\"><b><i>{{ this.totalpendinglabel }}</i></b></span></a>\n                        <a style=\"cursor:pointer\" (click)=\"toSongMgt()\" class=\"list-group-item bordersideless\">Total pending to publish songs <span class=\"badge\"><b><i>{{ this.totalpendingsong }}</i></b></span></a>\n                    </ul>\n                </div>\n            </div>\n        </div>  \n        <div class=\"col-xs-12 col-sm-6 col-md-6\">\n            <div class=\"panel panel-info\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\">Activity Summary</h3>\n                </div>\n                <div class=\"panel-body\">\n                    <ul class=\"list-group\">\n                        <a style=\"cursor:pointer\" routerLink=\"../admlisttrfbalancereq\" routerLinkActive=\"active\" class=\"list-group-item borderless bordersideless\">Transfer balance request Summary</a>\n                        <a style=\"cursor:pointer\" routerLink=\"../activitylogstats\" routerLinkActive=\"active\" class=\"list-group-item bordersideless\">View Activity Log</a>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LIS'\">\n        <label class=\"col-sm-2 control-label\"></label>\n        <div class=\"col-sm-7\">\n            You have logged in as Listener. <br>\n            Please use the kaXet mobile apps to buy songs.\n        </div>\n    </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -5866,6 +7210,9 @@ var DashboardComponent = /** @class */ (function () {
             width: '400px',
             data: 'Hi ' + labelname + ', Please find below your balance.'
         });
+    };
+    DashboardComponent.prototype.trflabelbalance = function () {
+        this.router.navigate(['/addtrfbalancereq']);
     };
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -6663,7 +8010,7 @@ module.exports = ""
 /***/ "./src/app/components/labelstats/viewlabelstats/viewlabelstats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL DETAILS</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"clearfix\">\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n            <div class=\"form-ele col-sm-10\">{{ user.username }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ user.username }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.name }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ user.name }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"form-ele col-sm-10\">{{ user.email }}\n                <!-- <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ user.email }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.contactno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.contactno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankaccno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankname }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n            <div class=\"form-ele col-sm-10\">{{ user.lastlogin | date:'medium' }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                <div class=\"form-ele\">{{ user.lastlogin | date:'medium' }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"balance\" class=\"col-sm-2 control-label\">Balance</label>\n            <div class=\"form-ele col-sm-10\">{{ user.balance | currency:'IDR'}}\n                <!-- <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ user.balance }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">       </label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>                \n  </div>\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL DETAILS</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"clearfix\">\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n            <div class=\"form-ele col-sm-10\">{{ user.username }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ user.username }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.name }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ user.name }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"form-ele col-sm-10\">{{ user.email }}\n                <!-- <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ user.email }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.contactno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.contactno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankaccno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccname\" class=\"col-sm-2 control-label\">Bank Account Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankaccname }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankname }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n            <div class=\"form-ele col-sm-10\">{{ user.lastlogin | date:'medium' }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                <div class=\"form-ele\">{{ user.lastlogin | date:'medium' }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"balance\" class=\"col-sm-2 control-label\">Balance</label>\n            <div class=\"form-ele col-sm-10\">{{ user.balance | currency:'IDR'}}\n                <!-- <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ user.balance }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">       </label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>                \n  </div>\n</div>"
 
 /***/ }),
 
@@ -6706,6 +8053,7 @@ var ViewlabelstatsComponent = /** @class */ (function () {
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         this.contactno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.bankaccno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.bankaccname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.bankname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.lastlogin = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.balance = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
@@ -6721,6 +8069,7 @@ var ViewlabelstatsComponent = /** @class */ (function () {
             email: this.email,
             contactno: this.contactno,
             bankaccno: this.bankaccno,
+            bankaccname: this.bankaccname,
             bankname: this.bankname,
             lastlogin: this.lastlogin,
             balance: this.balance
@@ -6755,6 +8104,7 @@ var ViewlabelstatsComponent = /** @class */ (function () {
             email: data.email,
             contactno: data.contactno,
             bankaccno: data.bankaccno,
+            bankaccname: data.bankaccname,
             bankname: data.bankname,
             lastlogin: this.lastlogin,
             balance: this.balance
@@ -8061,7 +9411,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" class=\"logo\" href=\"{{this.homepath}}\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <span *ngIf=\"this.qhashid != '' || !nav.linkaccess\" class=\"logo\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></span>\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
+module.exports = "<!-- Fixed navbar -->\n<div id=\"wrap\">\n    \n        <header>   \n            <div class=\"inner relative\">\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" class=\"logo\" href=\"{{this.homepath}}\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></a>\n                <span *ngIf=\"this.qhashid != '' || !nav.linkaccess\" class=\"logo\"><img src=\"KXLOGO6.png\" alt=\"kaxet\"></span>\n                <a *ngIf=\"this.qhashid === '' && nav.linkaccess\" id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"fa fa-bars fa-2x\"></i></a>\n                <nav id=\"navigation\">\n                    <ul id=\"main-menu\" onclick=\"toggleMenu()\">\n                        <li *ngIf=\"authService.isLoggedIn()\">\n                            <a style=\"cursor:pointer;float:center;color:#fce86c\" routerLink=\"report\" routerLinkActive=\"active\"><i class=\"fa fa-home fa-lg\"></i></a>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listartist\" routerLinkActive=\"active\">Artist</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addartist\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Artist</a></li>\n                                <li><a routerLink=\"listartist\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Artist</a></li>\n                            </ul>\n                        </li>\n                        <!-- <li><a href=\"http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html\">Portfolio</a></li> -->\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listalbum\" routerLinkActive=\"active\">Album</a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addalbum\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Album</a></li>\n                                <li><a routerLink=\"listalbum\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Album</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                            <a routerLink=\"listsong\" routerLinkActive=\"active\">Song  <i class=\"fa fa-music\"></i></a>\n                            <ul class=\"sub-menu\">\n                                <li><a routerLink=\"addsong\" routerLinkActive=\"active\"><i class=\"fa fa-plus-square\"></i>  Add Song</a></li>\n                                <li><a routerLink=\"listsong\" routerLinkActive=\"active\"><i class=\"fa fa-edit\"></i>  Manage Song</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n                                <a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Purchase</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"songpendingpurchase\" routerLinkActive=\"active\">Pending Cash</a></li>\n                                    <li><a routerLink=\"songcompletepurchase\" routerLinkActive=\"active\">Summary</a></li>\n                                </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Data</a>\n                            <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Configs</a></li>\n                                <li><a routerLink=\"labelstats\" routerLinkActive=\"active\">Labels</a></li>\n                                <li><a routerLink=\"artiststats\" routerLinkActive=\"active\">Artists</a></li>\n                                <li><a routerLink=\"albumstats\" routerLinkActive=\"active\">Albums</a></li>\n                                <li><a routerLink=\"songstats\" routerLinkActive=\"active\">Songs</a></li>\n                                <li><a routerLink=\"songpurchasestats\" routerLinkActive=\"active\">Purchase</a></li>\n                                <li><a routerLink=\"transactionstats\" routerLinkActive=\"active\">Transactions</a></li>\n                                <li><a routerLink=\"othertransactionstats\" routerLinkActive=\"active\">Bank Transfer/Adjustment</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <a style=\"cursor:pointer\">Pending Action</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"usermanagement\" [queryParams]=\"{status:'STSPEND',veremail:'Y'}\" routerLinkActive=\"active\">Pending Labels</a></li> -->\n                                <li><a routerLink=\"usermanagement\" routerLinkActive=\"active\">Pending Labels</a></li>\n                                <!-- <li><a routerLink=\"songmanagement\" [queryParams]=\"{songpublish:'N'}\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li> -->\n                                <li><a routerLink=\"songmanagement\" routerLinkActive=\"active\"><i class=\"fa fa-music\"></i> Publish Songs</a></li>\n                                <li><a routerLink=\"pendingtrfbalancereq\" routerLinkActive=\"active\">Pending Transfer Balance</a></li>\n                            </ul>\n                        </li>                        \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'\">\n                            <!-- <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a> -->\n                            <a style=\"cursor:pointer\">Adjustment</a>\n                            <ul class=\"sub-menu\">\n                                <!-- <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li> -->\n                                <li><a routerLink=\"addadjustment\" routerLinkActive=\"active\">Add Adjustment</a></li>\n                                <li><a routerLink=\"listadjustment\" routerLinkActive=\"active\">Adjustment Summary</a></li>\n                            </ul>\n                        </li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'\">\n                                <a routerLink=\"listconfig\" routerLinkActive=\"active\">Master Config  <i class=\"fa fa-wrench\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"addconfig\" routerLinkActive=\"active\">Add Config</a></li>\n                                    <li><a routerLink=\"addgroup\" routerLinkActive=\"active\">Add Group</a></li>\n                                    <li><a routerLink=\"listconfig\" routerLinkActive=\"active\">Manage Config</a></li>\n                                </ul>\n                        </li>\n\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADF'\">\n                                <a style=\"cursor:pointer\">Data</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"listadjustment\" routerLinkActive=\"active\">Adjustment Summary</a></li>\n                                    <li><a routerLink=\"admlisttrfbalancereq\" routerLinkActive=\"active\">Transfer Balance Request</a></li>\n                                </ul>\n                        </li>  \n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'ADF'\">\n                                <a style=\"cursor:pointer\">Pending Action</a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"pendingadjustment\" routerLinkActive=\"active\">Pending Adjustment</a></li>\n                                </ul>\n                        </li>\n\n                        <li class=\"current-menu-item\" *ngIf=\"!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess\"><a routerLink=\"login\" routerLinkActive=\"active\"><i class=\"fa fa-angle-right\"></i><i class=\"fa fa-angle-right\"></i>  Login</a></li>\n                        <li class=\"parent\" *ngIf=\"authService.isLoggedIn()\">\n                                <a routerLink=\"profile\" routerLinkActive=\"active\">Hi, {{ authService.currentUser.name }}  <i class=\"fa fa-user\"></i></a>\n                                <ul class=\"sub-menu\">\n                                    <li><a routerLink=\"profile\" routerLinkActive=\"active\">My Profile</a></li>\n                                    <li *ngIf=\"authService.currentUser.usertype == 'LBL'\"><a routerLink=\"listtrfbalancereq\" routerLinkActive=\"active\">Transfer Balance History</a></li>\n                                    <li><a routerLink=\"updateemail\" routerLinkActive=\"active\">Change Email</a></li>\n                                    <li><a routerLink=\"password\" routerLinkActive=\"active\">Change Password</a></li>\n                                    <li><a routerLink=\"logout\" routerLinkActive=\"active\">Logout</a></li>\n                                </ul>\n                            </li>\n                    </ul>\n                </nav>\n                <div class=\"clear\"></div>\n            </div>\n        </header>\t\n    </div> "
 
 /***/ }),
 
@@ -8115,6 +9465,687 @@ var NavbarComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_4__app_global__["a" /* Globals */]])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/othertransaction/othertransaction.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/othertransaction/othertransaction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Bank Transfer/Adjustment Transaction</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Reference</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"Reference\">\n                    </div>\n                </div>         \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"dbcr\" class=\"col-sm-2 paddingsearch\">IN/OUT</label>\n                    <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"dbcr\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of dc\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                    </div>\n                </div>            \n              </div>\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Transaction Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n\n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"col-sm-6\" style=\"margin:0;padding:0\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                      </div>\n                  </div>                  \n              </div>\n            </form>\n        </div>    \n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"transactions && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No transaction found</h3> \n        </div>\n\n        <div class=\"panel-body\">\n          There is NO transaction found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"transactions && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('transactiondt')\">Transaction Date</a></th>\n                            <th width=\"40%\" scope=\"col\">Remarks</th>\n                            <th width=\"20%\" scope=\"col\">Type</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('amount')\">Amount</a></th>\n                            <th width=\"5%\" scope=\"col\">In/Out</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let trx of transactions; let trxIndex = index'>\n                            <!-- <td data-label=\"Transaction Date\" scope=\"row\"><a style=\"cursor:pointer\" (click)=\"showTransaction(trx._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->\n                            <td data-label=\"Transaction Date\" scope=\"row\">{{ trx.transactiondt | date: 'd MMM y'}}</td>\n                            <td data-label=\"Remarks\">reference: {{ trx.purchaseid }} ; type: {{ trx.producttype}} </td>\n                            <td data-label=\"Type\">{{ trx.producttype}}</td>\n                            <td data-label=\"Amount\" class=\"text-right\">{{ trx.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"In/Out\">{{ trx.dbcr }}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"transactions && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/othertransaction/othertransaction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OthertransactionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+//import { SongService } from '../../services/song.service';
+
+var OthertransactionComponent = /** @class */ (function () {
+    function OthertransactionComponent(fb, authService, route, router, toastr, datePipe, transactionService, msconfigService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.transactionService = transactionService;
+        this.msconfigService = msconfigService;
+        this.dc = [{ code: '-', value: 'OUT' },
+            { code: '+', value: 'IN' }];
+        this.loading = false;
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.dbcr = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    OthertransactionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            purchaseid: this.purchaseid,
+            dbcr: this.dbcr,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.route.queryParams.forEach(function (params) {
+            _this.qpurchaseid = params['purchaseid'] || '';
+            _this.qdbcr = params['dbcr'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.purchaseid = _this.qpurchaseid;
+                payload.dbcr = _this.qdbcr;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    purchaseid: _this.qpurchaseid,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    OthertransactionComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    OthertransactionComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    OthertransactionComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['othertransaction'], {
+                            queryParams: {
+                                purchaseid: this.reportForm.value.purchaseid,
+                                dbcr: this.reportForm.value.dbcr,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['othertransaction'], {
+                    queryParams: {
+                        purchaseid: this.reportForm.value.purchaseid,
+                        dbcr: this.reportForm.value.dbcr,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    OthertransactionComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.transactionService.getOtherTransactionAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.transactions = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qpurchaseid = formval.purchaseid;
+                _this.qdbcr = formval.dbcr;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    purchaseid: _this.qpurchaseid,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    OthertransactionComponent.prototype.setPage = function (page) {
+        this.router.navigate(['othertransaction'], {
+            queryParams: {
+                purchaseid: this.qpurchaseid,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    OthertransactionComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    OthertransactionComponent.prototype.sortTransaction = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['othertransaction'], {
+            queryParams: {
+                purchaseid: this.qpurchaseid,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    OthertransactionComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-othertransaction',
+            template: __webpack_require__("./src/app/components/othertransaction/othertransaction.component.html"),
+            styles: [__webpack_require__("./src/app/components/othertransaction/othertransaction.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__["a" /* TransactionService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], OthertransactionComponent);
+    return OthertransactionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/othertransactionstats/othertransactionstats.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/othertransactionstats/othertransactionstats.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>Bank Transfer/Adjustment Transaction</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"purchaseid\" class=\"col-sm-2 paddingsearch\">Reference</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"purchaseid\" [formControl]=\"purchaseid\" placeholder=\"Reference\">\n                    </div>\n                </div>         \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"dbcr\" class=\"col-sm-2 paddingsearch\">IN/OUT</label>\n                    <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"dbcr\">\n                          <option ng-selected=\"true\" value=\"\">Select the option</option>\n                          <option *ngFor=\"let a of dc\" [ngValue]=\"a.code\">{{a.value}}</option>\n                      </select>\n                    </div>\n                </div>            \n              </div>\n              \n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Transaction Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n\n              </div>\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                </div>                  \n              </div>\n            </form>\n        </div>    \n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"transactions && totalrows < 1\">\n        <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No transaction found</h3> \n        </div>\n\n        <div class=\"panel-body\">\n          There is NO transaction found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"transactions && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('transactiondt')\">Transaction Date</a></th>\n                            <th width=\"40%\" scope=\"col\">Remarks</th>\n                            <th width=\"20%\" scope=\"col\">Type</th>\n                            <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTransaction('amount')\">Amount</a></th>\n                            <th width=\"5%\" scope=\"col\">In/Out</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let trx of transactions; let trxIndex = index'>\n                            <!-- <td data-label=\"Transaction Date\" scope=\"row\"><a style=\"cursor:pointer\" (click)=\"showTransaction(trx._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trx.transactiondt | date: 'd MMM y'}}</a></td>   -->\n                            <td data-label=\"Transaction Date\" scope=\"row\">{{ trx.transactiondt | date: 'd MMM y'}}</td>\n                            <td data-label=\"Remarks\">reference: {{ trx.purchaseid }} ;<br> type: {{ trx.producttype}} </td>\n                            <td data-label=\"Type\">{{ trx.producttype }}</td>\n                            <td data-label=\"Amount\" class=\"text-right\">{{ trx.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"In/Out\">{{ trx.dbcr }}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"transactions && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n  \n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/othertransactionstats/othertransactionstats.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OthertransactionstatsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__ = __webpack_require__("./src/app/services/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+//import { SongService } from '../../services/song.service';
+
+
+var OthertransactionstatsComponent = /** @class */ (function () {
+    function OthertransactionstatsComponent(fb, authService, route, router, toastr, datePipe, transactionService, msconfigService, labelmgtService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.transactionService = transactionService;
+        this.msconfigService = msconfigService;
+        this.labelmgtService = labelmgtService;
+        this.dc = [{ code: '-', value: 'OUT' },
+            { code: '+', value: 'IN' }];
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.purchaseid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.dbcr = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    OthertransactionstatsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            purchaseid: this.purchaseid,
+            dbcr: this.dbcr,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qpurchaseid = params['purchaseid'] || '';
+            _this.qdbcr = params['dbcr'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.purchaseid = _this.qpurchaseid;
+                payload.dbcr = _this.qdbcr;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    purchaseid: _this.qpurchaseid,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    OthertransactionstatsComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    OthertransactionstatsComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    OthertransactionstatsComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    OthertransactionstatsComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['othertransactionstats'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                purchaseid: this.reportForm.value.purchaseid,
+                                dbcr: this.reportForm.value.dbcr,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['othertransactionstats'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        purchaseid: this.reportForm.value.purchaseid,
+                        dbcr: this.reportForm.value.dbcr,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    OthertransactionstatsComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.transactionService.getAdmOtherTransactionAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.transactions = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid,
+                    _this.qpurchaseid = formval.purchaseid;
+                _this.qdbcr = formval.dbcr;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    purchaseid: _this.qpurchaseid,
+                    dbcr: _this.qdbcr,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    OthertransactionstatsComponent.prototype.setPage = function (page) {
+        this.router.navigate(['othertransactionstats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                purchaseid: this.qpurchaseid,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    OthertransactionstatsComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    OthertransactionstatsComponent.prototype.sortTransaction = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['othertransactionstats'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                purchaseid: this.qpurchaseid,
+                dbcr: this.qdbcr,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    OthertransactionstatsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-othertransactionstats',
+            template: __webpack_require__("./src/app/components/othertransactionstats/othertransactionstats.component.html"),
+            styles: [__webpack_require__("./src/app/components/othertransactionstats/othertransactionstats.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_transaction_service__["a" /* TransactionService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_msconfig_service__["a" /* MsconfigService */],
+            __WEBPACK_IMPORTED_MODULE_8__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], OthertransactionstatsComponent);
+    return OthertransactionstatsComponent;
 }());
 
 
@@ -15019,6 +17050,1562 @@ var TransactionstatsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>TRANSFER REQUEST</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <form  [formGroup]=\"addTrfRequestForm\" (ngSubmit)=\"addTrfRequest(addTrfRequestForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': addTrfRequestForm.get('insref').invalid && addTrfRequestForm.get('insref').dirty}\">\n          <label for=\"insref\" class=\"col-sm-2 control-label\">Reference </label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"insref\" id=\"insref\" placeholder=\"Ins Reference\">\n          </div>\n\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': addTrfRequestForm.get('amount').invalid && addTrfRequestForm.get('amount').dirty}\">\n          <label for=\"amount\" class=\"col-sm-2 control-label\">Amount<sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">Rp</div>\n              <input [disabled]=\"this.loading == true\" type=\"number\" class=\"form-control\" id=\"amount\" [formControl]=\"amount\" placeholder=\"Amount\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"addTrfRequestForm.get('amount').dirty && addTrfRequestForm.get('amount').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addTrfRequestForm.get('amount').errors.required\">\n                  Please enter amount\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"addTrfRequestForm.get('amount').errors.pattern\">\n                  Please enter a valid amount\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\">\n          <label for=\"account\" class=\"col-sm-2\"></label>\n            <div class=\"input-group col-sm-10\"> \n                <button style=\"padding:5px;\"type=\"button\" (click)=\"viewlabelbalance(this.name)\" [disabled]=\"this.loading == true\" class=\"btn btn-primary\">Check balance</button>\n            </div>\n      </div>\n      <hr class=\"line-grey-center\">\n      <div class=\"form-group\">\n        <label for=\"account\" class=\"col-sm-2\"></label>\n        <div class=\"col-xs-12 col-sm-10 input-group\">\n          <h4>Will be Transfered To</h4>            \n          <ul class=\"list-group\">\n              <li class=\"list-group-item borderless bordersideless\">Account No <span class=\"badge\"><b><i>{{ this.bankaccno }}</i></b></span></li>\n              <li class=\"list-group-item borderless bordersideless\">Account Name <span class=\"badge\"><b><i>{{ this.bankaccname }}</i></b></span></li>\n              <li class=\"list-group-item borderless bordersideless\">Bank Name <span class=\"badge\"><b><i>{{ this.bankname }}</i></b></span></li>\n          </ul>\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n           <label class=\"col-sm-2 control-label\">  </label>\n         <mat-progress-bar mode=\"determinate\" value=\"{{this.progressvalue}}\"></mat-progress-bar>\n         <sup *ngIf=\"progressvalue > 0\">{{ this.progressvalue }} %</sup>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"addTrfRequestForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n    </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddtrfbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__labelbalancedialog_labelbalancedialog_component__ = __webpack_require__("./src/app/components/labelbalancedialog/labelbalancedialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_trfbalance_service__ = __webpack_require__("./src/app/services/trfbalance.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var AddtrfbalancereqComponent = /** @class */ (function () {
+    function AddtrfbalancereqComponent(fb, authService, userService, toastr, route, router, dialog, trfbalanceService) {
+        this.fb = fb;
+        this.authService = authService;
+        this.userService = userService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+        this.dialog = dialog;
+        this.trfbalanceService = trfbalanceService;
+        this.loading = false;
+        this.progressvalue = 0;
+        this.amount = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.insref = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+    }
+    AddtrfbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.name = this.userObj.name;
+        this.progressvalue = 0;
+        this.addTrfRequestForm = this.fb.group({
+            amount: this.amount,
+            insref: this.insref
+        });
+        this.userService.getUser(this.userObj.userid).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.user = data.data[0];
+                _this.bankaccno = _this.user.bankaccno;
+                _this.bankaccname = _this.user.bankaccname;
+                _this.bankname = _this.user.bankname;
+            }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    AddtrfbalancereqComponent.prototype.addTrfRequest = function (formdata) {
+        var _this = this;
+        this.progressvalue = 0;
+        if (this.addTrfRequestForm.dirty && this.addTrfRequestForm.valid) {
+            this.progressvalue = 10;
+            var theForm = this.addTrfRequestForm.value;
+            //alert('Amount to be transfered: '+ theForm.amount);  
+            theForm.bankaccno = this.bankaccno;
+            theForm.bankaccname = this.bankaccname;
+            theForm.bankname = this.bankname;
+            theForm.status = 'STSPEND';
+            this.trfbalanceService.saveTrfbalancereq(this.userObj.userid, theForm)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    _this.progressvalue = 0;
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.loading = false;
+                    _this.progressvalue = 100;
+                    _this.toastr.success(data.message);
+                }
+                _this.addTrfRequestForm.reset();
+                _this.progressvalue = 0;
+            }, function (err) {
+                _this.loading = false;
+                _this.progressvalue = 0;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+        else {
+            this.toastr.error('Please provide correct input...');
+        }
+    };
+    AddtrfbalancereqComponent.prototype.viewlabelbalance = function (labelname) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__labelbalancedialog_labelbalancedialog_component__["a" /* LabelbalancedialogComponent */], {
+            disableClose: true,
+            width: '400px',
+            data: 'Hi ' + labelname + ', Please find below your balance.'
+        });
+    };
+    AddtrfbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-addtrfbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/addtrfbalancereq/addtrfbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_8__services_trfbalance_service__["a" /* TrfbalanceService */]])
+    ], AddtrfbalancereqComponent);
+    return AddtrfbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>TRANSFER REQUEST SUMMARY</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n                <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                      <div class=\"col-sm-10\">\n                          <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                          <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                      </div>\n                  </div>         \n                  <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                    </div>\n                  </div>            \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                    <label class=\"col-sm-6 paddingsearch\">Request Date</label>\n                  </div>  \n              </div>\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                              Today\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-3 col-md-3\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                              Current month\n                          </label>\n                      </div>\n                  </div>\n                  <div class=\"col-sm-6 col-md-6\">\n                      <div class=\"radio\">\n                          <label>\n                              <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                              Date Range (yyyy-mm-dd)\n                          </label>\n                      </div>\n                      <div class=\"row\" style=\"padding: 8px\">\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                  </div>\n                              </div>\n                          </div>\n                          <div class=\"col-sm-6 col-md-6\">\n                              <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                  <div class=\"input-group\">\n                                      <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                      <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                  </div>\n                                  <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                      <span class=\"col-sm-2\"></span>\n                                      <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                  </div>\n                              </div>\n                          </div>\n                      </div>\n                  </div> \n\n              </div>\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                      <select class=\"form-control\" [formControl]=\"labelid\">\n                          <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                          <option value=\"\">Select the label</option>\n                          <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                      </select>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                </div>                  \n              </div>\n            </form>\n        </div>    \n    </div>\n    <div class=\"panel panel-danger\" *ngIf=\"trfbalancereqs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No transfer balance req found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is NO pending transfer balance request found for the selected criteria.\n        </div>\n    </div>\n    <div class=\"panel panel-default\" *ngIf=\"trfbalancereqs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n        </div>\n        <div class=\"panel-body\">\n          <div class=\"table-responsive\">\n              <table class=\"table table-hover\">\n                  <thead>\n                      <tr>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('requestdt')\">Request Date</a></th>\n                          <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('label')\">Label</a></th>\n                          <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('amount')\">Amount</a></th>\n                          <th width=\"10%\" scope=\"col\">Ins Ref</th>\n                          <th width=\"15%\" scope=\"col\">Status</th>\n                          <th width=\"25%\" scope=\"col\" >Action</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor='let trf of trfbalancereqs; let trfIndex = index'>\n                          <td data-label=\"Request Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showTrfbalancereq(trf._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Transfer Req\">{{ trf.requestdt | date: 'd MMM y'}}</a></td>  \n                          <td data-label=\"Label\">{{ trf.label }}</td>\n                          <td data-label=\"Amount\" class=\"text-right\">{{ trf.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                          <td data-label=\"Ins Ref\">{{ trf.insref}}</td>\n                          <td data-label=\"Status\">{{ trf.stsvalue}}</td>\n                          <td data-label=\"Action\">\n                              <a *ngIf=\"trf.status != 'STSRJCT' && authService.currentUser.usertype == 'ADM'\" style=\"cursor:pointer;color:darkgreen\" aria-label=\"Edit\" (click)=\"updateTrfbalancereq(trfIndex, trf._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Update Transfer\">Update</a>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div> \n          <div style=\"text-align:center\" *ngIf=\"trfbalancereqs && totalrows > 10\">\n              <nav aria-label=\"Page navigation\">\n                  <ul class=\"pagination\">\n                      <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                          <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                      </li>\n                  </ul>\n              </nav>\n          </div> \n        </div>\n    </div>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmlisttransferbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_trfbalancemgt_service__ = __webpack_require__("./src/app/services/admin/trfbalancemgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var AdmlisttransferbalancereqComponent = /** @class */ (function () {
+    function AdmlisttransferbalancereqComponent(fb, authService, route, router, toastr, datePipe, trfbalancemgtService, labelmgtService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.trfbalancemgtService = trfbalancemgtService;
+        this.labelmgtService = labelmgtService;
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    AdmlisttransferbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                //admlisttrfbalancereq
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    AdmlisttransferbalancereqComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    AdmlisttransferbalancereqComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    AdmlisttransferbalancereqComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    AdmlisttransferbalancereqComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['admlisttrfbalancereq'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['admlisttrfbalancereq'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    AdmlisttransferbalancereqComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.trfbalancemgtService.getSumTrfbalancereqAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.trfbalancereqs = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid;
+                _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    AdmlisttransferbalancereqComponent.prototype.setPage = function (page) {
+        this.router.navigate(['admlisttrfbalancereq'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    AdmlisttransferbalancereqComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    AdmlisttransferbalancereqComponent.prototype.sortTrfbalancereq = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['admlisttrfbalancereq'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    AdmlisttransferbalancereqComponent.prototype.showTrfbalancereq = function (trfbalancereqid) {
+        this.router.navigate(["viewtrfbalancereq/" + trfbalancereqid], {
+            queryParams: {
+                src: 'cmpl',
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    AdmlisttransferbalancereqComponent.prototype.updateTrfbalancereq = function (idx, trfbalancereqid) {
+        this.router.navigate(["editposttrfbalancereq/" + trfbalancereqid], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    AdmlisttransferbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-admlisttransferbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/admlisttransferbalancereq/admlisttransferbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_trfbalancemgt_service__["a" /* TrfbalancemgtService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], AdmlisttransferbalancereqComponent);
+    return AdmlisttransferbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>EDIT DETAILS TRANSFER BALANCE</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-12\">\n            <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n            <form [formGroup]=\"trfbalancereqForm\" (ngSubmit)=\"editTrfbalancereq(trfbalancereqForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n    \n              <div class=\"form-group\">\n                  <label for=\"account\" class=\"col-sm-1\"></label>\n                  <div class=\"col-xs-12 col-sm-11 input-group\">\n                    <h4>Request Detail</h4>            \n                    <ul class=\"list-group\">\n                        <li class=\"list-group-item borderless bordersideless\">Request Date <span class=\"badge\"><b><i>{{ trfbalancereq?.requestdt | date: 'd MMM y'}}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Amount <span class=\"badge\"><b><i>{{ trfbalancereq?.amount | currency: 'IDR':'symbol-narrow' }}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Ins Reference <span class=\"badge\"><b><i>{{ trfbalancereq?.insref }}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Status <span class=\"badge\"><b><i>{{ trfbalancereq?.stsvalue }}</i></b></span></li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"form-group\">\n                  <label for=\"account\" class=\"col-sm-1\"></label>\n                  <div class=\"col-xs-12 col-sm-11 input-group\">\n                    <h4>Will be Transfered To</h4>            \n                    <ul class=\"list-group\">\n                        <li class=\"list-group-item borderless bordersideless\">Account No <span class=\"badge\"><b><i>{{ trfbalancereq?.bankaccno }}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Account Name <span class=\"badge\"><b><i>{{ trfbalancereq?.bankaccname }}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Bank Name <span class=\"badge\"><b><i>{{ trfbalancereq?.bankname }}</i></b></span></li>\n                    </ul>\n                  </div>\n                </div>\n                <hr class=\"line-grey-center\">\n                <div class=\"form-group\" [ngClass]=\"{'has-error': trfbalancereqForm.get('bankref').invalid && trfbalancereqForm.get('bankref').dirty}\">\n                    <label for=\"bankref\" class=\"col-sm-3 control-label\">Bank Reference <sup>*</sup></label>\n                    <div class=\"input-group col-sm-9\">\n                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                        <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankref\" id=\"bankref\" placeholder=\"Bank Reference\">\n                    </div>\n                    <div class=\"text-danger\" *ngIf=\"trfbalancereqForm.get('bankref').dirty && trfbalancereqForm.get('bankref').errors\">\n                        <span class=\"col-sm-3\"></span>\n                        <span class=\"col-sm-9\" style=\"padding:4px 0 0\" *ngIf=\"trfbalancereqForm.get('bankref').errors.required\">\n                            Please enter the bank reference\n                        </span>\n                    </div>\n                </div>\n                <div class=\"form-group\" [ngClass]=\"{'has-error': trfbalancereqForm.get('transferdt').invalid && trfbalancereqForm.get('transferdt').dirty}\">\n                    <label for=\"transferdt\" class=\"col-sm-3 control-label\">Transfer date <sup>*</sup></label>  \n                  <div class=\"input-group col-sm-9\">\n                        <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                        <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"transferdt\" placeholder=\"Transfer Date\">\n                    </div>\n                    <div class=\"text-danger\" *ngIf=\"trfbalancereqForm.get('transferdt').dirty && trfbalancereqForm.get('transferdt').invalid\">\n                        <span class=\"col-sm-3\"></span>\n                        <span class=\"col-sm-9\" style=\"padding:4px 0 0\">Please enter valid transfer date</span>\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"remarks\" class=\"col-sm-3 control-label\">Remarks <sup>&nbsp;</sup></label>\n                    <div class=\"input-group col-xs-12 col-sm-9\">\n                        <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"remarks\" rows=\"10\" [formControl]=\"remarks\" placeholder=\"Remarks\"></textarea>\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"editlog\" class=\"col-sm-3 control-label\">Edit Log <sup>&nbsp;</sup></label>\n                    <div class=\"input-group col-xs-12 col-sm-9\">\n                        <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"editlog\" rows=\"10\" [formControl]=\"editlog\" placeholder=\"Edit Log\"></textarea>\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                  <label class=\"col-sm-3 control-label\"></label>\n                  <div class=\"col-sm-9\" style=\"padding:0;margin:0;\">\n                    <button type=\"submit\" [disabled]=\"trfbalancereqForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n                    <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n                  </div>\n                </div>\n            </form>\n        </div>\n        \n      </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditposttransferbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_admin_trfbalancemgt_service__ = __webpack_require__("./src/app/services/admin/trfbalancemgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var EditposttransferbalancereqComponent = /** @class */ (function () {
+    function EditposttransferbalancereqComponent(fb, authService, trfbalancemgtService, toastr, route, router) {
+        this.fb = fb;
+        this.authService = authService;
+        this.trfbalancemgtService = trfbalancemgtService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+        this.loading = false;
+        this.bankref = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.transferdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.remarks = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.editlog = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true }, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+    }
+    EditposttransferbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.trfbalancereqid = params['id'];
+        });
+        this.getSelectedTrfbalancereq(this.trfbalancereqid);
+        this.userObj = this.authService.currentUser;
+        this.trfbalancereqForm = this.fb.group({
+            bankref: this.bankref,
+            transferdt: this.transferdt,
+            remarks: this.remarks,
+            editlog: this.editlog,
+        });
+    };
+    EditposttransferbalancereqComponent.prototype.getSelectedTrfbalancereq = function (id) {
+        var _this = this;
+        this.trfbalancemgtService.getTrfbalancereqAgg(id).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.trfbalancereq = data.data[0];
+                    _this.populateForm(data.data[0]);
+                }
+                else {
+                    _this.toastr.error('Empty transfer balance request result');
+                    _this.router.navigate(['pendingtrfbalancereq']);
+                }
+            }
+            else {
+                _this.toastr.error('Transfer request id is incorrect in the URL');
+                _this.router.navigate(['pendingtrfbalancereq']);
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['pendingtrfbalancereq']);
+        });
+    };
+    EditposttransferbalancereqComponent.prototype.populateForm = function (data) {
+        this.trfbalancereqForm.patchValue({
+            bankref: data.bankref,
+            transferdt: data.transferdt,
+            remarks: data.remarks,
+            editlog: data.extfield1
+        });
+    };
+    EditposttransferbalancereqComponent.prototype.editTrfbalancereq = function (formdata) {
+        var _this = this;
+        if (this.trfbalancereqForm.valid) {
+            var theForm = this.trfbalancereqForm.value;
+            theForm.adminuser = this.userObj.username;
+            theForm.adminuserid = this.userObj.userid;
+            this.loading = true;
+            this.trfbalancemgtService.editposttrfbalance(this.trfbalancereqid, theForm)
+                .subscribe(function (data) {
+                _this.loading = false;
+                if (data.success === false) {
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['errorpage']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.toastr.success(data.message);
+                }
+                if (!_this.trfbalancereqid) {
+                    _this.trfbalancereqForm.reset();
+                }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+    };
+    EditposttransferbalancereqComponent.prototype.onBack = function () {
+        this.router.navigate(['/admlisttrfbalancereq'], { preserveQueryParams: true });
+    };
+    EditposttransferbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-editposttransferbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/editposttransferbalancereq/editposttransferbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_admin_trfbalancemgt_service__["a" /* TrfbalancemgtService */],
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
+    ], EditposttransferbalancereqComponent);
+    return EditposttransferbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>TRANSFER REQUEST LIST</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">Search Parameter</h3>\n        </div>\n        <div class=\"panel-body\">\n            <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"insref\" class=\"col-sm-2 paddingsearch\">Ins Ref</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"insref\" [formControl]=\"insref\" placeholder=\"Ins Reference\">\n                    </div>\n                </div>         \n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"status\" class=\"col-sm-2 paddingsearch\">Status</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                        <select class=\"form-control\" [formControl]=\"status\">\n                            <option ng-selected=\"true\" value=\"\">Select the status</option>\n                            <option *ngFor=\"let a of sts\" [ngValue]=\"a.code\">{{a.value}}</option>\n                        </select>\n                    </div>\n                </div>            \n              </div>\n\n              <div class=\"row rowmarginsearch\">\n                  <div class=\"col-sm-6 col-md-6\">\n                      <label for=\"submit\" class=\"col-sm-2 paddingsearch\"></label>\n                      <div class=\"col-sm-10\">\n                        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n                      </div>\n                  </div>                  \n              </div>\n            </form>\n        </div>    \n    </div>\n\n    <div class=\"panel panel-danger\" *ngIf=\"trfbalancereqs && totalrows < 1\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">No transfer request found</h3> \n        </div>\n  \n        <div class=\"panel-body\">\n            There is no Transfer balance request found.\n        </div>\n    </div>\n\n    <div class=\"panel panel-default\" *ngIf=\"trfbalancereqs && totalrows > 0 && this.loading == false\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\"><i>{{reportTitle}}</i> <b> ({{ totalrows }} records found)</b> </h3> \n        </div>\n        <div class=\"panel-body\">\n            <div class=\"table-responsive\">\n                <table class=\"table table-hover\">\n                    <thead>\n                        <tr>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('requestdt')\">Request Date</a></th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('amount')\">Amount</a></th>\n                            <th width=\"20%\" scope=\"col\">Ins Reference</th>\n                            <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('status')\">Status</a></th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor='let trf of trfbalancereqs; let trfIndex = index'>\n                            <td scope=\"row\" data-label=\"Request Date\"><a style=\"cursor:pointer\" (click)=\"showTrfbalancereq(trf._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Detail\">{{ trf.requestdt | date: 'd MMM y'}}</a></td>\n                            <td data-label=\"Amount\">{{ trf.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                            <td data-label=\"Ins Reference\">{{ trf.insref }}</td>\n                            <td data-label=\"Status\">{{ trf.stsvalue}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div> \n            <div style=\"text-align:center\" *ngIf=\"trfbalancereqs && totalrows > 10\">\n                <nav aria-label=\"Page navigation\">\n                    <ul class=\"pagination\">\n                        <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                            <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                        </li>\n                    </ul>\n                </nav>\n            </div> \n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListtrfbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_admin_msconfig_service__ = __webpack_require__("./src/app/services/admin/msconfig.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_trfbalance_service__ = __webpack_require__("./src/app/services/trfbalance.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var ListtrfbalancereqComponent = /** @class */ (function () {
+    function ListtrfbalancereqComponent(fb, authService, toastr, route, router, trfbalanceService, msconfigService) {
+        this.fb = fb;
+        this.authService = authService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+        this.trfbalanceService = trfbalanceService;
+        this.msconfigService = msconfigService;
+        this.loading = false;
+        this.insref = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.status = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+    }
+    ListtrfbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            insref: this.insref,
+            status: this.status
+        });
+        this.getMsconfigGroupList('TRFBLSTATUS');
+        this.route.queryParams.forEach(function (params) {
+            _this.qinsref = params['insref'] || '';
+            _this.qstatus = params['status'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            var payload = {};
+            payload.status = _this.qstatus;
+            payload.insref = _this.qinsref;
+            payload.page = _this.qpage;
+            payload.sortby = _this.qsort;
+            _this.fetchReport(_this.userObj.userid, payload);
+            _this.reportForm.patchValue({
+                insref: _this.qinsref,
+                status: _this.qstatus
+            });
+        });
+    };
+    ListtrfbalancereqComponent.prototype.getMsconfigGroupList = function (groupid) {
+        var _this = this;
+        this.msconfigService.getMsconfigbygroup(groupid).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    if (groupid == 'TRFBLSTATUS') {
+                        _this.sts = data.data;
+                    }
+                }
+                else {
+                    _this.sts = [{ code: '', value: 'Empty list...' }];
+                }
+            }
+            else {
+                _this.sts = [{ code: '', value: 'Error ms config list' }];
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.sts = [{ code: '', value: 'Error ms config list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ListtrfbalancereqComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.userObj.userid, this.reportForm.value);
+            this.router.navigate(['listtrfbalancereq'], {
+                queryParams: {
+                    insref: this.reportForm.value.insref,
+                    status: this.reportForm.value.status,
+                    page: 1,
+                    sortby: null
+                }
+            });
+        }
+    };
+    ListtrfbalancereqComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.trfbalanceService.getTrfbalancereqAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.trfbalancereqs = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qinsref = formval.insref;
+                _this.qstatus = formval.status;
+                _this.reportTitle = 'Transfer Request Result';
+                _this.reportForm.patchValue({
+                    insref: _this.qinsref,
+                    status: _this.qstatus
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ListtrfbalancereqComponent.prototype.setPage = function (page) {
+        this.router.navigate(['listtrfbalancereq'], {
+            queryParams: {
+                insref: this.qinsref,
+                status: this.qstatus,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    ListtrfbalancereqComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    ListtrfbalancereqComponent.prototype.sortTrfbalancereq = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['listtrfbalancereq'], {
+            queryParams: {
+                insref: this.qinsref,
+                status: this.qstatus,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    ListtrfbalancereqComponent.prototype.showTrfbalancereq = function (trfbalancereqid) {
+        this.router.navigate(["viewtrfbalancereq/" + trfbalancereqid], {
+            queryParams: {
+                src: 'list',
+                insref: this.qinsref,
+                status: this.qstatus,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    ListtrfbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-listtrfbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/listtrfbalancereq/listtrfbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_6__services_trfbalance_service__["a" /* TrfbalanceService */],
+            __WEBPACK_IMPORTED_MODULE_5__services_admin_msconfig_service__["a" /* MsconfigService */]])
+    ], ListtrfbalancereqComponent);
+    return ListtrfbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Pending Transfer Balance</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div *ngIf=\"this.loading == false\" class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">Search Parameter</h3>\n      </div>\n      <div class=\"panel-body\">\n          <form [formGroup]=\"reportForm\" (ngSubmit)=\"getReport(reportForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n              <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                    <label for=\"fromamt\" class=\"col-sm-2 paddingsearch\">From Amount</label>\n                    <div class=\"col-sm-10\">\n                        <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                        <input type=\"text\" class=\"form-control\" id=\"fromamt\" [formControl]=\"fromamt\" placeholder=\"From Amount\">\n                    </div>\n                </div>         \n                <div class=\"col-sm-6 col-md-6\">\n                  <label for=\"toamt\" class=\"col-sm-2 paddingsearch\">To Amount</label>\n                  <div class=\"col-sm-10\">\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div> -->\n                      <input type=\"text\" class=\"form-control\" id=\"toamt\" [formControl]=\"toamt\" placeholder=\"To Amount\">\n                  </div>\n                </div>            \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-6 col-md-6\">\n                  <label class=\"col-sm-6 paddingsearch\">Request Date</label>\n                </div>  \n            </div>\n            <div class=\"row rowmarginsearch\">\n                <div class=\"col-sm-3 col-md-3\">\n                    <div class=\"radio\">\n                        <label>\n                            <input type=\"radio\" name=\"rptype\" value=\"opt3\" [formControl]=\"rptype\" checked>\n                            Today\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col-sm-3 col-md-3\">\n                    <div class=\"radio\">\n                        <label>\n                            <input type=\"radio\" name=\"rptype\" value=\"opt1\" [formControl]=\"rptype\">\n                            Current month\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col-sm-6 col-md-6\">\n                    <div class=\"radio\">\n                        <label>\n                            <input type=\"radio\" name=\"rptype\" value=\"opt2\" [formControl]=\"rptype\">\n                            Date Range (yyyy-mm-dd)\n                        </label>\n                    </div>\n                    <div class=\"row\" style=\"padding: 8px\">\n                        <div class=\"col-sm-6 col-md-6\">\n                            <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('startdt').invalid && reportForm.get('startdt').dirty}\">\n                                <div class=\"input-group\">\n                                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                    <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"startdt\" placeholder=\"Start Date\">\n                                </div>\n                                <div class=\"text-danger\" *ngIf=\"reportForm.get('startdt').dirty && reportForm.get('startdt').invalid\">\n                                    <span class=\"col-sm-2\"></span>\n                                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid start date</span>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"col-sm-6 col-md-6\">\n                            <div class=\"form-group\" style=\"margin-right:0\" [ngClass]=\"{'has-error': reportForm.get('enddt').invalid && reportForm.get('enddt').dirty}\">\n                                <div class=\"input-group\">\n                                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                                    <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"enddt\" placeholder=\"End Date\">\n                                </div>\n                                <div class=\"text-danger\" *ngIf=\"reportForm.get('enddt').dirty && reportForm.get('enddt').invalid\">\n                                    <span class=\"col-sm-2\"></span>\n                                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid end date</span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div> \n\n            </div>\n            <div class=\"row rowmarginsearch\">\n              <div class=\"col-sm-6 col-md-6\">\n                <label for=\"labelid\" class=\"col-sm-2 paddingsearch\">Label</label>\n                <div class=\"col-sm-10\">\n                    <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list-alt\"></i></div> -->\n                    <select class=\"form-control\" [formControl]=\"labelid\">\n                        <!-- <option ng-selected=\"true\" value=\"\">Select the artist</option> -->\n                        <option value=\"\">Select the label</option>\n                        <option *ngFor=\"let label of userlist\" [ngValue]=\"label._id\">{{label.name}}</option>\n                    </select>\n                  </div>\n              </div>\n              <div class=\"col-sm-6 col-md-6\">\n                  <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"this.loading == false && reportForm.invalid\">Submit</button>\n              </div>                  \n            </div>\n          </form>\n      </div>    \n  </div>  \n  <div class=\"panel panel-danger\" *ngIf=\"trfbalancereqs && totalrows < 1\">\n      <div class=\"panel-heading\">\n          <h3 class=\"panel-title\">No transfer balance req found</h3> \n      </div>\n\n      <div class=\"panel-body\">\n          There is NO pending transfer balance request found for the selected criteria.\n      </div>\n  </div>\n  <div class=\"panel panel-default\" *ngIf=\"trfbalancereqs && totalrows > 0 && this.loading == false\">\n    <div class=\"panel-heading\">\n        <span class=\"panel-title\"><i>{{reportTitle}}</i> <b> {{ totalrows }} records found</b> </span> \n    </div>\n    <div class=\"panel-body\">\n      <div class=\"table-responsive\">\n          <table class=\"table table-hover\">\n              <thead>\n                  <tr>\n                      <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('requestdt')\">Request Date</a></th>\n                      <th width=\"20%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('label')\">Label</a></th>\n                      <th width=\"15%\" scope=\"col\"><a style=\"cursor:pointer\" (click)=\"sortTrfbalancereq('amount')\">Amount</a></th>\n                      <th width=\"10%\" scope=\"col\">Ins Ref</th>\n                      <th width=\"15%\" scope=\"col\">Status</th>\n                      <th width=\"25%\" scope=\"col\" >Action</th>\n                  </tr>\n              </thead>\n              <tbody>\n                  <tr *ngFor='let trf of trfbalancereqs; let trfIndex = index'>\n                      <td data-label=\"Request Date\" scope=\"row\"><a style=\"font-size:12px;cursor:pointer\" (click)=\"showTrfbalancereq(trf._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"View Transfer Req\">{{ trf.requestdt | date: 'd MMM y'}}</a></td>  \n                      <td data-label=\"Label\">{{ trf.label }}</td>\n                      <td data-label=\"Amount\" class=\"text-right\">{{ trf.amount | currency: 'IDR':'symbol-narrow' }}</td>\n                      <td data-label=\"Ins Ref\">{{ trf.insref}}</td>\n                      <td data-label=\"Status\">{{ trf.stsvalue}}</td>\n                      <td data-label=\"Action\">\n                          <!-- <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Approve\" (click)=\"approvePayment(songpending._id, songpending.song,songpending.songid,songpending.objlistenerid, songpending.songprice)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Approve Payment\"><i class=\"fa fa-check fa-2x\"></i></a> -->\n                          <a style=\"cursor:pointer;color:darkgreen\" aria-label=\"Edit\" (click)=\"updateTrfbalancereq(trfIndex, trf._id)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Update Transfer\">Update</a>\n                          &nbsp;&nbsp;&nbsp;\n                          <!-- <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectPayment(songpending._id, songpending.song)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Payment\"><i class=\"fa fa-times fa-2x\"></i></a> -->\n                          <a style=\"cursor:pointer;color:red\" aria-label=\"Reject\" (click)=\"rejectTrfbalancereq(trfIndex, trf._id, trf.label)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Reject Transfer\">Reject</a>\n                      </td>\n                  </tr>\n              </tbody>\n          </table>\n      </div> \n      <div style=\"text-align:center\" *ngIf=\"trfbalancereqs && totalrows > 10\">\n          <nav aria-label=\"Page navigation\">\n              <ul class=\"pagination\">\n                  <li *ngFor=\"let item of createPager(pgCounter); let idx = index\">\n                      <a [ngClass]=\"{'selected': qpage == idx + 1 }\" class=\"selected\" style=\"cursor:pointer\" (click) = \"setPage(idx + 1)\">{{ idx + 1 }}</a>\n                  </li>\n              </ul>\n          </nav>\n      </div> \n    </div>\n  </div>\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PendingtrfbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_admin_trfbalancemgt_service__ = __webpack_require__("./src/app/services/admin/trfbalancemgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__ = __webpack_require__("./src/app/services/admin/usermgt.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var PendingtrfbalancereqComponent = /** @class */ (function () {
+    function PendingtrfbalancereqComponent(fb, authService, route, router, toastr, datePipe, trfbalancemgtService, labelmgtService) {
+        var _this = this;
+        this.fb = fb;
+        this.authService = authService;
+        this.route = route;
+        this.router = router;
+        this.toastr = toastr;
+        this.datePipe = datePipe;
+        this.trfbalancemgtService = trfbalancemgtService;
+        this.labelmgtService = labelmgtService;
+        this.loading = false;
+        this.labelid = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+        this.fromamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.toamt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].pattern('[0-9]+(\.[0-9][0-9]?)?')]);
+        this.rptype = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('opt3');
+        this.startdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.enddt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]({ value: '', disabled: true });
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationEnd */]) {
+                _this.ngOnInit();
+            }
+        });
+    }
+    PendingtrfbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.reportForm = this.fb.group({
+            labelid: this.labelid,
+            fromamt: this.fromamt,
+            toamt: this.toamt,
+            rptype: this.rptype,
+            startdt: this.startdt,
+            enddt: this.enddt
+        });
+        this.getLabels();
+        this.route.queryParams.forEach(function (params) {
+            _this.qlabelid = params['labelid'] || '';
+            _this.qfromamt = params['fromamt'] || '';
+            _this.qtoamt = params['toamt'] || '';
+            _this.qrptype = params['rptype'] || '';
+            _this.qstartdt = params['startdt'] || '';
+            _this.qenddt = params['enddt'] || '';
+            _this.qpage = params['page'] || '';
+            _this.qsort = params['sortby'] || '';
+            if (_this.qrptype !== '') {
+                var payload = {};
+                payload.labelid = _this.qlabelid;
+                payload.fromamt = _this.qfromamt;
+                payload.toamt = _this.qtoamt;
+                payload.rptype = _this.qrptype;
+                if ((_this.qstartdt !== '' && _this.qenddt !== '')) {
+                    payload.startdt = _this.qstartdt;
+                    payload.enddt = _this.qenddt;
+                    _this.reportForm.get('startdt').enable();
+                    _this.reportForm.get('enddt').enable();
+                }
+                payload.page = _this.qpage;
+                payload.sortby = _this.qsort;
+                _this.fetchReport(_this.userObj.userid, payload);
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt
+                });
+            }
+            else {
+                _this.fetchReport(_this.userObj.userid, _this.reportForm.value);
+            }
+        });
+        this.reportForm.get('rptype').valueChanges
+            .subscribe(function (value) { return _this.toggleDates(value); });
+    };
+    PendingtrfbalancereqComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    PendingtrfbalancereqComponent.prototype.toggleDates = function (opt) {
+        var dt1Control = this.reportForm.get('startdt');
+        var dt2Control = this.reportForm.get('enddt');
+        if (opt === 'opt2') {
+            dt1Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt2Control.setValidators(__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required);
+            dt1Control.enable();
+            dt2Control.enable();
+        }
+        else {
+            dt1Control.clearValidators();
+            dt2Control.clearValidators();
+            dt1Control.disable();
+            dt2Control.disable();
+            dt1Control.setValue('');
+            dt2Control.setValue('');
+        }
+        dt1Control.updateValueAndValidity();
+        dt2Control.updateValueAndValidity();
+    };
+    PendingtrfbalancereqComponent.prototype.getLabels = function () {
+        var _this = this;
+        this.labelmgtService.getLabelList().subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.userlist = data.data;
+                    //console.log(this.artistlist);
+                }
+                else {
+                    _this.userlist = [{ _id: '', name: 'Empty list...' }];
+                }
+            }
+        }, function (err) {
+            _this.loading = false;
+            _this.userlist = [{ _id: '', name: 'Error label list' }];
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    PendingtrfbalancereqComponent.prototype.getReport = function (formdata) {
+        if (this.reportForm.valid) {
+            //this.fetchReport(this.reportForm.value);
+            if (this.reportForm.value.rptype === 'opt2') {
+                var pstartdt, penddt;
+                try {
+                    pstartdt = this.datePipe.transform(this.reportForm.value.startdt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    pstartdt = this.qstartdt;
+                }
+                try {
+                    penddt = this.datePipe.transform(this.reportForm.value.enddt, 'yyyy-MM-dd');
+                }
+                catch (error) {
+                    penddt = this.qenddt;
+                }
+                if (!pstartdt || !penddt) {
+                    this.toastr.error('Date format is invalid.');
+                }
+                else {
+                    if (pstartdt > penddt) {
+                        this.toastr.error('Start date cannot be greater than end date.');
+                    }
+                    else {
+                        this.router.navigate(['pendingtrfbalancereq'], {
+                            queryParams: {
+                                labelid: this.reportForm.value.labelid,
+                                fromamt: this.reportForm.value.fromamt,
+                                toamt: this.reportForm.value.toamt,
+                                rptype: this.reportForm.value.rptype,
+                                startdt: pstartdt,
+                                enddt: penddt,
+                                page: 1,
+                                sortby: null
+                            }
+                        });
+                    }
+                }
+            }
+            else {
+                this.router.navigate(['pendingtrfbalancereq'], {
+                    queryParams: {
+                        labelid: this.reportForm.value.labelid,
+                        fromamt: this.reportForm.value.fromamt,
+                        toamt: this.reportForm.value.toamt,
+                        rptype: this.reportForm.value.rptype,
+                        startdt: null,
+                        enddt: null,
+                        page: 1,
+                        sortby: null
+                    }
+                });
+            }
+        }
+    };
+    PendingtrfbalancereqComponent.prototype.fetchReport = function (userid, formval) {
+        var _this = this;
+        this.loading = true;
+        this.trfbalancemgtService.getTrfbalancereqAggs(userid, formval)
+            .subscribe(function (data) {
+            if (data.success === false) {
+                _this.loading = false;
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                _this.loading = false;
+                _this.trfbalancereqs = data.data;
+                _this.totalrows = +data.totalcount;
+                _this.pgCounter = Math.floor((_this.totalrows + 10 - 1) / 10);
+                _this.qlabelid = formval.labelid,
+                    _this.qfromamt = formval.fromamt;
+                _this.qtoamt = formval.toamt;
+                _this.qrptype = formval.rptype;
+                if (formval.startdt) {
+                    _this.qstartdt = formval.startdt;
+                    _this.qenddt = formval.enddt;
+                }
+                /* if (formval.rptype === 'opt1') {
+                  this.reportTitle = 'Song purchase for ' + this.datePipe.transform(new Date(), 'MMM y');
+                } else if (formval.rptype === 'opt2') {
+                    this.reportTitle = 'Song purchase between ' + this.datePipe.transform(new Date(formval.startdt), 'd MMM y') + ' and ' + this.datePipe.transform(new Date(formval.enddt), 'd MMM y');
+                    //this.reportTitle = 'Song purchase between ' + formval.startdt + ' and ' + formval.enddt;
+                } else if (formval.rptype === 'opt3') {
+                  this.reportTitle = 'Song purchase for today'
+                } */
+                _this.reportTitle = 'Search Result - ';
+                _this.reportForm.patchValue({
+                    labelid: _this.qlabelid,
+                    fromamt: _this.qfromamt,
+                    toamt: _this.qtoamt,
+                    rptype: _this.qrptype,
+                    startdt: _this.qstartdt,
+                    enddt: _this.qenddt,
+                });
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    PendingtrfbalancereqComponent.prototype.setPage = function (page) {
+        this.router.navigate(['pendingtrfbalancereq'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: page,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingtrfbalancereqComponent.prototype.createPager = function (number) {
+        var items = [];
+        for (var i = 1; i <= number; i++) {
+            items.push(i);
+        }
+        return items;
+    };
+    PendingtrfbalancereqComponent.prototype.sortTrfbalancereq = function (sortby) {
+        if (this.qsort === '') {
+            this.qsort = sortby;
+        }
+        else if (this.qsort.indexOf('-') > -1) {
+            this.qsort = sortby;
+        }
+        else {
+            this.qsort = '-' + sortby;
+        }
+        this.router.navigate(['pendingtrfbalancereq'], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingtrfbalancereqComponent.prototype.showTrfbalancereq = function (trfbalancereqid) {
+        this.router.navigate(["viewtrfbalancereq/" + trfbalancereqid], {
+            queryParams: {
+                src: 'pend',
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingtrfbalancereqComponent.prototype.rejectTrfbalancereq = function (idx, trfbalancereqid, label) {
+        var _this = this;
+        if (confirm('Do you really want to reject this transfer from: ' + label + ' record?')) {
+            this.loading = true;
+            var payloadData = {};
+            payloadData.status = 'STSRJCT';
+            this.trfbalancemgtService.updateStatustrfbalance(trfbalancereqid, payloadData)
+                .subscribe(function (data) {
+                if (data.success === false) {
+                    _this.loading = false;
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['errorpage']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.loading = false;
+                    _this.trfbalancereqs.splice(idx, 1);
+                    _this.totalrows = _this.totalrows - 1;
+                    _this.toastr.success(data.message);
+                }
+            }, function (err) {
+                _this.loading = false;
+                _this.toastr.error(err);
+            });
+        }
+    };
+    PendingtrfbalancereqComponent.prototype.updateTrfbalancereq = function (idx, trfbalancereqid) {
+        this.router.navigate(["updatetrfbalancereq/" + trfbalancereqid], {
+            queryParams: {
+                labelid: this.qlabelid,
+                fromamt: this.qfromamt,
+                toamt: this.qtoamt,
+                rptype: this.qrptype,
+                startdt: this.qstartdt,
+                enddt: this.qenddt,
+                page: this.qpage || 1,
+                sortby: this.qsort
+            }
+        });
+    };
+    PendingtrfbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-pendingtrfbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/pendingtrfbalancereq/pendingtrfbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"],
+            __WEBPACK_IMPORTED_MODULE_6__services_admin_trfbalancemgt_service__["a" /* TrfbalancemgtService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_admin_usermgt_service__["a" /* UsermgtService */]])
+    ], PendingtrfbalancereqComponent);
+    return PendingtrfbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Complete Transfer Balance</h3>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n        <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n        <form [formGroup]=\"trfbalancereqForm\" (ngSubmit)=\"completeTrfbalancereq(trfbalancereqForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n\n          <div class=\"form-group\">\n              <label for=\"account\" class=\"col-sm-1\"></label>\n              <div class=\"col-xs-12 col-sm-11 input-group\">\n                <h4>Request Detail</h4>            \n                <ul class=\"list-group\">\n                    <li class=\"list-group-item borderless bordersideless\">Request Date <span class=\"badge\"><b><i>{{ trfbalancereq?.requestdt | date: 'd MMM y'}}</i></b></span></li>\n                    <li class=\"list-group-item borderless bordersideless\">Amount <span class=\"badge\"><b><i>{{ trfbalancereq?.amount | currency: 'IDR':'symbol-narrow' }}</i></b></span></li>\n                    <li class=\"list-group-item borderless bordersideless\">Ins Reference <span class=\"badge\"><b><i>{{ trfbalancereq?.insref }}</i></b></span></li>\n                    <li class=\"list-group-item borderless bordersideless\">Status <span class=\"badge\"><b><i>{{ trfbalancereq?.stsvalue }}</i></b></span></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"account\" class=\"col-sm-1\"></label>\n              <div class=\"col-xs-12 col-sm-11 input-group\">\n                <h4>Will be Transfered To</h4>            \n                <ul class=\"list-group\">\n                    <li class=\"list-group-item borderless bordersideless\">Account No <span class=\"badge\"><b><i>{{ trfbalancereq?.bankaccno }}</i></b></span></li>\n                    <li class=\"list-group-item borderless bordersideless\">Account Name <span class=\"badge\"><b><i>{{ trfbalancereq?.bankaccname }}</i></b></span></li>\n                    <li class=\"list-group-item borderless bordersideless\">Bank Name <span class=\"badge\"><b><i>{{ trfbalancereq?.bankname }}</i></b></span></li>\n                </ul>\n              </div>\n            </div>\n            <hr class=\"line-grey-center\">\n            <div class=\"form-group\" [ngClass]=\"{'has-error': trfbalancereqForm.get('bankref').invalid && trfbalancereqForm.get('bankref').dirty}\">\n                <label for=\"bankref\" class=\"col-sm-2 control-label\">Bank Reference <sup>*</sup></label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                    <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankref\" id=\"bankref\" placeholder=\"Bank Reference\">\n                </div>\n                <div class=\"text-danger\" *ngIf=\"trfbalancereqForm.get('bankref').dirty && trfbalancereqForm.get('bankref').errors\">\n                    <span class=\"col-sm-2\"></span>\n                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"trfbalancereqForm.get('bankref').errors.required\">\n                        Please enter the bank reference\n                    </span>\n                </div>\n            </div>\n            <div class=\"form-group\" [ngClass]=\"{'has-error': trfbalancereqForm.get('transferdt').invalid && trfbalancereqForm.get('transferdt').dirty}\">\n                <label for=\"transferdt\" class=\"col-sm-2 control-label\">Transfer date <sup>*</sup></label>  \n              <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></div>\n                    <input type=\"text\" bsDatepicker [bsConfig]=\"{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }\" class=\"form-control\" [formControl]=\"transferdt\" placeholder=\"Transfer Date\">\n                </div>\n                <div class=\"text-danger\" *ngIf=\"trfbalancereqForm.get('transferdt').dirty && trfbalancereqForm.get('transferdt').invalid\">\n                    <span class=\"col-sm-2\"></span>\n                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter valid transfer date</span>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"remarks\" class=\"col-sm-2 control-label\">Remarks <sup>&nbsp;</sup></label>\n                <div class=\"input-group col-xs-12 col-sm-10\">\n                    <textarea [disabled]=\"this.loading == true\" class=\"form-control\" id=\"remarks\" rows=\"10\" [formControl]=\"remarks\" placeholder=\"Remarks\"></textarea>\n                </div>\n            </div>\n            <div class=\"form-group\">\n              <label class=\"col-sm-2 control-label\"></label>\n              <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"submit\" [disabled]=\"trfbalancereqForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n                <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Back</button>\n              </div>\n            </div>\n        </form>\n    </div>\n    \n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdatetrfbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_admin_trfbalancemgt_service__ = __webpack_require__("./src/app/services/admin/trfbalancemgt.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var UpdatetrfbalancereqComponent = /** @class */ (function () {
+    function UpdatetrfbalancereqComponent(fb, authService, trfbalancemgtService, toastr, route, router) {
+        this.fb = fb;
+        this.authService = authService;
+        this.trfbalancemgtService = trfbalancemgtService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+        this.loading = false;
+        this.bankref = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.transferdt = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.remarks = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
+    }
+    UpdatetrfbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.trfbalancereqid = params['id'];
+        });
+        this.getSelectedTrfbalancereq(this.trfbalancereqid);
+        this.userObj = this.authService.currentUser;
+        this.trfbalancereqForm = this.fb.group({
+            bankref: this.bankref,
+            transferdt: this.transferdt,
+            remarks: this.remarks,
+        });
+    };
+    UpdatetrfbalancereqComponent.prototype.getSelectedTrfbalancereq = function (id) {
+        var _this = this;
+        this.trfbalancemgtService.getTrfbalancereqAgg(id).subscribe(function (data) {
+            if (data.success === true) {
+                if (data.data[0]) {
+                    _this.trfbalancereq = data.data[0];
+                    _this.populateForm(data.data[0]);
+                }
+                else {
+                    _this.toastr.error('Empty transfer balance request result');
+                    _this.router.navigate(['pendingtrfbalancereq']);
+                }
+            }
+            else {
+                _this.toastr.error('Transfer request id is incorrect in the URL');
+                _this.router.navigate(['pendingtrfbalancereq']);
+            }
+        }, function (err) {
+            _this.loading = false;
+            //console.log(err);
+            _this.toastr.error(err);
+            _this.router.navigate(['pendingtrfbalancereq']);
+        });
+    };
+    UpdatetrfbalancereqComponent.prototype.populateForm = function (data) {
+        this.trfbalancereqForm.patchValue({
+            bankref: data.bankref,
+            transferdt: data.transferdt,
+            remarks: data.remarks
+        });
+    };
+    UpdatetrfbalancereqComponent.prototype.completeTrfbalancereq = function (formdata) {
+        var _this = this;
+        if (this.trfbalancereqForm.valid) {
+            var theForm = this.trfbalancereqForm.value;
+            theForm.status = 'STSCMPL';
+            theForm.adminuser = this.userObj.username;
+            theForm.adminuserid = this.userObj.userid;
+            this.loading = true;
+            this.trfbalancemgtService.completetrfbalance(this.trfbalancereqid, theForm)
+                .subscribe(function (data) {
+                _this.loading = false;
+                if (data.success === false) {
+                    if (data.errcode) {
+                        _this.authService.logout();
+                        _this.router.navigate(['errorpage']);
+                    }
+                    _this.toastr.error(data.message);
+                }
+                else {
+                    _this.toastr.success(data.message);
+                }
+                if (!_this.trfbalancereqid) {
+                    _this.trfbalancereqForm.reset();
+                }
+            }, function (err) {
+                _this.loading = false;
+                //console.log(err);
+                _this.toastr.error(err);
+            });
+        }
+    };
+    UpdatetrfbalancereqComponent.prototype.onBack = function () {
+        this.router.navigate(['/pendingtrfbalancereq'], { preserveQueryParams: true });
+    };
+    UpdatetrfbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-updatetrfbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/updatetrfbalancereq/updatetrfbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_admin_trfbalancemgt_service__["a" /* TrfbalancemgtService */],
+            __WEBPACK_IMPORTED_MODULE_3__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
+    ], UpdatetrfbalancereqComponent);
+    return UpdatetrfbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>VIEW TRANSFER REQUEST</h3>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-10\">\n            <form class=\"form-horizontal\">\n                <div class=\"form-group\">\n                    <label for=\"reqdate\" class=\"col-sm-4 control-label\">Request Date</label>\n                    <div class=\"form-ele col-sm-8\"> {{ trfbalancereq?.requestdt | date: 'd MMM y'}}</div>\n                </div> \n                <div class=\"form-group\">\n                    <label for=\"amount\" class=\"col-sm-4 control-label\">Amount</label>\n                    <div class=\"form-ele col-sm-8\">{{ trfbalancereq?.amount | currency: 'IDR':'symbol-narrow' }}\n                        <!-- <div class=\"input-group-addon\">Rp</div> -->\n                        <!-- <div class=\"form-ele\">{{ song?.songprice | currency: 'IDR':true }}</div> -->\n                    </div>\n                </div>\n              <div class=\"form-group\">\n                    <label for=\"insref\" class=\"col-sm-4 control-label\">Ins Reference</label>\n                    <div class=\"col-sm-8 form-ele\">{{ trfbalancereq?.insref }}\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                        <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"status\" class=\"col-sm-4 control-label\">Status</label>\n                    <div class=\"col-sm-8 form-ele\">{{ trfbalancereq?.stsvalue }}</div>\n                </div>\n\n                <div class=\"form-group\">\n                  <label for=\"account\" class=\"col-sm-2\"></label>\n                  <div class=\"col-xs-12 col-sm-10 input-group\">\n                    <h4>Will be Transfered To</h4>            \n                    <ul class=\"list-group\">\n                        <li class=\"list-group-item borderless bordersideless\">Account No <span class=\"badge\"><b><i>{{ trfbalancereq?.bankaccno }}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Account Name <span class=\"badge\"><b><i>{{ trfbalancereq?.bankaccname }}</i></b></span></li>\n                        <li class=\"list-group-item borderless bordersideless\">Bank Name <span class=\"badge\"><b><i>{{ trfbalancereq?.bankname }}</i></b></span></li>\n                    </ul>\n                  </div>\n                </div>\n                <hr class=\"line-grey-center\">\n                <div class=\"form-group\">\n                    <label for=\"bankref\" class=\"col-sm-4 control-label\">Bank Reference</label>\n                    <div class=\"col-sm-8 form-ele\">{{ trfbalancereq?.bankref }}\n                      <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                        <div class=\"form-ele\">{{ artist?.artistname }}</div> -->\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"trfdate\" class=\"col-sm-4 control-label\">Transfer Date</label>\n                    <div class=\"form-ele col-sm-8\"> {{ trfbalancereq?.transferdt | date: 'd MMM y'}}</div>\n                </div> \n                \n                <div class=\"form-group\">\n                    <label for=\"remarks\" class=\"col-sm-4 control-label\">Remarks</label>\n                    <div class=\"form-ele col-sm-8\">{{ trfbalancereq?.remarks }}</div>\n                </div>\n                \n            </form>\n        </div>\n        <div class=\"col-sm-2 thumbpadding\">\n            <label *ngIf=\"trfslip\" for=\"slip\" class=\"control-label\">Transfer Slip</label>        \n            <img *ngIf=\"trfslip\" src=\"{{ trfbalancereq?.transferslippath }}\" class=\"img-thumbnail thumbviewsize\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n         <label class=\"col-sm-1\"></label>\n        <div class=\"col-sm-11\">\n            <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n        </div>\n    </div>\n    <hr>    \n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewtrfbalancereqComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_trfbalance_service__ = __webpack_require__("./src/app/services/trfbalance.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__ = __webpack_require__("./src/app/common/toastr.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ViewtrfbalancereqComponent = /** @class */ (function () {
+    function ViewtrfbalancereqComponent(fb, authService, trfbalanceService, toastr, route, router) {
+        this.fb = fb;
+        this.authService = authService;
+        this.trfbalanceService = trfbalanceService;
+        this.toastr = toastr;
+        this.route = route;
+        this.router = router;
+    }
+    ViewtrfbalancereqComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userObj = this.authService.currentUser;
+        this.sub = this.route.params.subscribe(function (params) {
+            var trfreqid = params['id'];
+            _this.trfreqid = trfreqid;
+            _this.getTrfrequest(trfreqid);
+        });
+        this.route.queryParams.forEach(function (params) {
+            _this.qsrcpg = params['src'] || '';
+        });
+    };
+    ViewtrfbalancereqComponent.prototype.getTrfrequest = function (id) {
+        var _this = this;
+        this.trfbalanceService.getTrfbalancereqAgg(id).subscribe(function (data) {
+            if (data.success === false) {
+                if (data.errcode) {
+                    _this.authService.logout();
+                    _this.router.navigate(['errorpage']);
+                }
+                _this.toastr.error(data.message);
+            }
+            else {
+                if (data.data[0]) {
+                    _this.trfbalancereq = data.data[0];
+                    if (_this.trfbalancereq.transferslippath) {
+                        _this.trfslip = true;
+                    }
+                    else {
+                        _this.trfslip = false;
+                    }
+                }
+                else {
+                    _this.toastr.error('TRF REQUEST id is incorrect in the URL');
+                }
+            }
+        }, function (err) {
+            //console.log(err);
+            _this.toastr.error(err);
+        });
+    };
+    ViewtrfbalancereqComponent.prototype.onBack = function () {
+        if (this.qsrcpg === 'list') {
+            this.router.navigate(['/listtrfbalancereq'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'pend') {
+            this.router.navigate(['/pendingtrfbalancereq'], { preserveQueryParams: true });
+        }
+        else if (this.qsrcpg === 'cmpl') {
+            this.router.navigate(['/admlisttrfbalancereq'], { preserveQueryParams: true });
+        }
+    };
+    ViewtrfbalancereqComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-viewtrfbalancereq',
+            template: __webpack_require__("./src/app/components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component.html"),
+            styles: [__webpack_require__("./src/app/components/trfbalancereq/viewtrfbalancereq/viewtrfbalancereq.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_trfbalance_service__["a" /* TrfbalanceService */],
+            __WEBPACK_IMPORTED_MODULE_5__common_toastr_service__["a" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]])
+    ], ViewtrfbalancereqComponent);
+    return ViewtrfbalancereqComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/user/emailverification/emailverification.component.css":
 /***/ (function(module, exports) {
 
@@ -15916,7 +19503,7 @@ module.exports = ""
 /***/ "./src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>My Profile</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div class=\"clearfix\">\n      <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"form-group\">\n              <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.username }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('name').invalid && profileForm.get('name').dirty}\">\n              <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('name').dirty && profileForm.get('name').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} name</span>\n              </div>\n          </div>\n<!--           <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n              <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\">@</div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"email\" [formControl]=\"email\" placeholder=\"Email\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter a valid email</span>\n              </div>\n          </div> -->\n          <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ userObj.email }}</div>\n            </div>\n            <div class=\"text-warning\" *ngIf=\"authService.currentUser.verified_email == 'N'\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Email is not verified yet. Please verify by clicking <a style=\"cursor:pointer\" (click)=\"verifyEmail(userObj.username, userObj.name, userObj.email)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Verify\">HERE</a> !</span>\n            </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('contactno').invalid && profileForm.get('contactno').dirty}\">\n              <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"contactno\" [formControl]=\"contactno\" placeholder=\"Contact No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('contactno').dirty && profileForm.get('contactno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Contact Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankaccno').invalid && profileForm.get('bankaccno').dirty}\">\n              <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankaccno\" [formControl]=\"bankaccno\" placeholder=\"Bank Account No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankaccno').dirty && profileForm.get('bankaccno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Account Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\">\n            <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n            </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankname').invalid && profileForm.get('bankname').dirty}\">\n              <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankname\" [formControl]=\"bankname\" placeholder=\"Bank Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankname').dirty && profileForm.get('bankname').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Name</span>\n              </div>\n          </div>\n<!--           <div class=\"form-group\">\n              <label for=\"usertype\" class=\"col-sm-2 control-label\">User Type</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.usertype }}</div>\n              </div>\n          </div> -->\n          <div class=\"form-group\">\n              <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.lastlogin | date:'medium' }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label class=\"col-sm-2 control-label\"></label>\n              <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                  <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n                  <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Cancel</button>\n              </div>\n          </div>\n      </form>                \n    </div>\n  </div>"
+module.exports = "<div class=\"container pagecontainer\">\n    <div class=\"page-header\">\n        <h3>My Profile</h3>\n    </div>\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n    <div class=\"clearfix\">\n      <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n          <div class=\"form-group\">\n              <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.username }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('name').invalid && profileForm.get('name').dirty}\">\n              <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"name\" [formControl]=\"name\" placeholder=\"Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('name').dirty && profileForm.get('name').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your {{ userObj.username }} name</span>\n              </div>\n          </div>\n<!--           <div class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('email').invalid && profileForm.get('email').dirty}\">\n              <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\">@</div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"email\" [formControl]=\"email\" placeholder=\"Email\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('email').dirty && profileForm.get('email').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter a valid email</span>\n              </div>\n          </div> -->\n          <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ userObj.email }}</div>\n            </div>\n            <div class=\"text-warning\" *ngIf=\"authService.currentUser.verified_email == 'N'\">\n                <span class=\"col-sm-2\"></span>\n                <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Email is not verified yet. Please verify by clicking <a style=\"cursor:pointer\" (click)=\"verifyEmail(userObj.username, userObj.name, userObj.email)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Verify\">HERE</a> !</span>\n            </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('contactno').invalid && profileForm.get('contactno').dirty}\">\n              <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"contactno\" [formControl]=\"contactno\" placeholder=\"Contact No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('contactno').dirty && profileForm.get('contactno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Contact Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankaccno').invalid && profileForm.get('bankaccno').dirty}\">\n              <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankaccno\" [formControl]=\"bankaccno\" placeholder=\"Bank Account No\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankaccno').dirty && profileForm.get('bankaccno').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Account Number</span>\n              </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankaccname').invalid && profileForm.get('bankaccname').dirty}\">\n                <label for=\"bankaccname\" class=\"col-sm-2 control-label\">Bank Account Name</label>\n                <div class=\"input-group col-sm-10\">\n                    <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                    <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankaccname\" [formControl]=\"bankaccname\" placeholder=\"Bank Account Name\">\n                </div>\n                <div class=\"text-danger\" *ngIf=\"profileForm.get('bankaccname').dirty && profileForm.get('bankaccname').invalid\">\n                    <span class=\"col-sm-2\"></span>\n                    <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Account Name</span>\n                </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\">\n            <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n            <div class=\"input-group col-sm-10\">\n                <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n                <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n            </div>\n          </div>\n          <div *ngIf=\"authService.isLoggedIn() && authService.currentUser.usertype == 'LBL'\" class=\"form-group\" [ngClass]=\"{'has-error': profileForm.get('bankname').invalid && profileForm.get('bankname').dirty}\">\n              <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-pencil\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" id=\"bankname\" [formControl]=\"bankname\" placeholder=\"Bank Name\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"profileForm.get('bankname').dirty && profileForm.get('bankname').invalid\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\">Please enter your Bank Name</span>\n              </div>\n          </div>\n<!--           <div class=\"form-group\">\n              <label for=\"usertype\" class=\"col-sm-2 control-label\">User Type</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.usertype }}</div>\n              </div>\n          </div> -->\n          <div class=\"form-group\">\n              <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                  <div class=\"form-ele\">{{ userObj.lastlogin | date:'medium' }}</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label class=\"col-sm-2 control-label\"></label>\n              <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                  <button type=\"submit\" [disabled]=\"profileForm.invalid || this.loading == true\" class=\"btn btn-primary\">Update</button>\n                  <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\" (click)=\"onBack()\">Cancel</button>\n              </div>\n          </div>\n      </form>                \n    </div>\n  </div>"
 
 /***/ }),
 
@@ -15967,6 +19554,7 @@ var ProfileComponent = /** @class */ (function () {
         //email = new FormControl('', [Validators.email]);
         this.contactno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.bankaccno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.bankaccname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.bankcode = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.bankname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
     }
@@ -15977,6 +19565,7 @@ var ProfileComponent = /** @class */ (function () {
             name: this.name,
             contactno: this.contactno,
             bankaccno: this.bankaccno,
+            bankaccname: this.bankaccname,
             bankcode: this.bankcode,
             bankname: this.bankname
         });
@@ -16004,6 +19593,7 @@ var ProfileComponent = /** @class */ (function () {
             //email: data.email,
             contactno: data.contactno,
             bankaccno: data.bankaccno,
+            bankaccname: data.bankaccname,
             bankcode: data.bankcode,
             bankname: data.bankname
         });
@@ -16159,7 +19749,7 @@ module.exports = ""
 /***/ "./src/app/components/user/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain capital letter, number or special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>Register Label</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"registerUser(registerForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('name').invalid && registerForm.get('name').dirty}\">\n          <label for=\"name\" class=\"col-sm-2 control-label\">Label Name <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"name\" id=\"name\" placeholder=\"Label Name\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('name').dirty && registerForm.get('name').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('name').errors.required\">\n                  Please enter your label name\n              </span>\n          </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('email').invalid && registerForm.get('email').dirty}\">\n          <label for=\"email\" class=\"col-sm-2 control-label\">Email <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\">@</div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"email\" id=\"email\" placeholder=\"Email\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('email').dirty && registerForm.get('email').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('email').invalid\">\n                  Please enter a valid email\n              </span>\n          </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('contactno').invalid && registerForm.get('contactno').dirty}\">\n        <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-earphone\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"contactno\" id=\"contactno\" placeholder=\"Contact No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('contactno').dirty && registerForm.get('contactno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('contactno').errors.required\">\n                Please enter your contact no\n            </span>\n        </div>\n      </div>\n\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccno').invalid && registerForm.get('bankaccno').dirty}\">\n        <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccno\" id=\"bankaccno\" placeholder=\"Bank Account No\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccno').dirty && registerForm.get('bankaccno').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccno').errors.required\">\n                Please enter your bank account no\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankaccname').invalid && registerForm.get('bankaccname').dirty}\">\n        <label for=\"bankaccname\" class=\"col-sm-2 control-label\">Bank Account Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankaccname\" id=\"bankaccname\" placeholder=\"Bank Account Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankaccname').dirty && registerForm.get('bankaccname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankaccname').errors.required\">\n                Please enter your bank account name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"bankcode\" class=\"col-sm-2 control-label\">Bank Code</label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankcode\" id=\"bankcode\" placeholder=\"Bank Code\">\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('bankname').invalid && registerForm.get('bankname').dirty}\">\n        <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name <sup>*</sup></label>\n        <div class=\"input-group col-sm-10\">\n            <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></div>\n            <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"bankname\" id=\"bankname\" placeholder=\"Bank Name\">\n        </div>\n        <div class=\"text-danger\" *ngIf=\"registerForm.get('bankname').dirty && registerForm.get('bankname').errors\">\n            <span class=\"col-sm-2\"></span>\n            <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('bankname').errors.required\">\n                Please enter your bank name\n            </span>\n        </div>\n      </div>\n      <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('username').invalid && registerForm.get('username').dirty}\">\n          <label for=\"username\" class=\"col-sm-2 control-label\">Username <sup>*</sup></label>\n          <div class=\"input-group col-sm-10\">\n              <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n              <input [disabled]=\"this.loading == true\" type=\"text\" class=\"form-control\" [formControl]=\"username\" id=\"username\" placeholder=\"Username\">\n          </div>\n          <div class=\"text-danger\" *ngIf=\"registerForm.get('username').dirty && registerForm.get('username').errors\">\n              <span class=\"col-sm-2\"></span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.required\">\n                  Please enter username\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.minlength\">\n                  Username must be longer than 3 characters.\n              </span>\n              <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('username').errors.maxlength\">\n                  Username cannot be longer than 16 characters.\n              </span>\n          </div>\n      </div>\n\n       <div formGroupName=\"passwordGroup\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup').errors }\">\n           \n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.password').invalid && registerForm.get('passwordGroup.password').dirty}\">\n              <label for=\"password\" class=\"col-sm-2 control-label\">Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"password\" id=\"password\" placeholder=\"Pasword\">\n              </div>\n              <div class=\"text-danger\"  *ngIf=\"registerForm.get('passwordGroup.password').dirty && registerForm.get('passwordGroup.password').errors\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.required\">\n                      Please enter password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.password').errors.pattern\">\n                      Password must be minimum 6 and maximum 12 characters AND contain capital letter, number or special characters\n                  </span>\n              </div>\n          \n          </div>\n          <div class=\"form-group\" [ngClass]=\"{'has-error': registerForm.get('passwordGroup.retypepass').invalid && registerForm.get('passwordGroup.retypepass').dirty}\">\n              <label for=\"retypepass\" class=\"col-sm-2 control-label\">Retype Password <sup>*</sup></label>\n              <div class=\"input-group col-sm-10\">\n                  <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-asterisk\"></i></div>\n                  <input [disabled]=\"this.loading == true\" type=\"password\" class=\"form-control\" [formControl]=\"retypepass\" id=\"retypepass\" placeholder=\"Retype Password\">\n              </div>\n              <div class=\"text-danger\" *ngIf=\"(registerForm.get('passwordGroup.retypepass').touched || registerForm.get('passwordGroup.retypepass').dirty) && (registerForm.get('passwordGroup.retypepass').errors || registerForm.get('passwordGroup').errors)\">\n                  <span class=\"col-sm-2\"></span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup.retypepass').errors?.required\">\n                      Please confirm your password\n                  </span>\n                  <span class=\"col-sm-10\" style=\"padding:4px 0 0\" *ngIf=\"registerForm.get('passwordGroup').errors?.mismatchedPassword\">\n                      Password do not match\n                  </span>\n              </div>\n          </div>\n       </div>\n      <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\"></label>\n          <div class=\"col-sm-5\" style=\"padding:0;margin:0;\">\n              <button type=\"submit\" [disabled]=\"registerForm.invalid || this.loading == true\" class=\"btn btn-primary\">Submit</button>\n              <button type=\"reset\" [disabled]=\"this.loading == true\" class=\"btn btn-default\">Reset</button>\n              <button type=\"button\" [disabled]=\"this.loading == true\" (click)=\"onLogin()\" class=\"btn btn-info\">Back to Login</button>\n          </div>\n          <div class=\"col-sm-5\" style=\"text-align:right\">\n              <sup>*</sup> required\n          </div>\n      </div>\n  </form>\n\n</div>"
 
 /***/ }),
 
@@ -16207,6 +19797,7 @@ var RegisterComponent = /** @class */ (function () {
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         this.contactno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.bankaccno = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
+        this.bankaccname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.bankcode = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].nullValidator]);
         this.bankname = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]);
         this.username = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].minLength(4), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].maxLength(16)]);
@@ -16221,6 +19812,7 @@ var RegisterComponent = /** @class */ (function () {
             email: this.email,
             contactno: this.contactno,
             bankaccno: this.bankaccno,
+            bankaccname: this.bankaccname,
             bankcode: this.bankcode,
             bankname: this.bankname,
             username: this.username,
@@ -17153,7 +20745,7 @@ module.exports = ""
 /***/ "./src/app/components/usermgt/viewlabel/viewlabel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL DETAILS</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"clearfix\">\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n            <div class=\"form-ele col-sm-10\">{{ user.username }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ user.username }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.name }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ user.name }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"form-ele col-sm-10\">{{ user.email }}\n                <!-- <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ user.email }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.contactno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.contactno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankaccno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankname }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n            <div class=\"form-ele col-sm-10\">{{ user.lastlogin | date:'medium' }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                <div class=\"form-ele\">{{ user.lastlogin | date:'medium' }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"balance\" class=\"col-sm-2 control-label\">Balance</label>\n            <div class=\"form-ele col-sm-10\">{{ user.balance | currency:'IDR'}}\n                <!-- <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ user.balance }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">       </label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>                \n  </div>\n</div>\n"
+module.exports = "<div class=\"container pagecontainer\">\n  <div class=\"page-header\">\n      <h3>LABEL DETAILS</h3>\n  </div>\n  <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px' }\"></ngx-loading>\n  <div class=\"clearfix\">\n    <form [formGroup]=\"profileForm\" (ngSubmit)=\"updateUser(profileForm.value)\" class=\"form-horizontal\" novalidate autocomplete=\"off\">\n        <div class=\"form-group\">\n            <label for=\"username\" class=\"col-sm-2 control-label\">Username</label>\n            <div class=\"form-ele col-sm-10\">{{ user.username }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-user\"></i></div>\n                <div class=\"form-ele\">{{ user.username }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"name\" class=\"col-sm-2 control-label\">Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.name }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon-font\"></i></div>\n                <div class=\"form-ele\">{{ user.name }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\" class=\"col-sm-2 control-label\">Email</label>\n            <div class=\"form-ele col-sm-10\">{{ user.email }}\n                <!-- <div class=\"input-group-addon\">@</div>\n                <div class=\"form-ele\">{{ user.email }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"contactno\" class=\"col-sm-2 control-label\">Contact No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.contactno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.contactno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccno\" class=\"col-sm-2 control-label\">Bank Account No</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankaccno }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankaccname\" class=\"col-sm-2 control-label\">Bank Account Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankaccname }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankaccno }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"bankname\" class=\"col-sm-2 control-label\">Bank Name</label>\n            <div class=\"form-ele col-sm-10\">{{ user.bankname }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-bold\"></i></div>\n                <div class=\"form-ele\">{{ user.bankname }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"lastlogin\" class=\"col-sm-2 control-label\">Last Login</label>\n            <div class=\"form-ele col-sm-10\">{{ user.lastlogin | date:'medium' }}\n                <!-- <div class=\"input-group-addon\"><i class=\"glyphicon glyphicon glyphicon-calendar\"></i></div>\n                <div class=\"form-ele\">{{ user.lastlogin | date:'medium' }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"balance\" class=\"col-sm-2 control-label\">Balance</label>\n            <div class=\"form-ele col-sm-10\">{{ user.balance | currency:'IDR'}}\n                <!-- <div class=\"input-group-addon\">Rp</div>\n                <div class=\"form-ele\">{{ user.balance }}</div> -->\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">       </label>\n            <div class=\"col-sm-10\" style=\"padding:0;margin:0;\">\n                <button type=\"button\" (click)=\"onBack()\" class=\"btn btn-default\">Back</button>\n            </div>\n        </div>\n    </form>                \n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -17397,6 +20989,127 @@ var ActivitylogService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
     ], ActivitylogService);
     return ActivitylogService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/admin/adjustment.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdjustmentService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var AdjustmentService = /** @class */ (function () {
+    function AdjustmentService(http, globals) {
+        this.http = http;
+        this.globals = globals;
+        this.adminurl = globals.adminurl;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    AdjustmentService.prototype.saveAdjustment = function (userid, oAdjustment) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.adminurl + "/api/saveadjustment/" + userid, JSON.stringify(oAdjustment), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AdjustmentService.prototype.getSumAdjustmentAggs = function (userid, oAdjustment) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.adminurl + "/api/adjustmentagg/" + userid, JSON.stringify(oAdjustment), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AdjustmentService.prototype.getAdjustmentAgg = function (adjid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get(this.adminurl + "/api/getadjustmentagg/" + adjid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AdjustmentService.prototype.editAdjustment = function (adjid, oAdjustment) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put(this.adminurl + "/api/editadjustment/" + adjid, JSON.stringify(oAdjustment), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AdjustmentService.prototype.updateStatusadjustment = function (adjid, oAdjustment) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.adminurl + "/api/updatestatusadjustment/" + adjid, JSON.stringify(oAdjustment), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    AdjustmentService.prototype.handleError = function (error) {
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
+    };
+    AdjustmentService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]])
+    ], AdjustmentService);
+    return AdjustmentService;
 }());
 
 
@@ -17726,6 +21439,140 @@ var SongadminService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]])
     ], SongadminService);
     return SongadminService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/admin/trfbalancemgt.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrfbalancemgtService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_global__ = __webpack_require__("./src/app/app.global.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var TrfbalancemgtService = /** @class */ (function () {
+    function TrfbalancemgtService(http, globals) {
+        this.http = http;
+        this.globals = globals;
+        this.adminurl = globals.adminurl;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    TrfbalancemgtService.prototype.getTrfbalancereqAggs = function (userid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.adminurl + "/api/pendingtrfbalancereq/" + userid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalancemgtService.prototype.getTrfbalancereqAgg = function (trfreqid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get(this.adminurl + "/api/gettrfbalancereqagg/" + trfreqid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalancemgtService.prototype.getSumTrfbalancereqAggs = function (userid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.adminurl + "/api/trfbalancereqagg/" + userid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalancemgtService.prototype.updateStatustrfbalance = function (trfbalancereqid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put(this.adminurl + "/api/updatestatustrfbalancereq/" + trfbalancereqid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalancemgtService.prototype.editposttrfbalance = function (trfbalancereqid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put(this.adminurl + "/api/editposttrfbalancereq/" + trfbalancereqid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalancemgtService.prototype.completetrfbalance = function (trfbalancereqid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post(this.adminurl + "/api/completetrfbalancereq/" + trfbalancereqid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalancemgtService.prototype.handleError = function (error) {
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
+    };
+    TrfbalancemgtService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_3__app_global__["a" /* Globals */]])
+    ], TrfbalancemgtService);
+    return TrfbalancemgtService;
 }());
 
 
@@ -19247,6 +23094,19 @@ var TransactionService = /** @class */ (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    TransactionService.prototype.getOtherTransactionAggs = function (userid, oTransaction) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/othertransactionagg/" + userid, JSON.stringify(oTransaction), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     TransactionService.prototype.getAdmTransactionAggs = function (userid, oTransaction) {
         var theUser = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
@@ -19257,6 +23117,19 @@ var TransactionService = /** @class */ (function () {
         headers.append('Authorization', "" + this.jwtToken);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this.http.post("api/admtransactionagg/" + userid, JSON.stringify(oTransaction), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TransactionService.prototype.getAdmOtherTransactionAggs = function (userid, oTransaction) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/admothertransactionagg/" + userid, JSON.stringify(oTransaction), options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -19283,6 +23156,97 @@ var TransactionService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
     ], TransactionService);
     return TransactionService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/trfbalance.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrfbalanceService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_throw__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var TrfbalanceService = /** @class */ (function () {
+    function TrfbalanceService(http) {
+        this.http = http;
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+    }
+    TrfbalanceService.prototype.saveTrfbalancereq = function (userid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/trfbalancereq/" + userid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalanceService.prototype.getTrfbalancereqAggs = function (userid, oTrfbalancereq) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.post("api/trfbalancereqagg/" + userid, JSON.stringify(oTrfbalancereq), options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalanceService.prototype.getTrfbalancereqAgg = function (trfreqid) {
+        var theUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (theUser) {
+            this.jwtToken = theUser.token;
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', "" + this.jwtToken);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.get("api/gettrfbalancereqagg/" + trfreqid, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    TrfbalanceService.prototype.handleError = function (error) {
+        var errMsg = error.status ? error.status + " - " + error.statusText : 'Ooops sorry...a server error occured. Please try again shortly.';
+        //console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(errMsg);
+    };
+    TrfbalanceService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], TrfbalanceService);
+    return TrfbalanceService;
 }());
 
 

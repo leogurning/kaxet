@@ -1,0 +1,81 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>EDIT DETAILS TRANSFER BALANCE</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+            <form [formGroup]="trfbalancereqForm" (ngSubmit)="editTrfbalancereq(trfbalancereqForm.value)" class="form-horizontal" novalidate autocomplete="off">
+    
+              <div class="form-group">
+                  <label for="account" class="col-sm-1"></label>
+                  <div class="col-xs-12 col-sm-11 input-group">
+                    <h4>Request Detail</h4>            
+                    <ul class="list-group">
+                        <li class="list-group-item borderless bordersideless">Request Date <span class="badge"><b><i>{{ trfbalancereq?.requestdt | date: 'd MMM y'}}</i></b></span></li>
+                        <li class="list-group-item borderless bordersideless">Amount <span class="badge"><b><i>{{ trfbalancereq?.amount | currency: 'IDR':'symbol-narrow' }}</i></b></span></li>
+                        <li class="list-group-item borderless bordersideless">Ins Reference <span class="badge"><b><i>{{ trfbalancereq?.insref }}</i></b></span></li>
+                        <li class="list-group-item borderless bordersideless">Status <span class="badge"><b><i>{{ trfbalancereq?.stsvalue }}</i></b></span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="account" class="col-sm-1"></label>
+                  <div class="col-xs-12 col-sm-11 input-group">
+                    <h4>Will be Transfered To</h4>            
+                    <ul class="list-group">
+                        <li class="list-group-item borderless bordersideless">Account No <span class="badge"><b><i>{{ trfbalancereq?.bankaccno }}</i></b></span></li>
+                        <li class="list-group-item borderless bordersideless">Account Name <span class="badge"><b><i>{{ trfbalancereq?.bankaccname }}</i></b></span></li>
+                        <li class="list-group-item borderless bordersideless">Bank Name <span class="badge"><b><i>{{ trfbalancereq?.bankname }}</i></b></span></li>
+                    </ul>
+                  </div>
+                </div>
+                <hr class="line-grey-center">
+                <div class="form-group" [ngClass]="{'has-error': trfbalancereqForm.get('bankref').invalid && trfbalancereqForm.get('bankref').dirty}">
+                    <label for="bankref" class="col-sm-3 control-label">Bank Reference <sup>*</sup></label>
+                    <div class="input-group col-sm-9">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
+                        <input [disabled]="this.loading == true" type="text" class="form-control" [formControl]="bankref" id="bankref" placeholder="Bank Reference">
+                    </div>
+                    <div class="text-danger" *ngIf="trfbalancereqForm.get('bankref').dirty && trfbalancereqForm.get('bankref').errors">
+                        <span class="col-sm-3"></span>
+                        <span class="col-sm-9" style="padding:4px 0 0" *ngIf="trfbalancereqForm.get('bankref').errors.required">
+                            Please enter the bank reference
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': trfbalancereqForm.get('transferdt').invalid && trfbalancereqForm.get('transferdt').dirty}">
+                    <label for="transferdt" class="col-sm-3 control-label">Transfer date <sup>*</sup></label>  
+                  <div class="input-group col-sm-9">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                        <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-red', showWeekNumbers: false }" class="form-control" [formControl]="transferdt" placeholder="Transfer Date">
+                    </div>
+                    <div class="text-danger" *ngIf="trfbalancereqForm.get('transferdt').dirty && trfbalancereqForm.get('transferdt').invalid">
+                        <span class="col-sm-3"></span>
+                        <span class="col-sm-9" style="padding:4px 0 0">Please enter valid transfer date</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="remarks" class="col-sm-3 control-label">Remarks <sup>&nbsp;</sup></label>
+                    <div class="input-group col-xs-12 col-sm-9">
+                        <textarea [disabled]="this.loading == true" class="form-control" id="remarks" rows="10" [formControl]="remarks" placeholder="Remarks"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editlog" class="col-sm-3 control-label">Edit Log <sup>&nbsp;</sup></label>
+                    <div class="input-group col-xs-12 col-sm-9">
+                        <textarea [disabled]="this.loading == true" class="form-control" id="editlog" rows="10" [formControl]="editlog" placeholder="Edit Log"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"></label>
+                  <div class="col-sm-9" style="padding:0;margin:0;">
+                    <button type="submit" [disabled]="trfbalancereqForm.invalid || this.loading == true" class="btn btn-primary">Update</button>
+                    <button type="reset" [disabled]="this.loading == true" class="btn btn-default" (click)="onBack()">Back</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+        
+      </div>
+</div>

@@ -7,6 +7,7 @@ const UserSchema = new Schema({
     email: {type:String},
     contactno: {type:String},
     bankaccno: {type:String},
+    bankaccname: {type:String},
     bankcode: {type:String},
     bankname: {type:String},  
     username: {type:String},

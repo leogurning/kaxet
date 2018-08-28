@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
   email = new FormControl('', [Validators.email]);
   contactno = new FormControl('', [Validators.required]);
   bankaccno = new FormControl('', [Validators.required]);
+  bankaccname = new FormControl('', [Validators.required]);
   bankcode = new FormControl('', [Validators.nullValidator]);
   bankname = new FormControl('', [Validators.required]);
   username = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(16)]);
@@ -45,6 +46,7 @@ export class RegisterComponent implements OnInit {
       email: this.email,
       contactno: this.contactno,
       bankaccno: this.bankaccno,
+      bankaccname: this.bankaccname,
       bankcode: this.bankcode,
       bankname: this.bankname,
       username: this.username,

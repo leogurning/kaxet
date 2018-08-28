@@ -17,6 +17,7 @@ exports.signup = function(req, res, next){
     const email = req.body.email;
     const contactno = req.body.contactno;
     const bankaccno = req.body.bankaccno;
+    const bankaccname = req.body.bankaccname;
     const bankcode = req.body.bankcode;
     const bankname = req.body.bankname;
     const username = req.body.username;
@@ -24,7 +25,7 @@ exports.signup = function(req, res, next){
     const usertype = 'LBL';
     var rand,randhash,link;
 
-     if (!name || !email || !contactno || !bankaccno || !bankname || !username || !password|| !usertype) {
+     if (!name || !email || !contactno || !bankaccno || !bankaccname || !bankname || !username || !password|| !usertype) {
          return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
      }
  
@@ -48,6 +49,7 @@ exports.signup = function(req, res, next){
                 email: email,
                 contactno: contactno,
                 bankaccno: bankaccno,
+                bankaccname: bankaccname,
                 bankcode: bankcode,
                 bankname: bankname,
                 username: username,
@@ -184,11 +186,12 @@ exports.updateUser = function(req, res, next){
     const name = req.body.name;
     const contactno = req.body.contactno;
     const bankaccno = req.body.bankaccno;
+    const bankaccname = req.body.bankaccname;
     const bankcode = req.body.bankcode;
     const bankname = req.body.bankname;
     const userid = req.params.id;
 
-    if (!name || !contactno || !bankaccno || !bankname || !userid) {
+    if (!name || !contactno || !bankaccno || !bankaccname || !bankname || !userid) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incompleted.'});
     } else {
 	User.findById(userid).exec(function(err, user){
@@ -198,6 +201,7 @@ exports.updateUser = function(req, res, next){
 			user.name = name;
             user.contactno = contactno;
             user.bankaccno = bankaccno;
+            user.bankaccname = bankaccname;
             user.bankcode = bankcode;
             user.bankname = bankname;
 		}
@@ -461,6 +465,7 @@ exports.pubregisterlabel = function(req, res, next){
     const email = req.body.email;
     const contactno = req.body.contactno;
     const bankaccno = req.body.bankaccno;
+    const bankaccname = req.body.bankaccname;
     const bankcode = req.body.bankcode;
     const bankname = req.body.bankname;
     const username = req.body.username;
@@ -470,7 +475,7 @@ exports.pubregisterlabel = function(req, res, next){
 
     const q = 'registerlabelQueue';
 
-    if (!name || !email || !contactno || !bankaccno || !bankname || !username || !password|| !usertype) {
+    if (!name || !email || !contactno || !bankaccno || !bankaccname || !bankname || !username || !password|| !usertype) {
         return res.status(422).json({ success: false, message: 'Posted data is not correct or incomplete.'});
     }
     console.log(username);

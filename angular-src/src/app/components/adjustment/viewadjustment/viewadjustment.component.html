@@ -1,0 +1,82 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h3>Adjustment Detail</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-10">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="reqdate" class="col-sm-4 control-label">Request Date</label>
+                    <div class="form-ele col-sm-8"> {{ adjustment?.requestdt | date: 'd MMM y'}}</div>
+                </div> 
+                <div class="form-group">
+                    <label for="label" class="col-sm-4 control-label">Label</label>
+                    <div class="form-ele col-sm-8">{{ adjustment?.label }}
+                        <!-- <div class="input-group-addon">Rp</div> -->
+                        <!-- <div class="form-ele">{{ song?.songprice | currency: 'IDR':true }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-sm-4 control-label">Amount</label>
+                    <div class="form-ele col-sm-8">{{ adjustment?.amount | currency: 'IDR':'symbol-narrow' }}
+                        <!-- <div class="input-group-addon">Rp</div> -->
+                        <!-- <div class="form-ele">{{ song?.songprice | currency: 'IDR':true }}</div> -->
+                    </div>
+                </div>
+              <div class="form-group">
+                    <label for="dbcr" class="col-sm-4 control-label">IN+ / OUT-</label>
+                    <div class="col-sm-8 form-ele">{{ adjustment?.dbcr }}
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ artist?.artistname }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8 form-ele">{{ adjustment?.stsvalue }}</div>
+                </div>
+                <div class="form-group">
+                    <label for="requestby" class="col-sm-4 control-label">Request By</label>
+                    <div class="col-sm-8 form-ele">{{ adjustment?.requestby }}
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ artist?.artistname }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="remarks" class="col-sm-4 control-label">Remarks</label>
+                    <div class="form-ele col-sm-8">{{ adjustment?.remarks }}</div>
+                </div>
+                <hr class="line-grey-center">
+              
+                <div class="form-group">
+                    <label for="apvdate" class="col-sm-4 control-label">Approve Date</label>
+                    <div class="form-ele col-sm-8"> {{ adjustment?.approvedt | date: 'd MMM y'}}</div>
+                </div> 
+                <div class="form-group">
+                    <label for="apvby" class="col-sm-4 control-label">Approved By</label>
+                    <div class="col-sm-8 form-ele">{{ adjustment?.approveby }}
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ artist?.artistname }}</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editlog" class="col-sm-4 control-label">Edit Log</label>
+                    <div class="col-sm-8 form-ele">{{ adjustment?.extfield1 }}
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-font"></i></div>
+                        <div class="form-ele">{{ artist?.artistname }}</div> -->
+                    </div>
+                </div>      
+            </form>
+        </div>
+        <div class="col-sm-2 thumbpadding">
+
+        </div>
+        
+    </div>
+    <div class="form-group">
+         <label class="col-sm-1"></label>
+        <div class="col-sm-11">
+            <button type="button" (click)="onBack()" class="btn btn-default">Back</button>
+        </div>
+    </div>
+    <hr>   
+</div>

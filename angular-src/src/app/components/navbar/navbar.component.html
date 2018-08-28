@@ -43,12 +43,14 @@
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
                             <a style="cursor:pointer">Data</a>
                             <ul class="sub-menu">
+                                    <li><a routerLink="listconfig" routerLinkActive="active">Configs</a></li>
                                 <li><a routerLink="labelstats" routerLinkActive="active">Labels</a></li>
                                 <li><a routerLink="artiststats" routerLinkActive="active">Artists</a></li>
                                 <li><a routerLink="albumstats" routerLinkActive="active">Albums</a></li>
                                 <li><a routerLink="songstats" routerLinkActive="active">Songs</a></li>
                                 <li><a routerLink="songpurchasestats" routerLinkActive="active">Purchase</a></li>
                                 <li><a routerLink="transactionstats" routerLinkActive="active">Transactions</a></li>
+                                <li><a routerLink="othertransactionstats" routerLinkActive="active">Bank Transfer/Adjustment</a></li>
                             </ul>
                         </li>                        
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
@@ -58,12 +60,16 @@
                                 <li><a routerLink="usermanagement" routerLinkActive="active">Pending Labels</a></li>
                                 <!-- <li><a routerLink="songmanagement" [queryParams]="{songpublish:'N'}" routerLinkActive="active"><i class="fa fa-music"></i> Publish Songs</a></li> -->
                                 <li><a routerLink="songmanagement" routerLinkActive="active"><i class="fa fa-music"></i> Publish Songs</a></li>
+                                <li><a routerLink="pendingtrfbalancereq" routerLinkActive="active">Pending Transfer Balance</a></li>
                             </ul>
                         </li>                        
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADM'">
-                            <a routerLink="listconfig" routerLinkActive="active">Master Config  <i class="fa fa-wrench"></i></a>
+                            <!-- <a routerLink="listconfig" routerLinkActive="active">Master Config  <i class="fa fa-wrench"></i></a> -->
+                            <a style="cursor:pointer">Adjustment</a>
                             <ul class="sub-menu">
-                                <li><a routerLink="listconfig" routerLinkActive="active">Manage Config</a></li>
+                                <!-- <li><a routerLink="listconfig" routerLinkActive="active">Manage Config</a></li> -->
+                                <li><a routerLink="addadjustment" routerLinkActive="active">Add Adjustment</a></li>
+                                <li><a routerLink="listadjustment" routerLinkActive="active">Adjustment Summary</a></li>
                             </ul>
                         </li>
                         <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'SUP'">
@@ -74,11 +80,27 @@
                                     <li><a routerLink="listconfig" routerLinkActive="active">Manage Config</a></li>
                                 </ul>
                         </li>
+
+                        <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADF'">
+                                <a style="cursor:pointer">Data</a>
+                                <ul class="sub-menu">
+                                    <li><a routerLink="listadjustment" routerLinkActive="active">Adjustment Summary</a></li>
+                                    <li><a routerLink="admlisttrfbalancereq" routerLinkActive="active">Transfer Balance Request</a></li>
+                                </ul>
+                        </li>  
+                        <li class="parent" *ngIf="authService.isLoggedIn() && authService.currentUser.usertype == 'ADF'">
+                                <a style="cursor:pointer">Pending Action</a>
+                                <ul class="sub-menu">
+                                    <li><a routerLink="pendingadjustment" routerLinkActive="active">Pending Adjustment</a></li>
+                                </ul>
+                        </li>
+
                         <li class="current-menu-item" *ngIf="!authService.isLoggedIn() && this.qhashid === '' && nav.linkaccess"><a routerLink="login" routerLinkActive="active"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>  Login</a></li>
                         <li class="parent" *ngIf="authService.isLoggedIn()">
                                 <a routerLink="profile" routerLinkActive="active">Hi, {{ authService.currentUser.name }}  <i class="fa fa-user"></i></a>
                                 <ul class="sub-menu">
                                     <li><a routerLink="profile" routerLinkActive="active">My Profile</a></li>
+                                    <li *ngIf="authService.currentUser.usertype == 'LBL'"><a routerLink="listtrfbalancereq" routerLinkActive="active">Transfer Balance History</a></li>
                                     <li><a routerLink="updateemail" routerLinkActive="active">Change Email</a></li>
                                     <li><a routerLink="password" routerLinkActive="active">Change Password</a></li>
                                     <li><a routerLink="logout" routerLinkActive="active">Logout</a></li>

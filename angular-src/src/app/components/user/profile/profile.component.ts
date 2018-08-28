@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
   //email = new FormControl('', [Validators.email]);
   contactno = new FormControl('', [Validators.required]);
   bankaccno = new FormControl('', [Validators.required]);
+  bankaccname = new FormControl('', [Validators.required]);
   bankcode = new FormControl('', [Validators.nullValidator]);
   bankname = new FormControl('', [Validators.required]);
 
@@ -43,6 +44,7 @@ export class ProfileComponent implements OnInit {
       name: this.name,
       contactno: this.contactno,
       bankaccno: this.bankaccno,
+      bankaccname: this.bankaccname,
       bankcode: this.bankcode,
       bankname: this.bankname
     });
@@ -72,6 +74,7 @@ export class ProfileComponent implements OnInit {
       //email: data.email,
       contactno: data.contactno,
       bankaccno: data.bankaccno,
+      bankaccname: data.bankaccname,
       bankcode: data.bankcode,
       bankname: data.bankname
     });

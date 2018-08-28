@@ -17,6 +17,7 @@ const transaction = require('./routes/transaction.js');
 const activitylog = require('./routes/activitylog.js');
 
 const consumers = require('./routes/consumers.js');
+const trfbalance = require('./routes/trfbalance.js');
 
 const port = process.env.PORT || process.env.KAXETP_SERVICE_PORT || config.serverport;
 
@@ -161,10 +162,16 @@ apiRoutes.post('/transaction/:id', transaction.savetransaction); // API adds tra
 apiRoutes.post('/transactionagg/:id', transaction.transactionagg); // API get transaction data of the label
 apiRoutes.post('/admtransactionagg/:id', transaction.admtransactionagg); // API get transaction data of the label
 apiRoutes.get('/labelbalance/:id', transaction.getlabelbalance); // API get balance data of the label
+apiRoutes.post('/othertransactionagg/:id', transaction.othertransactionagg); // API get transaction data of the label
+apiRoutes.post('/admothertransactionagg/:id', transaction.admothertransactionagg); // API get transaction data of the label
 
 apiRoutes.post('/activitylog/:id', activitylog.saveactivity); // API adds activitylog of the label
 apiRoutes.post('/activitylogagg/:id', activitylog.activitylogagg); // API get activitylog data of the label
 apiRoutes.post('/admactivitylogagg/:id', activitylog.admactivitylogagg); // API get activitylog data of the label
+
+apiRoutes.post('/trfbalancereq/:id', trfbalance.pubaddtrfbalancereq); // API adds transfer balance request of the label
+apiRoutes.post('/trfbalancereqagg/:id', trfbalance.trfbalancereqagg); // API display list of transfer balance request of the label
+apiRoutes.get('/gettrfbalancereqagg/:id', trfbalance.gettrfbalancereqagg); // API get details of transfer balance request of the label
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
