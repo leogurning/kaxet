@@ -206,7 +206,7 @@ export class SongstatsComponent implements OnInit {
       }
     }
   }
-  stopAllplaying(selectedItem) {
+/*   stopAllplaying(selectedItem) {
     let curState = true;
     if (this.state[this.currentPlaying]) {
       curState = this.state[this.currentPlaying].playing;
@@ -225,6 +225,38 @@ export class SongstatsComponent implements OnInit {
       }
       
     }    
+  } */
+  stopAllplaying(selectedItem) {
+    let curState = true;
+    if (this.state[this.currentPlaying]) {
+      curState = this.state[this.currentPlaying].playing;
+    }
+    if (curState) {
+      if (this.currentPlaying != selectedItem) {
+        if (this.state[this.currentPlaying]) {
+          this.state[this.currentPlaying].playing = false;
+        }
+        if (this.audiotag) {
+          if (this.audio) { this.audio.pause(); }
+          this.audio = null;
+        } else {
+          if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+          this.audioBuffer = null;
+          this.audiobufferSource = null;
+        }
+      }   
+    } else {
+      if (this.currentPlaying != selectedItem) {
+        if (this.audiotag) {
+          if (this.audio) { this.audio.pause(); }
+          this.audio = null;
+        } else {
+          if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+          this.audioBuffer = null;
+          this.audiobufferSource = null;
+        }
+      }   
+    }
   }
   playAudiocontext(selectedItem, audiourl) {
     

@@ -88,6 +88,7 @@ export class SongmgtComponent implements OnInit {
   private state: any = [];
   private audiotag = false;
   private currentPlaying = -1;
+  private previousaudiotype: string = '';
 
   ngOnInit() {
     this.userObj =  this.authService.currentUser;
@@ -212,7 +213,7 @@ export class SongmgtComponent implements OnInit {
 
     }
   }
-  stopAllplaying(selectedItem, audiotype) {
+  /* stopAllplaying(selectedItem, audiotype) {
     let curState = true;
     
     if (this.state[this.currentPlaying]) {
@@ -265,6 +266,78 @@ export class SongmgtComponent implements OnInit {
         }
       }
     }    
+
+  } */
+  stopAllplaying(selectedItem, audiotype) {
+    let curState = true;
+    
+    if (this.state[this.currentPlaying]) {
+      curState = this.state[this.currentPlaying].playingprvw || this.state[this.currentPlaying].playingsong;
+    }
+    if (curState) {
+      if (this.currentPlaying != selectedItem) {
+        if (this.state[this.currentPlaying]) {
+          this.state[this.currentPlaying].playingprvw = false;
+          this.state[this.currentPlaying].playingsong = false;
+        }
+        if (this.audiotag) {
+          if (this.audio) { this.audio.pause(); }
+          this.audio = null;
+        } else {
+          if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+          this.audioBuffer = null;
+          this.audiobufferSource = null;
+        }
+        
+      } else { //if (this.currentPlaying == selectedItem)
+        
+          if (audiotype === 'prvw') {
+            if (this.state[this.currentPlaying]) {
+              if (this.state[this.currentPlaying].playingsong) {
+                if (this.audiotag) {
+                  if (this.audio) { this.audio.pause(); }
+                  this.audio = null;
+                } else {
+                  if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+                  this.audioBuffer = null;
+                  this.audiobufferSource = null;
+                }
+                this.state[this.currentPlaying].playingsong = false;
+              }          
+            }
+          } else if (audiotype === 'song') {
+            if (this.state[this.currentPlaying]) {
+              if (this.state[this.currentPlaying].playingprvw) {
+                if (this.audiotag) {
+                  if (this.audio) { this.audio.pause(); }
+                  this.audio = null;
+                } else {
+                  if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+                  this.audioBuffer = null;
+                  this.audiobufferSource = null;
+                }
+                this.state[this.currentPlaying].playingprvw = false;
+              }          
+            }
+          }
+        
+      }   
+    } else { // curState both false for prvw and song
+      if (this.currentPlaying == selectedItem && this.previousaudiotype == audiotype) {
+        //no action
+      } else {
+        //reset
+        if (this.audiotag) {
+          if (this.audio) { this.audio.pause(); }
+          this.audio = null;
+        } else {
+          if (this.audiobufferSource) { this.audiobufferSource.stop(); }
+          this.audioBuffer = null;
+          this.audiobufferSource = null;
+        }
+      }
+    }
+     
 
   }
   playAudiocontext(selectedItem, audiotype, audiourl) {
@@ -377,8 +450,10 @@ export class SongmgtComponent implements OnInit {
     if (this.audioBuffer && this.audiobufferSource) {
       if (audiotype === 'prvw') {
         this.state[selectedItem].playingprvw = false;
+        this.previousaudiotype = 'prvw';
       } else if (audiotype === 'song') {
         this.state[selectedItem].playingsong = false;
+        this.previousaudiotype = 'song';
       }
       this.audiobufferSource.stop();    
     }
@@ -387,8 +462,10 @@ export class SongmgtComponent implements OnInit {
     if (this.audio && this.audio.src) {
       if (audiotype === 'prvw') {
         this.state[selectedItem].playingprvw = false;
+        this.previousaudiotype = 'prvw';
       } else if (audiotype === 'song') {
         this.state[selectedItem].playingsong = false;
+        this.previousaudiotype = 'song';
       }
       this.audio.pause();   
     }
