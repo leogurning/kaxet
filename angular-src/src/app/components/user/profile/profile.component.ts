@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
 //  dialogResult = "";
 
   constructor(private fb: FormBuilder, 
-    private authService: AuthService,
+    public authService: AuthService,
     private userService: UserService,
     private notifService: NotifService,
     private router: Router,

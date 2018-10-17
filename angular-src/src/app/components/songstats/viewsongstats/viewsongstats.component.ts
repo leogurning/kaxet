@@ -58,7 +58,7 @@ export class ViewsongstatsComponent implements OnInit {
   private songBuffer: AudioBuffer;
   private prvwbufferSource: AudioBufferSourceNode;
   private songbufferSource: AudioBufferSourceNode;
-  private state = {prvwplaying:false, songplaying:false, 
+  public state = {prvwplaying:false, songplaying:false, 
                    loadingprvw:false, loadingsong:false};
   private audiotag = false;
 

@@ -4,6 +4,7 @@ export interface IArtist {
     artistphotopath: String;
     artistphotoname: String;
     status: String;
+    about: String;
 }
 
 export interface IArtistList {

@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
   totalpendingpurchase: number = 0;
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private artistService: ArtistService,
     private albumService: AlbumService,
     private songService: SongService,

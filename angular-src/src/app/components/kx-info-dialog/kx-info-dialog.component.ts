@@ -10,7 +10,7 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 export class KxInfoDialogComponent implements OnInit {
 
   constructor( private dialogRef: MatDialogRef<KxInfoDialogComponent>,
-               @Inject(MAT_DIALOG_DATA) private data: string 
+               @Inject(MAT_DIALOG_DATA) public data: string 
              ) 
   { }
 

@@ -3,7 +3,7 @@
       <h3>Change Photo</h3>
   </div>
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-  <form [formGroup]="artistForm" (ngSubmit)="updatePhoto(artistForm.value)" class="form-horizontal" novalidate autocomplete="off">
+  <form [formGroup]="artistForm" class="form-horizontal" novalidate autocomplete="off">
 <!--       <div class="form-group" [ngClass]="{'has-error': profileForm.get('imgpath').invalid && profileForm.get('imgpath').dirty}">
           <label for="imgpath" class="col-sm-2 control-label">Image Path</label>
           <div class="input-group col-sm-10">

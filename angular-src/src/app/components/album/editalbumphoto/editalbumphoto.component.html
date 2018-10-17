@@ -3,7 +3,7 @@
         <h3>Change Photo</h3>
     </div>
     <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-    <form [formGroup]="albumForm" (ngSubmit)="updatePhoto(albumForm.value)" class="form-horizontal" novalidate autocomplete="off">
+    <form [formGroup]="albumForm" class="form-horizontal" novalidate autocomplete="off">
 
         <div class="form-group">
             <!-- <label for="albumimage" class="col-sm-2 control-label"></label> -->

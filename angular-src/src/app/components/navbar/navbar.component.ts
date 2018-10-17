@@ -11,7 +11,7 @@ import { Globals } from '../../app.global';
 })
 export class NavbarComponent implements OnInit {
   qhashid: string;
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
               private route: ActivatedRoute,
               public nav: NavbarService,
               private globals: Globals) 

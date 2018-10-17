@@ -282,7 +282,7 @@ const appRoutes: Routes = [
       tertiaryColour: '#ce3b3b'
     }),
     BsDatepickerModule.forRoot(),
-    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'})
+    RouterModule.forRoot(appRoutes, { onSameUrlNavigation: 'reload' })
   ],
   entryComponents: [
     KxInfoDialogComponent,

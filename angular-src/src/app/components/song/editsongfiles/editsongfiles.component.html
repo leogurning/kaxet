@@ -3,7 +3,7 @@
         <h3>Change Song Files</h3>
     </div>
     <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-    <form [formGroup]="songForm" (ngSubmit)="updateSong(songForm.value)" class="form-horizontal" novalidate autocomplete="off">
+    <form [formGroup]="songForm" class="form-horizontal" novalidate autocomplete="off">
         <div class="form-group">
           <label for="songprvw" class="col-sm-2 control-label">Song Preview</label>
           <div class="input-group col-sm-10">
